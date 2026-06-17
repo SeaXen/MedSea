@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>STEMI ECG criteria (ST elevation, hyperacute T waves, reciprocal changes) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CARDIOLOGY</span>
+      <div class="h1">STEMI ECG criteria (ST elevation, hyperacute T waves, reciprocal changes)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Introduction</span>
+  </div>
+  <div class="sec-body">
+<p><b>STEMI = ST elevation MI</b> — transmural ischaemia from complete coronary occlusion. Defined by <b>ST elevation</b> at the J-point in <b>≥2 contiguous leads</b> (4th Universal Definition, 2018). <b>"Time is muscle"</b> — early recognition saves myocardium.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">ST Elevation Thresholds (J-point)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Lead Group</th><th>♂ <40 yr</th><th>♂ ≥40 yr</th><th>♀</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**V2–V3**</td><td>≥2.5 mm</td><td>≥2.0 mm</td><td>≥1.5 mm</td></tr><tr><td>**All other leads**</td><td>≥1.0 mm</td><td>≥1.0 mm</td><td>≥1.0 mm</td></tr><tr><td>**V7–V9 (posterior)**</td><td>≥1.0 mm (♂ <40)</td><td>≥0.5 mm</td><td>≥0.5 mm</td></tr><tr><td>**V3R, V4R (RV)**</td><td>≥1.0 mm (♂ <30)</td><td>≥0.5 mm</td><td>≥0.5 mm</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Classic Evolution (Stage by Stage)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>Time</th><th>ECG</th><th>Pathology</th></tr><tr><td>---</td><td>---</td><td>---</td><td>---</td></tr><tr><td>**Hyperacute T**</td><td><30 min</td><td>Tall, broad, peaked T (early)</td><td>Reversible ischaemia</td></tr><tr><td>**ST elevation**</td><td>min–hours</td><td>Concave-up ST ↑, often "tombstone"</td><td>Injury (transmural)</td></tr><tr><td>**Q wave**</td><td>hours–days</td><td>Pathological Q (>40 ms, >25% R)</td><td>Necrosis</td></tr><tr><td>**T inversion**</td><td>days–weeks</td><td>Symmetric TWI</td><td>Peri-infarct</td></tr><tr><td>**Normalised ST**</td><td>weeks</td><td>Q persists, T normalises</td><td>Scar</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Hyperacute T Waves</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Tall, broad, "tented"</b> T waves, often in same leads that subsequently elevate</li><li>Earliest sign of STEMI (first 30 min)</li><li><b>Tall anterior T</b> in V2–V4 = early anterior STEMI</li><li>May be subtle — compare to previous ECG</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">ST Elevation Patterns</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Concave up</b> (often early, less specific)</li><li><b>Convex / tombstone</b> (more specific for transmural injury)</li><li><b>≥1 mm in two contiguous leads</b> (or as above)</li><li><b>Reciprocal ST depression</b> (opposite leads) — increases specificity (e.g., inferior ST↑ + lateral ST↓)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Pathological Q Waves</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Width ≥40 ms</b> (1 small box)</li><li><b>Depth ≥25% of R wave</b></li><li>Develops <b>hours to days</b></li><li>Persists indefinitely</li><li>Not all Q waves are pathological — III, aVL, V1, V2 (septal) can be normal</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Reciprocal Changes</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>ST depression in leads opposite</b> to ST elevation</li><li><b>Inferior STEMI (II, III, aVF)</b> + ST↓ in I, aVL = high specificity</li><li><b>Anterior STEMI (V1–V4)</b> + ST↓ in inferior leads = indicates proximal LAD, larger infarct</li><li>Absence of reciprocal change does NOT rule out STEMI</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Coronary Territory</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Leads</th><th>Artery</th><th>Wall</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>V1–V2</td><td>Septal (LAD)</td><td>Septal</td></tr><tr><td>V3–V4</td><td>Anterior (LAD)</td><td>Anterior</td></tr><tr><td>V5–V6, I, aVL</td><td>Lateral (LCx / diagonal)</td><td>Lateral</td></tr><tr><td>II, III, aVF</td><td>Inferior (RCA 90%, LCx 10%)</td><td>Inferior</td></tr><tr><td>V7–V9</td><td>Posterior (LCx / RCA)</td><td>Posterior</td></tr><tr><td>V3R, V4R</td><td>RV (RCA)</td><td>RV</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Posterior MI</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>ST depression in V1–V3</b> (mirror image)</li><li><b>Tall, broad R wave in V1–V2</b> (true posterior Q)</li><li><b>Confirm with V7–V9</b>: ST elevation ≥0.5 mm</li><li>Usually from <b>LCx or distal RCA</b></li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Right Ventricular MI</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>ST elevation ≥1 mm in V3R, V4R</b> (most specific)</li><li><b>Inferior MI</b> + hypotension → think RV infarct</li><li>Confirm with <b>V4R</b> (RCA territory)</li><li><b>Avoid nitrates and diuretics</b> (preload-dependent)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">STEMI Equivalents</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>New LBBB</b> with Sgarbossa criteria</li><li><b>de Winter T waves</b> (upsloping ST depression V1–V6 + tall T) — proximal LAD</li><li><b>Wellens syndrome</b> (deep symmetric TWI V2–V3) — critical proximal LAD</li><li><b>Posterior MI</b> (V1–V3 ST depression)</li><li><b>Hyperacute T waves</b></li><li><b>South African flag sign</b> (persistent ST elevation after MI = LV aneurysm)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Sgarbossa Criteria (LBBB / Paced rhythm)</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>≥1 mm concordant ST elevation</b> in leads with positive QRS (5 pts)</li><li><b>≥1 mm concordant ST depression in V1–V3</b> (3 pts)</li><li><b>≥5 mm discordant ST elevation</b> in leads with negative QRS (2 pts)</li><li><b>Modified Sgarbossa</b> (Smith-modified): ST/S ratio ≤−0.25 = positive</li><li><b>Total ≥3</b> = diagnostic of STEMI in LBBB</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Localisation from ECG</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>LAD proximal</b> — ST↑ aVR, aVL, new RBBB, anterior + septal</li><li><b>LAD mid</b> — anterior + septal</li><li><b>LAD distal</b> — apical, ± V7–V9</li><li><b>RCA proximal</b> — inferior + RV (V4R)</li><li><b>LCx</b> — lateral, posterior</li></ul>
+<div class="callout"><b>Pearls</b> - <b>≥1 mm ST elevation in 2 contiguous leads</b> = STEMI (use sex/age cutoffs for V2–V3) - <b>Reciprocal changes ↑ specificity</b> (e.g., inferior + lateral ST↓) - <b>Hyperacute T waves</b> = earliest sign (tall, broad, tented) - <b>V1–V3 ST depression</b> = posterior MI (get V7–V9) - <b>Inferior MI + hypotension</b> → V4R for RV infarct; avoid nitrates - <b>Sgarbossa ≥3</b> = STEMI in LBBB; <b>modified Sgarbossa ST/S ratio</b> better</div>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · STEMI ECG criteria (ST elevation, hyperacute T waves, reciprocal changes) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

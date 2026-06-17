@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hemodynamic profiling (wet/dry, warm/cold) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CARDIOLOGY</span>
+      <div class="h1">Hemodynamic profiling (wet/dry, warm/cold)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Why Profile?</span>
+  </div>
+  <div class="sec-body">
+<p>Stevenson's bedside <b>2×2 haemodynamic matrix</b> guides initial therapy in minutes. Avoids blind diuresis in low-output patients.</p>
+<table class="ctable"><tr><th></th><th>**Wet (congested)**</th><th>**Dry (euvolaemic)**</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Warm (perfused)**</td><td>**Warm & Wet** — most common (~70%)</td><td>**Warm & Dry** — compensated</td></tr><tr><td>**Cold (hypoperfused)**</td><td>**Cold & Wet** — worst prognosis</td><td>**Cold & Dry** — uncommon</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Bedside Assessment</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Perfusion ("Warm or Cold")</div>
+<table class="ctable"><tr><th>Warm</th><th>Cold</th></tr><tr><td>---</td><td>---</td></tr><tr><td>Warm peripheries</td><td>Cool / mottled peripheries</td></tr><tr><td>Normal pulse pressure</td><td>**Narrow pulse pressure** (<25%)</td></tr><tr><td>Normal mentation</td><td>Confused, drowsy</td></tr><tr><td>Normal urine output</td><td>Oliguria</td></tr><tr><td>No ACEi/BB hypotension</td><td>Symptomatic hypotension</td></tr></table>
+<div class="sub-h">Congestion ("Wet or Dry")</div>
+<table class="ctable"><tr><th>Wet</th><th>Dry</th></tr><tr><td>---</td><td>---</td></tr><tr><td>↑JVP, orthopnoea, bendopnoea</td><td>No orthopnoea, flat JVP</td></tr><tr><td>Peripheral / sacral oedema</td><td>No oedema</td></tr><tr><td>Hepatomegaly, ascites</td><td>No congestion</td></tr><tr><td>Crackles, pleural effusion</td><td>Clear lung bases</td></tr><tr><td>**S3 gallop**</td><td>No S3</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Profile-Based Therapy</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Warm &amp; Wet (most common)</div>
+<ul><li><b>IV loop diuretic</b> (furosemide 20–40 mg IV stat, repeat or infusion)</li><li>Vasodilator if hypertensive (GTN)</li><li>Continue oral GDMT (BB, ACEi/ARB if BP allows)</li></ul>
+<div class="sub-h">Cold &amp; Wet (cardiogenic shock spectrum)</div>
+<ul><li><b>Inotrope</b> — dobutamine (β1), milrinone (PDE3), levosimendan (calcium sensitiser)</li><li><b>Vasopressor</b> — noradrenaline (if SBP &lt;80)</li><li><b>Diuretic</b> — to decongest (use with inotrope)</li><li><b>Mechanical support</b> — IABP, Impella, VA-ECMO if refractory</li><li><b>Right heart catheter</b> to titrate</li></ul>
+<div class="sub-h">Cold &amp; Dry</div>
+<ul><li><b>Cautious fluid challenge</b> (250 mL NS over 15 min)</li><li>If no response → inotrope</li><li>Often early decompensation of advanced HFrEF</li></ul>
+<div class="sub-h">Warm &amp; Dry</div>
+<ul><li>Optimise oral therapy</li><li>Discharge planning</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Invasive Confirmation (Swan-Ganz)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Profile</th><th>CI (L/min/m²)</th><th>PCWP (mmHg)</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Normal**</td><td>2.5–4.0</td><td>6–12</td></tr><tr><td>**Warm & Dry**</td><td>≥2.5</td><td>≤15</td></tr><tr><td>**Warm & Wet**</td><td>≥2.5</td><td>>18</td></tr><tr><td>**Cold & Dry**</td><td><2.5</td><td>≤15</td></tr><tr><td>**Cold & Wet**</td><td><2.5</td><td>>18</td></tr></table>
+<div class="callout"><b>Cardiac power output</b> = (MAP × CO)/451 — most powerful predictor of mortality in cardiogenic shock. CPO &lt;0.6 W ⇒ very high mortality.</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Monitoring</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Strict fluid balance, daily weight</li><li>U&amp;E, K⁺, creatinine on diuretics</li><li>BP, HR, SpO₂, urine output</li><li>BNP/NT-proBNP for response</li><li>Reassess profile <b>at least twice daily</b></li></ul>
+<div class="callout"><b>Pearls</b> - <b>Warm &amp; Wet = diuretic ± vasodilator</b> - <b>Cold &amp; Wet = inotrope + diuretic ± MCS</b> - <b>Cold &amp; Dry = fluid challenge then inotrope</b> - <b>Narrow pulse pressure</b> = cold (low stroke volume) - <b>Bendopnoea</b> (dyspnoea bending forward) — earliest sign of congestion - <b>S3 gallop</b> is the most specific sign of elevated LV filling pressure</div>
+<p>&lt;callout icon="🎯" color="rose_bg"&gt; <b>CLINICAL SIGNIFICANCE —</b> Stevenson's 2×2 matrix is the <b>bedside shortcut</b> to ADHF therapy. Most admissions are <b>Warm &amp; Wet</b> → IV diuretics. <b>Cold &amp; Wet</b> requires inotropes and consideration of mechanical support. RHC may be needed in complex cases (ESC IIa). &lt;/callout&gt;</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Hemodynamic profiling (wet/dry, warm/cold) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

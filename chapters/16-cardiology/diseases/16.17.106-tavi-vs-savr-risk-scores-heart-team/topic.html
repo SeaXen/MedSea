@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TAVI vs SAVR (risk scores, heart team) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CARDIOLOGY</span>
+      <div class="h1">TAVI vs SAVR (risk scores, heart team)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Background</span>
+  </div>
+  <div class="sec-body">
+<p><b>Transcatheter Aortic Valve Implantation (TAVI / TAVR)</b> has revolutionised AS care. The <b>PARTNER</b>, <b>CoreValve</b>, <b>Evolut</b>, and <b>NOTION</b> trials progressively expanded TAVI indications from inoperable → high-risk → intermediate → low-risk cohorts. Current guidelines (ESC 2021, ACC/AHA 2020) consider TAVI in patients <b>&gt;65–75 years</b> depending on risk, anatomy, and lifetime management considerations.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definitions</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>SAVR</b> — Surgical Aortic Valve Replacement (sternotomy / mini-thoracotomy)</li><li><b>TAVI</b> — Percutaneous / transapical / transaortic valve delivery (most common: transfemoral)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Risk Stratification Scores</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Score</th><th>Components</th><th>Use</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**STS score**</td><td>Age, sex, EF, reoperation, MI, stroke, renal failure, DM, COPD, etc.</td><td>Surgical mortality</td></tr><tr><td>**EuroSCORE II**</td><td>Similar + critical state, PA pressure</td><td>Surgical mortality</td></tr><tr><td>**frailty**</td><td>Gait speed, grip strength, Katz ADL</td><td>Adjunctive</td></tr><tr><td>**STS/ACC TAVR in-hospital mortality**</td><td>Procedural risk</td><td>TAVI</td></tr><tr><td>**NYHA, CCS, pulmonary HTN**</td><td>Functional</td><td>Decision-making</td></tr></table>
+<div class="callout">Surgical risk: low &lt;4%, intermediate 4–8%, high &gt;8% (STS).</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">ESC 2021 Recommendations</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Patient Profile</th><th>Recommendation</th></tr><tr><td>---</td><td>---</td></tr><tr><td>**>75 yr OR high surgical risk** (STS/EuroSCORE II >8%) OR frail OR prior sternotomy OR unsuitable for surgery</td><td>**TAVI preferred** (Class I)</td></tr><tr><td>**<75 yr, low surgical risk, suitable for surgery, bicuspid / AR predominant**</td><td>**SAVR preferred** (Class I)</td></tr><tr><td>**Age 65–75, intermediate risk, suitable for both**</td><td>**Heart Team** + patient preference</td></tr><tr><td>**Inoperable**</td><td>TAVI only option</td></tr><tr><td>**Bicuspid, severe AR (no annular calcification)**</td><td>SAVR (TAVI less effective)</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">The Heart Team</span>
+  </div>
+  <div class="sec-body">
+<p>A <b>multidisciplinary team</b> is mandated for all AS interventions:</p>
+<ul><li><b>Interventional cardiologist</b> (TAVI operator)</li><li><b>Cardiac surgeon</b> (SAVR operator + TAVI backup)</li><li><b>Imaging specialist</b> (echo, CT)</li><li><b>Cardiologist / geriatrician</b> (patient assessment, frailty, comorbidity)</li><li><b>Anaesthetist</b> (high-risk patients)</li></ul>
+<p>The Heart Team <b>reviews each case</b>, weighs TAVI vs SAVR, and <b>individualises</b> the decision.</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">TAVI vs SAVR — Trade-offs</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Factor</th><th>TAVI</th><th>SAVR</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Invasiveness**</td><td>Minimally invasive</td><td>Open chest</td></tr><tr><td>**Mortality (low-risk)**</td><td>Comparable (PARTNER 3, Evolut Low Risk)</td><td>Comparable</td></tr><tr><td>**Stroke**</td><td>Slightly higher in early trials; now similar</td><td>Slightly lower</td></tr><tr><td>**Conduction disturbance / PPM**</td><td>**Higher** (~10–25%)</td><td>Lower (~3–8%)</td></tr><tr><td>**Paravalvular leak**</td><td>More common (esp. early devices)</td><td>Less common</td></tr><tr><td>**Vascular complications**</td><td>Higher (TF access)</td><td>Lower</td></tr><tr><td>**Durability**</td><td>**5-yr data** reassuring; **10-yr** data still maturing</td><td>10–20 yr well-documented</td></tr><tr><td>**Anticoagulation**</td><td>Aspirin (or DAPT short) lifelong</td><td>Mechanical→warfarin; bio→aspirin</td></tr><tr><td>**Recovery**</td><td>Days</td><td>Weeks</td></tr><tr><td>**Reintervention**</td><td>Higher (paravalvular leak, valve-in-valve)</td><td>Lower</td></tr><tr><td>**Repeat procedure in young patient**</td><td>Valve-in-valve TAVI feasible</td><td>Redo surgery higher risk</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Anatomic Considerations for TAVI</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Annular sizing</b> by CT — risk of annular rupture if oversizing</li><li><b>Calcium burden</b> (LVOT, raphe) — predictor of paravalvular leak and rupture</li><li><b>Coronary heights</b> — risk of coronary obstruction (low Bicuspid, valve-in-valve)</li><li><b>Vascular access</b> — iliofemoral diameter, tortuosity, calcification</li><li><b>Bicuspid anatomy</b> — previously relative contraindication; current TAVI devices acceptable in selected Type 1 BAV</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Lifetime Management</span>
+  </div>
+  <div class="sec-body">
+<p>For <b>younger patients</b>, the choice has long-term implications:</p>
+<ul><li>TAVI may <b>commit</b> to valve-in-valve TAVI later (small surgical risk of redo SAVR)</li><li>SAVR provides <b>durable</b> prosthesis (esp. mechanical in &lt;50 yr, bioprosthetic in 50–70)</li><li>Patient preference and "lifetime strategy" discussed in Heart Team</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Special Situations</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Pure AR</b> without annular calcification → TAVI less effective (lack of anchor) → SAVR preferred</li><li><b>Severe LV dysfunction</b> — TAVI outcomes favourable; consider pre-TAVI MCS bridge</li><li><b>Prior CABG</b> — TAVI preferred (avoids redo sternotomy)</li><li><b>Porcelain aorta</b> — TAVI preferred (can't cross-clamp)</li></ul>
+<div class="callout"><b>Pearls</b> - <b>TAVI</b> is now first-line for patients <b>&gt;75 yr</b> or high surgical risk - <b>SAVR</b> preferred in &lt;75 yr, low risk, bicuspid, AR predominant, unsuitable anatomy - <b>Heart Team</b> decision is mandatory and must involve both operators + imaging - <b>TAVI</b> has higher PPM and paravalvular leak risk; <b>SAVR</b> has higher bleeding and AF risk - Discuss <b>lifetime management</b> with younger patients — durability favours SAVR</div>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · TAVI vs SAVR (risk scores, heart team) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

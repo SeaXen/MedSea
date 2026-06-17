@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Takotsubo cardiomyopathy — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">CARDIOLOGY</span>
+      <div class="h1">Takotsubo cardiomyopathy</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Definition</span>
+  </div>
+  <div class="sec-body">
+<p><b>Transient LV systolic dysfunction</b> with characteristic <b>apical ballooning</b> (or other patterns) in the absence of obstructive CAD, triggered by <b>emotional or physical stress</b>. Also called <b>stress cardiomyopathy</b> or <b>broken-heart syndrome</b>. Predominantly postmenopausal women (~90%).</p>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Mayo Clinic Diagnostic Criteria</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Transient hypokinesis, akinesis, or dyskinesis of <b>LV mid-segments ± apex</b></li><li><b>Absence of obstructive CAD</b> or plaque rupture</li><li><b>New ECG abnormalities</b> (ST elevation / TWI) or modest troponin elevation</li><li><b>Absence of pheochromocytoma</b> or myocarditis</li></ol>
+<div class="callout"><b>InterTAK score</b> — predicts probability of Takotsubo vs ACS (female sex, emotional trigger, psychiatric/neurological disorder, QTc prolongation, etc.).</div>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Catecholamine surge</b> → direct myocyte toxicity, microvascular spasm, epicardial spasm, Ca²⁺ overload</li><li><b>Oestrogen deficiency</b> (postmenopausal) → loss of cardioprotection</li><li><b>Brain-heart axis</b> — emotional stress → amygdala activation → sympathetic discharge</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Patterns (AHA Scientific Statement 2018)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Apex</th><th>Base</th></tr><tr><td>---</td><td>---</td><td>---</td></tr><tr><td>**Apical (apical ballooning) — most common**</td><td>Akinesis</td><td>Hyperkinesis</td></tr><tr><td>**Mid-ventricular**</td><td>Normal</td><td>Normal</td></tr><tr><td>**Basal (reverse)**</td><td>Hyperkinesis</td><td>Akinesis</td></tr><tr><td>**Focal / biventricular**</td><td>Variable</td><td>Variable</td></tr></table>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Triggers</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Emotional</b> — grief, anger, surprise, fear</li><li><b>Physical</b> — surgery, severe illness, ICU, SAH, stroke, sepsis, cocaine, adrenaline</li><li><b>No identifiable trigger</b> in ~30% (primary)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Clinical Features</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Chest pain</b> (mimics ACS)</li><li><b>Dyspnoea</b></li><li><b>Syncope, arrhythmia, cardiogenic shock</b> (rare but serious)</li><li>ECG: ST elevation (anterior), TWI, QTc prolongation</li><li>Troponin mildly elevated (disproportionate to wall motion abnormality extent)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>ECG</b> — ST elevation (anterior) or diffuse TWI, QTc ↑</li><li><b>Troponin</b> — modest rise (mismatch with extensive WMA)</li><li><b>NT-proBNP</b> — markedly elevated (mismatch)</li><li><b>Echo</b> — characteristic wall motion pattern, EF reduced</li><li><b>Coronary angio / CTCA</b> — <b>normal</b> (mandatory)</li><li><b>CMR</b> — gold standard: oedema (T2), no LGE, characteristic "apical ballooning"; excludes MI and myocarditis</li><li><b>Left ventriculogram</b> — "octopus pot" (takotsubo = Japanese octopus trap)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>LV outflow tract obstruction</b> (~25% — basal hyperkinesis + SAM)</li><li><b>Cardiogenic shock</b></li><li><b>LV thrombus</b> → systemic embolism</li><li><b>Ventricular arrhythmia</b> (torsades, VF)</li><li><b>Apical aneurysm</b> (rare)</li><li><b>Mortality</b> ~5% in-hospital (similar to ACS)</li></ul>
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Supportive</b> — most recover within days to weeks</li><li><b>Heart failure</b> — diuretics, standard GDMT (controversial — beta-blocker may help)</li><li><b>LVOTO</b> — beta-blocker (↓hyperkinesis), IV fluids, <b>avoid inotropes, vasodilators</b></li><li><b>Cardiogenic shock</b> — small fluid bolus, <b>avoid inotropes</b> (worsen gradient) — consider <b>mechanical support</b> (IABP, Impella)</li><li><b>Anticoagulation</b> if LV thrombus or apical aneurysm</li><li><b>Avoid</b> — inotropes, vasodilators if LVOTO</li><li><b>Recovery</b> — EF normalises within 1–4 weeks in 90%</li><li>Recurrence rate ~1–2%/year</li></ul>
+<div class="callout"><b>Pearls</b> - <b>Takotsubo = "octopus pot"</b> — apical ballooning, hyperkinetic base - <b>90% postmenopausal women</b>, often with emotional trigger - <b>Troponin-BNP mismatch</b> — modest troponin, high BNP - <b>CMR</b> is the gold standard (no LGE, distinguishes from MI and myocarditis) - <b>LVOTO in 25%</b> — beta-blocker helps, inotropes harm - <b>Avoid inotropes, vasodilators</b> if LVOTO present - <b>Cardiogenic shock</b> — small fluid challenge, mechanical support - <b>Anticoagulation</b> if LV thrombus - <b>Recurrence</b> ~1–2%/year; <b>mortality</b> similar to ACS</div>
+<p>&lt;callout icon="🎯" color="rose_bg"&gt; <b>CLINICAL SIGNIFICANCE —</b> Takotsubo mimics ACS — <b>always perform coronary angio</b>. CMR differentiates from MI (no LGE) and myocarditis. <b>LVOTO occurs in 25%</b> and dictates therapy (beta-blocker, avoid inotropes). In-hospital mortality ~5%, similar to ACS — manage aggressively. &lt;/callout&gt;</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Takotsubo cardiomyopathy · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

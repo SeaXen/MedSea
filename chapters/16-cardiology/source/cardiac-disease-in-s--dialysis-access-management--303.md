@@ -1,0 +1,31 @@
+# Dialysis Access — Cardiovascular Implications
+
+## 1. Types
+- **AV fistula** (preferred, lowest thrombosis, longest patency)
+- **AV graft** (if fistula not feasible)
+- **Central venous catheter** (last resort, highest infection/thrombosis)
+
+## 2. Cardiovascular Effects of AVF
+- **High-output cardiac state** immediately post-creation
+- ↑ CO 10–20% (shunt flow 0.5–2 L/min)
+- Can precipitate **high-output HF** in patients with pre-existing cardiac dysfunction
+- **Brachial flow** >2 L/min or Qa/CO >30% = high risk
+
+## 3. Pre-op Cardiac Workup
+- **Echo** before AVF creation in patients with known HF, LV dysfunction, or pulmonary HTN
+- **Avoid AVF** in severe LV dysfunction (EF <30%)
+- Consider **peritoneal dialysis** instead
+
+## 4. AVF Issues
+- **Steal syndrome** — distal limb ischemia (rare, 1–5%)
+- **Aneurysmal dilation** — high flow
+- **Heart failure** — flow reduction (banding) or ligation
+- **Central vein stenosis** (especially after catheter)
+
+## 5. Catheter Concerns
+- **Central vein thrombosis** — affecting future access
+- **Stenosis** — SVC syndrome
+- **Endocarditis** — especially S. aureus
+- **Arrhythmias** (atrial) if catheter in RA
+
+> **Pearls** — **AVF can cause high-output HF**. Check Qa/CO if symptomatic. **Avoid AVF in severe LV dysfunction** if possible. **Steal syndrome** = distal limb ischemia, may need flow reduction.
