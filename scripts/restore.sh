@@ -22,27 +22,29 @@ if [ ! -d "$CHAPTER_DIR" ]; then
   exit 1
 fi
 
-echo "[$(date)] Restoring $CHAPTER_DIR -> $TARGET/16. Cardiology/"
-mkdir -p "$TARGET/16. Cardiology"
+DEST="$TARGET/16. Cardiology"
+echo "[$(date)] Restoring $CHAPTER_DIR -> $DEST/"
+mkdir -p "$DEST"
 
-# Restore hubs
+# Step 1: restore hubs (flat .md files)
 if [ -d "$CHAPTER_DIR/hubs" ]; then
-  cp -r "$CHAPTER_DIR/hubs/." "$TARGET/16. Cardiology/"
+  for hub_md in "$CHAPTER_DIR/hubs/"*.md; do
+    [ -f "$hub_md" ] || continue
+    cp "$hub_md" "$DEST/"
+    echo "  hub: $(basename "$hub_md")"
+  done
 fi
 
-# Restore diseases (each subfolder has topic.md/html/png)
-if [ -d "$CHAPTER_DIR/diseases" ]; then
-  cp -r "$CHAPTER_DIR/diseases/." "$TARGET/16. Cardiology/"
+# Step 2: restore diseases into hub-nested structure (uses manifest)
+if [ -f "$CHAPTER_DIR/manifest.json" ] && [ -d "$CHAPTER_DIR/diseases" ]; then
+  python3 "$REPO/scripts/restore_diseases.py" "$CHAPTER_DIR" "$DEST"
 fi
 
-# Restore source mds to /root/sk-content/ for future re-rendering
+# Step 3: restore source mds to /root/sk-content/
 if [ -d "$CHAPTER_DIR/source" ]; then
   mkdir -p /root/sk-content
   cp -n "$CHAPTER_DIR/source/"*.md /root/sk-content/ 2>/dev/null || true
+  echo "  source mds: $(ls "$CHAPTER_DIR/source/"*.md 2>/dev/null | wc -l)"
 fi
 
 echo "[$(date)] Restore complete"
-echo ""
-echo "Next steps (if PNG/HTML missing):"
-echo "  cd /root/sea-knowledge-infographics"
-echo "  python3 render_topic.py --slug <topic> --title <Title> --markdown-file <md> --out-dir <folder>"
