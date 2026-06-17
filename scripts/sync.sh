@@ -4,12 +4,12 @@
 set -euo pipefail
 
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
-SRC="/mnt/tb/Sea-knowledge/16. Cardiology"
 
 echo "[$(date)] Starting MedSea backup..."
 
 # Rebuild content
 python3 "$REPO/scripts/build_backup.py" "$REPO"
+python3 "$REPO/scripts/build_nephro_backup.py" "$REPO"
 
 # Stage and commit changes
 cd "$REPO"
@@ -22,7 +22,7 @@ fi
 
 git commit -m "Backup: $(date +%Y-%m-%d_%H%M)
 
-Auto-backup from /mnt/tb/Sea-knowledge/16. Cardiology"
+Auto-backup from /mnt/tb/Sea-knowledge/"
 
 # Push to GitHub
 git push origin main 2>&1 || echo "[$(date)] Push failed (will retry next run)"
