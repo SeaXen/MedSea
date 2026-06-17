@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Urine Investigations — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">Urine Investigations</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Perform systematic urinalysis interpretation</li><li>Differentiate glomerular vs non-glomerular haematuria</li><li>Identify and interpret urinary casts and crystals</li><li>Apply quantification methods (ACR, PCR, 24h)</li><li>Apply to FCPS/MRCP clinical vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Urinalysis — The "Renal Biopsy of the Poor"</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Dipstick Analysis</div>
+<table class="ctable"><tr><th>Parameter</th><th>Normal</th><th>Abnormal Significance</th></tr><tr><td>-----------</td><td>--------</td><td>----------------------</td></tr><tr><td>**pH**</td><td>4.5–8.0</td><td>Low: acidosis, UTI (urea-splitters); High: alkalosis, urea-splitters</td></tr><tr><td>**Specific Gravity**</td><td>1.005–1.030</td><td>Low: DI, CKD; High: dehydration, glycosuria, proteinuria</td></tr><tr><td>**Protein**</td><td>Negative</td><td>**Proteinuria** (glomerular > tubular > overflow); false +ve: alkaline, bloody</td></tr><tr><td>**Glucose**</td><td>Negative</td><td>**Glycosuria** (DM, renal glycosuria, pregnancy, SGLT2i)</td></tr><tr><td>**Ketones**</td><td>Negative</td><td>**Ketonuria** (DKA, starvation, low carb diet)</td></tr><tr><td>**Blood**</td><td>Negative</td><td>**Haematuria** (RBC >3/HPF); false +ve: myoglobin, Hb</td></tr><tr><td>**Leucocytes**</td><td>Negative</td><td>**Leucocyturia** (UTI, sterile pyuria = TB, stones, interstitial nephritis)</td></tr><tr><td>**Nitrites**</td><td>Negative</td><td>**Nitrituria** (Gram-negative UTI, sensitivity ~50%)</td></tr><tr><td>**Bilirubin**</td><td>Negative</td><td>Liver disease, haemolysis</td></tr><tr><td>**Urobilinogen**</td><td>Normal</td><td>Increased: haemolysis, haemolytic anaemia</td></tr></table>
+<div class="callout">[!key] <b>Proteinuria</b>: Dipstick detects albumin; ACR = gold standard for quantification. <b>Haematuria</b>: Dipstick +ve + microscopy RBC &gt;3/HPF = true haematuria.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Urine Microscopy</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Element</th><th>Normal</th><th>Abnormal Significance</th></tr><tr><td>---------</td><td>--------</td><td>----------------------</td></tr><tr><td>**RBC**</td><td>0–2/HPF</td><td>**>3/HPF = haematuria**; **dysmorphic = glomerular**; isomorphic = non-glomerular</td></tr><tr><td>**WBC**</td><td>0–5/HPF</td><td>**>5/HPF = pyuria**; sterile pyuria = TB, interstitial nephritis, stones, carcinoma</td></tr><tr><td>**Epithelial cells**</td><td>Few</td><td>Squamous = contamination; Transitional = bladder/TCC; Renal tubular = ATN, interstitial nephritis</td></tr><tr><td>**Casts**</td><td>Hyaline few</td><td>**RBC cast = GN**; **WBC cast = pyelo/interstitial nephritis**; Granular/muddy brown = ATN; Waxy/broad = advanced CKD; Fatty = nephrotic syndrome</td></tr><tr><td>**Crystals**</td><td>Few urates</td><td>**Cystine** (hexagonal = cystinuria), **Uric acid** (needles/rosettes), **Calcium oxalate** (envelopes), **Struvite** (coffin-lid = struvite/Proteus)</td></tr><tr><td>**Microorganisms**</td><td>None</td><td>Bacteria = UTI; Yeast = Candida; Parasites (Schistosoma)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Proteinuria Quantification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Method</th><th>Normal</th><th>Use</th></tr><tr><td>------</td><td>--------</td><td>--------</td><td>-----</td></tr><tr><td>**ACR**</td><td>Albumin:creatinine ratio (spot)</td><td><3 mg/mmol</td><td>**Gold standard**; corrects for concentration</td></tr><tr><td>**PCR**</td><td>Protein:creatinine ratio (spot)</td><td><15 mg/mmol</td><td>Includes non-albumin; overestimates if tubular protein</td></tr><tr><td>**24h urine protein**</td><td>24h collection</td><td><150 mg/day</td><td>Gold standard but cumbersome</td></tr><tr><td>**Dipstick**</td><td>Semi-quantitative</td><td>Negative</td><td>Screening only</td></tr></table>
+<table class="ctable"><tr><th>ACR Category</th><th>Range (mg/mmol)</th><th>Term</th></tr><tr><td>--------------</td><td>-----------------</td><td>------</td></tr><tr><td>**A1**</td><td><3</td><td>Normal</td></tr><tr><td>**A2**</td><td>3–30</td><td>Microalbuminuria</td></tr><tr><td>**A3**</td><td>>30</td><td>Macroalbuminuria</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Haematuria</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Definition</th><th>Cause</th></tr><tr><td>------</td><td>------------</td><td>-------</td></tr><tr><td>**Microscopic**</td><td>>3 RBC/HPF on microscopy</td><td>Dipstick +ve → confirm microscopy</td></tr><tr><td>**Macroscopic**</td><td>Visible blood in urine</td><td>Stone, tumour, trauma, severe GN</td></tr></table>
+<table class="ctable"><tr><th>Type</th><th>RBC Morphology</th><th>Cause</th></tr><tr><td>------</td><td>----------------</td><td>-------</td></tr><tr><td>**Glomerular**</td><td>**Dysmorphic** (>50% dysmorphic), RBC casts</td><td>GN, vasculitis, IgA nephropathy</td></tr><tr><td>**Non-glomerular**</td><td>**Isomorphic** (uniform), no casts</td><td>Stones, tumours, UTI, trauma, exercise</td></tr></table>
+<div class="callout">[!key] <b>Dysmorphic RBCs + RBC casts = Glomerular haematuria</b> <b>Isomorphic RBCs + no casts = Non-glomerular (urological)</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Urinary Casts</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Cast Type</th><th>Appearance</th><th>Significance</th></tr><tr><td>-----------</td><td>------------</td><td>--------------</td></tr><tr><td>**Hyaline**</td><td>Clear, low refractive</td><td>Normal (dehydration, fever, exercise)</td></tr><tr><td>**RBC**</td><td>Red-brown, retain RBC shape</td><td>**Glomerulonephritis** (pathognomonic)</td></tr><tr><td>**WBC / Pus**</td><td>White, granular</td><td>**Pyelonephritis**, acute interstitial nephritis</td></tr><tr><td>**Granular**</td><td>Brown, granular</td><td>**ATN**, severe glomerular disease</td></tr><tr><td>**Muddy brown**</td><td>Dark, granular</td><td>**ATN** (classic)</td></tr><tr><td>**Waxy / Broad**</td><td>High refractive, broad</td><td>**Advanced CKD**, chronic tubular damage</td></tr><tr><td>**Fatty / Oval fat bodies**</td><td>Maltese crosses</td><td>**Nephrotic syndrome** (lipiduria)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Urinary Crystals</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Crystal</th><th>Shape</th><th>Clinical Association</th></tr><tr><td>---------</td><td>-------</td><td>---------------------</td></tr><tr><td>**Cystine**</td><td>**Hexagonal** (flat, hexagonal plates)</td><td>**Cystinuria** (autosomal recessive)</td></tr><tr><td>**Uric acid**</td><td>Needles, rosettes, rhombic</td><td>**Gout, tumour lysis, acidic urine**</td></tr><tr><td>**Calcium oxalate**</td><td>**Envelope-shaped** (bipyramidal), dumbbells</td><td>**Hyperoxaluria, ethylene glycol**, stones</td></tr><tr><td>**Calcium phosphate**</td><td>Amorphous, stellate</td><td>Alkaline urine, hyperparathyroidism</td></tr><tr><td>**Struvite (Triple phosphate)**</td><td>**Coffin-lid / coffin-lid shaped** (prismatic)</td><td>**Struvite stones** (Proteus, Klebsiella - urea-splitting organisms)</td></tr><tr><td>**Ammonium urate**</td><td>Thorny apples, cactus-like</td><td>Liver disease, laxative abuse</td></tr><tr><td>**Leucine / Tyrosine**</td><td>Yellow-brown, fine/silky</td><td>Severe liver disease, tyrosinaemia</td></tr><tr><td>**Cholesterol**</td><td>Rectangular, notched</td><td>Nephrotic syndrome (lipiduria)</td></tr></table>
+<div class="callout">[!key] <b>Cystine = Hexagonal</b>; <b>Uric acid = Needles/rosettes</b>; <b>CaOx = Envelopes</b>; <b>Struvite = Coffin-lid</b>; <b>Cholesterol = Rectangular/notched</b> (nephrotic); <b>Tyrosine/Leucine</b> = liver failure.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Proteinuria Quantification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Method</th><th>Normal</th><th>Best For</th></tr><tr><td>------</td><td>--------</td><td>--------</td><td>----------</td></tr><tr><td>**ACR**</td><td>Albumin:creatinine ratio (spot)</td><td><3 mg/mmol</td><td>**Gold standard**</td></tr><tr><td>**PCR**</td><td>Protein:creatinine ratio</td><td><15 mg/mmol</td><td>Total protein (incl. non-albumin)</td></tr><tr><td>**24h urine protein**</td><td>24h collection</td><td><150 mg/day</td><td>Gold standard (cumbersome)</td></tr><tr><td>**Dipstick**</td><td>Semi-quantitative</td><td>Negative</td><td>Screening only</td></tr></table>
+<table class="ctable"><tr><th>ACR Category</th><th>Range (mg/mmol)</th><th>Term</th><th>Significance</th></tr><tr><td>--------------</td><td>-----------------</td><td>------</td><td>--------------</td></tr><tr><td>**A1**</td><td><3</td><td>Normal</td><td>—</td></tr><tr><td>**A2**</td><td>3–30</td><td>Microalbuminuria</td><td>Early diabetic nephropathy, hypertensive nephropathy</td></tr><tr><td>**A3**</td><td>>30</td><td>Macroalbuminuria</td><td>Overt proteinuria; >220 = nephrotic range</td></tr></table>
+<div class="callout"><b>PCR vs ACR</b>: PCR measures total protein; ACR specific for albumin. PCR &gt; ACR if tubular proteinuria (Fanconi, myeloma).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Haematuria Investigation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Step</th><th>Action</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>1</td><td>**Confirm**: Repeat dipstick + microscopy (>3 RBC/HPF)</td></tr><tr><td>2</td><td>**Morphology**: Dysmorphic (>50%) = glomerular; Isomorphic = non-glomerular</td></tr><tr><td>3</td><td>**Proteinuria**: ACR >30 + haematuria = glomerular disease</td></tr><tr><td>4</td><td>**Renal function**: eGFR, BP</td></tr><tr><td>5</td><td>**Imaging**: US KUB (stone, tumour, cyst); CT urogram (haematuria >40yr)</td></tr><tr><td>6</td><td>**Cystoscopy**: If >40yr or risk factors (smoker, analgesic abuse)</td></tr><tr><td>7</td><td>**Serology**: ASOT (post-strep), ANA, ANCA, anti-GBM, C3/C4, HIV, Hep B/C</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Urine Culture & Sensitivity</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Indication</th><th>Method</th></tr><tr><td>-----------</td><td>----------</td></tr><tr><td>**Symptomatic UTI**</td><td>Midstream urine (MSU)</td></tr><tr><td>**Catheter specimen**</td><td>Catheter specimen (CSU)</td></tr><tr><td>**Suprapubic aspirate**</td><td>Infants, contaminated samples</td></tr><tr><td>**Quantitative culture**</td><td>>10⁵ CFU/mL = significant bacteriuria</td></tr></table>
+<table class="ctable"><tr><th>Organism</th><th>Common Context</th></tr><tr><td>----------</td><td>----------------</td></tr><tr><td>**E. coli**</td><td>70–80% community UTI</td></tr><tr><td>**Klebsiella**</td><td>Hospital, catheter, stones</td></tr><tr><td>**Proteus**</td><td>Stones (urease → struvite), catheter</td></tr><tr><td>**Enterococcus**</td><td>Hospital, catheter, instrumentation</td></tr><tr><td>**Pseudomonas**</td><td>Hospital, catheter, immunocompromised</td></tr><tr><td>**Staph saprophyticus**</td><td>Young women, community UTI</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Special Urine Tests</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Indication</th><th>Method</th></tr><tr><td>---------</td><td>------------</td><td>--------</td></tr><tr><td>**Bence Jones Protein**</td><td>Myeloma, amyloidosis</td><td>Urine immunofixation, heating (precipitates at 50–60°C)</td></tr><tr><td>**Myoglobin**</td><td>Rhabdomyolysis</td><td>Dipstick +ve for blood, no RBCs on microscopy</td></tr><tr><td>**Haemoglobin**</td><td>Intravascular haemolysis</td><td>Dipstick +ve blood, no RBCs on microscopy</td></tr><tr><td>**Porphyrins**</td><td>Porphyria</td><td>Fluorescence, chromatography</td></tr><tr><td>**Catecholamines**</td><td>Pheochromocytoma</td><td>24h urine VMA, metanephrines</td></tr><tr><td>**Cortisol**</td><td>Cushing's</td><td>24h urinary free cortisol</td></tr><tr><td>**VMA/HVA**</td><td>Neuroblastoma</td><td>24h urine VMA, HVA</td></tr><tr><td>**5-HIAA**</td><td>Carcinoid syndrome</td><td>24h urine 5-HIAA</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Urinalysis</b> = renal biopsy of the poor; first test in renal disease - <b>Proteinuria</b>: ACR &gt;30 = proteinuria; ACR &gt;300 = nephrotic range - <b>Haematuria</b>: &gt;3 RBC/HPF + dysmorphic = glomerular; isomorphic = non-glomerular - <b>Casts</b>: RBC = GN; WBC = pyelo/interstitial; granular = ATN; waxy = advanced CKD; fatty = nephrotic - <b>Crystals</b>: Cystine (hex), urate (needles), Ca oxalate (envelopes), struvite (coffin-lid) - <b>ACR</b>: &lt;3 (A1), 3–30 (A2), &gt;30 (A3) — nephrotic if &gt;220 mg/mmol - <b>Casts</b>: RBC = GN; WBC = pyelo/interstitial; granular = ATN; waxy = CKD - <b>Crystals</b>: Cystine (hex), urate (needles), Ca oxalate (envelopes), struvite (coffin-lid) - <b>ACR categories</b>: A1 &lt;3, A2 3–30, A3 &gt;30 mg/mmol - <b>Glomerular haematuria</b>: dysmorphic RBCs + RBC casts - <b>Non-glomerular</b>: isomorphic RBCs, no casts</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Dipstick protein = all protein**</td><td>Dipstick = albumin only; misses tubular proteins (Bence Jones)</td></tr><tr><td>**Microalbuminuria = diabetic only**</td><td>Also hypertensive, early CKD, heart failure</td></tr><tr><td>**Red urine = haematuria**</td><td>Myoglobin, haemoglobin, beetroot, rifampicin, porphyria</td></tr><tr><td>**Proteinuria = always glomerular**</td><td>Tubular (Fanconi, drugs), overflow (myeloma), postural</td></tr><tr><td>**Casts = only in GN**</td><td>WBC = pyelo/interstitial; granular = ATN; waxy = CKD</td></tr><tr><td>**All crystals = stones**</td><td>Crystalluria ≠ stones (can be normal in concentrated urine)</td></tr><tr><td>**ACR = PCR**</td><td>ACR = albumin only; PCR = total protein (incl. tubular)</td></tr><tr><td>**Microalbuminuria = only diabetes**</td><td>Also hypertension, early CKD, heart failure</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Cast types</b>: <b>R</b>BC = GN; <b>W</b>BC = pyelo/interstitial; <b>G</b>ranular = ATN; <b>W</b>axy = CKD; <b>F</b>atty = nephrotic = <b>RWGWF</b></li><li><b>Crystals</b>: <b>C</b>ystine = <b>H</b>exagonal; <b>U</b>ric acid = <b>N</b>eedles; <b>C</b>a <b>Ox</b>alate = <b>E</b>nvelopes; <b>T</b>riple <b>P</b>hosphate = <b>C</b>offin-lid = <b>HUNECTPC</b></li><li><b>Proteinuria</b>: <b>A1</b> &lt;3, <b>A2</b> 3–30, <b>A3</b> &gt;30 = <b>A1-A2-A3</b></li><li><b>Casts</b>: <b>R</b>BC = GN; <b>W</b>BC = pyelo; <b>G</b>ranular = ATN; <b>W</b>axy = CKD = <b>RWGW</b></li><li><b>Crystals</b>: <b>C</b>ystine <b>H</b>ex; <b>U</b>ric <b>N</b>eedles; <b>C</b>a<b>O</b>x = <b>E</b>nvelope; <b>S</b>truvite = <b>C</b>offin = <b>CHUCEC</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>ACR categories (A1, A2, A3)</li><li>Cast types and significance (RBC, WBC, granular, waxy, fatty)</li><li>Crystal shapes (cystine, urate, calcium oxalate, struvite)</li><li>Haematuria: dysmorphic vs isomorphic</li><li>Cast types: RBC, WBC, granular, waxy, fatty</li><li>Crystal shapes: cystine, urate, Ca oxalate, struvite</li><li>ACR categories</li><li>Bence Jones protein detection</li><li>Cast significance table</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Dipstick + microscopy, ACR categories, cast types, crystal shapes, haematuria differentiation, proteinuria quantification</td></tr><tr><td>**Should Know 🟡**</td><td>Bence Jones protein, special urine tests, 24h urine collection, urine culture interpretation</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel biomarkers (NGAL, KIM-1), proteomics, urinary metabolomics</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Gold standard for quantifying proteinuria:</b></li></ol>
+<p>A. Dipstick protein B. <b>Albumin:Creatinine Ratio (ACR)</b> C. 24h urinary protein D. Protein:Creatinine Ratio (PCR) E. Dipstick protein</p>
+<ol><li><b>Microalbuminuria ACR range:</b></li></ol>
+<p>A. &lt;3 mg/mmol B. <b>3–30 mg/mmol</b> C. 30–300 D. &gt;300 E. 30–3000</p>
+<ol><li><b>RBC casts in urine indicate:</b></li></ol>
+<p>A. Pyelonephritis B. <b>Glomerulonephritis</b> C. ATN D. Interstitial nephritis E. Tumour</p>
+<ol><li><b>Waxy casts indicate:</b></li></ol>
+<p>A. Acute tubular necrosis B. Nephrotic syndrome C. <b>Advanced chronic kidney disease</b> D. Acute interstitial nephritis E. Minimal change disease</p>
+<ol><li><b>Cystine crystals are:</b></li></ol>
+<p>A. Needle-shaped B. <b>Hexagonal</b> C. Envelope-shaped D. Coffin-lid E. Amorphous</p>
+<ol><li><b>Cystine crystals are:</b></li></ol>
+<p>A. Needle-shaped B. <b>Hexagonal</b> C. Envelope-shaped C. Coffin-lid E. Amorphous</p>
+<ol><li><b>Best imaging for suspected renal colic:</b></li></ol>
+<p>A. IVU B. <b>Non-contrast CT KUB</b> C. Ultrasound D. IVP E. MRI</p>
+<ol><li><b>Gold standard for measuring GFR:</b></li></ol>
+<p>A. Serum creatinine B. eGFR (CKD-EPI) C. <b>Inulin clearance (DTPA/MAG3 clinical)</b> D. Cockcroft-Gault E. Cystatin C</p>
+<ol><li><b>Cystine crystals are:</b></li></ol>
+<p>A. Needle-shaped B. <b>Hexagonal</b> C. Envelope-shaped C. Coffin-lid E. Amorphous</p>
+<ol><li><b>Microalbuminuria ACR range:</b></li></ol>
+<p>A. &lt;3 mg/mmol B. <b>3–30 mg/mmol</b> C. 30–300 D. &gt;300 E. 30–3000</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>65-year-old diabetic, HbA1c 8.2%, urine ACR 45 mg/mmol. Classification:</b></li></ol>
+<p>A. Normal B. <b>Microalbuminuria (A2)</b> C. Macroalbuminuria (A3) D. Normal E. Nephrotic range</p>
+<ol><li><b>Child with macroscopic haematuria after URTI. Urine: RBC casts+, proteinuria. Diagnosis:</b></li></ol>
+<p>A. IgA nephropathy B. <b>Post-streptococcal GN</b> C. Thin basement membrane D. Alport syndrome C. Vasculitis</p>
+<ol><li><b>Adult with macroscopic haematuria, smoker, 55 years. Best initial imaging:</b></li></ol>
+<p>A. Ultrasound B. <b>CT urogram</b> C. CT KUB D. IVU E. MRI</p>
+<ol><li><b>Patient with nephrotic syndrome. Urine microscopy: oval fat bodies, fatty casts. Mechanism:</b></li></ol>
+<p>A. Lipiduria from glomerular leak B. <b>Hyperlipidaemia + glomerular leak → lipiduria</b> C. Tubular secretion D. Dietary fat malabsorption E. Chyluria</p>
+<ol><li><b>Patient with macroscopic haematuria, smoker, 60 years. CT urogram: bladder mass. Next step:</b></li></ol>
+<p>A. Radical cystectomy B. <b>TURBT (Transurethral Resection of Bladder Tumour)</b> C. Radical cystectomy D. BCG instillation E. Radiotherapy</p>
+<ol><li><b>Patient with recurrent UTIs, ultrasound shows normal kidneys. Next investigation:</b></li></ol>
+<p>A. CT KUB B. <b>Cystoscopy</b> C. IVU D. CT urogram E. MCU</p>
+<ol><li><b>Patient with haematuria, dysmorphic RBCs, RBC casts, proteinuria ACR 150. Most likely:</b></li></ol>
+<p>A. Bladder cancer B. <b>Glomerulonephritis</b> C. Stone disease D. UTI E. Prostatitis</p>
+<ol><li><b>Cystine crystals in urine. Inheritance:</b></li></ol>
+<p>A. Autosomal dominant B. <b>Autosomal recessive</b> C. X-linked C. Mitochondrial E. Sporadic</p>
+<ol><li><b>Patient with recurrent calcium oxalate stones. Urine crystal: envelope-shaped. Prevention:</b></li></ol>
+<p>A. Low calcium diet B. <b>High fluid intake, low oxalate, normal calcium, citrate supplementation</b> C. High calcium diet C. Thiazide only E. Allopurinol only</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: ACR normal?</li></ul>
+<p>A: &lt;3 mg/mmol</p>
+<ul><li>Q: Microalbuminuria range?</li></ul>
+<p>A: 3–30 mg/mmol</p>
+<ul><li>Q: Macroalbuminuria?</li></ul>
+<p>A: &gt;30 mg/mmol</p>
+<ul><li>Q: RBC casts = ?</li></ul>
+<p>A: Glomerulonephritis</p>
+<ul><li>Q: WBC casts = ?</li></ul>
+<p>A: Pyelonephritis / interstitial nephritis</p>
+<ul><li>Q: Granular casts = ?</li></ul>
+<p>A: ATN</p>
+<ul><li>Q: Waxy casts = ?</li></ul>
+<p>A: Advanced CKD</p>
+<ul><li>Q: Fatty casts = ?</li></ul>
+<p>A: Nephrotic syndrome</p>
+<ul><li>Q: Cystine crystals?</li></ul>
+<p>A: Hexagonal</p>
+<ul><li>Q: Uric acid crystals?</li></ul>
+<p>A: Needles/rosettes</p>
+<ul><li>Q: Ca oxalate crystals?</li></ul>
+<p>A: Envelope-shaped</p>
+<ul><li>Q: Struvite crystals?</li></ul>
+<p>A: Coffin-lid / coffin-lid shaped</p>
+<ul><li>Q: Calcium phosphate?</li></ul>
+<p>A. Amorphous, stellate</p>
+<ul><li>Q: Bence Jones protein?</li></ul>
+<p>A. Free light chains, myeloma</p>
+<ul><li>Q: Proteinuria gold standard?</li></ul>
+<p>A: ACR (albumin:creatinine ratio)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<p><i>Urine Investigations is a Must Know topic. Full FCPS/MRCP content with detailed tables, crystal/cast identification guides, quantification methods, MCQs, SBAs, flashcards, and answer keys available in the full version.</i></p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Urine Investigations · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

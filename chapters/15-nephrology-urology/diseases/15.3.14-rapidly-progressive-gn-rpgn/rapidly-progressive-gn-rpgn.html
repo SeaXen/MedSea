@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rapidly Progressive Glomerulonephritis (RPGN) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">Rapidly Progressive Glomerulonephritis (RPGN)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define RPGN (rapid AKI + active sediment + crescents)</li><li>Classify by aetiology (Anti-GBM, Immune-complex, Pauci-immune)</li><li>Recognise clinical presentations and serological patterns</li><li>Apply urgent diagnostic workup (serology, biopsy)</li><li>Manage emergently based on category (pulse steroids + CyC/rituximab ± PLEX)</li><li>Differentiate from other causes of rapid AKI</li><li>Apply to FCPS/MRCP emergency nephrology vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Clinical Presentation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Definition**</td><td>**Rapid loss of GFR** (50% decline in days–weeks) + **active urinary sediment** (haematuria, RBC casts, proteinuria)</td></tr><tr><td>**Pathology**</td><td>**Crescentic GN** — cellular crescents in **>50% glomeruli**</td></tr><tr><td>**Timecourse**</td><td>Days to weeks (vs CKD = months–years)</td></tr><tr><td>**Presentation**</td><td>AKI, haematuria (microscopic/macroscopic), proteinuria (subnephrotic), hypertension, oedema, ± pulmonary haemorrhage</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Aetiological Classification (Crucial for Management)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Mechanism</th><th>Serology</th><th>Examples</th></tr><tr><td>----------</td><td>-----------</td><td>----------</td><td>----------</td></tr><tr><td>**Type I: Anti-GBM**</td><td>Anti-α3(IV)NC1 collagen IgG</td><td>**Anti-GBM+**, ANCA−</td><td>**Anti-GBM disease** (Goodpasture's if pulmonary)</td></tr><tr><td>**Type II: Immune-Complex**</td><td>Immune complex deposition</td><td>**Low C3/C4**, ANA/dsDNA+, Cryo+, ANCA−</td><td>**Lupus nephritis (III/IV), Post-strep, Cryoglobulinaemia, IE, IgA (rare), MPGN**</td></tr><tr><td>**Type III: Pauci-immune**</td><td>**ANCA-mediated** (neutrophil activation)</td><td>**ANCA+ (p-ANCA/MPO or c-ANCA/PR3)**, C3/C4 normal</td><td>**GPA, MPA, EGPA, Renal-limited vasculitis**</td></tr></table>
+<div class="callout"><b>Double-positive</b> (Anti-GBM + ANCA) = 20–30% of Type I — treat as both.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Serological Workup (Order STAT)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Type I</th><th>Type II</th><th>Type III</th></tr><tr><td>------</td><td>--------</td><td>---------</td><td>----------</td></tr><tr><td>**Anti-GBM**</td><td>**Positive**</td><td>Negative</td><td>Negative</td></tr><tr><td>**ANCA (MPO/PR3)**</td><td>Negative (± double-positive)</td><td>Negative</td><td>**Positive**</td></tr><tr><td>**C3, C4**</td><td>Normal/Low C3</td><td>**Low C3 ± Low C4**</td><td>Normal</td></tr><tr><td>**ANA, dsDNA**</td><td>Negative</td><td>**Positive (SLE)**</td><td>Negative</td></tr><tr><td>**Cryoglobulins**</td><td>Negative</td><td>**Positive (Type II/III)**</td><td>Negative</td></tr><tr><td>**Hepatitis B/C, HIV**</td><td>Negative</td><td>**Positive (HCV, HBV)**</td><td>Negative</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Clinical Differentiation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Anti-GBM (Type I)</th><th>Immune-Complex (Type II)</th><th>Pauci-immune/ANCA (Type III)</th></tr><tr><td>---------</td><td>-------------------</td><td>--------------------------</td><td>------------------------------</td></tr><tr><td>**Age**</td><td>Bimodal (20–30, 60–70)</td><td>Variable (SLE: young ♀; Post-strep: children)</td><td>Older (>50)</td></tr><tr><td>**Pulmonary haemorrhage**</td><td>**Common (40–60%)**</td><td>Rare (SLE, cryo)</td><td>**Common in GPA/MPA**</td></tr><tr><td>**Anti-GBM**</td><td>**Positive**</td><td>Negative</td><td>Negative</td></tr><tr><td>**ANCA**</td><td>Negative*</td><td>Negative</td><td>**Positive**</td></tr><tr><td>**Complement**</td><td>Normal</td><td>**Low C3/C4**</td><td>Normal</td></tr><tr><td>**Biopsy IF**</td><td>**Linear IgG**</td><td>Granular ("full-house" SLE)</td><td>**Pauci-immune** (scant)</td></tr><tr><td>**Double-positive**</td><td>20–30% ANCA+</td><td>—</td><td>20–30% Anti-GBM+</td></tr></table>
+<div class="callout"><b>Always check both Anti-GBM and ANCA</b> in RPGN — double-positive changes management.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Emergency Management (Start IMMEDIATELY)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">General Principles</div>
+<ul><li><b>Do NOT wait for biopsy</b> if clinical + serology clear</li><li><b>Pulse IV Methylprednisolone 500–1000mg × 3 days</b> → Oral Prednisolone 1mg/kg/day</li><li><b>Cyclophosphamide</b> (IV 500mg/m² q2wk × 3mo OR oral 2mg/kg/day × 3mo)</li><li><b>Plasma Exchange (PLEX)</b> based on category</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Category-Specific Regimens</div>
+<p>#### Type I: Anti-GBM &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Component&lt;/th&gt;&lt;th&gt;Regimen&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>PLEX</b>&lt;/td&gt;&lt;td&gt;<b>Daily × 14 days</b> (or until anti-GBM negative) — <b>MANDATORY</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Cyclophosphamide</b>&lt;/td&gt;&lt;td&gt;IV 500mg/m² q2wk × 3mo&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Steroids</b>&lt;/td&gt;&lt;td&gt;Pulse → Oral taper 3–6mo&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Rituximab</b>&lt;/td&gt;&lt;td&gt;Alternative to CyC (especially young women — fertility)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="callout"><b>Anti-GBM</b>: PLEX = life-saving (removes antibody). Dialysis-dependent at presentation → &lt;10% renal recovery.</div>
+<p>#### Type II: Immune-Complex (SLE, Cryo, Post-strep, IE) &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Aetiology&lt;/th&gt;&lt;th&gt;Regimen&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>SLE (Class III/IV)</b>&lt;/td&gt;&lt;td&gt;Pulse steroids → <b>MMF 2–3g/day OR IV CyC 500mg/m² q2wk</b> + steroids&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Cryoglobulinaemia</b>&lt;/td&gt;&lt;td&gt;<b>PLEX + Rituximab + Steroids</b> (if severe/RPGN)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Post-strep</b>&lt;/td&gt;&lt;td&gt;Usually self-limited; supportive; steroids if crescentic &gt;50%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Infective Endocarditis</b>&lt;/td&gt;&lt;td&gt;<b>Antibiotics</b> (surgery if needed); immunosuppression contraindicated&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>IgA Nephropathy</b>&lt;/td&gt;&lt;td&gt;Rarely RPGN; if so: steroids ± CyC&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="callout"><b>Identify and treat infection first</b> (IE, post-strep) — immunosuppression can worsen.</div>
+<p>#### Type III: Pauci-immune (ANCA Vasculitis — GPA, MPA, EGPA) &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Component&lt;/th&gt;&lt;th&gt;Regimen&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;---------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>PLEX</b>&lt;/td&gt;&lt;td&gt;<b>If Cr &gt;500 μmol/L or pulmonary haemorrhage</b> (PEXIVAS trial: PLEX not routine for all)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Induction</b>&lt;/td&gt;&lt;td&gt;<b>Rituximab 375mg/m² weekly × 4</b> (preferred) <b>OR IV CyC 500mg/m² q2wk × 3mo</b>&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Steroids</b>&lt;/td&gt;&lt;td&gt;Pulse → Oral taper (RAVE/PEXIVAS: lower cumulative steroid better)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Maintenance</b>&lt;/td&gt;&lt;td&gt;<b>Rituximab q6mo OR Azathioprine/MMf</b> (MAINRITSAN: rituximab superior)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<div class="callout"><b>ANCA RPGN</b>: Rituximab non-inferior to CyC (RAVE); preferred for relapsing/young women.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">PLEX Indications Summary</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>PLEX Indication</th></tr><tr><td>----------</td><td>-----------------</td></tr><tr><td>**Anti-GBM**</td><td>**ALWAYS** (daily × 14d)</td></tr><tr><td>**ANCA (Type III)**</td><td>Cr >500 (5.7 mg/dL) **OR** Pulmonary haemorrhage</td></tr><tr><td>**Cryoglobulinaemia**</td><td>RPGN, alveolar haemorrhage, severe neuropathy</td></tr><tr><td>**SLE**</td><td>Not routine (consider if TMA, catastrophic APS)</td></tr><tr><td>**TMA/HUS**</td><td>Daily (see TMA topic)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Prognosis by Category</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>Renal Recovery (if treated early)</th><th>Relapse Risk</th></tr><tr><td>----------</td><td>-----------------------------------</td><td>--------------</td></tr><tr><td>**Anti-GBM**</td><td>Cr <300: 70–80%; Dialysis-dependent: **<10%**</td><td>Rare (<5%) once Ab cleared</td></tr><tr><td>**SLE**</td><td>Good with early tx (MMF/CyC)</td><td>Moderate (30–40%)</td></tr><tr><td>**ANCA**</td><td>Cr <300: 70–80%</td><td>**High (30–50%)** — maintenance needed</td></tr><tr><td>**Cryoglobulinaemia**</td><td>Variable (HCV cure improves)</td><td>High if HCV persists</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>RPGN</b> = rapid AKI + active sediment + <b>crescents &gt;50%</b>. - <b>Three categories</b>: Anti-GBM (Type I), Immune-complex (Type II), Pauci-immune/ANCA (Type III). - <b>Emergency workup</b>: Anti-GBM, ANCA (MPO/PR3), ANA/dsDNA, C3/C4, Cryoglobulins, Hepatitis. - <b>Anti-GBM</b>: Linear IgG, pulmonary haemorrhage common, <b>PLEX mandatory × 14d</b>. - <b>ANCA vasculitis</b>: Rituximab preferred induction (non-inferior to CyC, fertility-sparing). - <b>Double-positive</b> (Anti-GBM + ANCA): 20–30% — treat as both. - <b>PLEX</b>: Anti-GBM = always; ANCA = if Cr &gt;500 or pulmonary bleed. - <b>SLE RPGN</b>: MMF or CyC + steroids (not PLEX routine). - <b>Prognosis</b>: Dialysis-dependent Anti-GBM → &lt;10% recovery; ANCA high relapse → maintenance.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**RPGN = always ANCA**</td><td>Only **Type III** = ANCA; Type I = Anti-GBM; Type II = Immune-complex</td></tr><tr><td>**PLEX for all RPGN**</td><td>**Anti-GBM = always**; **ANCA = only if Cr >500 or pulmonary bleed**</td></tr><tr><td>**Rituximab for all**</td><td>Anti-GBM: CyC standard (rituximab alternative); ANCA: rituximab preferred; SLE: MMF/CyC</td></tr><tr><td>**Crescents = RPGN**</td><td>**>50% crescents = RPGN**; <50% = crescentic GN but not RPGN clinically</td></tr><tr><td>**Anti-GBM = no ANCA**</td><td>**20–30% double-positive** — worse prognosis, ↑ relapse</td></tr><tr><td>**Wait for biopsy before treatment**</td><td>**NO — treat emergently on serology**; biopsy confirms</td></tr><tr><td>**SLE RPGN = PLEX**</td><td>PLEX not routine for SLE; MMF/CyC + steroids first</td></tr><tr><td>**All pulmonary haemorrhage = Goodpasture's**</td><td>Also ANCA vasculitis, SLE, cryoglobulinaemia, catastrophic APS</td></tr><tr><td>**ANCA types**</td><td>**p-ANCA/MPO** = MPA/EGPA/renal-limited; **c-ANCA/PR3** = GPA</td></tr><tr><td>**Post-strep = RPGN rare**</td><td>Post-strep usually self-limited; RPGN rare, steroids if crescents >50%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>RPGN Types</b>: <b>I</b> = <b>I</b>mmune <b>A</b>nti-GBM; <b>II</b> = <b>I</b>mmune <b>C</b>omplex; <b>III</b> = <b>P</b>auci-immune <b>A</b>NCA = <b>ICAP</b></li><li><b>Anti-GBM</b>: <b>L</b>inear <b>I</b>gG + <b>P</b>ulmonary = <b>LIP</b></li><li><b>ANCA</b>: <b>P</b>R3 = <b>P</b>R3 <b>G</b>PA; <b>M</b>PO = <b>M</b>PA/<b>E</b>GPA</li><li><b>PLEX</b>: <b>A</b>nti-GBM = <b>A</b>lways; <b>A</b>NCA = <b>A</b>lways if Cr&gt;500/Pulmonary</li><li><b>Double-positive</b>: <b>A</b>nti-GBM + <b>A</b>NCA = <b>A</b>wful (worse prognosis)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((RPGN)) Definition[Rapid AKI + Active sediment + Crescents &gt;50%] Type_I[Anti-GBM (Type I)] Serology[Anti-GBM+] IF[Linear IgG] Pulmonary[Common 40-60%] Rx[PLEX x14d + CyC + Steroids] Prognosis[Dialysis-dep &lt;10% recovery] Type_II[Immune-Complex (Type II)] Causes[SLE, Cryo, Post-strep, IE, IgA] Serology[Low C3/C4, ANA+, Cryo+] IF[Granular (Full-house SLE)] Rx[Treat cause: SLE=MMF/CyC; Cryo=PLEX+Rituximab; IE=Abx] Type_III[Pauci-immune/ANCA (Type III)] Causes[GPA, MPA, EGPA, Renal-limited] Serology[ANCA+ (PR3/MPO)] IF[Pauci-immune] Rx[Rituximab preferred + Steroids; PLEX if Cr&gt;500/Pulm bleed] Relapse[High - maintenance Rituximab/AZA] Double_Positive[Anti-GBM + ANCA (20-30%)] Rx[Both protocols] Prognosis[Worse, high relapse] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>RPGN definition (rapid AKI + crescents &gt;50%)</li><li>Three aetiological types (Anti-GBM, Immune-complex, Pauci-immune)</li><li>Key serology for each (Anti-GBM, ANCA, C3/C4/ANA/Cryo)</li><li>Anti-GBM: Linear IgG, PLEX mandatory, pulmonary bleed</li><li>ANCA: Rituximab preferred, PLEX if Cr&gt;500/pulmonary</li><li>Double-positive (20–30%)</li><li>SLE RPGN: MMF/CyC (not PLEX routine)</li><li>Prognosis by category (dialysis-dep Anti-GBM &lt;10%, ANCA high relapse)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>RPGN definition, 3 types, serology workup, Anti-GBM PLEX mandatory, ANCA rituximab preferred, PLEX indications, double-positive</td></tr><tr><td>**Should Know 🟡**</td><td>SLE RPGN management (MMF/CyC), cryoglobulinaemia RPGN, post-strep RPGN, PEXIVAS/RAVE/MAINRITSAN trials, prognosis by category</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel ANCA therapies (avacopan, narsoplimab), anti-GBM antigen-specific therapy, complement inhibition in IC-RPGN, biomarkers for relapse prediction</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>RPGN histopathological hallmark:</b></li></ol>
+<p>A. <b>Crescents in &gt;50% glomeruli</b> B. Wire-loop lesions C. Spike and dome D. Tram-tracking E. Foot process effacement</p>
+<ol><li><b>Anti-GBM disease — immunofluorescence pattern:</b></li></ol>
+<p>A. Granular IgG + C3 B. <b>Linear IgG along GBM</b> C. Mesangial IgA D. Full-house E. C3 dominant</p>
+<ol><li><b>ANCA vasculitis — preferred induction agent (RAVE trial):</b></li></ol>
+<p>A. Cyclophosphamide B. <b>Rituximab</b> C. Mycophenolate C. Azathioprine E. Plasma exchange</p>
+<ol><li><b>Plasma exchange in ANCA RPGN — indication (PEXIVAS):</b></li></ol>
+<p>A. All cases B. <b>Serum creatinine &gt;500 μmol/L OR pulmonary haemorrhage</b> C. Only pulmonary haemorrhage D. Creatinine &gt;300 E. Never indicated</p>
+<ol><li><b>Double-positive Anti-GBM + ANCA prevalence:</b></li></ol>
+<p>A. &lt;5% B. <b>20–30%</b> C. 50% D. 70% E. 90%</p>
+<ol><li><b>Anti-GBM RPGN — dialysis-dependent at presentation, renal recovery:</b></li></ol>
+<p>A. 50% B. 30% C. <b>&lt;10%</b> D. 80% E. 100%</p>
+<ol><li><b>SLE Class III/IV RPGN — first-line induction:</b></li></ol>
+<p>A. Plasma exchange B. <b>MMF 2–3g/day OR IV Cyclophosphamide + Steroids</b> C. Rituximab alone D. Plasma exchange + Rituximab E. Azathioprine</p>
+<ol><li><b>ANCA type in Microscopic Polyangiitis (MPA):</b></li></ol>
+<p>A. c-ANCA/PR3 B. <b>p-ANCA/MPO</b> C. Both equally D. Atypical ANCA E. Anti-GBM</p>
+<ol><li><b>Maintenance therapy post-ANCA induction (MAINRITSAN):</b></li></ol>
+<p>A. Azathioprine B. <b>Rituximab q6mo (superior to AZA)</b> C. MMF D. Low-dose cyclophosphamide E. Steroids alone</p>
+<ol><li><b>Anti-GBM disease — PLEX duration:</b></li></ol>
+<p>A. 7 days B. <b>14 days (or until anti-GBM negative)</b> C. 21 days D. 28 days E. 3 days</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>55-year-old man, AKI (Cr 450), haematuria, RBC casts, pulmonary haemorrhage. Anti-GBM+, ANCA−. Immediate management:</b></li></ol>
+<p>A. IV Methylprednisolone only B. <b>PLEX daily × 14d + IV Cyclophosphamide + IV Methylprednisolone</b> C. Rituximab + steroids D. Plasma exchange × 7 days E. Supportive only</p>
+<ol><li><b>65-year-old woman, AKI (Cr 620), haematuria, proteinuria, no pulmonary symptoms. p-ANCA/MPO+, Anti-GBM−, C3/C4 normal. PLEX indicated?</b></li></ol>
+<p>A. Yes (Cr &gt;500) B. <b>Yes (Cr &gt;500 — PEXIVAS criterion)</b> C. No (only if pulmonary bleed) D. No (PLEX never in ANCA) E. Only if dialysis-dependent</p>
+<ol><li><b>25-year-old woman, SLE, AKI (Cr 380), active sediment, biopsy: Class IV lupus nephritis with crescents. Management:</b></li></ol>
+<p>A. PLEX + Rituximab B. <b>MMF 3g/day + Steroids (or IV CyC + steroids)</b> C. Rituximab alone D. Plasma exchange E. Cyclophosphamide alone</p>
+<ol><li><b>30-year-old man, GPA (c-ANCA/PR3+), RPGN (Cr 550), no pulmonary bleed. Biopsy: pauci-immune crescentic GN. Induction:</b></li></ol>
+<p>A. Cyclophosphamide only B. <b>Rituximab 375mg/m² weekly × 4 + Steroids</b> C. MMF + steroids D. PLEX + Cyclophosphamide E. Azathioprine + steroids</p>
+<ol><li><b>Anti-GBM + p-ANCA double-positive patient. Compared to pure Anti-GBM:</b></li></ol>
+<p>A. Better prognosis B. <b>Worse renal survival, higher relapse risk</b> C. No difference D. Lower PLEX requirement E. No maintenance needed</p>
+<ol><li><b>ANCA vasculitis patient, post-induction (rituximab), remission. Maintenance per MAINRITSAN:</b></li></ol>
+<p>A. Azathioprine 2mg/kg B. <b>Rituximab 500mg q6mo × 2 years</b> C. MMF 1g BD D. Low-dose prednisolone only E. No maintenance</p>
+<ol><li><b>Patient with RPGN, both Anti-GBM and p-ANCA positive. PLEX duration:</b></li></ol>
+<p>A. 7 days B. <b>14 days (Anti-GBM protocol) + ANCA immunosuppression</b> C. 21 days D. Until ANCA negative E. 3 days</p>
+<ol><li><b>ANCA vasculitis with pulmonary haemorrhage. PLEX protocol:</b></li></ol>
+<p>A. Alternate days × 7 B. <b>Daily × 7–14 days (as per Anti-GBM protocol for pulmonary bleed)</b> C. 3 sessions only E. Not indicated</p>
+<ol><li><b>RPGN differential — pauci-immune crescentic GN with NO extrarenal features. Most likely:</b></li></ol>
+<p>A. GPA B. <b>Renal-limited ANCA vasculitis</b> C. MPA D. EGPA E. Anti-GBM</p>
+<ol><li><b>Post-strep GN with crescents &gt;50% (RPGN). Management:</b></li></ol>
+<p>A. Supportive only B. <b>Steroids (if crescents &gt;50% and progressive)</b> C. PLEX D. Cyclophosphamide E. Rituximab</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: RPGN crescent threshold?</li></ul>
+<p>A: &gt;50% glomeruli</p>
+<ul><li>Q: RPGN Type I = ?</li></ul>
+<p>A: Anti-GBM (Linear IgG)</p>
+<ul><li>Q: RPGN Type II = ?</li></ul>
+<p>A: Immune-complex (SLE, Cryo, Post-strep, IE)</p>
+<ul><li>Q: RPGN Type III = ?</li></ul>
+<p>A: Pauci-immune / ANCA (GPA, MPA, EGPA)</p>
+<ul><li>Q: Anti-GBM PLEX?</li></ul>
+<p>A: Daily × 14d (mandatory)</p>
+<ul><li>Q: ANCA PLEX indication?</li></ul>
+<p>A: Cr &gt;500 OR pulmonary haemorrhage</p>
+<ul><li>Q: ANCA induction preferred?</li></ul>
+<p>A: Rituximab</p>
+<ul><li>Q: ANCA maintenance?</li></ul>
+<p>A: Rituximab q6mo (superior to AZA)</p>
+<ul><li>Q: Double-positive prevalence?</li></ul>
+<p>A: 20–30%</p>
+<ul><li>Q: Anti-GBM dialysis recovery?</li></ul>
+<p>A: &lt;10%</p>
+<ul><li>Q: SLE RPGN Rx?</li></ul>
+<p>A: MMF or CyC + steroids (NO routine PLEX)</p>
+<ul><li>Q: c-ANCA = ?</li></ul>
+<p>A: PR3 = GPA</p>
+<ul><li>Q: p-ANCA = ?</li></ul>
+<p>A: MPO = MPA/EGPA</p>
+<ul><li>Q: Post-strep RPGN Rx?</li></ul>
+<p>A: Steroids if progressive crescentic</p>
+<ul><li>Q: PEXIVAS trial?</li></ul>
+<p>A: PLEX not routine for all ANCA; only Cr&gt;500/pulm bleed</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>A</b> — Crescentic GN = crescents &gt;50% glomeruli = RPGN histology.</li><li><b>B</b> — Anti-GBM = linear IgG along GBM (pathognomonic).</li><li><b>B</b> — Rituximab non-inferior to CyC (RAVE), preferred for relapsing/fertility.</li><li><b>B</b> — PEXIVAS: PLEX only if Cr &gt;500 μmol/L (5.7 mg/dL) OR pulmonary haemorrhage.</li><li><b>B</b> — 20–30% of Anti-GBM have concurrent ANCA (usually p-ANCA/MPO).</li><li><b>C</b> — Dialysis-dependent Anti-GBM at presentation → &lt;10% renal recovery.</li><li><b>B</b> — SLE RPGN: MMF (preferred) or IV CyC + steroids; PLEX not routine.</li><li><b>B</b> — MPA/EGPA/renal-limited = p-ANCA/MPO; GPA = c-ANCA/PR3.</li><li><b>B</b> — MAINRITSAN: Rituximab 500mg q6mo × 2yr superior to AZA for relapse prevention.</li><li><b>B</b> — Anti-GBM PLEX: daily × 14 days or until antibody negative.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Anti-GBM + pulmonary bleed = emergency PLEX + CyC + steroids.</li><li><b>B</b> — Cr 620 (&gt;500) = PLEX indicated per PEXIVAS even without pulmonary bleed.</li><li><b>B</b> — SLE Class IV RPGN: MMF 3g/day or IV CyC + steroids; PLEX not standard.</li><li><b>B</b> — Rituximab preferred induction for ANCA vasculitis (RAVE).</li><li><b>B</b> — Double-positive: worse renal survival, higher relapse (ANCA component).</li><li><b>B</b> — MAINRITSAN: Rituximab 500mg q6mo × 2yr = superior maintenance.</li><li><b>B</b> — Double-positive: PLEX per Anti-GBM protocol (14d) + full ANCA immunosuppression.</li><li><b>B</b> — Pulmonary haemorrhage in ANCA = PLEX daily × 7–14d (same as Anti-GBM protocol).</li><li><b>B</b> — Pauci-immune crescentic GN without extrarenal = renal-limited ANCA vasculitis.</li><li><b>B</b> — Post-strep RPGN rare; if progressive crescentic &gt;50% → steroids (not PLEX/CyC).</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Rapidly Progressive Glomerulonephritis (RPGN)</b> is a <b>Must Know 🔴</b> emergency nephrology topic. <b>Definition</b>: Rapid AKI (days–weeks) + active sediment + <b>crescents &gt;50%</b>. <b>Three Categories</b>: <b>Type I</b> = Anti-GBM (linear IgG); <b>Type II</b> = Immune-complex (SLE, Cryo, Post-strep, IE); <b>Type III</b> = Pauci-immune/ANCA (GPA, MPA, EGPA). <b>Emergency Workup</b>: Anti-GBM, ANCA (MPO/PR3), ANA/dsDNA, C3/C4, Cryoglobulins, Hepatitis. <b>Management</b>: <b>Anti-GBM</b>: <b>PLEX daily × 14d</b> + CyC + Steroids (mandatory). <b>ANCA</b>: Rituximab preferred + Steroids; <b>PLEX if Cr &gt;500 or pulmonary bleed</b> (PEXIVAS). <b>SLE</b>: MMF/CyC + steroids (PLEX not routine). <b>Cryo</b>: PLEX + Rituximab + Steroids. <b>Double-positive (20–30%)</b>: Treat as both. <b>Prognosis</b>: Dialysis-dependent Anti-GBM &lt;10% recovery; ANCA high relapse → maintenance rituximab. <b>Exam focus</b>: 3 types, serology, PLEX indications, rituximab vs CyC, double-positive, SLE vs ANCA management, crescent threshold.</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Rapidly Progressive Glomerulonephritis (RPGN) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

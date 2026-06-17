@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Renal Tuberculosis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">Renal Tuberculosis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise clinical presentation (sterile pyuria, flank pain, constitutional symptoms)</li><li>Differentiate from other causes of sterile pyuria</li><li>Apply diagnostic workup (urine AFB culture/PCR, imaging, cystoscopy)</li><li>Manage with anti-TB therapy per guidelines</li><li>Identify complications (strictures, non-functioning kidney, amyloidosis)</li><li>Apply to FCPS/MRCP infectious/urology vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Epidemiology & Pathogenesis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Route**</td><td>Haematogenous (from pulmonary TB focus — often silent/old)</td></tr><tr><td>**Incidence**</td><td>~5–10% of TB patients have renal involvement; 30% of extrapulmonary TB</td></tr><tr><td>**Age**</td><td>Young adults (20–40yr); reactivation in elderly/immunocompromised</td></tr><tr><td>**HIV co-infection**</td><td>↑ risk, atypical presentation, disseminated</td></tr><tr><td>**Pathology**</td><td>Caseating granulomas → papillary necrosis → strictures → calcified "putty kidney"</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Presentation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Symptom/Sign</th><th>Frequency</th><th>Notes</th></tr><tr><td>--------------</td><td>-----------</td><td>-------</td></tr><tr><td>**Sterile pyuria**</td><td>**90–95%**</td><td>**Hallmark** — WBC in urine, no growth on routine culture</td></tr><tr><td>**Flank pain**</td><td>50–70%</td><td>Dull, persistent</td></tr><tr><td>**Frequency/Dysuria**</td><td>40–60%</td><td>Bladder involvement (TB cystitis)</td></tr><tr><td>**Haematuria**</td><td>30–40%</td><td>Microscopic > macroscopic</td></tr><tr><td>**Constitutional**</td><td>Variable</td><td>Fever, night sweats, weight loss (may be absent)</td></tr><tr><td>**Palpable kidney**</td><td>Rare</td><td>Enlarged early; small/contracted late</td></tr></table>
+<div class="callout"><b>Sterile pyuria + flank pain + constitutional symptoms</b> = Think Renal TB.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Differential: Sterile Pyuria</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Cause</th><th>Key Differentiator</th></tr><tr><td>-------</td><td>-------------------</td></tr><tr><td>**Renal TB**</td><td>AFB culture/PCR+, radiographic calcifications, strictures</td></tr><tr><td>**AIN**</td><td>Drug history, eosinophiluria, normal imaging</td></tr><tr><td>**Stones**</td><td>Colic, CT shows calculi</td></tr><tr><td>**Vasculitis**</td><td>ANCA+, systemic features, RPGN</td></tr><tr><td>**Prostatitis**</td><td>Expressed prostatic secretions WBC</td></tr><tr><td>**Urethritis**</td><td>Gonorrhoea/Chlamydia PCR, sexual history</td></tr><tr><td>**Bladder cancer**</td><td>Cystoscopy + biopsy, older age</td></tr><tr><td>**Interstitial nephritis (Sjögren's, etc.)**</td><td>Autoimmune markers, tubular dysfunction</td></tr><tr><td>**Partial UTI treatment**</td><td>Recent antibiotics, repeat culture</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnostic Workup</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Urine Studies</div>
+<table class="ctable"><tr><th>Test</th><th>Sensitivity/Specificity</th><th>Role</th></tr><tr><td>------</td><td>------------------------</td><td>------</td></tr><tr><td>**Urine AFB smear (ZN stain)**</td><td>Low sensitivity (~20%)</td><td>Rapid, screen</td></tr><tr><td>**Urine AFB culture (LJ/MGIT)**</td><td>**Gold standard** (80–90%)</td><td>Definitive; 4–8 weeks (MGIT 2–3 weeks)</td></tr><tr><td>**Urine PCR (Xpert MTB/RIF Ultra)**</td><td>**High (>90%)**</td><td>Rapid (hours); detects rifampicin resistance</td></tr><tr><td>**3 Early morning specimens**</td><td>Increases yield</td><td>Standard recommendation</td></tr></table>
+<div class="sub-h">Imaging</div>
+<table class="ctable"><tr><th>Modality</th><th>Findings</th></tr><tr><td>----------</td><td>----------</td></tr><tr><td>**IVU / CTU**</td><td>**Calyceal distortion**, strictures, "moth-eaten" calyces, papillary necrosis, **calcifications** ("putty kidney")</td></tr><tr><td>**Ultrasound**</td><td>Hydronephrosis, calcifications, small kidney</td></tr><tr><td>**CT**</td><td>Parenchymal calcifications, strictures, lymphadenopathy</td></tr></table>
+<div class="sub-h">Cystoscopy</div>
+<table class="ctable"><tr><th>Finding</th><th>Significance</th></tr><tr><td>---------</td><td>--------------</td></tr><tr><td>**Ulcerative cystitis** (hunters' ulcers)</td><td>Bladder TB</td></tr><tr><td>**Strictures** (ureteric, urethral)</td><td>Fibrotic sequelae</td></tr><tr><td>**Biopsy**</td><td>Caseating granulomas, AFB</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Treatment (Standard Anti-TB Regimen)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Drug-Sensitive TB</div>
+<table class="ctable"><tr><th>Phase</th><th>Drugs</th><th>Duration</th><th>Notes</th></tr><tr><td>-------</td><td>-------</td><td>----------</td><td>-------</td></tr><tr><td>**Intensive**</td><td>**HRZE** (Isoniazid, Rifampicin, Pyrazinamide, Ethambutol)</td><td>**2 months**</td><td>Pyridoxine 10–25mg/day with INH</td></tr><tr><td>**Continuation**</td><td>**HR** (Isoniazid, Rifampicin)</td><td>**4–7 months**</td><td>**Total 6–9 months** (renal TB often needs 9mo)</td></tr></table>
+<div class="callout"><b>Renal TB</b>: Extend continuation to 7 months (total 9 months) due to poor drug penetration in caseous lesions.</div>
+<div class="sub-h">Drug Dosing (Renal Impairment)</div>
+<table class="ctable"><tr><th>Drug</th><th>Normal Dose</th><th>eGFR <30 Adjustment</th></tr><tr><td>------</td><td>-------------</td><td>---------------------</td></tr><tr><td>**Isoniazid (H)**</td><td>5 mg/kg (max 300mg)</td><td>No adjustment (hepatic metabolism)</td></tr><tr><td>**Rifampicin (R)**</td><td>10 mg/kg (max 600mg)</td><td>No adjustment</td></tr><tr><td>**Pyrazinamide (Z)**</td><td>25 mg/kg (max 2g)</td><td>**Reduce frequency** (25 mg/kg 3x/week)</td></tr><tr><td>**Ethambutol (E)**</td><td>15 mg/kg (max 1.2g)</td><td>**Avoid if <15** (dose reduce 15mg/kg 3x/week)</td></tr></table>
+<div class="callout"><b>Ethambutol</b>: Monitor visual acuity/colour vision monthly.</div>
+<div class="sub-h">MDR-TB Renal</div>
+<ul><li>Individualised regimen per DST (bedaquiline, linezolid, levofloxacin, clofazimine, cycloserine)</li><li>Minimum 18–24 months total</li><li>Expert consultation mandatory</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Complications & Sequelae</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Management</th></tr><tr><td>--------------</td><td>------------</td></tr><tr><td>**Ureteric strictures**</td><td>Endoscopic dilatation, stenting, ureteric reimplantation</td></tr><tr><td>**Bladder fibrosis/contracture**</td><td>Augmentation cystoplasty</td></tr><tr><td>**Non-functioning kidney**</td><td>Nephrectomy (if hypertension, recurrent infection, pain)</td></tr><tr><td>**Amyloidosis (AA)**</td><td>Chronic inflammation → renal AA amyloidosis</td></tr><tr><td>**Renal failure**</td><td>Dialysis/transplant; TB prophylaxis if latent</td></tr></table>
+<div class="callout"><b>Nephrectomy</b>: Only if kidney non-functioning (&lt;10% function) AND causing symptoms (pain, infection, hypertension).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Renal TB in Special Populations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">HIV Co-infection</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Presentation**</td><td>More disseminated, atypical (may lack sterile pyuria)</td></tr><tr><td>**Diagnosis**</td><td>Xpert MTB/RIF Ultra preferred (higher sensitivity in HIV)</td></tr><tr><td>**ART interaction**</td><td>Rifampicin ↓ PI/NNRTI levels → use rifabutin or adjust ART</td></tr><tr><td>**IRIS**</td><td>Immune reconstitution inflammatory syndrome on starting ART</td></tr></table>
+<div class="sub-h">Transplant Recipients</div>
+<ul><li>Reactivation risk on immunosuppression</li><li>Prophylaxis (isoniazid 300mg/day × 6–9mo) if latent TB (IGRA/TST+)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Renal TB</b> = haematogenous spread from pulmonary focus. - <b>Sterile pyuria</b> = hallmark (90–95%). - <b>Diagnosis</b>: Urine AFB culture (gold standard) / Xpert MTB/RIF Ultra (rapid). - <b>Imaging</b>: IVU/CTU → calyceal distortion, strictures, calcifications ("putty kidney"). - <b>Treatment</b>: HRZE × 2mo → HR × 7mo (<b>total 9 months</b> for renal TB). - <b>Ethambutol</b> dose adjust in CKD; monitor vision. - <b>Complications</b>: Ureteric strictures, bladder fibrosis, non-functioning kidney → nephrectomy. - <b>HIV</b>: ↑ disseminated, rifampicin-ART interactions (use rifabutin), IRIS risk. - <b>Differential sterile pyuria</b>: TB, AIN, stones, vasculitis, bladder cancer, prostatitis.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Sterile pyuria = TB**</td><td>Also AIN, stones, vasculitis, bladder cancer, prostatitis, partially treated UTI</td></tr><tr><td>**Urine AFB smear = diagnostic**</td><td>Sensitivity only ~20%; need **culture/PCR**</td></tr><tr><td>**6 months treatment enough**</td><td>**Renal TB needs 9 months** (2HRZE + 7HR)</td></tr><tr><td>**Ethambutol safe in all CKD**</td><td>**Avoid if eGFR <15**; reduce frequency if <30</td></tr><tr><td>**Nephrectomy for all TB kidneys**</td><td>Only if **non-functioning (<10%) + symptomatic**</td></tr><tr><td>**TB only in active pulmonary**</td><td>Often **old/healed pulmonary focus** (silent)</td></tr><tr><td>**HIV TB = typical presentation**</td><td>Often **atypical, disseminated, smear-negative**</td></tr><tr><td>**Rifampicin with all ART**</td><td>Rifampicin ↓ PI/NNRTI → **switch to rifabutin** or adjust ART</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Renal TB clues</b>: <b>S</b>terile <b>P</b>yuria + <b>F</b>lank pain + <b>C</b>alcifications = <b>SPF</b></li><li><b>Putty kidney</b>: <b>P</b>apillary necrosis → <b>U</b>lceration → <b>T</b>ubular <b>T</b>issue destruction → <b>Y</b> calcified = <b>PUTTY</b></li><li><b>Anti-TB drugs</b>: <b>H</b>IPE <b>R</b>ifampicin <b>Z</b> <b>E</b>thambutol = <b>HRIPZE</b></li><li><b>Treatment duration</b>: <b>2</b> months HRZE + <b>7</b> months HR = <b>9</b> total = <b>2-7-9</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Renal Tuberculosis)) Pathogenesis[Haematogenous from pulmonary focus] Clinical Sterile_Pyuria[Hallmark 90-95%] Flank_Pain[50-70%] Frequency_Dysuria[Bladder involvement] Constitutional[Fever, night sweats, weight loss] Diagnosis Urine[Smear (low sens), Culture (Gold), PCR Xpert (Rapid)] Imaging[IVU/CTU: Calyceal distortion, strictures, calcifications] Cystoscopy[Ulcerative cystitis, strictures, biopsy] Treatment Intensive[HRZE x 2 months] Continuation[HR x 7 months = Total 9 months] Dose_Adj[PZA/Ethambutol reduce in CKD] Vision[Ethambutol → monthly eye check] Complications Strictures[Ureteric, urethral] Bladder_Fibrosis[Contracture] Non_functioning_Kidney[Nephrectomy if &lt;10% + symptomatic] Amyloidosis[AA type] Special[HIV: disseminated, rifabutin for ART, IRIS] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Hallmark of renal TB (sterile pyuria)</li><li>Gold standard diagnosis (urine AFB culture)</li><li>Rapid test (Xpert MTB/RIF Ultra)</li><li>Imaging findings (calyceal distortion, putty kidney)</li><li>Treatment duration (9 months: 2HRZE + 7HR)</li><li>Ethambutol in CKD (avoid &lt;15, reduce &lt;30)</li><li>Complications (strictures, non-functioning kidney)</li><li>HIV co-infection issues (rifabutin, IRIS)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Sterile pyuria, urine AFB culture/PCR, IVU/CTU findings (putty kidney), 9-month regimen, ethambutol vision monitoring, complications</td></tr><tr><td>**Should Know 🟡**</td><td>HIV co-management (rifabutin, IRIS), transplant prophylaxis, MDR-TB regimen, nephrectomy indications</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel diagnostics (LAM assay, NGS), shorter regimen trials, drug penetration in caseous lesions, genomic TB</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Hallmark urinary finding in renal TB:</b></li></ol>
+<p>A. Haematuria B. <b>Sterile pyuria</b> C. Proteinuria D. Glycosuria E. Crystalluria</p>
+<ol><li><b>Gold standard diagnostic test for renal TB:</b></li></ol>
+<p>A. Urine AFB smear B. <b>Urine AFB culture (LJ/MGIT)</b> C. Xpert MTB/RIF Ultra PCR D. CT urography E. Cystoscopy biopsy</p>
+<ol><li><b>Standard treatment duration for renal TB:</b></li></ol>
+<p>A. 6 months (2HRZE/4HR) B. <b>9 months (2HRZE/7HR)</b> C. 12 months D. 18 months D. 4 months</p>
+<ol><li><b>"Putty kidney" on imaging represents:</b></li></ol>
+<p>A. Acute pyelonephritis B. <b>End-stage calcified caseous necrosis</b> C. Medullary sponge kidney D. Renal papillary necrosis E. Oxalosis</p>
+<ol><li><b>Ethambutol dose adjustment in CKD:</b></li></ol>
+<p>A. No adjustment needed B. <b>Avoid if eGFR &lt;15; reduce frequency if eGFR 15–30</b> C. Reduce dose by 50% in all CKD D. Stop if eGFR &lt;60 E. Increase dose</p>
+<ol><li><b>Monitoring on ethambutol:</b></li></ol>
+<p>A. LFTs monthly B. <b>Visual acuity and colour vision monthly</b> C. Renal function weekly D. Audiometry monthly E. CBC weekly</p>
+<ol><li><b>Rifampicin interaction with ART (protease inhibitors):</b></li></ol>
+<p>A. No interaction B. <b>Rifampicin ↓ PI levels → use rifabutin instead</b> C. Increase PI dose D. Stop ART during TB treatment E. Switch to NNRTI</p>
+<ol><li><b>Nephrectomy in renal TB indicated if:</b></li></ol>
+<p>A. Any renal TB B. <b>Non-functioning kidney (&lt;10%) + symptomatic (pain, infection, HTN)</b> C. Positive urine culture only D. All bilateral cases E. At diagnosis</p>
+<ol><li><b>Rapid molecular test for TB with rifampicin resistance detection:</b></li></ol>
+<p>A. AFB smear B. <b>Xpert MTB/RIF Ultra</b> C. Urine culture D. LAM assay E. IGRA</p>
+<ol><li><b>Sterile pyuria differential includes all EXCEPT:</b></li></ol>
+<p>A. AIN B. Renal TB C. Bladder cancer D. <b>Untreated UTI (grows on routine culture)</b> E. Vasculitis</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>30-year-old man, 3 months flank pain, sterile pyuria, weight loss. IVU: calyceal clubbing, pelvic calcification. Urine AFB culture pending. Best immediate management:</b></li></ol>
+<p>A. Wait for culture B. <b>Start HRZE empirically (high suspicion)</b> C. Nephrectomy D. IV antibiotics E. Cystoscopy only</p>
+<ol><li><b>45-year-old woman on anti-TB for renal TB (month 2 of HRZE). Develops red-green colour blindness. Action:</b></li></ol>
+<p>A. Stop all drugs B. <b>Stop ethambutol; continue HRZ; monitor vision</b> C. Reduce ethambutol dose D. Switch to levofloxacin E. Continue all, monitor only</p>
+<ol><li><b>HIV+ patient (CD4 150) on efavirenz-based ART, diagnosed renal TB. Rifampicin started. ART adjustment:</b></li></ol>
+<p>A. Continue efavirenz B. <b>Switch to rifabutin + adjust efavirenz dose (800mg)</b> C. Stop ART D. Switch to dolutegravir 50mg BD E. Switch to PI/r + double dose</p>
+<ol><li><b>Renal TB patient, month 5 of treatment (on HR). Repeat urine culture negative. Imaging: non-functioning left kidney (split function 5%), recurrent UTIs. Management:</b></li></ol>
+<p>A. Continue HR only B. <b>Nephrectomy (non-functioning + recurrent infection)</b> C. Extend treatment to 12 months D. Add ethambutol back E. Stent only</p>
+<ol><li><b>Patient on anti-TB (month 3). Presents with acute flank pain, anuria. CT: bilateral ureteric strictures. Next step:</b></li></ol>
+<p>A. Stop anti-TB B. <b>Bilateral ureteric stenting/nephrostomy + continue anti-TB</b> C. Nephrectomy D. Increase steroid dose E. Surgical reimplantation now</p>
+<ol><li><b>Transplant recipient, 2 years post-Tx, IGRA positive. No active TB. Prophylaxis:</b></li></ol>
+<p>A. No prophylaxis needed B. <b>Isoniazid 300mg/day + pyridoxine × 6–9 months</b> C. HRZE × 2 months D. Rifampicin only E. BCG vaccine</p>
+<ol><li><b>Patient on HRZE for renal TB. Develops hepatitis (ALT 5x ULN). Management:</b></li></ol>
+<p>A. Stop all drugs B. <b>Stop HZ; continue RE; reintroduce H/Z sequentially after LFTs normalise</b> C. Stop all, restart after 2 weeks D. Continue all, monitor LFTs E. Switch to MDR regimen</p>
+<ol><li><b>Renal TB patient with MDR-TB (rifampicin resistant). Regimen basis:</b></li></ol>
+<p>A. HRZE + moxifloxacin B. <b>Individualised per DST: bedaquiline, linezolid, levofloxacin, clofazimine, cycloserine</b> C. INH + ethambutol + PZA D. Rifabutin-based E. Surgery only</p>
+<ol><li><b>HIV+ renal TB, CD4 50, starts ART 2 weeks after anti-TB. Week 4: worsening fever, lymphadenopathy, renal enlargement. Diagnosis:</b></li></ol>
+<p>A. TB treatment failure B. <b>IRIS (Immune Reconstitution Inflammatory Syndrome)</b> C. Drug reaction D. New malignancy E. Secondary infection</p>
+<ol><li><b>Child with renal TB, non-functioning kidney on DMSA. Asymptomatic now on treatment. Nephrectomy?</b></li></ol>
+<p>A. Yes, immediately B. <b>No — only if symptomatic (pain, HTN, infection) despite treatment</b> C. Yes, after 6 months D. Yes, if bilateral E. Only if culture positive</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Renal TB route?</li></ul>
+<p>A: Haematogenous from pulmonary focus</p>
+<ul><li>Q: Hallmark finding?</li></ul>
+<p>A: Sterile pyuria (90-95%)</p>
+<ul><li>Q: Gold standard diagnosis?</li></ul>
+<p>A: Urine AFB culture (LJ/MGIT)</p>
+<ul><li>Q: Rapid test?</li></ul>
+<p>A: Xpert MTB/RIF Ultra (detects RIF resistance)</p>
+<ul><li>Q: Putty kidney = ?</li></ul>
+<p>A: End-stage calcified caseous necrosis</p>
+<ul><li>Q: Treatment duration?</li></ul>
+<p>A: 9 months (2HRZE + 7HR)</p>
+<ul><li>Q: Ethambutol in CKD?</li></ul>
+<p>A: Avoid &lt;15, reduce freq 15-30</p>
+<ul><li>Q: Ethambutol monitoring?</li></ul>
+<p>A: Monthly visual acuity/colour vision</p>
+<ul><li>Q: Rifampicin + PI ART?</li></ul>
+<p>A: Use rifabutin instead</p>
+<ul><li>Q: Nephrectomy indication?</li></ul>
+<p>A: Non-functioning (&lt;10%) + symptomatic</p>
+<ul><li>Q: HIV TB prophylaxis?</li></ul>
+<p>A: INH 300mg × 6-9mo if IGRA+</p>
+<ul><li>Q: MDR-TB regimen?</li></ul>
+<p>A: Individualised per DST (bedaquiline, linezolid, etc.)</p>
+<ul><li>Q: IRIS timing?</li></ul>
+<p>A: Weeks after starting ART</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Sterile pyuria (WBC in urine, no growth on routine culture) is the hallmark of renal TB.</li><li><b>B</b> — Urine AFB culture (Löwenstein-Jensen or MGIT) = gold standard. Xpert PCR rapid but culture definitive.</li><li><b>B</b> — Renal TB: 2HRZE + 7HR = 9 months total (longer than pulmonary 6mo due to poor drug penetration in caseous lesions).</li><li><b>B</b> — "Putty kidney" = calcified caseous necrotic renal parenchyma (end-stage).</li><li><b>B</b> — Ethambutol: avoid if eGFR &lt;15; reduce to 15mg/kg 3x/week if eGFR 15–30.</li><li><b>B</b> — Ethambutol toxicity = optic neuritis → monitor visual acuity &amp; colour vision monthly.</li><li><b>B</b> — Rifampicin potent CYP3A4 inducer → ↓ PI/NNRTI levels. Use rifabutin (less induction) with dose-adjusted ART.</li><li><b>B</b> — Nephrectomy only if kidney non-functioning (&lt;10% split function) AND symptomatic (recurrent infection, pain, hypertension).</li><li><b>B</b> — Xpert MTB/RIF Ultra = rapid PCR (hours), detects M. tuberculosis + rifampicin resistance (rpoB mutations).</li><li><b>D</b> — Sterile pyuria = no growth on routine culture. Untreated UTI grows organisms → not "sterile".</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — High suspicion + sterile pyuria + IVU findings = start empiric HRZE immediately; don't wait 4–8 weeks for culture.</li><li><b>B</b> — Ethambutol optic neuropathy: stop E, continue HRZ; vision often recovers if caught early.</li><li><b>B</b> — Rifampicin with efavirenz: standard is rifabutin + efavirenz 800mg (or dolutegravir 50mg BD without rifampicin interaction).</li><li><b>B</b> — Non-functioning kidney (&lt;10%) + recurrent UTIs = nephrectomy indicated after adequate anti-TB.</li><li><b>B</b> — Ureteric strictures: urgent drainage (stent/nephrostomy) + continue anti-TB; surgery after treatment.</li><li><b>B</b> — Transplant + latent TB (IGRA+): INH 300mg + pyridoxine × 6–9 months prophylaxis.</li><li><b>B</b> — Drug-induced hepatitis: stop hepatotoxic drugs (H, Z); continue R, E; reintroduce H then Z sequentially.</li><li><b>B</b> — MDR-TB: individualised regimen per DST with ≥4 effective drugs (bedaquiline, linezolid, fluoroquinolone, clofazimine, cycloserine).</li><li><b>B</b> — IRIS: paradoxical worsening 2–8 weeks after ART start in advanced HIV; treat with steroids if severe, continue ART + anti-TB.</li><li><b>B</b> — Asymptomatic non-functioning kidney on treatment: observe; nephrectomy only if complications develop.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Renal Tuberculosis</b> is a <b>Must Know 🔴</b> infectious/urology topic. <b>Pathogenesis</b>: Haematogenous spread from pulmonary TB (often silent/old focus). <b>Clinical</b>: <b>Sterile pyuria (90–95%)</b>, flank pain, frequency/dysuria, constitutional symptoms. <b>Diagnosis</b>: <b>Urine AFB culture (gold standard)</b>, <b>Xpert MTB/RIF Ultra (rapid + RIF resistance)</b>, <b>IVU/CTU</b> (calyceal distortion, strictures, <b>"putty kidney"</b> calcifications), cystoscopy (ulcerative cystitis). <b>Treatment</b>: <b>2HRZE + 7HR = 9 months total</b>. Pyridoxine with INH. Ethambutol dose adjust in CKD + monthly vision monitoring. <b>Complications</b>: Ureteric strictures, bladder fibrosis/contracture, non-functioning kidney → <b>nephrectomy if &lt;10% function + symptomatic</b>. <b>HIV</b>: Atypical disseminated; <b>rifabutin for ART interactions</b>; IRIS risk on starting ART. <b>Exam focus</b>: Sterile pyuria, 9-month regimen, putty kidney, ethambutol vision monitoring, HIV ART interactions, nephrectomy criteria.</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Renal Tuberculosis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Testicular Torsion — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">Testicular Torsion</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise classic presentation (sudden scrotal pain, nausea, high-riding testis, absent cremasteric reflex)</li><li>Apply time-critical management (exploration within 6 hours)</li><li>Differentiate from torsion of appendix testis, epididymo-orchitis, incarcerated hernia</li><li>Apply Doppler US criteria (absent flow = torsion)</li><li>Perform surgical detorsion + bilateral orchiopexy</li><li>Counsel on salvage rates and fertility implications</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Pathophysiology</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Component</th><th>Detail</th></tr><tr><td>-----------</td><td>--------</td></tr><tr><td>**Mechanism**</td><td>Spermatic cord rotation → **venous occlusion** → oedema → **arterial occlusion** → ischaemia → infarction</td></tr><tr><td>**Anatomical predisposition**</td><td>**Bell-clapper deformity** — tunica vaginalis inserts high on testis → testis hangs free → can rotate</td></tr><tr><td>**Degree**</td><td>180° (incomplete), 360° (complete), 720° (multiple) — >360° = complete arterial occlusion</td></tr><tr><td>**Age peaks**</td><td>**Neonatal** (prenatal/perinatal) & **Adolescent (12–18yr)** — bimodal</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Presentation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Classic (Adolescent)</div>
+<table class="ctable"><tr><th>Feature</th><th>Typical</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Sudden severe scrotal pain**</td><td>Often wakes from sleep; may radiate to groin/abdomen</td></tr><tr><td>**Nausea / Vomiting**</td><td>50–70% (visceral referral)</td></tr><tr><td>**High-riding testis**</td><td>Testis pulled up by shortened cord</td></tr><tr><td>**Horizontal lie**</td><td>Testis rotates to transverse position</td></tr><tr><td>**Absent cremasteric reflex**</td><td>**Most sensitive sign** (ipsilateral)</td></tr><tr><td>**Swollen, tender testis**</td><td>Entire testis tender (vs epididymitis = epididymis only)</td></tr><tr><td>**No relief with elevation**</td><td>Negative Prehn's sign</td></tr></table>
+<div class="sub-h">Neonatal</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Prenatal/Perinatal**</td><td>Often irreversible at birth (dark, firm testis)</td></tr><tr><td>**Presentation**</td><td>Scrotal discolouration (blue/black), firm mass, absent cremasteric</td></tr><tr><td>**Contralateral**</td><td>High risk of asynchronous torsion — **bilateral fixation needed**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Differential Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Condition</th><th>Pain Onset</th><th>Key Features</th><th>Doppler</th></tr><tr><td>-----------</td><td>------------</td><td>--------------</td><td>---------</td></tr><tr><td>**Testicular Torsion**</td><td>**Sudden, severe**</td><td>High-riding, horizontal, absent cremasteric, no Prehn's</td><td>**Absent flow**</td></tr><tr><td>**Torsion of Appendix Testis**</td><td>Sudden</td><td>**Blue dot sign** (tender nodule at upper pole), normal testis lie</td><td>Normal testicular flow</td></tr><tr><td>**Epididymo-orchitis**</td><td>**Gradual** (hours–days)</td><td>Fever, dysuria, pyuria, tender epididymis ± testis, **Prehn's sign +** (relief with elevation)</td><td>**Increased flow**</td></tr><tr><td>**Incarcerated Inguinal Hernia**</td><td>Sudden</td><td>Groin mass, irreducible, bowel obstruction signs</td><td>N/A</td></tr><tr><td>**Idiopathic Scrotal Oedema**</td><td>Acute</td><td>Painless, bilateral scrotal wall oedema, normal testes</td><td>Normal</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Diagnostic Workup</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Clinical Diagnosis (Time-Critical)</div>
+<div class="callout"><b>If clinical suspicion high → IMMEDIATE SURGICAL EXPLORATION. Do NOT delay for imaging.</b></div>
+<table class="ctable"><tr><th>Scenario</th><th>Action</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Classic presentation** (sudden pain, absent cremasteric, high-riding)</td><td>**Straight to OR**</td></tr><tr><td>**Equivocal / Atypical**</td><td>**Doppler US stat** (if available within 30–60 min)</td></tr></table>
+<div class="sub-h">Doppler Ultrasound (If Needed)</div>
+<table class="ctable"><tr><th>Finding</th><th>Interpretation</th></tr><tr><td>---------</td><td>----------------</td></tr><tr><td>**Absent intratesticular flow**</td><td>**Torsion** (sensitivity 85–95%, specificity 95%)</td></tr><tr><td>**Reduced flow**</td><td>Intermittent/partial torsion</td></tr><tr><td>**Normal/Increased flow**</td><td>Epididymo-orchitis, appendix testis torsion</td></tr><tr><td>**"Whirlpool sign"**</td><td>Twisted spermatic cord (specific)</td></tr></table>
+<div class="callout"><b>False negatives</b>: Intermittent torsion, early torsion with partial flow.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management — **TIME IS TESTIS**</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Salvage Rate by Time</div>
+<table class="ctable"><tr><th>Time to Detorsion</th><th>Salvage Rate</th></tr><tr><td>-------------------</td><td>--------------</td></tr><tr><td>**<6 hours**</td><td>**90–100%**</td></tr><tr><td>**6–12 hours**</td><td>**50–60%**</td></tr><tr><td>**12–24 hours**</td><td>**10–20%**</td></tr><tr><td>**>24 hours**</td><td>**<10%** (orchiectomy likely)</td></tr></table>
+<div class="callout"><b>Every hour counts.</b> 6-hour golden window.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Surgical Exploration (Standard)</div>
+<table class="ctable"><tr><th>Step</th><th>Detail</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**Incision**</td><td>Transverse scrotal or inguinal (if equivocal)</td></tr><tr><td>**Detorsion**</td><td>Rotate testis **counterclockwise** (medial to lateral) — usually 2–3 full turns</td></tr><tr><td>**Viability assessment**</td><td>Wait 10–15 min: colour change (pink), bleeding from tunica albuginea</td></tr><tr><td>**Orchiopexy**</td><td>**Bilateral** (non-absorbable sutures, 3-point fixation) — prevents recurrence</td></tr><tr><td>**Orchiectomy**</td><td>If non-viable (black, no bleeding after detorsion) — place prosthesis if desired</td></tr></table>
+<div class="callout"><b>Always fix contralateral testis</b> — bell-clapper deformity is bilateral.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Neonatal Torsion</div>
+<table class="ctable"><tr><th>Scenario</th><th>Management</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**Prenatal (in utero)**</td><td>Usually non-salvageable; observe contralateral</td></tr><tr><td>**Perinatal (at birth)**</td><td>**Urgent exploration** if viable; contralateral fixation mandatory</td></tr><tr><td>**Asynchronous torsion**</td><td>Contralateral fixation at same time</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Post-Operative Care</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Aspect</th><th>Protocol</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Pain control**</td><td>Regular analgesia (NSAIDs + opioids PRN)</td></tr><tr><td>**Activity**</td><td>Scrotal support, avoid strenuous activity 2–4 weeks</td></tr><tr><td>**Follow-up**</td><td>Clinical exam at 2 weeks, 3 months (atrophy check)</td></tr><tr><td>**Fertility counselling**</td><td>Unilateral torsion → usually preserved fertility; semen analysis at 6–12mo if concerned</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Prevention/Management</th></tr><tr><td>--------------</td><td>----------------------</td></tr><tr><td>**Testicular atrophy**</td><td>Early exploration (<6hr); assess size at follow-up</td></tr><tr><td>**Infertility**</td><td>Autoimmune anti-sperm antibodies possible; semen analysis</td></tr><tr><td>**Cosmetic/psychological**</td><td>Testicular prosthesis if orchiectomy</td></tr><tr><td>**Recurrence**</td><td>Bilateral fixation prevents</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Testicular torsion</b> = urological emergency — <b>time is testis</b>. - <b>Classic</b>: Sudden scrotal pain, nausea, <b>high-riding testis</b>, <b>horizontal lie</b>, <b>absent cremasteric reflex</b>. - <b>Bell-clapper deformity</b> (absent gubernaculum) = bilateral predisposition. - <b>Salvage</b>: &lt;6hr = 90%, 6–12hr = 50%, &gt;24hr = &lt;10%. - <b>Diagnosis</b>: Clinical → <b>immediate OR</b>; Doppler US only if equivocal (absent flow = torsion). - <b>Management</b>: Surgical detorsion (counterclockwise) + <b>bilateral orchiopexy</b>. - <b>Orchiectomy</b> if non-viable (black, no bleeding after 15min). - <b>Differential</b>: Appendix testis torsion (blue dot), epididymo-orchitis (gradual, fever, Prehn's +), incarcerated hernia. - <b>Neonatal</b>: Often prenatal/perinatal; contralateral fixation mandatory.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Order Doppler first**</td><td>**High suspicion → OR immediately**; Doppler only if equivocal</td></tr><tr><td>**Pain relief with elevation = torsion**</td><td>**Prehn's sign NEGATIVE in torsion** (pain NOT relieved); +ve in epididymitis</td></tr><tr><td>**Cremasteric reflex present = no torsion**</td><td>**Absent cremasteric = torsion** (but can be absent in other conditions)</td></tr><tr><td>**Blue dot = torsion**</td><td>**Blue dot = appendix testis torsion**; whole testis not tender</td></tr><tr><td>**Unilateral fixation enough**</td><td>**Bilateral orchiopexy mandatory** — bell-clapper is bilateral</td></tr><tr><td>**Neonatal = wait and see**</td><td>**Urgent exploration if viable**; high asynchronous torsion risk</td></tr><tr><td>**Doppler rules out torsion**</td><td>**False negatives** in intermittent/early torsion</td></tr><tr><td>**Torsion = always 360°**</td><td>Can be 180° (incomplete), 720° (multiple)</td></tr><tr><td>**Orchiectomy always needed if >24hr**</td><td>**Assess viability intraoperatively** — some recover even late</td></tr><tr><td>**Fertility always lost**</td><td>Unilateral torsion → usually normal fertility; semen analysis if concerned</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Torsion signs</b>: <b>H</b>igh-riding, <b>H</b>orizontal, <b>A</b>bsent cremasteric, <b>N</b>o Prehn's = <b>HHAN</b></li><li><b>Time</b>: <b>6 HOURS</b> = golden window (&lt;6hr = 90% salvage)</li><li><b>Detorsion</b>: <b>C</b>ounter<b>C</b>lockwise = <b>Corre</b>ct</li><li><b>Differential</b>: <b>T</b>orsion = <b>T</b>wisted, <b>A</b>ppendix = <b>B</b>lue dot, <b>E</b>pididymitis = <b>G</b>radual + <b>P</b>rehn's +</li><li><b>Fixation</b>: <b>B</b>ilateral = <b>B</b>ell-clapper is bilateral</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Testicular Torsion)) Mechanism[Spermatic cord twist → venous → arterial occlusion] Anatomy[Bell-clapper deformity (no gubernaculum) = bilateral] Presentation Pain[Sudden, severe, radiates to groin] Nausea[50-70%] Exam[High-riding, Horizontal, Absent cremasteric, No Prehn's] Differential Appendix_Testis[Blue dot, upper pole tender] Epididymo_orchitis[Gradual, Fever, Prehn's+, Pyuria] Hernia[Groin mass, irreducible] Diagnosis Clinical[Time-critical → OR immediately] Doppler[Absent flow = torsion; if equivocal only] Management Timeline[&lt;6hr 90%, 6-12hr 50%, &gt;24hr &lt;10%] Surgery[Detorsion (counterclockwise) + Bilateral orchiopexy] Viability[Wait 15min: pink/bleeding = viable] Orchiectomy[If non-viable] Neonatal[Urgent if viable; contralateral fixation] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Golden window for salvage (&lt;6 hours = 90%)</li><li>Classic triad: sudden pain, high-riding, absent cremasteric</li><li>Bell-clapper deformity = bilateral predisposition</li><li>Detorsion direction (counterclockwise)</li><li>Bilateral orchiopexy mandatory</li><li>Prehn's sign negative in torsion</li><li>Blue dot = appendix testis torsion</li><li>Doppler: absent flow = torsion</li><li>Neonatal: urgent exploration + contralateral fixation</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Time-critical (<6hr), clinical diagnosis (absent cremasteric, high-riding), immediate exploration, bilateral fixation, salvage rates</td></tr><tr><td>**Should Know 🟡**</td><td>Doppler criteria, intermittent torsion, neonatal management, post-op atrophy follow-up, fertility implications, prosthesis</td></tr><tr><td>**Nice to Know 🟢**</td><td>Intraoperative assessment techniques (fluorescein, laser Doppler), long-term hormonal outcomes, psychological impact, genetic factors</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Golden window for testicular salvage in torsion:</b></li></ol>
+<p>A. &lt;3 hours B. <b>&lt;6 hours</b> C. &lt;12 hours D. &lt;18 hours E. &lt;24 hours</p>
+<ol><li><b>Most sensitive clinical sign of testicular torsion:</b></li></ol>
+<p>A. High-riding testis B. Horizontal lie C. <b>Absent cremasteric reflex</b> D. Nausea/vomiting E. Swollen scrotum</p>
+<ol><li><b>Direction of detorsion during surgery:</b></li></ol>
+<p>A. Clockwise B. <b>Counterclockwise (medial to lateral)</b> C. Either D. Inferior to superior E. Posterior to anterior</p>
+<ol><li><b>Prehn's sign in testicular torsion:</b></li></ol>
+<p>A. Positive (pain relieved by elevation) B. <b>Negative (pain NOT relieved by elevation)</b> C. Not applicable D. Variable E. Only in epididymitis</p>
+<ol><li><b>Blue dot sign is characteristic of:</b></li></ol>
+<p>A. Testicular torsion B. <b>Torsion of appendix testis</b> C. Epididymo-orchitis D. Incarcerated hernia E. Testicular tumour</p>
+<ol><li><b>Bilateral orchiopexy is performed because:</b></li></ol>
+<p>A. Both testes torsed B. <b>Bell-clapper deformity is bilateral</b> C. Prevents epididymitis D. Improves fertility D. Routine protocol</p>
+<ol><li><b>Salvage rate at 6–12 hours:</b></li></ol>
+<p>A. 90% B. <b>50–60%</b> C. 30% D. 10% E. &lt;5%</p>
+<ol><li><b>Doppler US finding in testicular torsion:</b></li></ol>
+<p>A. Increased flow B. Normal flow C. <b>Absent intratesticular flow</b> D. Venous flow only E. Arterial flow only</p>
+<ol><li><b>Neonatal testicular torsion — management if viable:</b></li></ol>
+<p>A. Observe B. <b>Urgent exploration + contralateral fixation</b> C. Doppler first D. Wait for descent E. Hormonal therapy</p>
+<ol><li><b>Contralateral fixation in torsion is done because:</b></li></ol>
+<p>A. Both usually torsed simultaneously B. <b>Bell-clapper deformity is bilateral (asynchronous torsion risk)</b> C. Improves cosmetic outcome D. Reduces pain E. Prevents epididymitis</p>
+<ol><li><b>Torsion of appendix testis — classic finding:</b></li></ol>
+<p>A. Whole testis tender, high-riding B. <b>Blue dot at upper pole, localised tenderness</b> C. Fever, pyuria D. Absent cremasteric reflex E. Horizontal lie of testis</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>16-year-old boy, 3 hours sudden left scrotal pain, vomiting. Exam: left testis high-riding, horizontal, tender, absent cremasteric reflex. Doppler not immediately available. Management:</b></li></ol>
+<p>A. Order Doppler US stat B. <b>Immediate surgical exploration (detorsion + bilateral orchiopexy)</b> C. Analgesia + scrotal support + review in 2h D. Urinalysis + antibiotics E. Doppler in morning</p>
+<ol><li><b>14-year-old boy, 4 hours scrotal pain. Exam: tender bluish nodule at upper pole of left testis, testis itself non-tender in normal position, cremasteric reflex present. Most likely diagnosis:</b></li></ol>
+<p>A. Testicular torsion B. <b>Torsion of appendix testis</b> C. Epididymo-orchitis D. Incarcerated hernia D. Testicular tumour</p>
+<ol><li><b>25-year-old man, gradual onset scrotal pain over 2 days, fever, dysuria. Exam: swollen tender epididymis, testis non-tender, Prehn's sign positive, pyuria. Management:</b></li></ol>
+<p>A. Immediate exploration B. <b>Antibiotics (ceftriaxone + doxycycline) + scrotal support</b> C. Doppler US D. Orchiopexy E. NSAIDs only</p>
+<ol><li><b>17-year-old boy, 8 hours scrotal pain. Exploration: left testis black, no bleeding after detorsion for 15 min. Right testis normal. Management:</b></li></ol>
+<p>A. Detorsion + bilateral orchiopexy B. <b>Left orchiectomy + right orchiopexy + prosthesis discussion</b> C. Left orchiectomy only D. Detorsion + left orchiopexy only E. Observe 30 min more</p>
+<ol><li><b>Newborn, left scrotum dark/blue, firm non-tender mass. Right testis normal. Most likely:</b></li></ol>
+<p>A. Testicular tumour B. <b>Prenatal testicular torsion (non-salvageable)</b> C. Epididymo-orchitis D. Torsion of appendix testis E. Haematoma</p>
+<ol><li><b>Neonate with viable testicular torsion at birth. Management:</b></li></ol>
+<p>A. Observe B. <b>Urgent exploration + detorsion + bilateral orchiopexy</b> C. Doppler US first D. Wait for spontaneous detorsion E. Orchiectomy</p>
+<ol><li><b>Intermittent testicular torsion — presentation:</b></li></ol>
+<p>A. Constant severe pain B. <b>Recurrent self-limiting pain (resolves with spontaneous detorsion)</b> C. Pain only with exercise D. No pain E. Only in neonates</p>
+<ol><li><b>Doppler US for suspected torsion — false negative risk highest in:</b></li></ol>
+<p>A. Complete torsion &gt;6hr B. <b>Intermittent / partial torsion</b> C. Neonatal torsion D. Torsion with haemorrhage E. Appendix testis torsion</p>
+<ol><li><b>Testicular salvage after torsion — long-term atrophy risk:</b></li></ol>
+<p>A. Never if salvaged &lt;6hr B. <b>Atrophy possible even with early salvage (assess at 3–6mo)</b> C. Only if &gt;12hr D. Only if orchiectomy E. Never with bilateral fixation</p>
+<ol><li><b>Fertility after unilateral testicular torsion:</b></li></ol>
+<p>A. Always infertile B. <b>Usually normal (semen analysis at 6–12mo if concerned)</b> C. Reduced in 50% D. Only if bilateral E. Requires IVF</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Golden window?</li></ul>
+<p>A: &lt;6 hours (90% salvage)</p>
+<ul><li>Q: Most sensitive sign?</li></ul>
+<p>A: Absent cremasteric reflex</p>
+<ul><li>Q: Detorsion direction?</li></ul>
+<p>A: Counterclockwise (medial to lateral)</p>
+<ul><li>Q: Prehn's sign in torsion?</li></ul>
+<p>A: Negative (no relief with elevation)</p>
+<ul><li>Q: Blue dot = ?</li></ul>
+<p>A: Appendix testis torsion</p>
+<ul><li>Q: Bilateral fixation why?</li></ul>
+<p>A: Bell-clapper is bilateral</p>
+<ul><li>Q: Salvage 6-12hr?</li></ul>
+<p>A: 50-60%</p>
+<ul><li>Q: Doppler torsion?</li></ul>
+<p>A: Absent intratesticular flow</p>
+<ul><li>Q: Neonatal viable?</li></ul>
+<p>A: Urgent exploration + contralateral fixation</p>
+<ul><li>Q: Intermittent torsion?</li></ul>
+<p>A: Recurrent self-limiting pain</p>
+<ul><li>Q: Long-term atrophy risk?</li></ul>
+<p>A: Even with early salvage (assess 3-6mo)</p>
+<ul><li>Q: Fertility after unilateral?</li></ul>
+<p>A: Usually normal</p>
+<ul><li>Q: Contralateral fixation?</li></ul>
+<p>A: Asynchronous torsion risk</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — &lt;6 hours = 90% salvage; 6–12hr = 50–60%; &gt;24hr = &lt;10%.</li><li><b>C</b> — Absent cremasteric reflex is the most sensitive clinical sign.</li><li><b>B</b> — Detorsion: counterclockwise (medial to lateral) — testis rotates laterally.</li><li><b>B</b> — Prehn's sign NEGATIVE in torsion (elevation does NOT relieve pain); positive in epididymitis.</li><li><b>B</b> — Blue dot sign = tender cyanotic nodule at upper pole = torsion of appendix testis.</li><li><b>B</b> — Bell-clapper deformity (high tunica vaginalis insertion) is bilateral → asynchronous torsion risk.</li><li><b>B</b> — 6–12 hours salvage = 50–60%.</li><li><b>C</b> — Doppler: absent intratesticular arterial flow = torsion.</li><li><b>B</b> — Neonatal viable torsion: urgent exploration + detorsion + bilateral orchiopexy.</li><li><b>B</b> — Contralateral fixation for asynchronous torsion (bell-clapper is bilateral).</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Classic presentation + 3 hours = immediate exploration. Do not delay for Doppler.</li><li><b>B</b> — Blue dot at upper pole, normal testis lie, cremasteric intact = appendix testis torsion.</li><li><b>B</b> — Gradual onset, fever, dysuria, epididymal tenderness, Prehn's +, pyuria = epididymo-orchitis.</li><li><b>B</b> — Non-viable testis (black, no bleeding after 15min detorsion) → orchiectomy; contralateral fixation.</li><li><b>B</b> — Prenatal torsion: dark firm testis at birth, usually non-salvageable.</li><li><b>B</b> — Neonatal viable torsion: same emergency principles — explore, detorse, bilateral fixation.</li><li><b>B</b> — Intermittent torsion: recurrent pain episodes that resolve spontaneously.</li><li><b>B</b> — False negatives in intermittent/partial torsion (flow may be present at scan time).</li><li><b>B</b> — Atrophy can occur even with early salvage; assess size at 3–6 month follow-up.</li><li><b>B</b> — Unilateral torsion rarely causes infertility; semen analysis if concerned.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Testicular Torsion</b> is a <b>Must Know 🔴</b> urological emergency. <b>Pathophysiology</b>: Spermatic cord twist → venous → arterial occlusion → ischaemia. <b>Bell-clapper deformity</b> (absent gubernaculum) = bilateral predisposition. <b>Clinical</b>: Sudden severe scrotal pain, nausea, <b>high-riding testis</b>, <b>horizontal lie</b>, <b>absent cremasteric reflex</b>, <b>negative Prehn's sign</b>. <b>Time-critical</b>: <b>&lt;6hr = 90% salvage</b>; 6–12hr = 50–60%; &gt;24hr = &lt;10%. <b>Diagnosis</b>: <b>Clinical → immediate OR</b>. Doppler US only if equivocal (absent flow = torsion). <b>Management</b>: Surgical exploration → detorsion (counterclockwise) → viability assessment → <b>bilateral orchiopexy</b>. Orchiectomy if non-viable. <b>Differential</b>: Appendix testis torsion (blue dot, localised), Epididymo-orchitis (gradual, fever, Prehn's +, pyuria), Incarcerated hernia. <b>Neonatal</b>: Prenatal often non-salvageable; perinatal viable → urgent exploration + contralateral fixation. <b>Exam focus</b>: Time window, absent cremasteric, bell-clapper bilateral, detorsion counterclockwise, bilateral fixation, blue dot differential, Prehn's sign negative.</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Testicular Torsion · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

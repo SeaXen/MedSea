@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bartter and Gitelman Syndromes (plus Liddle) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">Bartter and Gitelman Syndromes (plus Liddle)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Differentiate Bartter vs Gitelman vs Liddle by site, labs, and clinical features</li><li>Apply genetic classification (Bartter Types 1–5, Gitelman, Liddle)</li><li>Diagnose using urine electrolytes, renin/aldosterone, genetic testing</li><li>Manage each syndrome (NSAIDs/K+ for Bartter, Mg/K+ for Gitelman, amiloride for Liddle)</li><li>Apply to FCPS/MRCP paediatric and adult vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Bartter Syndrome</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Genetics &amp; Classification</div>
+<table class="ctable"><tr><th>Type</th><th>Gene</th><th>Protein</th><th>Location</th><th>Features</th></tr><tr><td>------</td><td>------</td><td>---------</td><td>----------</td><td>----------</td></tr><tr><td>**Type 1**</td><td>**SLC12A1**</td><td>**NKCC2**</td><td>TAL</td><td>Antenatal, severe, polyhydramnios</td></tr><tr><td>**Type 2**</td><td>**KCNJ1**</td><td>**ROMK (Kir1.1)**</td><td>TAL</td><td>Antenatal, severe, transient neonatal hyperK</td></tr><tr><td>**Type 3**</td><td>**CLCNKB**</td><td>**ClC-Kb**</td><td>TAL</td><td>Classic/classic, later onset, variable</td></tr><tr><td>**Type 4**</td><td>**BSND**</td><td>**Barttin** (β-subunit ClC-Ka/ClC-Kb)</td><td>TAL + inner ear</td><td>**Sensorineural deafness**</td></tr><tr><td>**Type 5**</td><td>**MAGED2**</td><td>**MAGE-D2**</td><td>TAL (X-linked)</td><td>Transient antenatal, resolves postnatally</td></tr></table>
+<div class="callout"><b>All Bartter types</b> = TAL salt wasting → ↑ prostaglandin E2 → polyuria, polyhydramnios.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Pathophysiology (TAL Defect)</div>
+<ul><li><b>TAL</b> = Na⁺-K⁺-2Cl⁻ cotransporter (NKCC2) + ROMK + ClC-Kb/Barttin</li><li><b>Defect</b> → ↓ NaCl reabsorption → <b>salt wasting</b> → volume depletion → ↑ renin/aldo</li><li><b>Consequences</b>: Polyuria (↓ medullary gradient), hypokalaemia, metabolic alkalosis, hypercalciuria → <b>nephrocalcinosis</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Clinical Presentation</div>
+<table class="ctable"><tr><th>Feature</th><th>Antenatal (Types 1,2,4)</th><th>Classic (Type 3)</th></tr><tr><td>---------</td><td>-------------------------</td><td>------------------</td></tr><tr><td>**Presentation**</td><td>**Prenatal**: polyhydramnios, prematurity</td><td>Childhood/adult: failure to thrive, polyuria</td></tr><tr><td>**Polyuria/Polydipsia**</td><td>Severe (neonatal)</td><td>Moderate-severe</td></tr><tr><td>**Growth**</td><td>**Failure to thrive**</td><td>Short stature</td></tr><tr><td>**Nephrocalcinosis**</td><td>**Common** (hypercalciuria)</td><td>Common</td></tr><tr><td>**Deafness**</td><td>**Type 4 (BSND) only**</td><td>—</td></tr><tr><td>**Hyperkalaemia**</td><td>**Type 2 (KCNJ1) transient neonatal**</td><td>—</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Biochemical Profile</div>
+<table class="ctable"><tr><th>Parameter</th><th>Bartter</th></tr><tr><td>-----------</td><td>---------</td></tr><tr><td>**K+**</td><td>**Low** (hypokalaemia)</td></tr><tr><td>**Cl-**</td><td>Low</td></tr><tr><td>**HCO3-**</td><td>**High** (metabolic alkalosis)</td></tr><tr><td>**Renin**</td><td>**High**</td></tr><tr><td>**Aldosterone**</td><td>**High**</td></tr><tr><td>**BP**</td><td>**Normal/Low** (volume depletion)</td></tr><tr><td>**Urine Ca2+**</td><td>**High** (hypercalciuria) → nephrocalcinosis</td></tr><tr><td>**Urine Mg2+**</td><td>Normal/mildly ↑</td></tr><tr><td>**Urine PGE2**</td><td>**High**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Intervention</th><th>Details</th></tr><tr><td>--------------</td><td>---------</td></tr><tr><td>**NSAIDs (Indomethacin)**</td><td>**First-line** — inhibits PGE2 → ↑ NaCl reabsorption in TAL, ↓ renin/aldo, ↑ K+</td></tr><tr><td>**K+ supplements**</td><td>KCl (high dose, often 50–100 mmol/day)</td></tr><tr><td>**K+-sparing diuretics**</td><td>Spironolactone/Amiloride (add-on)</td></tr><tr><td>**ACEi/ARB**</td><td>Sometimes used (↓ Ang II)</td></tr><tr><td>**Growth hormone**</td><td>If severe growth failure</td></tr><tr><td>**Avoid**</td><td>Loop diuretics (worsen wasting)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Gitelman Syndrome</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Genetics</div>
+<ul><li><b>SLC12A3</b> (chr16q13) → <b>NCC (Na-Cl cotransporter)</b> in <b>DCT</b></li><li><b>Autosomal recessive</b></li><li>Prevalence ~1:40,000 (higher in East Asia)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Pathophysiology (DCT Defect)</div>
+<ul><li><b>NCC loss-of-function</b> → ↓ NaCl reabsorption in DCT → mild volume depletion → ↑ renin/aldo</li><li><b>Paradoxical Mg2+ wasting</b> (DCT = major Mg reabsorption site via TRPM6)</li><li><b>Hypocalciuria</b> (↑ proximal Ca2+ reabsorption due to volume depletion)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Clinical Presentation</div>
+<table class="ctable"><tr><th>Feature</th><th>Typical</th></tr><tr><td>---------</td><td>---------</td></tr><tr><td>**Age at onset**</td><td>**Adolescence/adulthood** (often asymptomatic until stress)</td></tr><tr><td>**Symptoms**</td><td>Fatigue, muscle cramps, tetany (hypomagnesaemia), salt craving</td></tr><tr><td>**BP**</td><td>**Normal/Low**</td></tr><tr><td>**Growth**</td><td>Normal (vs Bartter failure to thrive)</td></tr><tr><td>**Nephrocalcinosis**</td><td>**Absent** (hypocalciuria)</td></tr><tr><td>**Chondrocalcinosis**</td><td>Adult: CPPD deposition (pseudogout)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Biochemical Profile</div>
+<table class="ctable"><tr><th>Parameter</th><th>Gitelman</th></tr><tr><td>-----------</td><td>----------</td></tr><tr><td>**K+**</td><td>**Low** (hypokalaemia)</td></tr><tr><td>**Cl-**</td><td>Low</td></tr><tr><td>**HCO3-**</td><td>**High** (metabolic alkalosis)</td></tr><tr><td>**Renin**</td><td>**High**</td></tr><tr><td>**Aldosterone**</td><td>**High**</td></tr><tr><td>**Mg2+**</td><td>**Low** (hypomagnesaemia — hallmark)</td></tr><tr><td>**Urine Ca2+**</td><td>**Low** (hypocalciuria — distinguishes from Bartter)</td></tr><tr><td>**Urine Mg2+**</td><td>**High** (renal Mg wasting)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Intervention</th><th>Details</th></tr><tr><td>--------------</td><td>---------</td></tr><tr><td>**Mg2+ supplementation**</td><td>**Oral Mg (glycinate/chloride) — mainstay**; IV if severe</td></tr><tr><td>**K+ supplements**</td><td>KCl (moderate doses)</td></tr><tr><td>**K+-sparing diuretics**</td><td>**Amiloride** (blocks ENaC → ↓ K+ wasting); Spironolactone</td></tr><tr><td>**NSAIDs**</td><td>Less effective than Bartter (PGE2 not as central)</td></tr><tr><td>**High salt diet**</td><td>Liberal NaCl intake</td></tr><tr><td>**Avoid**</td><td>Thiazides (target is NCC — already defective), loop diuretics</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Liddle Syndrome (Pseudohyperaldosteronism)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Genetics</div>
+<ul><li><b>SCNN1B</b> or <b>SCNN1G</b> (chr16p12) → <b>ENaC β/γ subunits</b> gain-of-function</li><li><b>Autosomal dominant</b></li><li>Constitutive ENaC activation → Na+ reabsorption independent of aldosterone</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Pathophysiology</div>
+<ul><li><b>ENaC always open</b> → ↑ Na+ reabsorption in CD → volume expansion → hypertension</li><li>↓ Renin, ↓ Aldosterone (suppressed)</li><li>↑ K+ &amp; H+ secretion → <b>hypokalaemia, metabolic alkalosis</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Clinical Presentation</div>
+<table class="ctable"><tr><th>Feature</th><th>Liddle</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Hypertension**</td><td>**Early-onset, severe, resistant**</td></tr><tr><td>**Hypokalaemia**</td><td>Marked</td></tr><tr><td>**Metabolic alkalosis**</td><td>Yes</td></tr><tr><td>**Renin**</td><td>**Low (suppressed)**</td></tr><tr><td>**Aldosterone**</td><td>**Low (suppressed)**</td></tr><tr><td>**Family history**</td><td>Autosomal dominant</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Differential: Liddle vs Hyperaldosteronism</div>
+<table class="ctable"><tr><th>Feature</th><th>Liddle</th><th>Primary Hyperaldosteronism</th></tr><tr><td>---------</td><td>--------</td><td>---------------------------</td></tr><tr><td>**Aldosterone**</td><td>**Low**</td><td>**High**</td></tr><tr><td>**Renin**</td><td>Low</td><td>Low</td></tr><tr><td>**ENaC mutation**</td><td>Yes</td><td>No</td></tr><tr><td>**Response to spironolactone**</td><td>**Poor** (ENaC mutation)</td><td>Good</td></tr><tr><td>**Response to amiloride/triamterene**</td><td>**Excellent**</td><td>Good</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Drug</th><th>Dose/Mechanism</th></tr><tr><td>------</td><td>----------------</td></tr><tr><td>**Amiloride**</td><td>**First-line** 5–20mg/day — blocks mutated ENaC directly</td></tr><tr><td>**Triamterene**</td><td>Alternative ENaC blocker</td></tr><tr><td>**Avoid**</td><td>Spironolactone (ineffective — acts via MR, not ENaC)</td></tr><tr><td>**Low Na+ diet**</td><td>Adjunct</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Comparison Table: Bartter vs Gitelman vs Liddle</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>**Bartter**</th><th>**Gitelman**</th><th>**Liddle**</th></tr><tr><td>---------</td><td>-------------</td><td>--------------</td><td>------------</td></tr><tr><td>**Site**</td><td>**TAL** (NKCC2/ROMK/ClC/BSND)</td><td>**DCT** (NCC)</td><td>**CD** (ENaC gain-of-function)</td></tr><tr><td>**Inheritance**</td><td>AR (Types 1-4), X-linked (Type 5)</td><td>**AR** (SLC12A3)</td><td>**AD** (SCNN1B/G)</td></tr><tr><td>**Age onset**</td><td>**Prenatal/Infancy** (Types 1,2,4); Childhood (Type 3)</td><td>**Adolescence/Adult**</td><td>**Childhood/Young adult**</td></tr><tr><td>**Polyhydramnios**</td><td>**Yes** (antenatal)</td><td>No</td><td>No</td></tr><tr><td>**Growth**</td><td>**Failure to thrive**</td><td>Normal</td><td>Normal</td></tr><tr><td>**Nephrocalcinosis**</td><td>**Yes** (hypercalciuria)</td><td>**No** (hypocalciuria)</td><td>No</td></tr><tr><td>**Hypomagnesaemia**</td><td>Mild/none</td><td>**Marked (hallmark)**</td><td>No</td></tr><tr><td>**Hypocalciuria**</td><td>No (hypercalciuria)</td><td>**Yes**</td><td>No</td></tr><tr><td>**BP**</td><td>Normal/Low</td><td>Normal/Low</td><td>**Hypertension**</td></tr><tr><td>**Renin/Aldo**</td><td>High/High</td><td>High/High</td><td>**Low/Low**</td></tr><tr><td>**Deafness**</td><td>Type 4 (BSND)</td><td>No</td><td>No</td></tr><tr><td>**Key Rx**</td><td>**Indomethacin**</td><td>**Mg2+ + Amiloride**</td><td>**Amiloride**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Bartter</b> = TAL defect, antenatal polyhydramnios, nephrocalcinosis, <b>indomethacin</b>. - <b>Gitelman</b> = DCT defect, <b>hypomagnesaemia + hypocalciuria</b>, later onset, <b>Mg²⁺ + amiloride</b>. - <b>Liddle</b> = ENaC gain-of-function, <b>hypertension + hypokalaemia + LOW renin/aldo</b>, <b>amiloride</b> (not spiro). - <b>Bartter vs Gitelman</b>: Nephrocalcinosis (Bartter YES, Gitelman NO); Hypomagnesaemia (Bartter NO, Gitelman YES); Hypocalciuria (Bartter NO, Gitelman YES). - <b>Genetics</b>: Bartter Types 1–5 (NKCC2, ROMK, ClC-Kb, Barttin, MAGE-D2); Gitelman = NCC (SLC12A3); Liddle = ENaC (SCNN1B/G). - <b>Urinary Ca2+</b> is the key discriminator: high in Bartter, low in Gitelman.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Bartter = hypertension**</td><td>Bartter = **normo/hypotension**; **Liddle = hypertension**</td></tr><tr><td>**Gitelman = childhood**</td><td>Gitelman = **adolescent/adult** (often diagnosed 20–40yr)</td></tr><tr><td>**All hypokalaemic alkalosis = Bartter/Gitelman**</td><td>**Liddle** also causes this but with **hypertension + low renin/aldo**</td></tr><tr><td>**Spironolactone works in Liddle**</td><td>**No — amiloride/triamterene only** (blocks ENaC directly)</td></tr><tr><td>**Indomethacin works in Gitelman**</td><td>Less effective; **Mg²⁺ replacement is mainstay**</td></tr><tr><td>**Bartter = hypocalciuria**</td><td>**Bartter = hypercalciuria → nephrocalcinosis**; Gitelman = hypocalciuria</td></tr><tr><td>**Gitelman = hypercalciuria**</td><td>**Gitelman = hypocalciuria** (volume depletion ↑ prox Ca2+ reabs)</td></tr><tr><td>**Liddle = high aldosterone**</td><td>**Liddle = LOW aldosterone** (suppressed by volume expansion)</td></tr><tr><td>**All Bartter types = deafness**</td><td>**Only Type 4 (BSND/barttin)** has sensorineural deafness</td></tr><tr><td>**MAGED2 = permanent**</td><td>**Type 5 (MAGED2)** = transient antenatal, resolves after birth (X-linked)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Bartter B's</b>: <b>B</b>artter = <b>B</b>aby (antenatal), <b>B</b>ig Ca²⁺ (nephrocalcinosis), <b>B</b>ad growth, <b>B</b>lock NKCC2/ROMK</li><li><b>Gitelman G's</b>: <b>G</b>itelman = <b>G</b>rown-up (adult), <b>G</b>ranny (hypomagnesaemia), <b>G</b>enerous Ca²⁺ reabs (hypocalciuria)</li><li><b>Liddle L's</b>: <b>L</b>iddle = <b>L</b>ow renin/aldo, <b>L</b>efty (hypertension), <b>L</b>ocks ENaC open</li><li><b>Site mnemonic</b>: <b>B</b>artter = <b>B</b>ase of loop (TAL); <b>G</b>itelman = <b>G</b>oes distal (DCT); <b>L</b>iddle = <b>L</b>ast segment (CD)</li><li><b>Rx</b>: <b>B</b>artter = <b>I</b>ndomethacin; <b>G</b>itelman = <b>M</b>g + <b>A</b>miloride; <b>L</b>iddle = <b>A</b>miloride</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Salt-Wasting / Hypertension Tubulopathies)) Bartter[TAL Defect] Types[1:NKCC2, 2:ROMK, 3:ClC-Kb, 4:Barttin(Deaf), 5:MAGED2(X,transient)] Features[Antenatal, Polyhydramnios, FTT, Nephrocalcinosis, High Ca urine] Rx[Indomethacin, K+, K+-sparing] Gitelman[DCT Defect] Gene[SLC12A3 = NCC] Features[Adult onset, Hypomagnesaemia, Hypocalciuria, NO nephrocalcinosis] Rx[Mg2+, Amiloride, K+] Liddle[CD ENaC Gain-of-Function] Gene[SCNN1B/G AD] Features[HTN, HypoK, Alkalosis, LOW Renin/Aldo] Rx[Amiloride (NOT spiro)] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Bartter site (TAL) vs Gitelman (DCT) vs Liddle (CD)</li><li>Bartter: antenatal, polyhydramnios, nephrocalcinosis, indomethacin</li><li>Gitelman: hypomagnesaemia, hypocalciuria, adult onset, Mg²⁺ + amiloride</li><li>Liddle: hypertension, low renin/aldo, amiloride (not spiro)</li><li>Genetic genes for each</li><li>Urine Ca2+ discriminator (high Bartter, low Gitelman)</li><li>Deafness = Bartter Type 4 only</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Bartter vs Gitelman vs Liddle differentiation (site, age, nephrocalcinosis, Mg, Ca urine, BP, renin/aldo, Rx)</td></tr><tr><td>**Should Know 🟡**</td><td>Bartter Types 1–5 genetic details, Gitelman prevalence (East Asia), Liddle AD inheritance, transient MAGED2</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel NCC modulators, ENaC structure/function, TRPM6 regulation, prenatal diagnosis, knockout mouse models</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Bartter syndrome site of defect:</b></li></ol>
+<p>A. DCT (NCC) B. CD (ENaC) C. <b>TAL (NKCC2/ROMK/ClC-Kb/Barttin)</b> D. PCT (NHE3) E. CD (MR)</p>
+<ol><li><b>Gitelman syndrome hallmark biochemical feature:</b></li></ol>
+<p>A. Hypercalciuria B. Nephrocalcinosis C. <b>Hypomagnesaemia + Hypocalciuria</b> D. Hyperkalaemia E. Low renin</p>
+<ol><li><b>Liddle syndrome — aldosterone level:</b></li></ol>
+<p>A. High B. <b>Low (suppressed)</b> C. Normal D. Variable E. Very high</p>
+<ol><li><b>Bartter type with sensorineural deafness:</b></li></ol>
+<p>A. Type 1 (NKCC2) B. Type 2 (ROMK) C. Type 3 (ClC-Kb) D. <b>Type 4 (BSND/Barttin)</b> E. Type 5 (MAGED2)</p>
+<ol><li><b>Drug of choice for Bartter syndrome:</b></li></ol>
+<p>A. Hydrochlorothiazide B. <b>Indomethacin</b> C. Amiloride D. Spironolactone E. Furosemide</p>
+<ol><li><b>Gitelman syndrome — urine calcium:</b></li></ol>
+<p>A. High (hypercalciuria) B. <b>Low (hypocalciuria)</b> C. Normal D. Variable E. Not measurable</p>
+<ol><li><b>Liddle syndrome — best treatment:</b></li></ol>
+<p>A. Spironolactone B. <b>Amiloride (or triamterene)</b> C. ACE inhibitor D. Indomethacin E. Magnesium</p>
+<ol><li><b>Bartter vs Gitelman — key discriminator:</b></li></ol>
+<p>A. Hypokalaemia (both) B. Metabolic alkalosis (both) C. <b>Urine calcium: High in Bartter, Low in Gitelman</b> D. Renin (both high) E. Age (both childhood)</p>
+<ol><li><b>Gitelman syndrome gene:</b></li></ol>
+<p>A. SLC12A1 B. KCNJ1 C. <b>SLC12A3 (NCC)</b> D. CLCNKB E. SCNN1B</p>
+<ol><li><b>Bartter syndrome — inheritance:</b></li></ol>
+<p>A. Autosomal dominant B. <b>Autosomal recessive (Types 1-4); X-linked (Type 5)</b> C. X-linked recessive D. Mitochondrial E. Sporadic only</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Premature infant, polyhydramnios history, polyuria, failure to thrive, nephrocalcinosis on US, hypokalaemia, metabolic alkalosis, high renin/aldo. Genetic test most likely:</b></li></ol>
+<p>A. SLC12A3 B. <b>SLC12A1 (NKCC2) — Bartter Type 1</b> C. SCNN1B D. SLC12A3 E. KCNJ1</p>
+<ol><li><b>25-year-old woman, fatigue, muscle cramps, hypokalaemia (2.8), metabolic alkalosis, hypomagnesaemia (0.5), hypocalciuria. BP 100/60. Renin/aldo high. Diagnosis:</b></li></ol>
+<p>A. Bartter syndrome B. <b>Gitelman syndrome</b> C. Liddle syndrome D. Primary hyperaldosteronism E. Surreptitious diuretic use</p>
+<ol><li><b>30-year-old man, severe hypertension since teens, hypokalaemia (2.5), metabolic alkalosis, low renin, low aldosterone. Father similar. Best treatment:</b></li></ol>
+<p>A. Spironolactone B. <b>Amiloride</b> C. Indomethacin D. Hydrochlorothiazide E. Eplerenone</p>
+<ol><li><b>Neonate with transient antenatal Bartter (polyhydramnios, prematurity), resolves after birth. X-linked. Gene:</b></li></ol>
+<p>A. SLC12A1 B. KCNJ1 C. CLCNKB D. BSND E. <b>MAGED2 (Type 5)</b></p>
+<ol><li><b>Bartter syndrome — why indomethacin works:</b></li></ol>
+<p>A. Blocks ENaC B. <b>Inhibits PGE2 → ↑ TAL NaCl reabsorption, ↓ renin/aldo</b> C. Blocks NCC D. Blocks ROMK E. Increases aldosterone</p>
+<ol><li><b>Gitelman syndrome — why hypocalciuria:</b></li></ol>
+<p>A. NCC defect → ↑ Ca²⁺ reabsorption in DCT B. <b>Volume depletion → ↑ proximal Ca²⁺ reabsorption</b> C. PTH suppression D. Vitamin D deficiency E. Hypercalciuria is the feature</p>
+<ol><li><b>Liddle vs Primary Hyperaldosteronism — distinguishing test:</b></li></ol>
+<p>A. Renin (both low) B. <b>Aldosterone (Low in Liddle, High in Conn's)</b> C. K+ (both low) D. BP (both high) E. Spironolactone response (works in both)</p>
+<ol><li><b>Bartter Type 2 (KCNJ1/ROMK) — unique neonatal feature:</b></li></ol>
+<p>A. Hypercalciuria B. <b>Transient hyperkalaemia (ROMK also needed for K+ secretion)</b> C. Deafness D. Hypomagnesaemia E. Hypocalciuria</p>
+<ol><li><b>Pregnant woman with Gitelman syndrome. Mg²⁺ supplementation:</b></li></ol>
+<p>A. Avoid (teratogenic) B. <b>Continue oral Mg²⁺ (glycinate safe); monitor levels</b> C. Switch to IV only D. Stop all supplements E. Increase dose 3x</p>
+<ol><li><b>Surreptitious diuretic abuse vs Bartter/Gitelman — key test:</b></li></ol>
+<p>A. Renin B. Aldosterone C. <b>Urine diuretic screen</b> D. Urine Na+ E. Genetic testing</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Bartter site?</li></ul>
+<p>A: TAL (NKCC2/ROMK/ClC-Kb/Barttin)</p>
+<ul><li>Q: Gitelman site?</li></ul>
+<p>A: DCT (NCC/SLC12A3)</p>
+<ul><li>Q: Liddle site?</li></ul>
+<p>A: CD (ENaC gain-of-function)</p>
+<ul><li>Q: Bartter nephrocalcinosis?</li></ul>
+<p>A: Yes (hypercalciuria)</p>
+<ul><li>Q: Gitelman nephrocalcinosis?</li></ul>
+<p>A: No (hypocalciuria)</p>
+<ul><li>Q: Bartter Rx?</li></ul>
+<p>A: Indomethacin</p>
+<ul><li>Q: Gitelman Rx?</li></ul>
+<p>A: Mg²⁺ + Amiloride</p>
+<ul><li>Q: Liddle Rx?</li></ul>
+<p>A: Amiloride (NOT spiro)</p>
+<ul><li>Q: Bartter Type 4 deafness?</li></ul>
+<p>A: BSND (barttin)</p>
+<ul><li>Q: Gitelman hypocalciuria?</li></ul>
+<p>A: Yes (hallmark)</p>
+<ul><li>Q: Liddle aldosterone?</li></ul>
+<p>A: Low (suppressed)</p>
+<ul><li>Q: Liddle renin?</li></ul>
+<p>A: Low</p>
+<ul><li>Q: Spiro works in Liddle?</li></ul>
+<p>A: No — amiloride only</p>
+<ul><li>Q: Bartter inheritance?</li></ul>
+<p>A: AR (Types 1-4), X-linked (Type 5)</p>
+<ul><li>Q: Gitelman inheritance?</li></ul>
+<p>A: AR (SLC12A3)</p>
+<ul><li>Q: Liddle inheritance?</li></ul>
+<p>A: AD (SCNN1B/G)</p>
+<ul><li>Q: MAGED2 Bartter?</li></ul>
+<p>A: Type 5, transient antenatal, X-linked, resolves after birth</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>C</b> — Bartter = TAL defect (NKCC2, ROMK, ClC-Kb, Barttin).</li><li><b>C</b> — Gitelman = hypomagnesaemia + hypocalciuria (hallmark pair).</li><li><b>B</b> — Liddle = volume expansion from ENaC overactivity → suppressed renin &amp; aldosterone.</li><li><b>D</b> — BSND (barttin) = β-subunit for ClC-Ka &amp; ClC-Kb → deafness (inner ear ClC-Ka).</li><li><b>B</b> — Indomethacin inhibits PGE2 (high in Bartter) → ↑ TAL NaCl reabsorption, ↓ renin/aldo.</li><li><b>B</b> — Volume depletion → ↑ proximal Ca²⁺ reabsorption → hypocalciuria (vs Bartter hypercalciuria).</li><li><b>B</b> — Amiloride/triamterene block ENaC directly; spironolactone acts via MR (ineffective in ENaC mutation).</li><li><b>C</b> — Urine Ca²⁺: High in Bartter (nephrocalcinosis), Low in Gitelman (hypocalciuria).</li><li><b>C</b> — SLC12A3 encodes NCC (DCT). SLC12A1 = NKCC2 (Bartter 1). KCNJ1 = ROMK (Bartter 2).</li><li><b>B</b> — Types 1–4 AR; Type 5 (MAGED2) X-linked recessive.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Premature + polyhydramnios + nephrocalcinosis + FTT = antenatal Bartter Type 1 (NKCC2).</li><li><b>B</b> — Adult + hypomagnesaemia + hypocalciuria + high renin/aldo + normal BP = Gitelman.</li><li><b>B</b> — Hypertension + hypokalaemia + low renin/aldo + AD family = Liddle → amiloride (ENaC blocker).</li><li><b>E</b> — Transient antenatal Bartter resolving postnatally, X-linked = MAGED2 (Type 5).</li><li><b>B</b> — Indomethacin inhibits PGE2 → ↑ NKCC2 activity, ↓ renin/aldo, ↑ K+.</li><li><b>B</b> — Volume depletion from NCC loss → ↑ proximal tubule Ca²⁺ reabsorption → hypocalciuria.</li><li><b>B</b> — Aldosterone: Low in Liddle (suppressed), High in Conn's. Spironolactone works in Conn's, not Liddle.</li><li><b>B</b> — ROMK needed for K+ secretion in TAL; Type 2 = transient neonatal hyperkalaemia.</li><li><b>B</b> — Oral Mg²⁺ (glycinate) safe in pregnancy; monitor levels. IV Mg²⁺ if severe.</li><li><b>C</b> — Urine diuretic screen distinguishes surreptitious use from genetic tubulopathies.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Bartter, Gitelman &amp; Liddle Syndromes</b> are <b>Must Know 🔴</b> tubulopathy topics. <b>Bartter</b>: TAL defect (NKCC2/ROMK/ClC-Kb/Barttin/MAGED2), AR (Types 1–4), X-linked (Type 5). Antenatal polyhydramnios, FTT, <b>nephrocalcinosis</b> (hypercalciuria), high renin/aldo. <b>Rx: Indomethacin + K+</b>. <b>Gitelman</b>: DCT defect (NCC/SLC12A3), AR. Adolescent/adult, <b>hypomagnesaemia + hypocalciuria</b> (hallmark), NO nephrocalcinosis, high renin/aldo. <b>Rx: Mg²⁺ + Amiloride + K+</b>. <b>Liddle</b>: CD ENaC gain-of-function (SCNN1B/G), AD. <b>Hypertension</b>, hypokalaemia, alkalosis, <b>LOW renin/aldo</b>. <b>Rx: Amiloride (NOT spiro)</b>. <b>Key discriminators</b>: Urine Ca²⁺ (Bartter HIGH, Gitelman LOW); BP (Liddle HIGH, others LOW); Mg²⁺ (Gitelman LOW); Renin/aldo (Liddle LOW, others HIGH). <b>Genetics</b>: Bartter 1–5 (NKCC2, ROMK, ClC-Kb, Barttin, MAGED2); Gitelman (NCC); Liddle (ENaC). <b>Exam focus</b>: Site, age, nephrocalcinosis, Mg/Ca urine, BP, renin/aldo, specific Rx.</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Bartter and Gitelman Syndromes (plus Liddle) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

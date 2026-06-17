@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clinical Examination of the Kidney and Urinary Tract — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">Clinical Examination of the Kidney and Urinary Tract</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Perform systematic clinical examination of renal and urinary systems</li><li>Identify key findings in renal and urological diseases</li><li>Correlate examination findings with underlying pathology</li><li>Apply examination findings to FCPS/MRCP clinical vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">General Assessment</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Component</th><th>Key Points</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**Vital Signs**</td><td>**BP (both arms, sitting/standing)** — hypertension is both cause and consequence of renal disease; **Pulse** — tachycardia in uraemia, sepsis; **Temp** — infection (UTI, perinephric abscess); **RR** — Kussmaul breathing in metabolic acidosis</td></tr><tr><td>**General Appearance**</td><td>**Pallor** (anaemia of CKD); **Pigmentation** (uraemic, Addison's); **Oedema** (nephrotic, CKD, heart failure); **Uraemic frost** (severe uraemia); **Bruising/ecchymoses** (uraemic platelet dysfunction)</td></tr><tr><td>**Fluid Status**</td><td>**JVP** (raised in fluid overload, heart failure); **Skin turgor** (dehydration); **Peripheral oedema** (nephrotic, CCF, hepatic); **Sacral oedema** (bedbound); **Ascites** (nephrotic, hepatic, malignant)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Abdominal Examination</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Kidney Palpation</div>
+<table class="ctable"><tr><th>Kidney</th><th>Technique</th><th>Normal</th><th>Abnormal Findings</th></tr><tr><td>--------</td><td>-----------</td><td>--------</td><td>-------------------</td></tr><tr><td>**Right**</td><td>Ballotment in RUQ, inspiration</td><td>Not palpable</td><td>Enlarged (PKD, hydronephrosis, RCC, infiltration), small/irregular (chronic scarring)</td></tr><tr><td>**Left**</td><td>Ballotment in LUQ, inspiration</td><td>May be palpable in thin</td><td>Enlarged (PKD, hydronephrosis, RCC, splenomegaly mimic), small/irregular</td></tr></table>
+<table class="ctable"><tr><th>Finding</th><th>Significance</th></tr><tr><td>---------</td><td>--------------</td></tr><tr><td>**Ballotable kidney**</td><td>Hydronephrosis, PKD, RCC, perinephric abscess</td></tr><tr><td>**Irregular, hard, fixed**</td><td>Renal cell carcinoma, TB, amyloidosis</td></tr><tr><td>**Smooth, firm, enlarged**</td><td>Acute glomerulonephritis, early PKD, infiltration</td></tr><tr><td>**Small, irregular, contracted**</td><td>Chronic pyelonephritis, chronic glomerulonephritis, hypertensive nephrosclerosis, reflux nephropathy</td></tr></table>
+<div class="sub-h">Bladder Palpation</div>
+<table class="ctable"><tr><th>Finding</th><th>Significance</th></tr><tr><td>---------</td><td>--------------</td></tr><tr><td>**Palpable bladder**</td><td>Urinary retention (outflow obstruction, neurogenic bladder), distended bladder</td></tr><tr><td>**Suprapubic tenderness**</td><td>Cystitis, acute retention, peritonitis</td></tr></table>
+<div class="sub-h">Flank Tenderness</div>
+<table class="ctable"><tr><th>Location</th><th>Significance</th></tr><tr><td>----------</td><td>--------------</td></tr><tr><td>**Costovertebral angle (CVA) tenderness**</td><td>Pyelonephritis, perinephric abscess, renal infarction, ureteric colic</td></tr><tr><td>**Renal angle tenderness**</td><td>Perinephric collection, subcapsular haemorrhage</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Genitourinary Examination</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Male</div>
+<table class="ctable"><tr><th>Component</th><th>Key Findings</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**Penis**</td><td>Hypospadias, epispadias, phimosis, balanitis, warts, ulcers (HSV, syphilis), carcinoma</td></tr><tr><td>**Urethral meatus**</td><td>Stricture (calibre), discharge (gonorrhoea, chlamydia), meatal stenosis</td></tr><tr><td>**Scrotum**</td><td>Swelling (hydrocele, hernia, tumour), erythema (Fournier's gangrene)</td></tr><tr><td>**Testes**</td><td>Size (atrophy in CKD, hypogonadism), consistency (hard = tumour), position (undescended), tenderness (epididymo-orchitis)</td></tr><tr><td>**Epididymis**</td><td>Tenderness, thickening (epididymitis, TB), nodules (tumour)</td></tr><tr><td>**Spermatic cord**</td><td>Varicocele (left > right, increases with Valsalva), hernia</td></tr></table>
+<div class="sub-h">Prostate (Digital Rectal Examination)</div>
+<table class="ctable"><tr><th>Finding</th><th>Significance</th></tr><tr><td>---------</td><td>--------------</td></tr><tr><td>**Smooth, firm, non-tender, 20-30g**</td><td>Normal</td></tr><tr><td>**Smooth, firm, enlarged, non-tender**</td><td>Benign Prostatic Hyperplasia (BPH)</td></tr><tr><td>**Hard, irregular, nodular, fixed**</td><td>Prostate carcinoma</td></tr><tr><td>**Tender, boggy, warm**</td><td>Acute prostatitis</td></tr><tr><td>**Fluctuant**</td><td>Prostatic abscess</td></tr></table>
+<div class="sub-h">Female</div>
+<table class="ctable"><tr><th>Component</th><th>Key Findings</th></tr><tr><td>-----------</td><td>--------------</td></tr><tr><td>**Vulva**</td><td>Atrophy (post-menopausal), ulcers (lichen sclerosus, carcinoma), warts</td></tr><tr><td>**Urethra**</td><td>Caruncle, diverticulum, stricture, discharge</td></tr><tr><td>**Vagina**</td><td>Atrophy, prolapse (cystocele, rectocele, uterine), discharge (infection)</td></tr><tr><td>**Urethral meatus**</td><td>Stricture, diversion, meatal stenosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Neurological Examination (Uraemic Complications)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Finding</th><th>Significance</th></tr><tr><td>---------</td><td>--------------</td></tr><tr><td>**Asterixis (flapping tremor)**</td><td>Uraemic encephalopathy, hepatic encephalopathy</td></tr><tr><td>**Peripheral neuropathy**</td><td>Sensory > motor, stocking-glove (uraemic, diabetic)</td></tr><tr><td>**Cranial nerve palsies**</td><td>Uraemic cranial neuropathy (rare)</td></tr><tr><td>**Myoclonus, seizures**</td><td>Uraemic encephalopathy</td></tr><tr><td>**Cognitive impairment**</td><td>Uraemic encephalopathy, dialysis dementia</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Skin Examination (Renal Disease)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Finding</th><th>Associated Condition</th></tr><tr><td>---------</td><td>---------------------</td></tr><tr><td>**Pallor**</td><td>Anaemia (CKD, ESRD)</td></tr><tr><td>**Hyperpigmentation**</td><td>Uraemia, Addison's, haemochromatosis</td></tr><tr><td>**Uraemic frost**</td><td>Severe uraemia (urea crystallises on skin)</td></tr><tr><td>**Ecchymoses, petechiae**</td><td>Uraemic platelet dysfunction</td></tr><tr><td>**Calcinosis cutis**</td><td>Calciphylaxis (ESRD, hyperparathyroidism)</td></tr><tr><td>**Pruritus, excoriations**</td><td>Uraemic pruritus, cholestasis</td></tr><tr><td>**Purpura, livedo reticularis**</td><td>Vasculitis, cholesterol emboli, APS</td></tr><tr><td>**Nail changes**</td><td>Half-and-half nails (Lindsay's nails = CKD), Beau's lines</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Vascular Access Examination (Dialysis Patients)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Access Type</th><th>Examination Points</th></tr><tr><td>-------------</td><td>-------------------</td></tr><tr><td>**AVF (Radiocephalic, Brachiocephalic, Brachiobasilic)**</td><td>**Thrill** (palpable), **Bruit** (continuous, machinery-like), **Maturation** (vein diameter >6mm, depth <6mm, length >6cm), **No stenosis** (no collateral veins, no arm swelling)</td></tr><tr><td>**AVG (PTFE graft)**</td><td>Thrill, bruit, signs of infection</td></tr><tr><td>**CVC (Tunnelled, Non-tunnelled)**</td><td>Exit site (infection, tunnel), patency (blood return), fibrin sheath</td></tr></table>
+<table class="ctable"><tr><th>Complication</th><th>Signs</th></tr><tr><td>--------------</td><td>-------</td></tr><tr><td>**Stenosis**</td><td>Loss of thrill/bruit, prolonged bleeding post-dialysis, high venous pressure, collateral veins, arm oedema</td></tr><tr><td>**Thrombosis**</td><td>Loss of thrill/bruit, no blood return</td></tr><tr><td>**Infection**</td><td>Erythema, warmth, purulent discharge, fever, bacteraemia</td></tr><tr><td>**Aneurysm**</td><td>Pulsatile swelling, thinning skin</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>BP</b> measurement is the single most important examination in renal disease - <b>Ballotable kidney</b> = hydronephrosis, PKD, RCC - <b>Small, irregular kidneys</b> = chronic irreversible disease - <b>CVA tenderness</b> = pyelonephritis, ureteric colic - <b>DRE</b> mandatory in male urinary symptoms (BPH, prostate Ca) - <b>Asterixis</b> = uraemic/hepatic encephalopathy - <b>Uraemic frost</b> = severe uraemia - <b>Half-and-half nails</b> = CKD (Lindsay's nails) - <b>AVF thrill/bruit</b> = patent; loss = stenosis/thrombosis</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Renal angle vs CVA tenderness**</td><td>Renal angle = perinephric; CVA = pyelonephritis/colic</td></tr><tr><td>**BPH vs Prostate Cancer**</td><td>BPH = smooth, firm, symmetric; CaP = hard, irregular, nodular</td></tr><tr><td>**Enlarged kidney = obstruction**</td><td>Also PKD, RCC, infiltration, early GN</td></tr><tr><td>**Small kidney = chronic disease**</td><td>Also congenital, vascular, reflux</td></tr><tr><td>**AVF bruit = always patent**</td><td>Early stenosis may still have bruit</td></tr><tr><td>**Uraemic frost = uraemia only**</td><td>Also in severe dehydration with high urea</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Renal exam</b>: <b>B</b>P, <b>B</b>allotment, <b>C</b>VA, <b>D</b>RE, <b>S</b>kin, <b>N</b>ails = <b>BBCDSN</b></li><li><b>Kidney enlargement causes</b>: <b>P</b>KD, <b>H</b>ydronephrosis, <b>R</b>CC, <b>I</b>nfiltration = <b>PHRI</b></li><li><b>Small kidney causes</b>: <b>C</b>hronic pyelo, <b>G</b>N, <b>H</b>ypertensive, <b>R</b>eflux = <b>CGHR</b></li><li><b>AVF maturation</b>: <b>D</b>iameter &gt;6mm, <b>D</b>epth &lt;6mm, <b>L</b>ength &gt;6cm = <b>DDL</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Renal/Urology Exam)) Vital_Signs[BP<i>, Pulse, Temp, RR] General[Pallor, Oedema, Pigmentation, Frost] Abdomen Kidneys[Palpation, Ballotment, Size, Consistency] Bladder[Distension, Tenderness] Flank[CVA Tenderness] GU_Male[Penis, Urethra, Scrotum, Testes, Epididymis, Prostate</i>] GU_Female[Vulva, Urethra, Vagina, Prolapse] Neuro[Asterixis, Neuropathy, Encephalopathy] Skin[Pallor, Pigmentation, Frost, Nails] Vascular_Access[Thrill, Bruit, Complications] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>How to ballot kidneys? What does ballotable mean?</li><li>CVA tenderness vs renal angle tenderness</li><li>Normal prostate vs BPH vs prostate cancer on DRE</li><li>AVF maturation criteria (rule of 6s)</li><li>Asterixis — causes, mechanism</li><li>Uraemic frost — mechanism</li><li>Half-and-half nails = ?</li><li>CVA tenderness vs renal angle tenderness</li><li>AVF thrill vs bruit significance</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>BP measurement, kidney palpation/ballotment, CVA tenderness, DRE, AVF assessment, asterixis, uraemic frost</td></tr><tr><td>**Should Know 🟡**</td><td>Peripheral neuropathy, skin changes, bladder palpation, female GU exam</td></tr><tr><td>**Nice to Know 🟢**</td><td>Urological neurological exam, female urethral examination</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>The single most important vital sign to measure in a patient with renal disease is:</b></li></ol>
+<p>A. Temperature B. <b>Blood pressure</b> C. Pulse rate D. Respiratory rate E. Oxygen saturation</p>
+<ol><li><b>A ballotable kidney is most suggestive of:</b></li></ol>
+<p>A. Chronic glomerulonephritis B. <b>Hydronephrosis or polycystic kidney disease</b> C. Chronic pyelonephritis D. Renal cortical necrosis E. Renal artery stenosis</p>
+<ol><li><b>On DRE, a hard, irregular, nodular prostate suggests:</b></li></ol>
+<p>A. BPH B. <b>Prostate carcinoma</b> C. Prostatitis D. Prostatic abscess D. Normal prostate</p>
+<ol><li><b>CVA tenderness is classically associated with:</b></li></ol>
+<p>A. Renal artery stenosis B. Perinephric abscess C. <b>Pyelonephritis or ureteric colic</b> D. Renal cortical necrosis E. Renal artery thrombosis</p>
+<ol><li><b>AVF maturation requires which "Rule of 6s"?</b></li></ol>
+<p>A. Diameter &gt;4mm, Depth &lt;4mm, Length &gt;4cm B. <b>Diameter &gt;6mm, Depth &lt;6mm, Length &gt;6cm</b> C. Diameter &gt;8mm, Depth &lt;8mm, Length &gt;8cm D. Diameter &gt;10mm, Depth &lt;10mm, Length &gt;10cm E. Diameter &gt;12mm, Depth &lt;12mm, Length &gt;12cm</p>
+<ol><li><b>Asterixis (flapping tremor) is most characteristic of:</b></li></ol>
+<p>A. Parkinson's disease B. <b>Uraemic or hepatic encephalopathy</b> C. Hyperthyroidism D. CO2 retention E. Alcohol withdrawal</p>
+<ol><li><b>Uraemic frost is caused by:</b></li></ol>
+<p>A. Hypercalcaemia B. <b>Urea crystallising on skin from sweat</b> C. Hyperphosphataemia D. Secondary hyperparathyroidism E. Calciphylaxis</p>
+<ol><li><b>Half-and-half (Lindsay's) nails are characteristic of:</b></li></ol>
+<p>A. Iron deficiency anaemia B. <b>Chronic kidney disease</b> C. Liver cirrhosis D. Congestive heart failure E. HIV/AIDS</p>
+<ol><li><b>On DRE, a hard, irregular, nodular prostate suggests:</b></li></ol>
+<p>A. BPH B. <b>Prostate carcinoma</b> C. Prostatitis D. Cyst E. Normal</p>
+<ol><li><b>Ballotable left kidney in a thin patient may be normal, but ballotable right kidney is more suggestive of pathology because:</b></li></ol>
+<p>A. Right kidney is lower B. <b>Right kidney is more posterolateral and easier to ballot when enlarged</b> C. Left kidney is protected by spleen D. Right kidney is larger E. Left kidney is never ballotable</p>
+<ol><li><b>Loss of thrill and bruit in AVF suggests:</b></li></ol>
+<p>A. Maturation B. <b>Thrombosis or stenosis</b> C. Maturation D. High flow E. Infection</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>55-year-old man with CKD stage 4. On examination: BP 160/95, pale conjunctivae, bilateral pedal oedema. Abdominal exam: right kidney ballotable, left kidney not palpable. Most likely diagnosis:</b></li></ol>
+<p>A. Chronic glomerulonephritis B. <b>Autosomal dominant polycystic kidney disease (ADPKD)</b> C. Bilateral renal artery stenosis C. Chronic pyelonephritis E. Renal amyloidosis</p>
+<ol><li><b>65-year-old man with LUTS. DRE: prostate 40g, smooth, firm, non-tender, median sulcus present. PSA 3.5 ng/mL. Most likely diagnosis:</b></li></ol>
+<p>A. Prostate cancer B. <b>Benign Prostatic Hyperplasia (BPH)</b> C. Prostatitis D. Prostatic abscess E. Normal prostate</p>
+<ol><li><b>70-year-old woman with AKI. On exam: asterixis present. This sign indicates:</b></li></ol>
+<p>A. Hepatic encephalopathy only B. <b>Uraemic (or hepatic) encephalopathy</b> C. Parkinsonism D. CO2 narcosis E. Hypercapnic respiratory failure</p>
+<ol><li><b>45-year-old man on haemodialysis via AVF. Arm swollen, dilated collateral veins, no thrill/bruit. Most likely complication:</b></li></ol>
+<p>A. Infection B. <b>Stenosis or thrombosis of AVF</b> C. Aneurysm D. High output cardiac failure E. Steal syndrome</p>
+<ol><li><b>30-year-old man with loin pain. CVA tenderness on right. Urine dipstick: blood++, protein+. Most likely:</b></li></ol>
+<p>A. Pyelonephritis B. <b>Ureteric colic (renal colic)</b> C. Renal cortical necrosis D. Renal artery thrombosis E. RCC</p>
+<ol><li><b>72-year-old man on haemodialysis. AVF at wrist: thrill and bruit present, but arm swollen with collaterals. Best next step:</b></li></ol>
+<p>A. Anticoagulation B. <b>Refer for fistulogram/angioplasty (suspected stenosis)</b> C. Ligature D. Create new AVF D. Anticoagulation</p>
+<ol><li><b>DRE in 60-year-old man: prostate hard, irregular, fixed, right lobe nodule. PSA 25 ng/mL. Next step:</b></li></ol>
+<p>A. TRUS biopsy B. <b>TRUS biopsy + MRI prostate + bone scan (staging)</b> C. MRI only D. Start androgen deprivation E. Palliative care</p>
+<ol><li><b>50-year-old woman with recurrent UTIs. Suprapubic tenderness on palpation. Best initial investigation:</b></li></ol>
+<p>A. CT urogram B. <b>Urine culture + sensitivity</b> C. Cystoscopy D. Ultrasound KUB E. IVU</p>
+<ol><li><b>Patient on HD via AVF. Pre-dialysis: thrill present, bruit continuous. Post-dialysis: thrill absent, bruit absent. Most likely:</b></li></ol>
+<p>A. AVF thrombosis B. <b>AVF stenosis (loss of thrill/bruit after dialysis = outflow stenosis)</b> C. AVF maturation D. Access recirculation E. Cardiac failure</p>
+<ol><li><b>12-year-old boy with nephrotic syndrome. ON exam: bilateral pitting oedema, ascites. Nail finding characteristic of CKD:</b></li></ol>
+<p>A. Clubbing B. <b>Half-and-half (Lindsay's) nails</b> C. Koilonychia D. Beau's lines E. Splinter haemorrhages</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Most important vital sign in renal disease?</li></ul>
+<p>A: Blood pressure</p>
+<ul><li>Q: Ballotable kidney = ?</li></ul>
+<p>A: Hydronephrosis or PKD (or RCC)</p>
+<ul><li>Q: CVA tenderness = ?</li></ul>
+<p>A: Pyelonephritis or ureteric colic</p>
+<ul><li>Q: AVF maturation rule of 6s?</li></ul>
+<p>A: Diameter &gt;6mm, Depth &lt;6mm, Length &gt;6cm</p>
+<ul><li>Q: DRE prostate cancer?</li></ul>
+<p>A: Hard, irregular, nodular, fixed</p>
+<ul><li>Q: DRE BPH?</li></ul>
+<p>A: Smooth, firm, symmetrical, non-tender, median sulcus present</p>
+<ul><li>Q: Asterixis = ?</li></ul>
+<p>A: Uraemic/hepatic encephalopathy</p>
+<ul><li>Q: Uraemic frost mechanism?</li></ul>
+<p>A: Urea crystallising from sweat</p>
+<ul><li>Q: Half-and-half nails = ?</li></ul>
+<p>A: CKD (Lindsay's nails)</p>
+<ul><li>Q: AVF thrill/bruit loss?</li></ul>
+<p>A: Thrombosis or stenosis</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — BP is the single most important vital sign in renal disease</li><li><b>B</b> — Ballotable = hydronephrosis, PKD, RCC (enlarged, mobile kidney)</li><li><b>B</b> — Hard, irregular, nodular = prostate cancer</li><li><b>C</b> — CVA tenderness = pyelonephritis or ureteric colic</li><li><b>B</b> — Rule of 6s: diameter &gt;6mm, depth &lt;6mm, length &gt;6cm</li><li><b>B</b> — Asterixis = uraemic/hepatic encephalopathy (flapping tremor)</li><li><b>B</b> — Urea in sweat crystallises on skin = uraemic frost</li><li><b>B</b> — Half-and-half (Lindsay's) nails = CKD</li><li><b>B</b> — Repeated for emphasis: hard, irregular = CaP</li><li><b>B</b> — Right kidney more posterolateral, easier to ballot when enlarged</li><li><b>B</b> — Loss of thrill/bruit = thrombosis or stenosis</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Bilateral ballotable kidneys + CKD + family history = ADPKD</li><li><b>B</b> — Smooth, firm, non-tender, enlarged with sulcus = BPH</li><li><b>B</b> — Asterixis = uraemic encephalopathy (CKD 4/5)</li><li><b>B</b> — Swollen arm + collaterals + loss of thrill/bruit = outflow stenosis</li><li><b>B</b> — CVA tenderness + haematuria = ureteric colic (stone)</li><li><b>B</b> — Swollen arm + collaterals + loss of thrill = stenosis → fistulogram + angioplasty</li><li><b>B</b> — Hard, irregular prostate + PSA 25 → TRUS biopsy + staging (MRI/bone scan)</li><li><b>B</b> — Suprapubic tenderness + recurrent UTI → urine culture first</li><li><b>B</b> — Loss of thrill/bruit POST-dialysis = outflow stenosis (post-dialysis venous pressure drop)</li><li><b>B</b> — Lindsay's nails = half-and-half = CKD/nephrotic syndrome</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Clinical Examination of the Kidney and Urinary Tract</b> is a <b>Must Know 🔴</b> topic. <b>Key takeaway:</b> Systematic exam: BP → fluid status → abdomen (kidneys, bladder, CVA) → GU (male/female) → neuro (asterixis) → skin (pallor, frost, nails) → vascular access (AVF). BP is #1 vital sign. Ballotable kidney = obstruction/PKD. CVA tenderness = pyelo/colic. DRE: BPH vs CaP. AVF: thrill/bruit = patent; loss = stenosis/thrombosis. Asterixis = uraemic encephalopathy. Uraemic frost = urea in sweat. Half-and-half nails = CKD. <b>Exam focus:</b> BP, ballotment, CVA, DRE, AVF assessment, asterixis, skin/nail signs. <b>Clinical relevance:</b> Bedside diagnosis of AKI, CKD, obstruction, infection, dialysis access complications.</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Clinical Examination of the Kidney and Urinary Tract · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

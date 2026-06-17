@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Priapism — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">Priapism</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Differentiate ischaemic vs non-ischaemic priapism (clinical, blood gas, Doppler)</li><li>Apply time-critical management for ischaemic priapism (aspiration, irrigation, phenylephrine, shunting)</li><li>Manage non-ischaemic priapism conservatively/embolisation</li><li>Recognise sickle cell priapism specifics (exchange transfusion, hydroxyurea prophylaxis)</li><li>Identify drug-induced causes and management</li><li>Apply to FCPS/MRCP emergency urology vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Classification</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Blood Flow</th><th>Age</th><th>Urgency</th></tr><tr><td>------</td><td>-----------</td><td>------------</td><td>-----</td><td>---------</td></tr><tr><td>**Ischaemic (Low-flow)**</td><td>Venous occlusion → corporal hypoxia/acidosis</td><td>**Low/Stagnant**</td><td>All (peak 30–40, sickle cell: children)</td><td>**Emergency (>4hr = permanent damage)**</td></tr><tr><td>**Non-ischaemic (High-flow)**</td><td>Arterial-lacunar fistula (trauma) → unregulated arterial inflow</td><td>**High**</td><td>Post-perineal trauma</td><td>Semi-elective</td></tr><tr><td>**Stuttering (Recurrent Ischaemic)**</td><td>Recurrent self-limiting ischaemic episodes</td><td>Intermittent</td><td>Sickle cell, idiopathic</td><td>Prevent progression</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Ischaemic Priapism (Low-Flow) — Emergency</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Aetiology</div>
+<table class="ctable"><tr><th>Category</th><th>Causes</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Idiopathic**</td><td>~30–50%</td></tr><tr><td>**Sickle Cell Disease**</td><td>**Most common in children/adolescents** (HbSS, HbSC, HbSβ-thal)</td></tr><tr><td>**Drug-Induced**</td><td>**PDE5 inhibitors** (sildenafil, tadalafil), **Anticoagulants** (warfarin, heparin, DOACs), **Antipsychotics** (risperidone, olanzapine, chlorpromazine), **Antidepressants** (trazodone, SSRIs), **Alpha-blockers** (tamsulosin), **Cocaine, Alcohol**</td></tr><tr><td>**Malignancy**</td><td>Leukaemia, metastatic infiltration</td></tr><tr><td>**Neurological**</td><td>Spinal cord injury, herniated disc, tumours</td></tr><tr><td>**Infections**</td><td>Sepsis, UTI</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Clinical Presentation</div>
+<table class="ctable"><tr><th>Feature</th><th>Ischaemic</th><th>Non-ischaemic</th></tr><tr><td>---------</td><td>-----------</td><td>---------------</td></tr><tr><td>**Pain**</td><td>**Severe, progressive**</td><td>Painless or mild</td></tr><tr><td>**Erection**</td><td>**Rigid corporal bodies**, glans **soft** (glans not involved)</td><td>**Non-rigid**, tumescent, glans may be engorged</td></tr><tr><td>**Duration**</td><td>>4 hours (often hours–days)</td><td>Hours to days</td></tr><tr><td>**Corpus spongiosum/glans**</td><td>**Soft** (not involved)</td><td>May be engorged</td></tr><tr><td>**Penile Doppler**</td><td>**Low/absent cavernosal flow**</td><td>**High arterial flow**</td></tr><tr><td>**Cavernosal Blood Gas**</td><td>**pH <7.25, pO₂ <30, pCO₂ >60** (acidosis)</td><td>Normal arterial values</td></tr></table>
+<div class="callout"><b>Glans soft + rigid corpora = ischaemic priapism</b> (corpus spongiosum spared).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Cavernosal Blood Gas (Diagnostic)</div>
+<table class="ctable"><tr><th>Parameter</th><th>Ischaemic</th><th>Normal Arterial</th></tr><tr><td>-----------</td><td>-----------</td><td>-----------------</td></tr><tr><td>**pH**</td><td>**<7.25** (acidosis)</td><td>7.35–7.45</td></tr><tr><td>**pO₂**</td><td>**<30 mmHg** (hypoxia)</td><td>80–100 mmHg</td></tr><tr><td>**pCO₂**</td><td>**>60 mmHg** (hypercapnia)</td><td>35–45 mmHg</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Management — Ischaemic Priapism (Algorithm)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Stepwise Approach (Time-Critical)</div>
+<table class="ctable"><tr><th>Time</th><th>Intervention</th></tr><tr><td>------</td><td>--------------</td></tr><tr><td>**0–4 hours**</td><td>Conservative: analgesia, ice packs, gentle exercise, oral terbutaline/sudafed (α-agonist)</td></tr><tr><td>**>4 hours**</td><td>**EMERGENCY: Corporal aspiration + irrigation + intracavernosal phenylephrine**</td></tr><tr><td>**Failed aspiration**</td><td>**Surgical shunt (distal → proximal)**</td></tr><tr><td>**Sickle Cell**</td><td>**Hydration, oxygenation, analgesia, exchange transfusion** ± aspiration/shunt</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">1. Corporal Aspiration &amp; Irrigation</div>
+<table class="ctable"><tr><th>Step</th><th>Detail</th></tr><tr><td>------</td><td>--------</td></tr><tr><td>**Anaesthesia**</td><td>Penile block (dorsal nerve) or local infiltration</td></tr><tr><td>**Aspiration**</td><td>19G butterfly needle at 2 & 10 o'clock (corpora cavernosa) — aspirate 20–50mL dark blood</td></tr><tr><td>**Irrigation**</td><td>Normal saline 50–100mL per side until effluent clear</td></tr><tr><td>**Phenylephrine**</td><td>**100–500 μg/mL** (dilute 1mg in 100–200mL NS) — inject 1mL q3–5min × max 1mg (monitor BP/HR)</td></tr><tr><td>**Repeat**</td><td>Aspirate/irrigate q10–15min if detumescence incomplete</td></tr></table>
+<div class="callout"><b>Phenylephrine</b>: α₁-agonist → corporal smooth muscle contraction. <b>Monitor BP/HR</b> (hypertension, bradycardia, arrhythmia). Contraindicated in severe CAD, uncontrolled HTN.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2. Surgical Shunt (If Aspiration Fails @ 1 hour)</div>
+<table class="ctable"><tr><th>Shunt Type</th><th>Description</th><th>Success Rate</th></tr><tr><td>------------</td><td>-------------</td><td>--------------</td></tr><tr><td>**Distal (Glans-Corporal)**</td><td>**Winter** (biopsy punch 3–5mm at glans-corpus junction), **Ebbehøj** (incision)</td><td>60–80%</td></tr><tr><td></td><td>**Al-Ghorab** (excision of tunica at glans-corpus)</td><td>70–85%</td></tr><tr><td>**Proximal (Corporospongiosal / Cavernosospongiosal)**</td><td>**Quackels** (corpus-spongiosum fistula), **Grayhack** (corpus-spongiosum with saphenous vein graft)</td><td>70–90%</td></tr><tr><td></td><td>**Eberhard** (cavernosospongiosal with graft)</td><td>70–85%</td></tr></table>
+<div class="callout"><b>Sequence</b>: Distal first (Winter/Ebbehøj/Al-Ghorab) → Proximal if distal fails.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3. Sickle Cell Priapism Specifics</div>
+<table class="ctable"><tr><th>Intervention</th><th>Detail</th></tr><tr><td>--------------</td><td>--------</td></tr><tr><td>**Hydration**</td><td>IV fluids (1.5–2x maintenance)</td></tr><tr><td>**Oxygen**</td><td>100% O₂ (reduce sickling)</td></tr><tr><td>**Analgesia**</td><td>Opioids (avoid NSAIDs if renal impairment)</td></tr><tr><td>**Exchange Transfusion**</td><td>**Target HbS <30%, Hb >10g/dL** — if aspiration fails or recurrent</td></tr><tr><td>**Hydroxyurea**</td><td>Prophylaxis for recurrent/stuttering</td></tr><tr><td>**Aspiration/Shunt**</td><td>Same as above; lower threshold for exchange</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Non-Ischaemic Priapism (High-Flow)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Aetiology</div>
+<ul><li><b>Perineal/penile trauma</b> (straddle injury, pelvic fracture) → <b>arterial-lacunar fistula</b></li><li><b>Iatrogenic</b> (penile injection, surgery)</li></ul>
+<div class="sub-h">Clinical</div>
+<ul><li>Painless/tender, <b>non-rigid</b> tumescence</li><li>Often post-trauma history</li><li>Doppler: <b>High arterial flow</b> (arterialised blood gas)</li></ul>
+<div class="sub-h">Management</div>
+<table class="ctable"><tr><th>Approach</th><th>Detail</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Observation**</td><td>25–50% spontaneous resolution</td></tr><tr><td>**Selective Arterial Embolisation**</td><td>**Definitive** (superselective angiography + coils/particles) — 90% success</td></tr><tr><td>**Surgical Ligation**</td><td>If embolisation fails/unavailable</td></tr><tr><td>**Compression**</td><td>Perineal pressure (temporary)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Stuttering (Recurrent Ischaemic) Priapism</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Recurrent self-limiting episodes</b> (&lt;4hr each)</li><li><b>High risk of progression</b> to fulminant ischaemic priapism</li><li><b>Aetiology</b>: Sickle cell (most common), idiopathic</li><li><b>Prophylaxis</b>: <b>Hydroxyurea</b> (sickle cell), <b>PDE5 inhibitors</b> (some evidence), <b> GnRH agonists</b>, <b>Baclofen</b>, <b>Terbutaline</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Priapism &gt;4hr = urological emergency</b>. - <b>Ischaemic (95%)</b> = rigid corpora, soft glans, <b>painful</b>, <b>low flow</b>, <b>acidic blood gas</b> (pH&lt;7.25, pO₂&lt;30). - <b>Non-ischaemic (5%)</b> = painless, non-rigid, <b>high flow</b>, post-trauma. - <b>Ischaemic &gt;4hr</b>: <b>Aspiration + irrigation + phenylephrine</b> (emergency). - <b>Phenylephrine</b>: 100–500 μg/mL, 1mL q3–5min, max 1mg; <b>monitor BP/HR</b>. - <b>Failed aspiration → shunt</b>: Distal (Winter/Al-Ghorab) → Proximal. - <b>Sickle cell</b>: Hydration, O₂, analgesia, <b>exchange transfusion</b> (HbS&lt;30%), hydroxyurea prophylaxis. - <b>Non-ischaemic</b>: Post-trauma, painless, non-rigid → <b>embolisation</b> (90% success). - <b>Stuttering</b>: Recurrent ischaemic → hydroxyurea prophylaxis.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**All priapism = ischaemic**</td><td>**5% = non-ischaemic** (high flow, post-trauma, painless)</td></tr><tr><td>**Glans rigid in ischaemic**</td><td>**Glans SOFT in ischaemic** (corpus spongiosum spared); glans rigid in non-ischaemic</td></tr><tr><td>**Ice packs first for ischaemic**</td><td>Ice OK adjunct but **aspiration/irrigation is definitive** after 4hr</td></tr><tr><td>**Phenylephrine = no monitoring**</td><td>**Monitor BP/HR** (hypertension, bradycardia, arrhythmia)</td></tr><tr><td>**Sickle cell = same as idiopathic**</td><td>**Lower threshold for exchange transfusion**; hydroxyurea prophylaxis</td></tr><tr><td>**Non-ischaemic = emergency surgery**</td><td>**Observation/embolisation** first; surgery if embolisation fails</td></tr><tr><td>**All priapism >4hr = shunt**</td><td>**Aspiration/irrigation/phenylephrine FIRST** (60–80% success)</td></tr><tr><td>**Oral terbutaline = definitive**</td><td>Only adjunct <4hr; >4hr = aspiration</td></tr><tr><td>**Glans involvement = ischaemic**</td><td>**Glans soft = ischaemic**; glans engorged = non-ischaemic</td></tr><tr><td>**Priapism in children = only sickle cell**</td><td>Also idiopathic, trauma, drugs, leukaemia</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Ischaemic features</b>: <b>R</b>igid corpus, <b>S</b>oft glans, <b>P</b>ainful, <b>A</b>cidic blood = <b>RSPA</b></li><li><b>Blood gas ischaemic</b>: <b>p</b>H <b>L</b>ow, <b>p</b>O₂ <b>L</b>ow, <b>p</b>CO₂ <b>H</b>igh = <b>Low Low High</b></li><li><b>Ischaemic stepwise</b>: <b>A</b>spiration → <b>I</b>rrigation → <b>P</b>henylephrine → <b>S</b>hunt = <b>AIPS</b></li><li><b>Phenylephrine</b>: <b>P</b>henylephrine = <b>P</b>ressure monitor (BP/HR)</li><li><b>Shunt sequence</b>: <b>D</b>istal (Winter/Al-Ghorab) → <b>P</b>roximal = <b>DP</b></li><li><b>Sickle cell</b>: <b>H</b>ydration, <b>O</b>xygen, <b>A</b>nalgesia, <b>E</b>xchange = <b>HOAE</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Priapism)) Ischaemic[Low-Flow 95%] Features[Rigid corpora, Soft glans, Painful, pH&lt;7.25, pO2&lt;30] Causes[Sickle cell, Drugs (PDE5i, antipsychotics, anticoagulants), Idiopathic, Leukaemia] Timeline[&gt;4hr = Emergency] Rx Aspiration[19G needle, aspirate dark blood] Irrigation[Saline until clear] Phenylephrine[100-500mcg/mL, q3-5min, max 1mg, MONITOR BP/HR] Shunt[Distal (Winter/Al-Ghorab) → Proximal] Sickle[Hydration, O2, Analgesia, Exchange Transfusion (HbS&lt;30%)] Non_Ischaemic[High-Flow 5%] Features[Non-rigid, Painless, High flow, Post-trauma] Rx[Observation → Embolisation (90%) → Surgery] Stuttering[Recurrent Ischaemic] Rx[Hydroxyurea, PDE5i, GnRH agonists, Terbutaline] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Ischaemic vs non-ischaemic differentiation (rigid/soft glans, pain, flow, blood gas)</li><li>Ischaemic blood gas (pH&lt;7.25, pO₂&lt;30, pCO₂&gt;60)</li><li>Time threshold (&gt;4hr = emergency)</li><li>Aspiration → Irrigation → Phenylephrine → Shunt</li><li>Phenylephrine dose (100–500 μg/mL, max 1mg) + BP/HR monitoring</li><li>Shunt sequence: Distal (Winter/Al-Ghorab) → Proximal</li><li>Sickle cell: Exchange transfusion (HbS&lt;30%)</li><li>Non-ischaemic: Embolisation (90%)</li><li>Stuttering: Hydroxyurea prophylaxis</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Ischaemic vs non-ischaemic, >4hr emergency, aspiration/irrigation/phenylephrine, shunt sequence, sickle cell exchange transfusion, non-ischaemic embolisation</td></tr><tr><td>**Should Know 🟡**</td><td>Phenylephrine monitoring, distal vs proximal shunt indications, stuttering prophylaxis, drug-induced causes, long-term erectile dysfunction risk</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel shunts (biodegradable), gene therapy for sickle cell, pharmacokinetic models for phenylephrine, quality of life outcomes</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Key distinguishing feature between ischaemic and non-ischaemic priapism:</b></li></ol>
+<p>A. Duration B. <b>Glans involvement (soft in ischaemic, engorged in non-ischaemic)</b> C. Age of onset D. Pain severity E. Time of day</p>
+<ol><li><b>Cavernosal blood gas in ischaemic priapism:</b></li></ol>
+<p>A. pH 7.40, pO₂ 80, pCO₂ 40 B. <b>pH &lt;7.25, pO₂ &lt;30, pCO₂ &gt;60</b> C. pH 7.30, pO₂ 50, pCO₂ 45 D. pH 7.35, pO₂ 60, pCO₂ 50 E. pH 7.20, pO₂ 100, pCO₂ 30</p>
+<ol><li><b>Time threshold for emergency intervention in ischaemic priapism:</b></li></ol>
+<p>A. 2 hours B. <b>4 hours</b> C. 6 hours D. 8 hours E. 12 hours</p>
+<ol><li><b>First-line emergency management for ischaemic priapism &gt;4 hours:</b></li></ol>
+<p>A. Oral terbutaline B. <b>Corporal aspiration + irrigation + intracavernosal phenylephrine</b> C. Immediate surgical shunt D. Ice packs only E. Observation</p>
+<ol><li><b>Phenylephrine concentration for intracavernosal injection:</b></li></ol>
+<p>A. 1–10 μg/mL B. <b>100–500 μg/mL</b> C. 1–5 mg/mL C. 10 mg/mL E. 100 mg/mL</p>
+<ol><li><b>Maximum total dose of intracavernosal phenylephrine:</b></li></ol>
+<p>A. 200 μg B. 500 μg C. <b>1 mg</b> D. 2 mg E. 5 mg</p>
+<ol><li><b>Sickle cell priapism — definitive disease-modifying intervention for recurrent episodes:</b></li></ol>
+<p>A. Repeated aspiration B. <b>Hydroxyurea prophylaxis</b> C. Chronic transfusion D. PDE5 inhibitors E. GnRH agonists</p>
+<ol><li><b>Non-ischaemic priapism — definitive management after failed observation:</b></li></ol>
+<p>A. Aspiration B. <b>Selective arterial embolisation</b> C. Distal shunt C. Phenylephrine E. Oral terbutaline</p>
+<ol><li><b>Stuttering priapism — most common association:</b></li></ol>
+<p>A. Trauma B. <b>Sickle cell disease</b> C. PDE5 inhibitors D. Anticoagulation E. Spinal cord injury</p>
+<ol><li><b>Glans penis in ischaemic priapism:</b></li></ol>
+<p>A. Rigid B. <b>Soft (spared)</b> C. Partially rigid D. Fluctuant E. Necrotic</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>28-year-old man, sickle cell disease (HbSS), 5-hour painful erection. Corpora rigid, glans soft. Cavernosal gas: pH 7.15, pO₂ 15, pCO₂ 75. First intervention:</b></li></ol>
+<p>A. Oral hydration + analgesia B. <b>Corporal aspiration + irrigation + phenylephrine</b> C. Winter shunt D. Exchange transfusion first E. Observation</p>
+<ol><li><b>35-year-old man, 6-hour erection after sildenafil use. Rigid corpora, soft glans, severe pain. Failed 2 rounds of aspiration/phenylephrine. Next step:</b></li></ol>
+<p>A. Increase phenylephrine dose B. <b>Distal shunt (Winter or Al-Ghorab)</b> C. Proximal shunt D. Exchange transfusion D. Observation</p>
+<ol><li><b>10-year-old boy, HbSS, 3-hour painful erection. Corpora rigid, glans soft. Cavernosal gas: pH 7.20. Initial management:</b></li></ol>
+<p>A. Ice packs B. <b>Aspiration + irrigation + phenylephrine + hydration + O₂ + analgesia</b> C. Exchange transfusion immediately D. Winter shunt E. Oral terbutaline</p>
+<ol><li><b>40-year-old man, straddle injury 2 weeks ago, now painless non-rigid erection. Doppler: high arterial flow. Management:</b></li></ol>
+<p>A. Aspiration + phenylephrine B. <b>Observation → selective arterial embolisation if persistent</b> C. Winter shunt D. Exchange transfusion E. Ice packs</p>
+<ol><li><b>Sickle cell patient with recurrent stuttering priapism (≥3 episodes/month). Best prophylaxis:</b></li></ol>
+<p>A. Daily PDE5 inhibitor B. <b>Hydroxyurea (titrate to MTD)</b> C. Chronic exchange transfusion D. GnRH agonist E. Terbutaline PRN</p>
+<ol><li><b>Ischaemic priapism &gt;4hr — phenylephrine injection protocol:</b></li></ol>
+<p>A. 1mg bolus once B. <b>1mL of 100–500mcg/mL q3–5min × max 1mg, monitor BP/HR</b> C. 5mg bolus D. Continuous infusion E. 100mcg/mL once</p>
+<ol><li><b>Non-ischaemic priapism post-trauma — definitive treatment:</b></li></ol>
+<p>A. Aspiration B. <b>Superselective arterial embolisation (90% success)</b> C. Distal shunt D. Phenylephrine E. Oral alpha-blocker</p>
+<ol><li><b>Sickle cell priapism &gt;4hr, failed aspiration/phenylephrine. Next step:</b></li></ol>
+<p>A. Proximal shunt B. <b>Exchange transfusion (target HbS&lt;30%) ± distal shunt</b> C. Observation D. High-dose steroids E. PDE5 inhibitor</p>
+<ol><li><b>Priapism in child — most common cause:</b></li></ol>
+<p>A. Trauma B. <b>Sickle cell disease</b> C. PDE5 inhibitor D. Antipsychotic E. Leukaemia</p>
+<ol><li><b>Monitoring during intracavernosal phenylephrine:</b></li></ol>
+<p>A. Serial cavernosal gas B. <b>Blood pressure and heart rate (hypertension, bradycardia, arrhythmia)</b> C. Urine output D. Temperature E. Oxygen saturation</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Ischaemic vs non-ischaemic key diff?</li></ul>
+<p>A: Glans soft (ischaemic) vs engorged (non-ischaemic)</p>
+<ul><li>Q: Ischaemic blood gas?</li></ul>
+<p>A: pH&lt;7.25, pO₂&lt;30, pCO₂&gt;60</p>
+<ul><li>Q: Emergency threshold?</li></ul>
+<p>A: &gt;4 hours</p>
+<ul><li>Q: First-line ischaemic &gt;4hr?</li></ul>
+<p>A: Aspiration + irrigation + phenylephrine</p>
+<ul><li>Q: Phenylephrine concentration?</li></ul>
+<p>A: 100–500 μg/mL</p>
+<ul><li>Q: Phenylephrine max dose?</li></ul>
+<p>A: 1 mg total</p>
+<ul><li>Q: Phenylephrine monitoring?</li></ul>
+<p>A: BP and HR</p>
+<ul><li>Q: Shunt sequence?</li></ul>
+<p>A: Distal (Winter/Al-Ghorab) → Proximal</p>
+<ul><li>Q: Sickle cell exchange target?</li></ul>
+<p>A: HbS &lt;30%</p>
+<ul><li>Q: Non-ischaemic definitive?</li></ul>
+<p>A: Arterial embolisation</p>
+<ul><li>Q: Stuttering prophylaxis?</li></ul>
+<p>A: Hydroxyurea</p>
+<ul><li>Q: Glans in ischaemic?</li></ul>
+<p>A: Soft</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Corpus spongiosum/glans spared in ischaemic (venous occlusion of corpora cavernosa only); engorged in non-ischaemic (arterial inflow).</li><li><b>B</b> — Ischaemic = acidosis (pH&lt;7.25), hypoxia (pO₂&lt;30), hypercapnia (pCO₂&gt;60).</li><li><b>B</b> — &gt;4 hours = emergency intervention threshold to prevent permanent fibrosis/impotence.</li><li><b>B</b> — Stepwise: aspiration → irrigation → phenylephrine (not shunt first).</li><li><b>B</b> — Standard dilution: 1mg phenylephrine in 100–200mL NS = 100–500 μg/mL.</li><li><b>C</b> — Max cumulative dose 1mg (prevent systemic α₁-effects: hypertension, bradycardia, arrhythmia).</li><li><b>B</b> — Hydroxyurea ↑ HbF → ↓ sickling → reduces stuttering episodes (proven in sickle cell).</li><li><b>B</b> — Non-ischaemic = arterial fistula → superselective embolisation (coils/particles) = 90% success.</li><li><b>B</b> — Stuttering priapism most commonly associated with sickle cell disease.</li><li><b>B</b> — Ischaemic = corpora cavernosa rigid, glans soft (corpus spongiosum not involved).</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Sickle cell, &gt;4hr, rigid corpora/soft glans, acidic gas = emergency aspiration/irrigation/phenylephrine.</li><li><b>B</b> — Failed 2 rounds of aspiration/phenylephrine → distal shunt (Winter/Al-Ghorab).</li><li><b>B</b> — Paediatric sickle cell: aspiration/irrigation/phenylephrine + aggressive hydration/O₂/analgesia; exchange if fails.</li><li><b>B</b> — Non-ischaemic (painless, high flow, post-trauma): observation first, then embolisation.</li><li><b>B</b> — Stuttering sickle cell priapism: hydroxyurea prophylaxis (↑ HbF, ↓ sickling).</li><li><b>B</b> — Standard protocol: 1mL of 100–500mcg/mL q3–5min, max 1mg total, continuous BP/HR monitoring.</li><li><b>B</b> — Superselective arterial embolisation = gold standard for non-ischaemic (90% success).</li><li><b>B</b> — Sickle cell + failed medical Rx → exchange transfusion (HbS&lt;30%) ± surgical shunt.</li><li><b>B</b> — Paediatric priapism: sickle cell disease is #1 cause.</li><li><b>B</b> — Phenylephrine α₁-effects: hypertension, reflex bradycardia, arrhythmia → monitor BP/HR.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Priapism</b> is a <b>Must Know 🔴</b> urological emergency. <b>Ischaemic (Low-flow, 95%)</b>: Rigid corpora, <b>soft glans</b>, painful, <b>blood gas pH&lt;7.25, pO₂&lt;30, pCO₂&gt;60</b>. Causes: sickle cell, drugs (PDE5i, antipsychotics, anticoagulants), idiopathic. <b>&gt;4hr = emergency</b>. <b>Stepwise Rx</b>: <b>Aspiration + irrigation + phenylephrine</b> (100–500 μg/mL, q3–5min, max 1mg, <b>monitor BP/HR</b>) → if fails → <b>Distal shunt (Winter/Al-Ghorab)</b> → <b>Proximal shunt</b>. <b>Sickle Cell</b>: Hydration, O₂, analgesia, <b>exchange transfusion (HbS&lt;30%)</b>, hydroxyurea prophylaxis for stuttering. <b>Non-ischaemic (High-flow, 5%)</b>: Post-trauma, painless, non-rigid, <b>high flow</b> → <b>embolisation</b> (90% success). <b>Stuttering</b>: Recurrent ischaemic episodes → <b>hydroxyurea prophylaxis</b>. <b>Exam focus</b>: Ischaemic vs non-ischaemic differentiation, &gt;4hr emergency, aspiration/irrigation/phenylephrine protocol, phenylephrine monitoring, shunt sequence, sickle cell exchange target, non-ischaemic embolisation, glans soft in ischaemic.</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Priapism · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

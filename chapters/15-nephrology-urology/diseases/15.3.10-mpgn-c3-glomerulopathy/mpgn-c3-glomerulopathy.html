@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MPGN and C3 Glomerulopathy (DDD, C3GN) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">MPGN and C3 Glomerulopathy (DDD, C3GN)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Classify MPGN by immunofluorescence (IC-MPGN vs C3G)</li><li>Differentiate DDD vs C3GN on EM</li><li>Identify underlying causes (infection, autoimmune, monoclonal gammopathy, complement mutations)</li><li>Apply complement studies (C3, C4, C3NeF, CFH, CFI, C3, CFB genetics)</li><li>Manage based on aetiology (immunosuppression, complement inhibition, plasma exchange)</li><li>Apply to FCPS/MRCP vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Classification (Modern — by IF)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Category</th><th>IF Pattern</th><th>Light Microscopy</th><th>Electron Microscopy</th><th>Key Drivers</th></tr><tr><td>----------</td><td>------------</td><td>------------------</td><td>---------------------</td><td>-------------</td></tr><tr><td>**IC-MPGN**</td><td>**IgG/IgM + C3** (granular)</td><td>MPGN pattern</td><td>Subendothelial ± mesangial deposits</td><td>**Immune complexes** (infections, autoimmune, MGUS/myeloma)</td></tr><tr><td>**C3 Glomerulopathy (C3G)**</td><td>**C3 dominant** (≥2+ > Ig)</td><td>MPGN pattern</td><td>**DDD**: Intramembranous dense deposits (osmiophilic ribbon); **C3GN**: Subendothelial/mesangial deposits</td><td>**Alternative pathway dysregulation** (C3NeF, CFH/CFI/C3/CFB mutations)</td></tr></table>
+<div class="callout"><b>Old classification</b> (I, II, III) <b>obsolete</b>. Use <b>IF-based classification</b> (IC-MPGN vs C3G).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Immune-Complex MPGN (IC-MPGN)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Aetiology</div>
+<table class="ctable"><tr><th>Cause</th><th>Mechanism</th><th>Typical Features</th></tr><tr><td>-------</td><td>-----------</td><td>------------------</td></tr><tr><td>**Chronic infections**</td><td>Immune complex deposition</td><td>**HCV** (cryoglobulinaemic), HBV, Endocarditis (IE), Shunt nephritis, Malaria, Schistosomiasis</td></tr><tr><td>**Autoimmune**</td><td>IC deposition</td><td>**SLE** (full-house IF), Cryoglobulinaemia, Sjögren's, IgA vasculitis (Henoch-Schönlein)</td></tr><tr><td>**Monoclonal gammopathy**</td><td>Monoclonal IC</td><td>**MGUS**, Myeloma, Lymphoproliferative — **check serum/urine immunofixation**</td></tr><tr><td>**Drug-induced**</td><td>Hapten/IC</td><td>Interferon-α, gemcitabine, heroin</td></tr></table>
+<div class="sub-h">Clinical Presentation</div>
+<ul><li><b>Nephritic syndrome</b> (haematuria, RBC casts, hypertension, AKI) — most common</li><li><b>Nephrotic syndrome</b> (20–30%)</li><li><b>Mixed nephrotic-nephritic</b></li><li><b>Asymptomatic proteinuria/haematuria</b></li><li>Low C3, <b>normal C4</b> (alternative pathway) — except cryoglobulinaemia (low C3 + low C4)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">C3 Glomerulopathy (C3G)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Pathogenesis</div>
+<table class="ctable"><tr><th>Factor</th><th>Role</th></tr><tr><td>--------</td><td>------</td></tr><tr><td>**C3 Nephritic Factor (C3NeF)**</td><td>Autoantibody stabilising C3 convertase (C3bBb) → **uncontrolled C3 cleavage** — 80% DDD, 50% C3GN</td></tr><tr><td>**CFH mutation/autoantibody**</td><td>Loss of C3b regulation → ↑ alternative pathway</td></tr><tr><td>**CFI mutation**</td><td>Impaired C3b inactivation</td></tr><tr><td>**C3 mutation**</td><td>Gain-of-function → resistant to inactivation</td></tr><tr><td>**CFB mutation**</td><td>Gain-of-function → ↑ C3 convertase formation</td></tr><tr><td>**Thrombomodulin (THBD) mutation**</td><td>Impaired C3b inactivation on endothelium</td></tr></table>
+<div class="callout"><b>C3NeF</b> = IgG autoantibody binding C3bBb → prevents decay → persistent C3 activation.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Dense Deposit Disease (DDD)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Age**</td><td>Children/young adults (5–30yr)</td></tr><tr><td>**Presentation**</td><td>Nephritic (50%), Nephrotic (30%), Mixed</td></tr><tr><td>**EM**</td><td>**Intramembranous dense deposits** (highly osmiophilic, "ribbon-like" transformation of GBM)</td></tr><tr><td>**IF**</td><td>C3 dominant (linear/granular capillary wall), no significant Ig</td></tr><tr><td>**Serum C3**</td><td>**Low** (consumed), C4 normal</td></tr><tr><td>**C3NeF**</td><td>**80–90% positive**</td></tr><tr><td>**Associations**</td><td>**Drusen** (retinal, ↑ AMD risk), **Partial lipodystrophy** (acquired, face/arms)</td></tr><tr><td>**Prognosis**</td><td>**Poor** — 50% ESRD at 10yr; recurrence post-transplant >50%</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">C3 Glomerulonephritis (C3GN)</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Age**</td><td>Broader (children → elderly)</td></tr><tr><td>**Presentation**</td><td>Variable (nephritic, nephrotic, asymptomatic)</td></tr><tr><td>**EM**</td><td>**Subendothelial &/or mesangial deposits** (NOT intramembranous dense deposits)</td></tr><tr><td>**IF**</td><td>C3 dominant (mesangial + capillary wall), no Ig</td></tr><tr><td>**Serum C3**</td><td>Low (60–70%), C4 normal</td></tr><tr><td>**C3NeF**</td><td>40–50% positive</td></tr><tr><td>**Associations**</td><td>Monoclonal gammopathy (screen!), CFH/CFI/C3/CFB mutations</td></tr><tr><td>**Prognosis**</td><td>Variable — better than DDD but still significant ESRD risk</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Complement Workup (Essential)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Interpretation</th></tr><tr><td>------</td><td>----------------</td></tr><tr><td>**C3**</td><td>Low in active disease (both IC-MPGN & C3G)</td></tr><tr><td>**C4**</td><td>Normal (alternative pathway) — **low if classical pathway** (SLE, cryoglobulinaemia)</td></tr><tr><td>**C3NeF**</td><td>Positive in ~80% DDD, 50% C3G</td></tr><tr><td>**CFH, CFI, C3, CFB levels**</td><td>Low if consumption; genetic testing if familial</td></tr><tr><td>**CFH autoantibody**</td><td>Causes acquired CFH deficiency</td></tr><tr><td>**Serum/urine immunofixation**</td><td>**Mandatory** — exclude monoclonal gammopathy (MGUS/myeloma)</td></tr><tr><td>**Genetic panel**</td><td>CFH, CFI, CFB, C3, THBD, DGKE (if familial/early onset)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">IC-MPGN</div>
+<table class="ctable"><tr><th>Aetiology</th><th>Treatment</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**HCV-associated**</td><td>**DAA therapy** (cure HCV → GN remission) ± Rituximab if cryoglobulinaemic</td></tr><tr><td>**HBV**</td><td>Antivirals (entecavir/tenofovir)</td></tr><tr><td>**IE/Endocarditis**</td><td>Antibiotics (+ valve surgery if needed)</td></tr><tr><td>**SLE**</td><td>Standard lupus nephritis protocol (MMF/CyC + steroids)</td></tr><tr><td>**Monoclonal gammopathy**</td><td>**Treat underlying clone** (bortezomib/dex ± rituximab ± daratumumab)</td></tr><tr><td>**Idiopathic**</td><td>**MMF + steroids** (KDIGO: 6mo MMF + steroids); consider CNI if refractory</td></tr></table>
+<div class="sub-h">C3 Glomerulopathy</div>
+<table class="ctable"><tr><th>Approach</th><th>Details</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Supportive**</td><td>ACEi/ARB (↓ proteinuria, ↓ BP), SGLT2i, BP control <130/80, statin</td></tr><tr><td>**Immunosuppression**</td><td>**MMF + steroids** (some benefit); CNI (tacrolimus) — evidence limited</td></tr><tr><td>**Eculizumab** (anti-C5)</td><td>**Case reports/series** — benefit in C3NeF+ with progressive CKD; not standard</td></tr><tr><td>**Iptacopan** (factor B inhibitor)</td><td>**Emerging** — APPEAR-C3G trial (phase 3) shows proteinuria reduction</td></tr><tr><td>**Pegcetacoplan** (C3 inhibitor)</td><td>**Emerging** — phase 2/3 trials ongoing</td></tr><tr><td>**Plasma exchange**</td><td>For CFH autoantibody (removes autoantibody) + immunosuppression</td></tr><tr><td>**Liver transplant**</td><td>For **CFH mutation** (CFH made in liver) — curative</td></tr></table>
+<div class="callout"><b>Transplant recurrence</b>: High in C3G (DDD &gt;50%, C3GN ~30%), lower in IC-MPGN if aetiology treated.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>MPGN reclassified by IF</b>: IC-MPGN (Ig+C3) vs C3G (C3 dominant). - <b>DDD</b>: Intramembranous dense deposits (EM), C3NeF 80–90%, drusen, lipodystrophy, poor prognosis. - <b>C3GN</b>: Subendothelial/mesangial deposits, C3NeF 40–50%, screen for monoclonal gammopathy. - <b>Low C3 + normal C4</b> = alternative pathway (C3G, IC-MPGN non-cryo). <b>Low C3 + low C4</b> = classical pathway (SLE, cryoglobulinaemia). - <b>C3NeF</b> = stabilises C3bBb → uncontrolled alternative pathway. - <b>Always check serum/urine immunofixation</b> in C3G (exclude MGUS/myeloma). - <b>Genetic testing</b>: CFH, CFI, C3, CFB, THBD if familial/early onset. - <b>Eculizumab</b> considered in progressive C3G with C3NeF+. - <b>HCV-MPGN</b>: Treat with DAAs (not immunosuppression). - <b>Transplant recurrence high</b> in C3G (especially DDD).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**MPGN types I/II/III still used**</td><td>Obsolete — use **IF classification** (IC-MPGN vs C3G)</td></tr><tr><td>**DDD = MPGN Type II**</td><td>DDD = **C3G subtype** (C3 dominant, intramembranous deposits)</td></tr><tr><td>**All MPGN = immune complex**</td><td>**C3G = no immune complexes** (C3 dominant, alternative pathway)</td></tr><tr><td>**Low C3 = always MPGN**</td><td>Also post-strep GN, SLE, cryoglobulinaemia, IE, C3G</td></tr><tr><td>**C3NeF = only in DDD**</td><td>Also in C3GN (~50%), some IC-MPGN</td></tr><tr><td>**C3GN = no monoclonal gammopathy**</td><td>**Screen mandatory** — MGUS/myeloma can mimic C3GN</td></tr><tr><td>**Eculizumab = first-line C3G**</td><td>Not standard — supportive + MMF/steroids first; eculizumab case-by-case</td></tr><tr><td>**DDD = drusen = eye only**</td><td>Drusen = retinal deposits → ↑ AMD risk (ophthalmology referral)</td></tr><tr><td>**IC-MPGN = never recur post-Tx**</td><td>Recurs if aetiology untreated (e.g., untreated HCV, MGUS)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>MPGN classification</b>: <b>I</b>C-MPGN = <b>I</b>mmune <b>C</b>omplex (Ig+C3); <b>C</b>3G = <b>C</b>3 dominant (no Ig)</li><li><b>C3G subtypes</b>: <b>D</b>DD = <b>D</b>ense <b>D</b>eposits (intramembranous); <b>C</b>3GN = <b>C</b>3 deposits (subendothelial/mesangial)</li><li><b>Complement pathway</b>: <b>Low C3 + Normal C4</b> = <b>Alternative</b> (C3G, IC-MPGN); <b>Low C3 + Low C4</b> = <b>Classical</b> (SLE, cryo)</li><li><b>C3NeF</b>: <b>C</b>3 <b>N</b>ephritic <b>F</b>actor = <b>C</b>onverts <b>C</b>3 <b>F</b>orever (stabilises C3bBb)</li><li><b>DDD associations</b>: <b>D</b>rusen (eyes), <b>L</b>ipodystrophy (face/arms) = <b>DDL</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((MPGN / C3 Glomerulopathy)) IC-MPGN[Immune-Complex MPGN] IF[IgG/IgM + C3 granular] Causes Infections[HCV, HBV, IE, Shunt] Autoimmune[SLE, Cryoglobulin, IgA vasculitis] Monoclonal[MGUS, Myeloma] Drugs[IFN-α, Gemcitabine] Management[Treat cause: DAA for HCV, Clone for MGUS, MMF+steroids if idiopathic] C3G[C3 Glomerulopathy] IF[C3 dominant (≥2+ &gt; Ig)] Pathogenesis[Alternative pathway dysregulation: C3NeF, CFH/CFI/C3/CFB mutations] DDD[Dense Deposit Disease] EM[Intramembranous dense deposits] C3NeF[80-90%] Associations[Drusen, Lipodystrophy] Prognosis[Poor, 50% ESRD 10yr] C3GN[C3 Glomerulonephritis] EM[Subendothelial/mesangial] C3NeF[40-50%] Screen[Monoclonal gammopathy!] Prognosis[Variable] Workup[C3, C4, C3NeF, CFH/CFI/C3/CFB, Immunofixation, Genetics] Management Supportive[ACEi/ARB, SGLT2i, BP&lt;130/80] IC-MPGN[Treat aetiology] C3G[MMF+steroids ± CNI; Eculizumab if progressive C3NeF+; Iptacopan emerging] Transplant[High recurrence C3G (DDD&gt;C3GN)] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>MPGN modern classification (IC-MPGN vs C3G)</li><li>DDD vs C3GN EM findings</li><li>C3NeF mechanism &amp; prevalence</li><li>Complement profile: Low C3 + normal C4 vs Low C3 + low C4</li><li>Mandatory test in C3G (immunofixation)</li><li>DDD associations (drusen, lipodystrophy)</li><li>HCV-MPGN treatment</li><li>Transplant recurrence risk</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>IC-MPGN vs C3G classification, DDD vs C3GN EM, C3NeF, complement profile (C3/C4), immunofixation screen, HCV-MPGN treatment</td></tr><tr><td>**Should Know 🟡**</td><td>Genetic causes (CFH, CFI, C3, CFB), eculizumab/iptacopan role, plasma exchange for CFH autoantibody, transplant recurrence</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel complement inhibitors (pegcetacoplan, danicopan), CFH liver transplant, DGKE mutations, retinal drusen screening</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Modern MPGN classification is based on:</b></li></ol>
+<p>A. Light microscopy pattern (I, II, III) B. <b>Immunofluorescence pattern (IC-MPGN vs C3G)</b> C. Electron microscopy alone D. Clinical presentation E. Serum complement levels</p>
+<ol><li><b>C3 Glomerulopathy immunofluorescence shows:</b></li></ol>
+<p>A. IgG dominant with C3 B. <b>C3 dominant (≥2+) with no/minimal Ig</b> C. IgA dominant D. Fibrinogen only E. IgM + C3 only</p>
+<ol><li><b>Dense Deposit Disease (DDD) EM hallmark:</b></li></ol>
+<p>A. Subepithelial humps B. Subendothelial deposits C. <b>Intramembranous dense deposits (ribbon-like)</b> D. Mesangial deposits only E. Tubuloreticular inclusions</p>
+<ol><li><b>Complement profile in C3G:</b></li></ol>
+<p>A. Low C3, Low C4 B. <b>Low C3, Normal C4</b> C. Normal C3, Low C4 D. Normal C3, Normal C4 E. Low C3, Low C4, Low Factor B</p>
+<ol><li><b>C3NeF prevalence in DDD:</b></li></ol>
+<p>A. 10–20% B. 40–50% C. <b>80–90%</b> D. 100% E. Not tested</p>
+<ol><li><b>Associations of DDD include:</b></li></ol>
+<p>A. Diabetic retinopathy B. <b>Retinal drusen + partial lipodystrophy</b> C. Pulmonary fibrosis D. Thyroiditis E. Inflammatory bowel disease</p>
+<ol><li><b>Essential investigation in newly diagnosed C3GN:</b></li></ol>
+<p>A. Renal US B. <b>Serum &amp; urine immunofixation</b> C. ANA D. ANCA E. Hepatitis B serology</p>
+<ol><li><b>Treatment of HCV-associated MPGN:</b></li></ol>
+<p>A. Steroids + cyclophosphamide B. <b>Direct-acting antivirals (DAA)</b> C. Rituximab alone D. Plasma exchange E. Eculizumab</p>
+<ol><li><b>Transplant recurrence risk highest in:</b></li></ol>
+<p>A. IC-MPGN (treated HCV) B. <b>DDD (C3G)</b> C. C3GN (C3G) D. Post-strep GN E. IgA nephropathy</p>
+<ol><li><b>Eculizumab in C3G — target:</b></li></ol>
+<p>A. C3 B. Factor B C. <b>C5 (prevents MAC formation)</b> D. CFH E. Properdin</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>25-year-old man, nephrotic syndrome, Low C3, Normal C4. Biopsy: MPGN pattern, C3 dominant IF, intramembranous dense deposits EM. Diagnosis:</b></li></ol>
+<p>A. IC-MPGN B. <b>DDD (C3G)</b> C. C3GN D. Post-strep GN E. Lupus nephritis</p>
+<ol><li><b>30-year-old woman, nephritic syndrome, Low C3, Normal C4. Biopsy: C3 dominant IF, subendothelial deposits EM. C3NeF negative. Next step:</b></li></ol>
+<p>A. Start eculizumab B. <b>Screen for monoclonal gammopathy (immunofixation)</b> C. Genetic testing for CFH only C. Start MMF + steroids E. Plasma exchange</p>
+<ol><li><b>45-year-old man, HCV+, nephrotic syndrome, cryoglobulins positive, Low C3, Low C4. Biopsy: MPGN pattern, IgM/IgG + C3. Management:</b></li></ol>
+<p>A. Rituximab + steroids B. <b>DAA therapy for HCV</b> C. Plasma exchange D. Cyclophosphamide E. Eculizumab</p>
+<ol><li><b>15-year-old boy, DDD diagnosed. Ophthalmology referral for:</b></li></ol>
+<p>A. Cataract screening B. <b>Retinal drusen (AMD risk)</b> C. Glaucoma screening D. Diabetic retinopathy E. Uveitis</p>
+<ol><li><b>50-year-old woman, C3GN, progressive CKD despite MMF+steroids, C3NeF positive. Emerging therapy option:</b></li></ol>
+<p>A. <b>Iptacopan (Factor B inhibitor)</b> B. High-dose IVIG C. Splenectomy D. Sirolimus E. Alemtuzumab</p>
+<ol><li><b>Young adult, MPGN pattern, C3 dominant, family history of similar disease. Genetic testing priority:</b></li></ol>
+<p>A. <b>CFH, CFI, C3, CFB, THBD</b> B. NPHS1, NPHS2, WT1 C. COL4A3, COL4A4, COL4A5 D. PKD1, PKD2 E. UMOD, MUC1</p>
+<ol><li><b>CFH mutation — curative transplant option:</b></li></ol>
+<p>A. Kidney alone B. <b>Liver-kidney (CFH produced in liver)</b> C. Heart-kidney C. Lung-kidney E. Pancreas-kidney</p>
+<ol><li><b>DDD vs C3GN — key EM difference:</b></li></ol>
+<p>A. DDD = subepithelial; C3GN = mesangial B. <b>DDD = intramembranous dense deposits; C3GN = subendothelial/mesangial</b> C. DDD = no deposits; C3GN = deposits D. DDD = humps; C3GN = tram-tracks E. No difference</p>
+<ol><li><b>Post-strep GN vs C3G — distinguishing feature:</b></li></ol>
+<p>A. Both have Low C3 B. <b>Post-strep: C3NeF negative, resolves; C3G: C3NeF often positive, chronic</b> C. Post-strep: C3 dominant D. Both have subepithelial humps E. No distinction possible</p>
+<ol><li><b>Monitoring on eculizumab for C3G:</b></li></ol>
+<p>A. C3 levels only B. <b>C3, C5, CH50, meningococcal vaccination status</b> C. LFTs only D. CBC only E. Urine protein only</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: MPGN modern classification?</li></ul>
+<p>A: IC-MPGN (Ig+C3) vs C3G (C3 dominant)</p>
+<ul><li>Q: DDD EM finding?</li></ul>
+<p>A: Intramembranous dense deposits (osmiophilic ribbon)</p>
+<ul><li>Q: C3GN EM finding?</li></ul>
+<p>A: Subendothelial/mesangial deposits</p>
+<ul><li>Q: C3G complement profile?</li></ul>
+<p>A: Low C3, Normal C4 (alternative pathway)</p>
+<ul><li>Q: C3NeF in DDD?</li></ul>
+<p>A: 80–90% positive</p>
+<ul><li>Q: C3NeF mechanism?</li></ul>
+<p>A: Stabilises C3bBb → uncontrolled C3 cleavage</p>
+<ul><li>Q: DDD associations?</li></ul>
+<p>A: Retinal drusen, partial lipodystrophy</p>
+<ul><li>Q: Mandatory test in C3G?</li></ul>
+<p>A: Serum/urine immunofixation (exclude MGUS/myeloma)</p>
+<ul><li>Q: HCV-MPGN treatment?</li></ul>
+<p>A: DAAs (not immunosuppression)</p>
+<ul><li>Q: Transplant recurrence C3G?</li></ul>
+<p>A: High (DDD &gt;50%, C3GN ~30%)</p>
+<ul><li>Q: Genetic causes C3G?</li></ul>
+<p>A: CFH, CFI, C3, CFB, THBD</p>
+<ul><li>Q: Eculizumab target?</li></ul>
+<p>A: C5 (blocks terminal complement)</p>
+<ul><li>Q: Iptacopan target?</li></ul>
+<p>A: Factor B (alternative pathway)</p>
+<ul><li>Q: CFH mutation transplant?</li></ul>
+<p>A: Liver-kidney (CFH from liver)</p>
+<ul><li>Q: Low C3 + Low C4 pathway?</li></ul>
+<p>A: Classical (SLE, cryoglobulinaemia)</p>
+<ul><li>Q: Low C3 + Normal C4 pathway?</li></ul>
+<p>A: Alternative (C3G, IC-MPGN non-cryo)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Modern classification by IF: IC-MPGN (Ig+C3) vs C3G (C3 dominant). Old types I/II/III obsolete.</li><li><b>B</b> — C3G definition: C3 ≥2+ intensity &gt; any Ig.</li><li><b>C</b> — DDD = intramembranous highly osmiophilic dense deposits transforming GBM.</li><li><b>B</b> — Alternative pathway activation → C3 consumed, C4 normal.</li><li><b>C</b> — C3NeF present in 80–90% DDD.</li><li><b>B</b> — Drusen (retinal) + acquired partial lipodystrophy (face/arms).</li><li><b>B</b> — Monoclonal gammopathy (MGUS/myeloma) mimics C3GN — must exclude.</li><li><b>B</b> — HCV-MPGN: treat virus with DAAs; GN often remits.</li><li><b>B</b> — DDD recurrence &gt;50% post-transplant; C3GN ~30%; IC-MPGN lower if aetiology treated.</li><li><b>C</b> — Eculizumab = anti-C5 monoclonal antibody → blocks MAC formation.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — C3 dominant IF + intramembranous dense deposits = DDD (C3G subtype).</li><li><b>B</b> — C3GN with negative C3NeF: screen for monoclonal gammopathy (MGUS/myeloma).</li><li><b>B</b> — HCV cryoglobulinaemic MPGN: DAAs first-line; rituximab if severe vasculitis.</li><li><b>B</b> — DDD associated with retinal drusen → ↑ AMD risk (ophthalmology monitoring).</li><li><b>A</b> — Iptacopan (Factor B inhibitor) phase 3 APPEAR-C3G trial; emerging for C3G.</li><li><b>A</b> — C3G genetic panel: CFH, CFI, C3, CFB, THBD (alternative pathway regulators).</li><li><b>B</b> — CFH synthesised in liver → liver-kidney transplant curative for CFH mutations.</li><li><b>B</b> — DDD = intramembranous dense deposits; C3GN = subendothelial/mesangial.</li><li><b>B</b> — Post-strep: self-limited, C3NeF negative; C3G: chronic, C3NeF often positive.</li><li><b>B</b> — Eculizumab: monitor CH50 (functional complement), meningococcal vaccine mandatory.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>MPGN &amp; C3 Glomerulopathy</b> is a <b>Must Know 🔴</b> topic. <b>Classification</b>: IC-MPGN (immune complexes: Ig+C3) vs C3G (C3 dominant, no Ig). <b>DDD</b>: Intramembranous dense deposits, C3NeF 80–90%, drusen/lipodystrophy, poor prognosis. <b>C3GN</b>: Subendothelial/mesangial deposits, C3NeF 40–50%, <b>screen for monoclonal gammopathy</b>. <b>Complement</b>: Low C3 + Normal C4 = alternative pathway. C3NeF = stabilises C3bBb. <b>Management</b>: Treat cause (DAAs for HCV, clone-directed for MGUS). Supportive: ACEi/ARB, SGLT2i. C3G: MMF+steroids ± CNI; eculizumab/iptacopan emerging for progressive C3NeF+. <b>Transplant</b>: High recurrence in C3G (DDD &gt; C3GN). CFH mutation → liver-kidney transplant. <b>Exam focus</b>: IF classification, EM distinction DDD vs C3GN, complement profile, immunofixation mandate, C3NeF, HCV treatment, transplant recurrence.</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · MPGN and C3 Glomerulopathy (DDD, C3GN) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cystinosis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">Cystinosis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Recognise classic infantile nephropathic cystinosis presentation (Fanconi, rickets, photophobia)</li><li>Differentiate three clinical forms</li><li>Diagnose via leukocyte cystine assay, genetic testing, corneal slit-lamp</li><li>Manage with cysteamine (cystine-depleting), supportive Fanconi care, transplant</li><li>Monitor for extra-renal complications (thyroid, diabetes, myopathy, CNS)</li><li>Apply to FCPS/MRCP paediatric nephrology vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Genetics & Pathogenesis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Gene</th><th>Protein</th><th>Function</th><th>Mutation Effect</th></tr><tr><td>------</td><td>---------</td><td>----------</td><td>-----------------</td></tr><tr><td>**CTNS** (chr17p13)</td><td>**Cystinosin**</td><td>Lysosomal cystine/H+ symporter (exports cystine from lysosome)</td><td>Loss-of-function → cystine accumulation in lysosomes → crystallisation → cellular damage</td></tr></table>
+<ul><li><b>Autosomal recessive</b></li><li>Carrier frequency ~1:100 (higher in French Canadians)</li><li><b>Cystine</b> = dimer of cysteine; poorly soluble → crystallises in lysosomes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Clinical Forms</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Form</th><th>Age Onset</th><th>Key Features</th><th>Prognosis</th></tr><tr><td>------</td><td>-----------</td><td>--------------</td><td>-----------</td></tr><tr><td>**Nephropathic (Infantile)**</td><td>**6–12 months**</td><td>**Fanconi syndrome**, rickets, polyuria, failure to thrive, photophobia</td><td>ESRD ~10yr if untreated; transplant → long survival</td></tr><tr><td>**Late-onset (Juvenile/Adult)**</td><td>**>12 years**</td><td>**Proteinuria/CKD** (no/focal Fanconi), milder</td><td>ESRD 20–40yr</td></tr><tr><td>**Ocular (Benign)**</td><td>Any age</td><td>**Corneal cystine crystals only** (photophobia)</td><td>No renal disease</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Nephropathic Infantile Cystinosis (Classic)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Presentation (6–18 months)</div>
+<table class="ctable"><tr><th>System</th><th>Features</th></tr><tr><td>--------</td><td>----------</td></tr><tr><td>**Renal**</td><td>**Full Fanconi syndrome**: polyuria, polydipsia, dehydration, glycosuria (normal glucose), aminoaciduria, phosphaturia (rickets), bicarbonaturia (RTA Type 2), hypouricaemia, low-molecular-weight proteinuria</td></tr><tr><td>**Growth**</td><td>**Failure to thrive**, short stature</td></tr><tr><td>**Bone**</td><td>**Rickets** (phosphate wasting, 1,25-Vit D deficiency) — resistant to Vit D</td></tr><tr><td>**Eyes**</td><td>**Photophobia**, blepharospasm (corneal cystine crystals) — by age 2–3yr</td></tr><tr><td>**Thyroid**</td><td>Hypothyroidism (later)</td></tr><tr><td>**Pancreas**</td><td>Diabetes mellitus (insulin-deficient, later)</td></tr><tr><td>**Muscle**</td><td>Myopathy, swallowing difficulty (later)</td></tr><tr><td>**CNS**</td><td>Neurocognitive impairment (rare, late)</td></tr></table>
+<div class="callout"><b>Fanconi + photophobia + rickets in infant</b> = cystinosis until proven otherwise.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Late-Onset Cystinosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Onset &gt;12 years (often 15–30yr)</li><li><b>Proteinuria/CKD</b> predominant</li><li><b>No/mild Fanconi</b>, no rickets</li><li>Corneal crystals present</li><li>ESRD ~25–40yr</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Ocular (Benign) Cystinosis</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Corneal crystals only</b> (slit-lamp)</li><li>Photophobia</li><li><b>No renal involvement</b>, normal kidney function</li><li>Adult diagnosis common</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Finding</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Leukocyte cystine assay**</td><td>**Gold standard** — elevated cystine (nmol ½ cystine/mg protein): Infantile >500, Juvenile 150–500, Carrier 50–150, Normal <50</td></tr><tr><td>**Genetic testing (CTNS)**</td><td>Confirms; 57kb founder deletion common in Northern Europeans</td></tr><tr><td>**Slit-lamp exam**</td><td>**Corneal cystine crystals** (needle-shaped, refractile) — pathognomonic</td></tr><tr><td>**Urinalysis**</td><td>Fanconi pattern (glycosuria, phosphaturia, aminoaciduria, bicarbonaturia)</td></tr><tr><td>**Renal biopsy**</td><td>Not needed; shows cystine crystals in tubular cells (electron-dense)</td></tr></table>
+<div class="callout"><b>Leukocyte cystine assay</b> = diagnostic standard. <b>Slit-lamp</b> = quick screen.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Cysteamine (Cystine-Depleting Agent)</div>
+<table class="ctable"><tr><th>Form</th><th>Dose</th><th>Notes</th></tr><tr><td>------</td><td>------</td><td>-------</td></tr><tr><td>**Cysteamine bitartrate (Cystagon)**</td><td>**1.3–1.95 g/m²/day** divided q6h</td><td>**Start ASAP** — delays ESRD by 10+ years</td></tr><tr><td>**Enteric-coated (Procysbi)**</td><td>Equivalent dose q12h</td><td>Better GI tolerability</td></tr><tr><td>**Ophthalmic drops (0.55% / 0.1%)**</td><td>q1h waking hours</td><td>**Dissolves corneal crystals**, prevents photophobia</td></tr></table>
+<div class="callout"><b>Cysteamine</b> enters lysosome → reacts with cystine → forms cysteine + cysteine-cysteamine mixed disulfide → exits via cationic amino acid transporter.</div>
+<div class="sub-h">Supportive Fanconi Management</div>
+<table class="ctable"><tr><th>Issue</th><th>Treatment</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**RTA Type 2 (bicarbonaturia)**</td><td>NaHCO₃/NaCitrate 5–15 mEq/kg/day (high dose)</td></tr><tr><td>**Hypophosphataemia/Rickets**</td><td>Phosphate supplements + 1,25-Vit D (calcitriol)</td></tr><tr><td>**Hypokalaemia**</td><td>KCl supplements</td></tr><tr><td>**Dehydration/Polyuria**</td><td>Free water access, avoid dehydration</td></tr><tr><td>**Growth**</td><td>GH therapy (if growth failure despite metabolic control)</td></tr><tr><td>**Thyroid**</td><td>Levothyroxine if hypothyroid</td></tr><tr><td>**Diabetes**</td><td>Insulin (insulin-deficient)</td></tr></table>
+<div class="sub-h">Transplant</div>
+<ul><li><b>Kidney transplant</b> = definitive for ESRD</li><li><b>Cysteamine continues post-transplant</b> → prevents extra-renal complications</li><li><b>No recurrence</b> in allograft (genetic defect in host, not kidney)</li><li>Combined liver-kidney not needed (liver not major site)</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Extra-Renal Complications (Monitor Post-Transplant)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>System</th><th>Complication</th><th>Screening</th></tr><tr><td>--------</td><td>--------------</td><td>-----------</td></tr><tr><td>**Eyes**</td><td>Corneal crystals, band keratopathy, retinopathy</td><td>Annual slit-lamp</td></tr><tr><td>**Thyroid**</td><td>Hypothyroidism (50% by age 30)</td><td>Annual TSH</td></tr><tr><td>**Pancreas**</td><td>Diabetes mellitus (insulin-deficient)</td><td>Annual HbA1c</td></tr><tr><td>**Muscle**</td><td>Distal myopathy, swallowing dysfunction</td><td>Clinical review</td></tr><tr><td>**CNS**</td><td>Neurocognitive decline, calcifications</td><td>MRI if symptomatic</td></tr><tr><td>**Gonadal**</td><td>Male infertility (obstructive azoospermia)</td><td>Semen analysis</td></tr><tr><td>**Skin**</td><td>Photosensitivity, hyperpigmentation</td><td>—</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Cystinosis</b> = <b>CTNS</b> mutation → lysosomal cystine accumulation. - <b>Most common cause of childhood Fanconi syndrome</b>. - <b>Triad</b>: Fanconi + rickets + photophobia (corneal crystals). - <b>Leukocyte cystine assay</b> = gold standard diagnosis. - <b>Slit-lamp</b> = corneal cystine crystals (needle-shaped). - <b>Cysteamine</b> = disease-modifying (start early, continue lifelong). - <b>Enteric-coated (Procysbi)</b> = better GI tolerance. - <b>Eye drops</b> = dissolve corneal crystals. - <b>Transplant</b> curative for renal disease; <b>cysteamine continues</b> for extra-renal protection. - <b>No recurrence</b> in transplant. - <b>Extra-renal</b>: hypothyroidism, diabetes, myopathy, male infertility.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Cystinosis = only kidneys**</td><td>**Multi-system**: eyes, thyroid, pancreas, muscle, CNS, gonads</td></tr><tr><td>**All cystinosis = Fanconi**</td><td>**Late-onset = proteinuria/CKD, no Fanconi**; Ocular = eyes only</td></tr><tr><td>**Cysteamine cures everything**</td><td>Cysteamine **delays ESRD, dissolves corneal crystals** — but extra-renal complications still need monitoring</td></tr><tr><td>**Stop cysteamine post-transplant**</td><td>**Continue lifelong** — prevents extra-renal complications</td></tr><tr><td>**Corneal crystals = only cystinosis**</td><td>Also in **tyrosinaemia, hypercholesterolaemia, drug-induced (chloroquine, amiodarone), Fabry**</td></tr><tr><td>**Cystinosis = only children**</td><td>Late-onset presents in teens/adults with proteinuria</td></tr><tr><td>**Leukocyte cystine = urinary cystine**</td><td>**Leukocyte cystine** = diagnostic; urinary cystine = screening only</td></tr><tr><td>**All Fanconi = cystinosis**</td><td>Also Wilson's, Lowe, tyrosinaemia, galactosaemia, drugs (tenofovir, ifosfamide), myeloma</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Cystinosis triad</b>: <b>F</b>anconi + <b>R</b>ickets + <b>P</b>hotophobia = <b>FRP</b></li><li><b>CTNS</b> = <b>C</b>ystine <b>T</b>ransporter <b>N</b>ot <b>S</b>toring</li><li><b>Cysteamine</b>: <b>C</b>ystine <b>E</b>ater <b>A</b>mines → <b>C</b>ysteine</li><li><b>Three forms</b>: <b>N</b>ephropathic (infant), <b>L</b>ate (juvenile), <b>O</b>cular (benign) = <b>NLO</b></li><li><b>Fanconi mnemonic</b>: <b>G</b>lucose, <b>A</b>mino acids, <b>P</b>hosphate, <b>U</b>ric acid, <b>H</b>CO3- = <b>GAPUH</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Cystinosis)) Gene[CTNS chr17p13 → Cystinosin] Pathogenesis[Lysosomal cystine accumulation → crystallisation → cell damage] Forms Infantile[6-18mo: Full Fanconi, Rickets, Photophobia, FTT] Late[&gt;12yr: Proteinuria/CKD, No Fanconi, Corneal crystals] Ocular[Any age: Corneal crystals only, Photophobia] Diagnosis Gold[Leukocyte cystine assay] Genetic[CTNS sequencing (57kb deletion common)] Eye[Slit-lamp: needle-shaped corneal crystals] Urine[Fanconi pattern] Management Cysteamine[Oral (Cystagon/Procysbi) lifelong + Eye drops] Fanconi_Rx[Alkali, Phosphate, Vit D, K+, GH] Transplant[Curative renal; continue cysteamine] Extra_Renal Eyes[Corneal crystals, band keratopathy] Thyroid[Hypothyroidism] Pancreas[Diabetes] Muscle[Myopathy, dysphagia] CNS[Calcifications, cognitive] Gonadal[Male infertility] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>CTNS gene → cystinosin function</li><li>Three forms (infantile, late, ocular)</li><li>Classic infantile triad (Fanconi, rickets, photophobia)</li><li>Gold standard diagnosis (leukocyte cystine assay)</li><li>Slit-lamp finding (corneal needle-shaped crystals)</li><li>Cysteamine mechanism, dosing, eye drops</li><li>Transplant = curative renal, continue cysteamine for extra-renal</li><li>Extra-renal complications monitoring</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>CTNS gene, three forms, infantile triad (Fanconi/rickets/photophobia), leukocyte cystine assay, slit-lamp, cysteamine (oral + eye drops), transplant curative</td></tr><tr><td>**Should Know 🟡**</td><td>Extra-renal monitoring (thyroid, diabetes, myopathy, CNS, gonadal), late-onset vs ocular forms, GI side effects of cysteamine, Procysbi advantages</td></tr><tr><td>**Nice to Know 🟢**</td><td>57kb founder deletion, corneal crystal dissolution kinetics, novel delivery systems, gene therapy trials, cystinosin structure/function</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Cystinosis gene:</b></li></ol>
+<p>A. <b>CTNS (chr17p13)</b> B. SLC12A3 C. KCNJ1 D. CLCNKB E. SCNN1B</p>
+<ol><li><b>Classic infantile cystinosis triad:</b></li></ol>
+<p>A. Proteinuria, hypertension, oedema B. <b>Fanconi syndrome, rickets, photophobia</b> C. Haematuria, RBC casts, hypertension D. Nephrotic syndrome, hyperlipidaemia, oedema E. AKI, oliguria, hyperkalaemia</p>
+<ol><li><b>Gold standard diagnostic test for cystinosis:</b></li></ol>
+<p>A. Urinary cystine excretion B. <b>Leukocyte cystine assay</b> C. Slit-lamp examination D. Renal biopsy E. Genetic testing only</p>
+<ol><li><b>Slit-lamp finding in cystinosis:</b></li></ol>
+<p>A. Kayser-Fleischer rings B. <b>Needle-shaped corneal cystine crystals</b> C. Cataracts D. Retinal haemorrhages E. Optic neuritis</p>
+<ol><li><b>Cysteamine mechanism:</b></li></ol>
+<p>A. Blocks cystine synthesis B. <b>Enters lysosome → reacts with cystine → forms cysteine + mixed disulfide → exits via cationic AA transporter</b> C. Inhibits CTNS transcription D. Enhances lysosomal exocytosis E. Chelates cysteine in blood</p>
+<ol><li><b>Cysteamine dosing (Cystagon):</b></li></ol>
+<p>A. 100 mg/day B. <b>1.3–1.95 g/m²/day divided q6h</b> C. 500 mg/day D. 2 g/day single dose E. Weight-based 10 mg/kg/day</p>
+<ol><li><b>Ophthalmic cysteamine drops — purpose:</b></li></ol>
+<p>A. Treat cataract B. <b>Dissolve corneal cystine crystals, prevent photophobia</b> C. Lower IOP D. Treat dry eye E. Prevent retinal detachment</p>
+<ol><li><b>Late-onset (juvenile) cystinosis — distinguishing feature from infantile:</b></li></ol>
+<p>A. Severe Fanconi B. <b>Proteinuria/CKD without Fanconi</b> C. Early rickets D. No corneal crystals E. Earlier ESRD</p>
+<ol><li><b>Cystinosis post-kidney transplant — cysteamine:</b></li></ol>
+<p>A. Stop (renal disease cured) B. <b>Continue lifelong (prevents extra-renal complications)</b> C. Reduce dose by 50% D. Switch to eye drops only E. Stop if no corneal crystals</p>
+<ol><li><b>Extra-renal complications of cystinosis include all EXCEPT:</b></li></ol>
+<p>A. Hypothyroidism B. Diabetes mellitus C. <b>Cardiomyopathy</b> D. Myopathy E. Male infertility</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>8-month-old infant, polyuria, failure to thrive, rickets, photophobia. Urine: glycosuria (normal glucose), phosphaturia, aminoaciduria, bicarbonaturia. Slit-lamp: corneal crystals. Most likely diagnosis:</b></li></ol>
+<p>A. Lowe syndrome B. <b>Nephropathic cystinosis</b> C. Wilson's disease D. Tyrosinaemia E. Galactosaemia</p>
+<ol><li><b>15-year-old with proteinuria, CKD stage 3, photophobia. No rickets, no Fanconi. Slit-lamp: corneal crystals. Leukocyte cystine 300 nmol/mg. Diagnosis:</b></li></ol>
+<p>A. Infantile cystinosis B. <b>Late-onset (juvenile) cystinosis</b> C. Ocular cystinosis D. Fabry disease E. Wilson's disease</p>
+<ol><li><b>Cystinosis patient on cysteamine bitartrate. Severe GI nausea/vomiting. Best alternative:</b></li></ol>
+<p>A. Stop cysteamine B. <b>Enteric-coated cysteamine (Procysbi) q12h</b> C. Increase dose D. Switch to IV cysteamine E. Add ondansetron only</p>
+<ol><li><b>6-year-old cystinosis patient, post-kidney transplant 1 year. Mother asks if cysteamine can stop. Advice:</b></li></ol>
+<p>A. Yes, transplant cured disease B. <b>No — continue lifelong to prevent extra-renal complications</b> C. Reduce to eye drops only D. Stop if leukocyte cystine normal E. Continue only if corneal crystals persist</p>
+<ol><li><b>25-year-old man with cystinosis (diagnosed infancy), now post-transplant 5 years. Routine monitoring should include:</b></li></ol>
+<p>A. Annual slit-lamp only B. <b>Annual TSH, HbA1c, slit-lamp, neuro review, semen analysis</b> C. Annual creatinine only D. Annual cystine level only E. No extra monitoring needed</p>
+<ol><li><b>Parents of cystinosis child ask recurrence risk for next pregnancy:</b></li></ol>
+<p>A. <b>25% (autosomal recessive)</b> B. 50% C. 0% D. 100% E. Depends on gender</p>
+<ol><li><b>Infantile cystinosis — RTA type present:</b></li></ol>
+<p>A. Type 1 (distal) B. <b>Type 2 (proximal) — bicarbonaturia</b> C. Type 4 (hypoaldosteronism) D. Type 3 (combined) E. No RTA</p>
+<ol><li><b>Cystinosis corneal crystals vs other causes — differential:</b></li></ol>
+<p>A. Tyrosinaemia, hypercholesterolaemia, chloroquine/amiodarone, Fabry B. Wilson's, Gaucher, Niemann-Pick C. Only cystinosis causes corneal crystals D. Diabetes, hypertension E. SLE, vasculitis</p>
+<ol><li><b>Cysteamine dosing schedule — reason for q6h (Cystagon):</b></li></ol>
+<p>A. Short half-life (&lt;2h) B. <b>To maintain continuous lysosomal cystine depletion</b> C. Food interactions D. Renal clearance E. Avoid peak toxicity</p>
+<ol><li><b>Genetic counselling for cystinosis carrier parents — prenatal diagnosis:</b></li></ol>
+<p>A. Not possible B. <b>Leukocyte cystine assay on chorionic villi OR CTNS mutation analysis</b> C. Ultrasound only D. Amniotic fluid cystine only E. Parental leukocyte cystine only</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Cystinosis gene?</li></ul>
+<p>A: CTNS (chr17p13)</p>
+<ul><li>Q: Cystinosin function?</li></ul>
+<p>A: Lysosomal cystine/H+ symporter</p>
+<ul><li>Q: Three forms?</li></ul>
+<p>A: Infantile (nephropathic), Late-onset (juvenile), Ocular (benign)</p>
+<ul><li>Q: Infantile classic triad?</li></ul>
+<p>A: Fanconi + rickets + photophobia</p>
+<ul><li>Q: Gold standard diagnosis?</li></ul>
+<p>A: Leukocyte cystine assay</p>
+<ul><li>Q: Slit-lamp finding?</li></ul>
+<p>A: Needle-shaped corneal cystine crystals</p>
+<ul><li>Q: Cysteamine mechanism?</li></ul>
+<p>A: Enters lysosome, reacts with cystine → cysteine + mixed disulfide → exits</p>
+<ul><li>Q: Cysteamine oral dose?</li></ul>
+<p>A: 1.3–1.95 g/m²/day q6h</p>
+<ul><li>Q: Eye drops purpose?</li></ul>
+<p>A: Dissolve corneal crystals, prevent photophobia</p>
+<ul><li>Q: Late-onset feature?</li></ul>
+<p>A: Proteinuria/CKD, NO Fanconi</p>
+<ul><li>Q: Ocular form?</li></ul>
+<p>A: Corneal crystals only, no renal disease</p>
+<ul><li>Q: Transplant + cysteamine?</li></ul>
+<p>A: Continue lifelong for extra-renal protection</p>
+<ul><li>Q: Extra-renal complications?</li></ul>
+<p>A: Hypothyroidism, diabetes, myopathy, CNS, male infertility</p>
+<ul><li>Q: Inheritance?</li></ul>
+<p>A: Autosomal recessive</p>
+<ul><li>Q: Carrier leukocyte cystine?</li></ul>
+<p>A: 50–150 nmol/mg (normal &lt;50, infantile &gt;500)</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>A</b> — CTNS (chr17p13) encodes cystinosin, the lysosomal cystine transporter.</li><li><b>B</b> — Classic triad: Fanconi syndrome, rickets (phosphate wasting), photophobia (corneal crystals).</li><li><b>B</b> — Leukocyte cystine assay = quantitative gold standard. Normal &lt;50, carrier 50–150, infantile &gt;500 nmol ½ cystine/mg protein.</li><li><b>B</b> — Needle-shaped, refractile cystine crystals in cornea (pathognomonic).</li><li><b>B</b> — Cysteamine enters lysosome → thiol-disulfide exchange with cystine → cysteine + cysteamine-cysteine mixed disulfide → exits via cationic AA transporter (LYS2).</li><li><b>B</b> — Cystagon: 1.3–1.95 g/m²/day divided q6h (short half-life). Procysbi (enteric) q12h.</li><li><b>B</b> — 0.55% (or 0.1%) cysteamine drops q1h waking → dissolve corneal crystals, relieve photophobia.</li><li><b>B</b> — Late-onset: proteinuria/CKD predominates, Fanconi absent/minimal, corneal crystals present.</li><li><b>B</b> — Continue cysteamine lifelong post-transplant to prevent thyroid, pancreas, muscle, CNS, gonadal complications.</li><li><b>C</b> — Cardiomyopathy not typical; hypothyroidism, diabetes, myopathy, male infertility are.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Infantile cystinosis: Fanconi + rickets + photophobia + corneal crystals + elevated leukocyte cystine.</li><li><b>B</b> — Juvenile cystinosis: Proteinuria/CKD, NO Fanconi, corneal crystals, intermediate leukocyte cystine.</li><li><b>B</b> — Procysbi (enteric-coated) q12h = better GI tolerability, same efficacy.</li><li><b>B</b> — Cysteamine lifelong post-transplant prevents extra-renal complications (thyroid, diabetes, myopathy, CNS).</li><li><b>B</b> — Multi-system monitoring: thyroid (TSH), pancreas (HbA1c), eyes (slit-lamp), neuro, gonadal.</li><li><b>A</b> — AR inheritance → 25% recurrence risk.</li><li><b>B</b> — Fanconi includes proximal RTA (Type 2) = bicarbonaturia.</li><li><b>A</b> — Differential for corneal crystals: tyrosinaemia, hypercholesterolaemia, drug-induced (chloroquine, amiodarone), Fabry.</li><li><b>B</b> — Short half-life; q6h maintains continuous lysosomal cystine depletion.</li><li><b>B</b> — Prenatal: CTNS mutation analysis on CVS/amniocytes OR leukocyte cystine on fetal blood/CVS.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Cystinosis</b> is a <b>Must Know 🔴</b> paediatric nephrology topic. <b>Genetics</b>: CTNS (chr17p13) → cystinosin (lysosomal cystine transporter) defect → cystine accumulation. AR. <b>Forms</b>: <b>Infantile (95%)</b> = Fanconi + rickets + photophobia (6–18mo); <b>Late-onset</b> = proteinuria/CKD, no Fanconi; <b>Ocular</b> = corneal crystals only. <b>Diagnosis</b>: <b>Leukocyte cystine assay</b> (gold standard), <b>slit-lamp</b> (corneal needle-shaped crystals), CTNS sequencing. <b>Treatment</b>: <b>Cysteamine</b> (Cystagon q6h / Procysbi q12h) + <b>ophthalmic drops</b> (q1h). Start early, continue lifelong. Supportive Fanconi care (alkali, phosphate, Vit D, K+). <b>Transplant</b>: Curative for ESRD; <b>continue cysteamine</b> for extra-renal protection. No recurrence. <b>Extra-renal</b>: Hypothyroidism, diabetes, myopathy, CNS, male infertility — monitor annually. <b>Exam focus</b>: Infantile triad, leukocyte cystine assay, slit-lamp, cysteamine (oral + eye drops), three forms, transplant + continue cysteamine, extra-renal monitoring.</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Cystinosis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

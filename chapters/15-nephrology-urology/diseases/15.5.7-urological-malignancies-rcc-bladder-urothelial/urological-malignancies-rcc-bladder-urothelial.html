@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Urological Malignancies (RCC, Bladder Cancer, Urothelial Cancer) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">Urological Malignancies (RCC, Bladder Cancer, Urothelial Cancer)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Diagnose, stage, and manage Renal Cell Carcinoma (RCC)</li><li>Diagnose, stage, and manage Bladder Cancer (NMIBC vs MIBC)</li><li>Diagnose, stage, and manage Upper Tract Urothelial Carcinoma (UTUC)</li><li>Apply staging systems (TNM, AJCC 8th) and risk stratification</li><li>Apply to FCPS/MRCP clinical scenarios</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Renal Cell Carcinoma (RCC)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Epidemiology &amp; Risk Factors</div>
+<table class="ctable"><tr><th>Factor</th><th>Association</th></tr><tr><td>--------</td><td>-------------</td></tr><tr><td>**Incidence**</td><td>~3% of adult cancers; 60–70yo; M:F 1.5:1</td></tr><tr><td>**Smoking**</td><td>**2x risk** (dose-dependent)</td></tr><tr><td>**Obesity**</td><td>↑ risk (adipokines, insulin resistance)</td></tr><tr><td>**Hypertension**</td><td>Independent risk factor</td></tr><tr><td>**Acquired Cystic Kidney Disease**</td><td>Dialysis patients (30–50x risk)</td></tr><tr><td>**Genetic**</td><td>**VHL syndrome** (3p25 deletion/mutation) → clear cell RCC; HLRCC (fumarate hydratase) → papillary type 2; BHD (FLCN) → chromophobe/oncocytoma</td></tr><tr><td>**Occupational**</td><td>Trichloroethylene, cadmium, asbestos</td></tr></table>
+<div class="sub-h">Histological Subtypes</div>
+<table class="ctable"><tr><th>Subtype</th><th>%</th><th>Genetics</th><th>Prognosis</th></tr><tr><td>---------</td><td>---</td><td>----------</td><td>-----------</td></tr><tr><td>**Clear Cell**</td><td>**70–80%**</td><td>**VHL loss (3p)**, PBRM1, SETD2, BAP1</td><td>Intermediate</td></tr><tr><td>**Papillary Type 1**</td><td>10–15%</td><td>MET activation</td><td>Better</td></tr><tr><td>**Papillary Type 2**</td><td>5–10%</td><td>Fumarate hydratase (HLRCC), NRF2</td><td>Worse</td></tr><tr><td>**Chromophobe**</td><td>5%</td><td>TP53, PTEN, BHD (FLCN)</td><td>Better</td></tr><tr><td>**Collecting Duct**</td><td><1%</td><td>SMARCB1, SETD2</td><td>Aggressive</td></tr><tr><td>**Unclassified**</td><td>3–5%</td><td>Variable</td><td>Variable</td></tr></table>
+<div class="sub-h">Clinical Presentation</div>
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Classic Triad**</td><td>Flank pain, haematuria, palpable mass (now <10%)</td></tr><tr><td>**Incidental**</td><td>**>50%** (CT/US for other reasons)</td></tr><tr><td>**Paraneoplastic**</td><td>**Erythrocytosis (EPO)**, hypercalcaemia (PTHrP), hypertension (renin), amyloidosis, Stauffer syndrome (hepatic dysfunction)</td></tr><tr><td>**Metastatic**</td><td>Lung (50%), bone, liver, brain, adrenal</td></tr></table>
+<div class="sub-h">Staging (TNM AJCC 8th)</div>
+<table class="ctable"><tr><th>T Stage</th><th>Definition</th></tr><tr><td>---------</td><td>------------</td></tr><tr><td>**T1a**</td><td>≤4 cm, renal only</td></tr><tr><td>**T1b**</td><td>4–7 cm, renal only</td></tr><tr><td>**T2a**</td><td>7–10 cm, renal only</td></tr><tr><td>**T2b**</td><td>>10 cm, renal only</td></tr><tr><td>**T3a**</td><td>Perinephric fat / renal vein / IVC (infradiaphragmatic)</td></tr><tr><td>**T3b**</td><td>IVC supradiaphragmatic / IVC wall</td></tr><tr><td>**T3c**</td><td>IVC wall invasion</td></tr><tr><td>**T4**</td><td>Beyond Gerota's fascia (adrenal, adjacent organs)</td></tr><tr><td>**N1**</td><td>Regional nodes</td></tr><tr><td>**M1**</td><td>Distant mets</td></tr></table>
+<div class="sub-h">Management by Stage</div>
+<table class="ctable"><tr><th>Stage</th><th>Treatment</th></tr><tr><td>-------</td><td>-----------</td></tr><tr><td>**T1a (≤4 cm)**</td><td>**Active surveillance** (elderly/comorbid), **Ablation** (RFA/cryo), **Partial nephrectomy** (gold standard if feasible)</td></tr><tr><td>**T1b (4–7 cm)**</td><td>**Partial nephrectomy** (preferred), Radical nephrectomy</td></tr><tr><td>**T2 (>7 cm)**</td><td>**Radical nephrectomy**</td></tr><tr><td>**T3**</td><td>Radical nephrectomy + IVC thrombectomy if needed</td></tr><tr><td>**T4**</td><td>Radical nephrectomy + multivisceral resection (if resectable)</td></tr><tr><td>**Metastatic (M1)**</td><td>**Cytoreductive nephrectomy** (selected) + **Systemic therapy**</td></tr></table>
+<div class="callout">[!key] <b>Nephron-sparing (partial) = preferred for T1 if technically feasible</b> — equivalent cancer control, better renal function.</div>
+<div class="sub-h">Systemic Therapy (Metastatic RCC)</div>
+<table class="ctable"><tr><th>Line</th><th>Regimen</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**1st Line (Clear Cell)**</td><td>**IO + TKI**: Pembrolizumab + axitinib, Nivolumab + cabozantinib, Avelumab + axitinib</td></tr><tr><td></td><td>**IO + IO**: Nivolumab + ipilimumab (intermediate/poor risk IMDC)</td></tr><tr><td>**2nd Line**</td><td>TKI (cabozantinib, axitinib, lenvatinib+everolimus) if IO-naïve; IO if TKI-naïve</td></tr><tr><td>**Non-Clear Cell**</td><td>TKI (sunitinib, cabozantinib); clinical trials</td></tr></table>
+<div class="sub-h">IMDC Prognostic Model (Metastatic RCC)</div>
+<table class="ctable"><tr><th>Factor</th><th>Points</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Hb < LLN**</td><td>1</td></tr><tr><td>**Corrected Ca > ULN**</td><td>1</td></tr><tr><td>**KPS <80%**</td><td>1</td></tr><tr><td>**Time from diagnosis to treatment <1yr**</td><td>1</td></tr><tr><td>**Neutrophils > ULN**</td><td>1</td></tr><tr><td>**Platelets > ULN**</td><td>1</td></tr><tr><td>**Risk Groups**</td><td>Favourable (0), Intermediate (1–2), Poor (≥3)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Bladder Cancer</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Epidemiology &amp; Risk Factors</div>
+<table class="ctable"><tr><th>Factor</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Incidence**</td><td>4th commonest cancer in men; 70–80yo; M:F 3:1</td></tr><tr><td>**Smoking**</td><td>**#1 risk (50% cases); 2–4x risk**</td></tr><tr><td>**Occupational**</td><td>**Aromatic amines** (benzidine, β-naphthylamine) — dye, rubber, leather, textile, paint</td></tr><tr><td>**Chemotherapy**</td><td>Cyclophosphamide (acrolein), ifosfamide</td></tr><tr><td>**Radiation**</td><td>Pelvic RT</td></tr><tr><td>**Chronic Irritation**</td><td>Stones, indwelling catheter, schistosomiasis (S. haematobium → squamous cell)</td></tr><tr><td>**Genetic**</td><td>Lynch syndrome, RB1 mutation</td></tr></table>
+<div class="sub-h">Classification by Invasion</div>
+<table class="ctable"><tr><th>Category</th><th>Definition</th><th>%</th></tr><tr><td>----------</td><td>------------</td><td>---</td></tr><tr><td>**NMIBC** (Non-Muscle Invasive)</td><td>Ta, Tis (CIS), T1</td><td>**75–80%**</td></tr><tr><td>**MIBC** (Muscle Invasive)</td><td>T2–T4</td><td>20–25%</td></tr></table>
+<div class="sub-h">TNM Staging (Bladder)</div>
+<table class="ctable"><tr><th>Stage</th><th>Definition</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**Ta**</td><td>Non-invasive papillary</td></tr><tr><td>**Tis (CIS)**</td><td>Carcinoma in situ (flat, high-grade)</td></tr><tr><td>**T1**</td><td>Lamina propria invasion (subepithelial connective tissue)</td></tr><tr><td>**T2**</td><td>Muscularis propria invasion (T2a superficial, T2b deep)</td></tr><tr><td>**T3**</td><td>Perivesical fat (T3a micro, T3b macro)</td></tr><tr><td>**T4**</td><td>Adjacent organs (prostate, uterus, vagina, pelvic/abdominal wall)</td></tr></table>
+<div class="sub-h">NMIBC Risk Stratification (EAU/AUA)</div>
+<table class="ctable"><tr><th>Risk Group</th><th>Criteria</th><th>Recurrence/Progression Risk</th></tr><tr><td>------------</td><td>----------</td><td>----------------------------</td></tr><tr><td>**Low**</td><td>Single, primary, Ta, LG, <3cm, no CIS</td><td>Recur 15%, Prog <1%</td></tr><tr><td>**Intermediate**</td><td>Multiple/recurrent Ta LG, or Ta HG <3cm</td><td>Recur 30–50%, Prog 5–10%</td></tr><tr><td>**High**</td><td>Any T1, any HG, any CIS, multiple/large Ta HG</td><td>Recur 50–70%, Prog 15–30%</td></tr></table>
+<div class="sub-h">Management</div>
+<p>#### NMIBC &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Step&lt;/th&gt;&lt;th&gt;Treatment&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>TURBT</b>&lt;/td&gt;&lt;td&gt;<b>Complete resection</b> (including muscle for T1); <b>Re-TURBT</b> mandatory for T1, incomplete, no muscle in specimen&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Low Risk</b>&lt;/td&gt;&lt;td&gt;<b>Single post-op instillation</b> (mitomycin C/epirubicin/gemcitabine within 24h)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Intermediate</b>&lt;/td&gt;&lt;td&gt;<b>Induction BCG</b> (6 weekly) ± <b>Maintenance BCG</b> (3 weekly at 3,6,12,18,24,30,36mo)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>High Risk</b>&lt;/td&gt;&lt;td&gt;<b>BCG induction + maintenance (1–3yr)</b>; Radical cystectomy if BCG-unresponsive&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>BCG-Unresponsive</b>&lt;/td&gt;&lt;td&gt;<b>Radical cystectomy</b> (gold standard); Intravesical alternatives (gemcitabine/docetaxel, pembrolizumab, nadofaragene firadenovec)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p>#### MIBC &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Step&lt;/th&gt;&lt;th&gt;Treatment&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Localised (T2–T4a, N0)</b>&lt;/td&gt;&lt;td&gt;<b>Radical cystectomy + pelvic lymphadenectomy + urinary diversion</b> (ileal conduit, neobladder, continent diversion)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Neoadjuvant</b>&lt;/td&gt;&lt;td&gt;<b>Cisplatin-based chemo (GC/MVAC) → cystectomy</b> (survival benefit)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Adjuvant</b>&lt;/td&gt;&lt;td&gt;If not given neoadjuvant + high risk (pT3/T4, N+)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Trimodality (Bladder Preservation)</b>&lt;/td&gt;&lt;td&gt;<b>Maximal TURBT + concurrent chemoradiation</b> (selected patients)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Metastatic</b>&lt;/td&gt;&lt;td&gt;<b>Cisplatin-based chemo (GC)</b> → <b>IO maintenance (avelumab)</b>; IO if cisplatin-ineligible&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Upper Tract Urothelial Carcinoma (UTUC)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>Detail</th></tr><tr><td>---------</td><td>--------</td></tr><tr><td>**Incidence**</td><td>5–10% of urothelial cancers; 70–80yo</td></tr><tr><td>**Risk Factors**</td><td>Smoking, **aromatic amines**, **Balkan nephropathy (aristolochic acid)**, Lynch syndrome, analgesic nephropathy</td></tr><tr><td>**Presentation**</td><td>Haematuria (90%), flank pain, UTI, incidental</td></tr><tr><td>**Diagnosis**</td><td>CT urogram (gold standard), ureteroscopy + biopsy, urine cytology (low sensitivity)</td></tr><tr><td>**Staging**</td><td>Same TNM as bladder (Ta–T4, N, M)</td></tr><tr><td>**Risk Strat**</td><td>**Low**: Ta LG, solitary, <2cm; **High**: T1, HG, CIS, multifocal, >2cm, hydronephrosis</td></tr><tr><td>**Treatment**</td><td>**Radical nephroureterectomy (RNU) + bladder cuff** (gold standard high-risk); **Kidney-sparing** (ureteroscopic ablation/laser, segmental resection) for low-risk</td></tr><tr><td>**Adjuvant**</td><td>Cisplatin-based chemo if pT3/T4 or N+ (controversial)</td></tr><tr><td>**Surveillance**</td><td>**High risk of bladder recurrence** — cystoscopy q3mo × 2yr</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>RCC = commonest renal cancer; Clear cell 70–80%; VHL mutation</b> - <b>RCC classic triad (flank pain, haematuria, mass) &lt;10%; incidental &gt;50%</b> - <b>RCC paraneoplastic: erythrocytosis (EPO), hypercalcaemia (PTHrP)</b> - <b>RCC staging: T1a ≤4cm → partial nephrectomy/ablation/surveillance; T1b 4–7 → partial; T2+ → radical</b> - <b>Metastatic RCC: IO+TKI 1st line (pembro+axiti, nivo+cabo); IMDC risk stratification</b> - <b>Bladder Ca: smoking #1; occupational aromatic amines; M&gt;F 3:1</b> - <b>NMIBC (75%): Ta, Tis, T1; MIBC (25%): T2+</b> - <b>NMIBC risk: Low (single Ta LG) → single post-op chemo; High (T1/HG/CIS) → BCG induction+maintenance</b> - <b>BCG-unresponsive → radical cystectomy</b> - <b>MIBC: neoadjuvant cisplatin chemo → radical cystectomy + diversion</b> - <b>UTUC: Balkan nephropathy (aristolochic acid); RNU + bladder cuff; high bladder recurrence</b> - <b>Schistosomiasis → squamous cell bladder cancer</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**All RCC = radical nephrectomy**</td><td>**T1a/T1b → partial/ablation/surveillance** (nephron-sparing)</td></tr><tr><td>**Clear cell = only RCC**</td><td>Papillary, chromophobe, collecting duct, unclassified</td></tr><tr><td>**VHL = only clear cell**</td><td>VHL = clear cell; but also sporadic clear cell have VHL loss</td></tr><tr><td>**Bladder Ca = only TCC**</td><td>Squamous (schisto), adenocarcinoma, small cell, sarcomatoid</td></tr><tr><td>**NMIBC = always BCG**</td><td>Low risk = single post-op chemo only; BCG for intermediate/high</td></tr><tr><td>**BCG = 6 weeks only**</td><td>**Maintenance BCG (1–3yr) essential for high risk** (SWOG/Sylvester)</td></tr><tr><td>**MIBC = cystectomy only**</td><td>**Neoadjuvant cisplatin chemo → cystectomy** = standard</td></tr><tr><td>**UTUC = same as bladder**</td><td>RNU + cuff; kidney-sparing for low risk; high bladder recurrence risk</td></tr><tr><td>**Schistosomiasis = TCC**</td><td>**Squamous cell carcinoma** (chronic inflammation)</td></tr><tr><td>**RCC mets = only lung**</td><td>Bone, liver, brain, adrenal also common</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>RCC Subtypes</b>: <b>C</b>lear (70%), <b>P</b>apillary (15%), <b>C</b>hromophobe (5%), <b>C</b>ollecting <b>D</b>uct (&lt;1%) = <b>CPCCD</b></li><li><b>RCC Paraneoplastic</b>: <b>E</b>rythrocytosis (EPO), <b>H</b>ypercalcaemia (PTHrP), <b>H</b>ypertension (Renin) = <b>EHH</b></li><li><b>RCC Staging</b>: <b>T1</b>a ≤4, <b>T1</b>b 4–7, <b>T2</b> 7–10, <b>T3</b> fat/vein/IVC, <b>T4</b> Gerota's = <b>T1T2T3T4</b></li><li><b>RCC Systemic</b>: <b>I</b>O+<b>T</b>KI 1st line; <b>I</b>MDC risk = <b>ITC</b></li><li><b>Bladder Risk</b>: <b>S</b>moking <b>#1</b>; <b>A</b>romatic <b>A</b>mines = <b>S#1 AA</b></li><li><b>NMIBC</b>: <b>T</b>a, <b>T</b>is, <b>T</b>1 = <b>TTT</b></li><li><b>NMIBC Risk</b>: <b>L</b>ow (Ta LG single), <b>I</b>ntermediate (multi/recur Ta LG), <b>H</b>igh (T1/HG/CIS) = <b>LIH</b></li><li><b>BCG</b>: <b>I</b>nduction 6wk + <b>M</b>aintenance 1–3yr = <b>IM</b></li><li><b>MIBC</b>: <b>N</b>eo<b>A</b>djuvant <b>C</b>isplatin → <b>C</b>ystectomy = <b>NAC</b></li><li><b>UTUC</b>: <b>R</b>adical <b>N</b>ephro<b>U</b>reterectomy (<b>R</b>NU) + <b>B</b>ladder <b>C</b>uff = <b>RNB</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Urological Malignancies)) RCC Subtypes[Clear 70%, Papillary, Chromophobe] Genetics[VHL loss (3p) - clear cell] Paraneoplastic[Erythrocytosis, Hypercalcaemia, HTN] Staging[T1a≤4, T1b4-7, T2&gt;7, T3 fat/vein, T4 Gerota] Local[Surveillance, Ablation, Partial (T1), Radical (T2+)] Metastatic[IO+TKI 1st line (Pembro+Axi, Nivo+Cabo); IMDC risk] Bladder Risk[Smoking #1; Aromatic amines; Schisto → SCC] NMIBC[Ta, Tis, T1 = 75%] NMIBC_Risk[Low (Ta LG single), Int (multi Ta LG), High (T1/HG/CIS)] NMIBC_Tx[TURBT; Low=post-op chemo; High=BCG Ind+Maint] BCG_Unresponsive[Cystectomy; Pembrolizumab, Gem/Doce] MIBC[T2+; NeoAdj Cisplatin → Radical Cystectomy + Diversion] Metastatic[GC → IO maintenance (Avelumab)] UTUC Risk[Smoking, Balkan (aristolochic), Lynch, Analgesic] Dx[CT Urogram, Ureteroscopy + biopsy] Rx[RNU + cuff (high risk); Kidney-sparing (low risk)] Surveillance[Bladder recurrence high = cysto q3mo] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>RCC: clear cell 70%, VHL mutation, paraneoplastic (EPO, PTHrP)</li><li>RCC staging: T1a ≤4cm → partial/ablation/surveillance; T2+ → radical</li><li>Metastatic RCC: IO+TKI 1st line; IMDC risk (favourable/intermediate/poor)</li><li>Bladder Ca: smoking #1, aromatic amines, M&gt;F 3:1</li><li>NMIBC (75%): Ta, Tis, T1; Risk: Low (Ta LG single) → post-op chemo; High (T1/HG/CIS) → BCG induction + maintenance</li><li>BCG-unresponsive → radical cystectomy</li><li>MIBC: neoadjuvant cisplatin chemo → radical cystectomy + diversion</li><li>UTUC: Balkan nephropathy (aristolochic acid); RNU + cuff; bladder surveillance</li><li>Schistosomiasis → squamous cell bladder cancer</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>RCC subtypes/VHL, staging & management (partial vs radical), metastatic IO+TKI, bladder risk factors, NMIBC risk stratification & BCG, MIBC neoadjuvant + cystectomy, UTUC RNU</td></tr><tr><td>**Should Know 🟡**</td><td>Papillary/chromophobe RCC, non-clear cell systemic therapy, bladder preservation (trimodality), UTUC kidney-sparing, surveillance protocols, Lynch syndrome</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel IO combinations, HIF-2α inhibitors (belzutifan), ctDNA, adjuvant pembrolizumab (KEYNOTE-564), enfortumab vedotin, quality of life outcomes</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Commonest histological subtype of RCC:</b></li></ol>
+<p>A. Papillary B. Chromophobe C. <b>Clear cell (70–80%)</b> D. Collecting duct E. Oncocytoma</p>
+<ol><li><b>Genetic alteration in clear cell RCC:</b></li></ol>
+<p>A. MET activation B. <b>VHL loss (3p deletion/mutation)</b> C. Fumarate hydratase D. FLCN (BHD) E. TP53</p>
+<ol><li><b>RCC paraneoplastic syndrome — erythrocytosis mediated by:</b></li></ol>
+<p>A. PTHrP B. Renin C. <b>EPO</b> D. VEGF E. IL-6</p>
+<ol><li><b>T1a RCC (≤4 cm) — preferred management:</b></li></ol>
+<p>A. Radical nephrectomy B. <b>Active surveillance / Ablation / Partial nephrectomy</b> C. Systemic therapy D. Radiotherapy E. Active surveillance only</p>
+<ol><li><b>Metastatic clear cell RCC — 1st line systemic therapy:</b></li></ol>
+<p>A. Sunitinib alone B. <b>IO + TKI (pembrolizumab + axitinib / nivolumab + cabozantinib)</b> C. Pazopanib alone D. High-dose IL-2 E. Everolimus alone</p>
+<ol><li><b>Commonest risk factor for bladder cancer:</b></li></ol>
+<p>A. Occupational dyes B. <b>Smoking (50% cases)</b> C. Schistosomiasis D. Cyclophosphamide E. Pelvic radiation</p>
+<ol><li><b>NMIBC high-risk features:</b></li></ol>
+<p>A. Single Ta LG &lt;3cm B. <b>Any T1, any HG, any CIS</b> C. Multiple Ta LG D. Primary Ta LG &lt;3cm E. No CIS</p>
+<ol><li><b>BCG-unresponsive NMIBC — gold standard treatment:</b></li></ol>
+<p>A. Repeat BCG B. <b>Radical cystectomy</b> C. Intravesical gemcitabine D. Radiotherapy E. Surveillance</p>
+<ol><li><b>Muscle-invasive bladder cancer (MIBC) — standard of care:</b></li></ol>
+<p>A. Radical cystectomy alone B. <b>Neoadjuvant cisplatin-based chemotherapy → radical cystectomy</b> C. Radiotherapy alone D. BCG induction + maintenance E. Intravesical chemo only</p>
+<ol><li><b>Upper tract urothelial carcinoma — associated with Balkan nephropathy:</b></li></ol>
+<p>A. <b>Aristolochic acid</b> B. Aromatic amines C. Cyclophosphamide D. Schistosomiasis E. Lynch syndrome</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>55-year-old man, incidental 3.5 cm left renal mass on CT for abdominal pain. Biopsy: clear cell RCC. Management:</b></li></ol>
+<p>A. Radical nephrectomy B. <b>Partial nephrectomy (nephron-sparing)</b> C. Active surveillance D. Ablation (RFA) E. Systemic therapy</p>
+<ol><li><b>65-year-old man, metastatic clear cell RCC, IMDC intermediate risk (Hb low, Ca high). 1st line:</b></li></ol>
+<p>A. Sunitinib B. <b>Pembrolizumab + axitinib OR nivolumab + cabozantinib</b> C. Nivolumab + ipilimumab D. Pazopanib E. Everolimus</p>
+<ol><li><b>70-year-old man, smoking 40 pack-years, painless haematuria. Cystoscopy: solitary 2cm papillary tumour. TURBT: Ta LG. Management:</b></li></ol>
+<p>A. Radical cystectomy B. <b>Single post-op intravesical mitomycin C (within 24h)</b> C. BCG induction + maintenance D. Repeat TURBT in 6 weeks E. Surveillance only</p>
+<ol><li><b>60-year-old man, T1 HG bladder cancer on TURBT, no muscle in specimen. Next step:</b></li></ol>
+<p>A. BCG induction B. <b>Repeat TURBT (mandatory for T1, no muscle)</b> C. Radical cystectomy D. Single post-op chemo E. Surveillance</p>
+<ol><li><b>55-year-old woman, CIS on bladder biopsy. BCG induction + maintenance completed. 6mo later: recurrent CIS. BCG-unresponsive. Management:</b></li></ol>
+<p>A. Repeat BCG B. <b>Radical cystectomy</b> C. Intravesical gemcitabine D. Pembrolizumab (if refuses cystectomy) E. Radiotherapy</p>
+<ol><li><b>65-year-old man, cT2N0M0 bladder cancer. Fit for surgery, cisplatin-eligible. Optimal management:</b></li></ol>
+<p>A. Radical cystectomy alone B. <b>Neoadjuvant cisplatin (GC or dose-dense MVAC) → radical cystectomy</b> C. BCG + chemo D. Radiotherapy alone E. Trimodality (TMT) only</p>
+<ol><li><b>40-year-old man, haematuria, CT urogram: right upper ureteric mass. Ureteroscopy biopsy: HG UTUC. Hydronephrosis present. Management:</b></li></ol>
+<p>A. Ureteroscopic laser ablation B. <b>Radical nephroureterectomy + bladder cuff excision</b> C. Segmental ureterectomy D. BCG instillation E. Surveillance</p>
+<ol><li><b>UTUC patient post-RNU. Bladder recurrence risk:</b></li></ol>
+<p>A. &lt;5% B. 10–15% C. <b>20–50% (high) — cystoscopy q3mo × 2yr</b> D. 60–70% E. Only if CIS present</p>
+<ol><li><b>Schistosomiasis-associated bladder cancer — histology:</b></li></ol>
+<p>A. Urothelial carcinoma B. <b>Squamous cell carcinoma</b> C. Adenocarcinoma D. Small cell carcinoma E. Sarcomatoid</p>
+<ol><li><b>RCC with IVC tumour thrombus extending above diaphragm (T3b). Management:</b></li></ol>
+<p>A. Radical nephrectomy alone B. <b>Radical nephrectomy + IVC thrombectomy (cardiac bypass if supradiaphragmatic)</b> C. Systemic therapy only D. Radiotherapy E. Ablation</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: RCC commonest subtype?</li></ul>
+<p>A: Clear cell (70–80%)</p>
+<ul><li>Q: RCC genetics?</li></ul>
+<p>A: VHL loss (3p) in clear cell</p>
+<ul><li>Q: RCC paraneoplastic?</li></ul>
+<p>A: Erythrocytosis (EPO), hypercalcaemia (PTHrP), HTN (renin)</p>
+<ul><li>Q: T1a RCC management?</li></ul>
+<p>A: Surveillance / ablation / partial nephrectomy</p>
+<ul><li>Q: Metastatic RCC 1st line?</li></ul>
+<p>A: IO+TKI (pembro+axiti, nivo+cabo); IO+IO (nivo+ipi) for int/poor IMDC</p>
+<ul><li>Q: Bladder Ca #1 risk?</li></ul>
+<p>A: Smoking (50%)</p>
+<ul><li>Q: NMIBC stages?</li></ul>
+<p>A: Ta, Tis (CIS), T1</p>
+<ul><li>Q: NMIBC high risk?</li></ul>
+<p>A: T1, HG, CIS</p>
+<ul><li>Q: NMIBC low risk Tx?</li></ul>
+<p>A: Single post-op intravesical chemo</p>
+<ul><li>Q: NMIBC high risk Tx?</li></ul>
+<p>A: BCG induction + maintenance (1–3yr)</p>
+<ul><li>Q: BCG-unresponsive?</li></ul>
+<p>A: Radical cystectomy (gold standard)</p>
+<ul><li>Q: MIBC standard?</li></ul>
+<p>A: Neoadjuvant cisplatin chemo → radical cystectomy</p>
+<ul><li>Q: UTUC Balkans?</li></ul>
+<p>A: Aristolochic acid</p>
+<ul><li>Q: UTUC treatment?</li></ul>
+<p>A: RNU + bladder cuff (high risk); kidney-sparing (low risk)</p>
+<ul><li>Q: UTUC bladder recurrence?</li></ul>
+<p>A: 20–50%; cystoscopy q3mo × 2yr</p>
+<ul><li>Q: Schistosomiasis bladder Ca?</li></ul>
+<p>A: Squamous cell carcinoma</p>
+<ul><li>Q: IMDC risk factors?</li></ul>
+<p>A: Hb↓, Ca↑, KPS&lt;80%, dx→tx&lt;1yr, neutrophils↑, platelets↑</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>C</b> — Clear cell = 70–80% of RCC</li><li><b>B</b> — VHL loss (3p) = hallmark of clear cell RCC</li><li><b>C</b> — Erythrocytosis = EPO overproduction</li><li><b>B</b> — T1a ≤4cm = nephron-sparing (partial/ablation/surveillance)</li><li><b>B</b> — IO+TKI = 1st line standard (KEYNOTE-426, CheckMate-9ER)</li><li><b>B</b> — Smoking = 50% of bladder cancer</li><li><b>B</b> — High risk NMIBC = any T1, any HG, any CIS</li><li><b>B</b> — BCG-unresponsive = radical cystectomy (gold standard)</li><li><b>B</b> — Neoadjuvant cisplatin → cystectomy = survival benefit</li><li><b>A</b> — Balkan nephropathy = aristolochic acid</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — 3.5cm = T1a → partial nephrectomy (nephron-sparing preferred)</li><li><b>B</b> — IMDC intermediate = IO+TKI (pembro+axiti or nivo+cabo)</li><li><b>B</b> — Ta LG solitary = low risk → single post-op chemo</li><li><b>B</b> — T1 HG + no muscle = repeat TURBT mandatory</li><li><b>B</b> — BCG-unresponsive CIS = radical cystectomy</li><li><b>B</b> — cT2N0 cisplatin-eligible = neoadjuvant GC → cystectomy</li><li><b>B</b> — HG UTUC + hydronephrosis = high risk → RNU + cuff</li><li><b>C</b> — UTUC bladder recurrence 20–50% = intensive cysto surveillance</li><li><b>B</b> — Schistosomiasis = squamous cell carcinoma</li><li><b>B</b> — T3b (IVC supradiaphragmatic) = radical nephrectomy + IVC thrombectomy with cardiac bypass</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Urological Malignancies</b> is a <b>Must Know 🔴</b> topic. <b>Key takeaway:</b> <b>RCC</b>: clear cell 70% (VHL loss); paraneoplastic: erythrocytosis, hypercalcaemia. <b>Staging</b>: T1a ≤4cm → partial/ablation/surveillance; T2+ → radical. <b>Metastatic</b>: IO+TKI 1st line; IMDC risk stratification. <b>Bladder Ca</b>: smoking #1, aromatic amines. <b>NMIBC</b> (75%): Ta/Tis/T1. Risk: Low (Ta LG single) → post-op chemo; High (T1/HG/CIS) → <b>BCG induction + maintenance</b>. <b>BCG-unresponsive</b> → radical cystectomy. <b>MIBC</b>: neoadjuvant cisplatin → radical cystectomy + diversion. <b>UTUC</b>: Balkan = aristolochic acid; <b>RNU + cuff</b>; bladder surveillance q3mo. <b>Schistosomiasis</b> → squamous cell. <b>Exam focus:</b> RCC subtypes/staging/management, metastatic therapy, bladder risk factors, NMIBC risk stratification, BCG protocol, MIBC neoadjuvant, UTUC management, schistosomiasis histology. <b>Clinical relevance:</b> Nephron-sparing surgery preserves renal function; IO revolutionised metastatic RCC; BCG maintenance critical for NMIBC; cystectomy morbidity high but curative for MIBC.</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Urological Malignancies (RCC, Bladder Cancer, Urothelial Cancer) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

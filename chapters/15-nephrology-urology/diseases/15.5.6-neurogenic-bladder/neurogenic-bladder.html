@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Neurogenic Bladder — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">Neurogenic Bladder</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Classify neurogenic bladder by lesion level (UMN vs LMN)</li><li>Apply urodynamic interpretation (compliance, DSD, detrusor pressure)</li><li>Manage with clean intermittent catheterisation (CIC), pharmacotherapy, surgical options</li><li>Prevent upper tract deterioration (hydronephrosis, VUR, renal scarring)</li><li>Apply to FCPS/MRCP spinal cord injury / myelomeningocele vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Classification by Lesion Level</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Lesion Level</th><th>Type</th><th>Bladder Behaviour</th><th>Sphincter</th><th>Urodynamics</th></tr><tr><td>--------------</td><td>------</td><td>-------------------</td><td>-----------</td><td>-------------</td></tr><tr><td>**Suprasacral** (UMN)</td><td>**Hyperreflexic** (Overactive)</td><td>**Detrusor overactivity** (involuntary contractions)</td><td>**DSD** (Detrusor-Sphincter Dyssynergia) — external sphincter contracts during detrusor contraction</td><td>High detrusor pressure, low compliance, DSD</td></tr><tr><td>**Sacral/Infrasacral** (LMN)</td><td>**Areflexic** (Underactive)</td><td>**Areflexia / Acontractility** — no detrusor contraction</td><td>**Flaccid** (no voluntary control)</td><td>Low detrusor pressure, high capacity, no DSD</td></tr><tr><td>**Conus Medullaris**</td><td>Mixed</td><td>Variable (often areflexic detrusor + DSD possible)</td><td>Mixed</td><td>Mixed</td></tr></table>
+<div class="callout"><b>UMN (Suprasacral)</b> = spastic bladder + DSD → high pressure → <b>upper tract risk</b>. <b>LMN (Sacral)</b> = flaccid bladder → retention → overflow incontinence + UTI.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Common Aetiologies</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Level</th><th>Causes</th></tr><tr><td>-------</td><td>--------</td></tr><tr><td>**Suprasacral (UMN)**</td><td>Spinal cord injury (T12/L1), Multiple sclerosis, Transverse myelitis, Spinal tumours, Cerebral palsy, Stroke, Parkinson's</td></tr><tr><td>**Sacral/Infrasacral (LMN)**</td><td>Cauda equina syndrome, Sacral tumours, Spina bifida/Myelomeningocele, Diabetic neuropathy, Pelvic surgery (rectal/prostate), Herpes zoster (S2–S4)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Clinical Presentation</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Suprasacral (UMN) — Hyperreflexic</div>
+<table class="ctable"><tr><th>Symptom</th><th>Mechanism</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Urgency, frequency, urge incontinence**</td><td>Detrusor overactivity</td></tr><tr><td>**Incomplete emptying, retention**</td><td>DSD → functional obstruction</td></tr><tr><td>**Recurrent UTIs**</td><td>Stasis, high pressure</td></tr><tr><td>**Autonomic dysreflexia** (if lesion >T6)</td><td>Bladder distension → massive sympathetic surge → hypertension, bradycardia, headache</td></tr></table>
+<div class="sub-h">Sacral/Infrasacral (LMN) — Areflexic</div>
+<table class="ctable"><tr><th>Symptom</th><th>Mechanism</th></tr><tr><td>---------</td><td>-----------</td></tr><tr><td>**Overflow incontinence**</td><td>Acontractile detrusor → chronic retention → overflow</td></tr><tr><td>**Stress incontinence**</td><td>Flaccid sphincter + abdominal pressure</td></tr><tr><td>**Recurrent UTIs**</td><td>Stasis, incomplete emptying</td></tr><tr><td>**Saddle anaesthesia, lax anus**</td><td>Sacral root involvement</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Urodynamics (Essential for Diagnosis & Management)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>UMN (Suprasacral)</th><th>LMN (Sacral)</th></tr><tr><td>-----------</td><td>-------------------</td><td>--------------</td></tr><tr><td>**Detrusor activity**</td><td>**Overactive** (involuntary contractions)</td><td>**Areflexic / Underactive**</td></tr><tr><td>**Compliance**</td><td>**Low** (stiff bladder)</td><td>High (flaccid)</td></tr><tr><td>**Detrusor pressure**</td><td>**High** (>40 cmH₂O risk)</td><td>Low</td></tr><tr><td>**DSD**</td><td>**Present** (EMG activity during contraction)</td><td>Absent</td></tr><tr><td>**Sphincter tone**</td><td>Hypertonic</td><td>Flaccid</td></tr><tr><td>**Bladder capacity**</td><td>Reduced</td><td>Increased</td></tr><tr><td>**Maximum flow rate**</td><td>Low (obstructed by DSD)</td><td>Low (no contractility)</td></tr></table>
+<div class="callout"><b>Detrusor leak point pressure (DLPP) &gt;40 cmH₂O</b> = risk of upper tract damage (hydronephrosis, VUR).</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Diagnostic Workup</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Test</th><th>Purpose</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Urodynamics (video-urodynamics preferred)**</td><td>**Gold standard** — confirms type, measures pressures, DSD, compliance</td></tr><tr><td>**Renal US**</td><td>Screen for hydronephrosis, cortical thinning, stones</td></tr><tr><td>**DMSA scan**</td><td>Renal scarring (reflux nephropathy)</td></tr><tr><td>**VCUG**</td><td>Vesicoureteric reflux (VUR) grading</td></tr><tr><td>**Post-void residual (PVR)**</td><td>Quantifies retention</td></tr><tr><td>**Cystoscopy**</td><td>Anatomy, stones, bladder trabeculation</td></tr><tr><td>**MRI Spine**</td><td>Identifies lesion level if unknown</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Management Principles</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Clean Intermittent Catheterisation (CIC) — **Cornerstone**</div>
+<table class="ctable"><tr><th>Aspect</th><th>Detail</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**Indication**</td><td>PVR >100–150mL, inadequate emptying, high detrusor pressure</td></tr><tr><td>**Frequency**</td><td>q4–6h (target PVR <100mL)</td></tr><tr><td>**Technique**</td><td>Sterile vs clean (clean acceptable for chronic); hydrophilic catheters</td></tr><tr><td>**Complications**</td><td>UTI (most common), urethral stricture, false passages, haematuria</td></tr><tr><td>**Teaching**</td><td>Patient/caregiver training essential; lifelong in most</td></tr></table>
+<div class="callout"><b>CIC + Anticholinergic</b> = standard for UMN to protect upper tracts.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2. Pharmacotherapy</div>
+<table class="ctable"><tr><th>Drug Class</th><th>Indication</th><th>Details</th></tr><tr><td>------------</td><td>------------</td><td>---------</td></tr><tr><td>**Anticholinergics** (Oxybutynin, Tolterodine, Solifenacin, Darifenacin, Fesoterodine)</td><td>**UMN** — detrusor overactivity, low compliance</td><td>Oral/Transdermal; side effects: dry mouth, constipation, cognitive (elderly), retention</td></tr><tr><td>**β₃-Agonist** (Mirabegron)</td><td>UMN (add-on or alternative)</td><td>Relax detrusor via β₃; fewer anticholinergic SEs</td></tr><tr><td>**α-Blockers** (Tamsulosin, Alfuzosin)</td><td>**DSD** (UMN) — ↓ sphincter resistance</td><td>Helps emptying with CIC</td></tr><tr><td>**Botulinum Toxin A** (OnabotulinumtoxinA)</td><td>Refractory UMN</td><td>100–200U intradetrusor q6–12mo; may need CIC post-injection</td></tr><tr><td>**Baclofen (intrathecal)**</td><td>Severe spasticity/DSD</td><td>Intrathecal pump for spasticity + bladder</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">3. Surgical Options (Refractory Cases)</div>
+<table class="ctable"><tr><th>Procedure</th><th>Indication</th><th>Details</th></tr><tr><td>-----------</td><td>------------</td><td>---------</td></tr><tr><td>**Augmentation Cystoplasty** (ileum/colon/ileocaecal)</td><td>Low compliance, high pressure refractory to meds</td><td>↑ capacity, ↓ pressure; CIC mandatory lifelong; risks: stones, mucus, metabolic acidosis, malignancy (long-term)</td></tr><tr><td>**Urinary Diversion** (ileal conduit, continent pouch)</td><td>Failed augmentation, patient preference</td><td>Stoma or catheterisable channel (Mitrofanoff)</td></tr><tr><td>**Sacral Neuromodulation**</td><td>Non-neurogenic + selected neurogenic</td><td>Not first-line for neurogenic; limited evidence</td></tr><tr><td>**Sphincterotomy** (endoscopic)</td><td>Male UMN with DSD refractory</td><td>↓ outlet resistance; incontinence → condom drainage</td></tr><tr><td>**Artificial Urinary Sphincter (AUS)**</td><td>Stress incontinence (LMN)</td><td>Gold standard for sphincteric incontinence; revision rate high</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Upper Tract Surveillance (Critical)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Parameter</th><th>Frequency</th><th>Action Threshold</th></tr><tr><td>-----------</td><td>-----------</td><td>------------------</td></tr><tr><td>**Renal US**</td><td>q6–12mo</td><td>New hydronephrosis → investigate</td></tr><tr><td>**Serum Creatinine / eGFR**</td><td>q6–12mo</td><td>Rising → urgent urodynamics</td></tr><tr><td>**Urodynamics**</td><td>q1–2yr (or change)</td><td>DLPP >40 cmH₂O → intervene</td></tr><tr><td>**DMSA**</td><td>If VUTI / hydronephrosis</td><td>Scarring → aggressive management</td></tr></table>
+<div class="callout"><b>Goal</b>: Keep detrusor pressure &lt;40 cmH₂O, compliance &gt;20 mL/cmH₂O, PVR &lt;100mL.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Complications</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Prevention</th></tr><tr><td>--------------</td><td>------------</td></tr><tr><td>**UTI**</td><td>CIC technique, cranberry/methenamine, prophylactic abx (selected)</td></tr><tr><td>**Bladder Stones**</td><td>Hydration, CIC, augmentation surveillance</td></tr><tr><td>**Hydronephrosis / VUR**</td><td>Low detrusor pressure (anticholinergics, botox, augmentation)</td></tr><tr><td>**Renal Failure**</td><td>Early detection + aggressive pressure management</td></tr><tr><td>**Bladder Cancer** (↑ risk in augmentation)</td><td>Annual cystoscopy + cytology 10yr post-augmentation</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Special Populations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Spina Bifida / Myelomeningocele</div>
+<ul><li><b>LMN pattern</b> (sacral agenesis) — areflexic bladder + flaccid sphincter</li><li><b>Early CIC</b> (from infancy) + anticholinergics if high pressure</li><li><b>Lifelong surveillance</b> — renal US q6mo, urodynamics q1–2yr</li></ul>
+<div class="sub-h">Spinal Cord Injury (SCI)</div>
+<ul><li><b>Acute phase</b> (spinal shock) — areflexic bladder → indwelling catheter</li><li><b>Recovery phase</b> (weeks-months) — UMN pattern emerges → transition to CIC</li><li><b>Autonomic dysreflexia</b> risk if lesion &gt;T6 — bladder/bowel distension triggers</li></ul>
+<div class="sub-h">Multiple Sclerosis</div>
+<ul><li>Variable (UMN common) — fluctuating course</li><li>Urodynamics at baseline + q1–2yr or symptom change</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Neurogenic bladder</b> = bladder dysfunction from CNS/PNS lesion. - <b>UMN (Suprasacral)</b> = detrusor overactivity + <b>DSD</b> → high pressure → <b>upper tract risk</b>. - <b>LMN (Sacral)</b> = areflexic/underactive + flaccid sphincter → overflow incontinence. - <b>Urodynamics</b> = gold standard (compliance, DSD, detrusor pressure, DLPP). - <b>DLPP &gt;40 cmH₂O</b> = danger threshold for upper tracts. - <b>CIC</b> = cornerstone of management (q4–6h, target PVR &lt;100mL). - <b>UMN</b>: Anticholinergics + CIC ± Botox ± α-blocker for DSD. - <b>LMN</b>: CIC ± α-blocker; AUS for stress incontinence. - <b>Augmentation cystoplasty</b> = refractory low compliance; CIC lifelong; metabolic acidosis, stones, malignancy risk. - <b>Surveillance</b>: US q6–12mo, urodynamics q1–2yr, DMSA if VUTI. - <b>Autonomic dysreflexia</b> (SCI &gt;T6): bladder distension → hypertensive crisis.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**All neurogenic bladder = UMN**</td><td>**Sacral/cauda equina = LMN** (areflexic, overflow)</td></tr><tr><td>**DSD = sphincter relaxes during voiding**</td><td>**DSD = sphincter CONTRACTS during detrusor contraction** (dyssynergia)</td></tr><tr><td>**CIC not needed if continent**</td><td>**PVR >150mL or high detrusor pressure = CIC needed** even if continent</td></tr><tr><td>**Anticholinergics for all**</td><td>**LMN (areflexic) = anticholinergics WORSEN retention**</td></tr><tr><td>**Augmentation = no more CIC**</td><td>**CIC MANDATORY lifelong after augmentation** (mucus, incomplete emptying)</td></tr><tr><td>**β₃-agonist = same as anticholinergic**</td><td>**Mirabegron** = different mechanism (β₃), fewer cognitive/dry mouth SEs</td></tr><tr><td>**α-blocker = for DSD in UMN**</td><td>Yes — tamsulosin ↓ sphincter tone → helps emptying with CIC</td></tr><tr><td>**Autonomic dysreflexia = any SCI**</td><td>**Only lesions >T6** (T6 and above)</td></tr><tr><td>**Urodynamics = one-time test**</td><td>**Repeat q1–2yr or with symptom change**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>UMN vs LMN</b>: <b>U</b>pper = <b>U</b>nstable (overactive) + <b>D</b>SD; <b>L</b>ower = <b>L</b>imp (areflexic) + <b>F</b>laccid</li><li><b>DSD</b>: <b>D</b>etrusor <b>S</b>phincter <b>D</b>yssynergia = <b>D</b>on't <b>S</b>ynergise <b>D</b>uring voiding</li><li><b>Neurogenic bladder Rx</b>: <b>C</b>IC + <b>A</b>nticholinergic (UMN) = <b>CA</b></li><li><b>DLPP</b>: <b>D</b>LPP &gt; <b>40</b> = <b>D</b>anger to upper tracts</li><li><b>Autonomic dysreflexia</b>: <b>A</b>bove <b>T</b>6 = <b>A</b>utonomic <b>D</b>ysreflexia risk</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Neurogenic Bladder)) UMN[Suprasacral (UMN)] Lesion[SCI, MS, Stroke, Tumour] Bladder[Overactive, Low compliance] Sphincter[DSD - contracts with detrusor] Pressure[High, DLPP &gt;40 risk] Management[CIC + Anticholinergics ± Botox ± α-blocker] LMN[Sacral/Infrasacral (LMN)] Lesion[Cauda equina, Spina bifida, Diabetic neuropathy] Bladder[Areflexic, High compliance] Sphincter[Flaccid] Management[CIC ± α-blocker; AUS for stress incontinence] Diagnosis Urodynamics[Gold standard: Compliance, DSD, DLPP, Capacity] Imaging[US, VCUG, DMSA] PVR[Post-void residual] Surveillance US[q6-12mo] Urodynamics[q1-2yr] Creatinine[q6-12mo] Complications UTI[Recurrent] Hydronephrosis[High pressure] VUR[Reflux] Stones[Stasis] Renal_Failure[End-stage] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>UMN vs LMN classification (lesion level, bladder behaviour, sphincter)</li><li>DSD definition and significance</li><li>DLPP &gt;40 cmH₂O = upper tract risk</li><li>CIC indications and frequency</li><li>UMN management: CIC + anticholinergics ± Botox</li><li>LMN management: CIC ± AUS</li><li>Augmentation cystoplasty indications + lifelong CIC</li><li>Autonomic dysreflexia (lesion &gt;T6, bladder trigger)</li><li>Surveillance schedule (US, urodynamics, creatinine)</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>UMN/LMN classification, DSD, DLPP >40, CIC cornerstone, anticholinergics for UMN, augmentation indications, surveillance</td></tr><tr><td>**Should Know 🟡**</td><td>Botox dosing, α-blockers for DSD, AUS for LMN stress incontinence, sacral neuromodulation limits, paediatric spina bifida management</td></tr><tr><td>**Nice to Know 🟢**</td><td>Intrathecal baclofen, novel neuromodulation, tissue-engineered bladders, quality of life metrics, health economics</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Suprasacral (UMN) neurogenic bladder — key urodynamic feature:</b></li></ol>
+<p>A. Areflexic detrusor B. <b>Detrusor overactivity + DSD</b> C. High compliance D. Flaccid sphincter E. Low detrusor pressure</p>
+<ol><li><b>Detrusor-Sphincter Dyssynergia (DSD) definition:</b></li></ol>
+<p>A. Sphincter relaxes during detrusor contraction B. <b>Sphincter contracts during detrusor contraction</b> C. Detrusor contracts without sphincter activity D. Sphincter contracts without detrusor activity E. Both relax simultaneously</p>
+<ol><li><b>Danger threshold for upper tract damage (DLPP):</b></li></ol>
+<p>A. &gt;20 cmH₂O B. &gt;30 cmH₂O C. <b>&gt;40 cmH₂O</b> D. &gt;50 cmH₂O E. &gt;60 cmH₂O</p>
+<ol><li><b>Cornerstone management for neurogenic bladder:</b></li></ol>
+<p>A. Indwelling catheter B. <b>Clean Intermittent Catheterisation (CIC)</b> C. Suprapubic catheter D. Condom drainage E. Diapers</p>
+<ol><li><b>CIC target post-void residual:</b></li></ol>
+<p>A. &lt;50 mL B. <b>&lt;100 mL</b> C. &lt;200 mL D. &lt;300 mL E. &lt;500 mL</p>
+<ol><li><b>Sacral (LMN) neurogenic bladder — typical presentation:</b></li></ol>
+<p>A. Urgency, frequency, DSD B. <b>Overflow incontinence, flaccid sphincter, high PVR</b> C. Autonomic dysreflexia D. High detrusor pressure E. Low bladder capacity</p>
+<ol><li><b>Anticholinergics in LMN (areflexic) bladder:</b></li></ol>
+<p>A. First-line B. <b>Contraindicated (worsen retention)</b> C. Use β₃-agonist instead D. Add α-blocker E. Only with CIC</p>
+<ol><li><b>Augmentation cystoplasty — mandatory lifelong:</b></li></ol>
+<p>A. Anticholinergics B. <b>CIC</b> C. Prophylactic antibiotics D. α-blockers E. Botox injections</p>
+<ol><li><b>Autonomic dysreflexia risk — spinal lesion level:</b></li></ol>
+<p>A. &gt;T10 B. <b>&gt;T6</b> C. &gt;L1 D. &gt;S2 E. Any level</p>
+<ol><li><b>Surveillance renal US frequency in neurogenic bladder:</b></li></ol>
+<p>A. Monthly B. <b>q6–12 months</b> C. Yearly D. q2 years E. Only if symptomatic</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>25-year-old man, T4 complete SCI, 6 months post-injury. Urodynamics: detrusor overactivity, DSD, DLPP 55 cmH₂O. Management:</b></li></ol>
+<p>A. Indwelling catheter B. <b>CIC + oxybutynin (anticholinergic) ± tamsulosin</b> C. Suprapubic catheter only D. Augmentation cystoplasty now E. Botulinum toxin only</p>
+<ol><li><b>40-year-old woman, cauda equina syndrome (L1 fracture). Overflow incontinence, PVR 400mL, flaccid sphincter. Best initial management:</b></li></ol>
+<p>A. Oxybutynin B. <b>CIC q4–6h</b> C. Tamsulosin only D. Artificial urinary sphincter E. Augmentation cystoplasty</p>
+<ol><li><b>Neurogenic bladder patient on CIC + anticholinergic. Repeat urodynamics: compliance 15 mL/cmH₂O, DLPP 45 cmH₂O, recurrent febrile UTIs. Next step:</b></li></ol>
+<p>A. Increase anticholinergic dose B. <b>Add intradetrusor botulinum toxin A (100–200U)</b> C. Switch to mirabegron D. α-blocker only E. Suprapubic catheter</p>
+<ol><li><b>Male with UMN neurogenic bladder, failed CIC + anticholinergics + botox. Severe DSD. Surgical option:</b></li></ol>
+<p>A. Augmentation cystoplasty B. <b>Endoscopic sphincterotomy + condom drainage</b> C. Artificial urinary sphincter D. Sacral neuromodulation E. Ileal conduit only</p>
+<ol><li><b>Spina bifida child, neurogenic bladder. Surveillance to prevent renal scarring:</b></li></ol>
+<p>A. US only B. <b>US q6mo + urodynamics q1–2yr + DMSA if VUTI/hydronephrosis</b> C. Annual creatinine only D. VCUG yearly E. No surveillance if continent</p>
+<ol><li><b>T8 SCI patient develops sudden severe headache, hypertension (220/130), bradycardia, sweating above lesion. Trigger: bladder distension. Immediate action:</b></li></ol>
+<p>A. IV labetalol B. <b>Sit up, loosen clothes, immediate bladder drainage (catheterise)</b> C. IV nitroglycerin D. Nifedipine SL E. IV hydralazine</p>
+<ol><li><b>Neurogenic bladder with augmentation cystoplasty (ileal). Long-term complication:</b></li></ol>
+<p>A. Hypertension B. <b>Metabolic acidosis, bladder stones, mucus, malignancy risk</b> C. Hyperkalaemia D. Hypocalcaemia E. Liver failure</p>
+<ol><li><b>Stress incontinence in LMN (sacral) neurogenic bladder — gold standard surgical:</b></li></ol>
+<p>A. Sling B. <b>Artificial Urinary Sphincter (AUS)</b> C. Bulking agents D. Tape E. Colposuspension</p>
+<ol><li><b>Mirabegron vs Anticholinergics — advantage:</b></li></ol>
+<p>A. More potent B. <b>Fewer cognitive/dry mouth/constipation side effects</b> C. Cheaper D. Once weekly dosing E. Works in LMN</p>
+<ol><li><b>Refractory UMN neurogenic bladder — bladder pressure persistently &gt;40 cmH₂O despite CIC + max anticholinergic + botox. Best definitive:</b></li></ol>
+<p>A. Long-term indwelling catheter B. <b>Augmentation cystoplasty</b> C. Sacral neuromodulation D. α-blocker addition E. Condom drainage</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: UMN bladder = ?</li></ul>
+<p>A: Suprasacral, overactive, DSD, high pressure</p>
+<ul><li>Q: LMN bladder = ?</li></ul>
+<p>A: Sacral/infrasacral, areflexic, flaccid sphincter, overflow</p>
+<ul><li>Q: DSD = ?</li></ul>
+<p>A: Sphincter contracts DURING detrusor contraction</p>
+<ul><li>Q: DLPP danger threshold?</li></ul>
+<p>A: &gt;40 cmH₂O</p>
+<ul><li>Q: CIC target PVR?</li></ul>
+<p>A: &lt;100 mL</p>
+<ul><li>Q: UMN Rx?</li></ul>
+<p>A: CIC + anticholinergics ± botox ± α-blocker</p>
+<ul><li>Q: LMN Rx?</li></ul>
+<p>A: CIC ± AUS for stress incontinence</p>
+<ul><li>Q: Augmentation mandatory?</li></ul>
+<p>A: Lifelong CIC</p>
+<ul><li>Q: Autonomic dysreflexia lesion?</li></ul>
+<p>A: &gt;T6</p>
+<ul><li>Q: Bladder trigger for AD?</li></ul>
+<p>A: Distension</p>
+<ul><li>Q: Botox dose?</li></ul>
+<p>A: 100–200U intradetrusor q6–12mo</p>
+<ul><li>Q: Surveillance US?</li></ul>
+<p>A: q6–12mo</p>
+<ul><li>Q: α-blocker in UMN?</li></ul>
+<p>A: For DSD (tamsulosin)</p>
+<ul><li>Q: mirabegron SEs?</li></ul>
+<p>A: Fewer cognitive/dry mouth than anticholinergics</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — UMN (suprasacral) = detrusor overactivity + DSD (dyssynergia) → high detrusor pressure.</li><li><b>B</b> — DSD = external urethral sphincter contracts IN SYNC with detrusor contraction (fails to relax).</li><li><b>C</b> — DLPP &gt;40 cmH₂O = risk of VUR, hydronephrosis, renal deterioration.</li><li><b>B</b> — CIC is the gold standard for emptying; indwelling catheters cause more complications.</li><li><b>B</b> — Target PVR &lt;100mL to minimise stasis, infection, stone risk.</li><li><b>B</b> — LMN (sacral) = areflexic detrusor → overflow incontinence, high PVR, flaccid sphincter.</li><li><b>B</b> — Anticholinergics further suppress detrusor → worsen retention in already areflexic bladder.</li><li><b>B</b> — Post-augmentation: mucus production, incomplete emptying → CIC mandatory lifelong.</li><li><b>B</b> — Autonomic dysreflexia: massive sympathetic surge from noxious stimulus below lesion &gt;T6.</li><li><b>B</b> — Renal US q6–12mo standard surveillance for upper tract changes.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — UMN with high DLPP: CIC + anticholinergic (oxybutynin) first-line; add α-blocker (tamsulosin) for DSD.</li><li><b>B</b> — LMN (cauda equina): areflexic bladder → CIC essential; anticholinergics contraindicated.</li><li><b>B</b> — Refractory low compliance + high DLPP + recurrent UTIs → intradetrusor botox 100–200U q6–12mo.</li><li><b>B</b> — Male UMN + severe DSD refractory → endoscopic sphincterotomy (reduces outlet resistance) + condom drainage.</li><li><b>B</b> — Spina bifida surveillance: US q6mo + urodynamics q1–2yr + DMSA if VUTI/hydronephrosis.</li><li><b>B</b> — Autonomic dysreflexia: immediate bladder drainage (catheterise) is FIRST and most effective step.</li><li><b>B</b> — Augmentation (ileum/colon): metabolic acidosis (HCO₃⁻ loss), mucus, stones, malignancy (long-term).</li><li><b>B</b> — AUS = gold standard for sphincteric stress incontinence (LMN, post-prostatectomy).</li><li><b>B</b> — Mirabegron (β₃-agonist): relaxes detrusor via cAMP; no antimuscarinic SEs (dry mouth, cognitive).</li><li><b>B</b> — Refractory high pressure despite maximal medical therapy → augmentation cystoplasty definitive.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">22</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Neurogenic Bladder</b> is a <b>Must Know 🔴</b> urology/neurology topic. <b>Classification</b>: <b>UMN (Suprasacral)</b> = detrusor overactivity + <b>DSD</b> (sphincter contracts during voiding) → high pressure; <b>LMN (Sacral/Infrasacral)</b> = areflexic/underactive + flaccid sphincter → overflow. <b>Urodynamics</b>: Gold standard. <b>DLPP &gt;40 cmH₂O</b> = upper tract danger. <b>Management</b>: <b>CIC q4–6h (PVR &lt;100mL)</b> = cornerstone. <b>UMN</b>: CIC + anticholinergics/β₃-agonist ± Botox ± α-blocker (tamsulosin for DSD). <b>LMN</b>: CIC ± AUS for stress incontinence. <b>Refractory</b>: <b>Augmentation cystoplasty</b> (ileum/colon) → ↑ capacity, ↓ pressure; <b>lifelong CIC mandatory</b>. <b>Surveillance</b>: US q6–12mo, urodynamics q1–2yr, creatinine q6–12mo, DMSA if VUTI. <b>Autonomic dysreflexia</b>: Lesion &gt;T6, triggered by bladder/bowel distension → hypertensive crisis; <b>immediate catheterisation</b> first step. <b>Exam focus</b>: UMN vs LMN, DSD, DLPP, CIC, anticholinergics UMN only, augmentation + CIC, autonomic dysreflexia &gt;T6.</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Neurogenic Bladder · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

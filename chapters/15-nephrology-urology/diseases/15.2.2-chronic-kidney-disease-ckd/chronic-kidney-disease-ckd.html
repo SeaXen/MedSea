@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chronic Kidney Disease (CKD) — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">Chronic Kidney Disease (CKD)</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Define CKD and apply KDIGO staging (G1–G5 + A1–A3)</li><li>Apply management principles: BP control, CV risk reduction, CKD-MBD, anaemia, acidosis, nutrition</li><li>Manage complications: volume overload, hyperkalaemia, acidosis, anaemia, CKD-MBD</li><li>Prepare for renal replacement therapy (RRT) and transplantation</li><li>Apply to FCPS/MRCP clinical scenarios</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Criterion</th><th>Definition</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**CKD**</td><td>eGFR <60 mL/min/1.73m² **for ≥3 months** **OR** markers of kidney damage (ACR ≥3 mg/mmol, haematuria, structural abnormalities) for ≥3 months</td></tr><tr><td>**Markers of Kidney Damage**</td><td>ACR ≥3 mg/mmol (or AER ≥30 mg/24h), haematuria (non-urological), structural abnormalities (imaging/histology), transplant recipient</td></tr></table>
+<div class="callout">[!key] <b>CKD requires persistence ≥3 months.</b> Single eGFR &lt;60 or ACR ≥3 is not enough — must be confirmed on ≥2 occasions ≥90 days apart.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">KDIGO Staging (2012)</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">GFR Categories (G)</div>
+<table class="ctable"><tr><th>Category</th><th>eGFR (mL/min/1.73m²)</th><th>Description</th></tr><tr><td>----------</td><td>----------------------</td><td>-------------</td></tr><tr><td>**G1**</td><td>≥90</td><td>Normal or high</td></tr><tr><td>**G2**</td><td>60–89</td><td>Mildly decreased</td></tr><tr><td>**G3a**</td><td>45–59</td><td>Mildly to moderately decreased</td></tr><tr><td>**G3b**</td><td>30–44</td><td>Moderately to severely decreased</td></tr><tr><td>**G4**</td><td>15–29</td><td>Severely decreased</td></tr><tr><td>**G5**</td><td><15</td><td>Kidney failure</td></tr></table>
+<div class="sub-h">Albuminuria Categories (A)</div>
+<table class="ctable"><tr><th>Category</th><th>ACR (mg/mmol)</th><th>AER (mg/24h)</th><th>Description</th></tr><tr><td>----------</td><td>---------------</td><td>--------------</td><td>-------------</td></tr><tr><td>**A1**</td><td><3</td><td><30</td><td>Normal to mildly increased</td></tr><tr><td>**A2**</td><td>3–30</td><td>30–300</td><td>Moderately increased (microalbuminuria)</td></tr><tr><td>**A3**</td><td>>30</td><td>>300</td><td>Severely increased (macroalbuminuria)</td></tr></table>
+<div class="sub-h">Prognosis by Combined G + A (Heat Map)</div>
+<table class="ctable"><tr><th></th><th>A1 (<3)</th><th>A2 (3–30)</th><th>A3 (>30)</th></tr><tr><td>---</td><td>---------</td><td>-----------</td><td>----------</td></tr><tr><td>**G1 (≥90)**</td><td>Low</td><td>Moderate</td><td>High</td></tr><tr><td>**G2 (60–89)**</td><td>Low</td><td>Moderate</td><td>High</td></tr><tr><td>**G3a (45–59)**</td><td>Moderate</td><td>High</td><td>Very High</td></tr><tr><td>**G3b (30–44)**</td><td>High</td><td>Very High</td><td>Very High</td></tr><tr><td>**G4 (15–29)**</td><td>Very High</td><td>Very High</td><td>Very High</td></tr><tr><td>**G5 (<15)**</td><td>Very High</td><td>Very High</td><td>Very High</td></tr></table>
+<div class="callout">[!key] <b>G3aA1 = Moderate risk; G3bA2 = Very High risk.</b> Low eGFR + high albuminuria = worst prognosis.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Aetiology (Common Causes)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Cause</th><th>% in Adults</th><th>Notes</th></tr><tr><td>-------</td><td>-------------</td><td>-------</td></tr><tr><td>**Diabetic Kidney Disease**</td><td>35–45%</td><td>Commonest cause worldwide</td></tr><tr><td>**Hypertensive Nephrosclerosis**</td><td>20–25%</td><td>Often overdiagnosed; needs biopsy if atypical</td></tr><tr><td>**Glomerulonephritis**</td><td>15–20%</td><td>IgA, FSGS, MN, etc.</td></tr><tr><td>**Obstructive Uropathy**</td><td>5–10%</td><td>BPH, stones, strictures</td></tr><tr><td>**ADPKD**</td><td>5%</td><td>Autosomal dominant</td></tr><tr><td>**Tubulointerstitial**</td><td>5%</td><td>Analgesics, lithium, reflux</td></tr><tr><td>**Unknown**</td><td>5–10%</td><td>Late presentation, small kidneys</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Clinical Presentation</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Stage</th><th>Typical Features</th></tr><tr><td>-------</td><td>------------------</td></tr><tr><td>**G1–G2**</td><td>Asymptomatic; detected on screening (ACR, BP)</td></tr><tr><td>**G3a–G3b**</td><td>Fatigue, nocturia, mild anaemia, early CKD-MBD</td></tr><tr><td>**G4**</td><td>Anaemia, bone disease, acidosis, volume overload, drug accumulation</td></tr><tr><td>**G5**</td><td>Uraemic symptoms: pericarditis, encephalopathy, neuropathy, bleeding, severe volume overload, refractory hyperkalaemia</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management Principles</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Cardiovascular Risk Reduction (Major Cause of Death)</div>
+<table class="ctable"><tr><th>Intervention</th><th>Target</th></tr><tr><td>--------------</td><td>--------</td></tr><tr><td>**Statin**</td><td>All CKD ≥50yo; <50yo if CVD/diabetes/10yr risk >10%</td></tr><tr><td>**Antiplatelet**</td><td>Secondary prevention only (not primary)</td></tr><tr><td>**BP Control**</td><td>**<130/80** (KDIGO 2021)</td></tr><tr><td>**SGLT2 Inhibitor**</td><td>**DAPA-CKD/EMPA-KIDNEY**: eGFR ≥20, UACR ≥200 — **↓ ESRD/CV death 30–40%**</td></tr><tr><td>**Finerenone**</td><td>T2DM + DKD on ACEi/ARB + SGLT2i, eGFR ≥25, K+ ≤4.8 — **↓ CV/renal events**</td></tr></table>
+<div class="sub-h">2. Blood Pressure</div>
+<table class="ctable"><tr><th>Agent</th><th>Preference</th></tr><tr><td>-------</td><td>------------</td></tr><tr><td>**ACEi/ARB**</td><td>**1st line** (especially if A2/A3); max tolerated dose</td></tr><tr><td>**Add-on**</td><td>Thiazide (G1–G3), loop diuretic (G4–G5), CCB, β-blocker</td></tr><tr><td>**Dual RAAS Blockade**</td><td>**CONTRAINDICATED** (↑ hyperkalaemia, AKI)</td></tr></table>
+<div class="sub-h">3. CKD-Mineral and Bone Disorder (CKD-MBD)</div>
+<table class="ctable"><tr><th>Parameter</th><th>Target (G3a–G5)</th><th>Treatment</th></tr><tr><td>-----------</td><td>-----------------</td><td>-----------</td></tr><tr><td>**Phosphate**</td><td>0.9–1.3 mmol/L (G3–G5)</td><td>Dietary restriction, **phosphate binders** (Ca-based, sevelamer, lanthanum, sucroferric oxyhydroxide)</td></tr><tr><td>**Calcium**</td><td>2.1–2.5 mmol/L (corrected)</td><td>Avoid Ca overload; limit Ca-based binders if vascular calcification</td></tr><tr><td>**PTH**</td><td>**2–9× ULN** (G3–G5)</td><td>**Vitamin D analogues** (alfacalcidol, calcitriol) if PTH rising + low/normal Ca + normal/high PO4; **Cinacalcet** if PTH very high + high Ca/PO4</td></tr><tr><td>**Vitamin D (25-OH)**</td><td>>30 ng/mL</td><td>Supplement if deficient (cholecalciferol)</td></tr></table>
+<div class="callout">[!key] <b>CKD-MBD triad</b>: ↑ PO4, ↓ Ca, ↑ PTH → vascular calcification + bone disease. <b>KDIGO: PTH 2–9× ULN.</b></div>
+<div class="sub-h">4. Anaemia of CKD</div>
+<table class="ctable"><tr><th>Parameter</th><th>Target / Action</th></tr><tr><td>-----------</td><td>-----------------</td></tr><tr><td>**Hb Target**</td><td>**100–115 g/L** (avoid >130 g/L — ↑ stroke/thrombosis risk)</td></tr><tr><td>**Iron**</td><td>TSAT ≥20%, Ferritin ≥100 ng/mL (or ≥200 if on ESA)</td></tr><tr><td>**ESA**</td><td>Darbepoetin/Epoetin alfa; start if Hb <100 g/L + iron replete; individualise</td></tr><tr><td>**Workup**</td><td>Exclude B12/folate deficiency, blood loss, haemolysis, aluminium (historical)</td></tr></table>
+<div class="sub-h">5. Metabolic Acidosis</div>
+<table class="ctable"><tr><th>Threshold</th><th>Treatment</th></tr><tr><td>-----------</td><td>-----------</td></tr><tr><td>**HCO₃⁻ <22 mmol/L**</td><td>**Oral sodium bicarbonate** 500–1000 mg TDS (target HCO₃⁻ ≥22)</td></tr><tr><td>**Benefit**</td><td>Slows CKD progression, improves muscle, bone, nutrition</td></tr></table>
+<div class="sub-h">6. Volume Management</div>
+<table class="ctable"><tr><th>Stage</th><th>Approach</th></tr><tr><td>-------</td><td>----------</td></tr><tr><td>**G1–G3**</td><td>Salt restriction <5g/day; thiazide if needed</td></tr><tr><td>**G4–G5**</td><td>Loop diuretic (furosemide/b bumetanide); ultrafiltration if on dialysis</td></tr></table>
+<div class="sub-h">7. Nutrition</div>
+<table class="ctable"><tr><th>Parameter</th><th>Recommendation</th></tr><tr><td>-----------</td><td>----------------</td></tr><tr><td>**Protein**</td><td>0.8 g/kg/day (G1–G4); 1.0–1.2 g/kg/day (G5 on dialysis)</td></tr><tr><td>**Salt**</td><td><2g Na/day (<5g salt)</td></tr><tr><td>**K+**</td><td>Restrict if hyperkalaemic; low-K+ diet if on dialysis</td></tr><tr><td>**Calories**</td><td>30–35 kcal/kg/day</td></tr></table>
+<div class="sub-h">8. Drug Dosing in CKD</div>
+<table class="ctable"><tr><th>Principle</th><th>Application</th></tr><tr><td>-----------</td><td>-------------</td></tr><tr><td>**eGFR-based dosing**</td><td>Use Cockcroft-Gault (CrCl) for drug dosing, not CKD-EPI eGFR</td></tr><tr><td>**Avoid nephrotoxins**</td><td>NSAIDs, aminoglycosides, IV contrast (if possible), tick-dose adjustments</td></tr><tr><td>**Common adjustments**</td><td>Antibiotics, DOACs, metformin, gabapentin, digoxin, allopurinol</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Complications & Acute Management</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Complication</th><th>Emergency Threshold</th><th>Management</th></tr><tr><td>--------------</td><td>---------------------</td><td>------------</td></tr><tr><td>**Hyperkalaemia**</td><td>K+ >6.5 or ECG changes</td><td>Ca gluconate, insulin/dextrose, salbutamol, binder, **dialysis**</td></tr><tr><td>**Fluid Overload**</td><td>Pulmonary oedema</td><td>IV loop diuretic, fluid restrict, **dialysis** if refractory</td></tr><tr><td>**Acidosis**</td><td>pH <7.2, HCO₃⁻ <12</td><td>IV bicarbonate, **dialysis**</td></tr><tr><td>**Uraemic Pericarditis**</td><td>Friction rub, effusion</td><td>**Dialysis** (intensive)</td></tr><tr><td>**Uraemic Encephalopathy**</td><td>Confusion, asterixis, seizures</td><td>**Dialysis**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Preparation for RRT (G4–G5)</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Timing</th><th>Action</th></tr><tr><td>--------</td><td>--------</td></tr><tr><td>**G4 (eGFR 15–29)**</td><td>**Refer to nephrology**; **AV fistula creation** (6mo maturation); transplant workup; patient education (modalities); conservative care discussion</td></tr><tr><td>**G5 (eGFR <15)**</td><td>**Start RRT** (AEIOU); pre-emptive transplant if living donor; dialysis access ready</td></tr></table>
+<div class="sub-h">Vascular Access</div>
+<table class="ctable"><tr><th>Type</th><th>Preference</th><th>Maturation</th></tr><tr><td>------</td><td>------------</td><td>------------</td></tr><tr><td>**AVF (Arteriovenous Fistula)**</td><td>**Gold standard** (radiocephalic > brachiocephalic)</td><td>6–8 weeks</td></tr><tr><td>**AVG (Arteriovenous Graft)**</td><td>If AVF not feasible</td><td>2–3 weeks</td></tr><tr><td>**CVC (Central Venous Catheter)**</td><td>**Temporary only** (high infection/stent risk)</td><td>Immediate</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Conservative (Non-Dialytic) Management</span>
+  </div>
+  <div class="sec-body">
+<ul><li>For frail elderly with multiple comorbidities, poor functional status</li><li>Focus: symptom control, volume, anaemia, acidosis, BP, advance care planning</li><li>Survival similar to dialysis in selected &gt;75yo with high comorbidity</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>CKD = eGFR &lt;60 or ACR ≥3 for ≥3 months</b> - <b>KDIGO G1–G5 + A1–A3</b>; heat map for prognosis - <b>Commonest cause: Diabetic kidney disease (~40%)</b> - <b>BP &lt;130/80</b>; <b>ACEi/ARB 1st line</b>; <b>NO dual RAAS blockade</b> - <b>SGLT2i (dapagliflozin/empagliflozin): eGFR ≥20, UACR ≥200 — game changer</b> - <b>Statin all CKD ≥50yo</b> - <b>CKD-MBD: PO4 0.9–1.3, Ca 2.1–2.5, PTH 2–9× ULN</b> - <b>Anaemia: Hb 100–115 g/L; ESA if &lt;100 + iron replete</b> - <b>Acidosis: HCO₃⁻ &lt;22 → NaHCO₃</b> - <b>G4: refer nephrology, AV fistula planning, transplant workup</b> - <b>G5: RRT (AEIOU) or conservative care</b> - <b>Drug dosing: use CrCl (Cockcroft-Gault), not eGFR</b> - <b>Avoid NSAIDs, aminoglycosides, contrast</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**eGFR <60 once = CKD**</td><td>Needs **≥3 months** persistence</td></tr><tr><td>**ACEi + ARB = better renoprotection**</td><td>**Contraindicated** (ONTARGET, VA NEPHRON)</td></tr><tr><td>**Statin only if LDL high**</td><td>**All CKD ≥50yo** (regardless of LDL)</td></tr><tr><td>**Hb target >120 g/L**</td><td>**100–115 g/L**; >130 ↑ stroke/thrombosis (CHOIR, TREAT)</td></tr><tr><td>**PTH target = normal**</td><td>**2–9× ULN** (suppressed PTH = adynamic bone)</td></tr><tr><td>**SGLT2i contraindicated in CKD**</td><td>**Indicated eGFR ≥20** (DAPA-CKD, EMPA-KIDNEY)</td></tr><tr><td>**Ca-based binders always 1st line**</td><td>Limit if vascular calcification/ hypercalcaemia; sevelamer/lanthanum alternatives</td></tr><tr><td>**Dialysis = always better than conservative**</td><td>Conservative non-dialytic management valid for frail elderly</td></tr><tr><td>**AVF = ready immediately**</td><td>**6–8 weeks maturation**; plan in G4</td></tr><tr><td>**Drug dosing by eGFR**</td><td>Use **CrCl (Cockcroft-Gault)** for drug dosing</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>CKD Definition</b>: <b>G</b>FR &lt;60 <b>OR</b> <b>A</b>CR ≥3 for <b>≥3M</b> = <b>GA-3M</b></li><li><b>KDIGO</b>: <b>G</b>FR <b>A</b>lbuminuria = <b>GA</b> matrix</li><li><b>Causes</b>: <b>D</b>iabetic, <b>H</b>ypertensive, <b>G</b>N, <b>O</b>bstruction, <b>A</b>DPKD, <b>T</b>ubulointerstitial = <b>DHGOAT</b></li><li><b>BP</b>: <b>&lt;130/80</b> = <b>13080</b></li><li><b>ACEi/ARB</b>: <b>D</b>ual <b>B</b>lockade <b>C</b>ontraindicated = <b>DBC</b></li><li><b>SGLT2i</b>: <b>C</b>REDENCE, <b>D</b>APA-CKD, <b>E</b>MPA-KIDNEY = <b>CDE</b></li><li><b>Anaemia</b>: <b>H</b>b <b>100–115</b> = <b>H100-115</b></li><li><b>CKD-MBD</b>: <b>P</b>O4 <b>0.9–1.3</b>, <b>C</b>a <b>2.1–2.5</b>, <b>P</b>TH <b>2–9×</b> = <b>PCP</b></li><li><b>Acidosis</b>: <b>H</b>CO3 <b>&lt;22 → NaHCO3</b> = <b>H22</b></li><li><b>RRT Prep</b>: <b>G</b>4 = <b>A</b>VF, <b>T</b>ransplant, <b>E</b>ducation = <b>GATE</b></li><li><b>Drug Dosing</b>: <b>C</b>rCl <b>C</b>ockcroft-<b>G</b>ault = <b>CCG</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Chronic Kidney Disease)) Definition GFR[&lt;60 for ≥3mo] Damage[ACR≥3, haematuria, structural] Staging_KDIGO G1_G5[G1:≥90, G2:60-89, G3a:45-59, G3b:30-44, G4:15-29, G5:&lt;15] A1_A3[A1:&lt;3, A2:3-30, A3:&gt;30] HeatMap[Prognosis by G+A] Causes DKD[Diabetic 40%] HTN[Hypertensive] GN[Glomerulonephritis] Obstruction[BPH, stones] ADPKD[Autosomal dominant] Tubulointerstitial[Analgesics, lithium] Management CV[Statin, BP&lt;130/80, SGLT2i, Finerenone] BP[ACEi/ARB 1st, NO dual] MBD[PO4, Ca, PTH, VitD] Anaemia[Hb 100-115, ESA, Iron] Acidosis[HCO3&lt;22 → NaHCO3] Nutrition[Protein 0.8g/kg, Salt&lt;2g] Drugs[CrCl dosing, avoid nephrotoxins] Complications K[Hyperkalaemia], Fluid[Overload], Acid[Acidosis], Uraemic[Pericarditis, Encephalopathy] RRT_Prep G4[Refer, AVF, Transplant workup] G5[AEIOU, Pre-emptive Tx] Access[AVF gold, AVG, CVC temp] Conservative[Frail elderly, symptom control] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>CKD definition: eGFR &lt;60 or ACR ≥3 for ≥3 months</li><li>KDIGO staging: G1–G5 (GFR) + A1–A3 (ACR); heat map</li><li>Commonest cause: Diabetic kidney disease (~40%)</li><li>BP target &lt;130/80; ACEi/ARB 1st line; NO dual RAAS blockade</li><li>SGLT2i: eGFR ≥20, UACR ≥200 (DAPA-CKD, EMPA-KIDNEY)</li><li>Statin: all CKD ≥50yo</li><li>CKD-MBD: PO4 0.9–1.3, Ca 2.1–2.5, PTH 2–9× ULN</li><li>Anaemia: Hb 100–115 g/L; ESA if &lt;100 + iron replete</li><li>Acidosis: HCO₃⁻ &lt;22 → NaHCO₃</li><li>G4: refer nephrology, AV fistula (6wk maturation), transplant workup</li><li>G5: AEIOU for RRT; conservative option for frail</li><li>Drug dosing: CrCl (Cockcroft-Gault), avoid nephrotoxins</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Definition, KDIGO staging, commonest causes, BP/ACEi/ARB/SGLT2i/statin, CKD-MBD targets, anaemia Hb target, acidosis treatment, G4/G5 referral & RRT prep, drug dosing principles</td></tr><tr><td>**Should Know 🟡**</td><td>Heat map prognosis, finerenone, phosphate binder choices, vitamin D analogues vs cinacalcet, conservative management, AVF maturation, conservative vs dialysis in elderly</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel therapies (endothelin, CCR2), genetic CKD (APOL1), cost-effectiveness, patient-reported outcomes, dialysis modality survival differences</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>CKD definition requires persistence of eGFR &lt;60 or ACR ≥3 for:</b></li></ol>
+<p>A. 1 month B. <b>≥3 months</b> C. 6 months D. 1 year E. No time requirement</p>
+<ol><li><b>KDIGO G3a eGFR range:</b></li></ol>
+<p>A. 60–89 B. <b>45–59</b> C. 30–44 D. 15–29 E. &lt;15</p>
+<ol><li><b>Commonest cause of CKD worldwide:</b></li></ol>
+<p>A. Hypertensive nephrosclerosis B. <b>Diabetic kidney disease</b> C. Glomerulonephritis D. ADPKD E. Obstructive uropathy</p>
+<ol><li><b>KDIGO 2021 BP target for CKD:</b></li></ol>
+<p>A. &lt;140/90 B. <b>&lt;130/80</b> C. &lt;120/70 D. &lt;150/90 E. &lt;160/100</p>
+<ol><li><b>Dual RAAS blockade (ACEi + ARB) in CKD:</b></li></ol>
+<p>A. Recommended for proteinuria B. <b>Contraindicated (↑ hyperkalaemia, AKI)</b> C. Only in diabetic CKD D. Only in non-diabetic CKD E. No evidence either way</p>
+<ol><li><b>SGLT2 inhibitor indication in CKD (DAPA-CKD/EMPA-KIDNEY):</b></li></ol>
+<p>A. eGFR ≥60 only B. eGFR ≥45 only C. eGFR ≥30 only D. <b>eGFR ≥20, UACR ≥200</b> E. Only in diabetic CKD</p>
+<ol><li><b>Target Hb for anaemia of CKD (KDIGO):</b></li></ol>
+<p>A. 90–105 g/L B. <b>100–115 g/L</b> C. 110–125 g/L D. 115–130 g/L E. &gt;130 g/L</p>
+<ol><li><b>PTH target in CKD G3–G5 (KDIGO):</b></li></ol>
+<p>A. Normal range B. <b>2–9× upper limit of normal</b> C. 10–20× ULN C. &lt;2× ULN E. Not monitored</p>
+<ol><li><b>Metabolic acidosis treatment threshold in CKD:</b></li></ol>
+<p>A. HCO₃⁻ &lt;15 mmol/L B. <b>HCO₃⁻ &lt;22 mmol/L</b> C. HCO₃⁻ &lt;25 mmol/L D. pH &lt;7.35 E. Only if symptomatic</p>
+<ol><li><b>Vascular access gold standard for haemodialysis:</b></li></ol>
+<p>A. CVC B. AVG C. <b>AVF (radiocephalic)</b> D. Peritoneal catheter E. Femoral catheter</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>65-year-old man, T2DM, eGFR 48, UACR 45 mg/mmol, BP 145/90 on amlodipine. Best next step:</b></li></ol>
+<p>A. Increase amlodipine B. <b>Add ACEi/ARB + SGLT2i (dapagliflozin)</b> C. Add ARB only D. Add ACEi + ARB E. Refer for dialysis</p>
+<ol><li><b>70-year-old woman, CKD G4 (eGFR 22), Hb 95, ferritin 80, TSAT 18%. Management:</b></li></ol>
+<p>A. Start ESA immediately B. <b>IV iron repletion first (target ferritin ≥100, TSAT ≥20%), then reassess Hb</b> C. Blood transfusion D. B12/folate only E. No treatment needed</p>
+<ol><li><b>CKD G3b, corrected Ca 2.65, PO4 1.8, PTH 45 (ULN 65). Management:</b></li></ol>
+<p>A. Start calcitriol B. <b>Restrict dietary phosphate; avoid Ca-based binders; monitor</b> C. Start cinacalcet D. Start alfacalcidol E. Parathyroidectomy</p>
+<ol><li><b>55-year-old man, CKD G4 (eGFR 25) on metformin 1g BD. Action:</b></li></ol>
+<p>A. Continue full dose B. <b>Reduce to 500mg BD (caution 30–45; contraindicated &lt;30)</b> C. Stop metformin D. Switch to insulin E. No change needed</p>
+<ol><li><b>CKD G5 (eGFR 10), not on dialysis, K+ 6.8, ECG peaked T waves. Immediate:</b></li></ol>
+<p>A. Calcium resonium only B. <b>IV calcium gluconate + insulin/dextrose + salbutamol + urgent dialysis</b> C. Kayexalate only D. Sodium bicarbonate only E. Fluid restriction only</p>
+<ol><li><b>CKD G4 patient preparation for RRT — AV fistula creation timing:</b></li></ol>
+<p>A. When eGFR &lt;15 B. <b>When eGFR 15–29 (G4) — 6–8 weeks maturation</b> C. Only when dialysis started D. At eGFR &lt;10 E. Never if transplant planned</p>
+<ol><li><b>Conservative (non-dialytic) management appropriate for:</b></li></ol>
+<p>A. All CKD G5 B. <b>Frail elderly &gt;75 with high comorbidity, poor functional status</b> C. All diabetic CKD D. Only if no AV fistula possible E. Never appropriate</p>
+<ol><li><b>Drug dosing in CKD — which formula to use:</b></li></ol>
+<p>A. CKD-EPI eGFR B. <b>Cockcroft-Gault CrCl</b> C. MDRD eGFR D. BIS1 eGFR E. Creatinine only</p>
+<ol><li><b>Finerenone indication in DKD (FIDELIO/FIGARO):</b></li></ol>
+<p>A. 1st line instead of ACEi B. <b>Add-on to ACEi/ARB + SGLT2i if eGFR ≥25, K+ ≤4.8, persistent albuminuria</b> C. Only if eGFR &lt;15 D. Replace SGLT2i E. Only in Type 1 DM</p>
+<ol><li><b>Hyperphosphataemia in CKD G4 — 1st line binder if vascular calcification present:</b></li></ol>
+<p>A. Calcium carbonate B. <b>Sevelamer / lanthanum / sucroferric oxyhydroxide (non-Ca-based)</b> C. Calcium acetate D. Aluminium hydroxide E. Magnesium carbonate</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: CKD definition?</li></ul>
+<p>A: eGFR &lt;60 or ACR ≥3 for ≥3 months</p>
+<ul><li>Q: KDIGO G categories?</li></ul>
+<p>A: G1 ≥90, G2 60–89, G3a 45–59, G3b 30–44, G4 15–29, G5 &lt;15</p>
+<ul><li>Q: KDIGO A categories?</li></ul>
+<p>A: A1 &lt;3, A2 3–30, A3 &gt;30 mg/mmol</p>
+<ul><li>Q: Commonest CKD cause?</li></ul>
+<p>A: Diabetic kidney disease (~40%)</p>
+<ul><li>Q: BP target CKD?</li></ul>
+<p>A: &lt;130/80</p>
+<ul><li>Q: ACEi/ARB dual blockade?</li></ul>
+<p>A: Contraindicated</p>
+<ul><li>Q: SGLT2i CKD indication?</li></ul>
+<p>A: eGFR ≥20, UACR ≥200 (DAPA-CKD, EMPA-KIDNEY)</p>
+<ul><li>Q: Statin in CKD?</li></ul>
+<p>A: All ≥50yo</p>
+<ul><li>Q: CKD-MBD targets?</li></ul>
+<p>A: PO4 0.9–1.3, Ca 2.1–2.5, PTH 2–9× ULN</p>
+<ul><li>Q: Anaemia Hb target?</li></ul>
+<p>A: 100–115 g/L</p>
+<ul><li>Q: Acidosis treatment?</li></ul>
+<p>A: HCO₃⁻ &lt;22 → NaHCO₃</p>
+<ul><li>Q: G4 referral?</li></ul>
+<p>A: Nephrology, AV fistula (6–8wk maturation), transplant workup</p>
+<ul><li>Q: G5 RRT indications?</li></ul>
+<p>A: AEIOU (Acidosis, Electrolytes, Ingestion, Overload, Uraemia)</p>
+<ul><li>Q: Drug dosing formula?</li></ul>
+<p>A: Cockcroft-Gault CrCl</p>
+<ul><li>Q: Finerenone?</li></ul>
+<p>A: Add-on to ACEi/ARB + SGLT2i if persistent albuminuria</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">20</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — CKD requires ≥3 months persistence</li><li><b>B</b> — G3a = 45–59 mL/min/1.73m²</li><li><b>B</b> — Diabetic kidney disease = commonest (~40%)</li><li><b>B</b> — KDIGO 2021: &lt;130/80</li><li><b>B</b> — ONTARGET/VA NEPHRON: dual blockade ↑ hyperkalaemia, AKI</li><li><b>D</b> — DAPA-CKD (eGFR 25–75), EMPA-KIDNEY (eGFR 20–45 or 45–90 + UACR ≥200)</li><li><b>B</b> — KDIGO: Hb 100–115 g/L; &gt;130 ↑ risk (CHOIR, TREAT)</li><li><b>B</b> — PTH 2–9× ULN (suppressed = adynamic bone)</li><li><b>B</b> — HCO₃⁻ &lt;22 → NaHCO₃ (slows progression)</li><li><b>C</b> — AVF = gold standard (radiocephalic first choice)</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — DKD + albuminuria + HTN → ACEi/ARB + SGLT2i (cornerstone)</li><li><b>B</b> — Iron deficiency first (ferritin &lt;100, TSAT &lt;20%) before ESA</li><li><b>B</b> — High Ca + high PO4 + normal PTH → restrict PO4, avoid Ca binders</li><li><b>B</b> — Metformin: caution 30–45 (reduce dose), contraindicated &lt;30</li><li><b>B</b> — K+ 6.8 + ECG changes = emergency dialysis + medical temporising</li><li><b>B</b> — AVF needs 6–8 weeks maturation; create in G4</li><li><b>B</b> — Conservative management valid for frail elderly with high comorbidity</li><li><b>B</b> — Drug dosing uses CrCl (Cockcroft-Gault), not eGFR</li><li><b>B</b> — Finerenone = add-on to ACEi/ARB + SGLT2i (FIDELIO/FIGARO)</li><li><b>B</b> — Non-Ca binders if vascular calcification/hypercalcaemia</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">21</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Chronic Kidney Disease</b> is a <b>Must Know 🔴</b> topic. <b>Key takeaway:</b> CKD = eGFR &lt;60 or ACR ≥3 for ≥3 months. <b>KDIGO G1–G5 + A1–A3</b> heat map for prognosis. Commonest cause: <b>diabetic kidney disease</b>. BP <b>&lt;130/80</b>; <b>ACEi/ARB 1st line; NO dual blockade</b>. <b>SGLT2i (eGFR ≥20, UACR ≥200) game-changer</b>. Statin all ≥50yo. <b>CKD-MBD: PO4 0.9–1.3, Ca 2.1–2.5, PTH 2–9× ULN</b>. Anaemia: <b>Hb 100–115 g/L</b>. Acidosis: <b>HCO₃⁻ &lt;22 → NaHCO₃</b>. <b>G4: refer, AV fistula (6wk maturation), transplant workup</b>. <b>G5: AEIOU for RRT</b>. Drug dosing: <b>CrCl (Cockcroft-Gault)</b>. Avoid nephrotoxins. <b>Exam focus:</b> Definition, staging, diabetic kidney disease, BP/ACEi/ARB/SGLT2i/statin, CKD-MBD targets, anaemia, acidosis, G4/G5 referral, drug dosing, conservative management. <b>Clinical relevance:</b> Early SGLT2i + ACEi/ARB dramatically slows progression; comprehensive multifactorial management reduces CV events (major cause of death in CKD).</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Chronic Kidney Disease (CKD) · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

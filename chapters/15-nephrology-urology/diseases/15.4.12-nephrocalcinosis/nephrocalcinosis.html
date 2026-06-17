@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nephrocalcinosis — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">Nephrocalcinosis</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Differentiate nephrocalcinosis vs nephrolithiasis</li><li>Classify by distribution (medullary vs cortical) and aetiology</li><li>Identify underlying causes (RTA Type 1, Bartter, hyperparathyroidism, medullary sponge kidney, etc.)</li><li>Diagnose via imaging (US, CT) and metabolic workup</li><li>Manage underlying cause + prevent progression</li><li>Apply to FCPS/MRCP radiology and metabolic vignettes</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Definition & Distinction</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Feature</th><th>**Nephrocalcinosis**</th><th>**Nephrolithiasis**</th></tr><tr><td>---------</td><td>---------------------</td><td>---------------------</td></tr><tr><td>**Definition**</td><td>Diffuse calcium deposition **in renal parenchyma**</td><td>Discrete **stones in collecting system** (calyces, pelvis, ureter)</td></tr><tr><td>**Imaging**</td><td>US/CT: **echogenic foci in parenchyma**</td><td>US/CT: **stones in lumen** with acoustic shadowing</td></tr><tr><td>**Pathology**</td><td>Tubular basement membrane / interstitium</td><td>Urinary supersaturation → crystal aggregation</td></tr><tr><td>**Renal function**</td><td>Often impaired (CKD)</td><td>Preserved until obstruction/infection</td></tr><tr><td>**Association**</td><td>Can coexist with stones</td><td>May occur without parenchymal calcification</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Classification by Distribution</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">1. Medullary Nephrocalcinosis (Most Common)</div>
+<table class="ctable"><tr><th>Cause</th><th>Mechanism</th><th>Key Features</th></tr><tr><td>-------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Distal RTA (Type 1)**</td><td>Alkaline urine + hypocitraturia + hypercalciuria</td><td>**Classic** — bilateral, symmetric</td></tr><tr><td>**Bartter Syndrome**</td><td>Hypercalciuria (TAL Ca²⁺ wasting) + hypocitraturia</td><td>Children, nephrocalcinosis + hypokalaemic alkalosis</td></tr><tr><td>**Primary Hyperparathyroidism**</td><td>Hypercalcaemia → hypercalciuria</td><td>↑ PTH, ↑ Ca²⁺, ↓ PO₄</td></tr><tr><td>**Medullary Sponge Kidney**</td><td>Dilated collecting ducts → stasis → Ca²⁺ precipitation</td><td>**Asymptomatic** or stones/UTI; "paintbrush" calyces on IVU</td></tr><tr><td>**Loop Diuretics (chronic)**</td><td>↓ TAL Ca²⁺ reabsorption → hypercalciuria</td><td>Reversible if stopped early</td></tr><tr><td>**Sarcoidosis / Vit D excess**</td><td>Hypercalcaemia → hypercalciuria</td><td>↑ 1,25-Vit D (granulomas)</td></tr><tr><td>**Renal Tubular Acidosis Type 2 (Proximal)**</td><td>Bicarbonaturia → alkaline urine + hypocitraturia</td><td>Less common than Type 1</td></tr><tr><td>**Hypocitraturia syndromes**</td><td>↓ Citrate (inhibitor of Ca crystallisation)</td><td>Idiopathic, RTA, K⁺ depletion</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">2. Cortical Nephrocalcinosis (Rarer, More Severe)</div>
+<table class="ctable"><tr><th>Cause</th><th>Mechanism</th><th>Key Features</th></tr><tr><td>-------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Cortical Necrosis**</td><td>Ischaemia → calcification of dead tubules</td><td>Obstetric (abruption, sepsis), HUS, snake bite</td></tr><tr><td>**Acute Phosphate Nephropathy**</td><td>Oral Na⁺ phosphate bowel prep → Ca-PO₄ precipitation</td><td>Elderly, CKD, volume depletion</td></tr><tr><td>**Tumour Lysis Syndrome**</td><td>Hyperphosphataemia → Ca-PO₄ precipitation</td><td>Post-chemo, high tumour burden</td></tr><tr><td>**Alport Syndrome**</td><td>GBM abnormality → cortical calcification</td><td>Haematuria, hearing loss, lenticonus</td></tr><tr><td>**Chronic Glomerulonephritis**</td><td>End-stage scarring → dystrophic calcification</td><td>Small kidneys, advanced CKD</td></tr><tr><td>**Renal TB**</td><td>Caseous necrosis → calcification</td><td>"Putty kidney"</td></tr><tr><td>**Oxalosis**</td><td>Primary/enteric hyperoxaluria → CaOx deposition</td><td>ESRD, systemic oxalosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Diagnostic Workup</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Imaging</div>
+<table class="ctable"><tr><th>Modality</th><th>Finding</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Ultrasound**</td><td>**Medullary: multiple echogenic foci in pyramids** (no shadowing); Cortical: echogenic cortex</td></tr><tr><td>**Non-contrast CT**</td><td>**Gold standard** — detects calcifications <1mm; distinguishes medullary vs cortical</td></tr><tr><td>**IVU / CTU**</td><td>"Paintbrush" calyces (medullary sponge kidney)</td></tr><tr><td>**Plain X-ray (KUB)**</td><td>Less sensitive; may show nephrocalcinosis as faint opacities over renal outline</td></tr></table>
+<div class="sub-h">Metabolic Workup (Essential)</div>
+<table class="ctable"><tr><th>Test</th><th>Purpose</th></tr><tr><td>------</td><td>---------</td></tr><tr><td>**Serum Ca²⁺, PO₄, Mg²⁺, Albumin**</td><td>Corrected Ca²⁺, hyper/hypocalcaemia, hyperphosphataemia</td></tr><tr><td>**PTH**</td><td>Primary hyperparathyroidism (↑ Ca, ↑ PTH) vs sarcoid (↑ Ca, ↓ PTH)</td></tr><tr><td>**1,25-Vit D**</td><td>Sarcoidosis, lymphoma (↑), Vit D toxicity</td></tr><tr><td>**Urine 24h Ca²⁺, Citrate, Oxalate, PO₄, Creatinine**</td><td>Hypercalciuria, hypocitraturia, hyperoxaluria, hyperphosphaturia</td></tr><tr><td>**Urinalysis (pH)**</td><td>Alkaline → RTA Type 1; Acidic → other</td></tr><tr><td>**Blood gas**</td><td>Metabolic acidosis (RTA) vs alkalosis (Bartter/Gitelman)</td></tr><tr><td>**Serum electrolytes (K⁺, HCO₃⁻)**</td><td>Hypokalaemia (RTA1, Bartter, Gitelman)</td></tr><tr><td>**Thyroid function**</td><td>Hyperthyroidism → hypercalciuria</td></tr><tr><td>**ACE level**</td><td>Sarcoidosis</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Aetiology-Specific Clues</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Cause</th><th>Age</th><th>Key Clues</th></tr><tr><td>-------</td><td>-----</td><td>-----------</td></tr><tr><td>**Distal RTA**</td><td>Child/Young adult</td><td>NAGMA, hypokalaemia, urine pH >5.5, nephrocalcinosis</td></tr><tr><td>**Bartter**</td><td>Infant/Child</td><td>Polyhydramnios, FTT, hypokalaemic alkalosis, nephrocalcinosis</td></tr><tr><td>**Hyperparathyroidism**</td><td>Adult</td><td>"Stones, bones, groans, moans" + nephrocalcinosis</td></tr><tr><td>**Medullary Sponge Kidney**</td><td>Young adult</td><td>Recurrent stones/UTI, asymptomatic screening, "paintbrush" calyces</td></tr><tr><td>**Sarcoidosis**</td><td>Young adult</td><td>↑ 1,25-Vit D, hypercalcaemia, hilar lymphadenopathy</td></tr><tr><td>**Loop diuretics**</td><td>Elderly/CHF</td><td>Chronic high-dose furosemide</td></tr><tr><td>**Cortical necrosis**</td><td>Peripartum / Sepsis</td><td>Anuria, history of massive haemorrhage/shock</td></tr><tr><td>**Phosphate nephropathy**</td><td>Elderly</td><td>Recent oral phosphate bowel prep</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">General Principles</div>
+<table class="ctable"><tr><th>Principle</th><th>Approach</th></tr><tr><td>-----------</td><td>----------</td></tr><tr><td>**Treat underlying cause**</td><td>Essential — stops progression</td></tr><tr><td>**Hydration**</td><td>2.5–3 L/day urine output</td></tr><tr><td>**Dietary**</td><td>Normal Ca²⁺ intake (↓ oxalate absorption), low Na⁺, low animal protein</td></tr><tr><td>**Citrate supplementation**</td><td>K-citrate/Na-citrate (↑ urinary citrate → inhibits crystallisation)</td></tr><tr><td>**Thiazides**</td><td>If hypercalciuria persists (↑ proximal Ca²⁺ reabsorption) — avoid in RTA1</td></tr><tr><td>**Avoid**</td><td>Excess Vit D, Ca²⁺ supplements (unless hypocalcaemic), high oxalate foods</td></tr></table>
+<div class="sub-h">Cause-Specific</div>
+<table class="ctable"><tr><th>Cause</th><th>Specific Management</th></tr><tr><td>-------</td><td>---------------------</td></tr><tr><td>**RTA Type 1**</td><td>Alkali (NaHCO₃/Na-citrate) — **corrects acidosis → ↑ citrate → ↓ Ca²⁺ crystallisation**</td></tr><tr><td>**Bartter**</td><td>Indomethacin + K⁺ + K⁺-sparing</td></tr><tr><td>**Hyperparathyroidism**</td><td>Parathyroidectomy (if indicated)</td></tr><tr><td>**Medullary Sponge Kidney**</td><td>Stone prevention (hydration, citrate), treat UTI</td></tr><tr><td>**Sarcoidosis**</td><td>Steroids, low Ca²⁺/Vit D diet</td></tr><tr><td>**Loop diuretics**</td><td>Reduce dose, switch to thiazide if possible</td></tr><tr><td>**Cortical necrosis**</td><td>Supportive; may need dialysis; often irreversible</td></tr><tr><td>**Oxalosis**</td><td>Pyridoxine (Type 1), dialysis, combined liver-kidney transplant</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">Prognosis</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Scenario</th><th>Outcome</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Early RTA/Bartter treated**</td><td>Nephrocalcinosis **reversible** (especially if caught early)</td></tr><tr><td>**Long-standing untreated**</td><td>**Irreversible** → interstitial fibrosis → CKD</td></tr><tr><td>**Cortical nephrocalcinosis**</td><td>Usually **irreversible**, progressive CKD</td></tr><tr><td>**Medullary sponge kidney**</td><td>Benign course; recurrent stones main issue</td></tr><tr><td>**Hyperparathyroidism post-op**</td><td>Often improves/regresses</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>Nephrocalcinosis</b> = parenchymal calcification (vs stones in lumen). - <b>Medullary</b> = most common: RTA1, Bartter, hyperparathyroidism, medullary sponge kidney, loop diuretics. - <b>Cortical</b> = severe: cortical necrosis, phosphate nephropathy, tumour lysis, oxalosis, Alport, TB. - <b>RTA Type 1</b> = classic medullary nephrocalcinosis (alkaline urine + hypocitraturia + hypercalciuria). - <b>Bartter</b> = infantile nephrocalcinosis + hypokalaemic alkalosis. - <b>Medullary sponge kidney</b> = "paintbrush" calyces, recurrent stones/UTI. - <b>Imaging</b>: US (screening), <b>CT = gold standard</b> (detects &lt;1mm). - <b>Workup</b>: Ca²⁺, PO₄, PTH, 1,25-Vit D, 24h urine Ca/citrate/oxalate, urinary pH, blood gas. - <b>Treatment</b>: Treat cause + hydration + citrate + thiazide (if hypercalciuria). - <b>RTA1 alkali</b> reverses nephrocalcinosis by ↑ citrate.</div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Nephrocalcinosis = kidney stones**</td><td>**Nephrocalcinosis = parenchymal**; Stones = collecting system</td></tr><tr><td>**All nephrocalcinosis = irreversible**</td><td>**Early RTA/Bartter treated = reversible**</td></tr><tr><td>**Citrate causes stones**</td><td>**Citrate INHIBITS** Ca²⁺ crystallisation (chelate Ca²⁺)</td></tr><tr><td>**Low Ca²⁺ diet prevents nephrocalcinosis**</td><td>**Normal Ca²⁺ diet** (binds oxalate in gut); low Ca²⁺ → ↑ oxalate absorption</td></tr><tr><td>**Loop diuretics = hypocalciuria**</td><td>**Loop diuretics = HYPERcalciuria** (blocks TAL Ca²⁺ reabsorption)</td></tr><tr><td>**Thiazides = hypercalciuria**</td><td>**Thiazides = HYPOcalciuria** (↑ proximal Ca²⁺ reabsorption)</td></tr><tr><td>**Medullary sponge kidney = medullary nephrocalcinosis always**</td><td>MSK = dilated ducts → stones/stasis; nephrocalcinosis not always present</td></tr><tr><td>**Cortical nephrocalcinosis = same as medullary**</td><td>**Cortical = worse prognosis**, different causes (necrosis, phosphate, oxalosis)</td></tr><tr><td>**Paintbrush calyces = RTA**</td><td>**Paintbrush = Medullary Sponge Kidney**</td></tr><tr><td>**Nephrocalcinosis only in adults**</td><td>**Children**: RTA, Bartter, hyperoxaluria, Alport</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>Medullary causes</b>: <b>R</b>TA1, <b>B</b>artter, <b>H</b>yperparathyroidism, <b>M</b>edullary sponge kidney, <b>L</b>oop diuretics, <b>S</b>arcoid, <b>P</b>roximal RTA = <b>RBHLMSP</b></li><li><b>Cortical causes</b>: <b>C</b>ortical necrosis, <b>P</b>hosphate nephropathy, <b>T</b>umour lysis, <b>O</b>xalosis, <b>A</b>lport, <b>T</b>B = <b>CPT OAT</b></li><li><b>RTA1 nephrocalcinosis</b>: <b>A</b>lkaline urine + <b>H</b>ypocitraturia + <b>H</b>ypercalciuria = <b>AHH</b></li><li><b>Bartter vs Gitelman Ca</b>: <b>B</b>artter = <b>B</b>ig Ca²⁺ (nephrocalcinosis); <b>G</b>itelman = <b>G</b>ood Ca²⁺ (hypocalciuria)</li><li><b>Citrate</b>: <b>C</b>itrate = <b>C</b>helates <b>C</b>alcium = <b>C</b>rystallisation <b>I</b>nhibitor</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Nephrocalcinosis)) Definition[Parenchymal Ca deposition ≠ Stones] Medullary[Most common] RTA1[Type 1 Distal: Alkaline urine, Hypocitraturia, Hypercalciuria] Bartter[TAL defect: Hypercalciuria, Hypokalaemic alkalosis] Hyperpara[Primary: HyperCa, ↑PTH] MSK[Medullary Sponge Kidney: Paintbrush calyces] LoopDiur[Chronic furosemide: Hypercalciuria] Sarcoid[↑1,25-VitD, HyperCa] RTA2[Proximal: Bicarbonaturia] Cortical[Severe, often irreversible] Cortical_Necrosis[Obstetric, HUS, Sepsis] Phosphate_Nephropathy[Oral phosphate prep] Tumour_Lysis[HyperPO4 → CaPO4] Oxalosis[Primary/enteric hyperoxaluria] Alport[GBM defect] TB[Putty kidney] Workup[Ca, PO4, PTH, VitD, 24h urine Ca/Cit/Ox, pH, Gas] Imaging[US screening, CT gold standard] Management Cause[Treat underlying] Hydration[2.5-3L/day] Citrate[K-citrate/Na-citrate] Thiazide[If hypercalciuria] Diet[Normal Ca, low Na, low animal protein] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>Nephrocalcinosis vs nephrolithiasis</li><li>Medullary causes (RTA1, Bartter, Hyperpara, MSK, Loop diuretics)</li><li>Cortical causes (Cortical necrosis, Phosphate nephropathy, Oxalosis, Alport)</li><li>RTA1 mechanism (alkaline urine + hypocitraturia + hypercalciuria)</li><li>Imaging: US vs CT</li><li>Metabolic workup (Ca, PTH, Vit D, 24h urine, pH)</li><li>Citrate inhibits crystallisation</li><li>Thiazide = hypocalciuric; Loop = hypercalciuric</li><li>Paintbrush calyces = MSK</li><li>RTA1 alkali reverses nephrocalcinosis</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Medullary vs cortical, RTA1/Bartter/Hyperpara/MSK as medullary causes, cortical necrosis/phosphate nephropathy/oxalosis as cortical, CT gold standard, metabolic workup, citrate/thiazide Rx</td></tr><tr><td>**Should Know 🟡**</td><td>Reversibility in early RTA/Bartter, medullary sponge kidney features, phosphate nephropathy risk factors, oxalosis management, Alport cortical calcification</td></tr><tr><td>**Nice to Know 🟢**</td><td>Quantitative CT scoring, novel inhibitors (phytate, magnesium), genetic hypercalciurias, nephrocalcinosis in transplant</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Nephrocalcinosis vs Nephrolithiasis — key distinction:</b></li></ol>
+<p>A. Nephrocalcinosis = stones in ureter B. <b>Nephrocalcinosis = parenchymal calcification; Nephrolithiasis = collecting system stones</b> C. Both are the same D. Nephrocalcinosis = only cortical E. Nephrolithiasis = parenchymal</p>
+<ol><li><b>Most common cause of medullary nephrocalcinosis in children:</b></li></ol>
+<p>A. Hyperparathyroidism B. <b>Distal RTA (Type 1) / Bartter Syndrome</b> C. Medullary sponge kidney D. Loop diuretics E. Sarcoidosis</p>
+<ol><li><b>RTA Type 1 causes nephrocalcinosis via all EXCEPT:</b></li></ol>
+<p>A. Alkaline urine B. Hypocitraturia C. Hypercalciuria D. <b>Hyperphosphaturia</b> E. Impaired NH₄⁺ excretion</p>
+<ol><li><b>"Paintbrush" calyces on IVU are characteristic of:</b></li></ol>
+<p>A. Distal RTA B. <b>Medullary Sponge Kidney</b> C. Bartter Syndrome D. Hyperparathyroidism E. Cortical necrosis</p>
+<ol><li><b>Loop diuretics cause nephrocalcinosis by:</b></li></ol>
+<p>A. Increasing citrate excretion B. <b>Decreasing TAL Ca²⁺ reabsorption → hypercalciuria</b> C. Causing metabolic alkalosis D. Increasing urinary pH D. Decreasing oxalate excretion</p>
+<ol><li><b>Cortical nephrocalcinosis causes include all EXCEPT:</b></li></ol>
+<p>A. Cortical necrosis B. Acute phosphate nephropathy C. Tumour lysis syndrome D. <b>Medullary sponge kidney</b> E. Oxalosis (primary/enteric)</p>
+<ol><li><b>Medullary sponge kidney — classic imaging:</b></li></ol>
+<p>A. Nephrocalcinosis in cortex B. <b>Dilated collecting ducts → "paintbrush" calyces</b> C. Staghorn calculi D. Small kidneys E. Hydronephrosis</p>
+<ol><li><b>Thiazide diuretics in nephrocalcinosis — indication:</b></li></ol>
+<p>A. All types routinely B. <b>Hypercalciuria (↑ proximal Ca²⁺ reabsorption)</b> C. Hypocalciuria D. Cortical nephrocalcinosis only E. Contraindicated always</p>
+<ol><li><b>Reversibility of nephrocalcinosis — best chance:</b></li></ol>
+<p>A. Cortical necrosis B. <b>Early distal RTA / Bartter with alkali/indomethacin treatment</b> C. Long-standing hyperparathyroidism D. Phosphate nephropathy E. Oxalosis with ESRD</p>
+<ol><li><b>Metabolic workup for nephrocalcinosis — essential tests:</b></li></ol>
+<p>A. Only serum creatinine B. <b>Ca²⁺, PO₄, PTH, 1,25-Vit D, 24h urine Ca/Citrate/Oxalate, urinary pH, blood gas</b> C. Only urinary pH D. Only PTH E. Only 24h urine calcium</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>6-year-old boy, failure to thrive, polyuria, hypokalaemia, metabolic alkalosis, renal US shows medullary nephrocalcinosis. Genetic test pending. Most likely diagnosis:</b></li></ol>
+<p>A. Distal RTA B. <b>Bartter Syndrome</b> C. Gitelman Syndrome D. Medullary Sponge Kidney E. Primary Hyperparathyroidism</p>
+<ol><li><b>45-year-old woman, recurrent calcium phosphate stones, medullary nephrocalcinosis on CT. Urine pH 7.2, hypokalaemia, bicarbonate 16 (normal anion gap). Serum Ca normal, PTH normal. Diagnosis:</b></li></ol>
+<p>A. Primary hyperparathyroidism B. <b>Distal RTA (Type 1)</b> C. Bartter Syndrome D. Medullary Sponge Kidney E. Renal tubular acidosis Type 2</p>
+<ol><li><b>30-year-old man, asymptomatic, incidentally found medullary nephrocalcinosis. IVU: "paintbrush" calyces. Recurrent UTIs. Best preventive strategy:</b></li></ol>
+<p>A. Parathyroidectomy B. <b>Hydration 2.5–3L/day + potassium citrate</b> C. Indomethacin D. Thiazide diuretic E. Allopurinol</p>
+<ol><li><b>70-year-old woman, recent oral sodium phosphate bowel prep for colonoscopy. Now oliguric, AKI. CT: diffuse cortical nephrocalcinosis. Most likely diagnosis:</b></li></ol>
+<p>A. Cortical necrosis B. <b>Acute phosphate nephropathy</b> C. Tumour lysis syndrome D. Oxalosis E. Chronic glomerulonephritis</p>
+<ol><li><b>Distal RTA with nephrocalcinosis — specific treatment that reverses calcification:</b></li></ol>
+<p>A. Hydrochlorothiazide B. <b>Alkali therapy (NaHCO₃/Na-citrate) — corrects acidosis → ↑ citrate → inhibits Ca²⁺ crystallisation</b> C. Allopurinol D. Low calcium diet E. Magnesium supplements</p>
+<ol><li><b>Bartter syndrome vs Gitelman syndrome — nephrocalcinosis:</b></li></ol>
+<p>A. <b>Bartter: YES; Gitelman: NO (hypocalciuria)</b> B. Both yes C. Both no D. Gitelman: YES; Bartter: NO E. Only with loop diuretics</p>
+<ol><li><b>Cortical nephrocalcinosis in a 25-year-old man with haematuria, hearing loss, lenticonus. Genetic condition:</b></li></ol>
+<p>A. ADPKD B. <b>Alport Syndrome (COL4A5)</b> C. ADTKD D. Fabry Disease E. Thin Basement Membrane Disease</p>
+<ol><li><b>Nephrocalcinosis workup — hypocitraturia found. Best treatment to increase citrate:</b></li></ol>
+<p>A. Thiazide B. <b>Potassium citrate / Sodium citrate</b> C. Allopurinol D. High animal protein diet E. Loop diuretic</p>
+<ol><li><b>Primary hyperparathyroidism with nephrocalcinosis — definitive treatment:</b></li></ol>
+<p>A. Cinacalcet B. <b>Parathyroidectomy (if criteria met)</b> C. Bisphosphonates C. Hydration only E. Alkali therapy</p>
+<ol><li><b>Acute phosphate nephropathy — risk factors:</b></li></ol>
+<p>A. Young age, normal renal function B. <b>Elderly, CKD, volume depletion, ACEi/ARB, high phosphate dose</b> C. Pregnancy D. Hyperthyroidism E. Bartter syndrome</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: Nephrocalcinosis vs stones?</li></ul>
+<p>A: Parenchymal vs collecting system</p>
+<ul><li>Q: Medullary nephrocalcinosis causes?</li></ul>
+<p>A: RTA1, Bartter, Hyperpara, MSK, Loop diuretics, Sarcoid</p>
+<ul><li>Q: Cortical nephrocalcinosis causes?</li></ul>
+<p>A: Cortical necrosis, Phosphate nephropathy, Tumour lysis, Oxalosis, Alport, TB</p>
+<ul><li>Q: RTA1 mechanism?</li></ul>
+<p>A: Alkaline urine + hypocitraturia + hypercalciuria</p>
+<ul><li>Q: Bartter Ca urine?</li></ul>
+<p>A: High (hypercalciuria) → nephrocalcinosis</p>
+<ul><li>Q: Gitelman Ca urine?</li></ul>
+<p>A: Low (hypocalciuria) → NO nephrocalcinosis</p>
+<ul><li>Q: MSK imaging?</li></ul>
+<p>A: Paintbrush calyces</p>
+<ul><li>Q: Citrate role?</li></ul>
+<p>A: Inhibits Ca crystallisation (chelate Ca)</p>
+<ul><li>Q: Thiazide effect on Ca?</li></ul>
+<p>A: Hypocalciuric (↑ proximal reabsorption)</p>
+<ul><li>Q: Loop diuretic effect on Ca?</li></ul>
+<p>A: Hypercalciuric (blocks TAL reabsorption)</p>
+<ul><li>Q: Phosphate nephropathy risk?</li></ul>
+<p>A: Elderly, CKD, volume depletion, oral phosphate prep</p>
+<ul><li>Q: Paintbrush calyces = ?</li></ul>
+<p>A: Medullary Sponge Kidney</p>
+<ul><li>Q: Acute phosphate nephropathy?</li></ul>
+<p>A: Cortical calcification post oral phosphate bowel prep</p>
+<ul><li>Q: RTA1 alkali reverses?</li></ul>
+<p>A: Yes — ↑ citrate → inhibits crystallisation</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — Nephrocalcinosis = diffuse parenchymal Ca deposition; Nephrolithiasis = discrete stones in calyces/pelvis/ureter.</li><li><b>B</b> — Children: Distal RTA (Type 1) and Bartter Syndrome are the classic medullary nephrocalcinosis causes.</li><li><b>D</b> — RTA1: alkaline urine, hypocitraturia, hypercalciuria cause nephrocalcinosis. Hyperphosphaturia not a mechanism.</li><li><b>B</b> — "Paintbrush" calyces = dilated collecting ducts in Medullary Sponge Kidney (contrast pooling in cystic ducts).</li><li><b>B</b> — Loop diuretics block NKCC2 in TAL → ↓ Ca²⁺ reabsorption → hypercalciuria → medullary nephrocalcinosis.</li><li><b>D</b> — MSK is a medullary cause (dilated ducts), not cortical. Cortical causes: necrosis, phosphate, tumour lysis, oxalosis, Alport, TB.</li><li><b>B</b> — MSK: dilated collecting ducts → contrast fills cystic ducts → "paintbrush" appearance on IVU/CTU.</li><li><b>B</b> — Thiazides ↑ proximal Ca²⁺ reabsorption → ↓ urinary Ca²⁺ (hypocalciuria) → used for hypercalciuric nephrocalcinosis.</li><li><b>B</b> — Early RTA1 (alkali) and Bartter (indomethacin) can reverse medullary nephrocalcinosis before fibrosis.</li><li><b>B</b> — Complete workup: serum Ca/PO₄/PTH/1,25-VitD, 24h urine Ca/Cit/Ox, urinary pH, blood gas.</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — Child + FTT + hypokalaemic alkalosis + medullary nephrocalcinosis = Bartter (TAL defect).</li><li><b>B</b> — Adult + medullary nephrocalcinosis + alkaline urine + NAGMA + normal Ca/PTH = Distal RTA Type 1.</li><li><b>B</b> — MSK asymptomatic with stones/UTI: hydration + citrate prevents new stones.</li><li><b>B</b> — Elderly + recent oral phosphate prep + AKI + cortical nephrocalcinosis = Acute phosphate nephropathy.</li><li><b>B</b> — Alkali corrects acidosis → ↑ urinary citrate (citrate reabsorption ↑ in alkalosis) → citrate chelates Ca²⁺ → inhibits crystallisation.</li><li><b>A</b> — Bartter: hypercalciuria → nephrocalcinosis; Gitelman: hypocalciuria → no nephrocalcinosis.</li><li><b>B</b> — Young male + haematuria + hearing loss + lenticonus + cortical nephrocalcinosis = Alport (COL4A5 X-linked).</li><li><b>B</b> — Citrate supplementation (K-citrate/Na-citrate) directly increases urinary citrate → inhibits Ca²⁺ crystallisation.</li><li><b>B</b> — Symptomatic primary hyperparathyroidism with nephrocalcinosis → parathyroidectomy per guidelines.</li><li><b>B</b> — Risk factors: elderly, CKD, volume depletion, ACEi/ARB, high phosphate dose/slow clearance.</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">19</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Nephrocalcinosis</b> is a <b>Must Know 🔴</b> metabolic/renal topic. <b>Definition</b>: Diffuse Ca²⁺ deposition in renal <b>parenchyma</b> (vs stones in collecting system). <b>Medullary (common)</b>: <b>RTA1</b> (alkaline urine + hypocitraturia + hypercalciuria), <b>Bartter</b>, Hyperparathyroidism, <b>Medullary Sponge Kidney</b> (paintbrush calyces), Loop diuretics, Sarcoidosis. <b>Cortical (severe)</b>: Cortical necrosis, Acute phosphate nephropathy, Tumour lysis, Oxalosis, Alport, TB. <b>Imaging</b>: US (screening), <b>CT (gold standard)</b>. <b>Workup</b>: Ca²⁺, PO₄, PTH, 1,25-VitD, 24h urine Ca/Citrate/Oxalate, urinary pH, blood gas. <b>Management</b>: Treat cause + hydration (2.5–3L) + <b>citrate</b> (inhibits crystallisation) + thiazide if hypercalciuria. <b>RTA1 alkali reverses</b> via ↑ citrate. <b>Key discriminators</b>: Bartter = nephrocalcinosis YES; Gitelman = nephrocalcinosis NO (hypocalciuria). MSK = paintbrush calyces. Phosphate nephropathy = elderly + oral phosphate prep. Cortical necrosis = obstetric/HUS. <b>Exam focus</b>: Medullary vs cortical, RTA1 mechanism, Bartter vs Gitelman Ca²⁺, MSK imaging, citrate/thiazide roles, reversibility.</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Nephrocalcinosis · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>

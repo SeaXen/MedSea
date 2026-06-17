@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Urinary Incontinence — Sea Knowledge</title>
+<style>
+  :root {
+    --rose:        #c09db1;
+    --rose-deep:   #996677;
+    --rose-soft:   #f3dde4;
+    --cream:       #faf1d0;
+    --cream-deep:  #e0b13f;
+    --sage:        #bfc3a6;
+    --sage-deep:   #8a9a72;
+    --coral:       #f68773;
+    --coral-deep:  #d65a4a;
+    --ink:         #3b2a32;
+    --ink-soft:    #6b5460;
+    --paper:       #fdf8ee;
+    --paper-edge:  #ece1c8;
+    --line:        #c9b59a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #efe6d3;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    background: var(--paper);
+    margin: 0 auto;
+    padding: 16px 22px 14px 22px;
+    position: relative;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,157,177,0.08), transparent 35%),
+      radial-gradient(circle at 88% 82%, rgba(224,177,63,0.07), transparent 40%);
+  }
+  .page::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid var(--paper-edge);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .sk-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1.6px solid var(--rose-deep);
+    padding-bottom: 5px; margin-bottom: 6px;
+  }
+  .sk-brand { display: flex; align-items: center; gap: 8px; }
+  .sk-logo { width: 30px; height: 30px; }
+  .brand-text {
+    font-family: "Georgia", serif;
+    font-size: 11px; letter-spacing: 1.6px;
+    color: var(--rose-deep); font-weight: 700;
+  }
+  .brand-text small { display:block; font-size: 7.5px; letter-spacing: 1.2px; color: var(--ink-soft); font-weight: 400; }
+  .sk-topic { text-align: right; }
+  .sk-topic .tag {
+    display: inline-block; background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 1.4px; padding: 1.5px 7px; border-radius: 8px;
+  }
+  .sk-topic .h1 {
+    font-size: 16px; font-weight: 800; color: var(--ink);
+    margin-top: 2px; letter-spacing: 0.4px;
+  }
+  .sec {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fffdf6;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(90deg, var(--rose-soft) 0%, #fff 95%);
+    padding: 2px 7px;
+    border-bottom: 0.8px solid var(--line);
+  }
+  .sec-num {
+    background: var(--rose-deep); color: #fff;
+    width: 15px; height: 15px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 8.5px; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 9.2px; font-weight: 800; letter-spacing: 1px;
+    color: var(--rose-deep); text-transform: uppercase;
+  }
+  .sec-body { padding: 3px 8px 4px 8px; font-size: 8.3px; line-height: 1.3; }
+  .sub-h {
+    font-size: 8px; font-weight: 800; color: var(--sage-deep);
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin: 3px 0 1px 0;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .sub-h::before {
+    content: ""; width: 10px; height: 1.5px; background: var(--coral);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  ul, ol { margin: 1px 0 2px 13px; padding: 0; }
+  li { margin-bottom: 1px; }
+  b, strong { color: var(--ink); }
+  p { margin: 1px 0 2px 0; }
+  .chip {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--ink);
+    border: 0.8px solid var(--cream-deep);
+    border-radius: 8px;
+    padding: 0 5px;
+    font-size: 7.5px;
+    font-weight: 700;
+    margin: 0 1px;
+  }
+  .chip.rose { background: var(--rose-soft); border-color: var(--rose); color: var(--rose-deep); }
+  .chip.sage { background: #eef0e3; border-color: var(--sage); color: var(--sage-deep); }
+  .chip.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .callout {
+    background: linear-gradient(180deg, #fff7e0 0%, #fdeec0 100%);
+    border: 0.8px solid var(--cream-deep);
+    border-left: 3px solid var(--cream-deep);
+    border-radius: 3px;
+    padding: 4px 7px;
+    font-size: 7.8px;
+    line-height: 1.3;
+    color: #5a4513;
+    margin-top: 3px;
+  }
+  .callout b { color: #5a4513; }
+  .ctable {
+    width: 100%; border-collapse: collapse; font-size: 7.6px;
+    border: 0.8px solid var(--line);
+  }
+  .ctable th, .ctable td {
+    border: 0.6px solid var(--line);
+    padding: 1.5px 4px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  .ctable thead th {
+    background: var(--rose-deep); color: #fff;
+    font-size: 7.5px; letter-spacing: 0.6px; text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+  }
+  .ctable tbody tr:nth-child(even) td { background: #fbf6e6; }
+  .ctable td.label { background: #f1e6d3; font-weight: 700; color: var(--ink); }
+  .pearls {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px;
+  }
+  .pearls li {
+    position: relative; padding-left: 11px;
+    font-size: 7.6px; line-height: 1.3;
+  }
+  .pearls li::before {
+    content: "★";
+    position: absolute; left: 0; top: 0;
+    color: var(--cream-deep); font-size: 9px; line-height: 1;
+  }
+  .fig {
+    border: 0.7px dashed var(--line);
+    background: #fffaf0;
+    border-radius: 3px;
+    padding: 2px;
+    text-align: center;
+    font-size: 6.8px; color: var(--ink-soft);
+  }
+  .fig svg { display: block; margin: 0 auto; }
+  .fig .cap { margin-top: 1px; font-style: italic; font-size: 6.5px; }
+  .sk-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 5px; padding-top: 4px;
+    border-top: 1.4px solid var(--rose-deep);
+    font-size: 7.2px; color: var(--ink-soft);
+  }
+  .sk-footer .logo-text {
+    font-weight: 800; letter-spacing: 1.4px; color: var(--rose-deep);
+  }
+  .arrow-down {
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--rose-deep);
+    margin: 0 auto;
+  }
+  .arrow-text {
+    text-align: center; font-size: 7px; color: var(--rose-deep);
+    font-weight: 700; letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .flow {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2px;
+  }
+  .flow .step {
+    flex: 1; text-align: center;
+    background: #fff; border: 0.7px solid var(--rose);
+    border-radius: 3px; padding: 2px 2px;
+    font-size: 7px; color: var(--rose-deep); font-weight: 700;
+    line-height: 1.15;
+  }
+  .flow .step.cream { background: var(--cream); border-color: var(--cream-deep); color: #6a4a13; }
+  .flow .step.coral { background: #fde2da; border-color: var(--coral); color: var(--coral-deep); }
+  .flow .arrow {
+    color: var(--rose-deep); font-weight: 800; font-size: 10px;
+  }
+  .small { font-size: 7.5px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="sk-header">
+    <div class="sk-brand">
+      <svg class="sk-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#f3dde4" stroke="#996677" stroke-width="2"/>
+        <path d="M10 36 Q16 30 22 36 T34 36 T46 36 T58 36" fill="none" stroke="#996677" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M10 44 Q16 38 22 44 T34 44 T46 44 T58 44" fill="none" stroke="#e0b13f" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="32" cy="22" r="3" fill="#d65a4a"/>
+      </svg>
+      <div class="brand-text">
+        SEA KNOWLEDGE
+        <small>STUDY NOTES</small>
+      </div>
+    </div>
+    <div class="sk-topic">
+      <span class="tag">NEPHROLOGY & UROLOGY</span>
+      <div class="h1">Urinary Incontinence</div>
+    </div>
+  </div>
+
+  <div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">1</span>
+    <span class="sec-title">Learning Objectives</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Classify types of urinary incontinence</li><li>Assess and diagnose UI (history, examination, investigations)</li><li>Apply conservative, pharmacological, and surgical management</li><li>Address special populations (elderly, post-prostatectomy, neurogenic)</li><li>Apply to FCPS/MRCP clinical scenarios</li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">2</span>
+    <span class="sec-title">Classification of Urinary Incontinence</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Type</th><th>Mechanism</th><th>Key Features</th></tr><tr><td>------</td><td>-----------</td><td>--------------</td></tr><tr><td>**Stress UI (SUI)**</td><td>↑ Intra-abdominal pressure > urethral closure pressure</td><td>Leakage with cough, sneeze, exercise, lifting; **no urgency**</td></tr><tr><td>**Urge UI (UUI)**</td><td>Detrusor overactivity (involuntary contractions)</td><td>**Urgency** + frequency + nocturia + leakage; "key-in-lock" syndrome</td></tr><tr><td>**Mixed UI (MUI)**</td><td>Combination of SUI + UUI</td><td>Features of both; one may predominate</td></tr><tr><td>**Overflow UI**</td><td>Chronic urinary retention → bladder overdistension</td><td>**Constant dribbling**, poor stream, hesitancy, incomplete emptying; **PV residual high**</td></tr><tr><td>**Functional UI**</td><td>Normal lower urinary tract but physical/cognitive impairment</td><td>Mobility issues, dementia, environmental barriers</td></tr><tr><td>**Continuous UI**</td><td>Fistula, ectopic ureter, sphincter destruction</td><td>Constant leakage (no storage)</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">3</span>
+    <span class="sec-title">Prevalence & Risk Factors</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Population</th><th>Prevalence</th></tr><tr><td>------------</td><td>------------</td></tr><tr><td>**Women**</td><td>25–45% (any UI); SUI commonest in young/middle; UUI increases with age</td></tr><tr><td>**Men**</td><td>10–30% (post-prostatectomy SUI common; UUI with BPH)</td></tr><tr><td>**Elderly (>65)**</td><td>30–50% (nursing home higher)</td></tr></table>
+<table class="ctable"><tr><th>Risk Factor</th><th>SUI</th><th>UUI</th></tr><tr><td>-------------</td><td>-----</td><td>-----</td></tr><tr><td>**Age**</td><td>↑</td><td>↑↑</td></tr><tr><td>**Parity/Vaginal Delivery**</td><td>↑↑</td><td>↑</td></tr><tr><td>**Menopause**</td><td>↑ (oestrogen loss)</td><td>↑</td></tr><tr><td>**Obesity**</td><td>↑↑</td><td>↑</td></tr><tr><td>**Chronic Cough/Constipation**</td><td>↑</td><td></td></tr><tr><td>**Neurological Disease**</td><td></td><td>↑ (MS, stroke, Parkinson's)</td></tr><tr><td>**BPH/Prostate Surgery**</td><td>↑ (post-TURP)</td><td>↑ (BOO)</td></tr><tr><td>**Medications**</td><td>Diuretics, α-blockers</td><td>Anticholinergics, diuretics, caffeine</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">4</span>
+    <span class="sec-title">Assessment & Diagnosis</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">History</div>
+<table class="ctable"><tr><th>Domain</th><th>Questions</th></tr><tr><td>--------</td><td>-----------</td></tr><tr><td>**Type**</td><td>Leakage with activity (SUI) vs urgency (UUI) vs constant (overflow)</td></tr><tr><td>**Severity**</td><td>Pads/day, volume, interference with activities</td></tr><tr><td>**Impact**</td><td>QoL scores (ICIQ-UI SF, King's Health Questionnaire)</td></tr><tr><td>**Voiding Diary**</td><td>**3-day diary**: frequency, volumes, leakage episodes, fluid intake</td></tr><tr><td>**Red Flags**</td><td>Haematuria, recurrent UTI, pain, neurological symptoms, pelvic mass</td></tr></table>
+<div class="sub-h">Examination</div>
+<table class="ctable"><tr><th>Component</th><th>SUI Focus</th><th>UUI/Overflow Focus</th></tr><tr><td>-----------</td><td>-----------</td><td>-------------------</td></tr><tr><td>**Abdominal**</td><td>Mass, scars, distension</td><td></td></tr><tr><td>**Pelvic (Women)**</td><td>**Cough stress test** (leakage with cough), pelvic organ prolapse (POP-Q), vaginal atrophy</td><td></td></tr><tr><td>**Genital (Men)**</td><td>Penile/scrotal, meatus</td><td>Prostate (DRE: size, consistency, nodules)</td></tr><tr><td>**Neurological**</td><td></td><td>Perineal sensation, anal tone, bulbocavernosus reflex, lower limbs</td></tr><tr><td>**Post-Void Residual (PVR)**</td><td>Usually low</td><td>**High (>100–150 mL)** = retention/overflow</td></tr></table>
+<div class="sub-h">Investigations</div>
+<table class="ctable"><tr><th>Test</th><th>Indication</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**Urinalysis + Culture**</td><td>Exclude UTI, haematuria, glycosuria</td></tr><tr><td>**Urodynamics**</td><td>**Complex/unclear diagnosis**, pre-surgery, neurogenic, failed conservative tx</td></tr><tr><td>**Cystoscopy**</td><td>Haematuria, recurrent UTI, failed surgery, suspicion of malignancy/fistula</td></tr><tr><td>**Imaging**</td><td>US KUB (hydronephrosis, PVR), MRI (if fistula/sphincter)</td></tr><tr><td>**Pad Test**</td><td>1-hour (standardised) or 24-hour (quantify leakage)</td></tr></table>
+<div class="sub-h">Urodynamics Key Parameters</div>
+<table class="ctable"><tr><th>Parameter</th><th>SUI</th><th>UUI</th><th>Overflow</th></tr><tr><td>-----------</td><td>-----</td><td>-----</td><td>----------</td></tr><tr><td>**Valsalva Leak Point Pressure (VLPP)**</td><td>**Low (<60 cmH2O)** = intrinsic sphincter deficiency</td><td>Normal/high</td><td>N/A</td></tr><tr><td>**Detrusor Pressure at Max Flow (PdetQmax)**</td><td>Normal</td><td>**High** (overactivity)</td><td>**Low** (underactivity)</td></tr><tr><td>**Maximum Urethral Closure Pressure (MUCP)**</td><td>**Low**</td><td>Normal</td><td>Normal</td></tr><tr><td>**Bladder Compliance**</td><td>Normal</td><td>Normal/low</td><td>Normal</td></tr><tr><td>**Detrusor Overactivity**</td><td>Absent</td><td>**Present** (phasic/terminal)</td><td>Absent</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">5</span>
+    <span class="sec-title">Management</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Conservative (1st Line for All Types)</div>
+<table class="ctable"><tr><th>Intervention</th><th>Details</th></tr><tr><td>--------------</td><td>---------</td></tr><tr><td>**Lifestyle**</td><td>Weight loss (BMI <25), smoking cessation, fluid management (1.5–2L/day, reduce caffeine/alcohol), treat constipation</td></tr><tr><td>**Pelvic Floor Muscle Training (PFMT)**</td><td>**SUI: 1st line**; 8–12 weeks supervised; ⱗ "Knack" (pre-contraction before stress)</td></tr><tr><td>**Bladder Training**</td><td>**UUI: 1st line**; scheduled voiding, urge suppression, progressive interval increase</td></tr><tr><td>**Continence Products**</td><td>Pads, sheaths (men), catheters (last resort)</td></tr><tr><td>**Vaginal Oestrogen (Post-menopausal)**</td><td>Topical (creme/pessary/ring) — improves urethral mucosa, PFMT response</td></tr></table>
+<div class="sub-h">Pharmacological</div>
+<p>#### Stress UI &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Drug&lt;/th&gt;&lt;th&gt;Mechanism&lt;/th&gt;&lt;th&gt;Notes&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Duloxetine</b>&lt;/td&gt;&lt;td&gt;SNRI → ↑ urethral sphincter tone (Onuf's nucleus)&lt;/td&gt;&lt;td&gt;<b>Only drug approved for SUI</b>; 20mg BD → 40mg BD; nausea common; avoid if hepatic/severe renal&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p>#### Urge UI / OAB &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Drug&lt;/th&gt;&lt;th&gt;Mechanism&lt;/th&gt;&lt;th&gt;Dose&lt;/th&gt;&lt;th&gt;Notes&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Anticholinergics</b>&lt;/td&gt;&lt;td&gt;M3 blockade → ↓ detrusor contractions&lt;/td&gt;&lt;td&gt;Oxybutynin 5mg TDS/IR, 10mg OD/ER; Tolterodine 2mg BD/4mg OD; Solifenacin 5mg OD; Darifenacin 7.5mg OD; Fesoterodine 4–8mg OD&lt;/td&gt;&lt;td&gt;<b>1st line</b>; side effects: dry mouth, constipation, blurred vision, cognitive (avoid elderly)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>β3-Agonist</b>&lt;/td&gt;&lt;td&gt;<b>Mirabegron</b> → β3 relaxation → ↑ bladder capacity&lt;/td&gt;&lt;td&gt;25mg OD → 50mg OD&lt;/td&gt;&lt;td&gt;<b>Alternative if anticholinergic intolerant</b>; less cognitive; hypertension monitoring&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Combination</b>&lt;/td&gt;&lt;td&gt;Anticholinergic + β3-agonist&lt;/td&gt;&lt;td&gt;Solifenacin + mirabegron&lt;/td&gt;&lt;td&gt;Refractory OAB&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p>#### Overflow / Neurogenic &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Approach&lt;/th&gt;&lt;th&gt;Detail&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;----------&lt;/td&gt;&lt;td&gt;--------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Clean Intermittent Catheterisation (CIC)</b>&lt;/td&gt;&lt;td&gt;Gold standard for retention/neurogenic&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Alpha-blockers</b>&lt;/td&gt;&lt;td&gt;Tamsulosin (if BOO component)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Bethanechol</b>&lt;/td&gt;&lt;td&gt;Cholinergic agonist (if detrusor underactivity) — limited evidence&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+<div class="sub-h">Surgical</div>
+<p>#### Stress UI (Women) &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Procedure&lt;/th&gt;&lt;th&gt;Indication&lt;/th&gt;&lt;th&gt;Notes&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;td&gt;-------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Retropubic Mid-Urethral Sling (TVT)</b>&lt;/td&gt;&lt;td&gt;<b>Gold standard SUI</b>&lt;/td&gt;&lt;td&gt;<b>&gt;85% cure</b>; mesh complications (erosion, pain, obstruction)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Transobturator Sling (TOT)</b>&lt;/td&gt;&lt;td&gt;Alternative&lt;/td&gt;&lt;td&gt;Less bladder/bowel injury; similar efficacy&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Single-Incision Mini-Sling</b>&lt;/td&gt;&lt;td&gt;Less invasive&lt;/td&gt;&lt;td&gt;Lower long-term data&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Colposuspension (Burch)</b>&lt;/td&gt;&lt;td&gt;Open/laparoscopic&lt;/td&gt;&lt;td&gt;Historical; durable; more invasive&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Bulking Agents</b>&lt;/td&gt;&lt;td&gt;Intrinsic sphincter deficiency (low VLPP)&lt;/td&gt;&lt;td&gt;Periurethral injection; lower durability; repeat needed&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Artificial Urinary Sphincter (AUS)</b>&lt;/td&gt;&lt;td&gt;<b>Men (post-prostatectomy SUI)</b>; failed slings&lt;/td&gt;&lt;td&gt;<b>Gold standard men</b>; 3-component; mechanical failure ~10–15%/yr&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p>#### Urge UI / OAB (Refractory) &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Procedure&lt;/th&gt;&lt;th&gt;Indication&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Botulinum Toxin A (Intradetrusor)</b>&lt;/td&gt;&lt;td&gt;Refractory OAB; 100U/200U; repeat q6–12mo; risk retention (CIC needed)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Sacral Neuromodulation (SNM)</b>&lt;/td&gt;&lt;td&gt;Refractory OAB/UUI; test phase → permanent; reversible&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Percutaneous Tibial Nerve Stimulation (PTNS)</b>&lt;/td&gt;&lt;td&gt;Refractory OAB; weekly × 12 then maintenance&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Augmentation Cystoplasty</b>&lt;/td&gt;&lt;td&gt;End-stage small capacity bladder; enterocystoplasty&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<p>#### Overflow (BOO/Neurogenic) &lt;table class="ctable"&gt;&lt;tr&gt;&lt;th&gt;Procedure&lt;/th&gt;&lt;th&gt;Indication&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;-----------&lt;/td&gt;&lt;td&gt;------------&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>TURP / HoLEP</b>&lt;/td&gt;&lt;td&gt;BPH with overflow&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>Urethroplasty</b>&lt;/td&gt;&lt;td&gt;Stricture&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;<b>CIC</b>&lt;/td&gt;&lt;td&gt;Neurogenic detrusor underactivity&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">6</span>
+    <span class="sec-title">Special Populations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">Post-Prostatectomy Incontinence (Men)</div>
+<table class="ctable"><tr><th>Timeline</th><th>Management</th></tr><tr><td>----------</td><td>------------</td></tr><tr><td>**0–3 months**</td><td>PFMT, lifestyle, pads; expect recovery</td></tr><tr><td>**3–12 months**</td><td>PFMT + biofeedback; duloxetine; consider early sling if persistent</td></tr><tr><td>**>12 months**</td><td>**Artificial Urinary Sphincter (AUS) = gold standard**; Adjuvant sling (male sling) if mild-moderate</td></tr></table>
+<div class="sub-h">Elderly / Nursing Home</div>
+<table class="ctable"><tr><th>Approach</th><th>Detail</th></tr><tr><td>----------</td><td>--------</td></tr><tr><td>**Prompted Voiding**</td><td>Scheduled toileting + positive reinforcement</td></tr><tr><td>**Habit Training**</td><td>Identify pattern → scheduled voiding</td></tr><tr><td>**Indwelling Catheter**</td><td>**Last resort** (comfort care only); suprapubic preferred if long-term</td></tr></table>
+<div class="sub-h">Neurogenic Bladder</div>
+<table class="ctable"><tr><th>Condition</th><th>Management</th></tr><tr><td>-----------</td><td>------------</td></tr><tr><td>**Suprasacral (UMN)**</td><td>Detrusor overactivity + DSD → anticholinergic + CIC; botulinum toxin</td></tr><tr><td>**Sacral/Infrasacral (LMN)**</td><td>Detrusor underactivity + areflexia → CIC; bethanechol (limited)</td></tr><tr><td>**Spinal Cord Injury**</td><td>Autonomic dysreflexia risk; CIC + anticholinergic + botulinum</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">7</span>
+    <span class="sec-title">High-Yield FCPS/MRCP Points</span>
+  </div>
+  <div class="sec-body">
+<div class="callout">[!important] - <b>SUI: leakage with cough/sneeze/exercise; no urgency; women &gt; men</b> - <b>UUI: urgency + frequency + nocturia + leakage; "key-in-lock"</b> - <b>MUI: both SUI + UUI features</b> - <b>Overflow: constant dribbling + high PVR (&gt;100–150mL)</b> - <b>Functional: normal tract, impaired mobility/cognition</b> - <b>Assessment: 3-day voiding diary, cough stress test, DRE, PVR</b> - <b>SUI 1st line: PFMT (8–12wk); drug: duloxetine; surgery: TVT (women), AUS (men)</b> - <b>UUI 1st line: bladder training; drug: anticholinergics (oxybutynin, solifenacin) or mirabegron; refractory: botox, SNM, PTNS</b> - <b>Overflow: high PVR; CIC gold standard; treat cause (TURP, stricture)</b> - <b>Post-prostatectomy: PFMT 0–3mo; AUS &gt;12mo if persistent</b> - <b>Vaginal oestrogen: post-menopausal adjunct</b> - <b>Pad test: 1-hr or 24-hr quantify leakage</b></div>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">8</span>
+    <span class="sec-title">Common Confusions / Exam Traps</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Trap</th><th>Correction</th></tr><tr><td>------</td><td>------------</td></tr><tr><td>**SUI = urgency**</td><td>**SUI = NO urgency**; UUI = urgency</td></tr><tr><td>**PFMT only for women**</td><td>**Men post-prostatectomy: PFMT 1st line**</td></tr><tr><td>**Anticholinergics for SUI**</td><td>**Anticholinergics for UUI/OAB**; SUI = duloxetine</td></tr><tr><td>**Mirabegron = anticholinergic**</td><td>**β3-agonist** (different mechanism, less cognitive)</td></tr><tr><td>**TVT = for men**</td><td>**TVT = women**; **AUS = men** (post-prostatectomy)</td></tr><tr><td>**All incontinence = surgery**</td><td>**Conservative 1st line for ALL types**</td></tr><tr><td>**Overflow = just dribbling**</td><td>**Must confirm high PVR (>100–150mL)**</td></tr><tr><td>**Elderly = just pads**</td><td>**Prompted voiding, habit training, treat reversible causes**</td></tr><tr><td>**Post-TURP SUI = immediate AUS**</td><td>**Wait 12 months; PFMT first; most recover**</td></tr><tr><td>**Urodynamics always needed**</td><td>**Only if complex/unclear, pre-surgery, neurogenic, failed conservative**</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">9</span>
+    <span class="sec-title">Mnemonics</span>
+  </div>
+  <div class="sec-body">
+<ul><li><b>UI Types</b>: <b>S</b>tress, <b>U</b>rge, <b>M</b>ixed, <b>O</b>verflow, <b>F</b>unctional = <b>SUMOF</b></li><li><b>SUI</b>: <b>C</b>ough, <b>S</b>neeze, <b>E</b>xercise = <b>CSE</b> (no urgency)</li><li><b>UUI</b>: <b>U</b>rgency, <b>F</b>requency, <b>N</b>octuria = <b>UFN</b></li><li><b>Overflow</b>: <b>H</b>igh <b>P</b>VR, <b>D</b>ribbling = <b>HPD</b></li><li><b>Assessment</b>: <b>D</b>iary (3-day), <b>C</b>ough <b>S</b>tress, <b>P</b>VR, <b>U</b>rodynamics = <b>DCS-PVU</b></li><li><b>SUI Tx</b>: <b>P</b>FMT → <b>D</b>uloxetine → <b>T</b>VT/<b>A</b>US = <b>PDTA</b></li><li><b>UUI Tx</b>: <b>B</b>ladder training → <b>A</b>nticholinergic/<b>M</b>irabegron → <b>B</b>otox/<b>S</b>NM/<b>P</b>TNS = <b>BAM-BSP</b></li><li><b>Overflow</b>: <b>P</b>VR &gt;100 → <b>C</b>IC → <b>T</b>URP = <b>PCT</b></li><li><b>Post-Prostatectomy</b>: <b>0–3mo PFMT</b>, <b>&gt;12mo AUS</b> = <b>03-12</b></li><li><b>Red Flags</b>: <b>H</b>aematuria, <b>R</b>ecurrent UTI, <b>P</b>ain, <b>N</b>euro, <b>M</b>ass = <b>HRPNM</b></li></ul>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">10</span>
+    <span class="sec-title">Mind Map</span>
+  </div>
+  <div class="sec-body">
+<p>``<code>mermaid mindmap root((Urinary Incontinence)) Types SUI[Leak with stress, no urgency] UUI[Urgency + leakage] MUI[Both SUI + UUI] Overflow[High PVR, dribbling] Functional[Normal tract, impaired mobility] Continuous[Fistula, ectopic ureter] Assessment Diary[3-day voiding diary] Exam[Cough stress, DRE, PVR, neuro] Urodynamics[VLPP, Pdet, MUCP, DO] Red_Flags[Haematuria, UTI, pain, mass] Conservative PFMT[SUI 1st line, 8-12wk] Bladder_Training[UUI 1st line] Vaginal_Oestrogen[Post-menopausal] Lifestyle[Weight, fluids, caffeine, constipation] Pharmacological SUI[Duloxetine (SNRI)] UUI[Anticholinergics, Mirabegron (β3)] Surgical SUI_Women[TVT/TOT (gold), Bulking, Colposuspension] SUI_Men[AUS (gold post-prostatectomy), Male sling] UUI_Refractory[Botox, SNM, PTNS, Augmentation] Overflow[CIC, TURP, Urethroplasty] Special Post_Prostatectomy[PFMT 0-3mo; AUS &gt;1yr] Elderly[Prompted voiding, habit training] Neurogenic[UM=antichol+CIC+botox; LM=CIC] </code>``</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">11</span>
+    <span class="sec-title">24-Hour Recall Prompts</span>
+  </div>
+  <div class="sec-body">
+<ol><li>UI types: SUI (cough/sneeze, no urgency), UUI (urgency+frequency), MUI, Overflow (high PVR), Functional</li><li>Assessment: 3-day diary, cough stress test, DRE, PVR, urodynamics if complex</li><li>SUI: women &gt; men; leakage with activity; PFMT 1st line; duloxetine drug; TVT/TOT surgery (women), AUS (men)</li><li>UUI: urgency + frequency + nocturia; bladder training 1st line; anticholinergics/mirabegron drugs; botox/SNM/PTNS refractory</li><li>Overflow: constant dribbling + high PVR (&gt;100–150mL); CIC gold standard; treat cause (TURP, stricture)</li><li>Post-prostatectomy: PFMT 0–3mo; AUS &gt;12mo if persistent</li><li>Vaginal oestrogen: post-menopausal adjunct</li><li>Urodynamics: VLPP low = ISD (SUI); detrusor overactivity = UUI; Pdet low = overflow</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">12</span>
+    <span class="sec-title">7-Day / 15-Day / 30-Day Revision Tracker</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Day</th><th>Date</th><th>Recall (1-5)</th><th>Notes</th></tr><tr><td>-----</td><td>------</td><td>--------------</td><td>-------</td></tr><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td></td><td></td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">13</span>
+    <span class="sec-title">Must Know / Should Know / Nice to Know</span>
+  </div>
+  <div class="sec-body">
+<table class="ctable"><tr><th>Priority</th><th>Content</th></tr><tr><td>----------</td><td>---------</td></tr><tr><td>**Must Know 🔴**</td><td>Types (SUI/UUI/MUI/Overflow/Functional), assessment (diary, cough stress, PVR), SUI PFMT/duloxetine/TVT-AUS, UUI bladder training/anticholinergics/mirabegron/botox/SNM, overflow CIC, post-prostatectomy AUS</td></tr><tr><td>**Should Know 🟡**</td><td>MUI management (treat predominant), vaginal oestrogen, neurogenic bladder protocols, augmentation cystoplasty, male slings, PTNS, prompt voiding elderly</td></tr><tr><td>**Nice to Know 🟢**</td><td>Novel devices (urethral inserts, magnetic sphincter), stem cell therapy, urethral bulking agent comparisons, cost-effectiveness, QoL instruments, AI-assisted urodynamics</td></tr></table>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">14</span>
+    <span class="sec-title">MCQs (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>Stress urinary incontinence is characterised by:</b></li></ol>
+<p>A. Urgency and frequency B. <b>Leakage with cough, sneeze, exercise; no urgency</b> C. Constant dribbling D. Nocturia only E. High post-void residual</p>
+<ol><li><b>Urge urinary incontinence — key feature:</b></li></ol>
+<p>A. Leakage with lifting only B. <b>Urgency + frequency + nocturia + leakage</b> C. High PVR C. No urgency E. Only at night</p>
+<ol><li><b>Post-void residual (PVR) elevated in:</b></li></ol>
+<p>A. SUI B. UUI C. <b>Overflow incontinence</b> D. Functional incontinence E. SUI + UUI</p>
+<ol><li><b>First-line conservative management for SUI:</b></li></ol>
+<p>A. Bladder training B. <b>Pelvic floor muscle training (PFMT) 8–12 weeks</b> C. Anticholinergics D. Mirabegron E. Duloxetine</p>
+<ol><li><b>First-line pharmacological treatment for UUI/OAB:</b></li></ol>
+<p>A. Duloxetine B. <b>Anticholinergics (oxybutynin, tolterodine, solifenacin) or mirabegron</b> C. Duloxetine + anticholinergic D. Alpha-blockers E. Beta-3 agonists only</p>
+<ol><li><b>Drug approved specifically for SUI:</b></li></ol>
+<p>A. Oxybutynin B. Mirabegron C. <b>Duloxetine</b> D. Solifenacin E. Tamsulosin</p>
+<ol><li><b>Surgical gold standard for SUI in women:</b></li></ol>
+<p>A. Colposuspension B. <b>Retropubic mid-urethral sling (TVT)</b> C. Bulking agents D. Artificial urinary sphincter E. Single-incision mini-sling</p>
+<ol><li><b>Surgical gold standard for post-prostatectomy SUI in men (&gt;12 months):</b></li></ol>
+<p>A. Male sling B. <b>Artificial urinary sphincter (AUS)</b> C. TVT D. Bulking agents E. Colposuspension</p>
+<ol><li><b>Refractory OAB — intradetrusor injection:</b></li></ol>
+<p>A. Duloxetine B. <b>Botulinum toxin A (100U/200U)</b> C. Mirabegron D. Tamsulosin E. Bulking agent</p>
+<ol><li><b>Overflow incontinence — gold standard management:</b></li></ol>
+<p>A. Anticholinergics B. <b>Clean intermittent catheterisation (CIC)</b> C. TVT D. Duloxetine E. Mirabegron</p>
+<ol><li><b>Post-prostatectomy incontinence — timeline for AUS:</b></li></ol>
+<p>A. Immediately B. 3 months C. 6 months D. <b>&gt;12 months (after maximal conservative recovery)</b> E. Never</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">15</span>
+    <span class="sec-title">SBA Questions (10)</span>
+  </div>
+  <div class="sec-body">
+<ol><li><b>45-year-old woman, 2 vaginal deliveries, leaks urine when coughing, sneezing, exercising. No urgency. Cough stress test positive. PVR 30mL. Best initial management:</b></li></ol>
+<p>A. TVT sling B. <b>PFMT supervised × 8–12 weeks</b> C. Duloxetine 40mg BD D. Oxybutynin 5mg TDS E. Refer for urodynamics</p>
+<ol><li><b>65-year-old woman, urgency, frequency (10/day), nocturia ×3, leakage with urgency. PVR 40mL. Failed bladder training 8 weeks. Best next step:</b></li></ol>
+<p>A. TVT sling B. <b>Anticholinergic (solifenacin 5mg OD) or mirabegron 25mg OD</b> C. Duloxetine D. CIC E. Botulinum toxin</p>
+<ol><li><b>70-year-old man, post-radical prostatectomy 14 months, persistent SUI (3 pads/day). Failed PFMT × 6 months. Best surgical option:</b></li></ol>
+<p>A. Repeat prostatectomy B. <b>Artificial urinary sphincter (AUS)</b> C. TVT sling C. Bulking agents E. CIC</p>
+<ol><li><b>55-year-old man, BPH, constant dribbling, poor stream, hesitancy. PVR 350mL. US: hydronephrosis. Management:</b></li></ol>
+<p>A. Anticholinergics B. <b>CIC + TURP/HoLEP (relieve obstruction)</b> C. Mirabegron D. Duloxetine E. TVT</p>
+<ol><li><b>60-year-old woman, post-menopausal, SUI + vaginal atrophy. Adjunct to PFMT:</b></li></ol>
+<p>A. Oral oestrogen B. <b>Topical vaginal oestrogen (cream/pessary/ring)</b> C. Duloxetine D. Oxybutynin E. Mirabegron</p>
+<ol><li><b>75-year-old nursing home resident, dementia, mobility impaired, wet every 2 hours. No UTI. PVR 50mL. Best approach:</b></li></ol>
+<p>A. Anticholinergics B. <b>Prompted voiding (scheduled toileting + reinforcement)</b> C. CIC D. TVT E. Indwelling catheter</p>
+<ol><li><b>Urodynamics — low Valsalva leak point pressure (VLPP &lt;60 cmH2O) indicates:</b></li></ol>
+<p>A. Detrusor overactivity B. <b>Intrinsic sphincter deficiency (SUI)</b> C. Bladder outlet obstruction D. Detrusor underactivity E. Normal</p>
+<ol><li><b>Mirabegron — mechanism of action:</b></li></ol>
+<p>A. M3 anticholinergic B. <b>β3-adrenoceptor agonist (detrusor relaxation)</b> C. SNRI D. Alpha-blocker E. Muscarinic agonist</p>
+<ol><li><b>Neurogenic bladder — suprasacral (UMN) lesion pattern:</b></li></ol>
+<p>A. Detrusor underactivity + areflexia B. <b>Detrusor overactivity + detrusor-sphincter dyssynergia (DSD)</b> C. Normal detrusor, low compliance D. Overflow only E. Stress incontinence only</p>
+<ol><li><b>Pad test — 1-hour standardised pad test &gt;4g indicates:</b></li></ol>
+<p>A. No incontinence B. Mild incontinence C. <b>Moderate-severe incontinence</b> D. Overflow only E. UUI only</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">16</span>
+    <span class="sec-title">Flashcards</span>
+  </div>
+  <div class="sec-body">
+<ul><li>Q: SUI key feature?</li></ul>
+<p>A: Leakage with cough/sneeze/exercise; NO urgency</p>
+<ul><li>Q: UUI key feature?</li></ul>
+<p>A: Urgency + frequency + nocturia + leakage</p>
+<ul><li>Q: Overflow UI?</li></ul>
+<p>A: Constant dribbling + high PVR (&gt;100–150mL)</p>
+<ul><li>Q: Functional UI?</li></ul>
+<p>A: Normal tract + impaired mobility/cognition</p>
+<ul><li>Q: SUI 1st line conservative?</li></ul>
+<p>A: PFMT 8–12 weeks supervised</p>
+<ul><li>Q: UUI 1st line conservative?</li></ul>
+<p>A: Bladder training</p>
+<ul><li>Q: SUI drug?</li></ul>
+<p>A: Duloxetine (SNRI)</p>
+<ul><li>Q: UUI/OAB drugs?</li></ul>
+<p>A: Anticholinergics (oxybutynin, solifenacin) or mirabegron (β3-agonist)</p>
+<ul><li>Q: SUI surgery women?</li></ul>
+<p>A: TVT/TOT (mid-urethral sling) gold standard</p>
+<ul><li>Q: SUI surgery men (post-prostatectomy)?</li></ul>
+<p>A: AUS (artificial urinary sphincter) gold standard &gt;12mo</p>
+<ul><li>Q: UUI refractory?</li></ul>
+<p>A: Botox (intradetrusor), SNM, PTNS</p>
+<ul><li>Q: Overflow management?</li></ul>
+<p>A: CIC gold standard; treat cause (TURP, stricture)</p>
+<ul><li>Q: Post-prostatectomy AUS timing?</li></ul>
+<p>A: &gt;12 months after maximal recovery</p>
+<ul><li>Q: Vaginal oestrogen?</li></ul>
+<p>A: Post-menopausal SUI/UUI adjunct</p>
+<ul><li>Q: Urodynamics VLPP low?</li></ul>
+<p>A: Intrinsic sphincter deficiency (SUI)</p>
+<ul><li>Q: Urodynamics detrusor overactivity?</li></ul>
+<p>A: UUI/OAB</p>
+<ul><li>Q: Mirabegron mechanism?</li></ul>
+<p>A: β3-agonist → detrusor relaxation</p>
+<ul><li>Q: Prompted voiding?</li></ul>
+<p>A: Scheduled toileting + reinforcement (elderly/dementia)</p>
+<ul><li>Q: CIC gold standard?</li></ul>
+<p>A: Overflow, neurogenic retention</p>
+<ul><li>Q: Pad test 1hr &gt;4g?</li></ul>
+<p>A: Moderate-severe incontinence</p>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">17</span>
+    <span class="sec-title">Answer Key with Explanations</span>
+  </div>
+  <div class="sec-body">
+<div class="sub-h">MCQs</div>
+<ol><li><b>B</b> — SUI = leakage with stress, no urgency</li><li><b>B</b> — UUI = urgency + frequency + nocturia</li><li><b>C</b> — Overflow = high PVR</li><li><b>B</b> — SUI 1st line = PFMT</li><li><b>B</b> — UUI 1st line = anticholinergics or mirabegron</li><li><b>C</b> — Duloxetine = only drug approved for SUI</li><li><b>B</b> — TVT = gold standard SUI women</li><li><b>B</b> — AUS = gold standard post-prostatectomy men</li><li><b>B</b> — Botox = refractory OAB intradetrusor</li><li><b>B</b> — CIC = gold standard overflow</li></ol>
+<div class="sub-h">SBAs</div>
+<ol><li><b>B</b> — SUI + positive cough stress + low PVR = PFMT 1st line</li><li><b>B</b> — UUI + failed bladder training = anticholinergic/mirabegron</li><li><b>B</b> — Post-prostatectomy &gt;12mo + failed PFMT = AUS</li><li><b>B</b> — High PVR + hydronephrosis = obstruction → CIC + TURP</li><li><b>B</b> — Post-menopausal + SUI + atrophy = vaginal oestrogen adjunct</li><li><b>B</b> — Dementia + mobility impaired = prompted voiding</li><li><b>B</b> — VLPP &lt;60 = intrinsic sphincter deficiency</li><li><b>B</b> — Mirabegron = β3-agonist</li><li><b>B</b> — UMN = DO + DSD</li><li><b>C</b> — 1hr pad test &gt;4g = moderate-severe</li></ol>
+<hr style="border:none; border-top:0.8px solid var(--line); margin:3px 0;">
+  </div>
+</div>
+<div class="sec">
+  <div class="sec-head">
+    <span class="sec-num">18</span>
+    <span class="sec-title">Summary</span>
+  </div>
+  <div class="sec-body">
+<p><b>Urinary Incontinence</b> is a <b>Must Know 🔴</b> topic. <b>Key takeaway:</b> <b>SUI</b>: leakage with stress (cough/sneeze), no urgency; <b>PFMT 1st line</b>, duloxetine drug, <b>TVT/TOT (women)</b>, <b>AUS (men post-prostatectomy)</b>. <b>UUI</b>: urgency + frequency + nocturia; <b>bladder training 1st line</b>, <b>anticholinergics/mirabegron</b>, refractory = <b>botox/SNM/PTNS</b>. <b>Overflow</b>: constant dribbling + <b>high PVR &gt;100mL</b>; <b>CIC gold standard</b>; treat cause. <b>Assessment</b>: 3-day diary, cough stress test, PVR, urodynamics if complex. <b>Post-prostatectomy</b>: PFMT 0–3mo, <b>AUS &gt;12mo</b>. <b>Vaginal oestrogen</b>: post-menopausal adjunct. <b>Elderly</b>: prompted voiding, habit training. <b>Exam focus:</b> Types &amp; features, assessment algorithm, PFMT vs bladder training, duloxetine vs anticholinergics/mirabegron, TVT vs AUS, botox/SNM for refractory UUI, CIC for overflow, post-prostatectomy timeline, urodynamics interpretation. <b>Clinical relevance:</b> UI massively impacts QoL; stepwise conservative → pharmacological → surgical approach; most patients improve with PFMT/bladder training; surgery reserved for refractory.</p>
+  </div>
+</div>
+
+  <div class="sk-footer">
+    <span class="logo-text">★ SEA KNOWLEDGE</span>
+    <span>Cardiology · Urinary Incontinence · v1.0</span>
+    <span>For FCPS / MRCP exam prep</span>
+  </div>
+
+</div>
+</body>
+</html>
