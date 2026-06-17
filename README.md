@@ -39,7 +39,7 @@ MedSea/
 ### Backup current content
 
 ```bash
-/root/MedSea/scripts/sync.sh
+/mnt/tb/Sea-knowledge/#MedSea/scripts/sync.sh
 ```
 
 This rebuilds the chapters/, commits changes, and pushes to GitHub.
@@ -47,7 +47,7 @@ This rebuilds the chapters/, commits changes, and pushes to GitHub.
 ### Restore from backup
 
 ```bash
-/root/MedSea/scripts/restore.sh
+/mnt/tb/Sea-knowledge/#MedSea/scripts/restore.sh
 ```
 
 This pulls the latest commit from GitHub and copies files back to
@@ -67,7 +67,7 @@ python3 /root/sea-knowledge-infographics/render_topic.py \
   --out-dir /path/to/disease/folder
 ```
 
-Then run `/root/MedSea/scripts/sync.sh` to back up the new render.
+Then run `/mnt/tb/Sea-knowledge/#MedSea/scripts/sync.sh` to back up the new render.
 
 ## Known gaps (Chapter 16)
 
@@ -78,8 +78,8 @@ regenerated with a different renderer if needed (e.g. weasyprint).
 
 ## Auto-backup
 
-A cron job runs `/root/MedSea/scripts/sync.sh` periodically. Check
-`/root/.hermes/cron/jobs.json` for the schedule.
+A cron job runs `/mnt/tb/Sea-knowledge/#MedSea/scripts/sync.sh` periodically.
+Check `/root/.hermes/cron/jobs.json` for the schedule.
 
 ## License
 
