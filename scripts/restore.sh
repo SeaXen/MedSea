@@ -14,7 +14,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-REPO="/root/MedSea"
+REPO="$(cd "$(dirname "$0")/.." && pwd)"
 CHAPTER_DIR="$REPO/chapters/$CHAPTER-cardiology"
 
 if [ ! -d "$CHAPTER_DIR" ]; then
