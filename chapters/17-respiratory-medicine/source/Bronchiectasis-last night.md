@@ -1,0 +1,193 @@
+---
+tags: [medicine, respiratory, bronchiectasis, revision, fcps, mrcp]
+chapter: Respiratory
+topic: Bronchiectasis
+exam: FCPS, MRCP
+source_note: [[Bronchiectasis]]
+status: rapid-revision
+last_updated: 2026-05-06
+---
+
+# Bronchiectasis — Last Night Before Exam
+
+Related: [[Bronchiectasis]], [[Pneumonia]], [[Hemoptysis]], [[Tuberculosis]], [[ABG Interpretation]]
+
+## Core Definition
+- **Bronchiectasis** = **permanent abnormal dilatation of bronchi** due to chronic infection, inflammation, and impaired mucus clearance.
+- It is a **clinical-radiological syndrome**, not just a CT finding.
+
+## Classic Clinical Picture
+- **Chronic cough**
+- **Large-volume daily purulent sputum**
+- **Recurrent chest infections**
+- **Hemoptysis**
+- Coarse crackles, wheeze, clubbing may be present
+
+> [!important]
+> In exams, the triad to remember is: **chronic productive cough + purulent sputum + recurrent infection**.
+
+## Key Pathophysiology
+### Vicious cycle
+1. Initial airway injury / defective defense
+2. Poor mucus clearance
+3. Persistent infection / colonization
+4. Neutrophilic inflammation
+5. Bronchial wall destruction
+6. Permanent bronchial dilatation
+7. More secretion retention and reinfection
+
+## Causes You Must Know
+### Common causes
+- **Post-infective** disease
+- **Post-tuberculous** disease
+- **ABPA**
+- **Cystic fibrosis**
+- **Immunodeficiency**
+- **Primary ciliary dyskinesia**
+- **Obstructing lesion** / foreign body / tumor
+- **Aspiration / reflux-related recurrent infection**
+
+### Pattern clues
+- **Central bronchiectasis** → think **ABPA**
+- **Upper-lobe disease** → think **TB** or **cystic fibrosis**
+- **Focal/localized disease** → think **obstruction**
+- **Diffuse bilateral disease** → think post-infective, immunodeficiency, ciliary dysfunction, CF
+
+## Anatomy Pearls
+- Disease affects the **bronchi**, not just alveoli.
+- Failed **mucociliary clearance** is central.
+- **Bronchial arteries** become hypertrophied and are the usual source of significant hemoptysis.
+
+## Physiology Pearls
+- Retained secretions → chronic bacterial colonization.
+- Mucus plugging → regional hypoventilation and **V/Q mismatch**.
+- Advanced disease can cause **hypoxemia**, then **respiratory failure**.
+
+## Investigation of Choice
+- **HRCT chest** = best confirmatory investigation
+
+### HRCT signs
+- **Signet ring sign**
+- **Lack of normal bronchial tapering**
+- **Visible bronchi near pleural surface**
+- Cystic spaces / mucus plugging in severe disease
+
+## Other Important Investigations
+- **Sputum culture** and sensitivity
+- Chest X-ray: tram-track lines, ring shadows, cystic change
+- Spirometry: often obstructive or mixed pattern
+- CBC, eosinophils, IgE, immunoglobulins depending on cause
+- AFB/TB testing when indicated
+- Bronchoscopy for **focal disease**, obstruction suspicion, or unexplained hemoptysis
+
+## Important Organisms
+- **Haemophilus influenzae**
+- **Pseudomonas aeruginosa**
+- **Streptococcus pneumoniae**
+- **Moraxella catarrhalis**
+
+> [!warning]
+> **Pseudomonas colonization = more severe disease + worse prognosis**.
+
+## Differential Diagnosis
+- [[COPD]]
+- [[Asthma]]
+- Tuberculosis
+- Lung abscess
+- Chronic bronchitis
+- Lung cancer
+- Interstitial lung disease with traction bronchiectasis
+
+## Stable Management = CLEAR
+- **C**ulture sputum
+- **L**oosen secretions + lung physiotherapy
+- **E**radicate/treat infection
+- **A**ddress underlying cause
+- **R**ehab + vaccines + review
+
+### Core long-term measures
+- **Airway clearance physiotherapy** = cornerstone
+- Hydration / secretion mobilization
+- Culture-guided antibiotics
+- Treat underlying cause
+- Vaccination: influenza, pneumococcal
+- Smoking cessation if relevant
+- Bronchodilator if asthma/bronchospasm/obstructive component
+
+## Exacerbation Management
+Think of worsening:
+- sputum volume
+- sputum purulence
+- cough
+- breathlessness
+- malaise
+- hemoptysis
+
+### Treat with
+- Send sputum culture if possible
+- **Antibiotics** guided by previous cultures
+- Intensify **airway clearance**
+- Oxygen if hypoxemic
+- ABG if severe
+- Look for pneumonia, sepsis, respiratory failure, major hemoptysis
+
+## Hemoptysis
+- Common complication
+- Usually from **bronchial arteries**
+- Massive/significant hemoptysis may require:
+  - stabilization of ABC
+  - urgent localization
+  - specialist referral
+  - **bronchial artery embolization**
+
+## Red Flags / When to Admit
+- **Major or massive hemoptysis**
+- Hypoxemia / cyanosis
+- Sepsis / severe infective exacerbation
+- Drowsiness / respiratory failure
+- Rapid worsening breathlessness
+- Weight loss + focal disease → exclude cancer/TB
+
+## Complications
+- Recurrent infective exacerbations
+- Chronic colonization with resistant organisms
+- Hemoptysis
+- Respiratory failure
+- Cor pulmonale in advanced disease
+- Weight loss / poor quality of life
+- Rarely amyloidosis in longstanding suppurative disease
+
+## Top FCPS/MRCP One-Liners
+- **HRCT chest confirms bronchiectasis.**
+- **Chronic purulent sputum** is the key clinical clue.
+- **Central bronchiectasis suggests ABPA.**
+- **Upper-lobe disease suggests TB or CF.**
+- **Focal disease suggests obstruction.**
+- **Pseudomonas = severe disease / worse prognosis.**
+- **Airway clearance physiotherapy is core treatment.**
+- Major hemoptysis may need **bronchial artery embolization**.
+
+## Ultra-Short Viva Answers
+### Define bronchiectasis
+Permanent abnormal dilatation of bronchi associated with chronic infection, impaired mucus clearance, and recurrent suppurative airway disease.
+
+### Best investigation
+**HRCT chest**.
+
+### Why hemoptysis occurs
+Because chronically inflamed **bronchial arteries** become enlarged and fragile.
+
+### Most important long-term treatment
+**Airway clearance physiotherapy** plus infection control.
+
+## Last 10 Things to Memorize
+1. Permanent **bronchial dilatation**
+2. **HRCT** is diagnostic
+3. Purulent daily sputum is classic
+4. Recurrent infections are typical
+5. Hemoptysis is common
+6. Central disease = **ABPA**
+7. Upper-lobe disease = **TB/CF**
+8. Focal disease = **obstruction**
+9. **Pseudomonas** = poor prognosis
+10. **Airway clearance** is the cornerstone of care

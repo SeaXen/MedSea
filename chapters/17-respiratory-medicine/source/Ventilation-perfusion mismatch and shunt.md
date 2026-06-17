@@ -1,0 +1,351 @@
+---
+tags: [medicine, respiratory, v-q-mismatch, shunt, physiology, davidson, fcps, mrcp]
+chapter: Respiratory
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 17: Respiratory medicine
+topic: Ventilation-perfusion mismatch and shunt
+exam: FCPS, MRCP
+references:
+  physiology: ["Ganong", "Guyton and Hall", "West's Respiratory Physiology", "Davidson"]
+  clinical: ["Davidson", "BTS", "PasTest"]
+related: [ABG Interpretation, Oxygen Therapy and NIV, Spirometry Interpretation, Respiratory Failure, Type 1 respiratory failure]
+status: full-fcps-mrcp-note
+last_updated: 2026-06-16
+---
+
+# Ventilation-perfusion mismatch and shunt
+
+> [!important]
+> **V/Q mismatch** is the most common cause of **hypoxaemia** in lung disease. **Shunt** (perfusion without ventilation) is the most refractory to O₂ therapy. Understanding the V/Q spectrum is essential for interpreting ABG, A-a gradient, and response to O₂.
+
+Related: [[ABG Interpretation]], [[Oxygen Therapy and NIV]], [[Respiratory Failure]], [[Spirometry Interpretation]]
+
+> [!tip] **FCPS/MRCP pearl**: V/Q mismatch **responds to supplemental O₂**; true shunt **does not** (or responds poorly). V/Q = 1 = perfect match; V/Q = 0 = pure shunt; V/Q = ∞ = dead space.
+
+## Learning Objectives
+- Define V/Q ratio and its spectrum
+- Distinguish V/Q mismatch, shunt, and dead space
+- Calculate A-a gradient and identify causes
+- Predict response to O₂ therapy
+- Apply to common disease states
+
+## Definition
+
+**V/Q ratio** = ratio of alveolar ventilation (V) to pulmonary capillary blood flow (Q).
+
+| V/Q value | Meaning | Example |
+|----------|---------|---------|
+| **0** | Pure shunt (perfusion without ventilation) | Pneumonia, atelectasis, ARDS, complete airway obstruction |
+| **0 < V/Q < 1** | Low V/Q (relative shunt) | Early pneumonia, mild airway obstruction |
+| **1** | Perfect match | Normal lung units |
+| **1 < V/Q < ∞** | High V/Q (wasted ventilation / relative dead space) | PE, early COPD |
+| **∞** | Pure dead space (ventilation without perfusion) | PE (complete obstruction) |
+
+## Pathophysiology
+
+### Normal V/Q distribution
+- Apex: V/Q ≈ 3.3 (high V, low Q → relative dead space)
+- Base: V/Q ≈ 0.6 (low V, high Q → relative shunt)
+- **Lung is never perfectly matched** — normal A-a gradient is 5–15 mmHg (1–2 kPa)
+
+### Hypoxaemia mechanisms
+1. **Hypoventilation** (low V/Q = 0) → ↑PaCO₂ + ↓PaO₂
+2. **V/Q mismatch** (low V/Q) → ↓PaO₂, variable PaCO₂
+3. **Shunt** (V/Q = 0) → ↓PaO₂ refractory to O₂
+4. **Diffusion limitation** → ↓PaO₂ (esp. exercise)
+5. **Low FiO₂** (high altitude) → ↓PaO₂
+
+### Shunt vs V/Q mismatch
+| Feature | V/Q mismatch | True shunt |
+|---------|--------------|------------|
+| **Cause** | Under-ventilated, perfused alveoli | No ventilation, perfused |
+| **PaO₂ response to 100% O₂** | Improves (PaO₂ >500 mmHg) | **No/minimal improvement** |
+| **A-a gradient** | ↑ | ↑↑↑ |
+| **PaCO₂** | Variable | Usually normal/low (compensatory) |
+| **Examples** | Asthma, COPD, mild pneumonia | ARDS, lobar pneumonia, severe atelectasis, R→L cardiac shunt |
+
+## Clinical Applications
+
+### V/Q mismatch states
+- **COPD/asthma**: perfusion of poorly ventilated areas (low V/Q)
+- **Pneumonia** (early): partial consolidation
+- **Pulmonary oedema**: fluid impairs gas exchange
+- **ILD**: thickened alveolar-capillary membrane
+
+### True shunt states
+- **Pneumonia** (consolidation)
+- **ARDS** (alveolar collapse + fluid)
+- **Atelectasis**
+- **Pulmonary AVM** (anatomical shunt)
+- **R→L intracardiac shunt** (e.g. PFO, ASD with Eisenmenger)
+- **Hepatopulmonary syndrome**
+
+### Dead space (high V/Q)
+- **PE** (ventilated, no perfusion)
+- **Severe COPD** (alveolar destruction)
+- **Low cardiac output states**
+- **PE contributes to ↑PaCO₂ and ↑A-a gradient**
+
+## Diagnosis
+
+### A-a gradient
+**A-a gradient = PAO₂ − PaO₂** (normal 5–15 mmHg / 1–2 kPa on room air; increases with age)
+
+- **PAO₂** = FiO₂ × (Patm − PH₂O) − PaCO₂/R = 0.21 × (760 − 47) − PaCO₂/0.8 ≈ 150 − PaCO₂/0.8 (room air)
+- **Causes of ↑A-a gradient**: V/Q mismatch, shunt, diffusion limitation
+- **Normal A-a gradient + ↓PaO₂ + ↑PaCO₂** = hypoventilation (e.g. opioid, NM weakness)
+
+### Shunt fraction calculation
+- **Iso-shunt diagram** (classic): PaO₂ vs FiO₂ for given shunt fractions
+- 50% shunt = PaO₂ <60 mmHg on 100% O₂
+- Clinical: 100% O₂ for 15–20 min; if PaO₂ doesn't rise above 500 mmHg, significant shunt
+
+### V/Q scan
+- **Clinical use**: suspected PE
+- V = ventilation, Q = perfusion
+- Matched defect = normal; mismatched (V normal, Q absent) = PE
+- Indeterminate: intermediate probability
+
+## Management
+
+### V/Q mismatch
+- **Treat underlying cause** (bronchodilators, antibiotics, diuretics)
+- **Supplemental O₂** to correct hypoxaemia
+- Usually responds well
+
+### True shunt
+- **Treat underlying cause** (consolidation, atelectasis)
+- **O₂ often ineffective** at correcting
+- **PEEP** recruits collapsed alveoli (ARDS, atelectasis)
+- **Positioning** (prone, lateral decubitus to good lung down)
+- **ECMO** in severe refractory cases
+
+## FCPS/MRCP High-Yield Summary
+
+| Domain | Key points |
+|--------|------------|
+| **Normal V/Q** | 1.0 (perfect match) |
+| **Lung apex V/Q** | ~3.3 (high V, low Q) |
+| **Lung base V/Q** | ~0.6 (low V, high Q) |
+| **V/Q mismatch** | Most common cause of hypoxaemia in lung disease |
+| **Shunt** | Refractory to O₂ (PaO₂ <500 on 100% O₂) |
+| **V/Q response to O₂** | Yes, improves |
+| **A-a gradient** | ↑ in V/Q mismatch, shunt, diffusion limitation; normal in hypoventilation |
+| **Hypoventilation pattern** | ↓PaO₂ + ↑PaCO₂ + normal A-a gradient |
+| **PE** | High V/Q (dead space), ↑A-a gradient, ↓PaCO₂ (hypervent) |
+| **ARDS** | Severe shunt; prone positioning recruits alveoli |
+
+## MCQs (10)
+
+1. Normal V/Q ratio in healthy lung is:
+   A. 0.5
+   B. **1.0**
+   C. 2.0
+   D. 0.1
+   E. 5.0
+   **Answer: B** — V/Q = 1 is the ideal.
+
+2. A patient with hypoxaemia is given 100% O₂ for 20 min. PaO₂ rises from 50 to 380 mmHg. Mechanism of hypoxaemia:
+   A. True shunt
+   B. **V/Q mismatch**
+   C. Hypoventilation
+   D. Diffusion limitation
+   E. Low FiO₂
+   **Answer: B** — Significant improvement with O₂ = V/Q mismatch.
+
+3. A patient with hypoxaemia is given 100% O₂ for 20 min. PaO₂ rises from 50 to 55 mmHg. Mechanism:
+   A. V/Q mismatch
+   B. **True shunt**
+   C. Hypoventilation
+   D. Anaemia
+   E. Altitude
+   **Answer: B** — Minimal response to O₂ = true shunt.
+
+4. A-a gradient is normal in:
+   A. Pneumonia
+   B. PE
+   C. **Hypoventilation (e.g. opioid overdose)**
+   D. ARDS
+   E. ILD
+   **Answer: C** — Hypoventilation = normal A-a gradient (low V, normal Q).
+
+5. The most common cause of hypoxaemia in lung disease is:
+   A. Shunt
+   B. **V/Q mismatch**
+   C. Hypoventilation
+   D. Diffusion
+   E. Low FiO₂
+   **Answer: B** — V/Q mismatch most common.
+
+6. ARDS hypoxaemia is due to:
+   A. V/Q mismatch
+   B. **True shunt (collapsed/fluid-filled alveoli)**
+   C. Hypoventilation
+   D. Anaemia
+   E. Altitude
+   **Answer: B** — ARDS = severe shunt.
+
+7. PE causes hypoxaemia via:
+   A. Shunt
+   B. **Increased dead space (V/Q ↑)**
+   C. V/Q mismatch
+   D. Anaemia
+   E. Altitude
+   **Answer: B** — Dead space (high V/Q).
+
+8. A 60-year-old with COPD and PaO₂ 55 mmHg, PaCO₂ 50 mmHg, A-a gradient 30. Mechanism:
+   A. Pure hypoventilation
+   B. **V/Q mismatch**
+   C. Shunt
+   D. Anaemia
+   E. Altitude
+   **Answer: B** — ↑A-a gradient = V/Q mismatch (or shunt).
+
+9. The PaO₂ on 100% O₂ in a 50% shunt is:
+   A. >500 mmHg
+   B. **<60 mmHg**
+   C. Normal
+   D. 200 mmHg
+   E. 100 mmHg
+   **Answer: B** — 50% shunt has refractory hypoxaemia.
+
+10. A patient with hypoxaemia has normal A-a gradient and ↑PaCO₂. Diagnosis:
+    A. V/Q mismatch
+    B. Shunt
+    C. **Pure hypoventilation (e.g. opioid overdose)**
+    D. PE
+    E. Anaemia
+    **Answer: C** — Normal A-a + ↑PaCO₂ = hypoventilation.
+
+## SBA Questions (10)
+
+1. A patient has hypoxaemia, ↑A-a gradient, ↑PaCO₂. Best first treatment:
+   A. Intubation
+   B. **Supplemental O₂ + treat underlying cause**
+   C. Hyperventilation
+   D. Steroids
+   E. Antibiotics
+   **Answer: B** — O₂ + treat cause.
+
+2. PE ABG typically shows:
+   A. ↑PaCO₂
+   B. **↓PaO₂ + ↓PaCO₂ (hyperventilation) + ↑A-a gradient**
+   C. Normal
+   D. ↑PaO₂
+   E. ↑pH
+   **Answer: B** — Hypoxaemia + respiratory alkalosis (compensatory hyperventilation).
+
+3. A patient with severe ARDS has PaO₂ 60 mmHg on 100% O₂. P/F ratio:
+   A. 60
+   B. **60 (severe ARDS)**
+   C. 300
+   D. 200
+   E. 100
+   **Answer: B** — P/F 60 = severe ARDS by Berlin definition.
+
+4. First-line treatment for shunt in ARDS:
+   A. Bronchodilators
+   B. **PEEP to recruit collapsed alveoli**
+   C. Steroids
+   D. Antibiotics
+   E. Diuretics
+   **Answer: B** — PEEP recruits.
+
+5. A patient with hypoxaemia has ↓PaO₂ + normal PaCO₂ + ↑A-a gradient. Mechanism:
+   A. Hypoventilation
+   B. **V/Q mismatch (most likely) or shunt**
+   C. Altitude
+   D. Anaemia
+   E. Anxiety
+   **Answer: B** — ↑A-a gradient + ↓PaCO₂ = V/Q mismatch or shunt.
+
+6. The V/Q scan interpretation in PE: matched defect means:
+   A. PE
+   B. **Normal or other cause**
+   C. Pneumonia
+   D. PE confirmed
+   E. COPD
+   **Answer: B** — Matched = normal.
+
+7. Hepatopulmonary syndrome is associated with:
+   A. **Hypoxaemia + intrapulmonary shunts + liver disease**
+   B. Hypercapnia
+   C. Normal ABG
+   D. Pleural effusion
+   E. No symptoms
+   **Answer: A** — HPS = liver disease + intrapulmonary vascular dilatations + hypoxaemia.
+
+8. PFO with R→L shunt causes:
+   A. ↑PaO₂
+   B. **↓PaO₂ refractory to O₂, platypnoea-orthodeoxia**
+   C. Normal
+   D. ↑PaCO₂
+   E. No symptoms
+   **Answer: B** — Anatomical shunt.
+
+9. Dead space ventilation in PE leads to:
+   A. ↓PaCO₂
+   B. **Initial hyperventilation → ↓PaCO₂ (if V/Q still adequate)**
+   C. ↑PaCO₂
+   D. No effect
+   E. Hyperoxia
+   **Answer: B** — Hyperventilation compensates.
+
+10. Treatment of hypoxaemia due to V/Q mismatch:
+    A. ECMO
+    B. **Supplemental O₂ + treat underlying cause**
+    C. Tracheostomy
+    D. Steroids only
+    E. Surgery
+    **Answer: B** — O₂ + treat.
+
+## Flashcards
+
+- **Q: Normal V/Q ratio?**
+  A: 1.0.
+
+- **Q: V/Q at lung apex?**
+  A: ~3.3 (high V, low Q).
+
+- **Q: V/Q at lung base?**
+  A: ~0.6 (low V, high Q).
+
+- **Q: What does shunt not respond to?**
+  A: 100% O₂ (refractory hypoxaemia).
+
+- **Q: Normal A-a gradient?**
+  A: 5–15 mmHg (1–2 kPa) on room air.
+
+- **Q: Cause of ↑A-a gradient?**
+  A: V/Q mismatch, shunt, diffusion limitation.
+
+- **Q: Cause of normal A-a gradient + ↓PaO₂?**
+  A: Hypoventilation.
+
+- **Q: V/Q ratio in PE?**
+  A: High (dead space).
+
+- **Q: Most common cause of hypoxaemia in lung disease?**
+  A: V/Q mismatch.
+
+- **Q: Treatment of shunt in ARDS?**
+  A: PEEP (recruit alveoli).
+
+## Answer Key with Explanations
+
+### MCQs
+1. **B**  2. **B**  3. **B**  4. **C**  5. **B**  6. **B**  7. **B**  8. **B**  9. **B**  10. **C**
+
+### SBAs
+1. **B**  2. **B**  3. **B**  4. **B**  5. **B**  6. **B**  7. **A**  8. **B**  9. **B**  10. **B**
+
+## Summary
+
+V/Q mismatch and shunt are the two main mechanisms of hypoxaemia in lung disease. **V/Q mismatch** is the most common and **responds to O₂**; **shunt** is refractory to O₂ and requires PEEP/recruitment. Normal A-a gradient suggests hypoventilation; ↑A-a gradient suggests V/Q mismatch, shunt, or diffusion limitation.
+
+## Local Navigation
+- **Parent Heading**: [[../Functional Anatomy, Physiology, and Investigations|Functional Anatomy, Physiology, and Investigations]]
+- **Parent Topic Group**: [[../Functional Anatomy, Physiology, and Investigations/Airflow, ventilation, and gas exchange|Airflow, ventilation, and gas exchange]]
+- **Chapter Map**: [[../Davidson Chapter 17 - Respiratory Medicine Hierarchy|Respiratory Medicine Hierarchy]]
+- **Chapter MOC**: [[../Respiratory MOC|Respiratory MOC]]
+- **Related**: [[ABG Interpretation]] · [[Oxygen Therapy and NIV]] · [[Respiratory Failure]] · [[Spirometry Interpretation]] · [[Type 1 respiratory failure]]

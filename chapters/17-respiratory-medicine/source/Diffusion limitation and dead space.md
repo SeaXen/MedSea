@@ -1,0 +1,390 @@
+---
+tags: [medicine, respiratory, diffusion, dead-space, physiology, davidson, fcps, mrcp]
+chapter: Respiratory
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 17: Respiratory medicine
+topic: Diffusion limitation and dead space
+exam: FCPS, MRCP
+references:
+  physiology: ["Ganong", "Guyton and Hall", "West's Respiratory Physiology", "Davidson"]
+  clinical: ["Davidson", "BTS", "PasTest"]
+related: [ABG Interpretation, Spirometry Interpretation, V/Q mismatch, Respiratory Failure, Oxygen Therapy and NIV]
+status: full-fcps-mrcp-note
+last_updated: 2026-06-16
+---
+
+# Diffusion limitation and dead space
+
+> [!important]
+> **Diffusion limitation** and **dead space ventilation** are key concepts in respiratory physiology. Diffusion limitation impairs O₂ transfer across the alveolar-capillary membrane; dead space is ventilation that doesn't participate in gas exchange. Both contribute to hypoxaemia in distinct clinical scenarios.
+
+Related: [[ABG Interpretation]], [[Spirometry Interpretation]], [[Ventilation-perfusion mismatch and shunt|V/Q mismatch]], [[Respiratory Failure]]
+
+> [!tip] **FCPS/MRCP pearl**: DLCO is the most sensitive test for diffusion limitation. Causes include ILD, pulmonary oedema, and pulmonary vascular disease. Dead space (↑V/Q) is increased in PE and severe COPD.
+
+## Learning Objectives
+- Define diffusion limitation and Fick's law of diffusion
+- List causes of diffusion limitation
+- Interpret DLCO values
+- Define dead space (anatomical, alveolar, physiological)
+- Apply to clinical scenarios
+- Distinguish diffusion limitation from V/Q mismatch
+
+## Definition
+
+### Fick's law of diffusion
+**V_gas = (A × D × ΔP) / T**
+
+- **V_gas** = volume of gas transferred per unit time
+- **A** = surface area for gas exchange
+- **D** = diffusion constant (∝ 1/√MW; CO₂ diffuses 20× faster than O₂ due to higher solubility)
+- **ΔP** = partial pressure gradient
+- **T** = thickness of membrane
+
+### Lung diffusing capacity (DL)
+- **DLCO** = diffusing capacity for carbon monoxide (most clinically used)
+- **DLCO = V_CO / (P_A_CO − P_cap_CO)** ≈ V_CO / P_A_CO (capillary P_CO ≈ 0)
+- **DL = Dm × Vc** (Dm = membrane diffusion; Vc = capillary blood volume)
+
+## Pathophysiology
+
+### Diffusion limitation mechanisms
+1. **↓Surface area (A)**: emphysema, pneumonectomy, lobectomy
+2. **↓Diffusion constant (D)**: lower solubility
+3. **↓Partial pressure gradient (ΔP)**: low FiO₂, PE
+4. **↑Membrane thickness (T)**: pulmonary fibrosis, oedema, inflammation
+
+### Clinical causes of diffusion limitation
+| Category | Examples |
+|----------|----------|
+| **ILD** | IPF, sarcoidosis, HP, pneumoconioses, CTD-ILD |
+| **Pulmonary oedema** | Cardiogenic, ARDS, fluid overload |
+| **Emphysema** | ↓alveolar surface area |
+| **Pulmonary vascular disease** | PE (↓capillary blood volume), pulmonary hypertension |
+| **Drugs** | Amiodarone, bleomycin, MTX, nitrofurantoin |
+| **Cardiac shunt** | R→L shunt (anatomical) |
+
+### Gas-specific differences
+- **CO₂ diffuses 20× faster** than O₂ (more soluble) → rarely diffusion-limited
+- **O₂ diffusion-limited** at exercise, high altitude, with severe disease
+- **N₂O** is blood-soluble but unlimited → used for membrane diffusion (Dm)
+- **CO** binds Hb avidly → capillary P_CO = 0 → used for DLCO
+
+## Dead space
+
+### Types of dead space
+| Type | Definition | Example |
+|------|------------|---------|
+| **Anatomical** | Conducting airways (no gas exchange) | Trachea, bronchi (~150 mL) |
+| **Alveolar** | Ventilated but not perfused alveoli | PE, severe emphysema |
+| **Physiological** | Anatomical + alveolar (VD) | Sum of both |
+| **Apparatus** | Mechanical ventilation tubing | Ventilator circuit |
+
+### Bohr equation
+**VD/VT = (PaCO₂ − PECO₂) / PaCO₂**
+- Normal: 0.2–0.35 (20–35% of tidal volume is dead space)
+- Increased in: PE, COPD, low cardiac output, mechanical ventilation
+
+### Causes of increased dead space
+- **PE** (most common pathological cause) — ventilated, no perfusion
+- **Severe COPD** (alveolar destruction)
+- **Pulmonary hypertension**
+- **Low cardiac output states**
+- **Mechanical ventilation** (overdistension, PEEP)
+- **Mainstem bronchus intubation** (single lung ventilation)
+
+## Diagnosis
+
+### DLCO measurement
+- **Single-breath DLCO** (most common)
+- Patient inhales trace CO + helium, breath-hold 10 s, exhale
+- DLCO = mL CO/min/mmHg
+- **Normal**: 75–120% predicted
+
+### DLCO interpretation
+| DLCO | Significance |
+|------|--------------|
+| ↑ **Increased** | Asthma, polycythaemia, L→R shunt, alveolar haemorrhage (early) |
+| **Normal** | Healthy lungs, normal alveolar membrane |
+| **↓ Mild** | Mild ILD, mild COPD, mild PH |
+| **↓ Moderate** | Moderate ILD, moderate COPD, PH |
+| **↓ Severe** | Severe ILD, severe emphysema, pulmonary vasculitis |
+
+### DLCO patterns
+| Disease | DLCO | Pattern |
+|---------|------|---------|
+| **Asthma** | Normal or ↑ | Obstructive, normal DLCO |
+| **COPD (chronic bronchitis)** | ↓ Mild-moderate | Obstructive, ↓DLCO |
+| **Emphysema** | ↓↓ Severe | Obstructive, ↓DLCO (most reduced) |
+| **ILD** | ↓↓ Severe | Restrictive, ↓DLCO (early sign) |
+| **Pulmonary vascular disease** | ↓↓ Severe | Normal volumes, ↓DLCO |
+| **Pneumonia (acute)** | Variable | Mixed |
+
+### ABG in dead space (e.g. PE)
+- ↓PaO₂ (↑A-a gradient)
+- ↓PaCO₂ (hyperventilation, unless massive PE)
+
+## Management
+
+### Diffusion limitation
+- **Treat underlying disease** (steroids for ILD, diuretics for oedema, antifibrotics for IPF)
+- **Supplemental O₂** (high FiO₂ to overcome diffusion gradient)
+- **Pulmonary rehabilitation** for chronic disease
+
+### Dead space
+- **Treat underlying cause** (anticoagulation for PE, bronchodilators for COPD)
+- **Reduce ventilator dead space** (shorter tubing, low PEEP)
+- **Treat pulmonary embolism** (anticoagulation, thrombolysis if massive)
+
+## FCPS/MRCP High-Yield Summary
+
+| Domain | Key points |
+|--------|------------|
+| **Fick's law** | V = A × D × ΔP / T |
+| **DLCO** | Most sensitive test for diffusion |
+| **↓DLCO causes** | ILD, emphysema, pulmonary oedema, PH |
+| **↑DLCO causes** | Asthma, polycythaemia, alveolar haemorrhage (early) |
+| **Dead space types** | Anatomical, alveolar, physiological |
+| **Bohr equation** | VD/VT = (PaCO₂ − PECO₂) / PaCO₂; normal 0.2–0.35 |
+| **Most common cause of ↑dead space** | PE |
+| **CO₂ diffusion** | 20× faster than O₂ (rarely diffusion-limited) |
+| **DLCO in IPF** | ↓↓ early; sensitive marker |
+| **DLCO in asthma** | Normal or ↑ |
+| **DLCO in emphysema** | ↓↓ severe (most reduced) |
+
+## Common Viva Questions
+
+| Question | Expected answer |
+|----------|-----------------|
+| What is Fick's law? | V = A × D × ΔP / T |
+| What is the most sensitive test for diffusion limitation? | DLCO |
+| What is normal DLCO? | 75–120% predicted |
+| Causes of ↓DLCO? | ILD, emphysema, oedema, PH |
+| Causes of ↑DLCO? | Asthma, polycythaemia, L→R shunt, alveolar haemorrhage |
+| Bohr equation? | VD/VT = (PaCO₂ − PECO₂) / PaCO₂ |
+| Most common cause of ↑dead space? | PE |
+| Why does CO₂ diffuse faster than O₂? | 20× more soluble |
+| Difference between DL and DLCO? | DL = membrane + capillary; DLCO = CO transfer |
+
+## Confusions & Mnemonics
+
+**Causes of ↓DLCO** — **"AIPE"**: **A**lveolar (emphysema), **I**nterstitial (ILD), **P**ulmonary vascular, **E**dema (pulmonary oedema)
+
+**Causes of ↑DLCO** — **"PALA"**: **P**olycythaemia, **A**sthma, **L**→R shunt, **A**lveolar haemorrhage
+
+**Dead space causes** — **"PE LOUD"**: **P**E, **E**mphysema, **L**ow cardiac output, **O**verdistension (vent), **U**pper airway (apparatus), **D**eath zone (PE, severe)
+
+## Local Navigation
+- **Parent Heading**: [[../Functional Anatomy, Physiology, and Investigations|Functional Anatomy, Physiology, and Investigations]]
+- **Parent Topic Group**: [[../Functional Anatomy, Physiology, and Investigations/Airflow, ventilation, and gas exchange|Airflow, ventilation, and gas exchange]]
+- **Chapter Map**: [[../Davidson Chapter 17 - Respiratory Medicine Hierarchy|Respiratory Medicine Hierarchy]]
+- **Chapter MOC**: [[../Respiratory MOC|Respiratory MOC]]
+- **Related**: [[Ventilation-perfusion mismatch and shunt|V/Q mismatch]] · [[ABG Interpretation]] · [[Spirometry Interpretation]] · [[Respiratory Failure]]
+
+## MCQs (10)
+
+1. Fick's law of diffusion includes all of the following EXCEPT:
+   A. Surface area
+   B. Diffusion constant
+   C. Partial pressure gradient
+   D. **Renal blood flow**
+   E. Membrane thickness
+   **Answer: D** — V = A × D × ΔP / T.
+
+2. The most sensitive test for diffusion limitation is:
+   A. Spirometry
+   B. **DLCO**
+   C. ABG
+   D. CXR
+   E. CT
+   **Answer: B** — DLCO most sensitive.
+
+3. CO₂ diffuses faster than O₂ because it is:
+   A. Smaller
+   B. **More soluble (20× faster)**
+   C. Less dense
+   D. Heavier
+   E. Charged
+   **Answer: B** — 20× more soluble.
+
+4. ↓DLCO is most prominent in which disease:
+   A. Asthma
+   B. **Emphysema**
+   C. Pneumonia
+   D. Pleural effusion
+   E. Bronchitis
+   **Answer: B** — ↓alveolar surface area in emphysema.
+
+5. Normal physiological dead space (VD/VT):
+   A. 0.05–0.10
+   B. **0.20–0.35**
+   C. 0.50–0.70
+   D. 0.80–0.90
+   E. >0.95
+   **Answer: B** — Normal 0.20–0.35.
+
+6. The most common cause of increased physiological dead space is:
+   A. Asthma
+   B. **Pulmonary embolism**
+   C. Pneumonia
+   D. Bronchitis
+   E. Pleural effusion
+   **Answer: B** — PE = ventilated, no perfusion.
+
+7. Bohr equation calculates:
+   A. FEV₁
+   B. **Dead space to tidal volume ratio (VD/VT)**
+   C. FRC
+   D. TLC
+   E. RV
+   **Answer: B** — VD/VT.
+
+8. ↑DLCO is seen in:
+   A. Emphysema
+   B. **Asthma (or alveolar haemorrhage)**
+   C. ILD
+   D. PH
+   E. Anaemia
+   **Answer: B** — ↑pulmonary capillary blood volume in asthma.
+
+9. The most common cause of ↓DLCO in a young person with normal spirometry is:
+   A. COPD
+   B. **Pulmonary vascular disease (e.g. PAH)**
+   C. Asthma
+   D. Bronchitis
+   E. Pleural effusion
+   **Answer: B** — ↓capillary blood volume.
+
+10. Physiological dead space includes:
+    A. Anatomical dead space only
+    B. Alveolar dead space only
+    C. **Anatomical + alveolar dead space**
+    D. Apparatus dead space
+    E. Trachea only
+    **Answer: C** — Anatomical + alveolar.
+
+## SBA Questions (10)
+
+1. A 60-year-old with IPF has progressive dyspnoea, ↓FVC, ↓DLCO. Mechanism:
+   A. V/Q mismatch
+   B. **Diffusion limitation (thickened alveolar membrane)**
+   C. Shunt
+   D. Hypoventilation
+   E. Anaemia
+   **Answer: B** — IPF = diffusion limitation.
+
+2. A 70-year-old with COPD has ↓FEV₁, ↓FEV₁/FVC, ↓DLCO. Cause of ↓DLCO:
+   A. Mucus plugging
+   B. **↓alveolar surface area (emphysema)**
+   C. Bronchospasm
+   D. Anaemia
+   E. Altitude
+   **Answer: B** — Loss of alveolar surface.
+
+3. A patient has ↑VD/VT (0.6) on ventilator. Cause:
+   A. Pneumonia
+   B. **PE or overdistension**
+   C. Bronchospasm
+   D. Anaemia
+   E. Obesity
+   **Answer: B** — High dead space.
+
+4. A patient with PE has ABG: pH 7.50, PaO₂ 65, PaCO₂ 30. Best interpretation:
+   A. Hypoventilation
+   B. **Hyperventilation compensating for hypoxaemia (dead space)**
+   C. Anxiety only
+   D. Asthma
+   E. Pneumonia
+   **Answer: B** — Compensatory hypervent.
+
+5. A 45-year-old with ↓DLCO but normal spirometry and no ILD findings. Cause:
+   A. Asthma
+   B. **Pulmonary vascular disease (e.g. PAH, PE)**
+   C. ILD
+   D. COPD
+   E. None
+   **Answer: B** — ↓capillary blood volume.
+
+6. DLCO is increased in:
+   A. Emphysema
+   B. **Asthma, polycythaemia, L→R shunt, alveolar haemorrhage**
+   C. ILD
+   D. Anaemia
+   E. PH
+   **Answer: B** — Multiple causes.
+
+7. Alveolar dead space is increased in:
+   A. Asthma
+   B. **PE, severe emphysema, low cardiac output**
+   C. Pneumonia
+   D. Anaemia
+   E. Obesity
+   **Answer: B** — Wasted ventilation.
+
+8. Treatment of dead space due to PE:
+   A. Bronchodilators
+   B. **Anticoagulation ± thrombolysis**
+   C. Steroids
+   D. Diuretics
+   E. Surgery
+   **Answer: B** — Treat PE.
+
+9. Pulmonary haemorrhage effect on DLCO:
+   A. ↓
+   B. **↑ (Hb in alveoli binds CO, ↑DLCO)**
+   C. No change
+   D. Initially ↓, then ↑
+   E. Variable
+   **Answer: B** — ↑CO uptake.
+
+10. Increased dead space ventilation leads to:
+    A. ↑PaCO₂ (if no compensation)
+    B. **Hyperventilation to maintain PaCO₂, until exhaustion**
+    C. ↓PaCO₂ always
+    D. No effect
+    E. Always respiratory failure
+    **Answer: B** — Compensatory hyperventilation.
+
+## Flashcards
+
+- **Q: Fick's law of diffusion?**
+  A: V = A × D × ΔP / T
+
+- **Q: Most sensitive test for diffusion limitation?**
+  A: DLCO
+
+- **Q: Why does CO₂ diffuse 20× faster than O₂?**
+  A: More soluble in blood.
+
+- **Q: ↓DLCO causes?**
+  A: ILD, emphysema, pulmonary oedema, pulmonary vascular disease.
+
+- **Q: ↑DLCO causes?**
+  A: Asthma, polycythaemia, L→R shunt, alveolar haemorrhage.
+
+- **Q: Normal physiological dead space (VD/VT)?**
+  A: 0.20–0.35.
+
+- **Q: Most common cause of ↑dead space?**
+  A: Pulmonary embolism.
+
+- **Q: Bohr equation?**
+  A: VD/VT = (PaCO₂ − PECO₂) / PaCO₂.
+
+- **Q: How does PE affect ABG?**
+  A: ↓PaO₂ (↑A-a gradient), ↓PaCO₂ (hyperventilation).
+
+- **Q: DLCO in IPF?**
+  A: ↓↓ early; sensitive marker of disease severity.
+
+## Answer Key with Explanations
+
+### MCQs
+1. **D**  2. **B**  3. **B**  4. **B**  5. **B**  6. **B**  7. **B**  8. **B**  9. **B**  10. **C**
+
+### SBAs
+1. **B**  2. **B**  3. **B**  4. **B**  5. **B**  6. **B**  7. **B**  8. **B**  9. **B**  10. **B**
+
+## Summary
+
+Diffusion limitation (Fick's law) and dead space ventilation are key respiratory physiology concepts. **DLCO is the most sensitive test for diffusion limitation**; causes of ↓DLCO include ILD, emphysema, oedema, and pulmonary vascular disease. **Dead space is increased in PE, severe COPD, and low cardiac output states**; the Bohr equation (VD/VT) quantifies this.

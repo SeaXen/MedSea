@@ -1,0 +1,360 @@
+---
+tags: [medicine, respiratory, cor-pulmonale, right-heart-failure, davidson, fcps, mrcp]
+chapter: Respiratory
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 17: Respiratory medicine
+topic: Cor pulmonale
+exam: FCPS, MRCP
+references:
+  clinical: ["Davidson", "ESC/ERS", "PasTest"]
+related: [Pulmonary hypertension, COPD, Right-heart strain in respiratory disease, Oxygen Therapy and NIV, ABG Interpretation, Long-term oxygen therapy in COPD]
+status: full-fcps-mrcp-note
+last_updated: 2026-06-16
+---
+
+# Cor pulmonale
+
+> [!important]
+> **Cor pulmonale** is **right ventricular failure** secondary to pulmonary disease. Most commonly due to **COPD** (chronic) or **massive PE** (acute). It is characterised by RV dilation/hypertrophy, elevated RV pressure, and signs of right heart failure.
+
+Related: [[Pulmonary hypertension|Pulmonary hypertension]], [[COPD]], [[Right-heart strain in respiratory disease]], [[Long-term oxygen therapy in COPD|LTOT in COPD]]
+
+> [!tip] **FCPS/MRCP pearl**: Cor pulmonale is a **right-sided** heart failure due to **lung disease** (not left heart disease). Most common cause: **COPD** (chronic hypoxia → pulmonary vasoconstriction → PH → RV failure). Treatment is primarily **treating the underlying lung disease** + O₂ + diuretics.
+
+## Definition
+
+**Cor pulmonale** = right ventricular (RV) dysfunction/failure due to **pulmonary disease** (excluding left heart disease or congenital heart disease).
+
+### Types
+- **Acute cor pulmonale**: sudden RV pressure overload (massive PE, severe ARDS)
+- **Chronic cor pulmonale**: progressive RV hypertrophy/dilation (COPD, ILD, PH)
+
+## Aetiology
+
+### Pulmonary disease causing cor pulmonale
+| Category | Examples |
+|----------|----------|
+| **Airway/lung parenchymal** | COPD (most common), ILD, CF, bronchiectasis |
+| **Vascular** | CTEPH, sickle cell, pulmonary vasculitis |
+| **Chest wall** | Kyphoscoliosis, obesity hypoventilation |
+| **Neuromuscular** | Severe NM weakness, polio |
+| **Acute** | Massive PE, severe ARDS, high PEEP |
+
+## Pathophysiology
+
+### Mechanism
+1. **Pulmonary disease** → **hypoxaemia + acidosis** → **pulmonary vasoconstriction** (HPV)
+2. **Chronic hypoxia** → **vascular remodelling** (medial hypertrophy, intimal fibrosis)
+3. **Vascular destruction** (e.g. emphysema — capillary loss)
+4. **↑PVR** → **RV pressure overload** → **RV hypertrophy**
+5. **RV dilation** → **tricuspid regurgitation** → **worsening RV failure**
+6. **RV failure** → **systemic venous congestion** (oedema, JVP ↑, hepatic congestion)
+
+### Hypoxic pulmonary vasoconstriction (HPV)
+- **Unique to pulmonary circulation** (opposite of systemic)
+- Diverts blood from poorly ventilated to well-ventilated areas
+- Chronic hypoxia → generalised HPV → ↑PVR → PH
+
+## Clinical Features
+
+### Symptoms
+- **Dyspnoea** (from underlying lung disease)
+- **Fatigue, lethargy**
+- **Ankle swelling**
+- **Abdominal discomfort** (hepatic congestion)
+- **Reduced exercise tolerance**
+
+### Signs
+- **JVP ↑** (with prominent a wave if sinus rhythm)
+- **Peripheral oedema** (pitting)
+- **Hepatic congestion** (pulsatile liver if TR)
+- **Ascites** (late)
+- **Pleural effusion** (often bilateral, transudative)
+- **Loud P2**
+- **RV heave** (left sternal border)
+- **Tricuspid regurgitation** (pansystolic murmur at LSE, ↑ with inspiration)
+- **Right S3, S4**
+- **Cyanosis** (advanced)
+- **Signs of underlying lung disease** (wheeze, crackles, etc.)
+
+## Diagnosis
+
+### Investigations
+| Test | Finding |
+|------|---------|
+| **CXR** | RV enlargement, prominent central PAs, pruning |
+| **ECG** | P pulmonale, RVH (R>S in V1), RBBB, right axis |
+| **Echo** | RV dilation, RV dysfunction, TR, PAP estimate |
+| **ABG** | ↓PaO₂, ↑PaCO₂ (in COPD), ↑A-a |
+| **NT-proBNP/BNP** | ↑ in RV strain |
+| **RHC** | Gold standard; mPAP >20, PCWP ≤15 (pre-capillary) |
+| **PFTs** | Underlying disease (obstructive/restrictive) |
+
+### ECG in cor pulmonale
+- **P pulmonale** (P >2.5 mm in II, >1.5 in V1)
+- **Right axis deviation**
+- **RVH**: R > S in V1, R in V1 + S in V5/V6 >10.5 mm
+- **RBBB** (partial or complete)
+- **Right precordial T-wave inversion** (RV strain)
+
+## Management
+
+### Treat underlying lung disease
+- **COPD**: bronchodilators, O₂, smoking cessation, pulmonary rehab
+- **ILD**: steroids, immunosuppression, antifibrotics
+- **PE**: anticoagulation, thrombolysis if massive
+- **OSA/OHS**: CPAP/BiPAP, weight loss
+
+### Supportive
+- **Long-term O₂ therapy (LTOT)** — improves survival in COPD with PaO₂ <7.3 (or <8.0 with cor pulmonale/polycythaemia)
+- **Diuretics** (furosemide) for oedema (cautious — may worsen alkalosis)
+- **ACE inhibitors / ARBs** — controversial; may help
+- **Anticoagulation** — for CTEPH
+- **Digoxin** — no proven benefit (increases RV contractility but may worsen)
+- **Vasodilators** (PDE5i, ERA) — only for PAH
+- **Phlebotomy** — for severe polycythaemia (Hct >55%)
+
+### Acute cor pulmonale (massive PE)
+- **Thrombolysis** (alteplase)
+- **Embolectomy**
+- **IVC filter** if recurrent
+- **Inotropes** (dobutamine, noradrenaline)
+- **Volume cautious** (over-resuscitation worsens RV)
+
+## Complications
+- **Right heart failure** (progressive)
+- **Arrhythmias** (AF, VT)
+- **Sudden death** (massive PE)
+- **Hepatic congestion** → cirrhosis
+- **Renal dysfunction** (cardiorenal)
+- **Death**
+
+## FCPS/MRCP High-Yield Summary
+
+| Domain | Key points |
+|--------|------------|
+| **Definition** | RV failure from lung disease |
+| **Most common cause** | COPD |
+| **Acute cause** | Massive PE |
+| **Mechanism** | Hypoxia → vasoconstriction → PH → RV failure |
+| **Loud P2** | Most sensitive sign |
+| **Echo** | RV dilation, dysfunction |
+| **Treatment** | Underlying disease + O₂ + diuretics |
+| **LTOT** | Improves survival in COPD (PaO₂ <7.3) |
+| **PDE5i/ERA** | Only for PAH |
+| **Pregnancy** | Avoid |
+
+## MCQs (10)
+
+1. Most common cause of cor pulmonale is:
+   A. ILD
+   B. **COPD**
+   C. PE
+   D. OSA
+   E. Asthma
+   **Answer: B** — COPD.
+
+2. Most sensitive clinical sign of cor pulmonale:
+   A. RV heave
+   B. **Loud P2**
+   C. JVP
+   D. Oedema
+   E. Cyanosis
+   **Answer: B** — Loud P2.
+
+3. Acute cor pulmonale is most commonly caused by:
+   A. Pneumonia
+   B. **Massive pulmonary embolism**
+   C. ARDS
+   D. Asthma
+   E. Pneumothorax
+   **Answer: B** — Massive PE.
+
+4. ECG in cor pulmonale shows:
+   A. LVH
+   B. **P pulmonale, RVH, RBBB, right axis**
+   C. STEMI
+   D. AF only
+   E. Nothing
+   **Answer: B** — Right heart changes.
+
+5. Treatment of chronic cor pulmonale in COPD:
+   A. **Treat COPD + LTOT + diuretics**
+   B. Lung transplant only
+   C. Steroids high-dose
+   D. Sildenafil
+   E. Anticoagulation
+   **Answer: A** — Treat underlying + O₂ + diuretics.
+
+6. The most important intervention for cor pulmonale in COPD is:
+   A. Diuretics
+   B. **Long-term O₂ therapy**
+   C. Digoxin
+   D. ACEi
+   E. Steroids
+   **Answer: B** — LTOT improves survival.
+
+7. LTOT improves survival in COPD when PaO₂ is:
+   A. <10
+   B. **<7.3 (or <8.0 with cor pulmonale/polycythaemia)**
+   C. <12
+   D. Normal
+   E. <5
+   **Answer: B** — Threshold.
+
+8. Cor pulmonale is **right** heart failure due to:
+   A. Left heart disease
+   B. **Lung disease (excluding left heart)**
+   C. CHD
+   D. MI
+   E. Valvular disease
+   **Answer: B** — Lung disease.
+
+9. The primary mechanism in COPD cor pulmonale:
+   A. Hypercapnia
+   B. **Chronic hypoxic pulmonary vasoconstriction**
+   C. Polycythaemia
+   D. Hyperviscosity
+   E. Bronchospasm
+   **Answer: B** — HPV.
+
+10. A patient with massive PE develops shock, ↑JVP, clear lungs. Diagnosis:
+    A. LV failure
+    B. **Acute cor pulmonale**
+    C. Pneumonia
+    D. Asthma
+    E. Pneumothorax
+    **Answer: B** — Acute cor pulmonale (PE).
+
+## SBA Questions (10)
+
+1. A 70-year-old with severe COPD has peripheral oedema, ↑JVP, loud P2, hepatomegaly. Diagnosis:
+   A. LV failure
+   B. **Cor pulmonale**
+   C. PE
+   D. Asthma
+   E. Pneumonia
+   **Answer: B** — Cor pulmonale.
+
+2. Best initial management of cor pulmonale in COPD with PaO₂ 7.0 kPa:
+   A. Steroids
+   B. **LTOT + diuretics + bronchodilators**
+   C. Sildenafil
+   D. Surgery
+   E. Wait
+   **Answer: B** — LTOT improves survival.
+
+3. Theophylline toxicity is most common in:
+   A. Asthma
+   B. **CKD, liver disease, heart failure**
+   C. PE
+   D. Pneumonia
+   E. None
+   **Answer: B** — ↓clearance.
+
+4. Digitalis (digoxin) in cor pulmonale:
+   A. Always
+   B. **No proven benefit (used cautiously)**
+   C. First-line
+   D. Curative
+   E. Required
+   **Answer: B** — No benefit.
+
+5. Diuretic use in cor pulmonale:
+   A. **Helps oedema but watch for hypokalaemia + alkalosis**
+   B. Curative
+   C. Never
+   D. Always
+   E. None
+   **Answer: A** — Symptomatic relief.
+
+6. Echocardiogram in cor pulmonale shows:
+   A. LV dysfunction
+   B. **RV dilation, RV dysfunction, TR**
+   C. Pericardial effusion
+   D. Mass
+   E. ASD
+   **Answer: B** — RV changes.
+
+7. Prognosis of cor pulmonale in advanced COPD:
+   A. Excellent
+   B. **Poor (cor pulmonale = poor prognostic factor)**
+   C. Same as COPD alone
+   D. Unknown
+   E. None
+   **Answer: B** — Poor prognosis.
+
+8. The role of anticoagulation in chronic cor pulmonale (not CTEPH):
+   A. Always
+   B. **Not routine (consider only if specific indication)**
+   C. Never
+   D. Daily
+   E. None
+   **Answer: B** — Not routine.
+
+9. The best single test to confirm pulmonary vascular disease in cor pulmonale:
+   A. CXR
+   B. **Right heart catheterisation**
+   C. ECG
+   D. Spirogram
+   E. ABG
+   **Answer: B** — RHC.
+
+10. Polycythaemia in cor pulmonale is treated by:
+    A. **Phlebotomy (Hct >55%) + LTOT**
+    B. Aspirin
+    C. Diuretics only
+    D. Steroids
+    E. None
+    **Answer: A** — Phlebotomy + O₂.
+
+## Flashcards
+
+- **Q: Most common cause of cor pulmonale?**
+  A: COPD.
+
+- **Q: Most sensitive sign?**
+  A: Loud P2.
+
+- **Q: Acute cor pulmonale?**
+  A: Massive PE.
+
+- **Q: Mechanism in COPD?**
+  A: Hypoxic pulmonary vasoconstriction.
+
+- **Q: Best survival intervention in COPD cor pulmonale?**
+  A: Long-term O₂ therapy.
+
+- **Q: LTOT threshold?**
+  A: PaO₂ <7.3 (or <8.0 with cor pulmonale/polycythaemia).
+
+- **Q: Echo finding?**
+  A: RV dilation, dysfunction, TR.
+
+- **Q: ECG in cor pulmonale?**
+  A: P pulmonale, RVH, RBBB, right axis.
+
+- **Q: Diuretic use?**
+  A: Oedema — watch K⁺ and alkalosis.
+
+- **Q: Polycythaemia treatment?**
+  A: Phlebotomy if Hct >55% + LTOT.
+
+## Answer Key with Explanations
+
+### MCQs
+1. **B**  2. **B**  3. **B**  4. **B**  5. **A**  6. **B**  7. **B**  8. **B**  9. **B**  10. **B**
+
+### SBAs
+1. **B**  2. **B**  3. **B**  4. **B**  5. **A**  6. **B**  7. **B**  8. **B**  9. **B**  10. **A**
+
+## Summary
+
+Cor pulmonale = RV failure from lung disease. Most common cause: COPD. Mechanism: hypoxia → HPV → PH → RV failure. Loud P2 = most sensitive sign. Treatment: underlying disease + LTOT (PaO₂ <7.3) + diuretics. Acute cause: massive PE → thrombolysis.
+
+## Local Navigation
+- **Parent Heading**: [[../Pulmonary Vascular Diseases|Pulmonary Vascular Diseases]]
+- **Parent Topic Group**: [[../Pulmonary Vascular Diseases/Pulmonary hypertension and cor pulmonale|Pulmonary hypertension and cor pulmonale]]
+- **Chapter Map**: [[../Davidson Chapter 17 - Respiratory Medicine Hierarchy|Respiratory Medicine Hierarchy]]
+- **Chapter MOC**: [[../Respiratory MOC|Respiratory MOC]]
+- **Related**: [[Pulmonary hypertension]] · [[COPD]] · [[Right-heart strain in respiratory disease]] · [[LTOT in COPD]]

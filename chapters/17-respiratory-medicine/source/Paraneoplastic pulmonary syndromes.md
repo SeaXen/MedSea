@@ -1,0 +1,411 @@
+---
+tags: [medicine, respiratory, paraneoplastic, lung-cancer, davidson, fcps, mrcp]
+chapter: Respiratory
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 17: Respiratory medicine
+topic: Paraneoplastic pulmonary syndromes
+exam: FCPS, MRCP
+references:
+  clinical: ["Davidson", "BTS", "PasTest"]
+related: [Lung Cancer, Small-cell vs non-small-cell lung cancer, Pancoast tumor and local invasion syndromes, Hypertrophic osteoarthropathy, Superior vena cava obstruction, Mesothelioma]
+status: full-fcps-mrcp-note
+last_updated: 2026-06-16
+---
+
+# Paraneoplastic pulmonary syndromes
+
+> [!important]
+> **Paraneoplastic syndromes** are remote effects of cancer not caused by direct invasion or metastasis. They occur in **10–20% of lung cancers** and may precede diagnosis. Most common: **hypercalcaemia (squamous), SIADH (SCLC), ectopic ACTH (SCLC), Lambert-Eaton (SCLC), HPOA (adenocarcinoma)**. Recognition can lead to earlier cancer diagnosis.
+
+Related: [[Lung Cancer]], [[Small-cell vs non-small-cell lung cancer|SCLC vs NSCLC]], [[Pancoast tumor and local invasion syndromes|Pancoast]]
+
+> [!tip] **FCPS/MRCP pearl**: **Hypercalcaemia + smoker = squamous lung cancer** (PTHrP). **Hyponatraemia + smoker = SCLC** (SIADH). **Cushing's + smoker = SCLC** (ectopic ACTH). **Lambert-Eaton = SCLC** (anti-P/Q-type VGCC). **HPOA + clubbing + smoker = lung adenocarcinoma**.
+
+## Definition
+
+**Paraneoplastic syndrome** = remote effect of cancer not due to direct invasion, metastasis, or treatment; mediated by **hormones, cytokines, antibodies, or unknown mechanisms**.
+
+## Pathophysiology
+
+### Mechanisms
+- **Ectopic hormone production** (PTHrP, ADH, ACTH, calcitonin, GHRH)
+- **Autoimmune** (antibodies against neural antigens: Lambert-Eaton, limbic encephalitis)
+- **Cytokine release** (IL-6 → fever, ↑CRP; TNF → cachexia)
+- **Unknown** (HPOA, dermatoses)
+
+### Lung cancer associations
+| Tumour type | Most common paraneoplastic |
+|-------------|---------------------------|
+| **Squamous** | Hypercalcaemia (PTHrP) |
+| **Small cell** | SIADH, ectopic ACTH, Lambert-Eaton, limbic encephalitis |
+| **Adenocarcinoma** | HPOA, migratory thrombophlebitis (Trousseau) |
+| **Large cell** | Gynaecomastia (β-hCG) |
+
+## Specific Paraneoplastic Syndromes
+
+### Endocrine
+
+#### Hypercalcaemia
+- **PTHrP** (squamous, also breast, renal, others)
+- **PTH-independent**
+- Symptoms: stones, bones, groans, psychiatric overtones
+- Treatment: **IV fluids + bisphosphonates (zoledronic acid) + calcitonin**
+- Treat underlying cancer
+
+#### SIADH (Syndrome of Inappropriate ADH)
+- **Most common paraneoplastic cause**: SCLC
+- **Hyponatraemia + concentrated urine + low serum osmolality + euvolaemia**
+- **Asymptomatic mild**: fluid restriction
+- **Severe (Na <120, seizures, coma)**: **hypertonic saline (3%)** + fluid restriction + demeclocycline/tolvaptan
+- Treat underlying cancer
+
+#### Ectopic ACTH
+- **SCLC most common**
+- Cushing syndrome (rapid onset, atypical features: skin atrophy, myopathy, hypertension, hyperglycaemia, hypokalaemia)
+- Diagnosis: ↑ACTH, ↑cortisol, non-suppressed by dexamethasone
+- Treatment: treat underlying + ketoconazole/metyrapone
+
+### Neurological
+
+#### Lambert-Eaton myasthenic syndrome (LEMS)
+- **Anti-P/Q-type voltage-gated calcium channel antibodies**
+- **SCLC most common** (paraneoplastic); sometimes idiopathic
+- **Proximal muscle weakness** (legs first)
+- **↓with activity** (improves briefly)
+- **Areflexia** (improves with repeated movement)
+- **Autonomic dysfunction** (dry mouth, constipation, ED)
+- **EMG**: increment on repetitive stimulation (>100%)
+- **Treatment**: 3,4-DAP (potassium channel blocker) + treat cancer; immunosuppression if idiopathic
+
+#### Limbic encephalitis / paraneoplastic encephalomyelitis
+- **Anti-Hu, anti-Ma2, anti-NMDA** antibodies
+- Memory loss, confusion, seizures
+- SCLC, germ cell, thymoma
+- Treatment: tumour, immunosuppression, IVIG, plasma exchange
+
+#### Subacute cerebellar degeneration
+- **Anti-Yo, anti-Hu, anti-Ri**
+- Ataxia, dysarthria, nystagmus
+- Often paraneoplastic (ovarian, SCLC, Hodgkin's)
+
+#### Opsoclonus-myoclonus
+- **Anti-Hu, anti-Ri**
+- "Dancing eyes, dancing feet"
+- Neuroblastoma (children), SCLC (adults)
+
+#### Sensory neuronopathy
+- **Anti-Hu**
+- Sensory ataxia, pain
+- SCLC
+
+#### Polymyositis / Dermatomyositis
+- ↑CK, proximal weakness, skin rash
+- **↑Risk of malignancy** (esp. dermatomyositis)
+- Lung, ovarian, gastric, colorectal
+
+### Musculoskeletal
+
+#### Hypertrophic osteoarthropathy (HPOA)
+- **Lung cancer** (especially adenocarcinoma)
+- **Clubbing + periostitis of long bones + synovitis**
+- Painful swelling of wrists/ankles
+- X-ray: periosteal new bone formation
+- Treat underlying cancer; NSAIDs, bisphosphonates
+
+### Haematological
+
+#### Migratory thrombophlebitis (Trousseau syndrome)
+- **Adenocarcinoma** (lung, pancreatic, GI)
+- Hypercoagulable state
+- Treat with **LMWH** (not warfarin alone)
+
+#### Polycythemia
+- **Ectopic EPO** (rare)
+- Renal cell, HCC, cerebellar haemangioblastoma, lung
+
+### Cutaneous
+
+#### Acanthosis nigricans
+- GI adenocarcinoma (gastric, lung)
+- Hyperpigmented velvety plaques in flexures
+
+#### Dermatomyositis
+- (above)
+
+#### Erythema gyratum repens
+- Wood-grain appearance
+- Often lung cancer
+
+#### Seborrhoeic keratosis (sign of Leser-Trélat)
+- Sudden eruption
+- GI adenocarcinoma
+
+### Other
+
+#### Cachexia / anorexia
+- Cytokines (TNF-α, IL-6)
+- Nutritional support + treat cancer
+
+#### Fever
+- Cytokines
+- Exclude infection first
+
+## Diagnosis
+
+### Approach
+- **Exclude other causes** (e.g. hypocalcaemia from parathyroid; SIADH from drugs)
+- **Confirm** with specific markers
+- **Treat underlying cancer**
+
+### Investigations
+- **Calcium, PTH, PTHrP**
+- **Na, osmolality, urine osmolality** (SIADH)
+- **ACTH, cortisol, dexamethasone suppression** (ectopic ACTH)
+- **Anti-Hu, anti-Yo, anti-Ri, anti-NMDA, anti-VGCC** antibodies
+- **Imaging** to find primary
+
+## Management
+
+### Treat underlying cancer
+- Most effective
+- Often improves paraneoplastic syndrome
+
+### Specific
+| Syndrome | Specific Rx |
+|----------|-------------|
+| **Hypercalcaemia** | IV fluids + bisphosphonates ± calcitonin |
+| **SIADH** | Fluid restriction, hypertonic saline if severe, demeclocycline/tolvaptan |
+| **Ectopic ACTH** | Treat cancer, ketoconazole/metyrapone |
+| **LEMS** | 3,4-DAP, treat cancer, IVIG |
+| **HPOA** | NSAIDs, bisphosphonates, treat cancer |
+| **Trousseau** | LMWH (lifelong) |
+| **Cerebellar degeneration** | Tumour, immunosuppression |
+| **Limbic encephalitis** | Tumour, IVIG, plasma exchange, rituximab |
+
+## FCPS/MRCP High-Yield Summary
+
+| Domain | Key points |
+|--------|------------|
+| **Definition** | Remote effect of cancer |
+| **Hypercalcaemia** | Squamous (PTHrP); bisphosphonates |
+| **SIADH** | SCLC; fluid restriction ± hypertonic saline |
+| **Ectopic ACTH** | SCLC; Cushing; hypokalaemia |
+| **LEMS** | SCLC; ↑with activity; anti-VGCC |
+| **HPOA** | Adenocarcinoma; clubbing + periostitis |
+| **Trousseau** | Adenocarcinoma; migratory thrombophlebitis; LMWH |
+| **Dermatomyositis** | ↑Malignancy risk; screen |
+
+## MCQs (10)
+
+1. The most common paraneoplastic cause of hypercalcaemia in lung cancer is:
+   A. **Squamous (PTHrP)**
+   B. SCLC
+   C. Adenocarcinoma
+   D. None
+   E. Carcinoid
+   **Answer: A** — Squamous, PTHrP.
+
+2. SIADH in lung cancer is most commonly caused by:
+   A. Squamous
+   B. **Small cell lung cancer (SCLC)**
+   C. Adenocarcinoma
+   D. None
+   E. Carcinoid
+   **Answer: B** — SCLC.
+
+3. The first-line treatment for SIADH in SCLC (severe, Na <120):
+   A. Wait
+   B. **Hypertonic saline (3%) + fluid restriction**
+   C. Tolvaptan only
+   D. None
+   E. Steroids
+   **Answer: B** — Hypertonic saline.
+
+4. Ectopic ACTH is most commonly associated with:
+   A. **SCLC**
+   B. Squamous
+   C. Adenocarcinoma
+   D. None
+   E. Carcinoid
+   **Answer: A** — SCLC.
+
+5. LEMS (Lambert-Eaton) is most commonly associated with:
+   A. **SCLC**
+   B. Squamous
+   C. None
+   D. Adenocarcinoma
+   E. Carcinoid
+   **Answer: A** — SCLC.
+
+6. LEMS weakness:
+   A. Worsens with activity
+   B. **Improves with activity (briefly)**
+   C. No change
+   D. Constant
+   E. None
+   **Answer: B** — Improves with activity.
+
+7. LEMS antibody:
+   A. **Anti-P/Q-type voltage-gated calcium channel (anti-VGCC)**
+   B. Anti-MuSK
+   C. Anti-AChR
+   D. None
+   E. Anti-Jo-1
+   **Answer: A** — Anti-VGCC.
+
+8. LEMS treatment:
+   A. Pyridostigmine
+   B. **3,4-DAP + treat cancer**
+   C. Steroids
+   D. None
+   E. Plasmapheresis only
+   **Answer: B** — 3,4-DAP.
+
+9. HPOA is most commonly associated with:
+   A. SCLC
+   B. **Lung adenocarcinoma**
+   C. Squamous
+   D. None
+   E. Carcinoid
+   **Answer: B** — Adenocarcinoma.
+
+10. Trousseau syndrome (migratory thrombophlebitis) is associated with:
+    A. **Adenocarcinoma (lung, pancreatic, GI)**
+    B. Squamous
+    C. SCLC
+    D. None
+    E. Carcinoid
+    **Answer: A** — Adenocarcinoma.
+
+## SBA Questions (10)
+
+1. The most useful treatment for hypercalcaemia of malignancy:
+   A. **IV fluids + IV bisphosphonates (zoledronic acid) + calcitonin if severe**
+   B. Steroids
+   C. Wait
+   D. Surgery
+   E. None
+   **Answer: A** — Bisphosphonates.
+
+2. The most common paraneoplastic neurological syndrome in SCLC:
+   A. **LEMS**
+   B. MG
+   C. None
+   D. Polymyositis
+   E. None
+   **Answer: A** — LEMS.
+
+3. Anti-Hu antibody is associated with:
+   A. **SCLC (paraneoplastic encephalomyelitis)**
+   B. None
+   C. Carcinoid
+   D. None
+   E. Breast
+   **Answer: A** — SCLC.
+
+4. The most common cause of hypercalcaemia in hospital:
+   A. **Malignancy (PTHrP)**
+   B. Hyperparathyroidism
+   C. None
+   D. Vitamin D
+   E. Sarcoid
+   **Answer: A** — Malignancy.
+
+5. SIADH is treated with tolvaptan when:
+   A. Always
+   B. **Fluid restriction inadequate**
+   C. First-line
+   D. None
+   E. Surgery
+   **Answer: B** — When fluid restriction fails.
+
+6. LEMS classic EMG finding:
+   A. **Incremental response to repetitive nerve stimulation**
+   B. Decremental
+   C. Fibrillations
+   D. None
+   E. Myotonic
+   **Answer: A** — Incremental.
+
+7. A patient with lung cancer and painful swollen wrists. Diagnosis:
+   A. RA
+   B. **HPOA (hypertrophic pulmonary osteoarthropathy)**
+   C. None
+   D. Gout
+   E. None
+   **Answer: B** — HPOA.
+
+8. The most useful treatment for Trousseau syndrome:
+   A. Warfarin
+   B. **LMWH (lifelong)**
+   C. Aspirin
+   D. None
+   E. Steroids
+   **Answer: B** — LMWH.
+
+9. Hypercalcaemia in lung cancer is associated with which histology:
+   A. **Squamous (PTHrP)**
+   B. SCLC
+   C. Adenocarcinoma
+   D. None
+   E. Carcinoid
+   **Answer: A** — Squamous.
+
+10. The most common neurological paraneoplastic in SCLC is:
+    A. LEMS
+    B. None
+    C. MG
+    D. None
+    E. Polymyositis
+    **Answer: A** — LEMS.
+
+## Flashcards
+
+- **Q: Hypercalcaemia cancer?**
+  A: Squamous (PTHrP).
+
+- **Q: SIADH cancer?**
+  A: SCLC.
+
+- **Q: Ectopic ACTH cancer?**
+  A: SCLC.
+
+- **Q: LEMS?**
+  A: SCLC; anti-VGCC; ↑with activity.
+
+- **Q: HPOA?**
+  A: Adenocarcinoma.
+
+- **Q: Trousseau?**
+  A: Adenocarcinoma (lung, pancreatic, GI); LMWH.
+
+- **Q: Hypercalcaemia Rx?**
+  A: IV fluids + bisphosphonates.
+
+- **Q: SIADH severe?**
+  A: Hypertonic saline.
+
+- **Q: Ectopic ACTH feature?**
+  A: Cushing + hypokalaemia + hypertension.
+
+- **Q: 3,4-DAP?**
+  A: LEMS treatment.
+
+## Answer Key with Explanations
+
+### MCQs
+1. **A**  2. **B**  3. **B**  4. **A**  5. **A**  6. **B**  7. **A**  8. **B**  9. **B**  10. **A**
+
+### SBAs
+1. **A**  2. **A**  3. **A**  4. **A**  5. **B**  6. **A**  7. **B**  8. **B**  9. **A**  10. **A**
+
+## Summary
+
+Paraneoplastic syndromes = remote effects of cancer. Hypercalcaemia: squamous (PTHrP). SIADH: SCLC. Ectopic ACTH: SCLC. LEMS: SCLC (anti-VGCC). HPOA: adenocarcinoma. Trousseau: adenocarcinoma. Treat underlying cancer + specific Rx (bisphosphonates, hypertonic saline, 3,4-DAP, LMWH).
+
+## Local Navigation
+- **Parent Heading**: [[../Thoracic Malignancy|Thoracic Malignancy]]
+- **Parent Topic Group**: [[../Thoracic Malignancy/Thoracic oncologic emergencies and nodules|Thoracic oncologic emergencies and nodules]]
+- **Chapter Map**: [[../Davidson Chapter 17 - Respiratory Medicine Hierarchy|Respiratory Medicine Hierarchy]]
+- **Chapter MOC**: [[../Respiratory MOC|Respiratory MOC]]
+- **Related**: [[Lung Cancer]] · [[Small-cell vs non-small-cell lung cancer]] · [[Pancoast tumor and local invasion syndromes]] · [[Mesothelioma]]

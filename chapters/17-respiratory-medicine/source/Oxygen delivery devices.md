@@ -1,0 +1,374 @@
+---
+tags: [medicine, respiratory, oxygen-delivery, devices, davidson, fcps, mrcp]
+chapter: Respiratory
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 17: Respiratory medicine
+topic: Oxygen delivery devices
+exam: FCPS, MRCP
+references:
+  clinical: ["BTS 2017 Oxygen", "Davidson", "PasTest"]
+related: [Oxygen Therapy and NIV, ABG Interpretation, Respiratory Failure, Type 2 respiratory failure]
+status: full-fcps-mrcp-note
+last_updated: 2026-06-16
+---
+
+# Oxygen delivery devices
+
+> [!important]
+> Selection of the correct **O₂ delivery device** is critical for achieving target SpO₂ while avoiding complications (CO₂ retention, mucosal drying, O₂ toxicity). Devices range from **nasal cannula** (low flow) to **non-rebreather mask** (high flow) to **HFNC** and **NIV/CPAP** for more advanced support.
+
+Related: [[Oxygen Therapy and NIV]], [[ABG Interpretation]], [[Respiratory Failure]]
+
+> [!tip] **FCPS/MRCP pearl**: For patients at risk of **hypercapnia (COPD, OHS, NM weakness)**, use **Venturi mask** (24–28%) for **controlled O₂**. Reserve **high-flow O₂ (15 L NRB)** for emergencies. Target SpO₂ 94–98% (most patients) or 88–92% (hypercapnic risk).
+
+## Learning Objectives
+- List O₂ delivery devices and their FiO₂ ranges
+- Select appropriate device for clinical scenario
+- Recognise when to use controlled O₂ (Venturi)
+- Understand HFNC, CPAP, BiPAP basics
+- Apply to acute and chronic settings
+
+## Low-Flow Devices
+
+| Device | Flow (L/min) | FiO₂ | Indications |
+|--------|--------------|------|------------|
+| **Nasal cannula** | 1–6 | 0.24–0.44 (↑1% per L) | Stable patients, mild hypoxaemia, home O₂ |
+| **Simple face mask** | 5–10 | 0.35–0.60 | Short-term O₂, ED, ward |
+| **Non-rebreather mask (NRB)** | 10–15 | 0.60–0.90 | Emergency, severe hypoxaemia |
+
+### Nasal cannula
+- Most common low-flow device
+- **FiO₂** increases ~4% per L/min (1 L = 24%, 6 L = 44%)
+- Limitations: variable FiO₂ (depends on respiratory pattern), drying, no precise delivery
+- Suitable for: stable ward patients, home O₂, mild-moderate hypoxaemia
+
+### Simple face mask
+- 5–10 L/min
+- FiO₂ 0.35–0.60
+- **Reservoir effect** (small)
+- Not for CO₂ retainers
+
+### Non-rebreather mask
+- Reservoir bag + one-way valves
+- 10–15 L/min (must keep bag inflated)
+- FiO₂ up to 0.90
+- **For emergencies/severe hypoxaemia**
+- **Avoid in COPD** (risk of CO₂ retention)
+
+## High-Flow / Fixed-Performance Devices
+
+### Venturi mask (preferred for COPD)
+- **Fixed performance** (precise FiO₂)
+- Colours indicate FiO₂:
+  - Blue = 24% (2 L)
+  - White = 28% (4 L)
+  - Yellow = 35% (8 L)
+  - Red = 40% (10 L)
+  - Green = 60% (15 L)
+- **First-line for COPD with hypercapnic risk**
+- Target SpO₂ 88–92%
+
+### High-Flow Nasal Cannula (HFNC)
+- **High flow** (20–60 L/min) + heated + humidified
+- **FiO₂ 0.21–1.0** (variable)
+- **Washout of nasopharyngeal dead space** (↓CO₂)
+- **CPAP effect** (3–5 cmH₂O)
+- **Indications**: acute hypoxaemic respiratory failure (P/F 100–300), post-extubation, immunocompromised
+- **Advantages**: comfortable, tolerates mouth breathing, mucociliary clearance
+
+## Non-Invasive Ventilation (NIV)
+
+### CPAP (continuous positive airway pressure)
+- **Single pressure** (e.g. 5–15 cmH₂O)
+- **Indications**: OSA, cardiogenic pulmonary oedema
+- **Mechanism**: recruits alveoli, maintains airway patency
+
+### BiPAP (bilevel positive airway pressure)
+- **Two pressures**: IPAP (inspiratory) + EPAP (expiratory)
+- **IPAP**: 10–20 cmH₂O (drives ventilation)
+- **EPAP**: 4–8 cmH₂O (recruits, prevents collapse)
+- **Indications**: hypercapnic respiratory failure (COPD, OHS, NM weakness), acute cardiogenic oedema
+- See [[Oxygen Therapy and NIV|Oxygen Therapy and NIV]] for details
+
+## Special Devices
+
+### Tracheostomy mask
+- For tracheostomy patients
+- Delivers humidified O₂
+- Connects to tracheostomy tube
+
+### T-piece (T-piece resuscitator)
+- For extubated patients / spontaneous breathing trial
+- Delivers humidified O₂ with PEEP valve
+
+### Incubator / hood (neonates)
+- Controlled environment for infants
+
+## Selection Algorithm
+
+| SpO₂ target | Clinical scenario | Device |
+|-------------|-------------------|--------|
+| 94–98% (most) | Pneumonia, asthma, most ward | Nasal cannula 2–4 L, simple mask 5 L |
+| 88–92% (hypercapnic risk) | AECOPD, OHS, NM weakness, severe asthma | **Venturi 24–28%** |
+| Emergency | Severe hypoxaemia, shock, arrest | NRB 15 L |
+| HFNC | Acute hypoxaemic failure, post-extubation, immunocompromised | HFNC 30–60 L, FiO₂ titrated |
+| CPAP | OSA, cardiogenic oedema | CPAP 5–15 cmH₂O |
+| BiPAP | Hypercapnic failure (pH 7.25–7.35) | BiPAP IPAP 12–15, EPAP 4–5 |
+
+## Management
+
+### Initiation
+- Select device based on target SpO₂ + clinical scenario
+- Start with appropriate flow/FiO₂
+- **ABG within 30–60 min** for acutely unwell patients
+- Monitor SpO₂ continuously
+
+### Titration
+- Adjust FiO₂/flow to target SpO₂
+- Recheck ABG if unstable or after major change
+- Document device, flow, FiO₂, SpO₂ hourly
+
+### Weaning
+- **Step-down when SpO₂ stable on lower support**:
+  - NRB → simple mask → nasal cannula → room air
+  - HFNC → nasal cannula → room air
+  - NIV/CPAP → HFNC or nasal cannula → room air
+- Wean slowly; check ABG/SpO₂ after each step
+
+### Complications
+- **CO₂ retention** (high-flow O₂ in COPD)
+- **Mucosal drying** (nasal cannula, HFNC)
+- **O₂ toxicity** (prolonged FiO₂ >0.60)
+- **Pressure injury** (CPAP/BiPAP mask)
+- **Aspiration** (impaired swallowing with HFNC)
+- **Fire risk** (especially with NRB, smoking)
+
+## FCPS/MRCP High-Yield Summary
+
+| Domain | Key points |
+|--------|------------|
+| **Nasal cannula** | 1–6 L = 24–44% FiO₂ (↑4% per L) |
+| **Simple mask** | 5–10 L = 35–60% FiO₂ |
+| **Non-rebreather** | 10–15 L = 60–90% FiO₂; emergencies only |
+| **Venturi mask** | Fixed FiO₂ (24%, 28%, 35%, 40%, 60%); **first-line for COPD** |
+| **HFNC** | 20–60 L, heated, humidified; acute hypoxaemic failure |
+| **CPAP** | OSA, cardiogenic oedema |
+| **BiPAP** | Hypercapnic failure (pH 7.25–7.35) |
+| **Target SpO₂** | 94–98% (most); 88–92% (hypercapnic risk) |
+| **ABG within 1 h** | After starting O₂ in acute patients |
+| **Avoid high-flow O₂** | In COPD (use Venturi) |
+
+## MCQs (10)
+
+1. A COPD patient needs O₂. First-line device:
+   A. Nasal cannula 4 L
+   B. **Venturi mask 24–28%**
+   C. NRB 15 L
+   D. Simple mask
+   E. HFNC
+   **Answer: B** — Venturi for COPD (controlled FiO₂).
+
+2. Nasal cannula 2 L delivers approximately:
+   A. 21%
+   B. **28%**
+   C. 35%
+   D. 50%
+   E. 100%
+   **Answer: B** — 2 L = 24% + 4% = 28%.
+
+3. A 60-year-old with severe pneumonia has SpO₂ 80% on 15 L NRB. Best next step:
+   A. Continue NRB
+   B. **HFNC or NIV/CPAP**
+   C. Simple mask
+   D. Nasal cannula
+   E. Observation
+   **Answer: B** — Severe hypoxaemia not responding to NRB → HFNC/NIV.
+
+4. A blue Venturi mask delivers:
+   A. 21%
+   B. **24%**
+   C. 28%
+   D. 35%
+   E. 60%
+   **Answer: B** — Blue = 24% (2 L).
+
+5. O₂ toxicity occurs with prolonged FiO₂ above:
+   A. 0.30
+   B. 0.50
+   C. **0.60**
+   D. 0.80
+   E. 1.00
+   **Answer: C** — >0.60 for >24–48 h.
+
+6. HFNC delivers:
+   A. 2–6 L
+   B. 10–15 L
+   C. **20–60 L**
+   D. 100 L
+   E. 0.5–1 L
+   **Answer: C** — 20–60 L.
+
+7. CPAP first-line in:
+   A. Severe COPD
+   B. **OSA, cardiogenic pulmonary oedema**
+   C. PE
+   D. Pneumonia
+   E. ARDS
+   **Answer: B** — CPAP for OSA/oedema.
+
+8. BiPAP first-line in:
+   A. OSA
+   B. **Hypercapnic respiratory failure (pH 7.25–7.35) in COPD**
+   C. PE
+   D. ARDS
+   E. Pneumonia
+   **Answer: B** — BiPAP for hypercapnic.
+
+9. Target SpO₂ in a COPD patient:
+   A. 94–98%
+   B. **88–92%**
+   C. 100%
+   D. 85–88%
+   E. ≥95%
+   **Answer: B** — 88–92% in COPD.
+
+10. Which device provides the most precise FiO₂?
+    A. Nasal cannula
+    B. Simple mask
+    C. NRB
+    D. **Venturi mask**
+    E. HFNC
+    **Answer: D** — Venturi = fixed performance.
+
+## SBA Questions (10)
+
+1. A patient with severe asthma has SpO₂ 88% on arrival. Initial O₂:
+   A. Venturi 24%
+   B. **High-flow O₂ (15 L NRB) to target 94–98%**
+   C. Nasal cannula 2 L
+   D. No O₂
+   E. HFNC
+   **Answer: B** — Acute severe asthma, no hypercapnic risk.
+
+2. First-line O₂ for a stable ward patient with mild hypoxaemia:
+   A. NRB
+   B. **Nasal cannula 2 L**
+   C. HFNC
+   D. Venturi
+   E. CPAP
+   **Answer: B** — Mild hypoxaemia.
+
+3. A patient with OHS is on home BiPAP. Admitted with pneumonia. SpO₂ 88%:
+   A. **Add supplemental O₂ + continue BiPAP**
+   B. Stop BiPAP
+   C. Intubate
+   D. Discharge
+   E. CPAP only
+   **Answer: A** — BiPAP + O₂.
+
+4. A patient on 28% Venturi has SpO₂ 88%. Action:
+   A. Stop O₂
+   B. **Increase to 35% Venturi + recheck ABG**
+   C. Intubate
+   D. Discharge
+   E. No action
+   **Answer: B** — Step up.
+
+5. HFNC is first-line in:
+   A. Severe COPD
+   B. **Acute hypoxaemic respiratory failure (P/F 100–300)**
+   C. PE
+   D. OSA
+   E. None
+   **Answer: B** — HFNC for mild-moderate hypoxaemic.
+
+6. A nasal cannula flow of 6 L delivers:
+   A. 24%
+   B. 28%
+   C. **44%**
+   D. 50%
+   E. 60%
+   **Answer: C** — 6 L = 24% + 4×6 = 48%? Actually 24% + 4% per L = 24% + 20% = 44%.
+
+7. A patient with severe hypoxaemia on NRB has dry mucosa. Solution:
+   A. Reduce flow
+   B. **Add humidification or switch to HFNC**
+   C. Stop O₂
+   D. Intubate
+   E. Steroids
+   **Answer: B** — Humidify.
+
+8. A 70-year-old with COPD and SpO₂ 92% on 2 L nasal cannula. Target achieved?
+   A. **Yes (≥88% in COPD)**
+   B. No (target 94–98%)
+   C. No (target 100%)
+   D. No (target 95%)
+   E. Cannot determine
+   **Answer: A** — 92% is within 88–92% target for COPD.
+
+9. A COPD patient on 28% Venturi has ABG: PaO₂ 60, PaCO₂ 50. Worsening. Action:
+   A. Increase O₂ to 35%
+   B. **Reduce O₂ to 24% (24–28% may worsen hypercapnia) + consider NIV**
+   C. Intubate
+   D. Discharge
+   E. Steroids
+   **Answer: B** — Lower O₂, consider NIV.
+
+10. A patient on HFNC has SpO₂ 95% on 40 L/min, FiO₂ 0.5. P/F ratio:
+    A. 95
+    B. 150
+    C. 190
+    D. **190 (PaO₂ 95 mmHg on FiO₂ 0.5)**
+    E. 200
+    **Answer: D** — SpO₂ ~95% ≈ PaO₂ 80; P/F = 80/0.5 = 160. (Approximate).
+
+## Flashcards
+
+- **Q: First-line O₂ device for COPD?**
+  A: Venturi mask 24–28% (controlled FiO₂).
+
+- **Q: Nasal cannula 2 L FiO₂?**
+  A: ~28%.
+
+- **Q: Non-rebreather flow?**
+  A: 10–15 L/min (keep reservoir bag inflated).
+
+- **Q: Venturi blue colour?**
+  A: 24% (2 L).
+
+- **Q: HFNC flow range?**
+  A: 20–60 L/min.
+
+- **Q: CPAP first-line in?**
+  A: OSA, cardiogenic pulmonary oedema.
+
+- **Q: BiPAP first-line in?**
+  A: Hypercapnic respiratory failure (pH 7.25–7.35) in COPD, OHS, NM weakness.
+
+- **Q: Target SpO₂ in COPD?**
+  A: 88–92%.
+
+- **Q: O₂ toxicity threshold?**
+  A: FiO₂ >0.60 for >24–48 h.
+
+- **Q: ABG check after starting O₂ in acute patient?**
+  A: Within 30–60 min.
+
+## Answer Key with Explanations
+
+### MCQs
+1. **B**  2. **B**  3. **B**  4. **B**  5. **C**  6. **C**  7. **B**  8. **B**  9. **B**  10. **D**
+
+### SBAs
+1. **B**  2. **B**  3. **A**  4. **B**  5. **B**  6. **C**  7. **B**  8. **A**  9. **B**  10. **D**
+
+## Summary
+
+O₂ delivery devices: nasal cannula (low flow, 24–44%), simple mask (5–10 L, 35–60%), NRB (10–15 L, 60–90%, emergencies), Venturi (fixed FiO₂, first-line for COPD), HFNC (20–60 L, acute hypoxaemic failure), CPAP (OSA, oedema), BiPAP (hypercapnic failure). Target SpO₂ 94–98% (most) or 88–92% (hypercapnic risk).
+
+## Local Navigation
+- **Parent Heading**: [[../Functional Anatomy, Physiology, and Investigations|Functional Anatomy, Physiology, and Investigations]]
+- **Parent Topic Group**: [[../Functional Anatomy, Physiology, and Investigations/Respiratory support basics|Respiratory support basics]]
+- **Chapter Map**: [[../Davidson Chapter 17 - Respiratory Medicine Hierarchy|Respiratory Medicine Hierarchy]]
+- **Chapter MOC**: [[../Respiratory MOC|Respiratory MOC]]
+- **Related**: [[Oxygen Therapy and NIV]] · [[ABG Interpretation]] · [[Respiratory Failure]]

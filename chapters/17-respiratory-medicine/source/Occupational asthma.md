@@ -1,0 +1,604 @@
+---
+tags: [medicine, respiratory, occupational, asthma, davidson, fcps, mrcp]
+chapter: Respiratory
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 17: Respiratory medicine
+topic: Occupational Asthma
+exam: FCPS, MRCP
+references:
+  anatomy: ["Gray's Anatomy", "Davidson"]
+  physiology: ["Ganong", "Guyton and Hall", "Davidson"]
+  clinical: ["Davidson", "PasTest", "personal notes", "HSE guidelines", "BOHRF"]
+related: [Asthma, Work-related asthma, COPD, Eosinophilic and phenotype-guided asthma, Airway Diseases]
+status: full-fcps-mrcp-topic-note
+last_updated: 2026-06-15
+---
+
+# Occupational Asthma (OA)
+
+Related: [[Asthma]], [[Work-related asthma]], [[COPD]], [[Eosinophilic and phenotype-guided asthma]], [[Airway Diseases]]
+
+> [!important]
+> **Occupational Asthma (OA)** = asthma caused by **agents in the workplace** (not merely exacerbated by work). **Two main types**: **sensitiser-induced** (immunological, latency period) vs **irritant-induced (RADS)** (non-immunological, acute high-level exposure). **Early diagnosis and removal from exposure** = best chance of remission. Key FCPS/MRCP: causative agents (HMWOAs/LMWOAs), diagnostic approach (serial PEF, specific challenge), compensation/legal aspects, prevention.
+
+## Learning Objectives
+- Distinguish **sensitiser-induced OA** (latency, IgE/non-IgE) from **irritant-induced OA (RADS)** (acute, non-immune)
+- Apply systematic diagnostic approach: history, serial PEF, specific IgE, specific inhalation challenge (SIC)
+- Identify high-risk occupations and causative agents (HMWOAs vs LMWOAs)
+- Apply management: exposure cessation, pharmacotherapy, return-to-work decisions
+- Understand legal/compensation framework (UK: industrial injuries disablement benefit)
+
+## Definition
+**Occupational Asthma (OA)** = **asthma caused by exposure to agents in the workplace**, not merely worsened by work. Distinct from **work-exacerbated asthma (WEA)** = pre-existing asthma worsened by workplace triggers.
+
+## Classification
+
+| Type | Mechanism | Latency | Examples |
+|------|-----------|---------|----------|
+| **Sensitiser-induced OA** | Immunological (IgE-mediated or non-IgE T-cell mediated) | **Weeks to years** (latency period) | **HMWOAs** (high molecular weight): flour, latex, animals, enzymes; **LMWOAs** (low molecular weight): isocyanates, anhydrides, colophony |
+| **Irritant-induced OA (RADS)** | **Non-immunological** direct epithelial injury | **None** (immediate, within 24h of high-level exposure) | Chlorine, ammonia, smoke, acid fumes, sulphur dioxide |
+
+## High-Risk Agents & Occupations
+
+### High Molecular Weight Agents (HMWOAs) — **Act via IgE**
+| Agent | Occupation | Key Features |
+|-------|------------|--------------|
+| **Flour/grain dust** | Bakers, millers, food processing | Most common HMWOA cause |
+| **Latex (Hev b 1-15)** | Healthcare, rubber industry | Immediate IgE; risk: atopy, frequent exposure |
+| **Animal proteins** | Lab workers, vets, farmers, groomers | Urine/serum/dander proteins |
+| **Enzymes** (amylase, subtilisin) | Detergent, pharmaceutical, baking | High potency sensitisers |
+| **Wood dust** (western red cedar) | Carpenters, sawmillers | Placic acid = causative |
+| **Seafood proteins** | Fish processing, shellfish workers | Steam/cooking aerosols |
+
+### Low Molecular Weight Agents (LMWOAs) — **Non-IgE (hapten) / T-cell mediated**
+| Agent | Occupation | Key Features |
+|-------|------------|--------------|
+| **Isocyanates** (TDI, HDI, MDI) | Spray painting, foam manufacture, insulation | Most common LMWOA cause; multiple mechanisms |
+| **Acid anhydrides** (phthalic, maleic) | Epoxy resins, plastics | HLA association (DR3, DQ2) |
+| **Colophony (rosin)** | Soldering, electronics | Fumes = sensitiser |
+| **Persulphate salts** | Hairdressing (bleach) | High risk, delayed reactions |
+| **Reactive dyes** | Textile industry | Azo dyes |
+| **Glutaraldehyde** | Healthcare (cold sterilisation) | Potent sensitiser |
+
+> **FCPS/MRCP tip**: **Isocyanates** = most common LMWOA cause overall; **Flour** = most common HMWOA cause overall. **Bakers, spray painters, healthcare workers** = top occupations.
+
+## Clinical Presentation
+
+### Sensitiser-Induced OA
+- **Latency period**: weeks to years (variable)
+- **Symptoms**: work-related wheeze, cough, chest tightness, dyspnoea, rhinitis, conjunctivitis
+- **Pattern**: symptoms **improve on days off/holidays**, recur on return to work
+- **Progression**: if exposure continues → persistent asthma independent of exposure
+
+### RADS (Reactive Airway Dysfunction Syndrome)
+- **Single high-level irritant exposure** → asthma symptoms within **24 hours**
+- **No latency period**, no prior asthma
+- **Persistence** >3 months = RADS diagnosis
+- **Triggers**: chlorine, ammonia, sulphur dioxide, acid fumes, smoke, cleaning agents
+
+## Diagnostic Approach (Stepwise)
+
+### 1. Occupational History (Essential)
+- **Current/previous jobs** with exposure details (agent, duration, intensity, PPE)
+- **Symptom pattern**: work-related? improve weekends/holidays?
+- **Rhinitis/conjunctivitis** often precedes asthma
+- **Co-workers affected?** (cluster = stronger evidence)
+
+### 2. Serial Peak Expiratory Flow (PEF) — **Cornerstone**
+- **Method**: PEF **every 2 hours** (waking to sleeping) for **≥3 weeks** (2 weeks at work, 2 weeks off)
+- **Analysis**: **Oasys** or similar software → **work effect index**, **area between curves**
+- **Diagnostic**: **>20% diurnal variation on work days** vs off days; **>15% improvement** off work
+
+### 3. Immunological Tests
+| Test | Role |
+|------|------|
+| **Skin prick / Specific IgE** | HMWOAs (flour, latex, animal proteins) — **IgE-mediated** |
+| **Specific IgE to LMWOA-HSA conjugates** | Limited availability for some LMWOAs (isocyanates, anhydrides) |
+| **Sputum eosinophils / FeNO** | Supports eosinophilic inflammation; not specific for OA |
+
+### 4. Specific Inhalation Challenge (SIC) — **Gold Standard**
+- **Controlled exposure** to suspected agent in hospital setting
+- **Monitor**: FEV₁, symptoms, bronchial hyperresponsiveness for 24h
+- **Positive**: ≥20% FEV₁ fall + symptoms + bronchial hyperresponsiveness
+- **Performed in specialised centres only**; limited availability
+
+### 5. Bronchial Provocation (Non-specific)
+- **Methacholine/histamine challenge** — confirms bronchial hyperresponsiveness
+- **Not specific for OA**; useful if SIC not available
+
+### Diagnostic Algorithm
+1. **History + Serial PEF (2+ weeks)** → if positive, **probable OA**
+2. **Specific IgE/SPT** (if HMWOA) → if positive, **confirmed OA**
+4. **SIC** (if available/equivocal) → **definitive diagnosis**
+5. **RADS**: history of single high irritant exposure + asthma onset ≤24h + persistent >3mo + positive methacholine + no prior asthma
+
+## Management
+
+### 1. Primary — **Complete Exposure Cessation** (Best Outcome)
+- **Redeployment** to non-exposed area **immediately**
+- **Early removal** (within 1-2 years) → **remission rate 30-50%**
+- **Delayed removal** (>2 years) → remission <10%, persistent asthma
+
+### 2. Pharmacotherapy (Parallel to Exposure Control)
+- **Standard asthma therapy**: ICS/LABA per GINA
+- **Oral corticosteroids** for severe exacerbations
+- **Biologics** if severe eosinophilic (omalizumab/mepolizumab/benralizumab/dupilumab)
+
+### 3. RADS Management
+- Standard asthma therapy
+- No role for immunotherapy (non-immune)
+- Long-term bronchodilators ± ICS
+
+### 4. Workplace Interventions
+- **Hierarchy of control**: elimination → substitution → engineering controls (LEV, enclosure) → administrative (job rotation) → PPE (respirators)
+- **Health surveillance**: periodic spirometry, symptom questionnaires for at-risk workers
+
+## Prognosis & Outcome Predictors
+| Factor | Favours Remission | Favours Persistence |
+|--------|-------------------|---------------------|
+| **Duration of exposure after symptoms** | Short (<1-2 yrs) | Long (>2 yrs) |
+| **Severity at diagnosis** | Mild (intermittent) | Severe (daily symptoms, low FEV₁) |
+| **Age** | Younger | Older |
+| **Smoking** | Non-smoker | Smoker |
+| **Atopy** | Non-atopic | Atopic |
+| **FEV₁ at diagnosis** | Normal/near normal | Significant obstruction |
+
+## Complications
+- **Persistent asthma** (even after exposure cessation)
+- **Fixed airflow obstruction** (remodelling)
+- **Psychological** (anxiety, depression, job loss)
+- **Financial** (loss of income, career change)
+
+## Legal & Compensation (UK Context)
+- **Prescribed Disease (PD) D1** — Occupational Asthma (Industrial Injuries Disablement Benefit)
+- **Reporting**: RIDDOR (Reporting of Injuries, Diseases and Dangerous Occurrences Regulations)
+- **Employer duties**: COSHH assessment, health surveillance, exposure control
+- **Referral**: Occupational health physician, specialist respiratory physician
+
+## FCPS/MRCP High-Yield Points
+1. **OA vs WEA**: OA = caused by work; WEA = pre-existing asthma worsened by work
+2. **Sensitiser-induced (latency)** vs **RADS (irritant, acute <24h)**
+3. **Serial PEF (2+ weeks, 2-hourly)** = cornerstone investigation
+4. **SIC** = gold standard; limited availability
+5. **Common agents**: **Flour (bakers)**, **Isocyanates (spray painters)**, **Latex (healthcare)**, **Animals (lab workers)**
+6. **Complete exposure cessation** = only chance of remission; early removal critical
+7. **RADS**: single high irritant exposure → asthma ≤24h, persists >3mo, non-immune
+8. **Legal**: Prescribed Disease D1 (IIDB), RIDDOR reporting
+
+## Common Viva Questions
+1. Difference between OA and work-exacerbated asthma
+2. Sensitiser-induced vs irritant-induced (RADS) OA
+3. Diagnostic approach to OA (serial PEF, SIC)
+4. Common causative agents and occupations
+5. Management and prognosis factors
+6. RADS diagnostic criteria
+7. Legal aspects (Prescribed Disease D1, RIDDOR)
+
+## Common Confusions / Exam Traps
+- **OA vs WEA**: OA = work *causes* asthma; WEA = work *worsens* existing asthma
+- **RADS** ≠ sensitiser OA (no latency, non-immune, single high exposure)
+- **Serial PEF** requires **2-hourly readings for 2+ weeks** (not just pre/post shift)
+- **SIC** = gold standard but **only in specialised centres**
+- **Specific IgE** only for HMWOAs (flour, latex, animals); **not reliable for LMWOAs**
+- **Early removal from exposure** = only chance of remission; late removal → permanent asthma
+- **RADS** = single high-level irritant exposure; symptoms within 24h; persists >3 months
+
+## Mnemonics
+- **OA TYPES**: **S**ensitiser (**S**low latency) vs **RADS** (**R**apid, **A**cute, **D**irect, **S**ingle exposure)
+- **COMMON AGENTS**: **F**lour (bakers), **I**socyanates (painters), **L**atex (healthcare), **A**nimals (lab)
+- **RADS CRITERIA**: **S**ingle high exposure, **A**sthma ≤24h, **P**ersists >3mo, **N**o prior asthma, **S**hock? No = **RADS**
+- **SERIAL PEF**: **2-hourly**, **2 weeks work + 2 weeks off**, **>20% variation work vs off**
+
+## Mind Map
+```mermaid
+mindmap
+  root((Occupational Asthma))
+    Types
+      Sensitiser-Induced: Latency, IgE/Non-IgE
+      RADS: Irritant, Acute, No Latency
+    Agents
+      HMWOA (IgE): Flour, Latex, Animals, Enzymes
+      LMWOA (Non-IgE): Isocyanates, Anhydrides, Colophony, Persulphates
+    Diagnosis
+      History + Serial PEF (2hrly, 2wk)
+      Specific IgE (HMWOA)
+      SIC (Gold Standard)
+      Methacholine (BHR)
+    Management
+      Exposure Cessation (Key)
+      Standard Asthma Rx
+      Rad: Standard Rx
+    Prognosis
+      Early Removal → Remission
+      Late → Persistent
+```
+
+## Flowchart
+```mermaid
+flowchart TD
+  A[Work-Related Respiratory Symptoms] --> B{History: Sensitiser vs Irritant?}
+  B -->|Sensitiser (Latency)| C[Serial PEF 2-hrly × 2wk\nWork + Off Work]
+  B -->|Irritant (Acute <24h)| D[RADS Criteria\nSingle High Exposure ≤24h\nPersists >3mo\nNo Prior Asthma]
+  C --> E{PEF: >20% Variation Work vs Off?}
+  E -->|Yes| F[Probable OA]
+  E -->|No| G[Unlikely OA]
+  F --> H[Specific IgE (HMWOA)\nSIC if Available]
+  H --> I[Confirmed OA]
+  D --> J[Methacholine Challenge +ve\nNo Latency\nRADS Diagnosed]
+  I --> K[Exposure Cessation → Standard Asthma Rx]
+  J --> K
+```
+
+## Suggested Visuals / Image Notes
+- Serial PEF plot (work vs off days)
+- SIC protocol diagram
+- Agent table (HMWOA vs LMWOA)
+- PEF work/off comparison chart
+
+## Suggested Video References
+- Occupational asthma diagnosis (HSE/BOHRF)
+- Specific inhalation challenge technique
+- RADS vs sensitiser OA
+
+## One-Page Revision Summary
+- **OA** = caused by work; **WEA** = pre-existing worsened by work
+- **Sensitiser OA** = latency (weeks-yrs), IgE (HMWOA) or non-IgE (LMWOA)
+- **RADS** = single high irritant, onset ≤24h, persists >3mo, non-immune
+- **Serial PEF 2-hourly × 2wk** = cornerstone; >20% variation work vs off
+- **SIC** = gold standard (specialised centres)
+- **Common**: Flour (bakers), Isocyanates (painters), Latex (healthcare), Animals (lab)
+- **Management**: Exposure cessation (early = remission chance), standard asthma Rx
+- **RADS**: single high irritant ≤24h → asthma >3mo, non-immune, methacholine +
+- **Legal**: Prescribed Disease D1 (IIDB), RIDDOR reporting
+
+## 24-Hour Recall Prompts
+- List 4 common occupational asthma agents with occupations
+- Contrast sensitiser OA vs RADS
+- State serial PEF protocol
+- List 3 factors predicting remission vs persistence
+
+## 7-Day / 15-Day / 30-Day Revision Tracker
+- [ ] Day 1 completed
+- [ ] 24-hour recall completed
+- [ ] Day 7 revision completed
+- [ ] Day 15 revision completed
+- [ ] Day 30 revision completed
+
+## Must Know / Should Know / Nice to Know
+### Must Know
+- OA vs WEA distinction
+- Sensitiser OA (latency) vs RADS (acute, single exposure)
+- Serial PEF protocol (2-hourly, 2 weeks work+off)
+- Common agents: Flour, Isocyanates, Latex, Animals
+- Exposure cessation = remission chance
+- RADS criteria (single high exposure, ≤24h onset, >3mo persistence)
+
+### Should Know
+- HMWOA vs LMWOA mechanisms
+- SIC gold standard (specialised centres)
+- Specific IgE for HMWOA only
+- Prognostic factors (early removal, severity, smoking, atopy)
+- Legal: Prescribed Disease D1, RIDDOR
+
+### Nice to Know
+- Specific agents (pluric acid, persulphates, glutaraldehyde)
+- Health surveillance programmes
+- Disability benefits (IIDB)
+- Psychological impact of job change
+
+## Self-Test Scorecard
+- Understanding: /10
+- Recall: /10
+- MCQ Performance: /10
+- SBA Performance: /10
+- Viva Confidence: /10
+- Total: /50
+
+> [!tip]
+> Interpretation: <35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.
+
+## Exam Answer Modes
+### Long Answer Skeleton
+- Definition: OA vs WEA
+- Classification (sensitiser vs RADS)
+- Major agents table (HMWOA/LMWOA, occupations)
+- Diagnostic approach (history → serial PEF → IgE → SIC)
+- RADS criteria
+- Management (cessation, pharmacotherapy, workplace)
+- Prognosis factors
+- Legal/compensation
+
+### Short Note Skeleton
+- OA vs WEA table
+- Sensitiser vs RADS comparison
+- Serial PEF protocol
+- Common agents table
+- RADS criteria box
+
+### Viva One-Liners
+- "OA = work causes asthma; WEA = work worsens pre-existing asthma"
+- "Sensitiser OA = latency (weeks-yrs); RADS = acute ≤24h, single exposure"
+- "Serial PEF: 2-hourly × 2 weeks (work + off); >20% variation work vs off = positive"
+- "SIC = gold standard (specialised centres only)"
+- "Common: Flour (bakers), Isocyanates (painters), Latex (healthcare), Animals (lab)"
+- "Exposure cessation early = 30-50% remission; late = <10%"
+- "RADS: single high irritant exposure ≤24h onset, persists >3mo, non-immune"
+- "Prescribed Disease D1 = IIDB; RIDDOR reporting mandatory"
+
+### Ward-Case Discussion Points
+- Baker with wheeze improving weekends → serial PEF → flour IgE → redeployment
+- Healthcare worker with glove-related wheeze → latex IgE → powder-free gloves/redeployment
+- Spray painter with wheeze after TDI exposure → isocyanate SIC → redeployment
+- Chemical spill, immediate wheeze, persistent 6 months → RADS (methacholine +ve)
+
+### Last-Night-Before-Exam Sheet
+- OA: Work causes asthma; WEA: Work worsens asthma
+- Sensitiser: Latency; RADS: Acute ≤24h
+- Serial PEF: 2hrly × 2wk, >20% work vs off
+- SIC: Gold standard
+- Common: Flour, Isocyanates, Latex, Animals
+- Cessation early = remission
+- RADS: Single exposure ≤24h, >3mo persistence
+- Legal: PD D1 (IIDB), RIDDOR
+
+## Summary
+**Occupational Asthma** = caused by workplace agents (not just exacerbated). **Sensitiser-induced** (latency, IgE/non-IgE) vs **RADS** (irritant, acute ≤24h, non-immune). **Serial PEF 2-hourly × 2 weeks** = cornerstone; **SIC** = gold standard. **Common agents**: flour (bakers), isocyanates (painters), latex (healthcare), animals (lab). **Exposure cessation** early = remission; late → persistent asthma. **RADS** = single high irritant exposure ≤24h → asthma >3mo. Legal: Prescribed Disease D1 (IIDB), RIDDOR reporting.
+
+## MCQs (10)
+1. Which agent is the **most common LMWOA** cause of occupational asthma?
+   A. Flour
+   B. Latex
+   C. **Isocyanates**
+   D. Animal proteins
+2. **Serial PEF monitoring** protocol for occupational asthma:
+   A. Pre/post shift daily for 1 week
+   B. **Every 2 hours for ≥2 weeks (work + off work)**
+   C. Morning/evening for 4 weeks
+   C. Pre/post bronchodilator weekly
+3. **RADS (Reactive Airway Dysfunction Syndrome)** is characterised by:
+   A. Latency period of weeks-months
+   B. IgE-mediated mechanism
+   C. **Single high-level irritant exposure, onset ≤24h, persists >3 months**
+   D. Positive specific IgE to causative agent
+4. **Gold standard** for diagnosing occupational asthma:
+   A. Serial PEF
+   B. **Specific Inhalation Challenge (SIC)**
+   C. Skin prick test
+   D. Methacholine challenge
+5. Most common HMWOA cause of occupational asthma:
+   A. Latex
+   B. **Flour/grain dust**
+   D. Isocyanates
+   D. Colophony
+
+## SBA Questions (10)
+1. A 28-year-old baker develops wheeze 2 hours into shift, improves weekends. Serial PEF shows >20% variation work vs off days. Specific IgE to wheat flour positive. Diagnosis:
+   A. Work-exacerbated asthma
+   B. **Sensitiser-induced occupational asthma**
+   D. RADS
+   D. Allergic bronchopulmonary aspergillosis
+2. Spray painter exposed to large TDI spill develops immediate wheeze, persists 6 months. No prior asthma. Methacholine positive. Diagnosis:
+   A. Sensitiser-induced OA
+   B. **RADS (Irritant-induced OA)**
+   C. Work-exacerbated asthma
+   D. Chemical pneumonitis
+3. Healthcare worker with glove-related wheeze, rhinitis, urticaria. Specific IgE to latex positive. Best management:
+   A. Continue work with powder-free gloves
+   B. **Complete latex avoidance (redeployment to latex-free area)**
+   C. Continue work with antihistamines
+   D. Oral immunotherapy
+4. Spray painter with 5-year history of work-related wheeze, now persistent even on holiday. FEV₁ 55% predicted. What prognostic factor indicates **poor remission chance**?
+   A. Non-atopic
+   B. **Duration of exposure after symptoms >2 years**
+   C. Non-smoker
+   D. Normal IgE
+5. Which test is **NOT** routinely available/useful for LMWOA diagnosis?
+   A. Specific inhalation challenge
+   B. Methacholine challenge
+   C. **Specific IgE** (not validated for most LMWOAs)
+   D. Serial PEF
+6. Best predictor of remission in occupational asthma:
+   A. Atopic status
+   B. **Early removal from exposure (<1-2 years from symptom onset)**
+   C. Initial FEV₁
+   D. Age at diagnosis
+7. **RADS diagnostic criteria** include ALL EXCEPT:
+   A. Single high-level irritant exposure
+   B. Asthma onset ≤24 hours
+   C. Persistence >3 months
+   D. **Positive specific IgE to irritant**
+7. Serial PEF monitoring protocol:
+   A. Pre/post shift daily for 1 week
+   B. **Every 2 hours for ≥2 weeks (including work and off-work periods)**
+   C. Morning/evening only for 4 weeks
+   D. PEF before/after bronchodilator weekly
+8. Legal compensation for occupational asthma in UK:
+   A. Prescribed Disease D1 (Industrial Injuries Disablement Benefit)
+   B. MWP (Medical Warning Program)
+   C. COSHH compensation scheme
+   D. NHS Litigation Authority
+8. Worker with RADS: most appropriate long-term management:
+   A. Oral corticosteroids lifelong
+   B. **Standard asthma therapy (ICS/LABA) + avoidance of irritants**
+   C. Oral immunotherapy
+   D. Bronchial thermoplasty
+9. Sensitiser-induced OA mechanism:
+   A. Direct epithelial injury
+   B. **Immunological (IgE or non-IgE mediated) with latency period**
+   C. Neurogenic inflammation
+   D. Oxidative stress only
+
+## Flashcards
+- Q: OA vs WEA
+  A: OA = work causes asthma; WEA = work worsens pre-existing asthma
+- Q: Sensitiser OA vs RADS
+  A: Sensitiser = latency, immune; RADS = acute ≤24h, single exposure, non-immune
+- Q: Serial PEF protocol
+  A: 2-hourly × 2 weeks (work + off); >20% variation work vs off
+- Q: Common agents
+  A: Flour (bakers), Isocyanates (painters), Latex (healthcare), Animals (lab)
+- Q: SIC = Gold standard
+  A: Specialised centres only
+- Q: Management key
+  A: Exposure cessation early = remission
+- Q: RADS = single high irritant ≤24h, persists >3mo
+- Q: Legal = PD D1 (IIDB), RIDDOR
+- Q: Best predictor remission
+  A: Early exposure cessation (<1-2yrs)
+- Q: HMWOA vs LMWOA
+  A: HMWOA = IgE (flour, latex, animals); LMWOA = non-IgE (isocyanates, anhydrides)
+
+## Answer Key with Explanations
+### MCQs
+1. **C** — Isocyanates = most common LMWOA cause.
+2. **B** — Serial PEF: 2-hourly for ≥2 weeks (work + off work periods).
+3. **C** — RADS = single high irritant exposure, onset ≤24h, persists >3mo, non-immune.
+4. **B** — SIC = gold standard (specialised centres).
+4. **B** — Flour/grain dust = most common HMWOA cause.
+
+### SBAs
+1. **B** — Baker, work-related, serial PEF +ve, flour IgE +ve = sensitiser-induced OA.
+2. **B** — Single high TDI exposure, acute onset, no prior asthma, persistent >3mo = RADS.
+3. **B** — Latex OA: complete avoidance/redeployment required; continued exposure = progression.
+4. **B** — Duration of exposure after symptom onset >2 years = poor remission prognosis.
+5. **C** — Specific IgE not validated for most LMWOAs.
+6. **B** — Early exposure cessation (<1-2 years) = best predictor of remission.
+7. **D** — RADS criteria: no specific IgE (non-immune).
+7. **B** — Serial PEF: 2-hourly for ≥2 weeks work+off.
+8. **A** — Prescribed Disease D1 (IIDB).
+8. **B** — RADS: standard asthma therapy (ICS/LABA) + irritant avoidance.
+9. **B** — Sensitiser OA = immunological (IgE/non-IgE) with latency period.
+
+## Flashcards
+- Q: OA vs WEA
+  A: OA = work causes asthma; WEA = work worsens pre-existing asthma
+- Q: Sensitiser OA vs RADS
+  A: Sensitiser = latency, immune; RADS = acute ≤24h, single exposure, non-immune
+- Q: Serial PEF protocol
+  A: 2-hourly × 2 weeks (work + off); >20% variation work vs off
+- Q: Common agents
+  A: Flour (bakers), Isocyanates (painters), Latex (healthcare), Animals (lab)
+- Q: SIC = Gold standard
+  A: Specialised centres only
+- Q: Management key
+  A: Exposure cessation early = remission
+- Q: RADS = single high irritant ≤24h, persists >3mo
+- Q: Legal = PD D1 (IIDB), RIDDOR
+- Q: Best predictor remission
+  A: Early exposure cessation (<1-2yrs)
+- Q: HMWOA vs LMWOA
+  A: HMWOA = IgE (flour, latex, animals); LMWOA = non-IgE (isocyanates, anhydrides)
+
+## Answer Key with Explanations
+### MCQs
+1. **C** — Isocyanates = most common LMWOA cause.
+2. **B** — Serial PEF: 2-hourly for ≥2 weeks (work + off work periods).
+3. **C** — RADS = single high irritant exposure, onset ≤24h, persists >3mo, non-immune.
+4. **B** — SIC = gold standard (specialised centres).
+5. **B** — Flour/grain dust = most common HMWOA cause.
+
+### SBAs
+1. **B** — Baker, work-related, serial PEF +ve, flour IgE +ve = sensitiser-induced OA.
+2. **B** — Single high TDI exposure, acute onset, no prior asthma, persistent >3mo = RADS.
+3. **B** — Latex OA: complete avoidance/redeployment required; continued exposure = progression.
+4. **B** — Duration of exposure after symptom onset >2 years = poor remission prognosis.
+5. **C** — Specific IgE not validated for most LMWOAs.
+6. **B** — Early exposure cessation (<1-2 years) = best predictor of remission.
+7. **D** — RADS criteria: no specific IgE (non-immune).
+7. **B** — Serial PEF: 2-hourly for ≥2 weeks work+off.
+8. **A** — Prescribed Disease D1 (IIDB).
+8. **B** — RADS: standard asthma therapy (ICS/LABA) + irritant avoidance.
+9. **B** — Sensitiser OA = immunological (IgE or non-IgE mediated) with latency period.
+
+---
+## Additional MCQs (6–10)
+
+6. The most useful diagnostic test for occupational asthma is:
+   A. Single methacholine challenge
+   B. **Serial PEF measurements at and away from work**
+   C. Skin-prick test alone
+   D. CXR
+   E. Total IgE
+   **Answer: B** — Serial PEF is the screening test of choice for occupational asthma.
+
+7. A baker with asthma improves during holidays. Specific IgE to wheat flour is positive. Most likely:
+   A. Irritant-induced asthma
+   B. **IgE-mediated occupational asthma (LMWOA)**
+   C. Vocal cord dysfunction
+   D. COPD
+   E. Sarcoidosis
+   **Answer: B** — Flour = LMWOA with IgE mechanism (work-related, ↑IgE).
+
+8. First-line treatment of occupational asthma after diagnosis:
+   A. SABA PRN
+   B. **Complete avoidance of offending agent + ICS**
+   C. Oral steroids long-term
+   D. LTRA only
+   E. Theophylline
+   **Answer: B** — Avoidance is key; ICS for inflammation.
+
+9. Which sensitiser causes the **highest** incidence of occupational asthma?
+   A. Flour
+   B. Latex
+   C. **Isocyanates (esp. in spray painters, plastics)**
+   D. Animal dander
+   E. Wood dust
+   **Answer: C** — Isocyanates are the most common cause of LMWOA in industrialised countries.
+
+10. Reactive airways dysfunction syndrome (RADS) is caused by:
+    A. Chronic low-dose exposure
+    B. **Single acute high-dose irritant exposure**
+    C. Allergic sensitisation
+    D. Infection
+    E. Smoking
+    **Answer: B** — RADS = single high-dose exposure → persistent asthma-like syndrome.
+
+## Additional SBAs (6–10)
+
+6. An isocyanate-exposed worker develops work-related wheeze. Best diagnostic approach:
+   A. Single methacholine test
+   B. **Serial PEF + specific challenge test (SIC)**
+   C. CXR
+   D. Total IgE only
+   E. Spirometry once
+   **Answer: B** — Serial PEF for screening; specific challenge for confirmation.
+
+7. A baker with occupational asthma is at risk of:
+   A. **Permanent airflow obstruction if exposure continues**
+   B. Resolution despite continued exposure
+   C. PE
+   D. Lung cancer
+   E. Pneumothorax
+   **Answer: A** — Continued exposure → irreversible airway remodelling.
+
+8. Compensable occupational asthma requires:
+   A. Symptom report only
+   B. **Documented work-relatedness + objective confirmation (PEF/SIC)**
+   C. Self-diagnosis
+   D. Spirometry alone
+   E. No documentation
+   **Answer: B** — Requires objective work-relatedness documentation.
+
+9. Best PEF pattern in occupational asthma:
+   A. Consistently low at all times
+   B. **Lower on workdays vs days off**
+   C. Higher on workdays
+   D. Random
+   E. No pattern
+   **Answer: B** — Work-related decline is the diagnostic pattern.
+
+10. A spray painter with occupational asthma. First management step:
+    A. Continue work with mask
+    B. **Remove from exposure + ICS**
+    C. Switch occupation with no support
+    D. Oral steroids
+    E. SABA only
+    **Answer: B** — Remove from exposure + pharmacotherapy.
+
+## Local Navigation
+- **Parent Heading**: [[../Airway Diseases|Airway Diseases]]
+- **Parent Topic Group**: [[../Airway Diseases/Asthma spectrum|Asthma spectrum]]
+- **Chapter Map**: [[../Davidson Chapter 17 - Respiratory Medicine Hierarchy|Respiratory Medicine Hierarchy]]
+- **Chapter MOC**: [[../Respiratory MOC|Respiratory MOC]]
+- **Drug Reference**: [[../../Clinical Therapeutics and Good Prescribing|Drugs]]
+- **Related**: [[Asthma]] · [[Acute severe asthma]] · [[Difficult-to-treat and severe asthma]] · [[Eosinophilic and phenotype-guided asthma]]

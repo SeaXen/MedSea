@@ -1,0 +1,25 @@
+---
+tags: [medicine, respiratory, topic-group]
+chapter: Respiratory
+davidson_chapter: Chapter 17: Respiratory medicine
+status: hierarchy-hub
+---
+
+# Respiratory support basics
+
+Parent: [[Functional Anatomy, Physiology, and Investigations]]  
+Related: [[Respiratory MOC]] · [[Davidson Chapter 17 - Respiratory Medicine Hierarchy]]
+
+## Disease-Level Notes
+- [[Oxygen Therapy and NIV]]
+- [[Functional Anatomy, Physiology, and Investigations/Oxygen delivery devices|Oxygen delivery devices]]
+- [[Functional Anatomy, Physiology, and Investigations/Indications for invasive ventilation in respiratory disease|Indications for invasive ventilation in respiratory disease]]
+- [[Functional Anatomy, Physiology, and Investigations/Aerosol and inhaler device basics|Aerosol and inhaler device basics]]
+- [[Functional Anatomy, Physiology, and Investigations/High-flow nasal oxygen basics|High-flow nasal oxygen basics]]
+
+## Expansion Targets
+- Upgrade each disease-level file into a full FCPS/MRCP note when requested.
+- Preserve chapter boundary and differential-focused grouping.
+
+## Tags
+#medicine #respiratory #topic-group

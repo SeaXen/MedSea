@@ -1,0 +1,337 @@
+---
+tags: [medicine, respiratory, subsegmental-pe, incidental-pe, davidson, fcps, mrcp]
+chapter: Respiratory
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 17: Respiratory medicine
+topic: Subsegmental and incidental pulmonary embolism
+exam: FCPS, MRCP
+references:
+  clinical: ["ESC 2019", "CHEST 2019", "Davidson", "PasTest"]
+related: [Pulmonary Embolism, D-dimer, CTPA, and Wells score framework, Right-heart strain in respiratory disease, Oxygen Therapy and NIV]
+status: full-fcps-mrcp-note
+last_updated: 2026-06-16
+---
+
+# Subsegmental and incidental pulmonary embolism
+
+> [!important]
+> **Subsegmental PE (SSPE)** and **incidental PE** are increasingly detected with modern high-resolution CTPA. Management is **individualised** — not all SSPE/incidental PE requires anticoagulation, but most do. Risk-benefit analysis considers clot burden, symptoms, recurrence risk, and bleeding risk.
+
+Related: [[Pulmonary Embolism]], [[D-dimer, CTPA, and Wells score framework]]
+
+> [!tip] **FCPS/MRCP pearl**: Most SSPE/incidental PE should still be **anticoagulated** unless very low risk. Subsegmental PE in patients with **low clot burden + no proximal DVT + transient/reversible risk factor + low recurrence risk + no active cancer + good cardiopulmonary reserve** may be observed without anticoagulation. Always check for **DVT** (if present → treat as standard PE).
+
+## Definition
+
+- **Subsegmental PE (SSPE)**: PE limited to subsegmental pulmonary arteries (most peripheral)
+- **Incidental PE (IPE)**: PE detected on CT performed for another reason (not for suspected PE)
+- **Asymptomatic PE**: clinically silent but identified (subset of IPE)
+
+## Epidemiology
+
+- SSPE: 5–10% of all PE diagnosed on CTPA
+- IPE: 1–5% of all CTPA
+- More common with modern multi-detector CT (better resolution)
+
+## Clinical Significance
+
+### Recurrence risk
+- Low clot burden may have lower recurrence
+- However, ~50% have residual clot
+- 5–10% have concurrent DVT
+- Risk of progression if untreated (especially with persistent risk factors)
+
+### Mortality
+- Lower than segmental/proximal PE
+- But still significant (5–10% mortality if untreated in cancer patients)
+- Often reflects underlying disease (cancer, infection)
+
+## Decision: Anticoagulate or Observe?
+
+### Anticoagulate if:
+- **Symptomatic** (chest pain, dyspnoea, etc.)
+- **Active cancer** (high recurrence)
+- **Persistent risk factor** (cancer, immobility, thrombophilia)
+- **Pregnancy**
+- **Concurrent DVT**
+- **Multiple subsegmental PE** (extensive)
+- **Right heart strain** (rare in SSPE)
+- **Cardiopulmonary reserve** poor
+
+### Observe (no anticoagulation) — controversial, all required:
+- **Asymptomatic** incidental single subsegmental PE
+- **No concurrent DVT** (leg Doppler)
+- **Reversible transient risk factor** (surgery, immobility)
+- **Low recurrence risk**
+- **No active cancer**
+- **No thrombophilia**
+- **Low bleeding risk** (good follow-up possible)
+- **Good cardiopulmonary reserve**
+
+## Management
+
+### Investigation
+- **Bilateral leg Doppler** (to exclude DVT — if DVT present, treat as standard PE)
+- **CTPA review** (confirm SSPE, exclude other findings)
+- **Risk stratification**: assess for active cancer, recent surgery, immobilisation
+- **Lab workup**: FBC, U&E, LFT, coagulation; consider thrombophilia if unprovoked
+- **Echo** if any sign of RV strain
+
+### Anticoagulation if indicated
+- **Same regimen as standard PE** (DOAC, LMWH, or warfarin)
+- **3 months** for provoked (reversible)
+- **≥3–6 months** for unprovoked; consider extended
+- **Cancer-associated**: LMWH or DOAC; extended while cancer active
+
+### Follow-up
+- Monitor for symptoms
+- Repeat imaging if persistent/worsening symptoms
+- Bleeding risk assessment
+
+## Special Populations
+
+### Cancer
+- IPE in cancer patients should be **treated** (high recurrence)
+- LMWH or DOAC
+
+### Pregnancy
+- SSPE in pregnancy: treat with LMWH
+- Continue for remainder of pregnancy + 6 weeks postpartum
+
+### Postoperative
+- Distinguish from "old" clot
+- Treat as PE if acute (symptoms, fresh clot)
+- Discuss with surgery
+
+### Incidental small distal PE in stable patients
+- Increasingly common finding
+- Decision based on risk-benefit
+
+## FCPS/MRCP High-Yield Summary
+
+| Domain | Key points |
+|--------|------------|
+| **SSPE** | PE in subsegmental arteries only |
+| **IPE** | Incidental finding on CT |
+| **Most require anticoagulation** | Unless very low risk |
+| **DVT** | Exclude with leg Doppler |
+| **Active cancer** | Treat |
+| **Persistent risk** | Treat |
+| **Symptomatic** | Treat |
+| **Asymptomatic + low risk** | Consider observation |
+| **Standard regimen** | Same as standard PE |
+
+## MCQs (10)
+
+1. A 70-year-old with cancer has incidental SSPE on CT abdomen. Management:
+   A. Observe
+   B. **Anticoagulate (cancer + IPE)**
+   C. Aspirin
+   D. IVC filter
+   E. Surgery
+   **Answer: B** — Treat in cancer.
+
+2. SSPE in pregnancy:
+   A. Observe
+   B. **Anticoagulate with LMWH**
+   C. Warfarin
+   D. Aspirin
+   E. None
+   **Answer: B** — LMWH.
+
+3. Incidental SSPE in a young patient after surgery. Asymptomatic. Leg Doppler negative. Best:
+   A. Always observe
+   B. **Consider observation (low risk, transient factor)**
+   C. Always treat
+   D. IVC filter
+   E. Aspirin
+   **Answer: B** — Consider observation.
+
+4. SSPE in the setting of concurrent DVT:
+   A. Observe
+   B. **Anticoagulate (DVT = standard PE treatment)**
+   C. Aspirin
+   D. Filter
+   E. None
+   **Answer: B** — Standard PE Rx.
+
+5. The most important next step after diagnosis of SSPE:
+   A. Discharge
+   B. **Bilateral leg Doppler (exclude DVT)**
+   C. Aspirin
+   D. Filter
+   E. None
+   **Answer: B** — Exclude DVT.
+
+6. Incidental SSPE on staging CT in cancer patient. Best management:
+   A. Observe
+   B. **Anticoagulate (cancer = high recurrence)**
+   C. Aspirin
+   D. Filter
+   E. None
+   **Answer: B** — Treat.
+
+7. SSPE on CTPA in a 40-year-old with reversible risk factor (long flight). Symptomatic. Leg Doppler negative. Best:
+   A. Observe
+   B. **Anticoagulate (symptomatic)**
+   C. Aspirin
+   D. None
+   E. Watch
+   **Answer: B** — Symptomatic → treat.
+
+8. The minimum workup for SSPE/IPE includes:
+   A. Discharge
+   B. **Leg Doppler + assessment of risk factors + cancer screen if appropriate**
+   C. Aspirin
+   D. Surgery
+   E. None
+   **Answer: B** — Workup.
+
+9. Most SSPE/IPE arises from:
+   A. Cardiac source
+   B. **Lower limb/pelvic DVT**
+   C. Air embolism
+   D. Tumour
+   E. None
+   **Answer: B** — DVT source.
+
+10. A 30-year-old with SSPE and active ulcerative colitis (flare). Management:
+    A. Observe
+    B. **Anticoagulate (active inflammation = persistent risk)**
+    C. Aspirin
+    D. Filter
+    E. None
+    **Answer: B** — Treat.
+
+## SBA Questions (10)
+
+1. SSPE = PE limited to:
+   A. Main PA
+   B. Lobar arteries
+   C. **Subsegmental arteries**
+   D. Pulmonary trunk
+   E. All
+   **Answer: C** — Subsegmental.
+
+2. Incidental PE is detected on CT performed for:
+   A. Suspected PE
+   B. **Another reason (e.g. cancer staging)**
+   C. Trauma
+   D. Infection
+   E. None
+   **Answer: B** — Incidental finding.
+
+3. The strongest indication to anticoagulate SSPE:
+   A. Age >70
+   B. **Active cancer**
+   C. Female
+   D. Male
+   E. None
+   **Answer: B** — Cancer = high recurrence.
+
+4. Recurrence risk in SSPE compared to segmental PE:
+   A. Much higher
+   B. **Likely lower**
+   C. Same
+   D. Unknown
+   E. None
+   **Answer: B** — Lower.
+
+5. SSPE in a patient with active malignancy, no DVT, asymptomatic. Best:
+   A. Observe
+   B. **Anticoagulate (cancer = persistent risk)**
+   C. Aspirin
+   D. None
+   E. Wait
+   **Answer: B** — Anticoagulate.
+
+6. SSPE observation (no anticoagulation) is appropriate when:
+   A. Always
+   B. **Asymptomatic + no DVT + transient factor + low recurrence + low bleed risk**
+   C. Never
+   D. With cancer
+   E. None
+   **Answer: B** — All criteria.
+
+7. The most sensitive test for concurrent DVT in SSPE/IPE:
+   A. D-dimer
+   B. **Bilateral leg compression ultrasound**
+   C. CTPA
+   D. Echo
+   E. None
+   **Answer: B** — Leg Doppler.
+
+8. SSPE with no DVT and resolved risk factor. Best duration of anticoagulation:
+   A. Lifelong
+   B. **3 months**
+   C. 6 weeks
+   D. 1 year
+   E. None
+   **Answer: B** — 3 months (provoked).
+
+9. Thrombolysis in SSPE/IPE:
+   A. Always
+   B. **Not indicated (low clot burden)**
+   C. With cancer
+   D. With pregnancy
+   E. None
+   **Answer: B** — Not indicated.
+
+10. The most important factor when deciding to anticoagulate SSPE/IPE:
+    A. Patient age
+    B. **Risk-benefit (recurrence vs bleeding) + cancer + DVT + symptoms**
+    C. Sex
+    D. Smoking
+    E. None
+    **Answer: B** — Risk-benefit.
+
+## Flashcards
+
+- **Q: SSPE definition?**
+  A: PE limited to subsegmental arteries.
+
+- **Q: IPE definition?**
+  A: Incidental finding on CT for another reason.
+
+- **Q: Most important next step?**
+  A: Bilateral leg Doppler to exclude DVT.
+
+- **Q: Anticoagulate in cancer IPE?**
+  A: Yes (high recurrence).
+
+- **Q: Observe SSPE when?**
+  A: Asymptomatic + no DVT + transient risk + low bleed risk.
+
+- **Q: Duration if provoked?**
+  A: 3 months.
+
+- **Q: Thrombolysis in SSPE?**
+  A: Not indicated.
+
+- **Q: Source of most PE?**
+  A: Lower limb/pelvic DVT.
+
+- **Q: Cancer + IPE?**
+  A: Treat (LMWH or DOAC).
+
+- **Q: Pregnancy + SSPE?**
+  A: LMWH.
+
+## Answer Key with Explanations
+
+### MCQs
+1. **B**  2. **B**  3. **B**  4. **B**  5. **B**  6. **B**  7. **B**  8. **B**  9. **B**  10. **B**
+
+### SBAs
+1. **C**  2. **B**  3. **B**  4. **B**  5. **B**  6. **B**  7. **B**  8. **B**  9. **B**  10. **B**
+
+## Summary
+
+SSPE/IPE: most require anticoagulation. Key: bilateral leg Doppler to exclude DVT. Cancer + IPE = treat. SSPE observation = asymptomatic + no DVT + transient factor + low risk. Same anticoagulation regimen as standard PE.
+
+## Local Navigation
+- **Parent Heading**: [[../Pulmonary Vascular Diseases|Pulmonary Vascular Diseases]]
+- **Parent Topic Group**: [[../Pulmonary Vascular Diseases/Venous thromboembolic disease|Venous thromboembolic disease]]
+- **Chapter Map**: [[../Davidson Chapter 17 - Respiratory Medicine Hierarchy|Respiratory Medicine Hierarchy]]
+- **Chapter MOC**: [[../Respiratory MOC|Respiratory MOC]]
+- **Related**: [[Pulmonary Embolism]] · [[D-dimer, CTPA, and Wells score framework]]

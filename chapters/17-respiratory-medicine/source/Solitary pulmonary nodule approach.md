@@ -1,0 +1,792 @@
+---
+tags: [medicine, respiratory, spn, solitary-pulmonary-nodule, lung-nodule, davidson, fcps, mrcp]
+chapter: Respiratory
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 17: Respiratory medicine
+topic: Solitary pulmonary nodule approach
+exam: FCPS, MRCP
+references:
+  anatomy: ["Gray's Anatomy", "Davidson"]
+  physiology: ["Ganong", "Guyton and Hall", "Davidson"]
+  clinical: ["Davidson", "PasTest", "personal notes", "BTS Pulmonary Nodule Guidelines 2015/2023", "Fleischner Society Guidelines 2017", "NICE NG122", "ACCP Guidelines"]
+related: [Lung cancer, Malignant pleural effusion, Pancoast tumor, CT chest pattern approach, PET-CT, Bronchoscopy, Transthoracic needle biopsy]
+status: full-fcps-mrcp-topic-note
+last_updated: 2026-06-15
+---
+
+# Solitary Pulmonary Nodule (SPN) Approach
+
+Related: [[Lung cancer]], [[Malignant pleural effusion]], [[Pancoast tumor]], [[CT chest pattern approach]], [[PET-CT]], [[Bronchoscopy]], [[Transthoracic needle biopsy]]
+
+> [!important]
+> **Solitary pulmonary nodule (SPN)** = single, well-circumscribed opacity ≤3 cm in lung parenchyma, surrounded by aerated lung, **no associated atelectasis/lymphadenopathy**. **>3 cm = mass**. **Incidental on CT** (95% of SPNs). Key FCPS/MRCP: **Risk stratification** (clinical + CT features), **Fleischner Society follow-up** vs **BTS algorithm**, **PET-CT** (metabolic activity), **Biopsy indications** (TTNA, bronchoscopy, VATS), **Probability calculators** (Brock, Mayo, Herder), **Benign patterns** (calcification, fat, stability).
+
+## Learning Objectives
+- Define SPN (≤3 cm) vs mass (>3 cm) and distinguish from other pulmonary opacities
+- Apply **clinical risk factors** (age, smoking, cancer history, asbestos) and **CT morphological features** (size, margins, density, growth rate)
+- Use **probability calculators** (Brock, Mayo, Herder) to estimate pre-test probability of malignancy
+- Apply **Fleischner Society 2017** and **BTS 2015/2023** follow-up algorithms based on size and risk
+- Interpret **PET-CT** (SUVmax threshold ~2.5) and know **false +/− causes**
+- Select **biopsy modality** (TTNA for peripheral >1 cm, bronchoscopy for central/endo bronchial, VATS for diagnostic uncertainty/high risk)
+- Recognise **benign specific patterns** (popcorn calcification, fat density, target lesion, stable ≥2 years)
+
+## Definition
+**Solitary Pulmonary Nodule (SPN)** = single, spherical/oval, well-circumscribed pulmonary opacity **≤3 cm** in greatest diameter, **surrounded by aerated lung**, **no associated atelectasis, pneumonitis, or lymphadenopathy**.
+
+**Mass** = **>3 cm** (higher malignancy probability, different workup).
+
+**Incidentaloma** = SPN found on imaging for unrelated reason (~95% of SPNs).
+
+> **FCPS/MRCP tip**: **Multiple nodules** = different differential (mets, TB, sarcoid, granulomatosis, septic emboli). **SPN = single**.
+
+## Core Anatomy / Pathophysiology
+### Nodule biology
+- **Doubling time** (DT): Malignant 20–400 days (most 50–150); Benign: <7 days (infection) or >400 days (scar/granuloma)
+- **Volume doubling time (VDT)** more accurate than diameter
+- **Ground-glass component** → lepidic growth (adenocarcinoma in situ / minimally invasive)
+- **Solid component** → invasive adenocarcinoma
+
+### CT attenuation (Hounsfield Units)
+| Density | HU Range | Differential |
+|---------|----------|--------------|
+| **Fat** | **-40 to -120** | **Hamartoma** (fat + calcification), lipoid pneumonia, lipoma |
+| **Water/soft tissue** | 0–100 | Most nodules (malignant, granuloma, infection) |
+| **Calcification** | >200 | **Benign patterns**: central, laminated, popcorn, diffuse; **Eccentric/stippled** = malignant possible |
+
+## Normal Values / Important Cut-offs
+### Size Thresholds (Fleischner / BTS)
+| Size | Category | Action |
+|------|----------|--------|
+| **<6 mm** (≤6 mm) | Very small | **Low risk**: No routine follow-up (Fleischner); **High risk**: Optional CT at 12 mo (Fleischner) |
+| **6–8 mm** | Small | **Fleischner**: Low risk CT 6–12 mo, then 18–24 mo; High risk CT 6–12 mo, then 18–24 mo |
+| **>8 mm** (8–30 mm) | Intermediate/Large | **Probability assessment** (Brock/Mayo), **PET-CT**, **Biopsy consideration** |
+| **>30 mm** | **Mass** | **High malignancy probability** → Tissue diagnosis staging |
+
+### Malignancy Probability Calculators
+| Calculator | Variables | Output |
+|------------|-----------|--------|
+| **Brock (2017)** | Age, sex, FHx, emphysema, size, type, location, margins, spiculation | **Probability %** (validated in UKLS/NELSON) |
+| **Mayo Clinic (1997)** | Age, smoking, cancer hx, size, spiculation, upper lobe | **Probability %** |
+| **Herder (2005)** | Mayo + PET-CT SUV | **Post-PET probability** |
+
+### PET-CT Thresholds
+| SUVmax | Interpretation |
+|--------|----------------|
+| **<1.5** | Likely benign (but false - in carcinoid, AIS, MIA, slow-growing) |
+| **1.5–2.5** | Indeterminate |
+| **>2.5** | Likely malignant (false + in infection, inflammation, granuloma, sarcoid, RB-ILD) |
+
+### Growth Rate
+| Doubling Time | Interpretation |
+|---------------|----------------|
+| **<20 days** | Infection, inflammation |
+| **20–400 days** | **Malignant** (typical) |
+| **>400 days** | Benign (granuloma, scar) |
+
+## Classification
+### By aetiology
+| Category | Examples |
+|----------|----------|
+| **Malignant** | **Primary lung cancer** (adenocarcinoma > squamous > small cell), **Metastasis** (colorectal, breast, renal, melanoma, sarcoma), **Lymphoma** |
+| **Benign neoplastic** | **Hamartoma** (most common benign), bronchial adenoma (carcinoid), chondroma, fibroma |
+| **Infectious / Granulomatous** | **TB** (primary complex, tuberculoma), **fungal** (histoplasma, coccidioides, aspergillus), **bacterial** (abscess, resolving pneumonia), **Nocardia**, **actinomycosis** |
+| **Inflammatory / Autoimmune** | **Sarcoidosis**, **rheumatoid nodule**, **GPA/EGPA**, **organising pneumonia** |
+| **Congenital / Developmental** | **Arteriovenous malformation (AVM)**, bronchial cyst, sequestration |
+| **Other** | **Round atelectasis**, pulmonary infarct, haematoma, mucous plug, amyloidosis |
+
+### By CT morphology
+| Type | Features | Malignancy Risk |
+|------|----------|-----------------|
+| **Solid** | Completely solid | Intermediate (depends on size, margins) |
+| **Subsolid** | **Part-solid** (solid + GGO) | **High** (invasive adenocarcinoma) |
+| | **Pure ground-glass (GGN)** | Variable (AIS, MIA, adenocarcinoma; low if persistent) |
+
+## Etiology / Causes
+### Risk Factors for Malignancy
+| Factor | Relative Risk |
+|--------|---------------|
+| **Age >60** | **Strong** |
+| **Current/former smoker** | **Strong** (pack-years dose-dependent) |
+| **Prior malignancy** (extrathoracic) | **Strong** (metastasis risk) |
+| **Asbestos exposure** | Moderate |
+| **COPD / Emphysema** | Moderate (independent risk) |
+| **Family history** lung cancer | Moderate |
+| **Occupational exposure** (silica, arsenic, radon, diesel) | Moderate |
+
+### Benign Aetiologies (Common)
+- **Granulomas** (TB, histoplasmosis, sarcoidosis) — **most common benign cause** in endemic areas
+- **Hamartoma** — **most common benign neoplasm** ("popcorn" calcification, fat density)
+- **Infectious** (resolving pneumonia, abscess, fungal ball)
+- **Benign tumours** (carcinoid, chondroma)
+- **Vascular** (AVM, infarct)
+
+## Clinical Features
+### History
+- **Usually asymptomatic** (incidental finding)
+- **Symptoms if malignant/large**: cough, haemoptysis, weight loss, chest pain, dyspnoea
+- **Risk factor assessment**: age, smoking (pack-years, quit date), occupational, family, prior cancer
+- **Travel/residence** (TB, endemic fungi)
+
+### Examination
+- **Usually normal**
+- **Signs of lung cancer** (if advanced): clubbing, HOA, lymphadenopathy, SVC obstruction, pleural effusion
+- **Signs of infection** (if infectious): fever, crackles
+
+## Investigations
+### 1. CT Chest (Thin-section, 1–1.25 mm slices) — PRIMARY TOOL
+**Key Features to Report:**
+| Feature | Malignant Suggestive | Benign Suggestive |
+|---------|---------------------|-------------------|
+| **Size** | >8 mm, >20 mm | <6 mm |
+| **Margins** | **Spiculated**, lobulated, irregular | **Smooth**, well-defined |
+| **Density** | Solid, part-solid (mixed GGO) | Pure GGO (if stable), fat, calcification |
+| **Calcification** | Eccentric, stippled, amorphous | **Central, laminated, popcorn, diffuse** |
+| **Fat** | Absent | **Present (-40 to -120 HU) = Hamartoma** |
+| **Growth** | Documented increase | **Stable ≥2 years = Benign** |
+| **Location** | Upper lobe | Lower lobe |
+| **Satellite nodules** | Yes | No |
+| **Pleural retraction/tag** | Yes | No |
+
+### 2. PET-CT (for nodules >8 mm with intermediate probability)
+- **SUVmax >2.5** = likely malignant
+- **SUVmax <1.5** = likely benign
+- **False negatives**: Carcinoid, AIS/MIA, mucinous adenocarcinoma, small <8 mm, slow-growing (adenocarcinoma with long DT)
+- **False positives**: TB, granuloma, sarcoid, active infection, post-RT, rheumatoid nodule, RB-ILD
+
+### 3. Probability Assessment
+| Pre-test Probability | Management |
+|----------------------|------------|
+| **Very low (<5%)** | CT surveillance (Fleischner) |
+| **Low (5–30%)** | PET-CT → if negative, surveillance; if positive, biopsy |
+| **Intermediate (30–70%)** | PET-CT → tissue diagnosis (biopsy) |
+| **High (>70%)** | **Direct to tissue diagnosis + staging** (PET-CT for staging) |
+
+### 4. Tissue Diagnosis (if indicated)
+| Modality | Indication | Yield | Complications |
+|----------|------------|-------|---------------|
+| **TTNA (Transthoracic Needle Aspiration/Biopsy)** | **Peripheral nodule >1 cm**, pleural contact | **90-95%** (malignant), 60-80% (benign specific) | **Pneumothorax 15-25%** (5-10% need drain), haemorrhage |
+| **Bronchoscopy (+/- EBUS, navigation, radial EBUS)** | **Central nodule**, endobronchial visible, mediastinal nodes | **70-80%** (with navigation/EBUS) | Low (bleeding, pneumothorax rare) |
+| **VATS (Video-Assisted Thoracoscopic Surgery)** | **Diagnostic uncertainty**, high risk, failed less invasive, therapeutic intent | **>95%** (diagnostic + therapeutic) | Surgical risks (air leak, bleeding, pain) |
+| **Sputum cytology** | Central, cavitary, >2 cm | Low (20-30%) | Non-invasive |
+
+### 5. Additional Tests
+- **Tumour markers** (CEA, CYFRA 21-1, NSE, ProGRP) — **not for diagnosis**, supportive
+- **Bloods** (FBC, LFT, Ca, LDH) — baseline for staging/treatment
+- **Pulmonary function** (if surgery considered) — FEV1, DLCO, VO2 max
+
+## Interpretation Frameworks
+### 1. Fleischner Society 2017 Guidelines (Solid Nodules)
+| Nodule Size | Low Risk (No risk factors) | High Risk (Smoker, FHx, etc.) |
+|-------------|---------------------------|------------------------------|
+| **<6 mm** | **No routine follow-up** | Optional CT at 12 mo (discretionary) |
+| **6–8 mm** | CT at 6–12 mo, then 18–24 mo | CT at 6–12 mo, then 18–24 mo |
+| **>8 mm** | Probability assessment → PET-CT ± biopsy | Probability assessment → PET-CT ± biopsy |
+
+**Subsolid Nodules (GGN/Part-solid):**
+| Type | Size | Follow-up |
+|------|------|-----------|
+| **Pure GGN** | <6 mm | No follow-up |
+| | ≥6 mm | CT at 6–12 mo, then every 2 years until 5 years |
+| **Part-solid** | <6 mm | CT at 3–6 mo to confirm persistence |
+| | ≥6 mm | **PET-CT / Biopsy consideration** (solid component ≥6 mm = high risk) |
+
+### 2. BTS 2015/2023 Algorithm (UK Standard)
+1. **<5 mm**: Discharge (no follow-up)
+2. **5–8 mm**: Low risk → CT 12 mo; High risk → CT 3 mo, then 12 mo, then 24 mo
+3. **>8 mm**: **Brock/Mayo probability** → if <10% → CT surveillance; 10-70% → PET-CT; >70% → direct biopsy/staging
+
+### 3. Growth Assessment
+- **Volume doubling time (VDT)** from serial CT volumetry
+- **VDT 20–400 days** = malignant until proven otherwise
+- **Stable ≥2 years** (same size on ≥2 CTs 2 years apart) = **benign**
+
+### 4. Benign Calcification Patterns
+| Pattern | Cause |
+|---------|-------|
+| **Central** | Granuloma (TB, fungal) |
+| **Laminated** | Granuloma |
+| **Popcorn** | **Hamartoma** |
+| **Diffuse** | Granuloma, hamartoma |
+| **Eccentric / Stippled / Amorphous** | **Malignant possible** (dystrophic calcification in tumour) |
+
+## Diagnosis
+**Diagnostic Algorithm:**
+```
+Incidental SPN on CT
+    ↓
+Characterise: Size, margins, density, calcification, fat, location, comparison with prior
+    ↓
+Calculate pre-test probability (Brock/Mayo)
+    ↓
+Probability <5% → Fleischner surveillance
+Probability 5-30% → PET-CT → PET neg → surveillance; PET pos → biopsy
+Probability 30-70% → PET-CT → biopsy (TTNA/bronch/VATS)
+Probability >70% → Direct biopsy + staging PET-CT
+```
+
+**Benign diagnosis criteria (avoid biopsy):**
+1. **Benign calcification pattern** (central, laminated, popcorn, diffuse)
+2. **Fat density** (-40 to -120 HU) = hamartoma
+3. **Stability ≥2 years** on serial CT
+4. **Specific benign diagnosis** (AVM with contrast, round atelectasis with comet tail)
+
+## Differential Diagnosis
+| Diagnosis | CT Clues |
+|-----------|----------|
+| **Primary lung cancer** (adenocarcinoma) | Spiculated, part-solid, upper lobe, pleural tag, SUV >2.5 |
+| **Metastasis** | Multiple usually, but solitary possible (renal, colorectal, breast, melanoma, sarcoma) — known primary |
+| **Hamartoma** | **Fat density (-40 to -120 HU)**, **popcorn calcification**, smooth, slow growth |
+| **TB tuberculoma** | Upper lobe, satellite nodules, calcification, tree-in-bud, ADA, AFB |
+| **Fungal granuloma** (histo/cocci) | Endemic area, calcification, multiple often |
+| **Sarcoidosis** | Perilymphatic (peribronchovascular, subpleural, septal), bilateral hilar nodes |
+| **Rheumatoid nodule** | Subpleural, cavitation, known RA, RF/CCP +ve |
+| **GPA/EGPA** | Cavitating nodules, systemic vasculitis, ANCA +ve |
+| **Carcinoid** | Central, enhancing, may cause obstruction, SUV low (false PET neg) |
+| **AVM** | Feeding artery/draining vein, contrast enhancement, bruit |
+
+## Management
+### 1. Surveillance (Fleischner/BTS)
+**Solid Nodules:**
+| Size | Low Risk | High Risk |
+|------|----------|-----------|
+| **<6 mm** | None | Optional CT 12 mo |
+| **6–8 mm** | CT 6–12 mo, then 18–24 mo | CT 6–12 mo, then 18–24 mo |
+| **>8 mm** | See probability pathway | See probability pathway |
+
+**Subsolid (GGN/Part-solid):**
+| Type | Follow-up |
+|------|-----------|
+| **Pure GGN <6 mm** | None |
+| **Pure GGN ≥6 mm** | CT 6–12 mo, then q2y ×5 years |
+| **Part-solid <6 mm** | CT 3–6 mo confirm persistence |
+| **Part-solid ≥6 mm** | Solid component ≥6 mm → PET-CT/biopsy |
+
+### 2. PET-CT Based
+- **SUVmax <1.5** → Surveillance (Fleischner)
+- **SUVmax 1.5–2.5** → Short-interval CT (3 mo) or biopsy
+- **SUVmax >2.5** → Biopsy (TTNA/bronch/VATS)
+
+### 3. Tissue Diagnosis Pathway
+| Nodule Characteristic | Preferred Biopsy |
+|----------------------|------------------|
+| **Peripheral, >1 cm, pleural contact** | **TTNA (CT-guided)** |
+| **Central, endobronchial, mediastinal nodes** | **Bronchoscopy ± EBUS/navigation** |
+| **Subsolid, part-solid, central, failed TTNA/bronch** | **VATS (diagnostic + therapeutic)** |
+| **High surgical risk, diagnostic uncertainty** | **VATS** |
+
+### 4. Confirmed Benign
+- **Discharge** (if granuloma, hamartoma, stable ≥2 years, fat/calcification)
+- **Treat underlying** (TB, fungal, sarcoid, rheumatoid, infection)
+
+### 5. Confirmed Malignant
+- **Staging** (PET-CT, brain MRI, EBUS/EUS for nodes)
+- **MDT discussion** → treatment (surgery, radiotherapy, systemic therapy, multimodal)
+- **Early stage (I-II)** → **Surgical resection** (lobectomy + lymphadenectomy) ± adjuvant
+- **Locally advanced (III)** → **Chemoradiotherapy** ± immunotherapy
+- **Metastatic (IV)** → **Systemic therapy** (targeted, immunotherapy, chemotherapy)
+
+## Drug Interactions / Contraindications / Cautions
+### Biopsy-Specific
+| Procedure | Contraindications | Cautions |
+|-----------|-------------------|----------|
+| **TTNA** | Uncorrected coagulopathy (INR >1.5, plt <50), severe pulmonary hypertension, contralateral pneumonectomy | Emphysema (pneumothorax risk), small nodule <1 cm (lower yield) |
+| **Bronchoscopy** | Severe hypoxaemia (unless intubated), unstable haemodynamics, recent MI | Anticoagulation (hold for biopsy), URTI |
+| **VATS** | Unfit for GA, no pleural space, extensive adhesions | Poor pulmonary reserve (FEV1 <30%) |
+
+### PET-CT
+- **Diabetes** (blood glucose <10 mmol/L ideal; high glucose → false neg)
+- **Pregnancy** (avoid unless essential)
+- **Recent surgery/RT** (false + inflammation)
+
+## Procedures
+### TTNA (CT-Guided Core Biopsy)
+1. **CT localisation** → skin mark
+2. **Local anaesthetic** (1% lidocaine) → pleural surface
+3. **Coaxial needle** (17–19G introducer) → **core biopsy needle** (18–20G) for histology
+4. **Multiple passes** (≥3 cores for histology + cytology)
+5. **Post-procedure CT** → check pneumothorax
+6. **Observation 2–4h** → repeat CXR → discharge if stable
+
+### Bronchoscopy for SPN
+1. **Pre-procedure**: NBM 4h, sedation (midazolam ± fentanyl), topical lidocaine
+2. **Navigation**: **Radial EBUS** (ultrasound probe confirms nodule contact) ± **Electromagnetic navigation** (ENB)
+3. **Sampling**: Transbronchial biopsy (TBBx), brushing, washing, forceps biopsy
+4. **ROSE** (Rapid On-Site Evaluation) if available → improves yield
+5. **Post-procedure**: CXR if TBBx done (pneumothorax check)
+
+## Complications
+### TTNA
+- **Pneumothorax** 15-25% (5-10% need drain) — risk: emphysema, small nodule, deep, lower lobe, multiple passes
+- **Haemorrhage** (usually self-limiting, <1% major)
+- **Air embolism** (rare, fatal)
+- **Tumour seeding** (track, <0.1%)
+
+### Bronchoscopy
+- **Bleeding** (post-biopsy, usually minor)
+- **Pneumothorax** (rare, <1% with TBBx)
+- **Hypoxaemia** (monitor SpO2)
+- **Laryngospasm/bronchospasm**
+
+### VATS
+- **Air leak** (prolonged >5-7 days)
+- **Bleeding**
+- **Pain** (intercostal nerve)
+- **Empyema** (rare)
+- **Conversion to thoracotomy**
+
+## Red Flags / Emergencies
+- **Rapid growth** (doubling <3 months) → aggressive malignancy
+- **New symptoms** (haemoptysis, weight loss, pain)
+- **SVC obstruction** (mediastinal invasion)
+- **Massive haemoptysis** (bronchial artery embolisation)
+- **Post-biopsy tension pneumothorax** → immediate needle decompression
+
+## Special Situations
+### Ground-Glass Nodules (GGN)
+- **Pure GGN** = adenocarcinoma in situ (AIS) / minimally invasive (MIA) / lepidic adenocarcinoma
+- **Persistence** = key (follow 2+ years for pure GGN)
+- **Part-solid** = invasive adenocarcinoma (solid component size = invasive component)
+
+### Multiple Nodules (not SPN)
+- **Mets** (most common)
+- **TB** (miliary, tuberculoma)
+- **Sarcoid** (perilymphatic)
+- **Septic emboli** (feeding vessel sign)
+- **Granulomatosis (GPA/EGPA)**
+- **Sept emboli** (IVDU, endocarditis)
+
+### Subcentimeter Nodules (<5 mm)
+- **Overwhelmingly benign** in low-risk
+- **Follow-up** per Fleischner only if high risk
+
+### Pregnancy
+- **CT chest** — shielded, low-dose if essential
+- **PET-CT** — avoid
+- **Biopsy** — TTNA preferred (no sedation), delay VATS if possible
+
+## Prognosis
+| Scenario | Outcome |
+|----------|---------|
+| **Benign (granuloma, hamartoma, stable)** | Excellent (no mortality from nodule) |
+| **Early lung cancer (Stage IA, surgically resected)** | **5-year OS 70-90%** |
+| **Advanced lung cancer (Stage IV)** | Median 12-24 mo (targeted/immunotherapy improving) |
+| **Missed malignancy (delayed diagnosis)** | Stage migration → worse survival |
+
+## Topic Correlation
+- [[Lung cancer]] — primary malignancy
+- [[CT chest pattern approach]] — nodule characterisation
+- [[PET-CT]] — metabolic assessment
+- [[Bronchoscopy]] —, [[Transthoracic needle biopsy]] — tissue diagnosis
+- [[Pancoast tumor]] — apical nodule/mass
+- [[Malignant pleural effusion]] — staging
+
+## FCPS/MRCP High-Yield Points
+1. **SPN ≤3 cm**, mass >3 cm; incidental 95%
+2. **Fleischner 2017** follow-up by size/risk; **BTS** probability-based
+3. **Risk factors**: Age >60, smoking, prior cancer, asbestos, COPD
+4. **CT malignant features**: Spiculation, lobulation, part-solid, upper lobe, pleural tag, satellite nodules
+5. **Benign patterns**: **Fat (-40 to -120 HU) = hamartoma**; **Calcification** (central, laminated, popcorn, diffuse = benign; eccentric/stippled = malignant)
+6. **Doubling time** 20–400 days = malignant; >400 days = benign; **Stable ≥2 years = benign**
+6. **PET-CT**: SUV >2.5 malignant; <1.5 benign; false neg (carcinoid, AIS, MIA, <8 mm); false + (TB, granuloma, sarcoid, infection)
+7. **Probability calculators**: Brock (UKLS validated), Mayo, Herder (post-PET)
+8. **Biopsy**: TTNA peripheral >1 cm (90% yield, 15-25% pneumothorax); Bronchoscopy central/EBUS; VATS diagnostic uncertainty
+9. **Surveillance**: Fleischner low risk <6 mm no follow-up; 6-8 mm CT 6-12 mo; >8 mm probability pathway
+10. **Subsolid**: Pure GGN persistent → follow q2y ×5y; Part-solid solid component ≥6 mm → PET/biopsy
+
+## Common Viva Questions
+1. Fleischner vs BTS follow-up for solid/subsolid nodules
+2. CT features of malignancy vs benign
+3. PET-CT interpretation (SUV thresholds, false +/−)
+4. Probability calculators (Brock, Mayo, Herder)
+5. Biopsy modality selection (TTNA vs bronchoscopy vs VATS)
+6. Benign calcification patterns
+7. Subsolid nodule management (pure GGN vs part-solid)
+8. Probability-based management pathway
+
+## Common Confusions / Exam Traps
+- **All nodules need PET-CT** — NO, only >8 mm intermediate probability
+- **Stable 1 year = benign** — NO, need **≥2 years** stability
+- **PET-CT negative = definitely benign** — NO, false neg in carcinoid, AIS, MIA, slow-growing, <8 mm
+- **Popcorn calcification = malignant** — NO, **hamartoma = benign**
+- **Fat density = malignant** — NO, **hamartoma = benign**
+- **TTNA for all nodules** — NO, central = bronchoscopy; small <1 cm = low yield
+- **Bronchoscopy for peripheral nodules** — LOW yield without navigation/EBUS
+- **Surgery for all SPN >8 mm** — NO, probability-based, biopsy first
+
+## Mnemonics
+- **SPN MALIGNANCY RISK**: **S**ize (>8mm), **P**leural tag, **N**odule type (part-solid), **M**argins (spiculated), **A**ge >60, **L**ocation (upper lobe), **I**nternal density (solid), **G**rowth (documented), **N**icotine (smoking), **A**sbestos, **N**odule count (solitary), **C**alcification (eccentric), **Y**ears (stable 2y=benign)
+- **BENIGN CALCIFICATION**: **C**entral, **L**aminated, **P**opcorn, **D**iffuse = **CLPD** (benign); **E**ccentric, **S**tippled = **malignant possible**
+- **FLEISCHNER SOLID**: **<6mm** low risk = **none**; high risk = **optional 12mo**; **6-8mm** = **CT 6-12mo → 18-24mo**; **>8mm** = **probability pathway**
+- **PET THRESHOLDS**: **<1.5** benign; **1.5-2.5** indeterminate; **>2.5** malignant
+- **FALSE PET NEG**: **C**arcinoid, **A**IS/**M**IA, **M**ucinous, **S**low-growing, **S**mall <8mm = **CAMSS**
+- **BIOPSY CHOICE**: **P**eripheral >1cm + pleural contact = **T**TNA; **C**entral/endobronchial/nodes = **B**ronchoscopy; **U**ncertain/failed = **V**ATS
+
+## Mind Map
+```mermaid
+mindmap
+  root((SPN Approach))
+    Definition
+      ≤3cm, well-circumscribed, aerated lung
+      Mass >3cm
+    CT Features
+      Malignant: spiculated, lobulated, part-solid, upper lobe, pleural tag
+      Benign: smooth, fat (-40 to -120), calcification (central/laminated/popcorn/diffuse)
+    Probability
+      Brock, Mayo, Herder (post-PET)
+      Low <5% → Surveillance
+      Intermediate 5-70% → PET-CT
+      High >70% → Biopsy + Staging
+    PET-CT
+      SUV <1.5 benign
+      SUV >2.5 malignant
+      False neg: carcinoid, AIS, MIA, <8mm
+      False pos: TB, granuloma, sarcoid
+    Management
+      Surveillance (Fleischner/BTS)
+      Biopsy: TTNA (peripheral), Bronch (central), VATS (uncertain)
+      Surgery (early stage)
+    Subsolid
+      Pure GGN: persistent → q2y x5y
+      Part-solid: solid component ≥6mm → PET/biopsy
+```
+
+## Flowchart
+```mermaid
+flowchart TD
+    A[Incidental SPN on CT] --> B[Characterise: size, margins, density, fat, calcification, prior imaging]
+    B --> C{Benign specific pattern?\nFat / Benign calcification / Stable ≥2y}
+    C -- YES --> D[BENIGN → Discharge / Treat underlying]
+    C -- NO --> E[Calculate Probability (Brock/Mayo)]
+    E --> F{Risk Category}
+    F -- Very Low <5% --> G[Fleischner Surveillance]
+    F -- Low 5-30% --> H[PET-CT]
+    H --> I{SUV}
+    I -- <1.5 --> G
+    I -- 1.5-2.5 --> J[CT 3mo or Biopsy]
+    I -- >2.5 --> K[Biopsy]
+    F -- Intermediate 30-70% --> L[PET-CT → Biopsy]
+    F -- High >70% --> M[Direct Biopsy + Staging PET-CT]
+    K --> N[TTNA (peripheral) / Bronch (central) / VATS (uncertain)]
+    M --> N
+    N --> O{Diagnosis}
+    O -- Benign --> G
+    O -- Malignant --> P[Staging → MDT → Treatment]
+```
+
+## Suggested Visuals / Image Notes
+- SPN CT examples: malignant (spiculated, part-solid) vs benign (hamartoma fat/popcorn, granuloma calcification)
+- Fleischner follow-up tables
+- PET-CT SUV thresholds
+- Probability calculator inputs
+- Biopsy modality decision tree
+- Subsolid nodule classification (AIS, MIA, invasive)
+
+## Suggested Video References
+- BTS pulmonary nodule guideline
+- Fleischner Society 2017 guidelines
+- PET-CT interpretation for SPN
+- TTNA technique
+- Bronchoscopy with radial EBUS/navigation
+- VATS for SPN
+- Subsolid nodule management (AIS/MIA)
+
+## One-Page Revision Summary
+- **SPN** = ≤3 cm, single, well-circumscribed, aerated lung
+- **Malignant CT**: Spiculated, lobulated, part-solid, upper lobe, pleural tag, satellite nodules
+- **Benign CT**: Smooth, **fat (-40 to -120 HU) = hamartoma**, **calcification** (central, laminated, popcorn, diffuse)
+- **Stable ≥2 years** = benign
+- **Doubling time** 20-400 days = malignant
+- **Fleischner**: <6mm low risk no follow-up; 6-8mm CT 6-12mo; >8mm probability pathway
+- **PET-CT**: SUV <1.5 benign, >2.5 malignant; false neg: carcinoid, AIS, MIA, <8mm
+- **Brock/Mayo/Herder** probability calculators
+- **Biopsy**: TTNA peripheral >1cm; Bronch central/EBUS; VATS uncertainty
+- **Subsolid**: Pure GGN persistent → q2y×5y; Part-solid solid≥6mm → PET/biopsy
+
+## 24-Hour Recall Prompts
+- SPN definition and size cutoff
+- 3 malignant CT features, 3 benign CT features
+- Fleischner follow-up for <6mm, 6-8mm, >8mm
+- PET-CT SUV thresholds and false neg/pos
+- Benign calcification patterns
+- Biopsy modality selection
+- Subsolid nodule management
+
+## 7-Day / 15-Day / 30-Day Revision Tracker
+- [ ] Day 1 completed
+- [ ] 24-hour recall completed
+- [ ] Day 7 revision completed
+- [ ] Day 15 revision completed
+- [ ] Day 30 revision completed
+
+## Must Know / Should Know / Nice to Know
+### Must Know
+- SPN definition (≤3 cm) vs mass (>3 cm)
+- Fleischner 2017 solid nodule follow-up table
+- Malignant vs benign CT features
+- Benign calcification patterns (CLPD) and fat density
+- PET-CT SUV thresholds and false neg/pos
+- Probability calculators (Brock, Mayo, Herder)
+- Biopsy modality selection (TTNA, bronch, VATS)
+- Subsolid nodule basics (pure GGN vs part-solid)
+
+### Should Know
+- Volume doubling time calculation
+- BTS 2015/2023 algorithm differences from Fleischner
+- Herder model (post-PET probability)
+- Carcinoid/AIS/MIA PET false negatives
+- Round atelectasis, AVM mimics
+- Pregnancy/pediatric adaptations
+
+### Nice to Know
+- AI/CAD for nodule detection
+- Liquid biopsy (ctDNA) for SPN
+- Cost-effectiveness of screening (NLST, NELSON, UKLS)
+- Genetic markers in nodules
+- Long-term outcomes of surveillance cohorts
+
+## Self-Test Scorecard
+- Understanding: /10
+- Recall: /10
+- MCQ Performance: /10
+- SBA Performance: /10
+- Viva Confidence: /10
+- Total: /50
+
+> [!tip]
+> Interpretation: <35 = weak topic, 35-44 = acceptable but insecure, 45+ = strong exam-ready topic.
+
+## Exam Answer Modes
+### Long Answer Skeleton
+- Definition (SPN ≤3 cm, mass >3 cm)
+- Clinical risk factors table
+- CT morphology (malignant vs benign features table)
+- Benign specific patterns (fat, calcification types)
+- Probability assessment (Brock, Mayo, Herder)
+- Management algorithms (Fleischner, BTS) for solid and subsolid
+- PET-CT role, thresholds, limitations
+- Tissue diagnosis pathway (TTNA, bronchoscopy, VATS)
+- Subsolid nodule management (AIS, MIA, invasive)
+- Follow-up and discharge criteria
+
+### Short Note Skeleton
+- Definition box
+- CT features comparison table
+- Fleischner table
+- PET thresholds box
+- Biopsy decision tree
+- Subsolid algorithm
+
+### Viva One-Liners
+- "SPN ≤3 cm, single, well-circumscribed; mass >3 cm"
+- "Fleischner solid: <6mm low risk no follow-up; 6-8mm CT 6-12mo→18-24mo; >8mm probability pathway"
+- "Malignant CT: spiculated, lobulated, part-solid, upper lobe, pleural tag, satellite nodules"
+- "Benign CT: smooth, fat (-40 to -120 HU)=hamartoma, calcification (central/laminated/popcorn/diffuse)"
+- "Stable ≥2 years = benign; Doubling time 20-400 days = malignant"
+- "PET: SUV <1.5 benign, >2.5 malignant; False neg: carcinoid, AIS, MIA, <8mm"
+- "Probability: Brock (UK), Mayo, Herder (post-PET)"
+- "Biopsy: TTNA peripheral >1cm pleural contact; Bronch central/EBUS; VATS diagnostic uncertainty"
+- "Subsolid: Pure GGN persistent → q2y×5y; Part-solid solid≥6mm → PET/biopsy"
+- "Benign calcification: Central, Laminated, Popcorn, Diffuse = CLPD"
+
+### Ward-Case Discussion Points
+- 65M smoker, 12 mm RUL spiculated nodule, Brock 65% → PET-CT SUV 8.2 → TTNA biopsy → adenocarcinoma → staging PET-CT + brain MRI → MDT → lobectomy
+- 40F never-smoker, 5 mm LLL pure GGN, Brock 2% → Fleischner: optional CT 12 mo (low risk pure GGN <6mm)
+- 70M ex-smoker, 25 mm part-solid RUL, solid component 10 mm, SUV 12 → high probability → VATS wedge resection (diagnostic + therapeutic) → MIA (minimally invasive adenocarcinoma)
+
+### Last-Night-Before-Exam Sheet
+- SPN ≤3cm, Mass >3cm
+- Fleischner: <6mm none; 6-8mm CT 6-12mo; >8mm prob pathway
+- Malig: Spic, lobulated, part-solid, upper lobe, pleural tag
+- Benign: Smooth, Fat=-hamartoma, Calcif: Central/Laminated/Popcorn/Diffuse
+- Stable 2y = benign; DT 20-400d = malig
+- PET: <1.5 benign, >2.5 malig; False neg: Carcinoid, AIS, MIA, <8mm
+- Prob: Brock, Mayo, Herder
+- Biopsy: TTNA peripheral; Bronch central; VATS uncertain
+- Subsolid: Pure GGN q2y×5y; Part-solid solid≥6mm→PET/biopsy
+
+## Summary
+**Solitary pulmonary nodule (SPN)** = single, well-circumscribed opacity **≤3 cm** in lung parenchyma. **Mass >3 cm**. **CT characterisation** is key: **Malignant features** = spiculated margins, lobulation, part-solid (mixed GGO), upper lobe, pleural retraction, satellite nodules. **Benign features** = smooth margins, **fat density (-40 to -120 HU) = hamartoma**, **benign calcification patterns** (central, laminated, popcorn, diffuse); eccentric/stippled calcification = malignant suspicion. **Stability ≥2 years** = benign; **volume doubling time 20–400 days** = malignant. **Management**: **Fleischner Society 2017** (low risk <6mm no follow-up; 6–8mm CT 6–12mo; >8mm probability-based) and **BTS** (probability calculators: Brock, Mayo, Herder). **PET-CT** for >8mm intermediate probability: SUV <1.5 benign, >2.5 malignant; **false negatives** in carcinoid, AIS/MIA, mucinous, <8mm; **false positives** in TB, granuloma, sarcoid, infection. **Biopsy**: **TTNA** for peripheral >1cm with pleural contact; **bronchoscopy ± EBUS/navigation** for central/endobronchial/nodes; **VATS** for diagnostic uncertainty/failed less invasive. **Subsolid nodules**: Pure GGN persistent → CT q2y ×5 years; Part-solid with solid component ≥6mm → PET-CT/biopsy (invasive adenocarcinoma).
+
+## MCQs (10)
+1. **SPN size threshold** distinguishing nodule from mass:
+   A. 2 cm
+   B. **3 cm**
+   C. 4 cm
+   D. 5 cm
+
+2. **Fleischner 2017** — solid nodule <6 mm in low-risk patient:
+   A. CT at 3 months
+   B. CT at 6 months
+   C. **No routine follow-up**
+   D. PET-CT
+
+3. **Benign calcification pattern** — popcorn calcification is characteristic of:
+   A. Granuloma
+   B. **Hamartoma**
+   C. Carcinoid
+   D. Metastasis
+
+4. **Fat density** on CT (-40 to -120 HU) in a pulmonary nodule indicates:
+   A. Lipoid pneumonia
+   B. **Hamartoma**
+   C. Liposarcoma
+   D. Metastatic liposarcoma
+
+5. **PET-CT SUVmax threshold** for likely malignancy:
+   A. >1.0
+   B. >1.5
+   C. **>2.5**
+   D. >3.0
+
+6. **False negative PET-CT** for SPN — which is NOT a cause?
+   A. Carcinoid tumour
+   B. Adenocarcinoma in situ (AIS)
+   C. **Fast-growing small cell carcinoma**
+   D. Nodule <8 mm
+
+7. **Biopsy modality** for peripheral nodule >1 cm with pleural contact:
+   A. Bronchoscopy
+   B. **TTNA (CT-guided)**
+   C. VATS
+   D. Sputum cytology
+
+8. **Subsolid nodule** — pure ground-glass nodule (GGN) ≥6 mm, persistent:
+   A. Immediate biopsy
+   B. PET-CT
+   C. **CT surveillance every 2 years for 5 years (Fleischner)**
+   D. No follow-up needed
+
+9. **Stability** on serial CT — minimum duration to consider benign:
+   A. 6 months
+   B. 1 year
+   C. **2 years**
+   D. 3 years
+
+10. **Volume doubling time** typical for malignant nodule:
+    A. <7 days
+    B. **20–400 days**
+    C. 500–1000 days
+    D. >1000 days
+
+## SBA Questions (10)
+1. A 62M smoker (40 pack-years), incidental 14 mm RUL solid nodule, spiculated margins. Brock probability 55%. Next step?
+   A. CT surveillance 3 months
+   B. **PET-CT**
+   C. Immediate TTNA
+   D. VATS wedge resection
+
+2. Same patient, PET-CT SUVmax 8.5. Next step?
+   A. CT surveillance
+   B. **TTNA biopsy (peripheral, >1 cm, pleural contact)**
+   C. Bronchoscopy
+   D. Empiric radiotherapy
+
+3. A 45F never-smoker, incidental 5 mm LLL pure GGN. No prior imaging. Fleischner recommendation?
+   A. CT at 3 months
+   B. CT at 6 months
+   C. **Optional CT at 12 months (low risk, pure GGN <6 mm) or no follow-up**
+   D. PET-CT
+
+4. A 70M prior renal cell carcinoma (nephrectomy 3 years ago), new 18 mm RML nodule. Most likely?
+   A. Primary lung cancer
+   B. **Metastatic renal cell carcinoma**
+   C. Granuloma
+   D. Hamartoma
+
+5. Pulmonary nodule with **popcorn calcification** and **fat density (-80 HU)**. Diagnosis?
+   A. Tuberculoma
+   B. **Hamartoma**
+   C. Carcinoid
+   D. Metastatic osteosarcoma
+
+6. A 55M, 22 mm part-solid RUL nodule, solid component 12 mm. High risk. Next step?
+   A. CT surveillance 3 months
+   B. **PET-CT (solid component ≥6 mm → high risk)**
+   C. Bronchoscopy
+   C. Immediate VATS
+
+7. Which nodule feature is MOST reassuring for benignity?
+   A. Spiculated margins
+   B. **Stable size on CT 3 years ago**
+   C. Upper lobe location
+   D. Solid density
+
+8. PET-CT SUVmax 1.2 in a 15 mm nodule. Interpretation?
+   A. Definitely benign
+   B. **Likely benign (but false neg possible: carcinoid, AIS, MIA, <8mm)**
+   C. Indeterminate
+   D. Malignant
+
+9. Transthoracic needle aspiration (TTNA) — most common significant complication:
+   A. Haemorrhage requiring transfusion
+   B. **Pneumothorax (15-25%, 5-10% need drain)**
+   C. Air embolism
+   D. Tumour seeding
+
+10. Fleischner follow-up for solid nodule 6–8 mm in high-risk patient:
+    A. CT 12 months only
+    B. **CT 6–12 months, then 18–24 months**
+    C. CT 3 months, then 12 months
+    D. PET-CT
+
+## Flashcards
+- Q: SPN size cutoff
+  A: ≤3cm (mass >3cm)
+- Q: Fleischner <6mm low risk
+  A: No routine follow-up
+- Q: Fleischner 6-8mm
+  A: CT 6-12mo, then 18-24mo
+- Q: Malignant CT features
+  A: Spiculated, lobulated, part-solid, upper lobe, pleural tag
+- Q: Benign CT features
+  A: Smooth, fat (-40 to -120), benign calcification
+- Q: Popcorn calcification
+  A: Hamartoma
+- Q: Fat density
+  A: Hamartoma
+- Q: Stable benign
+  A: ≥2 years
+- Q: Doubling time malig
+  A: 20-400 days
+- Q: PET SUV thresholds
+  A: <1.5 benign, >2.5 malig
+- Q: PET false neg
+  A: Carcinoid, AIS, MIA, <8mm
+- Q: TTNA indication
+  A: Peripheral >1cm, pleural contact
+- Q: Bronch indication
+  A: Central, endobronchial, nodes
+- Q: Subsolid pure GGN ≥6mm
+  A: CT q2y ×5y
+- Q: Part-solid solid≥6mm
+  A: PET-CT / Biopsy
+
+## Answer Key with Explanations
+### MCQs
+1. **B** — SPN ≤3 cm; mass >3 cm.
+2. **C** — Fleischner: low risk <6mm no routine follow-up.
+3. **B** — Popcorn calcification = hamartoma.
+4. **B** — Fat density (-40 to -120 HU) = hamartoma (diagnostic).
+5. **C** — SUVmax >2.5 = likely malignant.
+6. **C** — Small cell carcinoma is fast-growing, typically PET-avid (not false negative).
+7. **B** — TTNA preferred for peripheral >1cm with pleural contact (yield 90-95%).
+8. **C** — Fleischner: pure GGN ≥6mm persistent → CT q2y ×5 years.
+9. **C** — Stability ≥2 years on serial CT = benign.
+10. **B** — Malignant nodule typical doubling time 20-400 days.
+
+### SBAs
+1. **B** — Brock 55% = intermediate → PET-CT (Fleischner/BTS).
+2. **B** — SUV 8.5 + peripheral >1cm → TTNA (highest yield).
+3. **C** — Low risk, pure GGN <6mm → optional CT 12mo or no follow-up.
+4. **B** — Prior RCC + new solitary nodule = metastasis until proven otherwise.
+5. **B** — Popcorn calcification + fat = hamartoma (pathognomonic).
+6. **B** — Part-solid with solid component ≥6mm → PET-CT/biopsy (invasive adenocarcinoma likely).
+7. **B** — Stability ≥2 years = benign (strongest reassuring feature).
+8. **B** — SUV 1.2 = likely benign BUT false negatives exist (carcinoid, AIS, MIA, <8mm).
+9. **B** — Pneumothorax 15-25% (5-10% need drain) is most common significant complication.
+10. **B** — Fleischner: 6-8mm high risk → CT 6-12mo, then 18-24mo.
+
+### Flashcards
+All correct as written.
+
+---

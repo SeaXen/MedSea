@@ -1,0 +1,377 @@
+---
+tags: [medicine, respiratory, weaning, mechanical-ventilation, davidson, fcps, mrcp]
+chapter: Respiratory
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 17: Respiratory medicine
+topic: Weaning and escalation pitfalls
+exam: FCPS, MRCP
+references:
+  clinical: ["BTS 2017", "Davidson", "PasTest"]
+related: [Respiratory Failure, Oxygen Therapy and NIV, Indications for intubation in respiratory disease, NIV failure and escalation triggers, ARDS]
+status: full-fcps-mrcp-note
+last_updated: 2026-06-16
+---
+
+# Weaning and escalation pitfalls
+
+> [!important]
+> **Weaning from mechanical ventilation** should be considered as soon as the underlying cause is resolving. Prolonged ventilation is associated with VAP, ICU weakness, delirium, and mortality. Successful weaning requires systematic assessment, **spontaneous breathing trial (SBT)**, and careful extubation.
+
+Related: [[Respiratory Failure]], [[Oxygen Therapy and NIV]], [[Indications for intubation in respiratory disease]], [[NIV failure and escalation triggers]]
+
+> [!tip] **FCPS/MRCP pearl**: Weaning is possible when **FiO₂ ≤0.4, PEEP ≤5, haemodynamically stable, adequate mental status, and RSBI <105**. **SBT** = 30–120 min on T-piece or PSV 5–8 cmH₂O. **Extubate** if tolerated. **NIV after extubation** reduces reintubation in high-risk patients.
+
+## Definition
+
+**Weaning** = process of reducing ventilatory support and liberating from mechanical ventilation.
+
+## Weaning Categories
+
+| Category | Duration | Definition |
+|----------|----------|------------|
+| **Simple** | <24 h from initiation | Single SBT + extubation |
+| **Difficult** | 1–7 days | Multiple SBTs required |
+| **Prolonged** | >7 days | Repeated SBTs + tracheostomy often needed |
+
+## Weaning Criteria
+
+### Pre-requisites
+- **Underlying cause** resolving
+- **Haemodynamically stable** (no shock, low-dose vasopressors acceptable)
+- **Adequate mental status** (RASS 0 to -2; GCS >13)
+- **Adequate cough** (sputum clearance)
+- **No excessive secretions**
+- **Adequate oxygenation**: PaO₂/FiO₂ >200, PEEP ≤5, FiO₂ ≤0.4
+- **Adequate ventilation**: pH >7.30, PaCO₂ <50 mmHg (in COPD higher)
+- **No new infection** (active)
+- **Stable metabolic state**
+
+### RSBI (Rapid Shallow Breathing Index)
+- **RSBI = RR / TV (litres)**
+- **Normal <105** → predict successful weaning
+- **>105** → high risk of weaning failure
+
+## Spontaneous Breathing Trial (SBT)
+
+### Methods
+- **T-piece** (no support) for 30–120 min
+- **PSV 5–8 cmH₂O** + PEEP 5 (low-level support)
+- **Either equivalent**; PSV may be slightly better tolerated
+
+### Monitoring during SBT
+- **RR** (≤35 = pass)
+- **SpO₂** (≥90 = pass)
+- **HR** (≤140 or <20% change = pass)
+- **BP** (stable = pass)
+- **Subjective distress** (none = pass)
+- **ABG** (if signs of failure)
+- **Conscious level** (stable)
+
+### SBT failure criteria
+- RR >35 for >5 min
+- SpO₂ <90 for >30 s
+- HR >140 or ↑>20% from baseline
+- SBP <80 or >180
+- Agitation, diaphoresis, distress
+- pH <7.30 or ↑PaCO₂ >10 mmHg
+
+## Extubation
+
+### Successful SBT → extubate
+- **O₂ via nasal cannula** or **HFNC** (in high-risk)
+- **NIV post-extubation** in high-risk patients (age >65, COPD, hypercapnia)
+- Monitor for stridor (cuff leak test if high risk)
+
+### Cuff leak test
+- Measures air leak around deflated ETT cuff
+- **Low leak (<110 mL)** = high risk of post-extubation stridor
+- Consider steroids (methylprednisolone 4 h before)
+
+## Difficult/Prolonged Weaning
+
+### Causes
+- **Respiratory muscle weakness** (critical illness myopathy, neuropathy, disuse atrophy)
+- **Cardiac dysfunction** (weaning-induced pulmonary oedema)
+- **Fluid overload**
+- **Persistent underlying disease**
+- **Psychological dependence** (anxiety, depression)
+- **Excess sedation**
+- **Malnutrition**
+- **Endocrine** (adrenal, thyroid)
+
+### Management
+- **Treat underlying cause**
+- **Optimise nutrition** (avoid overfeeding)
+- **Daily sedation hold** (minimise sedation)
+- **Rehabilitation** (early mobility)
+- **Tracheostomy** (if prolonged weaning expected)
+- **NIV post-extubation** in high-risk
+
+## Tracheostomy
+
+### Indications
+- Prolonged ventilation expected (>7–10 days)
+- Failed extubation
+- Airway protection (NM weakness, bulbar dysfunction)
+- Secretion management
+
+### Timing
+- **Early tracheostomy** (≤4 days) may reduce ventilation days
+- **Late tracheostomy** (≥10 days) for prolonged weaning
+
+### Speaking valve
+- **Passy-Muir** valve (one-way, allows speech)
+- Deflates cuff, allows air through vocal cords
+
+## Escalation Pitfalls
+
+### Reintubation
+- ~10–20% of patients reintubated after extubation
+- **Reintubation = ↑mortality** (2–5×)
+- High-risk: age >65, COPD, ↑secretions, low cough strength
+
+### Postextubation respiratory failure
+- **Within 48 h** = reintubation usually needed
+- HFNC or NIV can prevent
+- **Stridor** = consider reintubation or helium + O₂
+
+### Weaning-induced pulmonary oedema
+- **Cardiac dysfunction** unmasked by ↑workload
+- **Diuretics** + restart support
+- Echo if suspected
+
+## Extubation failure prediction
+- **Cough strength** (weak cough = high risk)
+- **Secretion burden** (copious = high risk)
+- **Cuff leak** <110 mL = stridor risk
+- **Mental status** (low GCS = high risk)
+- **Age, comorbidity**
+
+## FCPS/MRCP High-Yield Summary
+
+| Domain | Key points |
+|--------|------------|
+| **Weaning criteria** | FiO₂ ≤0.4, PEEP ≤5, stable, RSBI <105 |
+| **RSBI** | RR/TV; <105 = success |
+| **SBT** | 30–120 min on T-piece or PSV 5–8 |
+| **Extubation** | After successful SBT |
+| **Cuff leak** | <110 mL = stridor risk |
+| **NIV post-extubation** | High-risk patients |
+| **Reintubation** | ↑Mortality |
+| **Tracheostomy** | Prolonged weaning >7–10 days |
+| **Cardiac dysfunction** | Weaning-induced oedema |
+
+## MCQs (10)
+
+1. RSBI is calculated as:
+   A. RR × TV
+   B. **RR / TV (litres)**
+   C. TV / RR
+   D. RR + TV
+   E. SpO₂ / RR
+   **Answer: B** — RR/TV.
+
+2. RSBI <105 predicts:
+   A. Weaning failure
+   B. **Successful weaning**
+   C. ARDS
+   D. PE
+   E. None
+   **Answer: B** — Success.
+
+3. SBT duration:
+   A. 5 min
+   B. **30–120 min**
+   C. 4 h
+   D. 24 h
+   E. None
+   **Answer: B** — 30–120 min.
+
+4. SBT failure criterion (RR):
+   A. >20
+   B. >25
+   C. **>35 for >5 min**
+   D. >50
+   E. None
+   **Answer: C** — >35 for >5 min.
+
+5. Cuff leak <110 mL suggests:
+   A. Easy extubation
+   B. **Stridor risk**
+   C. Pneumonia
+   D. None
+   E. Failure
+   **Answer: B** — Stridor risk.
+
+6. NIV post-extubation reduces:
+   A. Mortality always
+   B. **Reintubation in high-risk patients**
+   C. Nothing
+   D. Pneumonia
+   E. None
+   **Answer: B** — Reintubation.
+
+7. Prolonged ventilation is associated with all EXCEPT:
+   A. VAP
+   B. **Improved immunity**
+   C. ICU weakness
+   D. Delirium
+   E. Mortality
+   **Answer: B** — Worsens immunity.
+
+8. Tracheostomy is typically considered after:
+   A. 1 day
+   B. 3 days
+   C. **7–10 days of ventilation**
+   D. 1 month
+   E. 6 months
+   **Answer: C** — 7–10 days.
+
+9. Weaning-induced pulmonary oedema is treated with:
+   A. Steroids
+   B. **Diuretics + restart support**
+   C. Antibiotics
+   D. Surgery
+   E. None
+   **Answer: B** — Diuretics.
+
+10. Reintubation within 48 h of extubation is associated with:
+    A. Better outcomes
+    B. **↑Mortality (2–5×)**
+    C. Same
+    D. None
+    E. Unknown
+    **Answer: B** — ↑Mortality.
+
+## SBA Questions (10)
+
+1. A patient on PSV 5, PEEP 5, FiO₂ 0.4 has RSBI 80, stable haemodynamics. Next:
+   A. Continue ventilation
+   B. **SBT (30–120 min)**
+   C. Discharge
+   D. Tracheostomy
+   E. None
+   **Answer: B** — SBT.
+
+2. SBT pass criteria include all EXCEPT:
+   A. RR ≤35
+   B. SpO₂ ≥90
+   C. **HR >140**
+   D. No distress
+   E. Stable BP
+   **Answer: C** — HR >140 = fail.
+
+3. Reintubation post-extubation mortality is:
+   A. Same as primary
+   B. **2–5× higher**
+   C. Lower
+   D. None
+   E. Unknown
+   **Answer: B** — Higher.
+
+4. Cuff leak <110 mL is treated by:
+   A. Wait
+   B. **Steroids 4 h before extubation**
+   C. Intubate immediately
+   D. Antibiotics
+   E. None
+   **Answer: B** — Steroids.
+
+5. A patient fails SBT. Next:
+   A. Discharge
+   B. **Return to full support, treat cause, retry next day**
+   C. Tracheostomy
+   D. Surgery
+   E. None
+   **Answer: B** — Retry.
+
+6. A patient on ventilation for 14 days, multiple SBTs fail. Next:
+   A. Continue ventilation
+   B. **Tracheostomy + slow weaning**
+   C. Discharge
+   D. Surgery
+   E. None
+   **Answer: B** — Tracheostomy.
+
+7. The most important cause of difficult weaning:
+   A. Heart failure
+   B. **Respiratory muscle weakness (ICU-acquired)**
+   C. Anxiety
+   D. Pain
+   E. None
+   **Answer: B** — ICU weakness.
+
+8. The most useful predictor of successful weaning:
+   A. CXR
+   B. **RSBI <105**
+   C. Echo
+   D. Spirogram
+   E. ABG
+   **Answer: B** — RSBI.
+
+9. After successful SBT, the next step is:
+   A. Discharge
+   B. **Extubation**
+   C. Tracheostomy
+   D. Surgery
+   E. None
+   **Answer: B** — Extubate.
+
+10. Daily sedation interruption is associated with:
+    A. Worse outcomes
+    B. **Shorter ventilation, ↓VAP, ↓ICU stay**
+    C. Same
+    D. None
+    E. Unknown
+    **Answer: B** — Shorter ventilation.
+
+## Flashcards
+
+- **Q: RSBI formula?**
+  A: RR / TV (litres).
+
+- **Q: RSBI threshold?**
+  A: <105 = success.
+
+- **Q: SBT duration?**
+  A: 30–120 min.
+
+- **Q: SBT failure RR?**
+  A: >35 for >5 min.
+
+- **Q: Cuff leak <110 mL?**
+  A: Stridor risk.
+
+- **Q: Tracheostomy timing?**
+  A: Consider after 7–10 days of ventilation.
+
+- **Q: Most important weaning predictor?**
+  A: RSBI.
+
+- **Q: Weaning failure - next step?**
+  A: Return to full support, treat cause, retry next day.
+
+- **Q: Weaning-induced oedema Rx?**
+  A: Diuretics + restart support.
+
+- **Q: Reintubation mortality?**
+  A: 2–5× higher.
+
+## Answer Key with Explanations
+
+### MCQs
+1. **B**  2. **B**  3. **B**  4. **C**  5. **B**  6. **B**  7. **B**  8. **C**  9. **B**  10. **B**
+
+### SBAs
+1. **B**  2. **C**  3. **B**  4. **B**  5. **B**  6. **B**  7. **B**  8. **B**  9. **B**  10. **B**
+
+## Summary
+
+Weaning: pre-requisites + RSBI <105 → SBT (30–120 min) → extubation. SBT failure: return to support, treat cause. Tracheostomy: 7–10 days. Cuff leak <110 mL = stridor risk. Reintubation = ↑mortality. Daily sedation interruption reduces ventilation days.
+
+## Local Navigation
+- **Parent Heading**: [[../Respiratory Failure and Ventilatory Support|Respiratory Failure and Ventilatory Support]]
+- **Parent Topic Group**: [[../Respiratory Failure and Ventilatory Support/Ventilatory support and escalation|Ventilatory support and escalation]]
+- **Chapter Map**: [[../Davidson Chapter 17 - Respiratory Medicine Hierarchy|Respiratory Medicine Hierarchy]]
+- **Chapter MOC**: [[../Respiratory MOC|Respiratory MOC]]
+- **Related**: [[Respiratory Failure]] · [[Oxygen Therapy and NIV]] · [[Indications for intubation in respiratory disease]] · [[NIV failure and escalation triggers]]

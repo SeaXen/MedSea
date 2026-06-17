@@ -1,0 +1,399 @@
+---
+tags: [medicine, respiratory, central-hypoventilation, opiates, sedatives, davidson, fcps, mrcp]
+chapter: Respiratory
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 17: Respiratory medicine
+topic: Central hypoventilation and sedative-related ventilatory failure
+exam: FCPS, MRCP
+references:
+  clinical: ["Davidson", "BTS", "PasTest"]
+related: [Respiratory Failure, Type 2 respiratory failure, Oxygen Therapy and NIV, ABG Interpretation, Neuromuscular respiratory weakness]
+status: full-fcps-mrcp-note
+last_updated: 2026-06-16
+---
+
+# Central hypoventilation and sedative-related ventilatory failure
+
+> [!important]
+> **Central hypoventilation** from opioids, sedatives, stroke, or other CNS causes produces **Type 2 respiratory failure** (↓PaO₂ + ↑PaCO₂ + normal A-a gradient). It is a **reversible cause** if recognised early. Treatment is **support ventilation + antidote** (e.g. naloxone for opioids) + airway protection.
+
+Related: [[Respiratory Failure]], [[Type 2 respiratory failure]], [[Oxygen Therapy and NIV]], [[ABG Interpretation]]
+
+> [!tip] **FCPS/MRCP pearl**: **Opioid + benzodiazepine = high-risk combination for respiratory depression**. Always check ABG and RR in any drowsy patient. **Normal A-a gradient + ↑PaCO₂ + ↓PaO₂ = pure hypoventilation**. Treatment: **antidote (naloxone, flumazenil) + ventilation support (NIV/intubation)**. Avoid flumazenil in chronic BZD users (seizure risk).
+
+## Definition
+
+**Central hypoventilation** = reduced drive to breathe from CNS dysfunction, leading to **Type 2 respiratory failure** (hypercapnia + hypoxaemia + **normal A-a gradient**).
+
+## Aetiology
+
+### Drug-induced
+- **Opioids** (morphine, fentanyl, oxycodone, heroin, methadone)
+- **Benzodiazepines** (midazolam, diazepam, lorazepam)
+- **Barbiturates**
+- **Alcohol intoxication**
+- **Tricyclic antidepressants** (overdose)
+- **Gamma-hydroxybutyrate (GHB)**
+- **Ketamine** (high dose)
+- **Sedatives in ICU** (over-sedation)
+
+### CNS lesions
+- **Brainstem stroke** (lateral medullary, basilar)
+- **Tumour** (pons, medulla)
+- **Trauma** (high cervical cord)
+- **Demyelination** (MS, NMOSD)
+- **Infections** (meningoencephalitis)
+- **Anoxic brain injury**
+- **Arnold-Chiari malformation**
+- **Encephalitis, meningitis**
+
+### Congenital / chronic
+- **Congenital central hypoventilation syndrome (CCHS)** (PHOX2B mutation)
+- **Obesity hypoventilation syndrome** (see OHS file)
+- **Late-onset central hypoventilation** (CCHS-related)
+
+### Endocrine / metabolic
+- **Severe hypothyroidism** (myxoedema coma)
+- **Severe metabolic alkalosis** (compensation)
+
+### Other
+- **High cervical cord injury** (above C3)
+- **Severe sleep-disordered breathing** (central hypoventilation)
+
+## Pathophysiology
+
+### Normal respiratory control
+- **Central chemoreceptors** (medulla): respond to ↑PaCO₂ → drive ventilation
+- **Peripheral chemoreceptors** (carotid, aortic bodies): respond to ↓PaO₂, ↑H⁺
+- **Brainstem respiratory centres**: integrate input → motor output to respiratory muscles
+
+### Central hypoventilation mechanisms
+1. **↓Drive to breathe** (drugs, brainstem lesions)
+2. **↓Response to CO₂/hypoxia** (congenital, chronic)
+3. **↑Work of breathing** (impaired muscle function) — but here drive is intact
+4. **Disordered integration** (brainstem disease)
+
+## Clinical Features
+
+### Symptoms
+- **Drowsiness, lethargy, confusion**
+- **Headache** (especially morning — hypercapnia)
+- **Dyspnoea** (often absent in chronic)
+- **Visual disturbance, tremor, asterixis**
+- **Snoring** (sleep-disordered)
+
+### Signs
+- **↓Respiratory rate** (RR <12 = warning)
+- **↓Tidal volume** (shallow breathing)
+- **Cyanosis** (severe)
+- **Bounding pulse, peripheral vasodilation** (CO₂ retention)
+- **Asterixis** (flapping tremor)
+- **Papilloedema** (severe CO₂ retention)
+- **Confusion → coma** (progressive)
+
+### Toxidromes
+| Substance | Features |
+|-----------|----------|
+| **Opioids** | Miosis, ↓RR, ↓GCS, ↓BP, bradycardia |
+| **Benzodiazepines** | Miosis (variable), ↓RR, ↓GCS, ataxia, nystagmus |
+| **TCA overdose** | Mydriasis, ↓RR, ↓BP, ↓GCS, **QRS widening**, seizures |
+| **Alcohol** | Ataxia, ↓RR, ↓GCS, hypoglycaemia |
+| **Opioid + benzo** | Severe CNS depression, ↑mortality |
+
+## Diagnosis
+
+### ABG
+- **↓PaO₂ + ↑PaCO₂ + ↓pH** (acute)
+- **Normal A-a gradient** (key)
+- ↑Bicarbonate (chronic compensation)
+
+### Toxicology screen
+- Serum/urine drug levels (opioid, BZD, alcohol)
+- ECG (QRS in TCA, QTc)
+
+### Imaging
+- **CT/MRI brain** (if brainstem lesion suspected)
+- **CXR** (aspiration pneumonia)
+
+### Other
+- **Sleep study** (chronic hypoventilation)
+- **Genetic testing** (PHOX2B for CCHS)
+
+## Management
+
+### General
+- **A–B–C assessment**
+- **Airway protection** (GCS <8 → intubate)
+- **Supplemental O₂** (controlled)
+- **Support ventilation** (NIV, intubation)
+- **Reversal agents if applicable**
+
+### Specific antidotes
+| Drug | Antidote | Dose |
+|------|----------|------|
+| **Opioids** | **Naloxone** | 0.4–2 mg IV (titrate) |
+| **Benzodiazepines** | **Flumazenil** | 0.2 mg IV (cautious) |
+| **TCA** | **Sodium bicarbonate** | 1–2 mEq/kg IV |
+| **Paracetamol** | N-acetylcysteine | Per protocol |
+| **Beta-blocker** | Glucagon, atropine | Per protocol |
+| **Calcium channel blocker** | Calcium, glucagon | Per protocol |
+
+### Naloxone
+- **Short half-life** (30–90 min) — may need re-dosing or infusion
+- **Start low** (0.04–0.4 mg) to avoid withdrawal, agitation, pulmonary oedema
+- **Monitor RR, GCS, SpO₂** closely
+
+### Flumazenil
+- **Cautious use** — risk of seizures in chronic BZD users
+- **Avoid** in:
+  - Chronic BZD use
+  - Mixed overdose (TCA + BZD)
+  - Head injury, seizures
+  - Unknown ingestion
+
+### Supportive
+- **IV fluids** cautiously
+- **Vasopressors** if hypotensive
+- **ICU monitoring**
+- **Aspiration precautions** (NBM, NG tube)
+
+### Chronic central hypoventilation (CCHS, OHS)
+- **NIV** (BiPAP) — nocturnal + daytime as needed
+- **Diaphragm pacing** (CCHS, high cord injury)
+- **Tracheostomy** + ventilation (severe)
+
+## Complications
+- **Cardiac arrest** (severe hypoxaemia, acidosis)
+- **Aspiration pneumonia**
+- **ARDS**
+- **Multi-organ failure**
+- **Death**
+
+## FCPS/MRCP High-Yield Summary
+
+| Domain | Key points |
+|--------|------------|
+| **Definition** | ↓Drive to breathe from CNS |
+| **ABG** | ↓PaO₂ + ↑PaCO₂ + **normal A-a gradient** |
+| **Common cause** | Opioids, sedatives, brainstem stroke |
+| **Antidote** | Naloxone (opioids), flumazenil (BZD) |
+| **Naloxone** | Short half-life, re-dose or infusion |
+| **Flumazenil** | Avoid in chronic BZD, mixed overdose |
+| **NIV** | First-line for hypoventilation |
+| **Intubate** | GCS <8, exhaustion |
+| **CCHS** | PHOX2B mutation; diaphragm pacing |
+
+## MCQs (10)
+
+1. ABG in central hypoventilation shows:
+   A. ↑A-a gradient
+   B. **Normal A-a gradient**
+   C. ↓PaCO₂
+   D. ↑PaO₂
+   E. None
+   **Answer: B** — Normal A-a.
+
+2. First-line treatment for opioid-induced respiratory failure:
+   A. Flumazenil
+   B. **Naloxone**
+   C. Theophylline
+   D. Aspirin
+   E. None
+   **Answer: B** — Naloxone.
+
+3. Naloxone half-life is:
+   A. 4–6 h
+   B. **30–90 min (short — may need re-dosing)**
+   C. 24 h
+   D. 1 week
+   E. None
+   **Answer: B** — Short.
+
+4. Flumazenil is contraindicated in:
+   A. Acute BZD overdose
+   B. **Chronic BZD use (seizure risk)**
+   C. Healthy adults
+   D. Children
+   E. None
+   **Answer: B** — Chronic BZD.
+
+5. Combination of opioid + BZD causes:
+   A. Hypertension
+   B. **Severe respiratory depression (↑mortality)**
+   C. Seizures
+   D. Hyperthermia
+   E. None
+   **Answer: B** — Severe.
+
+6. The most sensitive sign of opioid toxicity:
+   A. Seizures
+   B. **Miosis (pinpoint pupils) + ↓RR + ↓GCS**
+   C. Hypertension
+   D. Hyperthermia
+   E. None
+   **Answer: B** — Miosis + ↓RR + ↓GCS.
+
+7. CCHS is associated with:
+   A. BZD use
+   B. **PHOX2B mutation**
+   C. Opioid use
+   D. Stroke
+   E. None
+   **Answer: B** — PHOX2B.
+
+8. A patient with OHS is hospitalised with opioid-induced hypoventilation. First:
+   A. Wait
+   B. **Naloxone + NIV + supportive**
+   C. Antibiotics
+   D. Steroids
+   E. None
+   **Answer: B** — Naloxone + support.
+
+9. An elderly patient is on morphine for cancer pain and develops ↓RR + ↓GCS. First:
+   A. Wait
+   B. **Naloxone (titrate, then re-dose)**
+   C. Steroids
+   D. Antibiotics
+   E. None
+   **Answer: B** — Naloxone.
+
+10. The hallmark of central hypoventilation on ABG is:
+    A. ↑A-a gradient
+    B. **Normal A-a gradient + ↑PaCO₂**
+    C. ↓PaCO₂
+    D. ↑PaO₂
+    E. None
+    **Answer: B** — Normal A-a + ↑PaCO₂.
+
+## SBA Questions (10)
+
+1. A 40-year-old on morphine is found drowsy, RR 6, SpO₂ 85%. First:
+   A. Wait
+   B. **Naloxone 0.4 mg IV + O₂ + support**
+   C. Theophylline
+   D. Steroids
+   E. None
+   **Answer: B** — Naloxone.
+
+2. A 30-year-old takes 30 diazepam tablets. GCS 6. Treatment:
+   A. Flumazenil
+   B. **Airway + ventilation; flumazenil cautious (unknown chronicity)**
+   C. Wait
+   D. Antibiotics
+   E. None
+   **Answer: B** — Support; flumazenil if naive.
+
+3. The difference between central hypoventilation and V/Q mismatch on ABG:
+   A. Both have ↑A-a
+   B. **Central = normal A-a; V/Q = ↑A-a**
+   C. Both have ↓A-a
+   D. Same
+   E. None
+   **Answer: B** — Different.
+
+4. Naloxone infusion dose in severe opioid toxicity:
+   A. Bolus only
+   B. **0.4–2 mg/h infusion after initial bolus**
+   C. 100 mg
+   D. None
+   E. Stop
+   **Answer: B** — Infusion after bolus.
+
+5. The cause of pinpoint pupils in opioid toxicity:
+   A. Sympathetic
+   B. **Parasympathetic (Edinger-Westphal nucleus stimulation)**
+   C. Adrenal
+   D. None
+   E. Mixed
+   **Answer: B** — Parasympathetic.
+
+6. A patient on chronic methadone develops RR 4. Best:
+   A. Discharge
+   B. **Naloxone infusion (methadone is long-acting)**
+   C. Antibiotics
+   D. Steroids
+   E. None
+   **Answer: B** — Infusion for long-acting.
+
+7. Most common cause of iatrogenic central hypoventilation in hospital:
+   A. Opioids
+   B. **Opioid + sedative combination (PCA, post-op)**
+   C. BZD alone
+   D. Stroke
+   E. None
+   **Answer: B** — Combination.
+
+8. CCHS is treated with:
+   A. CPAP
+   B. **Diaphragm pacing + NIV (lifetime)**
+   C. Oxygen
+   D. Steroids
+   E. None
+   **Answer: B** — Pacing + NIV.
+
+9. Tricyclic antidepressant (TCA) overdose treatment for QRS widening:
+   A. Naloxone
+   B. **Sodium bicarbonate 1–2 mEq/kg IV bolus**
+   C. Flumazenil
+   D. Theophylline
+   E. None
+   **Answer: B** — NaHCO₃.
+
+10. The most reliable sign of severe opioid-induced hypoventilation:
+    A. Tachycardia
+    B. **RR <8 + ↓GCS + miosis**
+    C. Hypertension
+    D. Hyperthermia
+    E. None
+    **Answer: B** — RR <8 + ↓GCS + miosis.
+
+## Flashcards
+
+- **Q: ABG in central hypoventilation?**
+  A: ↓PaO₂ + ↑PaCO₂ + normal A-a gradient.
+
+- **Q: Opioid antidote?**
+  A: Naloxone.
+
+- **Q: Naloxone half-life?**
+  A: 30–90 min (short).
+
+- **Q: BZD antidote?**
+  A: Flumazenil (cautious).
+
+- **Q: Flumazenil contraindication?**
+  A: Chronic BZD use.
+
+- **Q: Opioid + BZD effect?**
+  A: Severe respiratory depression.
+
+- **Q: TCA antidote for QRS widening?**
+  A: Sodium bicarbonate.
+
+- **Q: CCHS gene?**
+  A: PHOX2B.
+
+- **Q: CCHS Rx?**
+  A: Diaphragm pacing + NIV.
+
+- **Q: First sign of central hypoventilation?**
+  A: ↓RR + ↓GCS + (miosis if opioid).
+
+## Answer Key with Explanations
+
+### MCQs
+1. **B**  2. **B**  3. **B**  4. **B**  5. **B**  6. **B**  7. **B**  8. **B**  9. **B**  10. **B**
+
+### SBAs
+1. **B**  2. **B**  3. **B**  4. **B**  5. **B**  6. **B**  7. **B**  8. **B**  9. **B**  10. **B**
+
+## Summary
+
+Central hypoventilation = ↓drive to breathe from CNS → Type 2 RF (normal A-a gradient). Common causes: opioids, BZD, brainstem stroke. ABG: ↓PaO₂ + ↑PaCO₂ + normal A-a gradient. Treatment: support ventilation + antidote (naloxone, flumazenil — cautiously). CCHS: PHOX2B mutation; Rx = diaphragm pacing + NIV. Avoid sedatives in high-risk patients.
+
+## Local Navigation
+- **Parent Heading**: [[../Respiratory Failure and Ventilatory Support|Respiratory Failure and Ventilatory Support]]
+- **Parent Topic Group**: [[../Respiratory Failure and Ventilatory Support/Hypoventilation, chest wall, and neuromuscular respiratory disorders|Hypoventilation, chest wall, and neuromuscular respiratory disorders]]
+- **Chapter Map**: [[../Davidson Chapter 17 - Respiratory Medicine Hierarchy|Respiratory Medicine Hierarchy]]
+- **Chapter MOC**: [[../Respiratory MOC|Respiratory MOC]]
+- **Related**: [[Respiratory Failure]] · [[Type 2 respiratory failure]] · [[Oxygen Therapy and NIV]] · [[Neuromuscular respiratory weakness]]
