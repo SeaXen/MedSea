@@ -1,0 +1,24 @@
+# Anticoagulation for Prosthetic Valves
+
+## 1. Mechanical Valves — LIFELONG Warfarin
+- **Aortic mechanical, no risk factors**: INR 2.0–3.0
+- **Aortic mechanical + risk factors** (AF, prior TE, LV dysfunction): INR 2.5–3.5
+- **Mitral mechanical**: INR 2.5–3.5
+- **Tricuspid mechanical** (rare): INR 3.0–4.0 (highest risk)
+- **Risk factors:** AF, prior thromboembolism, LVEF <30%, hypercoagulable state
+
+## 2. Bioprosthetic Valves
+- **First 3 months** (any position): warfarin INR 2.0–3.0
+- After 3 months: aspirin alone (or no anticoagulation if no AF)
+- If AF: full anticoagulation per AF guidelines (DOAC OK)
+- **DOACs** are an option for bioprosthetic + AF (subgroup analyses from ARISTOTLE, ROCKET-AF)
+
+## 3. Adding Antiplatelets
+- Mechanical + aspirin: controversial, ↑ bleeding (RECORD trial)
+- Routine low-dose aspirin reasonable if no bleeding history
+
+## 4. DOACs — CONTRAINDICATED in Mechanical Valves
+- RE-ALIGN trial: dabigatran **↑ thromboembolism + bleeding** vs warfarin
+- Never use in mechanical valves
+
+> **Pearls** — **Mechanical → lifelong warfarin only.** DOACs are **contraindicated** in mechanical valves. Bioprosthetic + AF → DOAC acceptable after 3 months. INR targets depend on position + risk factors.
