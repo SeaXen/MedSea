@@ -1,0 +1,454 @@
+---
+tags: [medicine, endocrinology, davidson, thyroid-pregnancy, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology (Thyroid Section)
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Thyroid disease in pregnancy is a core viva topic. Trimester-specific TSH targets, levothyroxine dose adjustment, TRAb monitoring, and postpartum management are essential for FCPS/MRCP."
+see_also: ["Hypothyroidism Overview", "Hyperthyroidism Overview", "Graves Disease", "Postpartum Thyroiditis", "Subclinical Thyroid Disease", "Reproductive Endocrinology"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Thyroid Disease in Pregnancy
+
+> [!info]
+> **Thyroid Disease in Pregnancy = Unique Physiological Changes + Specific Management.** **Trimester-Specific TSH Targets** (1st: 0.1-2.5, 2nd: 0.2-3.0, 3rd: 0.3-3.0). **Levothyroxine Dose ↑ 30% at Positive Pregnancy Test**. Autoimmune diseases (Graves, Hashimoto) require special management.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] State trimester-specific TSH targets and adjust levothyroxine accordingly
+- [ ] Manage hypothyroidism, hyperthyroidism, and thyroid nodules in pregnancy
+- [ ] Monitor and manage Graves disease, postpartum thyroiditis, and thyroid nodules
+- [ ] Advise on breastfeeding, neonatal monitoring, and contraception
+
+---
+
+## 2. Physiological Changes in Pregnancy
+
+| Change | Mechanism | Clinical Impact |
+|--------|-----------|-----------------|
+| **↑ TBG** (2-3x) | Oestrogen ↑ TBG Synthesis | **↑ Total T4/T3** (2-3x); **Free T4/T3 Reliable** |
+| **hCG Cross-Reactivity** | hCG → Weak TSH Agonist | **TSH ↓ 1st Trimester** (Often <0.1-0.4 mIU/L) |
+| **Iodine Clearance** | ↑ Renal Iodine Excretion | ↑ Iodine Requirement (**250 µg/day**) |
+| **Placental Transfer** | T4 Crosses (Limited); T3 Crosses Poorly | **Fetal Brain Depends on Maternal T4 (1st Tri)** |
+| **HCG Peak** | 8-12 Weeks | **TSH Nadir** (Often <0.1 in 1st Tri) |
+
+---
+
+## 2. Trimester-Specific TSH Targets
+
+| Trimester | TSH Reference Range (mIU/L) | Management Target |
+|-----------|-----------------------------|-------------------|
+| **Pre-conception** | **<2.5** | Optimise Levothyroxine Dose Pre-Conception |
+| **1st Trimester (0-12w)** | **0.1 - 2.5** | **↑ Dose ~30% at +ve Test**; Monitor q4wk |
+| **2nd Trimester (13-26w)** | **0.2 - 3.0** | Monitor q4-6wk |
+| **3rd Trimester (27w+)** | **0.3 - 3.0** | Monitor q4-6wk; Plan Postpartum Dose Reduction |
+| **Postpartum** | Pre-pregnancy Dose | Reduce to Pre-Pregnancy Dose; Check TSH 6wk |
+
+**Key**: **Increase Levothyroxine ~30% at Positive Pregnancy Test** (Immediate); Monitor q4wk in 1st Tri, q4-6wk thereafter.
+
+---
+
+## 2. Hypothyroidism in Pregnancy
+
+### Overt Hypothyroidism (Pre-existing)
+| Aspect | Management |
+|--------|------------|
+| **Pre-conception** | TSH **<2.5**; Optimise Levothyroxine; Screen TPOAb |
+| **Diagnosis** | TSH > Trimester-Specific Upper Limit + Low fT4 |
+| **Levothyroxine Adjustment** | **↑ Dose ~30% at +ve Test** (Immediate); Titrate to Trimester Targets |
+| **Monitoring** | TSH + fT4 **q4wk (1st Tri)**, q4-6wk (2nd/3rd Tri) |
+| **Postpartum** | Reduce to Pre-Pregnancy Dose; Check TSH at 6wk |
+
+### Subclinical Hypothyroidism (SCH) in Pregnancy
+| Scenario | Action |
+|----------|--------|
+| **TPOAb+ with TSH >2.5 (1st Tri) / >3.0 (2nd/3rd)** | **Treat** (Levothyroxine 50-75µg) |
+| **TPOAb- with TSH >4.0 (1st) / >3.0 (2nd/3rd)** | Consider Treatment |
+| **TPOAb+ Euthyroid** | Monitor TSH q4-6wk; ↑ Dose if TSH >2.5 (1st) / >3.0 (2nd/3rd) |
+
+---
+
+## 3. Hyperthyroidism in Pregnancy
+
+### Graves Disease
+| Trimester | Preferred ATD | Dose | Key Points |
+|-----------|---------------|------|------------|
+| **1st Trimester** | **PTU 50-150mg/day** | Lowest Effective Dose | **Avoid Carbimazole** (Teratogenicity: Aplasia Cutis) |
+| **2nd/3rd Trimester** | **Switch to Carbimazole** (or Continue PTU) | 15-40mg/day | PTU Hepatotoxicity Risk ↑ in 2nd/3rd Tri |
+| **Target** | **Lowest Effective Dose**; fT4 Upper Normal Range |
+
+### Monitoring
+| Parameter | Frequency |
+|-----------|-----------|
+| **TSH + fT4** | q4wk (1st Tri), q4-6wk (2nd/3rd) |
+| **TRAb** | Each Trimester; **TRAb >5 IU/L → ↑ Neonatal Risk** |
+| **Fetal US** | If TRAb >5 IU/L: Fetal Goitre, Tachycardia, Hydrops |
+
+### Neonatal Thyrotoxicosis
+| Risk Factor | Action |
+|-------------|--------|
+| **Maternal TRAb >5 IU/L** | Fetal US (Goitre, Tachycardia, Hydrops) |
+| **Delivery** | Vaginal Preferred; Neonate Monitored for Thyrotoxicosis (Tachycardia, Irritability, Poor Feeding) |
+| **Breastfeeding** | Carbimazole/PTU Compatible (Low Milk Transfer) |
+
+---
+
+## 2. Hypothyroidism in Pregnancy — Risks
+
+| Maternal | Fetal |
+|----------|-------|
+| Miscarriage, Pre-eclampsia, Placental Abruption, PPH, Anaemia | **Preterm Birth**, Low Birth Weight, **Impaired Neurodevelopment (IQ ↓7-10 pts)**, Stillbirth |
+
+**Key**: Early Treatment Prevents Neurodevelopmental Deficits.
+
+---
+
+## 2. Thyroxine Dose Adjustment in Pregnancy
+
+| Step | Action |
+|------|--------|
+| **Pre-conception** | Optimise Dose (TSH <2.5); Stop if TSH <2.5 |
+| **+ve Pregnancy Test** | **↑ Dose ~30% Immediately** (e.g., 100µg → 130µg) |
+| **1st Trimester** | Monitor TSH q4wk; Target 0.1-2.5 |
+| **2nd Trimester** | Target 0.2-3.0; Monitor q4-6wk |
+| **3rd Trimester** | Target 0.3-3.0; Monitor q4-6wk |
+| **Postpartum** | Reduce to Pre-Pregnancy Dose; Check TSH at 6wk |
+
+---
+
+## 3. Hyperthyroidism in Pregnancy
+
+### Treatment Algorithm
+| Trimester | Drug | Dose | Key Points |
+|-----------|------|------|------------|
+| **1st Trimester** | **PTU** (Preferred) | 50-150mg/day | **Avoid Carbimazole** (Teratogenicity: Aplasia Cutis, Choanal Atresia) |
+| **2nd/3rd Trimester** | **Switch to Carbimazole** | 15-40mg/day | PTU Hepatotoxicity Risk ↑ in 2nd/3rd Tri |
+| **Alternative** | **RAI Contraindicated** | Surgery if Refractory | Radioiodine **Contraindicated** in Pregnancy |
+
+### Targets
+| Parameter | Target |
+|-----------|--------|
+| **fT4** | **Upper Normal Range** (Avoid Fetal Hypothyroidism) |
+| **TSH** | Low but Detectable (Not Fully Suppressed) |
+
+### Fetal Monitoring
+| Indication | Test |
+|------------|------|
+| **Maternal TRAb >5 IU/L** | Fetal US (Goitre, Tachycardia, Hydrops, Growth) |
+| **High-Risk** | Fetal TSH/fT4 (Cord Blood if Available) |
+
+---
+
+## 3. Postpartum Thyroiditis (PPT)
+
+| Feature | Details |
+|---------|---------|
+| **Incidence** | **5-10%** of Pregnancies; TPOAb+ in 1st Tri → **30-50% Risk** |
+| **Timing** | Thyrotoxic Phase: 1-4mo Postpartum; **Hypothyroid Phase: 2-6mo** |
+| **Risk Factors** | TPOAb+ (1st Tri), Previous PPT, T1DM, Other Autoimmune |
+| **Phases** | **Thyrotoxic (1-3mo)** → **Hypothyroid (2-6mo)** → Recovery (or Permanent) |
+| **Management** | **Thyrotoxic Phase**: β-Blocker; **Hypothyroid Phase**: Levothyroxine if TSH >10/Symptomatic |
+| **Long-term** | **20-30% Permanent Hypothyroidism**; Recurrence in Subsequent Pregnancies |
+
+---
+
+## 3. Thyroid Nodules in Pregnancy
+
+| Scenario | Management |
+|-----------|------------|
+| **New Nodule** | TSH + fT4 → US → **FNA if TI-RADS ≥3** (Safe in Pregnancy) |
+| **Known Nodule, Stable** | Monitor Postpartum |
+| **FNA Result Bethesda V/VI** | Surgery Postpartum (2nd Tri Preferred) |
+| **RAI Uptake/Scan** | **Contraindicated** in Pregnancy |
+
+---
+
+## 4. Breastfeeding & Contraception
+
+| Aspect | Recommendation |
+|--------|----------------|
+| **Levothyroxine** | **Safe** (Minimal Milk Transfer) |
+| **Carbimazole/PTU** | **Compatible** (Low Milk Transfer; Infant Dose <1% Maternal) |
+| **RAI** | **Contraindicated** (Radioactive Milk) |
+| **Contraception** | **LARC** (IUD/Implant) Preferred; Avoid COCP if VTE Risk |
+
+---
+
+## 5. Postpartum Management
+
+| Aspect | Action |
+|--------|--------|
+| **Levothyroxine Dose** | **Reduce to Pre-Pregnancy Dose** Immediately Postpartum |
+| **TSH Check** | **6 Weeks Postpartum** |
+| **Postpartum Thyroiditis** | Screen TPOAb+ Women: TSH/fT4 at 3mo & 6mo |
+| **Neonatal Monitoring** | If Maternal TRAb >5 IU/L → Screen Neonate for Thyrotoxicosis |
+
+---
+
+## 5. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **TBG in Pregnancy** | **↑ 2-3x** (Oestrogen); Total T4/T3 ↑; **fT4/fT3 Reliable** |
+| **TSH in 1st Trimester** | **Can Be <0.1** (hCG Cross-Reactivity) — Normal if fT4 Normal |
+| **TSH Targets** | 1st: 0.1-2.5; 2nd: 0.2-3.0; 3rd: 0.3-3.0 mIU/L |
+| **Levothyroxine in Pregnancy** | **↑ Dose ~30% at +ve Test**; Monitor q4wk (1st Tri) |
+| **PTU vs Carbimazole** | **PTU 1st Tri** (Less Teratogenic); Switch to Carbimazole 2nd Tri |
+| **RAI in Pregnancy** | **Contraindicated** (Teratogenic) |
+| **TRAb in Pregnancy** | **>5 IU/L → ↑ Neonatal Thyrotoxicosis Risk**; Fetal US Indicated |
+| **Postpartum Thyroiditis** | 5-10% Pregnancies; TPOAb+ → 30-50% Risk; 20-30% Permanent Hypo |
+| **Breastfeeding** | Levothyroxine, Carbimazole, PTU **Safe** (Low Milk Transfer) |
+| **Contraception** | LARC Preferred; Avoid COCP if VTE Risk |
+| **Iodine Requirement** | **250 µg/day** (vs 150 µg Non-Pregnant) |
+| **Postpartum Levothyroxine** | Reduce to Pre-Pregnancy Dose; Check TSH at 6wk |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Low TSH in 1st Trimester** | **Normal** if fT4 Normal (hCG Cross-Reactivity); Only Treat if fT4 ↑ |
+| **Carbimazole vs PTU** | **PTU 1st Tri** (Less Teratogenic); Switch to Carbimazole 2nd Tri |
+| **TSH Targets** | 1st: 0.1-2.5; 2nd: 0.2-3.0; 3rd: 0.3-3.0 mIU/L |
+| **RAI in Pregnancy** | **Contraindicated** (Fetal Thyroid Ablation) |
+| **TRAb >5 IU/L** | ↑ Neonatal Thyrotoxicosis Risk; Fetal US Indicated |
+| **Postpartum Thyroiditis** | 20-30% Permanent Hypothyroidism; Recurrence Next Pregnancy |
+| **Levothyroxine Dose Increase** | **~30% Increase at Positive Test**; Monitor q4wk |
+| **Subclinical Hypothyroidism** | Treat if TPOAb+ / TSH >2.5 (1st Tri) / >3.0 (2nd/3rd) |
+| **Breastfeeding** | Carbimazole/PTU/Levothyroxine Safe |
+
+---
+
+## 8. Mind Map
+
+```mermaid
+mindmap
+  root((Thyroid in Pregnancy))
+    Physiology
+      ↑ TBG 2-3x → Total T4/T3 ↑
+      hCG ↓ TSH (1st Tri)
+      fT4/fT3 Reliable
+      Iodine Need 250µg/day
+    TSH Targets
+      Pre-conception: <2.5
+      1st Tri: 0.1-2.5
+      2nd Tri: 0.2-3.0
+      3rd Tri: 0.3-3.0
+    Hypothyroidism
+      ↑ Dose 30% at +ve Test
+      Targets: 1st 0.1-2.5, 2nd 0.2-3.0, 3rd 0.3-3.0
+      Subclinical: Treat if TPOAb+ or TSH > Target
+    Hyperthyroidism
+      PTU 1st Tri; Carbimazole 2nd/3rd
+      RAI Contraindicated
+      TRAb >5 → Fetal US
+    Postpartum Thyroiditis
+      5-10% Pregnancies
+      TPOAb+ → 30-50% Risk
+      20-30% Permanent Hypo
+    Monitoring
+      TSH q4wk (1st Tri), q4-6wk (2nd/3rd)
+      Postpartum: Reduce to Pre-preg Dose
+```
+
+---
+
+## 10. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **TSH in 1st Trimester** | Can be <0.1 (hCG Cross-Reactivity) — Normal if fT4 Normal |
+| **TSH Targets** | 1st: 0.1-2.5; 2nd: 0.2-3.0; 3rd: 0.3-3.0 mIU/L |
+| **Levothyroxine ↑** | **~30% Increase at +ve Test**; Monitor q4wk |
+| **PTU vs Carbimazole** | **PTU 1st Tri** (Less Teratogenic); Switch to Carbimazole 2nd Tri |
+| **RAI in Pregnancy** | **Contraindicated** (Fetal Thyroid Ablation) |
+| **TRAb >5 IU/L** | ↑ Neonatal Thyrotoxicosis Risk; Fetal US Indicated |
+| **Postpartum Thyroiditis** | 5-10% Pregnancies; 20-30% Permanent Hypothyroidism |
+| **Levothyroxine Dose ↑** | **~30% Increase at +ve Test** |
+| **Breastfeeding** | Carbimazole/PTU/Levothyroxine Safe (Low Milk Transfer) |
+| **Subclinical Hypothyroidism** | Treat if TPOAb+ / TSH >2.5 (1st Tri) / >3.0 (2nd/3rd) |
+| **TSH Targets** | 1st: 0.1-2.5; 2nd: 0.2-3.0; 3rd: 0.3-3.0 mIU/L |
+| **TRAb >5 IU/L** | ↑ Neonatal Risk; Fetal US |
+| **Postpartum** | Reduce to Pre-preg Dose; Check TSH 6wk |
+
+---
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Thyroid Disorders|Thyroid Disorders]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[Hypothyroidism Overview]], [[Hyperthyroidism Overview]], [[Graves Disease]], [[Postpartum Thyroiditis]], [[Subclinical Thyroid Disease]], [[Reproductive Endocrinology/Pregnancy]]
+## MCQs (10)
+1. **Thyroid in pregnancy - TSH targets:**
+   A. 1st tri: 0.1-2.5; 2nd tri: 0.2-3.0; 3rd tri: 0.3-3.0 mIU/L
+   B. All trimesters: 0.4-4.0
+   C. 1st: 0.4-4.0
+   D. Lower in 1st
+   E. Higher in 3rd
+
+2. **Levothyroxine dose increase in pregnancy:**
+   A. ~30% increase at positive test
+   B. No change
+   C. 50% increase
+   D. Double dose
+   E. Stop
+
+3. **TSH monitoring in pregnancy on LT4:**
+   A. Every 4 weeks until delivery
+   B. Once per trimester
+   C. At delivery only
+   D. Not needed
+   E. Monthly in 1st tri only
+
+4. **Graves disease in pregnancy - ATD:**
+   A. PTU 1st trimester; switch to carbimazole 2nd/3rd
+   B. Carbimazole throughout
+   C. RAI
+   D. Surgery
+   E. No ATD needed
+
+5. **TRAb in pregnancy:**
+   A. Crosses placenta; monitor fetal thyroid if high
+   B. Does not cross
+   C. Only in 1st tri
+   D. Causes fetal hyperthyroidism only
+   E. Protective
+
+6. **Postpartum thyroiditis:**
+   A. Thyrotoxic (1-4mo) -> Hypothyroid (2-6mo) -> Recovery; 20-30% permanent hypo
+   B. Permanent hyperthyroidism
+   C. Only thyrotoxic
+   D. Only hypothyroid
+   E. No postpartum effect
+
+7. **Iodine requirement in pregnancy:**
+   A. 250 mcg/day
+   B. 150 mcg/day
+   C. 100 mcg/day
+   D. 500 mcg/day
+   E. No change
+
+8. **Thyroid cancer in pregnancy:**
+   A. Defer RAI until postpartum; surgery in 2nd tri if needed
+   B. RAI immediately
+   C. Terminate pregnancy
+   D. Chemotherapy
+   E. No treatment needed
+
+9. **Subclinical hypothyroidism in pregnancy:**
+   A. Treat if TSH >trimester-specific upper limit
+   B. Never treat
+   C. Treat only if TSH>10
+   D. Treat only if symptomatic
+   E. Levothyroxine contraindicated
+
+10. **Hyperthyroidism in pregnancy:**
+   A. PTU 1st tri -> switch carbimazole; target fT4 upper normal; monitor fetal growth
+   B. Carbimazole throughout
+   C. RAI
+   D. Surgery 1st tri
+   E. Observation only
+
+## SBA Questions (10)
+1. **Pregnant 10wks on LT4 100mcg: TSH 4.2 (ref 0.1-2.5). Action?**
+   A. Increase dose ~30% (to 125-150mcg); monitor q4wk
+   B. Stop LT4
+   C. Reduce dose
+   D. Continue same
+   E. Switch to T3
+
+2. **30yo pregnant 8wks: Graves, TSH <0.01, fT4 45. ATD?**
+   A. PTU 100-200mg TDS
+
+3. **Postpartum woman: TSH <0.01, fT4 40, painless, 3mo pp. Phase?**
+   A. Postpartum thyroiditis thyrotoxic phase (1-4mo)
+   B. Graves
+   C. Silent thyroiditis
+   D. Subacute
+   E. Factitious
+
+4. **Same patient at 5mo pp: TSH 15, fT4 5. Management?**
+   A. Levothyroxine (hypothyroid phase); monitor for recovery
+   B. Carbimazole
+   C. RAI
+   D. Surgery
+   E. Observation
+
+5. **Pregnant: subclinical hypo TSH 3.5 (ref 0.1-2.5), TPOAb+. Treat?**
+   A. Yes (Ab+); levothyroxine
+   B. No
+   C. Only if TSH>10
+   D. Only if symptomatic
+   E. RAI
+
+## Flashcards
+- **Q: Pregnancy TSH targets**
+  **A: 1st: 0.1-2.5; 2nd: 0.2-3.0; 3rd: 0.3-3.0 mIU/L**
+
+- **Q: LT4 dose increase**
+  **A: ~30% at positive test; monitor q4wk**
+
+- **Q: Graves in pregnancy**
+  **A: PTU 1st tri -> switch carbimazole 2nd/3rd**
+
+- **Q: TRAb in pregnancy**
+  **A: Crosses placenta; monitor fetal thyroid if high**
+
+- **Q: Postpartum thyroiditis**
+  **A: 1-4mo thyrotoxic -> 2-6mo hypo -> recovery; 20-30% permanent hypo**
+
+- **Q: Iodine in pregnancy**
+  **A: 250 mcg/day; deficiency -> fetal brain damage**
+
+- **Q: Subclinical hypo pregnancy**
+  **A: Treat if TSH >trimester upper limit**
+
+- **Q: Thyroid cancer pregnancy**
+  **A: Defer RAI; surgery 2nd tri if needed**
+
+- **Q: RAI in pregnancy**
+  **A: Absolutely contraindicated**
+
+- **Q: Methimazole/Carbimazole**
+  **A: Teratogenic (aplasia cutis); avoid 1st tri**
+
+## Answer Key with Explanations
+### MCQs
+1. **1st tri: 0.1-2.5; 2nd tri: 0.2-3.0; 3rd tri: 0.3-3.0 mIU/L** — Thyroid in pregnancy - TSH targets:
+
+2. **~30% increase at positive test** — Levothyroxine dose increase in pregnancy:
+
+3. **Every 4 weeks until delivery** — TSH monitoring in pregnancy on LT4:
+
+4. **PTU 1st trimester; switch to carbimazole 2nd/3rd** — Graves disease in pregnancy - ATD:
+
+5. **Crosses placenta; monitor fetal thyroid if high** — TRAb in pregnancy:
+
+6. **Thyrotoxic (1-4mo) -> Hypothyroid (2-6mo) -> Recovery; 20-30% permanent hypo** — Postpartum thyroiditis:
+
+7. **250 mcg/day** — Iodine requirement in pregnancy:
+
+8. **Defer RAI until postpartum; surgery in 2nd tri if needed** — Thyroid cancer in pregnancy:
+
+9. **Treat if TSH >trimester-specific upper limit** — Subclinical hypothyroidism in pregnancy:
+
+10. **PTU 1st tri -> switch carbimazole; target fT4 upper normal; monitor fetal growth** — Hyperthyroidism in pregnancy:
+
+
+### SBAs
+1. **Increase dose ~30% (to 125-150mcg); monitor q4wk** — Pregnant 10wks on LT4 100mcg: TSH 4.2 (ref 0.1-2.5). Action?
+
+2. **PTU 100-200mg TDS** — 30yo pregnant 8wks: Graves, TSH <0.01, fT4 45. ATD?
+
+3. **Postpartum thyroiditis thyrotoxic phase (1-4mo)** — Postpartum woman: TSH <0.01, fT4 40, painless, 3mo pp. Phase?
+
+4. **Levothyroxine (hypothyroid phase); monitor for recovery** — Same patient at 5mo pp: TSH 15, fT4 5. Management?
+
+5. **Yes (Ab+); levothyroxine** — Pregnant: subclinical hypo TSH 3.5 (ref 0.1-2.5), TPOAb+. Treat?
+

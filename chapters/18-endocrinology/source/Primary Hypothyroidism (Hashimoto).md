@@ -1,0 +1,525 @@
+---
+tags: [medicine, endocrinology, davidson, hashimoto, hashimoto-thyroiditis, primary-hypothyroidism, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology (Thyroid Section)
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Hashimoto's thyroiditis is the commonest cause of hypothyroidism in iodine-sufficient areas (90%). Key viva topics: autoimmune pathogenesis, antibody profiles, association with other autoimmune diseases, progression from subclinical to overt, and differentiation from other causes of hypothyroidism."
+see_also: ["Hypothyroidism Overview", "Central Hypothyroidism", "Subclinical Thyroid Disease", "Thyroiditis", "Autoimmune Polyendocrine Syndromes"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Primary Hypothyroidism (Hashimoto's Thyroiditis)
+
+> [!info]
+> **Hashimoto's Thyroiditis (Chronic Autoimmune Thyroiditis) = Commonest Cause of Hypothyroidism in Iodine-Sufficient Areas (90%).** Autoimmune lymphocytic infiltration → destruction → fibrosis. **Female:Male = 10:1**, Peak 30-50y. **TPOAb 90-95%, TgAb 70-80%**.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Describe autoimmune pathogenesis and genetic susceptibility
+- [ ] Recognise clinical spectrum from antibody-positive euthyroid to overt hypothyroidism
+- [ ] Interpret antibody tests (Anti-TPO, Anti-Tg, TRAb)
+- [ ] Apply management guidelines for each stage (euthyroid → subclinical → overt)
+- [ ] Recognise associated autoimmune comorbidities (APS-2, APS-3, APS-4)
+
+---
+
+## 2. Pathophysiology & Genetics
+
+### Autoimmune Pathogenesis
+| Step | Mechanism |
+|------|-----------|
+| **1. Loss of Tolerance** | Failure of T-Regulatory Cells → Autoreactive T-Cells Escape Thymic Deletion |
+| **2. Antigen Presentation** | Thyrocytes Present TPO/Tg Peptides on HLA-DR → Activate CD4+ T-Cells |
+| **3. B-Cell Activation** | T-Cell Help → B-Cell Differentiation → **Anti-TPO / Anti-Tg Antibodies** |
+| **4. Cytotoxicity** | **CD8+ Cytotoxic T-Cells** + **ADCC (Anti-TPO)** → Thyrocyte Apoptosis |
+| **5. Fibrosis** | IFN-γ, TNF-α → Fibrosis → Thyroid Atrophy |
+
+### Genetic Susceptibility
+| Gene | Association | Mechanism |
+|------|-------------|-----------|
+| **HLA-DR3 (DRB1*03:01)** | **Strongest** (OR 3-5) | Antigen Presentation |
+| **HLA-DR5 (DRB1*11/12)** | Moderate | Antigen Presentation |
+| **CTLA-4** | **Strong** (CT60 Polymorphism) | ↓ T-Reg Function |
+| **PTPN22** | **Strong** (R620W) | ↑ TCR Signalling → Autoimmunity |
+| **FCRL3, CD40, IL2RA, TG, TSHR** | Moderate | Immune Regulation |
+| **TPO, Tg** | Weak | Autoantigen Structure |
+
+**Family History**: 1st Degree Relatives 10-15x Risk; **Monozygotic Twin Concordance 30-50%**.
+
+---
+
+## 2. Antibody Profile
+
+| Antibody | Target | Prevalence in Hashimoto | Clinical Utility |
+|----------|--------|------------------------|------------------|
+| **Anti-TPO (TPOAb)** | Thyroid Peroxidase | **90-95%** | **Diagnostic Gold Standard**; High Titre = ↑ Progression Risk |
+| **Anti-Tg (TgAb)** | Thyroglobulin | **70-80%** | Complements TPOAb; Useful if TPOAb Negative |
+| **TRAb (TSHR-Ab)** | TSH Receptor | **<10%** (Usually Negative) | If Positive → Consider Graves Overlap |
+| **TSH-R Blocking Ab** | Rare | <5% | Causes Transient Neonatal Hypothyroidism |
+
+### Antibody Interpretation
+| Scenario | TPOAb | TgAb | Interpretation |
+|----------|-------|------|----------------|
+| **Typical Hashimoto** | **Positive** | Positive | Classic |
+| **TPOAb Only** | **Positive** | Negative | Common (80% of Ab+ Cases) |
+| **TgAb Only** | Negative | **Positive** | Less Common (<5%); Confirm with Repeat |
+| **Seronegative** | Negative | Negative | **Seronegative Hashimoto** (5-10%); Diagnosis Clinical + US |
+
+---
+
+## 3. Clinical Spectrum & Stages
+
+### Stages of Hashimoto's Thyroiditis
+| Stage | TSH | fT4 | Antibodies | Clinical | Management |
+|-------|-----|-----|------------|----------|------------|
+| **1. Euthyroid (Antibody+)** | Normal | Normal | **TPOAb+ / TgAb+** | Asymptomatic / Incidental | **Monitor** q6-12mo |
+| **2. Subclinical Hypothyroidism** | **4.5-10 mIU/L** (or >10) | Normal | **TPOAb+ / TgAb+** | Often Asymptomatic | **Treat if**: TSH >10 / TPOAb+ / Pregnant / Lipids ↑ / Symptoms |
+| **3. Overt Hypothyroidism** | **>10 mIU/L** (Often >20) | **Low** | TPOAb+/TgAb+ | Fatigue, Weight Gain, Cold Intolerance, Constipation, Bradycardia | **Levothyroxine 1.6 µg/kg/day** |
+| **4. Myxoedema Coma** | >100 (Often) | Very Low | TPOAb+ | Hypothermia, Coma, Hypotension | **ICU Emergency** |
+
+### Progression Rates
+| Stage | Annual Progression to Overt Hypothyroidism |
+|-------|--------------------------------------------|
+| **Antibody+ Euthyroid** | **2-5%/yr** (Higher if TPOAb Titre High) |
+| **Subclinical (TSH 4.5-10, Ab+)** | **5-10%/yr** |
+| **Subclinical (TSH >10)** | **10-20%/yr** |
+
+---
+
+## 2. Clinical Features — Hashimoto's Thyroiditis
+
+### Goitre
+| Feature | Details |
+|---------|---------|
+| **Presence** | **60-80%** (Diffuse, Firm, Rubbery, Non-Tender) |
+| **Texture** | **Firm, Rubbery** ("Rubbery" on Palpation) |
+| **Tenderness** | **Absent** (Unlike Subacute Thyroiditis) |
+| **Size** | Variable (Small to Massive) |
+| **Ultrasound** | **Hypoechoic, Heterogeneous**, Pseudonodular, Micronodules |
+
+### Associated Autoimmune Diseases (APS)
+| Syndrome | Components | Hashimoto Association |
+|----------|------------|----------------------|
+| **APS-2 (Schmidt)** | **Addison's + Hashimoto** ± T1DM | **Most Common** (Addison's 10-20%) |
+| **APS-3** | **Hashimoto + Autoimmune Thyroid Disease** ± Others | **Most Common APS** |
+| **APS-4** | Hashimoto + Other Autoimmune (Excl. Addison's/T1DM) | Common |
+| **Type 1 DM** | 10-30% Coexistence | Screen T1DM if Hashimoto+ |
+| **Coeliac Disease** | 5-10% Coexistence | Screen TTG-IgA if Symptoms |
+| **Pernicious Anaemia** | 5-10% | Check B12 if Macrocytosis |
+| **Vitiligo, Alopecia Areata** | 5-10% | Screen if Suspected |
+
+---
+
+## 3. Diagnosis
+
+### Key Investigations
+| Test | Expected in Hashimoto | Interpretation |
+|------|----------------------|----------------|
+| **TSH** | **High** (Overt: >10-20; Subclinical: 4.5-10) | Primary Hypothyroidism |
+| **fT4** | **Low** (Overt) / Normal (Subclinical) | Confirms Hypothyroidism |
+| **Anti-TPO** | **Positive (90-95%)** | **Diagnostic Gold Standard** |
+| **Anti-Tg** | Positive (70-80%) | Supports Diagnosis |
+| **TRAb** | **Negative** (<10%) | Excludes Graves |
+| **Thyroid US** | **Hypoechoic, Heterogeneous, Pseudonodular, Micronodules** | Characteristic |
+| **FNA (If Nodule)** | Lymphocytic Infiltration, Hürthle Cells | Confirms Hashimoto if Needed |
+
+### Differential Diagnosis
+| Condition | Differentiating Features |
+|---------|-------------------------|
+| **Subacute Thyroiditis** | **Pain + Tenderness + ↑ESR/CRP**; Low RAI Uptake |
+| **Silent/Postpartum Thyroiditis** | **Painless**; TPOAb+; Low RAI; Postpartum |
+| **Drug-Induced (Lithium, Amiodarone)** | Drug History; Specific Patterns |
+| **Iodine Deficiency** | Endemic Area; Low Urinary Iodine; TSH ↑, fT4 Low |
+| **Post-Surgical / Post-RAI** | History of Surgery/RAI; No Antibodies |
+| **Central Hypothyroidism** | **TSH Low/Normal + fT4 Low** |
+| **Factitious** | Low Tg, Suppressed TSH, High fT4/fT3, No Antibodies |
+| **Non-Thyroidal Illness** | Low T3, Normal/High rT3, Normal TSH/fT4 |
+
+---
+
+## 4. Management by Stage
+
+### Stage 1: Euthyroid + Antibodies Positive
+| Action | Details |
+|--------|---------|
+| **Monitor** | TSH + fT4 + TPOAb **q6-12mo** |
+| **Patient Education** | Symptoms of Hypothyroidism; Pregnancy Planning |
+| **Screen Comorbidities** | T1DM, Coeliac (TTG-IgA), B12, Vit D, Lipids |
+
+### Stage 2: Subclinical Hypothyroidism (TSH 4.5-10, fT4 Normal)
+| TSH Range | TPOAb | Action |
+|-----------|-------|--------|
+| **4.5-10, Ab Negative** | Monitor q6-12mo | Observe |
+| **4.5-10, TPOAb+** | **Treat** (Levothyroxine 25-50µg) | Reduces Progression |
+| **TSH >10** | Any | **Treat** (High Progression Risk) |
+| **Pregnant / Planning** | Any TSH > Trimester Limit | **Treat** (Target Trimester-Specific) |
+| **TPOAb+ / Lipids ↑ / Cardiac Risk** | Any TSH >4.5 | **Treat** |
+
+**Levothyroxine Dose**: 25-50µg/day → Titrate to TSH 0.4-4.0
+
+### Stage 3: Overt Hypothyroidism
+| Treatment | **Levothyroxine 1.6 µg/kg/day** (~100-150µg for 70kg) |
+|----------|--------------------------------------------------------|
+| **Initiation** | Young/Healthy: Full Dose; Elderly/Cardiac: 25-50µg → Titrate 25µg q6-8wk |
+| **Target** | **TSH 0.4-4.0 mIU/L** (Mid-Normal) |
+| **Monitoring** | TSH + fT4 q6-8wk until Stable; then 6-12 Monthly |
+
+### Stage 4: Myxoedema Coma — See Myxoedema Coma Note
+
+---
+
+## 4. Associated Autoimmune Comorbidities (Screening)
+
+| Condition | Prevalence in Hashimoto | Screening Test | When to Screen |
+|-----------|------------------------|----------------|----------------|
+| **Type 1 DM** | 10-30% | HbA1c, Fasting Glucose, GAD65/IA2/ZnT8 | At Diagnosis; Annual |
+| **Addison's Disease** | 5-20% (APS-2) | 09:00 Cortisol, ACTH, 21-OH Ab | If Fatigue, Hypotension, Hyperpigmentation |
+| **Coeliac Disease** | 5-15% | TTG-IgA + Total IgA | At Diagnosis; q2-3yr if +ve |
+| **Pernicious Anaemia** | 5-10% | B12, IF-Ab, Parietal Cell Ab | If Macrocytosis, Neuropathy |
+| **Vitiligo / Alopecia Areata** | 5-10% | Clinical Exam | At Diagnosis |
+| **Type 1 DM + Addison's (APS-2)** | High Risk | Screen All Axes | At Diagnosis + Annual |
+| **Premature Ovarian Insufficiency** | ↑ Risk in Women | AMH, FSH | If Amenorrhoea/Infertility |
+
+---
+
+## 5. Special Situations
+
+### Pregnancy in Hashimoto's
+| Aspect | Management |
+|--------|------------|
+| **Pre-conception** | TSH **<2.5**; Optimise Levothyroxine; TPOAb Titre |
+| **1st Trimester** | TSH **0.1-2.5**; ↑ Dose ~30% at +ve Test |
+| **2nd/3rd Trimester** | TSH 0.2-3.0 / 0.3-3.0; Monitor q4-6wk |
+| **TPOAb+ (No Hypothyroidism)** | Monitor TSH q4-6wk; ↑ Levothyroxine if TSH >2.5 |
+| **Postpartum** | Reduce to Pre-Pregnancy Dose; Check TSH 6wk |
+
+### Children & Adolescents
+| Aspect | Management |
+|----------|------------|
+| **Diagnosis** | Same (TSH, fT4, TPOAb, US) |
+| **Growth** | Monitor Height Velocity, Bone Age |
+| **Puberty** | Delayed if Untreated; Assess Bone Age |
+| **Transition** | Paediatric → Adult Endocrine Services (Age 16-18) |
+
+### Elderly
+| Aspect | Management |
+|--------|------------|
+| **Target TSH** | **0.5-5.0** (Up to 7 if Frail) |
+| **Start Low** | 25-50µg → Titrate Slowly (25µg q6-8wk) |
+| **Cardiac Risk** | Avoid Over-Replacement (AF, Ischaemia) |
+| **Bone** | Monitor BMD (Over-Replacement → Osteoporosis) |
+
+---
+
+## 5. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Hashimoto = Commonest Cause** | **90% Hypothyroidism** in Iodine-Sufficient Areas |
+| **TPOAb** | **90-95% Positive**; **Diagnostic Gold Standard** |
+| **TgAb** | 70-80% Positive; Complements TPOAb |
+| **Seronegative Hashimoto** | 5-10%; Diagnosis Clinical + US |
+| **TPOAb Titre** | **High Titre** → ↑ Progression Risk |
+| **TSH in Primary Hypo** | **High** (>10-20 mIU/L Overt) |
+| **Subclinical Hashimoto** | TSH 4.5-10 + fT4 Normal + TPOAb+ |
+| **Progression Rate** | Ab+ Euthyroid 2-5%/yr; Subclinical Ab+ 5-10%/yr; TSH>10 = 10-20%/yr |
+| **TSH Target** | Adult 0.4-4.0; Elderly 0.5-5.0; Pregnancy Trimester-Specific |
+| **Levothyroxine Dose** | 1.6 µg/kg/day (~100-150µg for 70kg) |
+| **Administration** | Empty Stomach, 30-60min Pre-Meal; Separate Ca/Fe/PPI 4h |
+| **Pregnancy Targets** | 1st: 0.1-2.5; 2nd: 0.2-3.0; 3rd: 0.3-3.0 mIU/L |
+| **APS-2** | Hashimoto + Addison's (± T1DM) |
+| **APS-3** | Hashimoto + Other Autoimmune (Excl. Addison/T1DM) |
+| **Coeliac Screen** | TTG-IgA + Total IgA (5-15% Coexistence) |
+| **TPOAb Titre** | High Titre → ↑ Progression Risk |
+| **Seronegative Hashimoto** | 5-10%; Diagnosis Clinical + US (Hypoechoic) |
+| **TSH Target** | Adult 0.4-4.0; Elderly 0.5-5.0; Pregnancy Trimester-Specific |
+| **Levothyroxine Dose** | 1.6 µg/kg/day (~100-150µg for 70kg) |
+| **Over-Replacement** | AF, Osteoporosis, Tachycardia, Weight Loss, Tremor |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Hashimoto vs Subacute Thyroiditis** | Hashimoto = Painless, Firm Goitre, TPOAb+, Normal ESR; Subacute = Painful, Tender, ↑ESR |
+| **Hashimoto vs Silent Thyroiditis** | Hashimoto = Chronic, Goitre, TPOAb High; Silent = Acute, Painless, Transient |
+| **Hashimoto vs Central Hypo** | Hashimoto: TSH High; Central: TSH Low/Normal + Low fT4 |
+| **Hashimoto vs Post-Surgical** | Hashimoto = Antibodies+, Goitre; Post-Surgical = Surgical History, No Antibodies |
+| **Seronegative Hashimoto** | 5-10%; Diagnosis = Clinical + US (Hypoechoic) + Exclude Others |
+| **TPOAb vs TgAb** | TPOAb = More Sensitive (90-95%); TgAb = Less Sensitive (70-80%) |
+| **TPOAb Titre** | High Titre → ↑ Progression Risk; Monitor if High |
+| **Hashimoto vs Subacute** | Hashimoto = Chronic, Painless, Firm Goitre; Subacute = Acute, Painful, ↑ESR |
+| **Hashimoto vs Drug-Induced** | Drug-Induced = Drug History (Li, Amiodarone, TKI); Hashimoto = Antibodies+ |
+| **Hashimoto vs Fibrotic (Riedel's)** | Riedel's = "Woody" Hard, Fixed, Invasive, Compressive; Hashimoto = Firm, Rubbery |
+
+**Mnemonic: HASHIMOTO**
+- **H**ashimoto = **H**ypothyroidism Commonest Cause (90%)
+- **A**utoimmune = Lymphocytic Infiltration + Fibrosis
+- **S**erology = **TPOAb 90-95%**, TgAb 70-80%
+- **H**LA-DR3/DR5, CTLA-4, PTPN22
+- **I**gG Autoantibodies (TPO, Tg)
+- **M**yeloperoxidase (TPO Target)
+- **O**ther Autoimmune (APS-2, APS-3, T1DM, Coeliac, Pernicious)
+- **T**hyroid = Firm, Rubbery, Diffuse Goitre
+- **O**rder of Autoimmune: T1DM, Addison, Coeliac, Vitiligo
+
+---
+
+## 9. Mind Map
+
+```mermaid
+mindmap
+  root((Hashimoto's Thyroiditis))
+    Aetiology
+      Autoimmune Lymphocytic Infiltration
+      T-Cell Mediated Destruction
+      Fibrosis & Atrophy
+    Genetics
+      HLA-DR3/DR5 (Strongest)
+      CTLA-4, PTPN22, FCRL3, CD40
+    Antibodies
+      TPOAb 90-95% (Gold Standard)
+      TgAb 70-80%
+      TRAb Negative
+    Clinical Spectrum
+      Euthyroid Ab+ → Monitor
+      Subclinical (TSH 4.5-10) → Treat if Ab+/Pregnant/TSH>10
+      Overt (TSH>10, fT4 Low) → Levothyroxine
+      Myxoedema Coma (ICU Emergency)
+    Clinical Features
+      Firm Rubbery Goitre (60-80%)
+      Non-Tender
+      Hypothyroid Symptoms
+      Associated Autoimmune (APS-2, APS-3)
+    Antibodies
+      TPOAb 90-95% (Gold Standard)
+      TgAb 70-80%
+      TRAb Negative
+      Seronegative 5-10%
+    Progression
+      Euthyroid Ab+ → 2-5%/yr
+      Subclinical Ab+ → 5-10%/yr
+      TSH>10 → 10-20%/yr
+    Associations
+      APS-2: Hashimoto + Addison (+T1DM)
+      APS-3: Hashimoto + Other Autoimmune
+      T1DM, Coeliac, Pernicious Anaemia, Vitiligo
+    Treatment
+      Subclinical: Treat if Ab+/Preg/TSH>10
+      Overt: Levothyroxine 1.6µg/kg
+      Target TSH 0.4-4.0
+      Pregnancy: Trimester Targets
+```
+
+---
+
+## 10. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Hashimoto = Commonest Cause** | **90% Hypothyroidism** in Iodine-Sufficient Areas |
+| **TPOAb** | **90-95% Positive**; **Diagnostic Gold Standard** |
+| **TgAb** | 70-80% Positive; Complements TPOAb |
+| **Seronegative Hashimoto** | 5-10%; Diagnosis Clinical + US |
+| **TPOAb Titre** | **High Titre** → ↑ Progression Risk |
+| **TSH in Primary Hypo** | **High** (>10-20 mIU/L Overt) |
+| **Subclinical Hashimoto** | TSH 4.5-10 + fT4 Normal + TPOAb+ |
+| **Progression Rate** | Ab+ Euthyroid 2-5%/yr; Subclinical Ab+ 5-10%/yr; TSH>10 = 10-20%/yr |
+| **TSH Target** | Adult 0.4-4.0; Elderly 0.5-5.0; Pregnancy Trimester-Specific |
+| **Levothyroxine Dose** | 1.6 µg/kg/day (~100-150µg for 70kg) |
+| **Administration** | Empty Stomach, 30-60min Pre-Meal; Separate Ca/Fe/PPI 4h |
+| **Pregnancy Targets** | 1st: 0.1-2.5; 2nd: 0.2-3.0; 3rd: 0.3-3.0 mIU/L |
+| **APS-2** | Hashimoto + Addison's (± T1DM) |
+| **APS-3** | Hashimoto + Other Autoimmune (Excl. Addison/T1DM) |
+| **Coeliac Screen** | TTG-IgA + Total IgA (5-15% Coexistence) |
+| **TPOAb Titre** | High Titre → ↑ Progression Risk |
+| **Seronegative Hashimoto** | 5-10%; Diagnosis Clinical + US (Hypoechoic) |
+| **TSH Target** | Adult 0.4-4.0; Elderly 0.5-5.0; Pregnancy Trimester-Specific |
+| **Levothyroxine Dose** | 1.6 µg/kg/day (~100-150µg for 70kg) |
+| **Over-Replacement** | AF, Osteoporosis, Tachycardia, Weight Loss, Tremor |
+
+---
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Thyroid Disorders|Thyroid Disorders]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[Hypothyroidism Overview]], [[Central Hypothyroidism]], [[Subclinical Thyroid Disease]], [[Thyroiditis]], [[Autoimmune Polyendocrine Syndromes]]
+## MCQs (10)
+1. **Hashimoto's thyroiditis =**
+   A. Autoimmune lymphocytic thyroiditis → hypothyroidism
+   B. Bacterial thyroid infection
+   C. Viral thyroiditis
+   D. Iodine-induced thyroiditis
+   E. Drug-induced thyroiditis
+
+2. **Commonest cause of hypothyroidism in iodine-sufficient areas:**
+   A. Hashimoto's (90%)
+   B. Post-RAI
+   C. Post-surgical
+   D. Iodine deficiency
+   E. Drug-induced
+
+3. **Anti-TPO antibodies in Hashimoto's:**
+   A. Present in 90-95%
+   B. Present in 50-60%
+   C. Absent
+   D. Only in Graves
+   E. Only in postpartum thyroiditis
+
+4. **Hashimoto's associated autoimmune conditions:**
+   A. Type 1 DM, Addison's, Coeliac, Vitiligo, Pernicious anaemia
+   B. Only Graves
+   C. Only MEN
+   D. Only CAH
+   E. No associations
+
+5. **Histology of Hashimoto's:**
+   A. Lymphocytic infiltration, Hurthle cells, follicular atrophy
+   B. Neutrophilic infiltration
+   C. Granulomatous
+   D. Normal
+   E. Papillary hyperplasia
+
+6. **Goitre in Hashimoto's:**
+   A. Usually present (firm, rubbery, non-tender)
+   B. Always absent
+   C. Always tender
+   D. Only in children
+   E. Only in pregnancy
+
+7. **Postpartum thyroiditis risk:**
+   A. High if TPOAb+ in 1st trimester
+   B. Low if TPOAb+
+   C. No relation
+   D. Only if prior Graves
+   E. Only with family history
+
+8. **Hashimoto's and lymphoma risk:**
+   A. Increased (MALT lymphoma)
+   B. Decreased
+   C. No change
+   D. Only if treated with RAI
+   E. Only in men
+
+9. **Treatment of Hashimoto's:**
+   A. Levothyroxine if hypothyroid/subclinical; monitor if euthyroid
+   B. Carbimazole
+   C. RAI
+   D. Surgery
+   E. Steroids
+
+10. **Selenium in Hashimoto's:**
+   A. May reduce anti-TPO antibodies
+   B. Cures Hashimoto's
+   C. Worsens disease
+   D. No effect
+   E. Contraindicated
+
+## SBA Questions (10)
+1. **40yo woman: goitre, TSH 15, fT4 4, TPOAb 500, TgAb+. Diagnosis?**
+   A. Hashimoto's thyroiditis
+   B. Graves disease
+   C. Subacute thyroiditis
+   D. Riedel's thyroiditis
+   E. De Quervain's
+
+2. **Same patient: treatment?**
+   A. Levothyroxine 1.6 µg/kg/day
+   B. Carbimazole
+   C. RAI
+   D. Surgery
+   E. Observation
+
+3. **28yo woman (pregnant 10wks): TPOAb+, TSH 3.5, fT4 normal. Risk?**
+   A. Postpartum thyroiditis; monitor TSH
+   B. No risk
+   C. Graves disease
+   D. Fetal hypothyroidism
+   E. Stillbirth
+
+4. **Hashimoto's with rapid goitre enlargement. Concern?**
+   A. Thyroid lymphoma (MALT); biopsy if suspicious
+   B. Graves transformation
+   C. RAI needed
+   D. Surgery urgent
+   E. Infection
+
+5. **Sibling of Hashimoto's patient: screening?**
+   A. TPOAb + TSH; if positive → monitor annually
+   B. No screening needed
+   C. Full thyroid panel
+   D. US thyroid only
+   E. Genetic testing
+
+## Flashcards
+- **Q: Hashimoto's =**
+  **A: Autoimmune lymphocytic thyroiditis → hypothyroidism (90% cause in iodine-sufficient)**
+
+- **Q: Anti-TPO**
+  **A: 90-95% positive; also TgAb 70-80%**
+
+- **Q: Associated autoimmunity**
+  **A: T1DM, Addison's, Coeliac, Vitiligo, Pernicious anaemia (APS-3)**
+
+- **Q: Histology**
+  **A: Lymphocytic infiltration + Hurthle cells + follicular atrophy**
+
+- **Q: Goitre**
+  **A: Firm, rubbery, non-tender (vs painful in subacute)**
+
+- **Q: Postpartum thyroiditis**
+  **A: High risk if TPOAb+ in 1st trimester**
+
+- **Q: Lymphoma risk**
+  **A: Increased (MALT lymphoma); monitor for rapid goitre growth**
+
+- **Q: Treatment**
+  **A: Levothyroxine if TSH >4.5; monitor if euthyroid**
+
+- **Q: Selenium**
+  **A: May reduce anti-TPO; 200µg/day; not curative**
+
+- **Q: APS-3**
+  **A: Hashimoto's + other autoimmune (not Addison's = APS-2)**
+
+## Answer Key with Explanations
+### MCQs
+1. **Autoimmune lymphocytic thyroiditis → hypothyroidism** — Hashimoto's thyroiditis =
+
+2. **Hashimoto's (90%)** — Commonest cause of hypothyroidism in iodine-sufficient areas:
+
+3. **Present in 90-95%** — Anti-TPO antibodies in Hashimoto's:
+
+4. **Type 1 DM, Addison's, Coeliac, Vitiligo, Pernicious anaemia** — Hashimoto's associated autoimmune conditions:
+
+5. **Lymphocytic infiltration, Hurthle cells, follicular atrophy** — Histology of Hashimoto's:
+
+6. **Usually present (firm, rubbery, non-tender)** — Goitre in Hashimoto's:
+
+7. **High if TPOAb+ in 1st trimester** — Postpartum thyroiditis risk:
+
+8. **Increased (MALT lymphoma)** — Hashimoto's and lymphoma risk:
+
+9. **Levothyroxine if hypothyroid/subclinical; monitor if euthyroid** — Treatment of Hashimoto's:
+
+10. **May reduce anti-TPO antibodies** — Selenium in Hashimoto's:
+
+
+### SBAs
+1. **Hashimoto's thyroiditis** — 40yo woman: goitre, TSH 15, fT4 4, TPOAb 500, TgAb+. Diagnosis?
+
+2. **Levothyroxine 1.6 µg/kg/day** — Same patient: treatment?
+
+3. **Postpartum thyroiditis; monitor TSH** — 28yo woman (pregnant 10wks): TPOAb+, TSH 3.5, fT4 normal. Risk?
+
+4. **Thyroid lymphoma (MALT); biopsy if suspicious** — Hashimoto's with rapid goitre enlargement. Concern?
+
+5. **TPOAb + TSH; if positive → monitor annually** — Sibling of Hashimoto's patient: screening?
+

@@ -1,0 +1,528 @@
+---
+tags: [medicine, endocrinology, davidson, merkel-cell, neuroendocrine, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Merkel Cell Carcinoma (MCC) is a rare, aggressive cutaneous neuroendocrine carcinoma. Key viva: MCPyV association, CK20 positivity, sentinel lymph node biopsy, and immunotherapy (PD-1/PD-L1 inhibitors)."
+see_also: ["Neuroendocrine Tumours", "Carcinoid Syndrome", "Pancreatic NETs", "Bronchial NETs", "WHO 2019 NET Grading", "Skin Cancers"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Merkel Cell Carcinoma (MCC)
+
+> [!info]
+> **Merkel Cell Carcinoma (MCC) = Rare, Aggressive Cutaneous Neuroendocrine Carcinoma.** **MCPyV (Merkel Cell Polyomavirus) = 80% Causal.** **CK20+ (Perinuclear Dot), TTF-1 Negative.** **Highly Aggressive** (Early Lymphatic Spread). **Immunotherapy (PD-1/PD-L1) = Game-Changer for Advanced Disease.**
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Recognise clinical presentation (Rapidly Growing Painless Nodule on Sun-Exposed Skin)
+- [ ] Apply diagnostic criteria (AEIOU, Histology, IHC: CK20+, TTF-1-, MCPyV+)
+- [ ] Stage using AJCC 8th Edition (TNM)
+- [ ] Apply multimodal management (Surgery + SLNB → Adjuvant RT → Systemic Therapy)
+- [ ] Understand role of MCPyV and immunotherapy (PD-1/PD-L1 inhibitors)
+
+---
+
+## 2. Epidemiology & Risk Factors
+
+| Feature | Details |
+|-----------|---------|
+| **Incidence** | **~0.7/100,000/year** (Rare); Increasing |
+| **Age** | **>70 Years** (Median 75); Rare <50 |
+| **Sex** | **Male > Female** (2:1) |
+| **Risk Factors** | **UV Radiation** (Major); **Immunosuppression** (Transplant, HIV, CLL); **MCPyV Infection** (80%); Fair Skin, Age >50 |
+
+---
+
+## 2. Pathogenesis — MCPyV vs UV-Induced
+
+| Pathway | Mechanism | Frequency | Features |
+|--------|-----------|----------|---------|
+| **MCPyV-Positive (80%)** | **Merkel Cell Polyomavirus Integration** → **Large T Antigen** (truncated) → **RB/p53 Inactivation** | **~80%** | Older, Immunosuppressed, Less UV Signature |
+| **Virus-Negative (UV-Induced)** | **UV-Induced Mutations** (TP53, RB1, PI3K, NOTCH) | **~20%** | **High UV Signature** (C→T Transitions); Older, Immunocompetent, Higher Mutational Burden |
+
+---
+
+## 2. Clinical Presentation
+
+| Feature | Details |
+|---------|---------|
+| **Presentation** | **Rapidly Growing, Painless, Firm, Dome-Shaped Nodule** (1-2cm) |
+| **Location** | **Sun-Exposed Skin** (Head/Neck 50%, Extremities 40%, Trunk 10%) |
+| **Appearance** | **Red/Purple, Firm, Non-Tender, Shiny**; Often **AEIOU** Features |
+| **Growth** | **Rapid** (Doubling Time ~Weeks) |
+| **Lymph Nodes** | **Palpable Inguinal/Axillary/Cervical** (Early Lymphatic Spread) |
+| **Mets at Diagnosis** | **~30%** (Lymph Nodes, Liver, Lung, Bone, Brain) |
+
+### AEIOU Clinical Mnemonic
+| Letter | Feature |
+|------|---------|
+| **A** | **Asymptomatic** (No Pain/Itch) |
+| **E** | **Expanding Rapidly** (Doubling Time ~Weeks) |
+| **I** | **Immune Suppression** (Risk Factor) |
+| **O** | **Older** (>70 Years Median) |
+| **U** | **Ultraviolet Exposure** (Sun-Exposed Sites) |
+
+---
+
+## 2. Histopathology & Immunohistochemistry (IHC)
+
+### Histology
+| Feature | Description |
+|---------|-------------|
+| **Architecture** | **Small Round Blue Cells** (Nests/Trabeculae); Scant Cytoplasm; High N:C Ratio |
+| **Mitotic Rate** | **High** (>10 mitoses/10 HPF typical) |
+| **Necrosis** | Common (Geographic/Comedo) |
+| **Architecture** | Nests, Trabeculae, Sheets (Neuroendocrine Pattern) |
+
+### Immunohistochemistry (IHC) — Diagnostic Panel
+| Marker | MCC | Small Cell Lung Cancer | Melanoma | Lymphoma |
+|---------|-----|------------------------|----------|----------|
+| **CK20** | **+ (Perinuclear Dot)** | + (Usually Diffuse) | - | - |
+| **CK7** | - | + | - | - |
+| **TTF-1** | **-** | **+ (Most)** | - | - |
+| **Chromogranin A** | **+** | + | - | - |
+| **Synaptophysin** | **+** | + | - | - |
+| **NSE** | **+** | + | - | - |
+| **CD45 (LCA)** | - | - | - | **+** |
+| **S100 / HMB-45 / Melan-A** | - | - | **+** | - |
+| **MCPyV Large T Antigen** | **+ (CM2B4 Ab)** | - | - | - |
+
+**Diagnostic Triad**: **CK20+ (Perinuclear Dot), TTF-1 Negative, MCPyV Large T Antigen Positive**
+
+---
+
+## 3. Staging — AJCC 8th Edition (TNM)
+
+### Primary Tumour (T)
+| T Category | Size / Invasion |
+|----------|----------------|
+| **Tis** | In Situ |
+| **T1** | **≤2 cm** |
+| **T2** | **>2 - ≤5 cm** |
+| **T3** | **>5 cm** |
+| **T4** | **Invades Bone, Muscle, Fascia, Cartilage** |
+
+### Regional Nodes (N)
+| N Category | Criteria |
+|----------|---------|
+| **N0** | No Regional Nodal Metastasis |
+| **N1a** | **Clinically Occult** (SLNB Positive) |
+| **N1b** | **Clinically Detectable** (Palpable/Imaging) |
+| **N2** | **In-Transit Metastases** (Satellite Lesions Between Primary & Nodes) |
+| **N3** | **N1 + N2** (Both Nodes + In-Transit) |
+
+### Distant Metastasis (M)
+| M Category | Criteria |
+|-----------|----------|
+| **M0** | No Distant Metastasis |
+| **M1a** | Skin/Subcutaneous/Nodes Beyond Regional |
+| **M1b** | Lung Metastases |
+| **M1b** | Other Visceral (Liver, Bone, Brain) |
+| **M1c** | Multiple Distant Sites |
+
+### Stage Grouping (AJCC 8th)
+| Stage | T | N | M |
+|-------|-----|-----|---|
+| **0** | Tis | N0 | M0 |
+| **I** | T1 | N0 | M0 |
+| **IIA** | T2/T3 | N0 | M0 |
+| **IIB** | T4 | N0 | M0 |
+| **IIIA** | Any T | N1a | M0 |
+| **IIIB** | Any T | N1b | M0 |
+| **IIIC** | Any T | N2 | M0 |
+| **IV** | Any T | Any N | M1 |
+
+---
+
+## 3. Diagnosis — Workup
+
+### Initial Assessment
+| Component | Details |
+|---------|---------|
+| **History/Exam** | Skin Exam (Primary + Lymph Nodes), Full Skin Exam |
+| **Biopsy** | **Core Needle** (Preferred) / Excisional (If Small); **NOT Shave** |
+| **IHC** | **CK20+ (Perinuclear Dot), TTF-1-, Chromogranin+, Synaptophysin+, MCPyV LT+ (CM2B4)** |
+| **MCPyV Testing** | **CM2B4 Antibody (Large T Antigen)** or PCR |
+
+### Staging Investigations
+| Modality | Indication |
+|----------|-------------|
+| **Sentinel Lymph Node Biopsy (SLNB)** | **All Clinically Node-Negative (T1-T2)**; **Mandatory** |
+| **Imaging (CT/PET-CT)** | **If SLNB+ or Clinically Node-Positive** / T3-T4 |
+| **PET-CT (FDG)** | **High Sensitivity** (MCC is FDG-Avid) |
+| **Sentinel Lymph Node Biopsy (SLNB)** | **Standard for T1-T2, cN0** |
+
+---
+
+## 4. Surgical Management
+
+### Primary Tumour
+| Procedure | Indication |
+|-----------|-----------|
+| **Wide Local Excision (WLE)** | **Margins: 1-2cm (T1-T2), 2-3cm (T3-T4)** |
+| **Mohs Micrographic Surgery** | **Option for Facial/Head-Neck** (Tissue Sparing) |
+| **Mohs** | Margin Control (99% Clearance); Tissue Conservation |
+
+### Lymph Node Management
+| Scenario | Management |
+|----------|-----------|
+| **Clinically Node-Negative (cN0)** | **SLNB Mandatory** (T1-T2); If Positive → Completion Lymphadenectomy |
+| **Clinically Node-Positive (cN+)** | **Therapeutic Lymphadenectomy** (Radical) |
+| **In-Transit/Satellite Mets** | Excision + Lymphadenectomy |
+
+---
+
+## 4. Adjuvant Therapy
+
+### Radiotherapy (Adjuvant)
+| Indication | Dose / Fractionation |
+|------------|----------------------|
+| **Primary Tumour** | **T2-T4**, Positive Margins, Lymphovascular Invasion, Perineural Invasion |
+| **Lymph Nodes** | **Post-Lymphadenectomy** (High-Risk: ≥2 Nodes, ENE+, Large Nodes) |
+| **Dose** | **50-56 Gy / 25-28 Fractions** (Adjuvant); **60-66 Gy** (Positive Margins/ENE) |
+
+### Systemic Therapy (Adjuvant/Neoadjuvant)
+| Setting | Regimen |
+|---------|---------|
+| **Adjuvant (High-Risk Resected)** | **Nivolumab 480mg IV q4wk** (CheckMate 238 / ADAM) **OR** **Pembrolizumab 200mg q3w** (KEYNOTE-716) |
+| **Neoadjuvant** | **Nivolumab 240mg q2wk × 3-4 Cycles** (Pre-Surgery) + Adjuvant |
+| **Chemotherapy** | **Not Standard Adjuvant** (Historical: Platinum + Etoposide — Obsolete) |
+
+---
+
+## 4. Advanced/Metastatic Disease — Systemic Therapy
+
+### First-Line Immunotherapy (Standard of Care)
+| Agent | Dose | Approval |
+|--------|------|---------|
+| **Pembrolizumab** | **200mg IV q3wk** | **FDA 1st Line (2018)** |
+| **Avelumab** | **10mg/kg IV q2wk** | **FDA 1st Line (2017)** |
+| **Nivolumab** | **480mg q4wk** | **2nd Line (Post-Chemo)** |
+| **Retifulimab** | **500mg IV q4wk** | **FDA 2023** |
+
+### Response & Monitoring
+| Metric | Value |
+|---------|-------|
+| **ORR (1st Line)** | **50-60%** (Avelumab JAVELIN; Pembrolizumab KEYNOTE-017) |
+| **Median PFS** | **~8-12 Months** |
+| **Median OS** | **~20-25 Months** |
+| **Monitoring** | CT q3mo (RECIST 1.1); LDH, CBC, LFTs |
+
+### Refractory Disease
+| Line | Options |
+|--------|---------|
+| **2nd Line** | **Other PD-1/PD-L1** (If Not Used 1st), **Clinical Trial** |
+| **Chemotherapy** (Rarely Used Now) | **Carboplatin + Etoposide** (Like SCLC) — Low Response, High Toxicity |
+| **Clinical Trials** | **Bispecifics, CAR-T, ADC, Combination IO** |
+
+---
+
+## 5. Special Situations
+
+### Lymph Node Management
+| Scenario | Management |
+|----------|------------|
+| **cN0 (T1-T2)** | **SLNB Mandatory** (Sensitivity 90%+) |
+| **SLNB Positive** | Completion Lymphadenectomy (Therapeutic) |
+| **cN+ (Palpable/Imaging)** | Therapeutic Lymphadenectomy (Radical) |
+| **In-Transit / Satellite Mets** | Wide Excision + Lymphadenectomy; Consider Isolated Limb Infusion/Perfusion |
+
+### Special Sites
+| Site | Considerations |
+|-------|--------------|
+| **Head & Neck** | **Mohs Surgery** (Tissue Sparing); Parotid/Neck Dissection if Nodes |
+| **Eyelid** | Mohs + Sentinel Node; Lid Reconstruction |
+| **Genital** | Wide Excision + Inguinal/Femoral Lymphadenectomy |
+
+---
+
+## 5. Surveillance & Follow-Up
+
+| Timeframe | Clinical Exam | Imaging | Labs |
+|-----------|----------------|---------|------|
+| **0-2 Years** | **q3 Months** | **CT/PET-CT** (q3-6mo) | LDH, LFT, CBC q3mo |
+| **2-5 Years** | **q6 Months** | **CT/PET-CT** (q6-12mo) | LDH, CBC q6mo |
+| **>5 Years** | **Annual** | **Annual** | As Needed |
+
+**Lifelong Surveillance** (High Recurrence Risk Even After 5 Years)
+
+---
+
+## 5. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **MCC Clinical** | **AEIOU**: Asymptomatic, Expanding, Immunosuppressed, Older (>70), UV-Exposed |
+| **IHC Triad** | **CK20+ (Perinuclear Dot), TTF-1-, MCPyV LT+ (CM2B4)** |
+| **MCPyV** | **80% Positive**; Large T Antigen (CM2B4 Ab); Viral Integration → LT Ag → RB/p53 Inactivation |
+| **Virus-Negative MCC** | UV Signature (TP53, RB1 Mutations); Older, Immunocompetent |
+| **SLNB** | **Mandatory for cN0 (T1-T2)**; Sensitivity >90% |
+| **Surgery** | WLE 1-2cm Margins (T1-T2); Mohs for Face |
+| **Adjuvant RT** | T2-T4, +Margins, LVI, PNI, N+; 50-56Gy/25-28# |
+| **Adjuvant Immunotherapy** | **Nivolumab 480mg q4wk / Pembrolizumab 200mg q3wk / Avelumab 10mg/kg q2w** (1 Year) |
+| **1st Line Metastatic** | **Anti-PD-1/PD-L1** (Avelumab/Pembrolizumab) — **ORR 50-60%** |
+| **MCPyV** | **80% Positive**; Large T Antigen (CM2B4 Ab); Viral Integration → LT Ag → RB/p53 Inactivation |
+| **Virus-Negative** | UV Signature (TP53, RB1 Mutations); Higher Mutational Burden |
+| **Staging** | AJCC 8th: T1-T4, N1a/b, N2/N3, M1a-c |
+| **SLNB** | Mandatory cN0 T1-T2 (>90% Sensitivity) |
+| **Adjuvant IO** | **Nivolumab/Pembrolizumab/Avelumab × 1 Year** (High-Risk Resected) |
+| **1st Line Metastatic** | **Anti-PD-1/PD-L1** (Avelumab/Pembrolizumab) — ORR ~50-60% |
+| **MCPyV** | 80% Positive; LT Ag → RB/p53 Inactivation |
+| **Virus-Negative** | UV Signature (TP53, RB1); Older, Immunocompetent |
+
+---
+
+## 9. Mind Map
+
+```mermaid
+mindmap
+  root((Merkel Cell Carcinoma))
+    Epidemiology
+      Rare (0.7/100k); Male 2:1; Age >70; UV + MCPyV
+    AEIOU
+      Asymptomatic, Expanding, Immunosuppressed, Older, UV
+    Pathogenesis
+      MCPyV+ (80%): LT Ag → RB/p53 Inactivation
+      Virus-Neg: UV Mutational Signature (TP53, RB1)
+    IHC Triad
+      CK20+ (Perinuclear Dot), TTF-1-, MCPyV LT+ (CM2B4)
+    Staging (AJCC 8th)
+      T1-4 (Size/Invasion); N0-3 (SLNB vs Clin Node); M1a-c
+    Surgery
+      WLE (1-3cm Margins); Mohs (Face); SLNB (cN0 T1-T2)
+    Adjuvant
+      RT: T2-4, +Margins, LVI, PNI, N+
+      IO: Nivolumab/Pembro/Avelumab (1yr)
+    Systemic
+      1st Line: Anti-PD-1/PD-L1 (Ave/Pembro) — ORR 50-60%
+      Refractory: Clinical Trials
+    Surveillance
+      q3mo x2yr (Exam + CT/PET); q6mo x3yr; Annual >5yr
+    MCPyV
+      80%+; LT Ag → RB/p53 Inactivation
+    Virus-Neg
+      UV Signature (TP53, RB1); High TMB
+```
+
+---
+
+## 9. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **AEIOU MCC** | Asymptomatic, Expanding Rapidly, Immunosuppressed, Older (>70), UV Exposure |
+| **IHC Triad** | **CK20+ (Perinuclear Dot), TTF-1 Negative, MCPyV Large T Antigen Positive** |
+| **MCPyV** | **80%**; Large T Antigen (CM2B4) → RB/p53 Inactivation |
+| **Virus-Negative** | **UV Signature** (TP53, RB1 Mutations); High TMB |
+| **SLNB** | **Mandatory for cN0 T1-T2**; Sensitivity >90% |
+| **Surgery** | WLE 1-2cm (T1-2), 2-3cm (T3-4); Mohs (Facial) |
+| **Adjuvant RT** | T2-T4, Positive Margins, LVI, PNI, N+; 50-56Gy/25-28# |
+| **Adjuvant IO** | **Nivo/Pembrolizumab/Avelumab × 1 Year** (CheckMate 238 / KEYNOTE-716 / JAVELIN) |
+| **1st Line Metastatic** | **Anti-PD-1/PD-L1** (Avelumab, Pembrolizumab) — **ORR 50-60%** |
+| **MCPyV** | **80%**; LT Antigen → RB/p53 Inactivation |
+| **Virus-Negative** | UV Signature (TP53, RB1); **Higher TMB** |
+| **Staging** | AJCC 8th: T1-4, N1a/b/N2/N3, M1a-c |
+| **SLNB** | **Mandatory cN0 T1-T2**; Sensitivity >90% |
+| **Adjuvant IO** | **1 Year** (Nivo/Pembro/Avelumab) Post-Resection High-Risk |
+| **1st Line Metastatic** | **Anti-PD-1/PD-L1** (Ave/Pembro); ORR ~50-60% |
+| **MCC vs SCLC** | **TTF-1 Negative** (MCC); **CK20 Perinuclear Dot** (MCC) |
+| **MCPyV Detection** | **CM2B4 Ab** (Large T Antigen); PCR for Viral DNA |
+
+---
+
+## 9. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Neuroendocrine Tumours|Neuroendocrine Tumours]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[Carcinoid Syndrome]], [[Pancreatic NETs]], [[Bronchial NETs]], [[WHO 2019 NET Grading]], [[Skin Cancers]]
+## MCQs (10)
+1. **Merkel cell carcinoma (MCC) is a:**
+   A. High-grade neuroendocrine carcinoma of skin (Merkel cell = touch receptor)
+   B. Low-grade NET
+   C. Melanoma
+   D. Squamous cell carcinoma
+   E. Basal cell carcinoma
+
+2. **Merkel cell polyomavirus (MCPyV) association:**
+   A. ~80% of MCC (clonal integration); UV-signature mutations in virus-negative
+   B. 100%
+   C. 0%
+   D. 50%
+   E. Only in immunosuppressed
+
+3. **MCC typical presentation:**
+   A. Elderly, sun-exposed skin (head/neck), painless, rapidly growing, violaceous nodule
+   B. Young, non-sun-exposed
+   C. Pigmented
+   D. Ulcerated only
+   E. Multiple lesions
+
+4. **Immunohistochemistry for MCC:**
+   A. CK20 (perinuclear dot-like) +, Chromogranin A +, Synaptophysin +, MCPyV large T Ag +
+   B. CK20 -
+   C. S100 +
+   D. HMB45 +
+   E. Melan A +
+
+5. **MCC staging (AJCC 8th):**
+   A. Stage I: local <2cm; II: local >2cm; III: nodal; IV: distant
+   B. Same as melanoma
+   C. Same as SCC
+   D. No staging
+   E. Only TNM
+
+6. **MCC treatment (localised):**
+   A. Wide local excision (1-2cm margins) + SLNB + adjuvant radiotherapy to primary + nodes
+   B. Excision only
+   C. Radiotherapy only
+   D. Chemotherapy only
+   E. Immunotherapy only
+
+7. **SLNB in MCC:**
+   A. Indicated for all (high nodal metastasis rate 30% clinical, 50% occult)
+   B. Not indicated
+   C. Only if >2cm
+   D. Only head/neck
+   E. Only immunosuppressed
+
+8. **MCC adjuvant radiotherapy:**
+   A. Reduces local/regional recurrence (50% → 10-20%); indicated for most
+   B. Not beneficial
+   C. Only for positive margins
+   D. Only for nodal disease
+   E. Increases recurrence
+
+9. **Advanced MCC immunotherapy:**
+   A. Anti-PD-1/PD-L1 (avelumab, pembrolizumab, nivolumab) — 1st line; ORR ~50%
+   B. Chemotherapy 1st line
+   C. TKI
+   D. PRRT
+   E. No effective treatment
+
+10. **MCC surveillance:**
+   A. High recurrence risk (40% at 2yr); skin/nodal exam q3-6mo ×2yr then q6-12mo; imaging as indicated
+   B. Annual only
+   C. No surveillance
+   D. Only if symptomatic
+   E. Only skin exam
+
+## SBA Questions (5)
+1. **75yo man: 2cm rapidly growing violaceous nodule on cheek. Biopsy: small blue cells, CK20 perinuclear dot+, TTF-1-, MCPyV+. Staging: no nodes. Treatment?**
+   A. Wide local excision 1-2cm margins + SLNB + adjuvant RT to primary + nodal basin
+   B. Excision only
+   C. RT only
+   D. Chemo only
+   E. Immunotherapy only
+
+2. **Same patient: SLNB positive (micrometastasis). Adjuvant management?**
+   A. Completion lymph node dissection OR adjuvant RT to nodal basin (RT preferred)
+   B. Chemo
+   C. Immunotherapy
+   D. Observation
+   E. Completion dissection only
+
+3. **80yo woman: metastatic MCC (lung, liver). PD-L1 positive. 1st line?**
+   A. Avelumab (anti-PD-L1) or pembrolizumab/nivolumab (anti-PD-1)
+   B. Chemotherapy (carboplatin/etoposide)
+   C. Surgery
+   D. RT
+   E. PRRT
+
+4. **MCC vs small cell lung cancer IHC:**
+   A. MCC: CK20 dot+; SCLC: CK20-, TTF-1+, CK7+
+   B. Both CK20+
+   C. Both TTF-1+
+   D. Both S100+
+   E. No difference
+
+5. **Immunosuppressed patient (transplant): MCC risk:**
+   A. 10-30x increased risk; more aggressive; earlier onset; MCPyV+
+   B. Same as immunocompetent
+   C. Lower risk
+   D. Only virus-negative
+   E. No difference
+
+## Flashcards
+- **Q: MCC definition**
+  **A: High-grade cutaneous neuroendocrine carcinoma (Merkel cells = mechanoreceptors)**
+
+- **Q: Epidemiology**
+  **A: Elderly (70-80y), fair skin, sun-exposed (head/neck 50%), immunosuppression ↑ risk**
+
+- **Q: MCPyV**
+  **A: Polyomavirus; clonal integration in ~80%; virus-negative = UV signature mutations**
+
+- **Q: Clinical**
+  **A: Painless, firm, violaceous/red nodule; rapid growth (weeks-months); AEIOU features**
+
+- **Q: AEIOU**
+  **A: Asymptomatic, Expanding rapidly, Immune suppression, Older >50, Ultraviolet exposure**
+
+- **Q: IHC**
+  **A: CK20 perinuclear dot+ (pathognomonic), Chromogranin A+, Synaptophysin+, MCPyV LT-Ag+**
+
+- **Q: Differential**
+  **A: SCLC (TTF-1+, CK20-), melanoma (S100+, HMB45+), lymphoma (CD45+), SCC (p40+)**
+
+- **Q: Staging**
+  **A: AJCC 8th: I (<2cm), II (>2cm), III (nodal), IV (distant)**
+
+- **Q: SLNB**
+  **A: Indicated for ALL (occult nodal mets 30-50%); guides adjuvant RT**
+
+- **Q: Surgery**
+  **A: Wide local excision 1-2cm margins + SLNB**
+
+- **Q: Adjuvant RT**
+  **A: Reduces local/regional recurrence 50%→10-20%; primary + nodal basin**
+
+- **Q: Advanced Rx**
+  **A: 1st line: anti-PD-1/PD-L1 (avelumab FDA approved); ORR ~50%**
+
+- **Q: Chemotherapy**
+  **A: Carboplatin+etoposide (2nd line); response transient (3-6mo)**
+
+- **Q: Surveillance**
+  **A: q3-6mo ×2yr (skin + nodes + imaging); 40% recurrence at 2yr**
+
+- **Q: Immunosuppression**
+  **A: Transplant/HIV/CLL: 10-30x risk; earlier onset; more aggressive**
+
+## Answer Key with Explanations
+### MCQs
+1. **High-grade neuroendocrine carcinoma of skin (Merkel cell = touch receptor)** — Merkel cell carcinoma (MCC) is a:
+
+2. **~80% of MCC (clonal integration); UV-signature mutations in virus-negative** — Merkel cell polyomavirus (MCPyV) association:
+
+3. **Elderly, sun-exposed skin (head/neck), painless, rapidly growing, violaceous nodule** — MCC typical presentation:
+
+4. **CK20 (perinuclear dot-like) +, Chromogranin A +, Synaptophysin +, MCPyV large T Ag +** — Immunohistochemistry for MCC:
+
+5. **Stage I: local <2cm; II: local >2cm; III: nodal; IV: distant** — MCC staging (AJCC 8th):
+
+6. **Wide local excision (1-2cm margins) + SLNB + adjuvant radiotherapy to primary + nodes** — MCC treatment (localised):
+
+7. **Indicated for all (high nodal metastasis rate 30% clinical, 50% occult)** — SLNB in MCC:
+
+8. **Reduces local/regional recurrence (50% → 10-20%); indicated for most** — MCC adjuvant radiotherapy:
+
+9. **Anti-PD-1/PD-L1 (avelumab, pembrolizumab, nivolumab) — 1st line; ORR ~50%** — Advanced MCC immunotherapy:
+
+10. **High recurrence risk (40% at 2yr); skin/nodal exam q3-6mo ×2yr then q6-12mo; imaging as indicated** — MCC surveillance:
+
+### SBAs
+1. **Wide local excision 1-2cm margins + SLNB + adjuvant RT to primary + nodal basin** — 75yo man: 2cm rapidly growing violaceous nodule on cheek. Biopsy: small blue cells, CK20 perinuclear dot+, TTF-1-, MCPyV+. Staging: no nodes. Treatment?
+
+2. **Completion lymph node dissection OR adjuvant RT to nodal basin (RT preferred)** — Same patient: SLNB positive (micrometastasis). Adjuvant management?
+
+3. **Avelumab (anti-PD-L1) or pembrolizumab/nivolumab (anti-PD-1)** — 80yo woman: metastatic MCC (lung, liver). PD-L1 positive. 1st line?
+
+4. **MCC: CK20 dot+; SCLC: CK20-, TTF-1+, CK7+** — MCC vs small cell lung cancer IHC:
+
+5. **10-30x increased risk; more aggressive; earlier onset; MCPyV+** — Immunosuppressed patient (transplant): MCC risk:

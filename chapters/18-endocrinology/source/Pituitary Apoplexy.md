@@ -1,0 +1,567 @@
+---
+tags: [medicine, endocrinology, davidson, pituitary-apoplexy, emergency, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Pituitary apoplexy is a neurosurgical emergency. Immediate recognition and steroid cover are life-saving. Key viva topic: presentation, immediate management, differentiation from SAH/meningitis, indications for surgery."
+see_also: ["Pituitary Adenomas: Functioning", "Pituitary Adenomas: Non-Functioning", "Hypopituitarism", "Adrenal Crisis", "Endocrine Emergencies"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Pituitary Apoplexy
+
+> [!info]
+> **Pituitary Apoplexy = Acute Haemorrhage/Infarction in a Pituitary Adenoma.** A neurosurgical emergency. Presents with sudden headache, visual loss, ophthalmoplegia, and acute adrenal insufficiency. Mortality 1-2% with prompt treatment; higher if delayed.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Recognise clinical presentation of pituitary apoplexy
+- [ ] Execute emergency management protocol (steroids + fluids + urgent imaging)
+- [ ] Differentiate from SAH, meningitis, migraine, cavernous sinus thrombosis
+- [ ] Indicate surgical vs conservative management
+- [ ] Manage long-term hypopituitarism post-apoplexy
+
+---
+
+## 1. Definition & Epidemiology
+
+| Feature | Details |
+|---------|---------|
+| **Definition** | Acute Haemorrhage and/or Infarction within a Pituitary Adenoma |
+| **Incidence** | **0.6-10%** of Pituitary Adenomas; **0.17-0.5 per 100,000/year** |
+| **Mortality** | **1-2%** (with prompt treatment); Higher if delayed |
+| **Peak Age** | 40-60 years |
+| **Sex** | Slight Male Predominance |
+| **Adenoma Size** | **Macroadenoma (>10mm) in >90%**; Microadenoma Rare |
+
+---
+
+## 2. Aetiology & Precipitating Factors
+
+### Pathophysiology
+| Mechanism | Details |
+|----------|---------|
+| **Haemorrhage** | Rupture of Fragile Tumour Vessels (No Elastic Lamina) → Acute Expansion |
+| **Infarction** | Compression of Normal Pituitary + Vascular Compromise (Venous Outflow Obstruction) |
+| **Combined** | Most Cases: Haemorrhage + Infarction |
+
+### Precipitating Factors
+| Factor | Mechanism / Association |
+|----------|-------------------------|
+| **Hypertension** | Sudden ↑ BP → Vessel Rupture (Commonest Precipitant) |
+| **Anticoagulation / Antiplatelet** | Warfarin, DOACs, Aspirin, Clopidogrel, Heparin |
+| **Coagulopathy** | DIC, Liver Disease, Haemophilia, Thrombocytopenia |
+| **Dynamic Testing** | TRH, GnRH, Synacthen, Insulin Tolerance Test |
+| **Pregnancy / Postpartum** | ↑ Pituitary Volume + Hypercoagulability |
+| **Trauma / Surgery** | Head Trauma, Transsphenoidal Surgery, Dental Extraction |
+| **Coagulation Disorders** | DIC, TTP, HUS, Antiphospholipid Syndrome |
+| **Dopamine Agonists** | Cabergoline/Bromocriptine (Rapid Tumour Shrinkage → Haemorrhage) |
+
+---
+
+## 2. Clinical Presentation
+
+### Classical Triad (Present in ~50%)
+| Component | Frequency | Details |
+|-----------|-----------|---------|
+| **Sudden Severe Headache** | **>90%** | **"Thunderclap"**; Bifrontal/Retro-orbital; Valsalva Exacerbates |
+| **Visual Disturbance** | **70-80%** | **Bi-temporal Hemianopia** (Chiasmal); **Acuity Loss** |
+| **Ophthalmoplegia** | **50-70%** | **CN III > IV > VI**; Ptosis, Diplopia, Mydriasis |
+
+### Additional Features
+| System | Features |
+|--------|----------|
+| **Endocrine** | **Acute Adrenal Insufficiency** (Hypotension, Hyponatraemia, Hypoglycaemia, Hyperkalaemia) |
+| **Neurological** | Altered Consciousness, Meningism (Neck Stiffness), Seizures |
+| **Cranial Nerves** | **CN III** (Ptosis, Mydriasis, "Down & Out"); **CN IV** (Diplopia on Downgaze); **CN VI** (Esotropia) |
+| **Systemic** | Nausea, Vomiting, Fever, Rigors (Chemical Meningitis from Blood) |
+
+### Atypical Presentations
+| Presentation | Frequency |
+|--------------|-----------|
+| **Isolated Headache** | 10-15% |
+| **Isolated Visual Loss** | 5-10% |
+| **Isolated Ophthalmoplegia** | 5% |
+| **Isolated Endocrine** | <5% (Acute Adrenal Crisis) |
+| **Asymptomatic (Incidental)** | <5% (Found on Imaging for Other Reason) |
+
+---
+
+## 3. Differential Diagnosis
+
+| Condition | Key Differentiators |
+|-----------|---------------------|
+| **Subarachnoid Haemorrhage (SAH)** | **Thunderclap Headache + Meningism + CT Hyperdense Basal Cisterns**; Normal Pituitary on MRI |
+| **Bacterial Meningitis** | Fever, Meningism, ↑ WCC/CRP, CSF: ↑ WBC, ↓ Glucose, ↑ Protein |
+| **Viral Meningitis** | Fever, Meningism, CSF: Lymphocytic Pleocytosis, Normal Glucose |
+| **Cavernous Sinus Thrombosis** | Fever, Proptosis, Chemosis, Multiple CN Palsies, MRI: Thrombosed Cavernous Sinus |
+| **Migraine with Aura** | Recurrent; Visual Aura; No CN Palsies; Normal Imaging |
+| **Cluster Headache** | Unilateral Peri-orbital Pain; Autonomic Features; No Visual Field Defect |
+| **Metastatic Pituitary Deposit** | Older Age, Known Primary, Lytic Bone Lesions, Diplopia |
+
+---
+
+## 3. Diagnostic Workup
+
+### Immediate Investigations (Emergency)
+| Investigation | Purpose |
+|---------------|---------|
+| **MRI Pituitary (Urgent)** | **Gold Standard**; Haemorrhage (T1/T2*), Infarction, Mass Effect, Chiasmal Compression |
+| **CT Head (If MRI Unavailable)** | Hyperdense Sella (Acute Blood); Bony Sella Enlargement |
+| **Visual Fields (Goldmann/Humphrey)** | Bitemporal Hemianopia (Chiasmal Compression) |
+| **Hormonal Panel** | Cortisol, ACTH, TSH, fT4, Prolactin, LH/FSH, Testosterone/Oestradiol, GH/IGF-1 |
+| **Electrolytes / Glucose** | Na+, K+, Urea, Creatinine, Glucose (Adrenal Crisis Check) |
+| **Coagulation Screen** | INR, APTT, Fibrinogen, D-dimer (Anticoagulation Status) |
+
+### MRI Findings in Apoplexy
+| Sequence | Finding |
+|----------|---------|
+| **T1** | Hyperintense (Methaemoglobin) in Acute Phase; Heterogeneous |
+| **T2** | Heterogeneous (Haemorrhage + Infarction + Oedema) |
+| **T2*** / SWI | **Blooming** (Susceptibility) = Haemorrhage |
+| **Post-Gadolinium** | Peripheral Enhancement (Viable Tumour Rim); Central Non-enhancing (Infarct) |
+| **Mass Effect** | Chiasmal Compression, Cavernous Sinus Invasion, Third Ventricle Obstruction |
+
+---
+
+## 3. Emergency Management Protocol
+
+```
+SUSPECTED PITUITARY APOPLEXY
+         │
+         ▼
+1. ABCDE + IMMEDIATE STABILISATION
+         │
+         ├── AIRWAY / BREATHING: High-Flow O₂, Intubate if GCS <8
+         ├── CIRCULATION: **HYDROCORTISONE 100mg IV STAT** + 1L 0.9% NaCl OVER 1 HOUR
+         │       (DO NOT DELAY FOR TESTS — LIFE-SAVING)
+         ├── DISABILITY: GCS, Pupillary Response, Visual Acuity
+         └── EXPOSURE: Temperature, Full Examination
+         │
+         ▼
+2. URGENT IMAGING (Within 1 Hour)
+         │
+         ├── MRI PITUITARY (Gold Standard) — Haemorrhage, Infarction, Mass Effect
+         └── IF MRI UNAVAILABLE → CT HEAD (Hyperdense Sella)
+         │
+         ▼
+3. HORMONAL RESUSCITATION
+         │
+         ├── HYDROCORTISONE 100mg IV STAT → 50-100mg IV Q6H (Taper Over Days)
+         ├── FLUids: 2-3L 0.9% NaCl / 24H (Monitor U&Es, Glucose, JVP, UOP)
+         ├── CORRECT HYPONATRAEMIA (3% Saline if Severe/Neuro Symptoms)
+         ├── CORRECT HYPOGLYCAEMIA (10% Dextrose)
+         ▼
+         ▼
+4. URGENT NEUROSURGICAL REFERRAL
+         │
+         ├── INDICATIONS FOR SURGERY (Within 24-48h):
+         │       • Deteriorating Visual Fields / Acuity
+         │       • Deteriorating Consciousness / Ophthalmoplegia
+         │       • Persistent Hypotension Despite Steroids/Fluids
+         │       • Hydrocephalus (Third Ventricle Obstruction)
+         ├── CONSERVATIVE MANAGEMENT IF:
+         │       • Stable/Improving Neurological Status
+         │       • No Visual Deterioration
+         │       • No Hydrocephalus
+         │       • Small Haemorrhage / Minimal Mass Effect
+         │
+         ▼
+5. DEFINITIVE MANAGEMENT
+         │
+         ├── URGENT TSS (Within 24-48h) — If Surgical Indications Met
+         ├── CONSERVATIVE (High-dose Dexamethasone + Fluids + Monitoring) — If Stable
+         │
+         ▼
+6. POST-ACUTE MANAGEMENT
+         │
+         ├── HIGH-DOSE DEXAMETHASONE (4-8mg IV q6h) — Reduces Oedema/Inflammation
+         ├── HYDROCORTISONE TAPER (50-100mg q6h → 25mg q8h → Oral Taper)
+         ├── VISUAL FIELDS (Daily Inpatient; Then Outpatient)
+         ├── HORMONAL ASSESSMENT (Day 1, Week 1, Month 1, 3mo, 6mo, 1yr)
+         └── LONG-TERM SURVEILLANCE (MRI 3mo, 6mo, 1yr, then Yearly)
+```
+
+---
+
+## 4. Medical Management — Conservative Approach
+
+### Indications for Conservative Management
+- Stable/Improving Neurological Status
+- No Visual Deterioration (Stable Visual Fields)
+- Small Haemorrhage / Minimal Mass Effect
+- No Hydrocephalus
+- Patient Unfit for Surgery
+
+### Conservative Protocol
+| Intervention | Dose / Details |
+|--------------|----------------|
+| **Dexamethasone** | **4-8mg IV q6h** (High-dose; Reduces Oedema/Inflammation) |
+| **Hydrocortisone** | **100mg IV STAT** → 50-100mg q6h → Taper to Oral over 5-7 Days |
+| **Fluids** | 2-3L 0.9% NaCl / 24h (Target UOP >0.5mL/kg/h) |
+| **Electrolytes** | Monitor Na+, K+, Glucose q1-2h Initially |
+| **Head Elevation** | 30° (Reduce Intracranial Pressure) |
+| **Monitoring** | **GCS q1h**, **Visual Fields q4-6h**, **Pupils q1h**, **Vitals q15min** |
+
+---
+
+## 3. Surgical Indications & Outcomes
+
+### Surgical Indications (Within 24-48 Hours)
+| Indication | Urgency |
+|------------|---------|
+| **Deteriorating Visual Fields / Acuity** | **Urgent (Within 24h)** |
+| **Deteriorating Consciousness / New CN Palsies** | **Urgent (Within 24h)** |
+| **Hydrocephalus (Third Ventricle Obstruction)** | **Emergent** |
+| **Persistent Hypotension Despite Full Medical Rx** | **Urgent** |
+| **Progressive Ophthalmoplegia** | **Urgent** |
+
+### Surgical Approach
+| Approach | Details |
+|---------|---------|
+| **Transsphenoidal (Endoscopic)** | **Preferred**; Minimally Invasive; Direct Decompression |
+| **Craniotomy** | Rare; Giant Adenomas / Extensive Suprasellar / Failed TSS |
+
+### Surgical Outcomes
+| Outcome | Rate |
+|---------|------|
+| **Visual Improvement** | 70-85% (If Operated <72h); <50% if >2 Weeks |
+| **Ophthalmoplegia Recovery** | 50-70% (CN III Best; CN IV/VI Worse) |
+| **New Hypopituitarism** | 20-30% (New Deficits Post-Surgery) |
+| **Recurrence** | 10-15% at 5 Years (Residual Tumour) |
+| **Mortality** | **<1% (Elective TSS)**; 5-10% (Emergency Apoplexy Surgery) |
+
+---
+
+## 4. Post-Apoplexy Management
+
+### Hormonal Assessment Schedule
+| Timepoint | Tests |
+|-----------|-------|
+| **Day 1** | Cortisol, ACTH, TSH, fT4, Na+, K+, Glucose, Prolactin |
+| **Day 3-7** | Full Hormone Panel (Cortisol, ACTH, TSH, fT4, PRL, LH/FSH, GH/IGF-1) |
+| **Week 1-2** | Full Panel + Visual Fields |
+| **Month 1, 3, 6, 12** | Full Hormone Panel + MRI (1mo, 3mo, 6mo, 1yr) |
+| **Annual** | Hormones + MRI (Yearly ×3, then 2-3yrly) |
+
+### Hormone Replacement Post-Apoplexy
+| Deficiency | Replacement |
+|------------|-----------|
+| **ACTH/Cortisol** | **Hydrocortisone 15-20mg AM + 5-10mg PM** (Immediate IV if Crisis) |
+| **TSH/fT4** | **Levothyroxine** (Initiate **AFTER** Glucocorticoid) |
+| **GH/IGF-1** | RH-GH if Confirmed GHD (ITT Peak <3 µg/L) |
+| **Gonadotrophs** | Testosterone / HRT (If Hypogonadal) |
+| **Prolactin** | Not Replaced (Except Lactation) |
+
+---
+
+## 5. Complications & Prognosis
+
+| Complication | Frequency | Management |
+|--------------|-----------|------------|
+| **Visual Loss (Permanent)** | 10-15% (If Surgery <72h) | Early Surgery Critical |
+| **New Hypopituitarism** | 20-30% (Post-Surgery) | Hormone Replacement |
+| **Diabetes Insipidus** | 10-20% (Transient); 1-2% Permanent | Desmopressin |
+| **CSF Leak** | 2-5% | Conservative / Lumbar Drain / Surgical Repair |
+| **Meningitis** | <1% | IV Antibiotics |
+| **Carotid Artery Injury** | <1% | Emergency Vascular Repair |
+| **Recurrence** | 10-15% at 5 Years | Surveillance MRI |
+
+---
+
+## 5. Differential Diagnosis Table
+
+| Condition | Headache | Visual Loss | CN Palsies | Signs of Meningism | Imaging |
+|-----------|----------|-------------|------------|-------------------|---------|
+| **Pituitary Apoplexy** | Thunderclap | Bitemporal Hemianopia | **CN III/IV/VI** | Mild (Chemical) | **MRI: Haemorrhage in Sella** |
+| **SAH** | Thunderclap | Rare | CN III (Posterior Communicating) | **Severe** | **CT: Hyperdense Basal Cisterns** |
+| **Meningitis** | Subacute | Rare | CN Palsies (Late) | **Severe** | **CSF: ↑WBC, ↓Glucose, ↑Protein** |
+| **Cavernous Sinus Thrombosis** | Subacute | Proptosis + Visual Loss | **Multiple CN (III, IV, VI, V1/V2)** | Common | **MRI/MRV: Thrombosed Cavernous Sinus** |
+| **Cluster Headache** | Severe Unilateral | None | Ptosis/Miosis (Horner) | None | Normal Imaging |
+
+---
+
+## 6. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Classic Triad** | **Sudden Headache + Visual Loss + Ophthalmoplegia** (Present in ~50%) |
+| **Most Common Symptom** | **Sudden Severe Headache** (>90%) |
+| **Most Common Visual Defect** | **Bi-temporal Hemianopia** (Chiasmal Compression) |
+| **Most Common CN Palsy** | **CN III** (Ptosis, Mydriasis, "Down & Out") |
+| **Emergency Treatment** | **Hydrocortisone 100mg IV STAT** + 1L 0.9% NaCl (DO NOT DELAY) |
+| **Dexamethasone in Apoplexy** | **4-8mg IV q6h** (Reduces Oedema; Not Replacement for Hydrocortisone) |
+| **Surgery Timing** | Visual Deterioration → **Urgent (Within 24-48h)** |
+| **Visual Recovery** | **70-85% if Surgery <72h**; <50% if >2 Weeks |
+| **New Hypopituitarism Post-Surgery** | 20-30% (New Deficits) |
+| **Apoplexy vs SAH** | SAH = Thunderclap + Severe Meningism + CT Basal Cistern Hyperdensity |
+| **Apoplexy vs Meningitis** | Meningitis = Fever + Meningism + CSF Pleocytosis |
+| **Post-Apoplexy Hypopituitarism** | 20-30% New Deficits; GH → Gonad → TSH → ACTH |
+| **Dexamethasone vs Hydrocortisone** | Dex = Anti-oedema (High Dose); Hydrocortisone = Replacement (Physiological) |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Apoplexy vs SAH** | Apoplexy = Haemorrhage **Within Sella** (Pituitary); SAH = Haemorrhage **Basal Cisterns** |
+| **Apoplexy vs Meningitis** | Meningitis = Fever + Meningism + CSF Pleocytosis; Apoplexy = Thunderclap + Visual Loss + CN Palsies |
+| **Dexamethasone vs Hydrocortisone** | Dex = Anti-oedema (High Dose); Hydrocortisone = Glucocorticoid Replacement (Physiological) |
+| **Surgery Timing** | Visual Deterioration = **Urgent (24h)**; Stable = Conservative + Serial Monitoring |
+| **Visual Recovery** | **Time is Vision** — Surgery <72h = 70-85% Recovery; >2 Weeks = <50% |
+| **Apoplexy in Microadenoma** | Rare (<10%); Usually Macroadenoma (>10mm) |
+
+**Mnemonic: APOPLEXY MANAGEMENT**
+- **A**drenal Crisis → **Hydrocortisone 100mg IV STAT**
+- **P**ituitary MRI → **Urgent** (Haemorrhage + Mass Effect)
+- **O**phthalmoplegia → **CN III/IV/VI** (Visual Fields Daily)
+- **P**ressure (ICP) → **Dexamethasone 4-8mg IV q6h** (Anti-oedema)
+- **L**oss of Vision → **Urgent TSS** (Within 24h)
+- **E**lectrolytes → Na+, K+, Glucose, U&Es q1-2h
+- **X**-ray (CT) if MRI Unavailable → Hyperdense Sella
+- **Y**ield to Neurosurgery → **TSS Within 24-48h** if Surgical Indications
+
+---
+
+## 8. Mind Map
+
+```mermaid
+mindmap
+  root((Pituitary Apoplexy))
+    Definition
+      Acute Haemorrhage/Infarction in Pituitary Adenoma
+      Macroadenoma >10mm >90%
+    Presentation
+      Sudden Headache (90%)
+      Visual Loss (Bi-temporal Hemianopia) 70-80%
+      Ophthalmoplegia (CN III/IV/VI) 50-70%
+      Adrenal Crisis (Hypotension, Hyponatraemia, Hypoglycaemia)
+    Differential
+      SAH (CT Hyperdense Cisterns)
+      Meningitis (Fever, CSF Pleocytosis)
+      Cavernous Sinus Thrombosis (Proptosis, Multi-CN)
+      Metastatic Deposit
+    Emergency Management
+      Hydrocortisone 100mg IV STAT + 1L Saline
+      Dexamethasone 4-8mg q6h (Anti-oedema)
+      Urgent MRI Pituitary
+      Fluids + Electrolytes + Glucose Monitoring
+    Surgery Indications
+      Visual Deterioration → Urgent TSS (<24h)
+      Deteriorating Consciousness
+      Hydrocephalus
+      Refractory Hypotension
+    Surgical Outcomes
+      Visual Recovery: 70-85% (<72h); <50% (>2wks)
+      New Hypopituitarism 20-30%
+      DI: 10-20% Transient
+    Post-Op Surveillance
+      MRI 1, 3, 6, 12mo then Yearly
+      Hormones: 1mo, 3mo, 6mo, 1yr then Annually
+      Visual Fields: Daily Inpt → Outpt q3-6mo
+```
+
+---
+
+## 10. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Classic Triad** | Headache + Visual Loss + Ophthalmoplegia (~50% have all 3) |
+| **Most Common Symptom** | Sudden Severe Headache (>90%) |
+| **Apoplexy vs SAH** | Apoplexy = Intrasellar Haemorrhage; SAH = Subarachnoid (Basal Cisterns) |
+| **Emergency Steroid** | **Hydrocortisone 100mg IV STAT** (Glucocorticoid Replacement) |
+| **Dexamethasone Role** | **Anti-oedema** (4-8mg IV q6h); NOT Replacement |
+| **Surgery Indication** | Visual Deterioration / CN Palsy / Hydrocephalus / Refractory Hypotension |
+| **Surgery Timing** | **Urgent TSS Within 24-48h** (Visual Recovery Best <72h) |
+| **Visual Recovery** | 70-85% if Surgery <72h; <50% if >2 Weeks |
+| **New Hypopituitarism** | 20-30% Post-Surgery; GH → Gonad → TSH → ACTH |
+| **Dexamethasone vs Hydrocortisone** | Dex = Anti-oedema; Hydrocortisone = Replacement |
+| **Diabetes Insipidus Post-Op** | 10-20% Transient; 1-2% Permanent |
+| **Apoplexy Triggers** | HTN, Anticoagulation, Pregnancy, Dynamic Testing, Trauma |
+
+---
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Hypothalamic-Pituitary Axis|Hypothalamic-Pituitary Axis]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[Pituitary Adenomas: Functioning]], [[Pituitary Adenomas: Non-Functioning]], [[Hypopituitarism]], [[Adrenal Crisis]], [[Endocrine Emergencies]]
+## MCQs (10)
+1. **Pituitary apoplexy =**
+   A. Acute haemorrhage/infarction of pituitary adenoma
+   B. Pituitary tumour rupture
+   C. Pituitaryitis
+   D. Empty sella haemorrhage
+   E. Craniopharyngioma haemorrhage
+
+2. **Pituitary apoplexy presentation:**
+   A. Sudden severe headache, visual loss, ophthalmoplegia, hypotension, decreased consciousness
+   B. Gradual headache
+   C. Slow visual loss
+   D. Only hypotension
+   E. Only nausea
+
+3. **Pituitary apoplexy immediate management:**
+   A. High-dose dexamethasone 4-8mg IV q6h + fluids + urgent MRI -> surgery if deteriorating
+   B. Surgery immediately
+   C. Observation only
+   D. Dopamine agonists
+   E. Radiotherapy
+
+4. **Pituitary apoplexy visual loss:**
+   A. Urgent transsphenoidal decompression if deteriorating; high-dose steroids
+   B. Observation
+   C. Radiotherapy
+   D. Dopamine agonists
+   E. Orbital decompression
+
+5. **Pituitary apoplexy commonest hormonal deficit:**
+   A. ACTH deficiency (adrenal insufficiency)
+   B. TSH deficiency
+   C. GH deficiency
+   D. Gonadotrophin deficiency
+   E. ADH deficiency
+
+6. **Pituitary apoplexy risk factors:**
+   A. Large macroadenoma, hypertension, anticoagulation, pregnancy, dynamic testing
+   B. Small microadenoma
+   C. No risk factors
+   D. Only trauma
+   E. Only surgery
+
+7. **Pituitary apoplexy diagnosis:**
+   A. MRI pituitary (T1 hyperintensity = blood); visual fields; hormonal panel
+   B. CT only
+   C. X-ray
+   D. Clinical only
+   E. Blood tests only
+
+8. **Pituitary apoplexy post-decompression:**
+   A. High-dose steroids; monitor vision, electrolytes, cortisol; hormone replacement
+   B. Stop steroids
+   C. Dopamine agonists
+   D. Radiotherapy
+   E. Observation
+
+9. **Pituitary apoplexy in pregnancy:**
+   A. High risk; Sheehan syndrome differential; urgent MRI if visual loss
+   B. No risk
+   C. Only postpartum
+   D. No management needed
+   E. Termination required
+
+10. **Pituitary apoplexy vs meningioma:**
+   A. Apoplexy: sudden onset, pituitary adenoma; Meningioma: gradual, dural tail
+   B. Same
+   C. Apoplexy: gradual
+   D. Meningioma: sudden
+   E. No difference
+
+## SBA Questions (10)
+1. **50yo woman: known pituitary macroadenoma, sudden severe headache, bitemporal hemianopia, hypotension (90/50). Immediate?**
+   A. High-dose dexamethasone 8mg IV + fluids + urgent MRI -> surgery if deteriorating
+   B. Surgery immediately
+   C. Observation
+   D. Dopamine agonist
+   E. Radiotherapy
+
+2. **Same patient: day 1 post-decompression, cortisol 80 nmol/L. Action?**
+   A. Continue hydrocortisone 100mg IV q8h; taper over days
+   B. Stop steroids
+   C. Increase dexamethasone
+   D. Fludrocortisone
+   E. TSH
+
+3. **Pituitary apoplexy with improving vision post-steroids. Next?**
+   A. Continue steroids; monitor visual fields; elective decompression if stable
+   B. Urgent surgery
+   C. Stop steroids
+   D. Radiotherapy
+   E. Dopamine agonist
+
+4. **Pituitary apoplexy: panhypopituitarism day 1 post-surgery. Hormone replacement?**
+   A. Hydrocortisone 15-20mg AM + 5-10mg PM + levothyroxine + sex hormones
+   B. Hydrocortisone only
+   C. Levothyroxine only
+   D. Sex hormones only
+   E. No replacement needed
+
+5. **Pituitary apoplexy: which hormone to replace FIRST?**
+   A. Cortisol (hydrocortisone) - adrenal crisis risk
+   B. Levothyroxine
+   C. Sex hormones
+   D. GH
+   E. ADH
+
+## Flashcards
+- **Q: Pituitary apoplexy**
+  **A: Acute haemorrhage/infarction of pituitary adenoma; sudden headache, visual loss, ophthalmoplegia, hypotension**
+
+- **Q: Immediate Rx**
+  **A: High-dose dexamethasone 4-8mg IV q6h + fluids + urgent MRI -> transsphenoidal surgery if deteriorating**
+
+- **Q: Visual loss**
+  **A: Urgent decompression if deteriorating; high-dose steroids**
+
+- **Q: Commonest deficit**
+  **A: ACTH deficiency (adrenal insufficiency) - replace FIRST**
+
+- **Q: Risk factors**
+  **A: Large macroadenoma, hypertension, anticoagulation, pregnancy, dynamic testing**
+
+- **Q: Diagnosis**
+  **A: MRI pituitary (T1 hyperintensity = blood); visual fields; hormonal panel**
+
+- **Q: Post-op**
+  **A: High-dose steroids; monitor vision, electrolytes, cortisol; panhypopituitarism replacement**
+
+- **Q: Pregnancy**
+  **A: High risk; differential with Sheehan syndrome; urgent MRI if visual loss**
+
+- **Q: Causes**
+  **A: Haemorrhage > infarction; macroadenoma prone**
+
+- **Q: Key principle**
+  **A: CORTISOL FIRST (adrenal crisis risk); then thyroid, gonadal, GH, ADH**
+
+## Answer Key with Explanations
+### MCQs
+1. **Acute haemorrhage/infarction of pituitary adenoma** — Pituitary apoplexy =
+
+2. **Sudden severe headache, visual loss, ophthalmoplegia, hypotension, decreased consciousness** — Pituitary apoplexy presentation:
+
+3. **High-dose dexamethasone 4-8mg IV q6h + fluids + urgent MRI -> surgery if deteriorating** — Pituitary apoplexy immediate management:
+
+4. **Urgent transsphenoidal decompression if deteriorating; high-dose steroids** — Pituitary apoplexy visual loss:
+
+5. **ACTH deficiency (adrenal insufficiency)** — Pituitary apoplexy commonest hormonal deficit:
+
+6. **Large macroadenoma, hypertension, anticoagulation, pregnancy, dynamic testing** — Pituitary apoplexy risk factors:
+
+7. **MRI pituitary (T1 hyperintensity = blood); visual fields; hormonal panel** — Pituitary apoplexy diagnosis:
+
+8. **High-dose steroids; monitor vision, electrolytes, cortisol; hormone replacement** — Pituitary apoplexy post-decompression:
+
+9. **High risk; Sheehan syndrome differential; urgent MRI if visual loss** — Pituitary apoplexy in pregnancy:
+
+10. **Apoplexy: sudden onset, pituitary adenoma; Meningioma: gradual, dural tail** — Pituitary apoplexy vs meningioma:
+
+
+### SBAs
+1. **High-dose dexamethasone 8mg IV + fluids + urgent MRI -> surgery if deteriorating** — 50yo woman: known pituitary macroadenoma, sudden severe headache, bitemporal hemianopia, hypotension (90/50). Immediate?
+
+2. **Continue hydrocortisone 100mg IV q8h; taper over days** — Same patient: day 1 post-decompression, cortisol 80 nmol/L. Action?
+
+3. **Continue steroids; monitor visual fields; elective decompression if stable** — Pituitary apoplexy with improving vision post-steroids. Next?
+
+4. **Hydrocortisone 15-20mg AM + 5-10mg PM + levothyroxine + sex hormones** — Pituitary apoplexy: panhypopituitarism day 1 post-surgery. Hormone replacement?
+
+5. **Cortisol (hydrocortisone) - adrenal crisis risk** — Pituitary apoplexy: which hormone to replace FIRST?
+

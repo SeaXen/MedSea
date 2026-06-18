@@ -1,0 +1,482 @@
+---
+tags: [medicine, endocrinology, davidson, elderly, geriatric, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Endocrine changes in ageing are distinct from pathology. Key viva topics: physiological vs pathological changes (thyroid, glucose, gonadal, bone), prescribing nuances (start low go slow), and geriatric syndromes (frailty, falls, cognition)."
+see_also: ["Hypothyroidism Overview", "Hyperthyroidism Overview", "Osteoporosis & Metabolic Bone Disease", "Diabetes in the Elderly", "Hypogonadism", "Adrenal Insufficiency"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Endocrine Physiology & Disease in the Elderly
+
+> [!info]
+> **Ageing = Physiological Endocrine Remodelling, Not Just Pathology.** **Key Principle: Distinguish Age-Related Changes from True Pathology.** **Start Low, Go Slow** — Prescribing Principle.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Differentiate physiological ageing changes from endocrine pathology
+- [ ] Apply age-appropriate diagnostic thresholds and treatment targets
+- [ ] Prescribe endocrine therapies safely in frail/multimorbid elderly
+- [ ] Manage common geriatric endocrine syndromes (frailty, falls, cognitive decline)
+
+---
+
+## 2. Physiological Endocrine Changes with Ageing
+
+| Axis | Age-Related Change | Clinical Significance |
+|----------|------------------|----------------------|
+| **Thyroid** | ↑ TSH (Mild, 4-6 mIU/L), ↓ fT3, Stable fT4 | **Mild TSH Elevation Normal**; Do Not Treat if fT4 Normal |
+| **Adrenal** | ↓ DHEA/DHEAS (Adrenopause), Preserved Cortisol | DHEAS ↓ 80% by Age 70; **No Routine Replacement** |
+| **Gonadal (Male)** | ↓ Testosterone (1-2%/yr after 30), ↑ SHBG | **Late-Onset Hypogonadism** (LOH) vs Pathology |
+| **Gonadal (Female)** | **Menopause** (Mean 51); FSH ↑↑, Oestradiol ↓ | HRT Until 50-51 If Premature/Oearly |
+| **GH/IGF-1** | ↓↓ GH/IGF-1 (Somatopause); ↓ Muscle, ↑ Visceral Fat | **Not Treated** Unless Severe GHD |
+| **Insulin/Glucose** | ↑ Insulin Resistance, ↓ β-Cell Compensation | ↑ T2DM Risk; ↓ β-Cell Function |
+| **Bone/Calcium** | ↓ BMD (Osteoporosis), ↑ PTH, ↓ Vit D Synthesis | Fracture Risk ↑; Vit D + Ca Supplement |
+| **Thyroid** | ↑ TSH (Subclinical), Stable fT4 | **Do Not Treat** Subclinical Unless TSH >10/Ab+ |
+| **ACTH/Cortisol** | Preserved Diurnal Rhythm; ↑ Basal Cortisol | **No Adrenal Insufficiency** Unless Pathology |
+
+---
+
+## 2. Thyroid in the Elderly
+
+### Physiological vs Pathological
+| Parameter | Age-Related Change | Pathological Threshold |
+|----------------|-------------------|------------------------|
+| **TSH** | **Mildly ↑ (4-6 mIU/L)** | **>10 mIU/L ± Symptoms** = Treat |
+| **fT4** | Stable / Slight ↓ | **Low** = Overt Hypothyroidism |
+| **fT3** | **↓ (Low T3 Syndrome)** | Not Routinely Measured |
+| **Antibodies** | TPOAb ↑ with Age | TPOAb+ = ↑ Risk Progression |
+
+### Subclinical Hypothyroidism
+| TSH Range | Action |
+|-----------|--------|
+| **4.5-10 mIU/L** | **Observe** (q6-12mo), Treat if TPOAb+, Symptoms, Lipids, Cardiac Risk |
+| **>10 mIU/L** | **Treat** (Levothyroxine 25-50µg → Titrate) |
+
+### Hyperthyroidism in Elderly
+| Feature | Atypical Presentation ("Apathetic Thyrotoxicosis") |
+|----------|---------------------------------------------------|
+| **Typical Symptoms** | **Often Absent** (No Tremor, Weight Gain Not Loss) |
+| **Presentation** | **Confusion, Falls, AF, Weight Loss, Depression, Heart Failure** |
+| **Diagnosis** | TSH Suppressed + fT4/fT3 ↑ (Same as Young) |
+| **Treatment** | **Carbimazole** (Start Low 5-10mg); **Avoid RAI if Frail**; **Surgery High Risk** |
+
+---
+
+## 2. Diabetes in the Elderly
+
+| Feature | Young Adult | Elderly (>75) |
+|---------|-------------|---------------|
+| **Presentation** | Classic (Polyuria, Polydipsia) | **Atypical** (Confusion, Falls, Incontinence, Weight Loss) |
+| **HbA1c Target** | **<48 mmol/mol (6.5%)** | **Individualised**: **53-58 (7.0-7.5%)** if Frail/Comorbidities |
+| **Hypoglycaemia Risk** | Lower | **High** (Cognitive Decline, Falls, CV Events, Mortality) |
+| **HbA1c Target** | **<48 mmol/mol (6.5%)** | **Individualised: 53-58 (Frail) / 58-64 (Very Frail)** |
+| **Hypoglycaemia Unawareness** | Rare | **Common** (Autonomic Neuropathy, Polypharmacy) |
+| **First-Line Therapy** | Metformin | **Metformin (If eGFR >30)**; Avoid Sulfonylureas (Hypo Risk) |
+| **SGLT2i / GLP-1 RA** | 2nd/3rd Line | **1st Line if CVD/CKD/HF** (Cardio-Renal Benefit) |
+| **Insulin** | Basal-Bolus | **Basal Insulin Preferred** (Simpler, ↓ Hypo Risk) |
+
+### Hypoglycaemia in Elderly
+| Feature | Management |
+|---------|------------|
+| **Risk Factors** | Renal Impairment, Polypharmacy, Cognitive Impairment, Missed Meals |
+| **Presentation** | Confusion, Falls, Agitation, Silent (No Adrenergic Symptoms) |
+| **Management** | **Relaxed Targets**, Simplify Regimen, Avoid Sulfonylureas |
+
+---
+
+## 3. Thyroid Disorders — Special Considerations
+
+| Condition | Elderly Nuance |
+|-----------|----------------|
+| **Subclinical Hypo (TSH 4.5-10)** | **Observe** (Ab-/Asymptomatic); Treat if TPOAb+, Goitre, CVD Risk |
+| **Overt Hypothyroidism** | Start **Low** (25-50µg Levothyroxine) → Titrate Slowly (25µg q6-8wk) |
+| **Hyperthyroidism** | **Apathetic Thyrotoxicosis** (No Classic Symptoms); Carbimazole Start Low |
+| **Subclinical Hyper** | TSH <0.1; Observe if Asymptomatic; Treat if TSH <0.1 + Risk Factors |
+| **Amiodarone** | **Type 1 (Jod-Basedow) / Type 2 (Destructive)**; Monitor TSH q3mo |
+
+---
+
+## 3. Diabetes — Special Considerations
+
+| Aspect | Elderly Specifics |
+|--------|------------------|
+| **HbA1c Target** | **Individualised**: Healthy 53-58 (7-7.5%); Frail 58-64 (7.5-8.0%) |
+| **Hypoglycaemia** | **Major Harm** (Falls, Fractures, CV Events, Dementia Progression) |
+| **Sulfonylureas** | **Avoid** (High Hypo Risk); Prefer DPP-4i, SGLT2i, GLP-1 RA |
+| **SGLT2i / GLP-1 RA** | **1st Line if CVD/CKD/HF/Obesity** (Cardio-Renal Protection) |
+| **Insulin** | Basal Preferred (Simpler, Less Hypo); Pen Devices; Carer Support |
+| **Frailty** | **Rockwood/CFS Scale**; Deprescribe Complex Regimens |
+
+---
+
+## 3. Adrenal & Gonadal Axes
+
+### Adrenal Insufficiency
+| Aspect | Elderly Specifics |
+|--------|-------------------|
+| **Diagnosis** | Same Biochemistry; **Higher Clinical Suspicion** (Atypical Presentation) |
+| **Replacement** | **Hydrocortisone 10-15mg AM + 5mg PM** (Lower Doses); **No Fludrocortisone if BP Normal** |
+| **Stress Doses** | **Essential** (Frailty ↑ Crisis Risk) |
+
+### Male Hypogonadism (Late-Onset)
+| Aspect | Approach |
+|--------|----------|
+| **Diagnosis** | Symptomatic + **Testosterone <12 nmol/L (2 Occasions)** |
+| **Testosterone Replacement** | **Gel/Gel Preferred** (Steady Levels); Monitor Hct, PSA, Lipids |
+| **Contraindications** | **Hct >54%, Active Prostate Ca, Severe HF, Uncontrolled HTN** |
+
+### Female Hypogonadism / Menopause
+| Aspect | Elderly (>70) |
+|-------|-------------|
+| **HRT** | **Not Initiated >60-65** (WHI Harm); If Already On → Continue if Benefit > Risk |
+| **Vaginal Oestrogen** | **First-Line for GSM** (No Systemic Absorption) |
+| **Bone** | DEXA q2-3yr; Bisphosphonate/Denosumab if High Risk |
+
+---
+
+## 3. Bone & Calcium Metabolism
+
+| Aspect | Elderly Management |
+|--------|-------------------|
+| **Osteoporosis** | **DEXA q2-3yr (Women >65, Men >70)**; FRAX for 10yr Risk |
+| **Vitamin D** | **25-OH D ≥50 nmol/L (20 ng/mL)**; Supplement 800-2000 IU/day |
+| **Calcium** | **1200mg/day** (Diet + Supplement); Citrate if Achlorhydria |
+| **Fracture Prevention** | **FRAX** >10% (Major) / 3% (Hip) → Bisphosphonate/Denosumab |
+| **Falls Prevention** | Exercise (Balance/Strength), Home Hazards, Vit D, Medication Review |
+
+---
+
+## 3. Vitamin D in Elderly
+
+| Parameter | Recommendation |
+|-----------|----------------|
+| **25-OH D Target** | **>50 nmol/L (20 ng/mL)** |
+| **Supplementation** | **800-2000 IU/day** (Cholecalciferol) |
+| **Malabsorption/Obese** | Higher Dose; **IM 300,000 IU q6mo** Option |
+| **Monitoring** | 25-OH D q6-12mo Until Target Achieved |
+
+---
+
+## 4. Special Considerations
+
+### Polypharmacy & Drug Interactions
+| Drug Class | Endocrine Interaction |
+|------------|----------------------|
+| **PPIs** | ↓ B12, ↓ Mg, ↑ Fracture Risk (Long-Term) |
+| **Loop Diuretics** | ↑ Ca²⁺ Excretion; Hypomagnesaemia |
+| **Glucocorticoids** | ↑ Fracture Risk (Dose/Duration Dependent) |
+| **AEDs (Enzyme Inducers)** | ↑ Vit D Catabolism → Osteomalacia Risk |
+| **Antipsychotics** | ↑ Prolactin, Weight Gain, Metabolic Syndrome |
+
+### Renal Impairment (eGFR <30)
+| Drug | Adjustment |
+|-------|----------|
+| **Metformin** | **Contraindicated** (eGFR <30) |
+| **SGLT2i** | **Contraindicated** (eGFR <30) |
+| **GLP-1 RA** | **Safe** (Dulaglutide, Semaglutide — No Dose Adjustment) |
+| **DPP-4i** | **Linagliptin (No Adjustment)**; Others Reduce |
+| **Insulin** | **↓ Dose (25-50%)**; ↑ Hypoglycaemia Risk |
+
+---
+
+## 5. Geriatric Syndromes & Endocrine Links
+
+| Syndrome | Endocrine Link | Management |
+|----------|----------------|------------|
+| **Frailty** | Low Testosterone, Low IGF-1, High Cortisol, Low Vit D | Exercise, Nutrition, Vit D, Testosterone (If Symptomatic Low T) |
+| **Falls** | Hypoglycaemia, Orthostatic Hypotension (Autonomic Neuropathy), Cataracts, Polypharmacy | Med Review, Exercise, Vit D, Cataract Surgery |
+| **Cognitive Decline** | T2DM, Hypoglycaemia, Hypothyroidism, Low Testosterone | Glycaemic Control, Thyroid Optimisation, B12/Folate |
+| **Sarcopenia** | Low Testosterone, Low Vit D, Low GH/IGF-1, Inactivity | Resistance Exercise, Protein, Vit D, Testosterone (If Symptomatic) |
+
+---
+
+## 5. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **TSH in Elderly** | **Mild ↑ Normal (4-6 mIU/L)**; Treat Only if >10 or Symptoms |
+| **Subclinical Hypothyroidism** | TSH 4.5-10: Observe; >10 → Treat |
+| **Apathetic Thyrotoxicosis** | No Classic Symptoms; **Confusion, Falls, AF, Weight Loss** |
+| **Hypoglycaemia** | **Major Harm in Elderly** (Falls, CV Events, Dementia); Avoid Sulfonylureas |
+| **HbA1c Target** | Healthy: 53-58; **Frail: 58-64 (7.5-8.0%)** |
+| **SGLT2i/GLP-1** | **1st Line** if CVD/CKD/HF/Obesity; Renal Safe (Dapagliflozin ≥25) |
+| **Metformin** | Continue if eGFR >30; Reduce if 20-30; Stop <15 |
+| **Subclinical Hypo in Elderly** | Observe if TSH 4.5-10; Treat if >10 or Ab+ |
+| **Bone Health** | DEXA >65 (F) / >70 (M); Vit D 800-2000 IU + Ca 1200mg |
+| **Vit D Target** | **>50 nmol/L (20 ng/mL)** |
+| **Sick Euthyroid** | Low T3, Normal TSH/fT4 (Illness); Do Not Treat |
+| **Thyroid Storm in Elderly** | Atypical (No Fever); High Mortality |
+| **Adrenal Insufficiency** | Hydrocortisone 10-15mg AM + 5mg PM; Stress Doses for Illness |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **TSH in Elderly** | **Mild ↑ (4-6) is Normal Ageing**; Treat if >10 or Symptomatic |
+| **Apathetic Thyrotoxicosis** | No Tremor/Weight Loss; **Confusion, Falls, AF, Apathy** |
+| **Subclinical Hypothyroidism** | TSH 4.5-10 → Observe; >10 → Treat |
+| **HbA1c Target** | **Frail: 58-64 (7.5-8.0%)**; Avoid <53 (Hypo Risk) |
+| **SGLT2i in CKD** | **Dapagliflozin ≥25 eGFR**; Empagliflozin ≥20 |
+| **Sulfonylureas** | **Avoid** (High Hypo Risk); Use DPP-4i / SGLT2i / GLP-1 |
+| **Bisphosphonate Holiday** | After 3-5yr Oral / 3yr IV Zoledronic; Reassess DEXA |
+| **Denosumab Holiday** | **Contraindicated** — Rapid Bone Loss on Stopping |
+| **Testosterone in Elderly Men** | Only If Symptomatic + Low T (<12 nmol/L) |
+| **Vit D Target** | **>50 nmol/L (20 ng/mL)**; Dose 800-2000 IU/day |
+
+---
+
+## 9. Mind Map
+
+```mermaid
+mindmap
+  root((Endocrine in Elderly))
+    Thyroid
+      TSH ↑ Mildly Normal (4-6)
+      Subclinical Hypo: TSH 4.5-10 Observe; >10 Treat
+      Hyperthyroid: Apathetic (Confusion, Falls, AF)
+    Diabetes
+      HbA1c Target: Healthy 53-58; Frail 58-64
+      Avoid Sulfonylureas (Hypo)
+      SGLT2i/GLP-1 1st Line if CVD/CKD/HF
+      Insulin: Basal Preferred; Pen Devices
+    Adrenal
+      AI: Same Dx; Lower Dose Hydrocortisone
+      Stress Doses: Essential (Frailty ↑ Crisis Risk)
+    Bone
+      DEXA >65F/>70M; FRAX >10% → Bisphosphonate
+      Vit D >50 nmol/L; Ca 1200mg
+    Male Hypogonadism
+      Testosterone <12 + Symptoms → Gel/IM
+      Klinefelter: 47,XXY; High FSH/LH
+    Female
+      HRT Not Initiated >60-65
+      Vaginal Oestrogen (GSM) 1st Line
+    Drug Interactions
+      PPI → B12/Mg↓; Loop Diuretic → Ca/Mg Loss; Steroid → Fracture
+      AEDs → Vit D Catabolism
+    Geriatric Syndromes
+      Frailty: Low T, Low IGF-1, High Cortisol
+      Falls: Hypoglycaemia, Orthostatic BP, Polypharmacy
+      Cognitive: T2DM, Hypothyroid, Low T
+      Sarcopenia: Resistance Exercise + Protein + Vit D + T
+    Monitoring
+      HbA1c 6mo; TSH Annual; DEXA q2-3yr; Vit D Annual
+```
+
+---
+
+## 9. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Elderly TSH** | Mild ↑ (4-6) Normal; **Treat if >10 or Symptomatic** |
+| **Subclinical Hypo** | TSH 4.5-10 Observe; >10 Treat |
+| **Apathetic Thyrotoxicosis** | Confusion, Falls, AF, Weight Loss (No Classic Symptoms) |
+| **HbA1c Target Frail** | **58-64 (7.5-8.0%)** |
+| **Sulfonylureas** | **Avoid** (Hypoglycaemia, Falls, CV Events) |
+| **SGLT2i/GLP-1** | 1st Line if CVD/CKD/HF/Obesity |
+| **Metformin eGFR** | ≥30 OK; 20-30 Reduce; <15 Stop |
+| **Subclinical Hypo Elderly** | TSH 4.5-10 Observe; >10 Treat |
+| **Frail Targets** | HbA1c 58-64; BP <150/90; Accept Higher Glucose |
+| **Bone Health** | DEXA >65F/70M; Vit D 800-2000 IU + Ca 1200mg |
+| **Vit D Target** | >50 nmol/L (20 ng/mL) |
+| **Frail Hypoglycaemia** | Major Harm (Falls, CV Events, Dementia) |
+| **Testosterone Elderly** | Only If Symptomatic + Low (<12) |
+| **HRT >65** | Not Initiated; If Continuing → Annual Review |
+| **Geriatric Falls** | Review Meds (Sulfonylureas, Diuretics, Anticholinergics) |
+
+---
+
+## 9. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Endocrinology in Elderly|Endocrine in Elderly]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[Hypothyroidism Overview]], [[Diabetes in the Elderly]], [[Osteoporosis & Metabolic Bone Disease]], [[Male Hypogonadism]], [[Female Hypogonadism]], [[Adrenal Insufficiency- Primary (Addison)]]
+## MCQs (10)
+1. **Thyroid function in healthy ageing: typical pattern:**
+   A. TSH ↑ (upper reference limit increases), fT4 normal
+   B. TSH ↓, fT4 ↑
+   C. TSH normal, fT4 ↓
+   D. TSH ↓, fT4 ↓
+   E. No change
+
+2. **Subclinical hypothyroidism in elderly (>80): TSH 6-10, asymptomatic. Management?**
+   A. Observe + repeat in 3-6 months (no routine treatment if TSH <10)
+   B. Immediate levothyroxine
+   C. Liothyronine
+   D. Combo T4/T3
+   E. Refer for thyroidectomy
+
+3. **Levothyroxine dosing in elderly: start low go slow. Typical starting dose:**
+   A. 25-50 µg/day (12.5-25 µg if cardiac disease)
+   B. 100 µg/day
+   C. 1.6 µg/kg
+   D. Full replacement immediately
+   E. 500 µg/week
+
+4. **Adrenal insufficiency in elderly: atypical presentation:**
+   A. Fatigue, anorexia, weight loss, postural hypotension, hyponatraemia (often no hyperpigmentation)
+   B. Classic Addisonian crisis
+   C. Hyperpigmentation always
+   D. Hypertension
+   E. Hyperglycaemia
+
+5. **SIADH in elderly: most common drug causes:**
+   A. SSRIs, SNRIs, carbamazepine, PPIs, opioids
+   B. Diuretics only
+   C. Beta-blockers only
+   D. ACE inhibitors only
+   E. Statins only
+
+6. **Hyponatraemia correction in elderly: max safe rate:**
+   A. 4-6 mmol/L/24h (max 8 in first 24h if severe symptoms)
+   B. 10-12 mmol/L/24h
+   C. 15 mmol/L/24h
+   D. No limit
+   E. 0.5 mmol/L/h
+
+7. **Diabetes in elderly: HbA1c target (frail, multi-morbidity):**
+   A. 7.5-8.5% (58-69 mmol/mol)
+   B. <6.5%
+   C. 6.5-7.0%
+   D. <7.0% for all
+   E. No target
+
+8. **Metformin in elderly CKD: eGFR threshold for dose reduction:**
+   A. eGFR <45: reduce dose; <30: contraindicated
+   B. eGFR <60
+   C. eGFR <30 only
+   D. No adjustment
+   E. eGFR <15
+
+9. **Osteoporosis treatment in elderly: first-line:**
+   A. Oral bisphosphonate (alendronate) + Ca/Vit D; denosumab if contraindicated
+   B. Teriparatide first
+   C. Romosozumab first
+   D. HRT
+   E. Calcitonin
+
+10. **Denosumab in elderly: key monitoring:**
+   A. Hypocalcaemia (ensure Vit D replete); stop → rapid bone loss (rebound vertebral #)
+   B. Hypercalcaemia
+   C. Renal function only
+   D. LFTs only
+   E. No monitoring
+
+## SBA Questions (5)
+1. **85yo woman: falls, fatigue, TSH 8.5, fT4 12, no goitre, no cardiac history. Best approach?**
+   A. Repeat TSH/fT4 in 3 months; treat if TSH >10 or symptomatic
+   B. Start levothyroxine 50µg
+   C. Start levothyroxine 100µg
+   D. Refer endocrinology
+   E. Radioactive iodine
+
+2. **80yo man on sertraline: confused, Na+ 118, euvolaemic, urine osm 400, urine Na+ 60. Management?**
+   A. Fluid restriction <1L + stop sertraline → consider tolvaptan if severe
+   B. 3% saline rapid correction
+   C. Demeclocycline
+   D. Hypertonic saline + furosemide
+   E. Fludrocortisone
+
+3. **78yo woman: T2DM, eGFR 38, HbA1c 8.2% on metformin 1g BD. Best adjustment?**
+   A. Reduce metformin to 500mg BD (eGFR 30-45); review HbA1c target 7.5-8.0%
+   B. Stop metformin
+   C. Add sulfonylurea
+   D. Start insulin
+   E. Increase metformin
+
+4. **82yo man: hip fracture, DEXA T-score -3.0, eGFR 45. First-line?**
+   A. Alendronate 70mg weekly + Ca/Vit D; dental review
+   B. Denosumab 60mg 6-monthly
+   C. Teriparatide
+   D. Zoledronic acid
+   E. Raloxifene
+
+5. **90yo woman: community-acquired pneumonia, on prednisolone 5mg for PMR. Acute illness: stress-dose steroids?**
+   A. Hydrocortisone 50mg IV q6h (if AI suspected) or double oral dose; taper after recovery
+   B. Continue 5mg
+   C. Stop prednisolone
+   D. Increase to 20mg
+   E. Switch to dexamethasone
+
+## Flashcards
+- **Q: TSH in ageing**
+  **A: Upper reference limit increases with age (e.g., >80y: up to 7-8 mU/L); fT4 stable**
+
+- **Q: Subclinical hypo elderly**
+  **A: TSH 4.5-10, asymptomatic: observe, repeat 3-6mo; treat if TSH>10, symptomatic, goitre, antibodies**
+
+- **Q: Levothyroxine elderly**
+  **A: Start 12.5-25µg (cardiac disease) or 25-50µg; titrate q6-8wk; target TSH upper half ref range**
+
+- **Q: AI in elderly**
+  **A: Atypical: fatigue, anorexia, weight loss, postural hypotension, hyponatraemia; often NO hyperpigmentation**
+
+- **Q: SIADH elderly drugs**
+  **A: SSRIs/SNRIs (most common), carbamazepine, PPIs, opioids, cyclophosphamide**
+
+- **Q: Hyponatraemia correction**
+  **A: Max 4-6 mmol/L/24h (8 if seizures/coma); avoid osmotic demyelination**
+
+- **Q: DM elderly targets**
+  **A: Fit: 7-7.5%; Frail/multimorbidity: 7.5-8.5%; End-of-life: avoid symptomatic hyperglycaemia**
+
+- **Q: Metformin CKD**
+  **A: eGFR 45-59: full dose; 30-44: max 1g/day; <30: contraindicated (lactic acidosis risk)**
+
+- **Q: SGLT2i elderly**
+  **A: eGFR ≥20: cardiovascular/renal benefits; watch volume depletion, genital infections, euglycaemic DKA**
+
+- **Q: Osteoporosis elderly**
+  **A: Alendronate 1st line; denosumab if contraindicated/intolerant; zoledronic acid if adherence issue**
+
+- **Q: Denosumab caveat**
+  **A: STOP → rapid BMD loss + rebound vertebral fractures (MUST transition to bisphosphonate)**
+
+- **Q: Falls risk**
+  **A: Review medications (sedatives, antihypertensives); vit D 800-1000 IU; exercise; home safety**
+
+- **Q: Sick day rules**
+  **A: AI: double/triple glucocorticoid; DM: SGLT2i hold, metformin hold if dehydrated, insulin adjust**
+
+## Answer Key with Explanations
+### MCQs
+1. **TSH ↑ (upper reference limit increases), fT4 normal** — Thyroid function in healthy ageing: typical pattern:
+
+2. **Observe + repeat in 3-6 months (no routine treatment if TSH <10)** — Subclinical hypothyroidism in elderly (>80): TSH 6-10, asymptomatic. Management?
+
+3. **25-50 µg/day (12.5-25 µg if cardiac disease)** — Levothyroxine dosing in elderly: start low go slow. Typical starting dose:
+
+4. **Fatigue, anorexia, weight loss, postural hypotension, hyponatraemia (often no hyperpigmentation)** — Adrenal insufficiency in elderly: atypical presentation:
+
+5. **SSRIs, SNRIs, carbamazepine, PPIs, opioids** — SIADH in elderly: most common drug causes:
+
+6. **4-6 mmol/L/24h (max 8 in first 24h if severe symptoms)** — Hyponatraemia correction in elderly: max safe rate:
+
+7. **7.5-8.5% (58-69 mmol/mol)** — Diabetes in elderly: HbA1c target (frail, multi-morbidity):
+
+8. **eGFR <45: reduce dose; <30: contraindicated** — Metformin in elderly CKD: eGFR threshold for dose reduction:
+
+9. **Oral bisphosphonate (alendronate) + Ca/Vit D; denosumab if contraindicated** — Osteoporosis treatment in elderly: first-line:
+
+10. **Hypocalcaemia (ensure Vit D replete); stop → rapid bone loss (rebound vertebral #)** — Denosumab in elderly: key monitoring:
+
+### SBAs
+1. **Repeat TSH/fT4 in 3 months; treat if TSH >10 or symptomatic** — 85yo woman: falls, fatigue, TSH 8.5, fT4 12, no goitre, no cardiac history. Best approach?
+
+2. **Fluid restriction <1L + stop sertraline → consider tolvaptan if severe** — 80yo man on sertraline: confused, Na+ 118, euvolaemic, urine osm 400, urine Na+ 60. Management?
+
+3. **Reduce metformin to 500mg BD (eGFR 30-45); review HbA1c target 7.5-8.0%** — 78yo woman: T2DM, eGFR 38, HbA1c 8.2% on metformin 1g BD. Best adjustment?
+
+4. **Alendronate 70mg weekly + Ca/Vit D; dental review** — 82yo man: hip fracture, DEXA T-score -3.0, eGFR 45. First-line?
+
+5. **Hydrocortisone 50mg IV q6h (if AI suspected) or double oral dose; taper after recovery** — 90yo woman: community-acquired pneumonia, on prednisolone 5mg for PMR. Acute illness: stress-dose steroids?

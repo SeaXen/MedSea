@@ -1,0 +1,614 @@
+---
+tags: [medicine, endocrinology, davidson, hypothyroidism, hashimoto, myxoedema, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology (Thyroid Section)
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Hypothyroidism is one of the commonest endocrine disorders. Hashimoto's thyroiditis is the commonest cause. Key viva topics: diagnosis (TSH/fT4 patterns), replacement therapy, myxoedema coma, pregnancy management, and subclinical hypothyroidism."
+see_also: ["Primary Hypothyroidism (Hashimoto)", "Central Hypothyroidism", "Subclinical Thyroid Disease", "Myxoedema Coma", "Thyroiditis", "Thyroid in Pregnancy"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Hypothyroidism Overview
+
+> [!info]
+> **Hypothyroidism = Deficiency of Thyroid Hormone Action.** Commonest endocrine disorder after diabetes. **Hashimoto's Thyroiditis = Commonest Cause (90% in Iodine-Sufficient Areas)**. Female:Male = 10:1. Prevalence: 1-2% Overt, 4-10% Subclinical.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Classify hypothyroidism by aetiology (primary vs central) and severity
+- [ ] Apply diagnostic criteria (TSH, fT4 patterns)
+- [ ] Prescribe appropriate levothyroxine replacement and monitoring
+- [ ] Manage special situations (pregnancy, elderly, cardiac disease, myxoedema coma)
+- [ ] Differentiate subclinical from overt hypothyroidism
+
+---
+
+## 2. Classification & Aetiology
+
+| Category | Cause | Proportion |
+|----------|-------|------------|
+| **Primary (Thyroid Failure)** | **Hashimoto's Thyroiditis** (Autoimmune) | **90%** (Iodine-Sufficient) |
+| | Post-Thyroidectomy / Post-RAI | Common |
+| | Iodine Deficiency | Global Leading Cause |
+| | Drug-Induced (Lithium, Amiodarone, TKIs) | Common |
+| | Congenital (Dysgenesis, Dyshormonogenesis) | Rare |
+| **Central (Pituitary/Hypothalamic)** | Pituitary Adenoma / Surgery / Radiotherapy | <5% |
+| | Sheehan Syndrome, Lymphocytic Hypophysitis | Rare |
+| **Transient** | Postpartum Thyroiditis, Subacute Thyroiditis, Drug-Induced | Self-Limited |
+
+---
+
+## 2. Clinical Presentation
+
+| System | Features |
+|---------|----------|
+| **General** | Fatigue, Lethargy, Cold Intolerance, Weight Gain, Constipation |
+| **Skin/Hair** | Dry Skin, Hair Loss (Diffuse), Brittle Nails, Puffy Face, Periorbital Oedema |
+| **Cardiovascular** | Bradycardia, Diastolic Hypertension, Pericardial Effusion, Hyperlipidaemia |
+| **Neuromuscular** | Proximal Myopathy, Cramps, Carpal Tunnel, Slow Reflexes (Delayed Relaxation) |
+| **Neuropsychiatric** | Depression, Cognitive Slowing, Memory Impairment, "Brain Fog" |
+| **Reproductive** | Menorrhagia, Infertility, Galactorrhoea (↑ Prolactin) |
+| **Dermatological** | Dry Skin, Myxoedema (Non-Pitting Oedema), Hair Loss (Outer Third of Eyebrows) |
+| **Gastrointestinal** | Constipation, Reduced Appetite, Weight Gain (5-10kg) |
+| **Cardiac** | Bradycardia, ↓ Contractility, Pericardial Effusion, Diastolic Dysfunction |
+
+### Severe / Myxoedema Coma (See Separate Note)
+| Feature | Details |
+|---------|---------|
+| **Precipitants** | Infection, Sedatives, Trauma, Surgery, Cold Exposure, Non-Compliance |
+| **Clinical** | Hypothermia (<35°C), Coma, Hypoventilation, Hypotension, Hyponatraemia, Seizures |
+| **Mortality** | **20-50%** Despite Treatment |
+
+---
+
+## 2. Aetiology — Common Causes
+
+| Cause | Mechanism | Key Features |
+|-------|-----------|--------------|
+| **Hashimoto's Thyroiditis** | Autoimmune Lymphocytic Infiltration → Destruction | **TPOAb/TgAb+**, Goitre (Firm, Rubbery), TPOAb >90% |
+| **Post-Thyroidectomy / Post-RAI** | Surgical/Radiation Ablation | History of Surgery/RAI; Permanent |
+| **Iodine Deficiency** | Inadequate Substrate for Hormone Synthesis | Endemic Goitre; Neonatal Hypothyroidism Risk |
+| **Drug-Induced** | Lithium, Amiodarone, TKIs, Checkpoint Inhibitors | See Drug-Induced Note |
+| **Post-Thyroiditis** | Subacute, Silent, Postpartum Thyroiditis | Transient (Usually) |
+| **Congenital** | Dysgenesis (85%), Dyshormonogenesis (15%) | Neonatal Screening (TSH) |
+| **Central (Secondary)** | Pituitary/Hypothalamic Disease | Low fT4 + Inappropriately Low/Normal TSH |
+
+---
+
+## 3. Clinical Presentation — By Severity
+
+| Severity | TSH | fT4 | Clinical Features |
+|----------|-----|-----|-------------------|
+| **Subclinical** | **4.5-10 mIU/L** (or >10) | **Normal** | Often Asymptomatic; Mild Fatigue, Lipid Changes |
+| **Mild Overt** | **10-20 mIU/L** | **Low** | Fatigue, Weight Gain, Cold Intolerance, Constipation |
+| **Moderate** | **20-50 mIU/L** | **Low** | Frank Symptoms + Signs (Myxoedema, Bradycardia) |
+| **Severe** | **>50 mIU/L** | **Very Low** | Myxoedema, Bradycardia, Hyponatraemia, Pericardial Effusion |
+| **Myxoedema Coma** | **>100** (Often) | **Very Low** | Hypothermia, Coma, Hypotension, Hypoventilation |
+
+---
+
+## 3. Diagnosis
+
+### Biochemical Patterns
+| Condition | TSH | fT4 | Key Features |
+|-----------|-----|-----|--------------|
+| **Primary Overt Hypothyroidism** | **High (>10-20 mIU/L)** | **Low** | Classic |
+| **Subclinical Hypothyroidism** | **4.5-10 mIU/L** (or >10) | **Normal** | Asymptomatic/Mild |
+| **Central (Secondary) Hypothyroidism** | **Low / Inappropriately Normal** | **Low** | Pituitary/Hypothalamic Disease |
+| **Subclinical (TSH 4.5-10)** | 4.5-10 mIU/L | Normal | Controversial Treatment Threshold |
+| **Subclinical (TSH >10)** | **>10 mIU/L** | Normal | Treat as Overt |
+| **Sick Euthyroid Syndrome** | Low/Normal/High | Low/Normal | Non-Thyroidal Illness |
+
+### Key Investigations
+| Test | Purpose |
+|------|---------|
+| **TSH + fT4** | **Primary Diagnostic Pair** |
+| **Anti-TPO / Anti-Tg** | **Hashimoto Diagnosis** (>90% Positive) |
+| **TSH Receptor Antibodies** | If Graves Suspected (Rare in Hypo) |
+| **TSH + fT4 + fT3** | If Central Suspected (TSH Inappropriately Low) |
+| **Pituitary MRI** | If Central Hypothyroidism Suspected |
+| **Lipids, CK, Prolactin** | Secondary Effects |
+
+---
+
+## 3. Hashimoto's Thyroiditis (Chronic Autoimmune Thyroiditis)
+
+| Feature | Details |
+|---------|---------|
+| **Aetiology** | Autoimmune Lymphocytic Infiltration → Fibrosis & Destruction |
+| **Demographics** | **F:M = 10:1**; Peak 30-50y |
+| **Genetics** | **HLA-DR5, DR3**; CTLA-4, PTPN22, FCRL3, CD40 |
+| **Associations** | **Other Autoimmune**: T1DM, Addison's, Coeliac, Vitiligo, Pernicious Anaemia (APS-2/3) |
+| **Antibodies** | **Anti-TPO (90-95%)**, **Anti-Tg (70-80%)** |
+| **Histology** | Lymphocytic Infiltration, Germinal Centres, Hürthle Cells, Fibrosis |
+| **Natural History** | **Progressive** → Subclinical → Overt Hypothyroidism (5-10%/yr Progression if TPOAb+) |
+
+### Clinical Spectrum
+| Stage | TSH | fT4 | Antibodies | Management |
+|-------|-----|-----|------------|------------|
+| **Euthyroid (Antibody+)** | Normal | Normal | TPOAb/TgAb+ | Monitor q6-12mo |
+| **Subclinical Hypothyroidism** | 4.5-10 (or >10) | Normal | TPOAb+ | Treat if TSH >10 / Ab+ / Pregnant / Lipids |
+| **Overt Hypothyroidism** | >10 (often >20) | Low | TPOAb+ | **Levothyroxine** |
+
+---
+
+## 4. Levothyroxine Replacement Therapy
+
+### Dosing Principles
+| Parameter | Recommendation |
+|-----------|----------------|
+| **Standard Dose** | **1.6 µg/kg/day** (e.g., 100-150µg for 70kg Adult) |
+| **Elderly / Cardiac Disease** | **Start Low (25-50µg)** → Titrate by 25µg q4-6wk |
+| **Young / Healthy** | **Full Dose (1.6 µg/kg)** from Start |
+| **Administration** | **Empty Stomach, 30-60min Before Breakfast**; Avoid Ca/Fe/SSRI/PPI 4h |
+| **Formulation** | **Levothyroxine Sodium** (Stable); Avoid Switching Brands |
+
+### Titration & Monitoring
+| Phase | TSH Target | Frequency |
+|-------|------------|-----------|
+| **Initiation** | — | Check TSH/fT4 at **6-8 Weeks** |
+| **Titration** | Adjust by 12.5-25µg | q6-8 Weeks Until Target |
+| **Stable** | **TSH 0.4-4.0 mIU/L** (Mid-Normal) | **6-12 Monthly** Once Stable |
+| **Pregnancy** | **Trimester-Specific** (See Pregnancy Note) | q4-6 Weeks |
+
+### Target TSH Ranges (Overt Hypothyroidism)
+| Population | Target TSH (mIU/L) |
+|------------|-------------------|
+| **Adult** | **0.4 - 4.0** (Mid-Normal) |
+| **Elderly (>70)** | **0.5 - 5.0** (Avoid Over-Replacement) |
+| **Pregnancy** | Trimester-Specific (See Pregnancy Note) |
+| **Post-Thyroid Cancer** | **<0.1 - 0.5** (TSH Suppression) |
+
+---
+
+## 4. Subclinical Hypothyroidism
+
+| TSH Range | fT4 | Management |
+|-----------|-----|------------|
+| **4.5 - 10 mIU/L** | Normal | **Treat if**: TPOAb+, Pregnant/Planning, Lipids ↑, Symptoms, Cardiac Risk, Age <65 |
+| **>10 mIU/L** | Normal | **Treat** (High Progression Risk: 5-10%/yr to Overt) |
+| **During Pregnancy** | Trimester-Specific Upper Limit | **Treat if TSH > Trimester-Specific Upper Limit** |
+
+### Progression Risk
+| Factor | Annual Progression to Overt Hypothyroidism |
+|--------|--------------------------------------------|
+| **TSH 4.5-10, Ab Negative** | **2-3%/yr** |
+| **TSH 4.5-10, TPOAb+** | **5-10%/yr** |
+| **TSH >10** | **10-20%/yr** |
+
+---
+
+## 5. Special Populations
+
+### Pregnancy
+| Trimester | TSH Target (mIU/L) | Action |
+|-----------|---------------------|--------|
+| **Pre-conception** | **<2.5** | Optimise Dose Pre-Conception |
+| **1st Trimester** | **0.1 - 2.5** | ↑ Dose ~30% at +ve Test; Monitor q4wk |
+| **2nd Trimester** | **0.2 - 3.0** | Monitor q4-6wk |
+| **3rd Trimester** | **0.3 - 3.0** | Monitor q4-6wk |
+| **Postpartum** | Pre-Pregnancy Dose | Reduce to Pre-Pregnancy Dose; Check TSH 6wk |
+
+**Key**: **Increase Dose ~30% at Positive Pregnancy Test** (Instant); Monitor q4wk.
+
+### Elderly (>65-70)
+| Aspect | Recommendation |
+|--------|----------------|
+| **Target TSH** | **0.5 - 5.0** (Up to 6-7 if Frail) |
+| **Start Low** | 25-50µg; Titrate Slowly (25µg q6-8wk) |
+| **Cardiac Risk** | Avoid Over-Replacement (AF, Ischaemia) |
+| **Bone** | Avoid Over-Replacement (Osteoporosis Risk) |
+
+### Cardiac Disease
+| Condition | Precaution |
+|---------|------------|
+| **IHD / Angina** | Start 25µg; Titrate Slowly (25µg q4-6wk) |
+| **Heart Failure** | Low Dose; Monitor Weight, Oedema, BNP |
+| **Atrial Fibrillation** | Avoid Over-Replacement (Triggers AF) |
+
+---
+
+## 5. Myxoedema Coma — See Separate Note (Myxoedema Coma)
+
+---
+
+## 6. Monitoring & Adverse Effects
+
+### Monitoring Schedule
+| Phase | Tests | Frequency |
+|-------|-------|-----------|
+| **Initiation / Titration** | TSH + fT4 | q6-8 Weeks |
+| **Stable** | TSH (+ fT4 if Dose Change) | **6-12 Monthly** |
+| **Pregnancy** | TSH + fT4 | **q4-6 Weeks** |
+| **Dose Change** | TSH + fT4 | 6-8 Weeks Post-Change |
+
+### Adverse Effects of Over-Replacement
+| System | Features |
+|--------|----------|
+| **Cardiac** | Tachycardia, AF, Palpitations, Angina, HF Exacerbation |
+| **Bone** | Accelerated Osteoporosis (Postmenopausal Women) |
+| **Neuromuscular** | Tremor, Anxiety, Insomnia, Proximal Myopathy |
+| **Reproductive** | Menstrual Irregularities, Reduced Fertility |
+| **Metabolic** | Weight Loss, Hyperglycaemia |
+
+---
+
+## 6. Drug Interactions Affecting Levothyroxine Absorption/Action
+
+| Drug / Substance | Effect | Management |
+|------------------|--------|------------|
+| **Calcium Carbonate / Iron / PPIs / Sucralfate / Cholestyramine** | ↓ Absorption | **Separate by ≥4 Hours** |
+| **Soy Products / High-Fibre Diet** | ↓ Absorption | Separate Timing |
+| **Phenytoin / Carbamazepine / Rifampicin** | ↑ Metabolism (CYP450 Induction) | ↑ Levothyroxine Dose |
+| **Sertraline / Fluoxetine** | Displaces T4 from TBG | Monitor fT4 |
+| **Amiodarone** | Inhibits T4→T3 Conversion | Monitor fT3; Adjust Dose |
+| **Oestrogen / OCP / HRT** | ↑ TBG → ↑ Total T4 (fT4 Normal) | Dose Adjustment if Total T4 Used |
+
+---
+
+## 7. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Commonest Cause** | **Hashimoto's Thyroiditis (90%)** in Iodine-Sufficient Areas |
+| **TSH in Primary Hypo** | **High** (Often >20 mIU/L in Overt) |
+| **TSH in Central Hypo** | **Low / Inappropriately Normal** + Low fT4 |
+| **Subclinical Hypothyroidism** | TSH 4.5-10 (Normal fT4); Treat if >10 / Ab+ / Pregnant / Lipids |
+| **Levothyroxine Dose** | **1.6 µg/kg/day** (~100-150µg for 70kg) |
+| **Administration** | **Empty Stomach, 30-60min Before Breakfast**; Separate Ca/Fe/PPI by 4h |
+| **Pregnancy Targets** | 1st Tri: 0.1-2.5; 2nd: 0.2-3.0; 3rd: 0.3-3.0 mIU/L |
+| **Elderly Target TSH** | 0.5-5.0 (Up to 7 if Frail) |
+| **Subclinical Hypothyroidism** | TSH 4.5-10 (Normal fT4); Treat if >10 / Ab+ / Pregnant / Cardiac |
+| **Myxoedema Coma** | Hypothermia + Coma + Hypotension + Hyponatraemia → **Hydrocortisone 100mg IV + Levothyroxine IV** |
+| **TSH in Central Hypo** | **Low/Normal (Inappropriately Low)** + Low fT4 |
+| **Levothyroxine Dose** | 1.6 µg/kg/day (~100-150µg for 70kg) |
+| **Administration** | Empty Stomach, 30-60min Pre-Breakfast; Separate Ca/Fe/PPI 4h |
+| **Over-Replacement** | AF, Osteoporosis, Tachycardia, Weight Loss, Tremor |
+| **Drug Interactions** | Ca/Fe/PPI/Sucralfate → Separate 4h; Phenytoin/Rifampicin → ↑ Dose |
+| **Start Low Go Slow** | Elderly/Cardiac: 25-50µg → Titrate 25µg q6-8wk |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Primary vs Central Hypo** | Primary: TSH ↑↑ + fT4 ↓; Central: TSH Low/Normal + fT4 ↓ |
+| **Subclinical vs Overt** | Subclinical = TSH Abnormal + fT4 **Normal**; Overt = TSH Abnormal + fT4 **Low** |
+| **TSH in Central Hypo** | **NOT Elevated** — Inappropriately Normal/Low despite Low fT4 |
+| **Subclinical TSH 4.5-10** | Treat if TPOAb+, Pregnant, Lipids, Cardiac Risk; Observe if Asymptomatic Ab- |
+| **Levothyroxine Timing** | **Empty Stomach, 30-60min Before Breakfast** — Absorption Critical |
+| **Levothyroxine + Calcium/Iron** | **Separate by 4 Hours** (Chelation) |
+| **Pregnancy Dose Increase** | **~30% Increase** at Positive Test; Monitor q4wk |
+| **Myxoedema Coma** | IV Levothyroxine 300-500µg + **Hydrocortisone 100mg IV** (Co-existing AI) |
+| **Central Hypothyroidism TSH** | **Low or Inappropriately Normal** (Not Elevated) |
+| **TSH Targets** | Adult 0.4-4.0; Elderly 0.5-5.0; Pregnancy Trimester-Specific |
+
+**Mnemonic: HYPO THYROID**
+- **H**ashimoto = Commonest Cause (90%)
+- **Y**oung Women (F:M 10:1)
+- **P**rimary = TSH High; **C**entral = TSH Low/Normal
+- **O**vert = TSH High + fT4 Low
+- **T**hyroxine = 1.6 µg/kg/day
+- **H**yperlipidaemia, **Y**awning, **Y**awning (Fatigue)
+- **R**eflexes Delayed (Ankle Jerk)
+- **O**edema (Myxoedema, Non-Pitting)
+- **I**nfertility, **D**epression
+
+---
+
+## 9. Mind Map
+
+```mermaid
+mindmap
+  root((Hypothyroidism))
+    Aetiology
+      Primary (90%)
+        Hashimoto (Autoimmune, TPOAb+)
+        Post-Surgical / Post-RAI
+        Iodine Deficiency
+        Drug-Induced (Li, Amiodarone, TKI)
+        Congenital
+      Central (Secondary)
+        Pituitary (Adenoma, Surgery, RT)
+        Hypothalamic (Sheehan, Craniopharyngioma)
+      Transient
+        Postpartum / Subacute / Silent Thyroiditis
+    Classification
+      Subclinical: TSH 4.5-10, fT4 Normal
+      Overt: TSH High, fT4 Low
+      Central: TSH Low/Normal, fT4 Low
+    Hashimoto
+      Autoimmune Lymphocytic Infiltration
+      TPOAb 90-95%, TgAb 70-80%
+      F:M 10:1, HLA-DR3/DR5
+      Associated: T1DM, Addison, Coeliac, Vitiligo
+    Treatment
+      Levothyroxine 1.6 µg/kg/day
+      Empty Stomach, 30-60min Pre-Breakfast
+      Start Low Go Slow (Elderly/Cardiac)
+      Target TSH: Adult 0.4-4.0; Elderly 0.5-5.0; Preg Trimester-Specific
+    Subclinical
+      TSH 4.5-10: Observe/Treat Selectively
+      TSH >10: Treat
+      Pregnancy: Treat if >Trimester Limit
+    Pregnancy
+      ↑ Dose 30% at +ve Test
+      Targets: 1st 0.1-2.5, 2nd 0.2-3.0, 3rd 0.3-3.0
+    Monitoring
+      TSH + fT4 q6-8wk (Titration), Then 6-12mo
+      Avoid Over-Replacement (AF, Osteoporosis)
+    Complications
+      Over-Replacement: AF, Osteoporosis, Tremor
+      Under-Replacement: Myxoedema Coma (Rare)
+      Drug Interactions: Ca/Fe/PPI → Separate 4h
+    Myxoedema Coma
+      Hypothermia + Coma + Hypotension
+      IV T4 300-500µg + Hydrocortisone 100mg IV
+```
+
+---
+
+## 10. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Commonest Cause** | **Hashimoto's (90%)** in Iodine-Sufficient Areas |
+| **Primary Hypo TSH** | **High** (>10-20 in Overt) |
+| **Central Hypo TSH** | **Low/Normal** (Inappropriately Normal) + Low fT4 |
+| **Subclinical Hypo** | TSH 4.5-10, fT4 Normal; Treat if >10 / Ab+ / Pregnant / Lipids |
+| **Levothyroxine Dose** | **1.6 µg/kg/day** (~100-150µg for 70kg) |
+| **Administration** | Empty Stomach, 30-60min Pre-Meal; Separate Ca/Fe/PPI 4h |
+| **Pregnancy Targets** | 1st: 0.1-2.5; 2nd: 0.2-3.0; 3rd: 0.3-3.0 mIU/L |
+| **Elderly Target** | **0.5-5.0** (Up to 7 if Frail) |
+| **Subclinical Hypo** | TSH 4.5-10 Normal fT4; Treat if >10 / Ab+ / Pregnant / CVD |
+| **Myxoedema Coma** | Hypothermia + Coma + Hypotension + Hyponatraemia → **IV T4 300-500µg + Hydrocortisone 100mg IV** |
+| **Central Hypo TSH** | **Low/Normal (Inappropriately)** + Low fT4 |
+| **Levothyroxine Dose** | **1.6 µg/kg/day** (~100-150µg for 70kg) |
+| **Administration** | Empty Stomach, 30-60min Pre-Meal; Separate Ca/Fe/PPI 4h |
+| **Over-Replacement** | AF, Osteoporosis, Tachycardia, Weight Loss, Tremor |
+| **Drug Interactions** | Ca/Fe/PPI → Separate 4h; Phenytoin/Rifampicin → ↑ Dose |
+| **Start Low Go Slow** | Elderly/Cardiac: 25-50µg → Titrate 25µg q6-8wk |
+
+---
+
+## MCQs (10)
+1. **Commonest cause of hypothyroidism in iodine-sufficient areas:**
+   A. Hashimoto's thyroiditis (90%)
+   B. Iodine deficiency
+   C. Post-RAI
+   D. Post-surgical
+   E. Drug-induced
+
+2. **Primary hypothyroidism biochemical pattern:**
+   A. TSH ↑↑, fT4 ↓
+   B. TSH ↓, fT4 ↓
+   C. TSH normal, fT4 ↓
+   D. TSH ↑, fT4 normal
+   E. TSH ↓, fT4 ↑
+
+3. **Central (secondary) hypothyroidism pattern:**
+   A. TSH low/normal (inappropriately), fT4 ↓
+   B. TSH ↑↑, fT4 ↓
+   C. TSH ↑, fT4 normal
+   D. TSH ↓, fT4 ↑
+   E. TSH normal, fT4 normal
+
+4. **Subclinical hypothyroidism definition:**
+   A. TSH 4.5-10 mIU/L, fT4 normal
+   B. TSH >10, fT4 normal
+   C. TSH 4.5-10, fT4 ↓
+   D. TSH >10, fT4 ↓
+   E. TSH normal, fT4 ↓
+
+5. **Levothyroxine standard full replacement dose:**
+   A. 1.6 µg/kg/day (~100-150µg for 70kg)
+   B. 50-75µg/day
+   C. 200-250µg/day
+   D. 2.5 µg/kg/day
+   E. 100µg regardless of weight
+
+6. **Levothyroxine administration:**
+   A. Empty stomach, 30-60 min before breakfast; separate Ca/Fe/PPI 4h
+   B. With food
+   C. At bedtime
+   D. With calcium
+   E. With iron
+
+7. **Subclinical hypothyroidism TSH 4.5-10: treat if:**
+   A. TPOAb+ / Pregnant / Lipids / Cardiac risk / TSH>10
+   B. Always
+   C. Never
+   D. Only if TSH>10
+   E. Only if symptomatic
+
+8. **Pregnancy levothyroxine dose increase:**
+   A. ~30% increase at positive test; monitor q4wk
+   B. No change
+   C. 50% increase
+   D. Double dose
+   E. Stop levothyroxine
+
+9. **Myxoedema coma immediate treatment:**
+   A. IV levothyroxine 300-500µg + IV hydrocortisone 100mg
+   B. Oral levothyroxine only
+   C. IV hydrocortisone only
+   D. IV T3 only
+   E. RAI
+
+10. **Central hypothyroidism TSH:**
+   A. Low or inappropriately normal (NOT elevated) + low fT4
+   B. Elevated
+   C. Suppressed
+   D. Normal with high fT4
+   E. Pulsatile
+
+## SBA Questions (10)
+1. **50yo woman: fatigue, weight gain, TSH 12, fT4 6, TPOAb+. Treatment?**
+   A. Levothyroxine 1.6 µg/kg/day (start 50-75µg, titrate)
+   B. Carbimazole
+   C. RAI
+   D. Surgery
+   E. Observation
+
+2. **65yo man: ischaemic heart disease, TSH 15, fT4 5. Start levothyroxine?**
+   A. Start low (25µg), go slow (titrate 25µg q6-8wk)
+   B. Full dose 1.6 µg/kg immediately
+   C. Carbimazole
+   D. RAI
+   E. No treatment needed
+
+3. **30yo pregnant (8wks): on levothyroxine 100µg, TSH 4.2 (ref 0.1-2.5). Action?**
+   A. Increase dose ~30% (to 125-150µg); monitor q4wk
+   B. Stop levothyroxine
+   C. Reduce dose
+   D. Continue same dose
+   E. Switch to T3
+
+4. **Subclinical hypo: TSH 8, fT4 normal, TPOAb+, lipids high. Treat?**
+   A. Yes (Ab+ + lipids)
+   B. No (fT4 normal)
+   C. Only if TSH>10
+   D. Only if symptomatic
+   E. RAI
+
+5. **Central hypothyroidism: TSH 1.2, fT4 5, MRI shows pituitary macroadenoma. Treat?**
+   A. Levothyroxine (target fT4 mid-normal); check cortisol first
+   B. Carbimazole
+   C. RAI
+   D. Surgery first
+   E. Observation
+
+6. **Myxoedema coma: hypothermia 32°C, GCS 6, TSH 80, fT4 2. Immediate?**
+   A. IV LT4 300-500µg + IV hydrocortisone 100mg + passive rewarming
+   B. Oral LT4 + IV hydrocortisone
+   C. IV T3 only
+   D. Active external rewarming
+   E. RAI
+
+7. **Elderly on levothyroxine: TSH 0.1, fT4 22, asymptomatic. Action?**
+   A. Reduce dose (target TSH 0.5-5.0 in elderly)
+   B. Stop levothyroxine
+   C. Increase dose
+   D. Add carbimazole
+   E. RAI
+
+8. **Levothyroxine + calcium carbonate: patient takes together. Effect?**
+   A. Reduced absorption (chelation); separate by 4h
+   B. Increased absorption
+   C. No effect
+   D. Hypercalcaemia
+   E. Hypocalcaemia
+
+9. **Post-RAI hypothyroidism: TSH 25, fT4 4 at 6 months. Management?**
+   A. Levothyroxine full replacement dose (1.6 µg/kg/day)
+   B. Carbimazole
+   C. Repeat RAI
+   D. Observation
+   E. T3 only
+
+10. **Subclinical hypo TSH 6, fT4 normal, TPOAb-, asymptomatic, no CV risk. Manage?**
+   A. Observe; repeat TSH 3-6 months
+   B. Treat immediately
+   C. RAI
+   D. Surgery
+   E. T3 supplementation
+
+## Flashcards
+- **Q: Commonest cause**
+  **A: Hashimoto's (90%) in iodine-sufficient areas**
+
+- **Q: Primary hypo pattern**
+  **A: TSH ↑↑, fT4 ↓**
+
+- **Q: Central hypo pattern**
+  **A: TSH low/normal (inappropriately), fT4 ↓**
+
+- **Q: Subclinical hypo**
+  **A: TSH 4.5-10, fT4 normal; Treat if >10 / Ab+ / Pregnant / Lipids / CV risk**
+
+- **Q: Levothyroxine dose**
+  **A: 1.6 µg/kg/day (~100-150µg for 70kg)**
+
+- **Q: Levothyroxine admin**
+  **A: Empty stomach, 30-60 min pre-breakfast; separate Ca/Fe/PPI 4h**
+
+- **Q: Pregnancy target TSH**
+  **A: 1st: 0.1-2.5; 2nd: 0.2-3.0; 3rd: 0.3-3.0 mIU/L**
+
+- **Q: Elderly target TSH**
+  **A: 0.5-5.0 (up to 7 if frail)**
+
+- **Q: Myxoedema coma**
+  **A: Hypothermia + Coma + Hypotension → IV LT4 300-500µg + IV hydrocortisone 100mg**
+
+- **Q: Central hypo TSH**
+  **A: Low/normal (inappropriately) + low fT4**
+
+- **Q: Levothyroxine interactions**
+  **A: Ca/Fe/PPI → separate 4h; Phenytoin/Rifampicin → ↑ dose**
+
+- **Q: Start low go slow**
+  **A: Elderly/cardiac: 25-50µg → titrate 25µg q6-8wk**
+
+- **Q: Over-replacement**
+  **A: AF, osteoporosis, tremor, weight loss**
+
+- **Q: Subclinical hypo TSH 4.5-10**
+  **A: Observe if Ab-; Treat if Ab+ / Pregnant / Lipids / CV risk / TSH>10**
+
+## Answer Key with Explanations
+### MCQs
+1. **Hashimoto's thyroiditis (90%)** — Commonest cause of hypothyroidism in iodine-sufficient areas:
+
+2. **TSH ↑↑, fT4 ↓** — Primary hypothyroidism biochemical pattern:
+
+3. **TSH low/normal (inappropriately), fT4 ↓** — Central (secondary) hypothyroidism pattern:
+
+4. **TSH 4.5-10 mIU/L, fT4 normal** — Subclinical hypothyroidism definition:
+
+5. **1.6 µg/kg/day (~100-150µg for 70kg)** — Levothyroxine standard full replacement dose:
+
+6. **Empty stomach, 30-60 min before breakfast; separate Ca/Fe/PPI 4h** — Levothyroxine administration:
+
+7. **TPOAb+ / Pregnant / Lipids / Cardiac risk / TSH>10** — Subclinical hypothyroidism TSH 4.5-10: treat if:
+
+8. **~30% increase at positive test; monitor q4wk** — Pregnancy levothyroxine dose increase:
+
+9. **IV levothyroxine 300-500µg + IV hydrocortisone 100mg** — Myxoedema coma immediate treatment:
+
+10. **Low or inappropriately normal (NOT elevated) + low fT4** — Central hypothyroidism TSH:
+
+
+### SBAs
+1. **Levothyroxine 1.6 µg/kg/day (start 50-75µg, titrate)** — 50yo woman: fatigue, weight gain, TSH 12, fT4 6, TPOAb+. Treatment?
+
+2. **Start low (25µg), go slow (titrate 25µg q6-8wk)** — 65yo man: ischaemic heart disease, TSH 15, fT4 5. Start levothyroxine?
+
+3. **Increase dose ~30% (to 125-150µg); monitor q4wk** — 30yo pregnant (8wks): on levothyroxine 100µg, TSH 4.2 (ref 0.1-2.5). Action?
+
+4. **Yes (Ab+ + lipids)** — Subclinical hypo: TSH 8, fT4 normal, TPOAb+, lipids high. Treat?
+
+5. **Levothyroxine (target fT4 mid-normal); check cortisol first** — Central hypothyroidism: TSH 1.2, fT4 5, MRI shows pituitary macroadenoma. Treat?
+
+6. **IV LT4 300-500µg + IV hydrocortisone 100mg + passive rewarming** — Myxoedema coma: hypothermia 32°C, GCS 6, TSH 80, fT4 2. Immediate?
+
+7. **Reduce dose (target TSH 0.5-5.0 in elderly)** — Elderly on levothyroxine: TSH 0.1, fT4 22, asymptomatic. Action?
+
+8. **Reduced absorption (chelation); separate by 4h** — Levothyroxine + calcium carbonate: patient takes together. Effect?
+
+9. **Levothyroxine full replacement dose (1.6 µg/kg/day)** — Post-RAI hypothyroidism: TSH 25, fT4 4 at 6 months. Management?
+
+10. **Observe; repeat TSH 3-6 months** — Subclinical hypo TSH 6, fT4 normal, TPOAb-, asymptomatic, no CV risk. Manage?
+
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Thyroid Disorders|Thyroid Disorders]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[Primary Hypothyroidism (Hashimoto)]], [[Central Hypothyroidism]], [[Subclinical Thyroid Disease]], [[Myxoedema Coma]], [[Thyroiditis]], [[Thyroid in Pregnancy]]

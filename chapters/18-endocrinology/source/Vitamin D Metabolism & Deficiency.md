@@ -1,0 +1,529 @@
+---
+tags: [medicine, endocrinology, davidson, vitamin-d, metabolism, deficiency, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Vitamin D deficiency is endemic globally. Key viva topics: metabolism (25-hydroxylation → 1α-hydroxylation), deficiency causes (nutritional, malabsorption, renal, drugs), clinical features (rickets/osteomalacia, myopathy), and replacement strategies (cholecalciferol vs active analogues)."
+see_also: ["Osteoporosis & Metabolic Bone Disease", "Hypocalcaemia", "Hypoparathyroidism", "Rickets/Osteomalacia", "CKD-MBD", "Secondary Hyperparathyroidism (CKD)", "Pregnancy & Endocrine"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Vitamin D Metabolism & Deficiency
+
+> [!info]
+> **Vitamin D = Secosteroid Hormone** Essential for Calcium/Phosphate Homeostasis & Bone Health. **Deficiency = Global Pandemic** (1 Billion+ Worldwide). **25-OH Vitamin D = Storage Form** (Half-Life 2-3 Weeks); **1,25-(OH)₂D = Active Hormone** (Half-Life 4-6 Hours). **Deficiency = Rickets (Children) / Osteomalacia (Adults)** + Secondary Hyperparathyroidism + Osteoporosis.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Describe vitamin D synthesis, metabolism, and mechanism of action
+- [ ] Define deficiency, insufficiency, and sufficiency thresholds
+- [ ] Identify risk factors and clinical manifestations (rickets, osteomalacia, myopathy)
+- [ ] Apply replacement strategies (cholecalciferol vs active analogues)
+- [ ] Manage vitamin D in special populations (CKD, pregnancy, obesity, drugs)
+
+---
+
+## 2. Vitamin D Metabolism
+
+### Synthesis Pathway
+```
+Sunlight (UVB 290-315nm) → 7-Dehydrocholesterol (Skin) → **Pre-Vitamin D3** → **Vitamin D3 (Cholecalciferol)**
+         │
+         ▼
+Liver (25-Hydroxylase / CYP2R1) → **25-OH Vitamin D (Calcidiol)** — **Storage Form** (t½ 2-3 Weeks)
+         │
+         ▼
+Kidney (1α-Hydroxylase / CYP27B1) → **1,25-(OH)₂D (Calcitriol)** — **Active Hormone** (t½ 4-6h)
+         │
+         ▼
+Target Tissues (VDR) → Genomic (Genomic Transcription) + Non-Genomic (Rapid) Effects
+```
+
+### Alternative Sources
+| Source | Form | Notes |
+|--------|------|-------|
+| **Sunlight (UVB)** | **Vitamin D3 (Cholecalciferol)** | Major Source (80-90%) |
+| **Diet (Fatty Fish, Egg Yolk, Fortified Foods)** | **D3 (Cholecalciferol)** | Minor Contribution |
+| **Diet (Mushrooms, Fortified Foods)** | **Vitamin D2 (Ergocalciferol)** | Plant Source; Less Potent |
+| **Supplements** | **D3 (Cholecalciferol) / D2 (Ergocalciferol)** | D3 Preferred (More Potent) |
+
+---
+
+## 2. Metabolic Activation & Catabolism
+
+### Activation Steps
+| Step | Enzyme | Gene | Location | Regulation |
+|------|--------|------|--------|------------|
+| **1. 25-Hydroxylation** | **25-Hydroxylase (CYP2R1, CYP27A1)** | CYP2R1, CYP27A1 | Liver | **Substrate-Dependent** (First-Order Kinetics) |
+| **2. 1α-Hydroxylation** | **1α-Hydroxylase (CYP27B1)** | CYP27B1 | **Kidney (Proximal Tubule)** | **↑ PTH, ↓ Phosphate, ↓ Calcium, FGF23 ↓, PTH ↑** |
+| **24-Hydroxylation (Catabolism)** | **24-Hydroxylase (CYP24A1)** | CYP24A1 | Kidney, Target Tissues | **↑ 1,25-(OH)₂D, FGF23** |
+
+### Regulation of 1α-Hydroxylase (CYP27B1)
+| Stimulator | Inhibitor |
+|-------------|-----------|
+| **PTH ↑** (Strongest) | **FGF23 ↑** (Strongest) |
+| **Hypocalcaemia** | **Hypercalcaemia** |
+| **Hypophosphataemia** | **Hyperphosphataemia** |
+| **Growth Hormone / Prolactin** | **1,25-(OH)₂D (Feedback)** |
+| **Low 1,25-(OH)₂D** | **High 1,25-(OH)₂D** |
+
+---
+
+## 2. Vitamin D Forms & Activity
+
+| Form | Name | Half-Life | Potency | Source |
+|------|------|---------|---------|--------|
+| **Vitamin D3 (Cholecalciferol)** | Pre-Vitamin D3 → D3 | **2-3 Weeks** (25-OH D) | Prohormone | Sunlight, Diet, Supplements |
+| **Vitamin D2 (Ergocalciferol)** | D2 (Plant/Fungal) | **2-3 Weeks** (25-OH D2) | **Less Potent** (1/3 of D3) | Plants, Fortified Foods |
+| **25-OH Vitamin D (Calcidiol)** | Storage Form | **2-3 Weeks** | **Storage Pool** | Measured as "Vitamin D Level" |
+| **1,25-(OH)₂D (Calcitriol)** | Active Hormone | **4-6 Hours** | **Most Potent** | Renal 1α-Hydroxylation |
+| **Alfacalcidol (1α-OH D3)** | Synthetic Analogue | **12-24 Hours** | **Rapid Active** | Bypasses Renal 1α-Hydroxylase |
+| **Calcitriol (1,25-(OH)₂D₃)** | Active Hormone | **4-6 Hours** | **Most Potent** | Renal Failure / Hypoparathyroidism |
+
+---
+
+## 2. Vitamin D Status — Definitions (Endocrine Society / IOF / NOF)
+
+| Status | 25-OH Vitamin D (ng/mL) | 25-OH Vitamin D (nmol/L) |
+|--------|--------------------------|--------------------------|
+| **Deficiency** | **<20 ng/mL** | **<50 nmol/L** |
+| **Insufficiency** | **20-29 ng/mL** | **50-74 nmol/L** |
+| **Sufficiency** | **≥30 ng/mL** | **≥75 nmol/L** |
+| **Optimal (Bone Health)** | **40-60 ng/mL** | **100-150 nmol/L** |
+| **Toxicity** | **>150 ng/mL** | **>375 nmol/L** |
+
+> **Controversy**: IOM (Institute of Medicine) uses **≥20 ng/mL (50 nmol/L)** as Sufficient for Bone Health; Endocrine Society Recommends **≥30 ng/mL (75 nmol/L)**.
+
+---
+
+## 3. Risk Factors for Deficiency
+
+| Category | Risk Factors |
+|----------|--------------|
+| **Limited Sun Exposure** | Indoor Lifestyle, High Latitude (>35°), Winter, Sunscreen (SPF>15), Covering Clothing, Dark Skin (Melanin ↓ UVB Penetration) |
+| **Dietary** | Low Intake (Vegan, Lactose Intolerance), No Fortified Foods |
+| **Malabsorption** | Coeliac, IBD, Cystic Fibrosis, Bariatric Surgery, Short Bowel, Cholestatic Liver Disease |
+| **Renal Disease** | CKD (↓ 1α-Hydroxylase), Nephrotic Syndrome (Urinary Loss of DBP) |
+| **Hepatic Disease** | ↓ 25-Hydroxylation |
+| **Obesity** | Sequestration in Adipose Tissue (Volumetric Dilution); BMI >30 → 2x Risk |
+| **Ageing** | ↓ Skin 7-Dehydrocholesterol; ↓ Renal 1α-Hydroxylase |
+| **Drugs** | Enzyme Inducers (Phenytoin, Carbamazepine, Rifampicin, Rifabutin, St John's Wort); Glucocorticoids, Antiretrovirals (EFV, NVP) |
+| **Genetic** | CYP2R1, CYP27B1, CYP24A1, DBP (GC), VDR Polymorphisms |
+
+---
+
+## 3. Clinical Manifestations
+
+### Children — Rickets
+| Feature | Details |
+|---------|---------|
+| **Skeletal** | **Craniotabes** (Soft Skull), **Harrison's Groove** (Costochondral Junction), **Rachitic Rosary**, **Wrist/Ankle Widening**, Bow Legs (Genu Varum), Knock Knees (Genu Valgum) |
+| **Growth** | Failure to Thrive, Delayed Walking, Stunted Growth |
+| **Muscular** | Hypotonia, Proximal Myopathy, Delayed Motor Milestones |
+| **Dental** | Delayed Eruption, Enamel Hypoplasia, Caries |
+| **Biochemical** | **Low Ca²⁺, Low PO₄, High ALP, Low 25-OH D, High PTH, High ALP** |
+
+### Adults — Osteomalacia
+| Feature | Details |
+|---------|---------|
+| **Bone Pain** | **Proximal Myopathy** (Thighs, Shoulders), Diffuse Bone Pain (Ribs, Spine, Pelvis) |
+| **Fractures** | Looser's Zones (Pseudofractures), Pathological Fractures |
+| **Muscular** | Proximal Myopathy (Waddling Gait, Difficulty Rising), Muscle Weakness |
+| **Biochemical** | **Low Ca²⁺, Low PO₄, High ALP, Low 25-OH D, High PTH, High ALP** |
+
+### Subclinical / Insufficiency
+| Feature | Association |
+|---------|-------------|
+| **Osteoporosis** | Accelerated Bone Loss, Fragility Fractures |
+| **Muscle Weakness** | Proximal Myopathy, Falls Risk (Elderly) |
+| **Immune** | ↑ Infection Risk (TB, Respiratory), Autoimmune (MS, T1DM, IBD) |
+| **Cardiovascular** | Hypertension, Heart Failure, Cardiovascular Mortality |
+| **Cancer** | Colorectal, Breast, Prostate (Epidemiological) |
+| **Autoimmune** | MS, T1DM, IBD, RA |
+
+---
+
+## 3. Diagnosis & Thresholds
+
+### 25-OH Vitamin D Assay
+| Method | Notes |
+|----------|-------|
+| **Immunoassay (CLIA, ECLIA)** | Common; Variable Accuracy (Cross-Reactivity with 24,25-(OH)₂D) |
+| **LC-MS/MS** | **Gold Standard** (Separates D2/D3, 25-OH D2/D3, 24,25-(OH)₂D) |
+| **Standardisation** | **VDSP (Vitamin D Standardisation Program)** — CDC/DEQAS |
+
+### Interpretation (Endocrine Society / IOF)
+| 25-OH D Level | Status | Action |
+|---------------|--------|--------|
+| **<12 ng/mL (<30 nmol/L)** | **Severe Deficiency** | **Urgent Treatment** (High-Dose Loading) |
+| **12-19 ng/mL (30-49 nmol/L)** | **Deficiency** | **Treatment** (Loading + Maintenance) |
+| **20-29 ng/mL (50-74 nmol/L)** | **Insufficiency** | **Treatment** (Maintenance Dose) |
+| **30-100 ng/mL (75-250 nmol/L)** | **Sufficient** | Maintenance (If Risk Factors) |
+| **>100 ng/mL (>250 nmol/L)** | **Potential Toxicity** | Assess for Granulomatous Disease / Excess Supplementation |
+
+---
+
+## 4. Replacement Strategies
+
+### Vitamin D3 (Cholecalciferol) — Preferred
+| Scenario | Regimen |
+|-----------|---------|
+| **Severe Deficiency (<12 ng/mL)** | **Loading: 50,000 IU Weekly × 6-8 Weeks** → **Maintenance 1,000-2,000 IU/day** |
+| **Deficiency (12-19 ng/mL)** | **Loading: 50,000 IU Weekly × 4-6 Weeks** → **Maintenance 1,000-2,000 IU/day** |
+| **Insufficiency (20-29 ng/mL)** | **Maintenance 1,000-2,000 IU/day** (No Loading Needed) |
+| **Maintenance (Sufficient)** | **800-2,000 IU/day** (Age/Weight Dependent) |
+| **Obesity (BMI >30)** | **2-3x Higher Dose** (Sequestration) |
+| **Malabsorption** | **Higher Doses / IM Route / Active Analogues** |
+
+### Vitamin D2 (Ergocalciferol) vs D3
+| Feature | **D3 (Cholecalciferol)** | **D2 (Ergocalciferol)** |
+|-----------|--------------------------|-------------------------|
+| **Potency** | **100%** (Reference) | **~33%** (1/3 of D3) |
+| **Half-Life (25-OH)** | **Longer** (2-3 Weeks) | Shorter |
+| **Source** | Animal (Lanolin) | Fungal/Yeast |
+| **Preferred** | **YES** | Only if D3 Unavailable |
+
+---
+
+## 4. Special Populations
+
+### Chronic Kidney Disease (CKD)
+| Stage | Vitamin D Strategy |
+|-------|-------------------|
+| **CKD G1-3** | **Nutritional D3/D2** (Cholecalciferol/Ergocalciferol) → Monitor 25-OH D |
+| **CKD G4-5 / Dialysis** | **Active Analogues Required** (Renal 1α-Hydroxylase Lost) → **Alfacalcidol / Calcitriol / Paricalcitol** |
+| **Dialysis (HD/PD)** | **Paricalcitol / Alfacalcidol / Calcitriol** Post-HD; Monitor Ca, Phos, PTH |
+
+### Pregnancy & Lactation
+| Trimester | Requirement | Supplementation |
+|-----------|-------------|-----------------|
+| **All Trimesters** | **≥600 IU/day (15 µg)** | **400-600 IU/day** (Routine); **Higher if Deficient** |
+| **High Risk** (Dark Skin, Obesity, Veiled) | **1000-2000 IU/day** | |
+| **Lactation** | **600-800 IU/day** | Maternal Supplementation → Breast Milk |
+
+### Obesity (BMI >30)
+| Factor | Adjustment |
+|--------|------------|
+| **Sequestration** | Vitamin D Sequestered in Adipose Tissue |
+| **Dose** | **2-3x Standard Dose** (Loading + Maintenance) |
+| **Surgery (Bariatric)** | **High Risk** — Monitor 25-OH D q3mo Post-Op |
+
+### Drug Interactions (Enzyme Inducers)
+| Drug | Effect | Management |
+|--------|----------|-----------|
+| **Phenytoin, Carbamazepine, Phenobarbital, Primidone** | ↑ CYP24A1 (Catabolism) | **2-3x Higher Dose** |
+| **Rifampicin, Rifabutin** | | |
+| **St John's Wort** | | |
+| **Glucocorticoids** | ↑ Catabolism | Monitor 25-OH D |
+| **Antiretrovirals (EFV, NVP)** | ↑ CYP24A1 | Monitor |
+
+---
+
+## 4. Toxicity (Hypervitaminosis D)
+
+| Threshold | Features |
+|-----------|----------|
+| **25-OH D >150 ng/mL (>375 nmol/L)** | **Hypervitaminosis D** |
+| **Mechanism** | ↑ 1,25-(OH)₂D → Hypercalcaemia, Hypercalciuria, Nephrocalcinosis, Renal Failure |
+| **Symptoms** | Nausea, Vomiting, Polyuria, Polydipsia, Weakness, Confusion, AKI |
+| **Treatment** | **Stop Vitamin D**; Hydration; Loop Diuretics; Bisphosphonates (Severe) |
+
+---
+
+## 5. Replacement Regimens
+
+### Deficiency Treatment (Adults)
+| Severity | Loading Dose | Maintenance |
+|-----------|--------------|-------------|
+| **Severe (<12 ng/mL)** | **50,000 IU Weekly × 6-8 Weeks** | **1,000-2,000 IU/day** |
+| **Moderate (12-19 ng/mL)** | 50,000 IU Weekly × 4-6 Weeks | 1,000-2,000 IU/day |
+| **Insufficiency (20-29 ng/mL)** | **No Loading** | 1,000-2,000 IU/day |
+| **Maintenance (Sufficient)** | — | **800-2,000 IU/day** |
+
+### Special Regimens
+| Population | Loading | Maintenance |
+|------------|---------|-------------|
+| **Obesity (BMI >30)** | **2-3x Standard Loading** | **2-3x Maintenance** |
+| **Malabsorption** | **IM Vitamin D3** (300,000 IU q3-6mo) / **High-Dose Oral** | **2-3x Maintenance** |
+| **CKD G4-5 / Dialysis** | **Active Analogues Only** (Alfacalcidol, Calcitriol, Paricalcitol) | *Not Nutritional D2/D3* |
+
+### Paediatric Dosing (AAP/Endocrine Society)
+| Age | Deficiency Treatment | Maintenance |
+|-----|----------------------|-------------|
+| **0-1 Year** | 2,000 IU/day × 6 Weeks → 400-1,000 IU/day | 400-1,000 IU/day |
+| **1-18 Years** | 50,000 IU Weekly × 6 Weeks → 600-1,000 IU/day | 600-1,000 IU/day |
+
+---
+
+## 5. Monitoring & Toxicity
+
+### Monitoring
+| Parameter | Frequency | Target |
+|-----------|-----------|--------|
+| **25-OH Vitamin D** | 3-4 Months Post-Loading → Then q6-12mo | **30-60 ng/mL (75-150 nmol/L)** |
+| **Serum Calcium** | q3-6mo (If High Dose) | **<2.6 mmol/L (10.5 mg/dL)** |
+| **24h Urine Calcium** | If High Dose / Hypercalcaemia Risk | **<7.5 mmol/day (300 mg/day)** |
+
+### Toxicity Thresholds
+| 25-OH D Level | Clinical Significance |
+|----------------|----------------------|
+| **>100 ng/mL (250 nmol/L)** | **Potential Toxicity** — Monitor Calcium |
+| **>150 ng/mL (375 nmol/L)** | **Hypervitaminosis D** — Hypercalcaemia Risk |
+| **>200 ng/mL (500 nmol/L)** | **Severe Toxicity** — Stop Supplement; Hydration, Loop Diuretic, Bisphosphonate |
+
+---
+
+## 5. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Vitamin D Deficiency Definition** | **25-OH D <20 ng/mL (<50 nmol/L)** |
+| **Insufficiency** | **20-29 ng/mL (50-74 nmol/L)** |
+| **Sufficiency** | **≥30 ng/mL (≥75 nmol/L)** |
+| **Preferred Form** | **Vitamin D3 (Cholecalciferol)** — More Potent, Longer Half-Life |
+| **Loading Dose (Severe Def)** | **50,000 IU Weekly × 6-8 Weeks** |
+| **Maintenance Dose** | **1,000-2,000 IU/day** (Adults) |
+| **Obesity** | **2-3x Higher Dose** (Sequestration in Fat) |
+| **CKD G4-5** | **Active Analogues Only** (Alfacalcidol, Calcitriol, Paricalcitol) |
+| **Enzyme Inducers** | Phenytoin, Carbamazepine, Rifampicin → **2-3x Dose** |
+| **Toxicity** | **25-OH D >150 ng/mL** → Hypercalcaemia, Nephrocalcinosis |
+| **25-OH D Assay** | **LC-MS/MS Gold Standard**; Immunoassay Variable |
+| **Vitamin D2 vs D3** | **D3 Preferred** — More Potent, Longer Half-Life |
+| **Optimal Level** | **40-60 ng/mL (100-150 nmol/L)** for Bone Health |
+| **Pregnancy** | 600-800 IU/day; Deficiency → 1,000-2,000 IU |
+| **CKD G4-5** | **Active Analogues Only** (Alfacalcidol/Calcitriol/Paricalcitol) — Not Nutritional D |
+| **Loading Dose** | 50,000 IU Weekly × 6-8 Weeks (Severe Deficiency) |
+| **Active Analogues in CKD** | Alfacalcidol, Calcitriol, Paricalcitol (Bypass Renal 1α-Hydroxylase) |
+
+---
+
+## 9. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **D2 vs D3** | D3 = Cholecalciferol (Animal, Potent); D2 = Ergocalciferol (Plant, 1/3 Potency) |
+| **25-OH D vs 1,25-(OH)₂D** | 25-OH = Storage (Measure This); 1,25-(OH)₂D = Active Hormone (Short t½) |
+| **CKD Vitamin D** | CKD G1-3: Nutritional D3 OK; **CKD G4-5: Only Active Analogues** (Alfacalcidol/Calcitriol/Paricalcitol) |
+| **D2 vs D3 Potency** | D3 ≈ 3x D3 Potency; D2 Shorter Half-Life |
+| **Loading vs Maintenance** | Loading = 50,000 IU/wk ×6-8wk; Maintenance = 1,000-2,000 IU/day |
+| **Obesity Dosing** | 2-3x Standard Dose (Sequestration in Fat) |
+| **Toxicity Threshold** | 25-OH D >150 ng/mL = Hypervitaminosis D → Hypercalcaemia |
+
+**Mnemonic: VITAMIN D DEFICIENCY**
+- **V**itamin D **D**eficiency = **R**ickets (Kids) / **O**steomalacia (Adults)
+- **I**mmune **D**ysfunction (Infections, Autoimmune)
+- **T**hyroid / **A**utoimmune (MS, T1DM, IBD)
+- **A**dvanced **G**enetic (VDR, CYP24A1, CYP2R1)
+- **M**uscle **W**eakness (Proximal Myopathy)
+- **I**nsulin **R**esistance / **D**iabetes
+- **N**ephrolithiasis (Paradoxical — High Doses)
+- **D**eficiency **E**pidemic (1 Billion+ Worldwide)
+
+---
+
+## 10. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Vitamin D Deficiency** | **25-OH D <20 ng/mL (<50 nmol/L)** |
+| **Insufficiency** | **20-29 ng/mL (50-74 nmol/L)** |
+| **Sufficiency** | **≥30 ng/mL (≥75 nmol/L)** |
+| **Preferred Form** | **Vitamin D3 (Cholecalciferol)** — More Potent, Longer t½ |
+| **Loading Dose (Severe)** | **50,000 IU Weekly × 6-8 Weeks** |
+| **Maintenance** | **1,000-2,000 IU/day** (Adults) |
+| **Obesity** | **2-3x Standard Dose** (Sequestration) |
+| **CKD G4-5** | **Active Analogues Only** (Alfacalcidol, Calcitriol, Paricalcitol) |
+| **Enzyme Inducers** | Phenytoin, Carbamazepine, Rifampicin → **2-3x Dose** |
+| **Toxicity** | **25-OH D >150 ng/mL** → Hypercalcaemia, Nephrocalcinosis |
+| **25-OH D Assay** | **LC-MS/MS Gold Standard** |
+| **Vitamin D2 vs D3** | **D3 Preferred** — More Potent, Longer t½ |
+| **Optimal Level** | **40-60 ng/mL (100-150 nmol/L)** for Bone Health |
+| **Pregnancy** | 600-800 IU/day; Deficiency → 1,000-2,000 IU |
+| **CKD G4-5** | **Active Analogues Only** (Alfacalcidol, Calcitriol, Paricalcitol) |
+| **Loading Dose** | 50,000 IU Weekly × 6-8 Weeks |
+| **Active Analogues in CKD** | Alfacalcidol, Calcitriol, Paricalcitol (Bypass Renal 1α-Hydroxylase) |
+
+---
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Parathyroid & Calcium|Parathyroid & Calcium]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[Osteoporosis & Metabolic Bone Disease]], [[Hypocalcaemia]], [[Hypoparathyroidism]], [[Secondary Hyperparathyroidism (CKD)]], [[Primary Hyperparathyroidism]], [[Rickets/Osteomalacia]]
+## MCQs (10)
+1. **Vitamin D deficiency definition:**
+   A. 25-OH D <30 nmol/L (12 ng/mL); insufficiency 30-50 nmol/L
+   B. <50
+   C. <75
+   D. <100
+   E. <20
+
+2. **Vitamin D sources:**
+   A. Sunlight (UVB) -> skin 7-dehydrocholesterol -> Vit D3; diet (oily fish, fortified) minor
+   B. Diet only
+   C. Sunlight only
+   D. Supplements only
+   E. Endogenous synthesis only
+
+3. **Vit D metabolism:**
+   A. Skin (D3) -> liver 25-hydroxylase -> 25-OH D -> kidney 1a-hydroxylase -> 1,25(OH)2D (active)
+   B. Kidney only
+   C. Liver only
+   D. Intestine only
+   E. Adrenal only
+
+4. **Vit D deficiency causes:**
+   A. Rickets (children), osteomalacia (adults), secondary HPT, muscle weakness, falls
+   B. Osteoporosis only
+   C. Hypercalcaemia
+   D. Renal stones
+   E. No symptoms
+
+5. **Vit D deficiency treatment:**
+   A. Colecalciferol (D3) 20,000-40,000 IU weekly x8-12wk -> maintenance 800-2000 IU/day
+   B. Ergocalciferol single dose
+   C. Calcitriol first line
+   D. IV Vit D
+   E. Sunlight only
+
+6. **Vit D toxicity:**
+   A. Hypercalcaemia, hypercalciuria, renal stones, nephrocalcinosis; 25-OH D >250 nmol/L
+   B. Hypocalcaemia
+   C. Hyponatraemia
+   D. Hypertension
+   E. Weight loss
+
+7. **Vit D in CKD:**
+   A. Use active Vit D (calcitriol/paricalcitol) - kidney cannot 1a-hydroxylate
+   B. Colecalciferol sufficient
+   C. Ergocalciferol preferred
+   D. No Vit D needed
+   E. Toxic in CKD
+
+8. **Vit D in obesity:**
+   A. Sequestration in adipose tissue -> higher doses needed (2-3x)
+   B. Lower doses
+   C. Normal doses
+   D. Contraindicated
+   E. No adjustment
+
+9. **Vit D and falls:**
+   A. Deficiency -> proximal myopathy -> falls; supplementation d falls in elderly
+   B. No effect on falls
+   C. Increases falls
+   D. Only in osteoporosis
+   E. Only in children
+
+10. **Rickets vs osteomalacia:**
+   A. Rickets: children (growth plate); osteomalacia: adults (mineralisation defect)
+   B. Same
+   C. Rickets: adults
+   D. Osteomalacia: children
+   E. No difference
+
+## SBA Questions (10)
+1. **Elderly woman: falls, proximal weakness, 25-OH D 18 nmol/L. Treatment?**
+   A. Colecalciferol 20,000 IU weekly x8wk -> maintenance 1000 IU/day
+   B. Calcitriol
+   C. Ergocalciferol 50,000 IU monthly
+   D. IV Vit D
+   E. Sunlight only
+
+2. **Same patient: after loading, maintenance dose?**
+   A. 800-2000 IU/day (1000-2000 IU/day); monitor 25-OH D at 3-6mo
+   B. 400 IU/day
+   C. 50,000 IU monthly
+   D. No maintenance
+   E. Calcitriol
+
+3. **CKD stage 4: 25-OH D 25, PTH 400. Vit D therapy?**
+   A. Calcitriol/paricalcitol (active Vit D); kidney cannot 1a-hydroxylate
+   B. Colecalciferol high dose
+   C. Ergocalciferol
+   D. No Vit D
+   E. IV Vit D
+
+4. **Vit D toxicity: 25-OH D 300, Ca 3.0. Management?**
+   A. Stop Vit D; IV hydration; furosemide; avoid Ca; monitor Ca
+   B. Continue Vit D
+   C. Increase Ca
+   D. Cinacalcet
+   E. Calcitriol
+
+5. **Obesity (BMI 40): 25-OH D 20. Loading dose?**
+   A. 2-3x standard dose (60,000-120,000 IU weekly) due to sequestration
+   B. Standard dose
+   C. Half dose
+   D. No loading
+   E. Calcitriol
+
+## Flashcards
+- **Q: Vit D deficiency**
+  **A: 25-OH D <30 nmol/L; insufficiency 30-50 nmol/L**
+
+- **Q: Vit D synthesis**
+  **A: Skin UVB -> D3 -> liver 25-OH D -> kidney 1a-OH -> 1,25(OH)2D (active)**
+
+- **Q: Deficiency causes**
+  **A: Rickets (children), osteomalacia (adults), secondary HPT, myopathy, falls**
+
+- **Q: Treatment**
+  **A: Colecalciferol (D3) 20-40k IU weekly x8-12wk -> maintenance 800-2000 IU/day**
+
+- **Q: Toxicity**
+  **A: Hypercalcaemia, hypercalciuria, stones; 25-OH D >250 nmol/L**
+
+- **Q: CKD Vit D**
+  **A: Use ACTIVE Vit D (calcitriol/paricalcitol); kidney cannot 1a-hydroxylate**
+
+- **Q: Obesity**
+  **A: Sequestration in fat -> 2-3x higher doses**
+
+- **Q: Falls**
+  **A: Deficiency -> proximal myopathy -> falls; D supplementation d falls in elderly**
+
+- **Q: Rickets vs osteomalacia**
+  **A: Rickets: children (growth plate); osteomalacia: adults (mineralisation defect)**
+
+- **Q: Vit D forms**
+  **A: D3 (colecalciferol) preferred over D2 (ergocalciferol); D3 more potent**
+
+## Answer Key with Explanations
+### MCQs
+1. **25-OH D <30 nmol/L (12 ng/mL); insufficiency 30-50 nmol/L** — Vitamin D deficiency definition:
+
+2. **Sunlight (UVB) -> skin 7-dehydrocholesterol -> Vit D3; diet (oily fish, fortified) minor** — Vitamin D sources:
+
+3. **Skin (D3) -> liver 25-hydroxylase -> 25-OH D -> kidney 1a-hydroxylase -> 1,25(OH)2D (active)** — Vit D metabolism:
+
+4. **Rickets (children), osteomalacia (adults), secondary HPT, muscle weakness, falls** — Vit D deficiency causes:
+
+5. **Colecalciferol (D3) 20,000-40,000 IU weekly x8-12wk -> maintenance 800-2000 IU/day** — Vit D deficiency treatment:
+
+6. **Hypercalcaemia, hypercalciuria, renal stones, nephrocalcinosis; 25-OH D >250 nmol/L** — Vit D toxicity:
+
+7. **Use active Vit D (calcitriol/paricalcitol) - kidney cannot 1a-hydroxylate** — Vit D in CKD:
+
+8. **Sequestration in adipose tissue -> higher doses needed (2-3x)** — Vit D in obesity:
+
+9. **Deficiency -> proximal myopathy -> falls; supplementation d falls in elderly** — Vit D and falls:
+
+10. **Rickets: children (growth plate); osteomalacia: adults (mineralisation defect)** — Rickets vs osteomalacia:
+
+
+### SBAs
+1. **Colecalciferol 20,000 IU weekly x8wk -> maintenance 1000 IU/day** — Elderly woman: falls, proximal weakness, 25-OH D 18 nmol/L. Treatment?
+
+2. **800-2000 IU/day (1000-2000 IU/day); monitor 25-OH D at 3-6mo** — Same patient: after loading, maintenance dose?
+
+3. **Calcitriol/paricalcitol (active Vit D); kidney cannot 1a-hydroxylate** — CKD stage 4: 25-OH D 25, PTH 400. Vit D therapy?
+
+4. **Stop Vit D; IV hydration; furosemide; avoid Ca; monitor Ca** — Vit D toxicity: 25-OH D 300, Ca 3.0. Management?
+
+5. **2-3x standard dose (60,000-120,000 IU weekly) due to sequestration** — Obesity (BMI 40): 25-OH D 20. Loading dose?
+

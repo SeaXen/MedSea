@@ -1,0 +1,466 @@
+---
+tags: [medicine, endocrinology, davidson, ectopic-acth, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Ectopic ACTH syndrome accounts for 10-15% of ACTH-dependent Cushing. Key viva topic: differentiation from Cushing disease (HDDST, IPSS), localisation (CT, DOTATATE PET), and medical management (ketoconazole, metyrapone, bilateral adrenalectomy)."
+see_also: ["Cushing Syndrome Overview", "Cushing Disease", "Adrenal Cushing", "Dynamic Testing Principles", "Neuroendocrine Tumours", "Pituitary Adenomas: Functioning"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Ectopic ACTH Syndrome
+
+> [!info]
+> **Ectopic ACTH Syndrome = ACTH Secretion from Non-Pituitary Tumour.** Accounts for **10-15% of ACTH-Dependent Cushing**. **SCLC (50%), Bronchial Carcinoid (20%), Pancreatic NET, Thymic Carcinoid.** High ACTH, No HDDST Suppression, Localisation with CT/DOTATATE PET.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Differentiate ectopic ACTH from Cushing disease using HDDST, IPSS, CRH test
+- [ ] Identify common ectopic ACTH sources and their clinical features
+- [ ] Apply localisation strategies (CT, ⁶⁸Ga-DOTATATE PET, Bronchoscopy)
+- [ ] Outline medical management (ketoconazole, metyrapone, bilateral adrenalectomy)
+- [ ] Recognise cyclical ectopic ACTH and paraneoplastic features
+
+---
+
+## 2. Aetiology & Common Sources
+
+| Source | Frequency | ACTH Level | Clinical Features |
+|--------|-----------|------------|-------------------|
+| **Small Cell Lung Cancer (SCLC)** | **50%** | Very High (>500 pg/mL) | Rapid Onset, Severe Hypokalaemia, Hyperpigmentation, Weight Loss |
+| **Bronchial Carcinoid** | **20-25%** | High | Indolent Course, Often Resectable, Atypical Carcinoid |
+| **Pancreatic NET** | 10-15% | High | May Co-secrete Other Hormones (Insulin, Glucagon) |
+| **Thymic Carcinoid** | 5-10% | High | Associated with MEN1 |
+| **Phaeochromocytoma / Paraganglioma** | 5% | Variable | Paroxysmal Hypertension, Catecholamine Excess |
+| **Medullary Thyroid Cancer** | 2-5% | Elevated | Diarrhoea, Flushing, MEN2 |
+| **Other (Ovarian, Gastric, Renal)** | Rare | Variable | Occult Primary |
+
+---
+
+## 2. Clinical Features — Ectopic ACTH vs Cushing Disease
+
+| Feature | **Ectopic ACTH** | **Cushing Disease** |
+|---------|------------------|---------------------|
+| **ACTH Level** | **Very High** (Often >200 pg/mL, up to >1000) | Normal / Mildly Elevated (10-50 pg/mL) |
+| **Onset** | **Rapid** (Weeks) | Insidious (Months-Years) |
+| **Hypokalaemia** | **Severe** (<2.5 mmol/L, 80-90%) | Mild/Moderate (10-20%) |
+| **Metabolic Alkalosis** | Marked (HCO₃⁻ >30) | Mild |
+| **Hyperpigmentation** | **Prominent** (High ACTH → MSH Cross-Reactivity) | Mild |
+| **Weight Loss** | Common (Cancer Cachexia) | Weight Gain (Central Obesity) |
+| **Hypertension** | Severe, Resistant | Moderate |
+| **Glucose Intolerance** | Severe (Insulin Resistance) | Moderate |
+| **Mental Status** | Confusion, Lethargy (Electrolyte Disturbance) | Depression, Cognitive Changes |
+
+---
+
+## 3. Diagnostic Differentiation
+
+### Key Investigations
+
+| Test | **Ectopic ACTH** | **Cushing Disease** |
+|------|------------------|---------------------|
+| **Plasma ACTH** | **>100-200 pg/mL** (Often >500) | **10-50 pg/mL** |
+| **HDDST (2mg q6h × 48h)** | **No Suppression** (<50%) | **>50% Suppression** |
+| **CRH Test (100µg IV)** | **No ACTH Rise** | **ACTH ↑ >50%** |
+| **IPSS** | No Central:Peripheral Gradient | **Central:Peripheral >2 (Basal) / >3 (Post-CRH)** |
+| **MRI Pituitary** | Normal / Incidentaloma | **Microadenoma (80-90%)** |
+| **Imaging** | CT Chest/Abd/Pelvis + **⁶⁸Ga-DOTATATE PET** | MRI Pituitary (Microadenoma) |
+
+---
+
+## 3. Diagnostic Algorithm
+
+```
+Cushing Syndrome Confirmed + ACTH ≥10-20 pg/mL
+         │
+         └── HDDST (2mg q6h × 48h)
+                 │
+                 ├── NO SUPPRESSION (<50%) → ECTOPIC ACTH
+                 │       │
+                 │       ├── ACTH Very High (>200 pg/mL) → Strongly Suggests Ectopic
+                 │       │
+                 │       └── LOCALISATION WORKUP
+                 │               ├── CT Chest/Abdomen/Pelvis (Contrast)
+                 │               ├── ⁶⁸Ga-DOTATATE PET/CT (Somatostatin Receptor Imaging)
+                 │               ├── Bronchoscopy (If Lung Lesion)
+                 │               └── Octreotide Scan (If DOTATATE Unavailable)
+                 │
+                 └── SUPPRESSION >50% → CUSHING DISEASE
+                         MRI Pituitary → TSS
+```
+
+---
+
+## 3. Localisation Strategy
+
+### Step 1: CT Chest/Abdomen/Pelvis (Contrast)
+| Target | Details |
+|--------|---------|
+| **Lung** | SCLC, Carcinoid, Metastases |
+| **Mediastinum** | Thymic Carcinoid, Lymph Nodes |
+| **Abdomen/Pelvis** | Pancreatic NET, Adrenal (Rule Out Adrenal Cushing), Phaeochromocytoma |
+| **Resolution** | Thin Slice (1-2mm), Arterial + Venous Phase |
+
+### Step 2: Functional Imaging
+| Modality | Sensitivity | Specificity | Indication |
+|----------|-------------|-------------|------------|
+| **⁶⁸Ga-DOTATATE PET/CT** | **90-95%** (SSTR2+) | 90%+ | **First-Line** (SCLC, Carcinoid, Pancreatic NET, Phaeo) |
+| **Octreotide Scan (Octreoscan)** | 80-90% | 80% | If DOTATATE Unavailable |
+| **FDG-PET/CT** | High (SCLC) | Low (Net) | SCLC Staging; Not for Well-Differentiated NET |
+| **Bronchoscopy** | — | — | Central Bronchial Lesions (Carcinoid, SCLC) |
+
+---
+
+## 4. Common Ectopic ACTH Sources
+
+| Tumour Type | % of Ectopic ACTH | ACTH Level | Key Features |
+|-------------|-------------------|------------|--------------|
+| **SCLC** | **50%** | Very High (>500 pg/mL) | Smoker, Weight Loss, Paraneoplastic (SIADH, LEMS) |
+| **Bronchial Carcinoid (Typical/Atypical)** | 20-25% | High | Indolent, Long Survival, Often Resectable |
+| **Pancreatic NET** | 10-15% | High | May Co-secrete Insulin/Glucagon/PP |
+| **Thymic Carcinoid** | 5-10% | High | Young, MEN1 Association |
+| **Phaeochromocytoma/Paraganglioma** | 5% | Variable | Paroxysmal HTN, Catecholamine Excess |
+| **Medullary Thyroid Cancer** | 2-5% | Elevated | Diarrhoea, Flushing, MEN2 |
+| **Other (Ovarian, Gastric, Renal)** | <5% | Variable | Occult Primary |
+
+---
+
+## 4. Medical Management
+
+### First-Line: Surgical Resection (If Localised/Resectable)
+| Tumour | Approach |
+|--------|----------|
+| **Bronchial Carcinoid** | **Surgical Resection (Lobectomy/Sleeve)** — Curative if Localised |
+| **Thymic Carcinoid** | Thymectomy ± Mediastinal Lymphadenectomy |
+| **Pancreatic NET** | Distal Pancreatectomy / Whipple (Per Location) |
+| **SCLC** | Surgery Rarely Curative (Usually Metastatic) |
+
+### Medical Therapy (Unresectable/Metastatic/Pre-Op Bridge)
+| Drug | Dose | Mechanism | Monitoring |
+|------|------|-----------|------------|
+| **Ketoconazole** | 200-400mg Q6H (Max 1200mg/day) | **CYP11B1 Inhibition** (11β-Hydroxylase) | LFTs q2wk, Adrenal Insufficiency Risk, QTc |
+| **Metyrapone** | 250-750mg Q8H (Max 6g/day) | **11β-Hydroxylase Inhibition** | Hypotension, Oedema, Drowsiness, GI |
+| **Osilodrostat** | 2-30mg BD | **11β-Hydroxylase Inhibition** | ECG (QT), Hypokalaemia, Liver Enzymes |
+| **Etoposide** | SCLC Protocol | Chemotherapy | CBC, LFTs, Neuropathy |
+| **Somatostatin Analogues** | Octreotide LAR 20-40mg IM q4wk | SSTR2 Agonist (↓ ACTH Secretion) | GI, Gallstones, Hyperglycaemia |
+| **Mifepristone** | 300-1200mg/day | Glucocorticoid Receptor Antagonist | Endometrial Changes, K+ Monitoring |
+
+---
+
+## 4. Bilateral Adrenalectomy
+
+### Indications
+| Indication | Details |
+|-----------|---------|
+| **Failed Medical Therapy** | Uncontrolled Hypercortisolism Despite Maximal Medical Rx |
+| **Life-Threatening Complications** | Severe Hypokalaemia, Resistant HTN, Psychosis, Cardiomyopathy |
+| **Unresectable Ectopic Source** | Metastatic SCLC, Occult Primary |
+| **Patient Preference** | Definitive Cure After Failed Options |
+
+### Procedure
+| Aspect | Details |
+|---------|---------|
+| **Procedure** | **Laparoscopic Bilateral Adrenalectomy** (Preferred) |
+| **Immediate Post-Op** | **Hydrocortisone 100mg IV q6h** + Fludrocortisone 0.1mg OD |
+| **Fludrocortisone** | **0.05-0.2mg OD** (Life-Long Mineralocorticoid Replacement) |
+| **Glucocorticoid** | Hydrocortisone 15-20mg AM + 5-10mg PM (Life-Long) |
+| **Follow-up** | Lifelong Endocrine Follow-up; Crisis Card; Medic Alert |
+
+---
+
+## 5. Complications & Prognosis
+
+| Complication | Incidence | Management |
+|--------------|-----------|------------|
+| **Severe Hypokalaemia** | 80-90% | Aggressive K⁺ Replacement (IV KCl), Spironolactone/Amiloride |
+| **Metabolic Alkalosis** | Common | KCl, Acetazolamide (Rare) |
+| **Hyperglycaemia / Diabetes** | 70-80% | Insulin Sliding Scale / Basal-Bolus |
+| **Hypertension** | 90% | Multiple Agents (Including Spironolactone) |
+| **Osteoporosis** | 50% | Bisphosphonates, Calcium, Vitamin D |
+| **Psychiatric** | 30-50% | Antidepressants, Antipsychotics |
+| **Infection Risk** | ↑ (Immunosuppression) | Prophylactic TMP-SMX if Prolonged Steroids |
+
+### Prognosis by Source
+| Source | Median Survival | Curative Potential |
+|--------|----------------|-------------------|
+| **Bronchial Carcinoid** | **10-20 Years** | **High (If Resected Early)** |
+| **Pancreatic NET** | 5-10 Years | Moderate |
+| **Thymic Carcinoid** | 5-10 Years | Moderate (MEN1 Association) |
+| **SCLC** | **6-12 Months** | Poor (Palliative) |
+| **Phaeochromocytoma** | Variable | Good if Resected |
+| **Medullary Thyroid Cancer** | 5-10 Years | RET Mutation Guides Surgery |
+
+---
+
+## 6. Examination Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Ectopic ACTH %** | **10-15%** of ACTH-Dependent Cushing |
+| **ACTH Level** | **>200 pg/mL** (Often >500) vs Cushing Disease (10-50) |
+| **HDDST** | **No Suppression** (<50%) — Differentiates from Cushing Disease |
+| **SCLC** | **50% of Ectopic ACTH**; Very High ACTH, Severe Hypokalaemia |
+| **Bronchial Carcinoid** | 20-25%; Indolent, Resectable, Better Prognosis |
+| **HDDST** | No Suppression = Ectopic/Adrenal; >50% Suppression = Cushing Disease |
+| **IPSS** | No Central:Peripheral Gradient = Ectopic |
+| **Localisation** | CT Chest/Abd → **⁶⁸Ga-DOTATATE PET** (Best) → Bronchoscopy |
+| **Medical Rx** | Ketoconazole, Metyrapone, Osilodrostat, Etoposide (SCLC) |
+| **Bilateral Adrenalectomy** | Last Resort (Life-Long Gluco + Mineralocorticoid Replacement) |
+| **Cyclical Ectopic ACTH** | Daily UFC × 2-4 Weeks for Diagnosis |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Ectopic vs Cushing Disease** | Ectopic: ACTH Very High, No HDDST Suppression; Cushing Disease: ACTH Normal/High, HDDST Suppresses |
+| **Ectopic vs Adrenal Cushing** | Ectopic: ACTH High; Adrenal: ACTH Suppressed |
+| **SCLC vs Carcinoid** | SCLC: Aggressive, High ACTH, Short Survival; Carcinoid: Indolent, Resectable |
+| **IPSS vs CRH Test** | IPSS = Gold Standard Localisation; CRH Test = Functional (ACTH Rise >50% = Pituitary) |
+| **Bilateral Adrenalectomy** | Last Resort; Life-Long Gluco + Mineralo Replacement; Medical Alert Bracelet |
+| **Ectopic CRH** | Rare (<1%); CRH High, ACTH High; CRH Stimulation Test Positive |
+
+---
+
+## 9. Mind Map
+
+```mermaid
+mindmap
+  root((Ectopic ACTH Syndrome))
+    Frequency
+      10-15% of ACTH-Dependent Cushing
+    Sources
+      SCLC (50%) - Aggressive, High ACTH
+      Bronchial Carcinoid (20-25%) - Indolent, Resectable
+      Pancreatic NET (10-15%)
+      Thymic Carcinoid (5-10%) - MEN1
+      Phaeo/Paraganglioma (5%)
+      MTC (2-5%) - MEN2
+    Diagnosis
+      ACTH >200 pg/mL
+      HDDST No Suppression
+      IPSS No Gradient
+      MRI Pituitary Normal
+    Localisation
+      CT Chest/Abd/Pelvis
+      68Ga-DOTATATE PET (Gold Standard)
+      Bronchoscopy for Central Lesions
+    Management
+      Resectable → Surgery (Cure)
+      Unresectable → Ketoconazole/Metyrapone/Osilodrostat
+      Refractory → Bilateral Adrenalectomy
+    Complications
+      Hypokalaemia (80-90%)
+      Metabolic Alkalosis
+      Hyperglycaemia/Diabetes
+      Hypertension
+      Osteoporosis
+    Prognosis
+      Carcinoid: 10-20yr
+      SCLC: 6-12mo
+```
+
+---
+
+## 9. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Ectopic ACTH %** | 10-15% of ACTH-Dependent Cushing |
+| **ACTH Level** | **>200 pg/mL** (Often >500) vs Cushing Disease (10-50) |
+| **HDDST Result** | **No Suppression** (<50%) — Differentiates from Cushing Disease |
+| **Most Common Source** | **SCLC (50%)** |
+| **Best Localisation** | **⁶⁸Ga-DOTATATE PET/CT** (Gold Standard) |
+| **SCLC Features** | Smoker, Weight Loss, Severe Hypokalaemia, Paraneoplastic |
+| **Bronchial Carcinoid** | Indolent, Resectable, 10-20yr Survival |
+| **Medical Therapy** | Ketoconazole, Metyrapone, Osilodrostat, Etoposide (SCLC) |
+| **Bilateral Adrenalectomy** | Last Resort (Life-Long Replacement) |
+| **Ectopic vs Cushing Disease** | ACTH Very High, No HDDST Suppression, No IPSS Gradient |
+| **Adrenal vs Ectopic** | Adrenal: ACTH Suppressed; Ectopic: ACTH High |
+| **IPSS** | No Central:Peripheral Gradient = Ectopic |
+
+---
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Cushing Syndrome Overview|Cushing Syndrome Overview]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[Cushing Syndrome Overview]], [[Cushing Disease]], [[Adrenal Cushing]], [[Cyclical Cushing]], [[Dynamic Testing Principles]], [[Neuroendocrine Tumours]]
+## MCQs (10)
+1. **Ectopic ACTH ACTH level:**
+   A. >200 pg/mL (often >500)
+   B. Suppressed
+   C. Normal
+   D. Low
+   E. Variable
+
+2. **Commonest ectopic ACTH tumours:**
+   A. Small cell lung cancer, bronchial/thymic carcinoid
+   B. Pituitary adenoma
+   C. Adrenal adenoma
+   D. Renal cell cancer
+   E. Medullary thyroid cancer
+
+3. **HDDST in ectopic ACTH:**
+   A. No suppression
+   B. Suppresses >50%
+   C. Partial
+   D. Variable
+   E. Cortisol decreases
+
+4. **CRH test in ectopic ACTH:**
+   A. No ACTH rise
+   B. ACTH rise >50%
+   C. Variable
+   D. Cortisol rise
+   E. ACTH fall
+
+5. **Ectopic ACTH hypokalaemia:**
+   A. Severe (mineralocorticoid effect of high cortisol)
+   B. Mild
+   C. Absent
+   D. Hyperkalaemia
+   E. Variable
+
+6. **Ectopic ACTH skin hyperpigmentation:**
+   A. Marked (very high ACTH/MSH)
+   B. Absent
+   C. Mild
+   D. Only in Addison's
+   E. Variable
+
+7. **Treatment ectopic ACTH:**
+   A. Resection if localised; medical (ketoconazole, metyrapone) if metastatic
+   B. Pituitary surgery
+   C. Adrenalectomy
+   D. Radiotherapy
+   E. Observation only
+
+8. **Ectopic ACTH vs Cushing disease:**
+   A. ACTH >200 + no HDDST suppression + no CRH response
+   B. ACTH <50 + HDDST suppression
+   C. ACTH suppressed
+   D. Same features
+   E. Only imaging differs
+
+9. **Carcinoid syndrome vs ectopic ACTH:**
+   A. Carcinoid: serotonin (5-HIAA); Ectopic ACTH: cortisol
+   B. Same
+   C. Both cause Cushing
+   D. Both cause flushing
+   E. Both cause diarrhoea
+
+10. **Paraneoplastic ectopic ACTH:**
+   A. Can occur with any neuroendocrine tumour
+   B. Only SCLC
+   C. Only carcinoid
+   D. Only thymoma
+   E. Only pancreatic NET
+
+## SBA Questions (10)
+1. **55yo smoker: Cushing features, severe hypokalaemia 2.5, ACTH 450, chest CT 3cm spiculated mass. Diagnosis?**
+   A. Ectopic ACTH (small cell lung cancer)
+   B. Cushing disease
+   C. Adrenal Cushing
+   D. Phaeochromocytoma
+   E. CAH
+
+2. **Same patient: surgical candidate?**
+   A. Usually metastatic at diagnosis → medical therapy (ketoconazole, metyrapone)
+   B. Pituitary surgery
+   C. Adrenalectomy
+   D. Curative surgery always
+   E. Observation
+
+3. **30yo woman: Cushing, ACTH 300, pituitary MRI normal, chest CT shows 2cm bronchial carcinoid. Treatment?**
+   A. Surgical resection of carcinoid (curative if localised)
+   B. Pituitary surgery
+   C. Bilateral adrenalectomy
+   D. Ketoconazole only
+   E. Observation
+
+4. **Ectopic ACTH medical management:**
+   A. Ketoconazole, metyrapone, etomidate (IV), mitotane
+   B. Hydrocortisone
+   C. Fludrocortisone
+   D. Dexamethasone
+   E. Carbimazole
+
+5. **Cyclical ectopic ACTH:**
+   A. Rare; repeated testing needed
+   B. Does not exist
+   C. Same as cyclical Cushing disease
+   D. Always SCLC
+   E. Always carcinoid
+
+## Flashcards
+- **Q: Ectopic ACTH**
+  **A: ACTH >200 pg/mL; no DST suppression; no CRH response**
+
+- **Q: Common tumours**
+  **A: SCLC, bronchial/thymic carcinoid, pancreatic NET, medullary thyroid Ca**
+
+- **Q: HDDST**
+  **A: No cortisol suppression**
+
+- **Q: CRH test**
+  **A: No ACTH rise**
+
+- **Q: Hypokalaemia**
+  **A: Severe (cortisol mineralocorticoid effect at high levels)**
+
+- **Q: Hyperpigmentation**
+  **A: Marked (very high ACTH → MSH cross-reactivity)**
+
+- **Q: Treatment**
+  **A: Resection if localised; medical (ketoconazole, metyrapone) if metastatic**
+
+- **Q: SCLC ectopic ACTH**
+  **A: Usually advanced; medical Rx; poor prognosis**
+
+- **Q: Carcinoid ectopic ACTH**
+  **A: May be localised → surgical cure possible**
+
+- **Q: Differentiation from Cushing disease**
+  **A: ACTH >200 + no HDDST suppression + no CRH response**
+
+## Answer Key with Explanations
+### MCQs
+1. **>200 pg/mL (often >500)** — Ectopic ACTH ACTH level:
+
+2. **Small cell lung cancer, bronchial/thymic carcinoid** — Commonest ectopic ACTH tumours:
+
+3. **No suppression** — HDDST in ectopic ACTH:
+
+4. **No ACTH rise** — CRH test in ectopic ACTH:
+
+5. **Severe (mineralocorticoid effect of high cortisol)** — Ectopic ACTH hypokalaemia:
+
+6. **Marked (very high ACTH/MSH)** — Ectopic ACTH skin hyperpigmentation:
+
+7. **Resection if localised; medical (ketoconazole, metyrapone) if metastatic** — Treatment ectopic ACTH:
+
+8. **ACTH >200 + no HDDST suppression + no CRH response** — Ectopic ACTH vs Cushing disease:
+
+9. **Carcinoid: serotonin (5-HIAA); Ectopic ACTH: cortisol** — Carcinoid syndrome vs ectopic ACTH:
+
+10. **Can occur with any neuroendocrine tumour** — Paraneoplastic ectopic ACTH:
+
+
+### SBAs
+1. **Ectopic ACTH (small cell lung cancer)** — 55yo smoker: Cushing features, severe hypokalaemia 2.5, ACTH 450, chest CT 3cm spiculated mass. Diagnosis?
+
+2. **Usually metastatic at diagnosis → medical therapy (ketoconazole, metyrapone)** — Same patient: surgical candidate?
+
+3. **Surgical resection of carcinoid (curative if localised)** — 30yo woman: Cushing, ACTH 300, pituitary MRI normal, chest CT shows 2cm bronchial carcinoid. Treatment?
+
+4. **Ketoconazole, metyrapone, etomidate (IV), mitotane** — Ectopic ACTH medical management:
+
+5. **Rare; repeated testing needed** — Cyclical ectopic ACTH:
+

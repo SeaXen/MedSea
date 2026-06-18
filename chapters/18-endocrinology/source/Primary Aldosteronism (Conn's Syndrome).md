@@ -1,0 +1,508 @@
+---
+tags: [medicine, endocrinology, davidson, primary-aldosteronism, conns-syndrome, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Primary aldosteronism (Conn's syndrome) is the commonest cause of secondary hypertension (5-10% of HTN). Key viva topics: ARR screening, confirmatory tests, AVS for lateralisation, and surgical vs medical management."
+see_also: ["Adrenal Incidentaloma", "Phaeochromocytoma/Paraganglioma", "Secondary Hypertension", "Adrenal Cushing", "Secondary Hypertension"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Primary Aldosteronism (Conn's Syndrome)
+
+> [!info]
+> **Primary Aldosteronism (Conn's Syndrome) = Autonomous Aldosterone Secretion** from Adrenal Cortex. **Commonest Cause of Secondary Hypertension (5-10% of HTN).** **Surgical Cure Possible** (Unilateral Adenoma). Key: ARR Screening → Confirmatory Tests → AVS for Lateralisation → Surgery (Unilateral) vs Medical (Bilateral).
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Screen for primary aldosteronism using ARR
+- [ ] Apply confirmatory tests (saline infusion, fludrocortisone suppression, captopril challenge)
+- [ ] Interpret adrenal venous sampling (AVS) for lateralisation
+- [ ] Differentiate unilateral adenoma vs bilateral hyperplasia
+- [ ] Apply surgical vs medical management algorithms
+
+---
+
+## 2. Definition & Epidemiology
+
+| Feature | Details |
+|---------|---------|
+| **Definition** | **Autonomous Aldosterone Production** by Adrenal Cortex → Sodium Retention, K+ Loss, Hypertension |
+| **Prevalence** | **5-10% of Hypertension**; Up to 20% in Resistant HTN |
+| **Demographics** | Age 30-50; Female > Male (2:1) |
+| **Commonest Subtype** | **Unilateral Aldosterone-Producing Adenoma (APA)** (~60%) |
+| **Second Commonest** | **Bilateral Adrenal Hyperplasia (BAH)** (~40%) |
+| **Rare** | Adrenal Carcinoma (<1%), Familial Hyperaldosteronism (FH-I, II, III) |
+
+---
+
+## 2. Pathophysiology & Clinical Features
+
+### Pathophysiology
+| Mechanism | Consequence |
+|-----------|-------------|
+| **Aldosterone → ENaC Activation** (Collecting Duct) | **Na+ Reabsorption** → Volume Expansion → Hypertension |
+| **Aldosterone → ROMK Activation** | **K+ Excretion** → Hypokalaemia |
+| **Aldosterone → H+ Excretion** | Metabolic Alkalosis |
+| **Volume Expansion** | **Suppressed Renin** (Feedback) |
+
+### Clinical Features
+| Feature | Frequency | Details |
+|---------|-----------|---------|
+| **Hypertension** | **>95%** | Often Resistant (≥3 Drugs); Early Morning Surge |
+| **Hypokalaemia** | **60-80%** | Often Asymptomatic; Muscle Weakness, Cramps, Polyuria, Polydipsia |
+| **Metabolic Alkalosis** | Common | HCO₃⁻ ↑ (H+ Excretion in Exchange for K+ Reabsorption) |
+| **No Oedema** | **Absent** | Atrial Natriuretic Peptide (ANP) Escape → Natriuresis |
+| **Symptoms** | Fatigue, Muscle Weakness, Nocturia, Polyuria, Headaches |
+
+**Key Clue**: **Hypertension + Hypokalaemia (Spontaneous or Diuretic-Induced)** → Screen for PA.
+
+---
+
+## 2. Screening — Aldosterone/Renin Ratio (ARR)
+
+### Screening Indications
+| Indication | Population |
+|------------|------------|
+| **Resistant HTN** | ≥3 Drugs Including Diuretic |
+| **Hypokalaemia** | Spontaneous or Diuretic-Induced |
+| **Adrenal Incidentaloma** | Mandatory Workup |
+| **Hypertension + Hypokalaemia** | Spontaneous or Diuretic-Induced |
+| **Family History** | Early-Onset HTN, Stroke <40y |
+| **Adrenal Incidentaloma** | Mandatory Workup |
+
+### ARR Calculation & Interpretation
+| Parameter | Formula / Units |
+|-----------|-----------------|
+| **ARR** | **Aldosterone (pmol/L) / Renin (mIU/L or pg/mL)** |
+| **Units** | Aldosterone: pmol/L; Renin: mIU/L (Direct) or pg/mL (Activity) |
+| **Cut-off (pmol/L : mIU/L)** | **ARR >70** (or >30 + Aldosterone >400 pmol/L) |
+| **Cut-off (pmol/L : pg/mL)** | **ARR >1000** (or >150 : >200 pg/mL) |
+
+**Important**: **ARR is a Screening Test** — False Positives/Negatives Occur; **Confirmatory Testing Required**.
+
+---
+
+## 3. ARR — Pitfalls & Preparation
+
+### Pre-Test Conditions (Critical for Reliability)
+| Requirement | Target |
+|-----------|--------|
+| **Potassium** | **>4.0 mmol/L** (Correct Hypokalaemia First) |
+| **Sodium Intake** | **Normal/High Salt** (Not Low Salt) |
+| **Medications to STOP (4-6 Weeks)** | **Spironolactone, Eplerenone, Amiloride, Triamterene** (MRAs) |
+| **Medications to STOP (2 Weeks)** | ACEi, ARB, Diuretics, Beta-Blockers, CCBs, NSAIDs |
+| **Medications ALLOWED** | **Amlodipine, Doxazosin, Prazosin, Hydralazine, Moxonidine, Clonidine** |
+| **Posture** | **Seated ≥30 min** (or Supine 30min) |
+| **Time** | **09:00-10:00 AM** (After 30min Seated) |
+
+---
+
+## 3. Confirmatory Tests (After Positive ARR)
+
+| Test | Protocol | Positive Criteria |
+|------|----------|-------------------|
+| **Saline Infusion Test (SIT)** | **2L 0.9% NaCl IV over 4h** → Aldosterone | **Aldosterone >140 pmol/L (5 ng/dL)** = Positive |
+| **Fludrocortisone Suppression Test (FST)** | Fludrocortisone 0.1mg q6h × 4d + High Salt Diet | **Aldosterone >140 pmol/L** = Positive |
+| **Captopril Challenge Test (CCT)** | Captopril 50mg PO → Aldosterone at 0, 60, 90, 120min | **Aldosterone >140 pmol/L** or **ARR >70 Post-Captopril** |
+| **Oral Sodium Loading** | 6g NaCl/day × 3d → 24h Urine Aldosterone + Na+ | **Urine Aldo >33 nmol/day (12 µg/day) + Na+ >200 mmol/day** |
+
+**SIT Preferred** (Simplest, Safest); **FST** = Gold Standard (Complex); **CCT** = Alternative.
+
+---
+
+## 4. Subtype Differentiation — Adrenal Venous Sampling (AVS)
+
+### Indications for AVS
+| Indication | Details |
+|-----------|---------|
+| **Confirmed PA** | All Patients Willing/Eligible for Surgery |
+| **Age <40** | Some Guidelines: AVS Optional if Clear Unilateral Lesion on CT |
+| **Age >40** | **Mandatory** (CT Alone Unreliable for Lateralisation) |
+
+### AVS Procedure
+| Step | Details |
+|--------|---------|
+| **Preparation** | **Stop MRAs 4-6wk**; Continue Other BH Meds; Cosyntropin 250µg IV Bolus → 50µg/hr Infusion (Optional, Improves Selectivity) |
+| **Catheterisation** | Bilateral Adrenal Veins + IVC (Peripheral) |
+| **Sampling** | Aldosterone + Cortisol from Each Adrenal Vein + IVC |
+| **Timing** | Steady-State (After 20-30min Cosyntropin Infusion) |
+
+### Interpretation — Selectivity & Lateralisation Indices
+| Index | Formula | Success Criteria |
+|-------|---------|------------------|
+| **Selectivity Index (SI)** | **Adrenal Vein Cortisol / IVC Cortisol** | **SI ≥2-3** (With Cosyntropin) **≥3-5** (Without) |
+| **Lateralisation Index (LI)** | **High-Side Aldosterone/Cortisol ÷ Low-Side Aldosterone/Cortisol** | **LI ≥4** (With Cosyntropin); **≥2-3** (Without) |
+| **Contralateral Suppression** | Low-Side Aldosterone/Cortisol ≤ **Peripheral IVC Aldosterone/Cortisol** | Supports Unilateral Disease |
+
+---
+
+## 4. Interpretation of AVS Results
+
+| Result | Interpretation | Management |
+|--------|----------------|------------|
+| **SI ≥2-3 (Both Sides) + LI ≥4** | **Unilateral (Adenoma)** | **Adrenalectomy** (Laparoscopic) |
+| **SI ≥2-3 (Both Sides) + LI <4** | **Bilateral (BAH / Hyperplasia)** | **Medical Therapy** (Spironolactone / Eplerenone) |
+| **SI <2-3 (One/Both Sides)** | **Non-Selective / Failed Cannulation** | **Repeat AVS** or **CT-Guided Decision** |
+| **Contralateral Suppression** | Low-Side A/C ≤ Peripheral IVC A/C | Supports Unilateral Disease |
+
+---
+
+## 4. CT Imaging vs AVS
+| Modality | Sensitivity for Lateralisation | Role |
+|----------|-------------------------------|------|
+| **Adrenal CT** | **50-60%** (Poor) | Initial Anatomy; AVS Gold Standard |
+| **AVS** | **90-95%** | **Gold Standard for Lateralisation** |
+
+**Key**: **CT Alone Unreliable for Lateralisation** (30-40% Discordance with AVS).
+
+---
+
+## 5. Subtype Classification
+
+| Subtype | Frequency | Pathology | Treatment |
+|---------|-----------|-----------|-----------|
+| **Aldosterone-Producing Adenoma (APA)** | **~60%** | Unilateral Adenoma (KCNJ5, CACNA1D, ATP1A1 Mutations) | **Adrenalectomy** (Laparoscopic) |
+| **Bilateral Adrenal Hyperplasia (BAH)** | **~40%** | Bilateral Micronodular/Macronodular Hyperplasia | **Medical** (MR Antagonist) |
+| **Unilateral Hyperplasia** | Rare | Unilateral Diffuse Hyperplasia | Adrenalectomy |
+| **Adrenal Carcinoma** | <1% | Large, Heterogeneous, Invasion | Radical Adrenalectomy (+ Mitotane) |
+| **Familial Hyperaldosteronism** | Rare | FH-I (GRA), FH-II (APA FHx), FH-III (KCNJ5 Germline) | Per Subtype |
+
+---
+
+## 5. Management
+
+### Unilateral Adenoma (APA) — Surgical
+| Step | Procedure |
+|--------|-----------|
+| **Pre-Op** | **Spironolactone 200-400mg/day** (Control BP/K+) → Stop 4-6wk Pre-Op |
+| **Surgery** | **Laparoscopic Adrenalectomy** (Gold Standard) |
+| **Post-Op** | **Monitor K+** (Rebound Hyperkalaemia Common); Wean MR Antagonist |
+| **Cure Rate** | **80-95% Normotension**; 95% K+ Normalisation |
+
+### Bilateral Hyperplasia (BAH) — Medical
+| Drug | Dose | Notes |
+|------|------|-------|
+| **Spironolactone** | **25-100mg BD** (Max 400mg/day) | **First-Line**; Anti-Androgen (Gynaecomastia) |
+| **Eplerenone** | 50-100mg BD | **More Selective**; No Gynaecomastia; Costlier |
+| **Amiloride** | 5-20mg BD | ENaC Blocker; Add-On |
+| **Triamterene** | 50-100mg BD | Alternative |
+
+### Amiloride / Triamterene (Add-On)
+| Drug | Dose | Use |
+|------|------|-----|
+| **Amiloride** | 5-20mg BD | ENaC Blocker; K+-Sparing |
+| **Triamterene** | 50-100mg BD | Alternative to Spironolactone |
+
+---
+
+## 5. Metabolic Alkalosis & Hypokalaemia Management
+
+| Problem | Correction |
+|---------|------------|
+| **Hypokalaemia** | **KCl 40-80mmol/day Oral**; IV if Severe (<3.0) |
+| **Metabolic Alkalosis** | Correct K+ First; Acetazolamide (Rare) |
+| **Hypertension** | Spironolactone/Eplerenone + CCB/ACEi/ARB; Avoid Thiazides (Worsen K+) |
+
+---
+
+## 6. Special Populations
+
+### Pregnancy
+| Aspect | Management |
+|--------|-----------|
+| **Diagnosis** | **ARR Unreliable** (Renin/Aldo Physiologically ↑); Use **Saline Infusion Test** (If Needed) |
+| **Treatment** | **Methyldopa / Labetalol / Nifedipine** (Avoid MR Antagonists) |
+| **Postpartum** | Re-evaluate ARR at 6-12 Weeks Postpartum |
+
+### Familial Hyperaldosteronism
+| Type | Gene | Features | Treatment |
+|------|------|----------|-----------|
+| **FH-I (GRA)** | **CYP11B1/CYP11B2 Chimeric** | Dexamethasone-Suppressible; Autosomal Dominant | Low-Dose Dexamethasone |
+| **FH-II** | Unknown (Chromosome 7) | APA-like; Autosomal Dominant | Adrenalectomy / MR Antagonist |
+| **FH-III** | **KCNJ5** (Germline) | Severe Early-Onset; Adrenal Hyperplasia | Adrenalectomy |
+
+---
+
+## 6. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **PA Prevalence** | **5-10% of HTN**; Up to 20% Resistant HTN |
+| **Screening** | **ARR** (Aldosterone/Renin Ratio) — **ARR >70 (pmol/mIU)** or **>1000 (pmol/pg)** |
+| **Pre-Test Conditions** | K+ >4.0, Off MRAs 4-6wk, Off ACEi/ARB/Diuretics 2wk |
+| **Positive ARR** | **>70 (pmol/mIU)** or **>1000 (pmol/pg**); Confirm with Confirmatory Test |
+| **Confirmatory Tests** | SIT (>140 pmol/L), FST, CCT — **SIT Simplest** |
+| **AVS Indication** | Confirmed PA + Surgery Candidate; Age <40 Optional if CT Clear |
+| **AVS Lateralisation** | LI ≥4 (Cosyntropin) = Unilateral; <4 = Bilateral |
+| **Adrenal Adenoma (APA)** | **Surgery (Laparoscopic Adrenalectomy)** → 80-95% Cure |
+| **Bilateral Hyperplasia** | **Medical** (Spironolactone/Eplerenone) |
+| **Spironolactone Dose** | 25-100mg BD (Max 400mg); Monitor K+, Gynaecomastia |
+| **Eplerenone** | 50-100mg BD; No Gynaecomastia; Costlier |
+| **Post-Adrenalectomy K+** | **Rebound Hyperkalaemia** Common → Monitor |
+| **FH-I (GRA)** | CYP11B1/B2 Chimera; **Dexamethasone Suppressible** |
+| **FH-II** | APA Familial; No Dexamethasone Suppression |
+| **FH-III** | KCNJ5 Germline; Severe Early-Onset; Adrenalectomy |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **ARR Units** | **pmol/L ÷ mIU/L = >70** OR **pg/mL ÷ pg/mL = >1000** — Know Your Lab Units! |
+| **ARR False Positive** | Hypokalaemia, ACEi/ARB/Diuretics, Low Salt Diet |
+| **ARR Confirmatory** | Positive ARR ≠ PA — Must Confirm (SIT, FST, CCT) |
+| **CT vs AVS** | CT **Unreliable** for Lateralisation (30-40% Discordance) → AVS Gold Standard |
+| **APA vs BAH** | APA = Unilateral Adenoma (Surgery); BAH = Bilateral Hyperplasia (Medical) |
+| **Spironolactone vs Eplerenone** | Spiro = Cheaper, Gynaecomastia; Eplerenone = Selective, No Gynaecomastia |
+| **Post-Adrenalectomy K+** | **Rebound Hyperkalaemia** Common → Monitor, Adjust MR Antagonist |
+| **FH-I (GRA)** | **Dexamethasone Suppressible** — CYP11B1/B2 Chimeric Gene |
+| **FH-II** | Familial APA; No Dexamethasone Suppression |
+| **FH-III** | KCNJ5 Germline; Severe Infantile; Adrenalectomy |
+
+---
+
+## 9. Mind Map
+
+```mermaid
+mindmap
+  root((Primary Aldosteronism))
+    Epidemiology
+      5-10% HTN; 20% Resistant HTN
+      Female > Male (2:1); Age 30-50
+    Screening
+      ARR = Aldo (pmol/L) / Renin (mIU/L)
+      >70 (or >1000 pg/mL) = Positive
+      Pre-test: K+ >4.0; Off MRAs 4-6wk; Off ACEi/ARB/Diuretic 2wk
+    Confirmatory
+      SIT: 2L Saline 4h → Aldo >140 pmol/L
+      FST: Fludro 0.1mg q6h x4d + Salt → Aldo >140
+      CCT: Captopril 50mg → Aldo >140
+    AVS (Gold Standard)
+      Selectivity Index: Adrenal Cortisol/IVC ≥2-3
+      Lateralisation Index: High/Low A/C ≥4 (Cosyn) / ≥2-3 (No)
+      Contralateral Suppression
+    Subtypes
+      APA (60%): Unilateral Adenoma → Surgery
+      BAH (40%): Bilateral Hyperplasia → Medical (Spiro/Eplerenone)
+      FH-I (GRA): Dexamethasone Suppressible
+      FH-II: Familial APA
+      FH-III: KCNJ5 Germline (Severe Infantile)
+    Management
+      APA → Lap Adrenalectomy (Cure 80-95%)
+      BAH → Spiro/Eplerenone
+      Post-Op: Rebound HyperK+, Monitor
+    FH Types
+      FH-I: CYP11B1/B2 Chimera → Dex Supp
+      FH-II: Familial APA
+      FH-III: KCNJ5 Mut → Severe Infantile
+```
+
+---
+
+## 9. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **PA Prevalence** | 5-10% HTN; 20% Resistant HTN |
+| **ARR Cut-off** | **>70 (pmol/mIU)** or **>1000 (pg/mL ÷ pg/mL)** |
+| **Pre-Test Stop** | MRAs 4-6wk; ACEi/ARB/Diuretics 2wk; K+ >4.0 |
+| **Confirmatory** | **SIT: Aldo >140 pmol/L** post-2L Saline; **FST Gold Standard** |
+| **AVS Indication** | Confirmed PA + Surgery Candidate; Age <40 Optional if CT Clear |
+| **AVS Lateralisation** | LI ≥4 (Cosyn) / ≥2-3 (No Cosyn) = Unilateral |
+| **APA vs BAH** | APA = Surgery (Curative); BAH = Medical (Spiro/Eplerenone) |
+| **Post-Adrenalectomy K+** | **Rebound Hyperkalaemia** Common |
+| **FH-I (GRA)** | Dexamethasone Suppressible (CYP11B1/B2 Chimera) |
+| **FH-II** | Familial APA; No Dex Suppression |
+| **FH-III** | KCNJ5 Germline; Severe Infantile; Adrenalectomy |
+| **Spironolactone** | 25-100mg BD (Max 400mg); Gynaecomastia Risk |
+| **Eplerenone** | 50-100mg BD; No Gynaecomastia; Costlier |
+
+---
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Adrenal Disorders|Adrenal Disorders]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[Adrenal Incidentaloma]], [[Phaeochromocytoma/Paraganglioma]], [[Adrenal Cushing]], [[Secondary Hypertension]]
+## MCQs (10)
+1. **Primary aldosteronism =**
+   A. Aldosterone excess (autonomous) → hypertension + hypokalaemia
+   B. Cortisol excess
+   C. Catecholamine excess
+   D. Renin excess
+   E. ADH excess
+
+2. **Commonest cause:**
+   A. Bilateral adrenal hyperplasia (60-70%)
+   B. Adrenal adenoma (30-40%)
+   C. Adrenal carcinoma
+   D. Familial hyperaldosteronism
+   E. Ectopic aldosterone
+
+3. **Screening test:**
+   A. Aldosterone/renin ratio (ARR) - aldosterone high, renin suppressed
+   B. 1mg DST
+   C. Plasma metanephrines
+   D. Synacthen test
+   E. RAI uptake
+
+4. **ARR cut-off:**
+   A. ARR >700 pmol/mIU (or >30 ng/dL per ng/mL/hr) + aldosterone >400 pmol/L
+   B. ARR >100
+   C. ARR >1000
+   D. Renin high
+   E. Aldosterone low
+
+5. **Confirmatory test:**
+   A. Saline infusion test (aldosterone not suppressed) or fludrocortisone suppression test or captopril challenge
+   B. RAI uptake
+   C. Adrenal CT only
+   D. Synacthen test
+   E. 1mg DST
+
+6. **Adrenal CT in Conn:**
+   A. Adenoma = unilateral nodule; Hyperplasia = bilateral nodular/thickening
+   B. Always unilateral mass
+   C. Always bilateral
+   D. Never visible
+   E. Only functional imaging
+
+7. **Adrenal venous sampling (AVS):**
+   A. Gold standard for lateralisation; unilateral → surgery; bilateral → medical
+   B. Not needed if CT clear
+   C. Only for carcinoma
+   D. Only for hyperplasia
+   E. Risky - avoid
+
+8. **Treatment unilateral (adenoma):**
+   A. Laparoscopic adrenalectomy (curative)
+   B. Spironolactone lifelong
+   C. Eplerenone lifelong
+   D. Bilateral adrenalectomy
+   E. Observation
+
+9. **Treatment bilateral (hyperplasia):**
+   A. MR antagonist (spironolactone/eplerenone) lifelong
+   B. Unilateral adrenalectomy
+   C. Bilateral adrenalectomy
+   D. Surgery always
+   E. Observation
+
+10. **Hypokalaemia in Conn:**
+   A. Variable; may be normal K+; correct before ARR
+   B. Always present
+   C. Never present
+   D. Only in adenoma
+   E. Only in hyperplasia
+
+## SBA Questions (10)
+1. **50yo man: resistant HTN (3 drugs), K+ 3.0. Aldosterone 800, renin 5, ARR 160. Next?**
+   A. Saline infusion test (confirmatory) → CT adrenal → AVS
+   B. Adrenalectomy directly
+   C. Spironolactone only
+   D. CT → surgery without AVS
+   E. Observation
+
+2. **Same: CT shows 1.5cm left adrenal nodule. AVS shows left:right aldosterone:cortisol ratio 5:1. Treatment?**
+   A. Left laparoscopic adrenalectomy
+   B. Bilateral adrenalectomy
+   C. Spironolactone
+   D. Eplerenone
+   E. Observation
+
+3. **Same but AVS shows bilateral ratio 1:1. Treatment?**
+   A. Spironolactone/eplerenone lifelong
+   B. Bilateral adrenalectomy
+   C. Right adrenalectomy
+   D. Left adrenalectomy
+   E. Observation
+
+4. **Patient on spironolactone for resistant HTN: K+ 3.8, BP controlled. ARR interpretation?**
+   A. False negative (spironolactone ↑ renin, ↓ aldosterone); stop 4-6wk before ARR
+   B. True positive
+   C. True negative
+   D. Inconclusive
+   E. Need saline test
+
+5. **Familial hyperaldosteronism type I:**
+   A. Glucocorticoid-remediable (CYP11B1/B2 fusion); dexamethasone suppresses
+   B. Not suppressible
+   C. Requires bilateral adrenalectomy
+   D. Only in children
+   E. Autosomal recessive
+
+## Flashcards
+- **Q: Primary aldosteronism**
+  **A: Autonomous aldosterone excess → HTN + hypokalaemia (variable) + suppressed renin**
+
+- **Q: Commonest cause**
+  **A: Bilateral adrenal hyperplasia (60-70%); adenoma 30-40%**
+
+- **Q: Screening**
+  **A: ARR (aldosterone/renin); ARR >700 + aldosterone >400**
+
+- **Q: Confirmatory**
+  **A: Saline infusion test (aldosterone not suppressed) / fludrocortisone suppression / captopril challenge**
+
+- **Q: CT adrenal**
+  **A: Adenoma = unilateral nodule; Hyperplasia = bilateral thickening/nodules**
+
+- **Q: AVS**
+  **A: Gold standard lateralisation; unilateral → adrenalectomy; bilateral → MR antagonist**
+
+- **Q: Unilateral treatment**
+  **A: Laparoscopic adrenalectomy (curative for HTN in 30-50%)**
+
+- **Q: Bilateral treatment**
+  **A: Spironolactone/eplerenone lifelong**
+
+- **Q: Hypokalaemia**
+  **A: Variable; correct K+ before ARR (spironolactone stop 4-6wk)**
+
+- **Q: Familial type I**
+  **A: GRA (CYP11B1/B2 fusion); dexamethasone suppresses aldosterone**
+
+- **Q: Familial type III**
+  **A: KCNJ5 mutation; severe early-onset; bilateral hyperplasia**
+
+## Answer Key with Explanations
+### MCQs
+1. **Aldosterone excess (autonomous) → hypertension + hypokalaemia** — Primary aldosteronism =
+
+2. **Bilateral adrenal hyperplasia (60-70%)** — Commonest cause:
+
+3. **Aldosterone/renin ratio (ARR) - aldosterone high, renin suppressed** — Screening test:
+
+4. **ARR >700 pmol/mIU (or >30 ng/dL per ng/mL/hr) + aldosterone >400 pmol/L** — ARR cut-off:
+
+5. **Saline infusion test (aldosterone not suppressed) or fludrocortisone suppression test or captopril challenge** — Confirmatory test:
+
+6. **Adenoma = unilateral nodule; Hyperplasia = bilateral nodular/thickening** — Adrenal CT in Conn:
+
+7. **Gold standard for lateralisation; unilateral → surgery; bilateral → medical** — Adrenal venous sampling (AVS):
+
+8. **Laparoscopic adrenalectomy (curative)** — Treatment unilateral (adenoma):
+
+9. **MR antagonist (spironolactone/eplerenone) lifelong** — Treatment bilateral (hyperplasia):
+
+10. **Variable; may be normal K+; correct before ARR** — Hypokalaemia in Conn:
+
+
+### SBAs
+1. **Saline infusion test (confirmatory) → CT adrenal → AVS** — 50yo man: resistant HTN (3 drugs), K+ 3.0. Aldosterone 800, renin 5, ARR 160. Next?
+
+2. **Left laparoscopic adrenalectomy** — Same: CT shows 1.5cm left adrenal nodule. AVS shows left:right aldosterone:cortisol ratio 5:1. Treatment?
+
+3. **Spironolactone/eplerenone lifelong** — Same but AVS shows bilateral ratio 1:1. Treatment?
+
+4. **False negative (spironolactone ↑ renin, ↓ aldosterone); stop 4-6wk before ARR** — Patient on spironolactone for resistant HTN: K+ 3.8, BP controlled. ARR interpretation?
+
+5. **Glucocorticoid-remediable (CYP11B1/B2 fusion); dexamethasone suppresses** — Familial hyperaldosteronism type I:
+

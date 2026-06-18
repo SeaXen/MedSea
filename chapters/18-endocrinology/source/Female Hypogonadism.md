@@ -1,0 +1,485 @@
+---
+tags: [medicine, endocrinology, davidson, female-hypogonadism, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Female hypogonadism presents as amenorrhoea, infertility, or delayed puberty. Key viva topics: primary vs secondary differentiation (FSH/LH), POI vs hypothalamic amenorrhoea, HRT in POI, and fertility management."
+see_also: ["FSH/LH-Gonadal Axis", "PCOS", "Menopause & HRT", "Infertility", "POI (Premature Ovarian Insufficiency)", "Turner Syndrome", "Kallmann Syndrome"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Female Hypogonadism
+
+> [!info]
+> **Female Hypogonadism = Ovarian Failure or Insufficient Gonadotropin Drive.** Presents as **Primary Amenorrhoea** (No Menarche by 15) or **Secondary Amenorrhoea** (Absence of Menses ≥3-6 Months). **Primary (Hypergonadotropic)** = Ovarian Failure. **Secondary (Hypogonadotropic)** = Pituitary/Hypothalamic Failure.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Differentiate primary vs secondary hypogonadism using FSH/LH
+- [ ] Diagnose and manage Premature Ovarian Insufficiency (POI)
+- [ ] Manage hypothalamic amenorrhoea and PCOS overlap
+- [ ] Apply HRT in POI and menopause
+- [ ] Address fertility concerns and contraception
+
+---
+
+## 2. Classification & Aetiology
+
+| Type | FSH/LH | Oestradiol | Common Causes |
+|--------|--------|------------|---------------|
+| **Primary (Hypergonadotropic)** | **↑↑** | **Low** | Turner Syndrome (45,X), Premature Ovarian Insufficiency (POI), Chemo/Radiotherapy, Autoimmune, Surgery (Oophorectomy), Galactosaemia, Infections (Mumps) |
+| **Secondary (Hypogonadotropic)** | **↓/Normal** | **Low** | Hypothalamic Amenorrhoea (Weight Loss, Stress, Exercise), Pituitary Adenoma, Hyperprolactinaemia, Kallmann Syndrome, Sheehan Syndrome, Craniopharyngioma |
+
+---
+
+## 2. Clinical Presentation
+
+| Feature | Primary (POI/Turner) | Secondary (Hypothalamic/Pituitary) |
+|---------|----------------------|-----------------------------------|
+| **Primary Amenorrhoea** | Turner Syndrome, Gonadal Dysgenesis | Kallmann Syndrome, CNS Tumours |
+| **Secondary Amenorrhoea** | POI (Autoimmune, Chemo, Idiopathic) | Weight Loss, Stress, Exercise, Prolactinoma, Sheehan, Craniopharyngioma |
+| **Infertility** | Both Types | Both Types |
+| **Oestrogen Deficiency Signs** | Hot Flushes, Vaginal Dryness, Osteoporosis, Low Libido | Same |
+| **Additional Features** | Turner: Short Stature, Webbed Neck, Coarctation | Prolactinoma: Galactorrhoea; Kallmann: Anosmia |
+
+---
+
+## 2. Primary Hypogonadism — Key Entities
+
+### Premature Ovarian Insufficiency (POI)
+| Feature | Details |
+|---------|---------|
+| **Definition** | **Ovarian Failure <40 Years** (FSH >40 IU/L on 2 Occasions 4-6 Weeks Apart) |
+| **Incidence** | **1% by Age 40**; 0.1% by Age 30 |
+| **Aetiology** | **Idiopathic (90%)**; Autoimmune (Adrenal, Thyroid), Genetic (FMR1 Premutation, BMP15), Chemo/Radiotherapy, Surgery, Infections (Mumps), Galactosaemia |
+| **Autoimmune** | **Adrenal (Addison's) 10-20%**, Thyroid (Hashimoto), Coeliac, T1DM, Pernicious Anaemia |
+| **Genetic** | **FMR1 Premutation** (5-10%), BMP15, FOXL2; Turner (45,X) / Mosaic |
+| **Diagnosis** | **FSH >40 IU/L on 2 Occasions 4-6 Weeks Apart** + Amenorrhoea >4 Months + Age <40 |
+
+### Turner Syndrome (45,X / Mosaic)
+| Feature | Details |
+|---------|---------|
+| **Karyotype** | **45,X** (50%); Mosaic 45,X/46,XX (15-20%) |
+| **Phenotype** | Short Stature, Webbed Neck, Low Hairline, Low-Set Ears, Shield Chest, Cubitus Valgus |
+| **Cardiac** | **Coarctation of Aorta** (10-20%), Bicuspid Aortic Valve |
+| **Renal** | Horseshoe Kidney (30%), Collecting System Anomalies |
+| **Endocrine** | **Streak Ovaries** → Primary Amenorrhoea, Infertility |
+| **Screening** | Echocardiogram, Renal US, Audiology, Ophthalmology, BP Monitoring |
+
+---
+
+## 3. Secondary Hypogonadism — Key Entities
+
+### Hypothalamic Amenorrhoea (Functional)
+| Cause | Mechanism | Features |
+|--------|-----------|----------|
+| **Weight Loss / Anorexia** | ↓ Leptin → ↓ GnRH Pulse Generator | Low BMI (<18.5), Fear of Weight Gain |
+| **Excessive Exercise** | ↓ Leptin, ↑ Endorphins → ↓ GnRH Pulse Frequency | Athletes, Dancers, Low Body Fat |
+| **Psychological Stress** | ↑ CRH, ↑ Cortisol → ↓ GnRH | Stress, Life Events |
+| **Pituitary Adenoma** | **Prolactinoma** (Most Common) | Galactorrhoea, Headache, Visual Field Defects |
+| **Craniopharyngioma** | Suprasellar Mass | Visual Field Defects, Hormone Deficiencies |
+| **Sheehan Syndrome** | Postpartum Pituitary Necrosis | Agalactorrhoea, Amenorrhoea, Loss of Pubic/Axillary Hair |
+| **Kallmann Syndrome** | Anosmia + Hypogonadotropic Hypogonadism | ANOS1/KAL1 Gene |
+
+### Polycystic Ovary Syndrome (PCOS) — See Separate Note
+| Feature | PCOS |
+|---------|------|
+| **Diagnosis** | 2/3 Rotterdam: Oligo/Anovulation + Hyperandrogenism + PCO Morphology |
+| **Endocrine** | LH:FSH >2:1, Hyperandrogenism, Insulin Resistance |
+| **Management** | Lifestyle, COCP, Metformin, Letrozole (Ovulation Induction) |
+
+---
+
+## 3. Investigation Algorithm
+
+```
+Amenorrhoea (Primary or Secondary)
+         │
+         ▼
+PREGNANCY TEST (β-hCG) → Exclude Pregnancy
+         │
+         ▼
+FSH, LH, OESTRADIOL, PROLACTIN, TSH
+         │
+         ├── FSH/LH HIGH + OESTRADIOL LOW → PRIMARY HYPOGONADISM
+         │       ├── TURNER (45,X) → Karyotype, Cardiac/Renal US
+         │       ├── POI (FSH >40 IU/L x2) → Autoimmune Screen, FMR1, Bone Density
+         │       └── POST-SURGICAL / CHEMO / RADIO → History
+         │
+         ├── FSH/LH LOW/NORMAL + OESTRADIOL LOW → SECONDARY
+         │       ├── PROLACTIN HIGH → PROLACTINOMA (MRI Pituitary)
+         │       ├── LOW BMI / EXERCISE / STRESS → FUNCTIONAL HYPOTHALAMIC AMENORRHOEA
+         │       ├── PCOS (LH:FSH >2:1, ANDROGENS ↑) → ROTTERDAM CRITERIA
+         │       ├── SHEEHAN SYNDROME (POSTPARTUM) → EMPTY SELLA MRI
+         │       └── CRANIOPHARYNGIOMA / TUMOUR → MRI BRAIN
+         │
+         └── ANDROGENS HIGH + OLIGO/ANOVULATION → PCOS (See PCOS Note)
+```
+
+---
+
+## 3. Premature Ovarian Insufficiency (POI) — Management
+
+### Hormone Replacement Therapy (HRT) — Until Age 50
+| Component | Regimen |
+|---------|---------|
+| **Oestrogen** | **Transdermal 50-100µg/day** (Patch/Gel) OR **Oral 1-2mg** |
+| **Progestogen** | **Cyclical** (Medroxyprogesterone 10mg Days 1-12) or **Continuous** (If Hysterectomy) |
+| **Duration** | **Until Natural Menopause Age (~50-51 Years)** |
+| **Bone Protection** | Bisphosphonate if T-score ≤-2.5; Calcium/Vit D |
+| **Cardiovascular** | Monitor BP, Lipids; Transdermal Preferred (↓ VTE Risk) |
+
+### Fertility in POI
+| Option | Details |
+|--------|---------|
+| **Spontaneous Pregnancy** | **5-10%** (Intermittent Ovarian Activity) |
+| **Donor Oocyte IVF** | **Gold Standard** (Success 40-50%) |
+| **Own Oocyte IVF** | Rarely Successful (Low AMH, High FSH) |
+| **Fertility Preservation** | **Oocyte/Embryo Cryopreservation** Before Chemo/Radiotherapy |
+
+### Autoimmune Screening (POI)
+| Test | Frequency |
+|--------|---------|
+| **21-Hydroxylase Ab** | Adrenal (Addison's) — 10-20% |
+| **TPOAb / TgAb** | Thyroid (Hashimoto) — 20-30% |
+| **Coeliac (TTG-IgA)** | 5-10% |
+| **Pernicious Anaemia** | B12, IF-Ab — 5-10% |
+
+---
+
+## 3. Turner Syndrome Management
+
+| System | Surveillance / Intervention |
+|--------|-----------------------------|
+| **Cardiac** | Echocardiogram at Diagnosis; **Annual BP**; MRI Aorta if Dilated |
+| **Renal** | Renal US at Diagnosis; **Hypertension Screening** |
+| **Growth** | **GH Therapy** (0.035 mg/kg/day) — Start Early (Age 4-6) |
+| **Puberty Induction** | **Oestrogen** (Low Dose → Adult Dose over 2-3 Years) |
+| **Fertility** | Donor Oocyte IVF (Own Oocytes Rarely Viable) |
+| **Bone Health** | Calcium/Vit D; DEXA q2-3yr; Bisphosphonate if T-score ≤-2.5 |
+| **Thyroid** | Annual TSH (Autoimmune Thyroiditis Common) |
+| **Audiology/Ophthalmology** | Baseline + q2-3yr |
+
+---
+
+## 4. Hypothalamic Amenorrhoea Management
+
+| Cause | Management |
+|--------|-----------|
+| **Weight Loss / Anorexia** | **Weight Restoration** (BMI >18.5); Multidisciplinary (Dietitian, Psych) |
+| **Excessive Exercise** | Reduce Intensity/Volume; ↑ Energy Availability (>45 kcal/kg FFM/day) |
+| **Stress** | CBT, Stress Management, ↓ Training Load |
+| **Prolactinoma** | Cabergoline (0.25mg BD → Titrate); Surgery if Macro/Visual Defects |
+| **Kallmann Syndrome** | **hCG + rFSH** for Fertility; **Testosterone/Oestradiol** Replacement |
+
+---
+
+## 4. Premature Ovarian Insufficiency (POI) — Long-Term Risks
+
+| Complication | Screening / Prevention |
+|-----------|------------------------|
+| **Osteoporosis** | **DEXA at Diagnosis**; Repeat q2-3yr; Bisphosphonate if T-score ≤-2.5 |
+| **Cardiovascular** | Early Menopause → ↑ CVD Risk; **HRT Until Age 50** |
+| **Cognitive Decline** | Early Menopause → ↑ Dementia Risk; HRT Neuroprotective? |
+| **Autoimmune Risk** | Annual TSH, 21-OH Ab, Coeliac Screen |
+| **Fertility** | 5-10% Spontaneous Pregnancy; Donor Oocyte IVF Main Option |
+
+---
+
+## 5. Hormone Replacement Therapy (HRT) in POI / Turner
+
+| Regimen | Details |
+|---------|---------|
+| **Oestrogen** | Transdermal **50-100µg/day** (Patch/Gel) — Preferred (↓ VTE Risk) |
+| **Progestogen** | **Cyclical** (Medroxyprogesterone 10mg Days 1-12) or Continuous (If Hysterectomy) |
+| **Duration** | **Until Age 50-51** (Natural Menopause Age) |
+| **Non-Hormonal** | If HRT Contraindicated: Calcium/Vit D, Bisphosphonates, Lifestyle |
+
+---
+
+## 5. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Primary Amenorrhoea Causes** | Turner (45,X), Müllerian Agenesis, Androgen Insensitivity, Kallmann |
+| **Secondary Amenorrhoea Investigation** | β-hCG → FSH/LH/Oestradiol/Prolactin/TSH |
+| **POI Definition** | **FSH >40 IU/L on 2 Occasions (4-6 Weeks Apart)** + Age <40 + Amenorrhoea >4 Months |
+| **POI Aetiology** | Idiopathic (90%), Autoimmune (Adrenal/Thyroid), FMR1 Premutation, Chemo/Radiotherapy |
+| **POI HRT** | **Until Age 50**; Transdermal Oestrogen + Cyclical Progestogen |
+| **Turner Syndrome** | 45,X; Short Stature, Webbed Neck, Coarctation, Streak Ovaries; GH Therapy; Coarctation Repair |
+| **Hypothalamic Amenorrhoea** | Functional (Weight Loss, Exercise, Stress) → Weight Gain, ↓ Exercise |
+| **Kallmann Syndrome** | Anosmia + Hypogonadotropic Hypogonadism; **ANOS1/KAL1** |
+| **Sheehan Syndrome** | Postpartum Pituitary Necrosis; Agalactorrhoea + Amenorrhoea + Hair Loss; Empty Sella |
+| **POI HRT Duration** | **Until Age 50** (Natural Menopause Age) |
+| **Turner Cardiac** | **Coarctation of Aorta (10-20%)**, Bicuspid Aortic Valve |
+| **Kallmann Syndrome** | **Anosmia + Hypogonadotropic Hypogonadism**; **ANOS1/KAL1** Gene |
+| **POI Autoimmune Screen** | 21-OH Ab (Adrenal), TPOAb (Thyroid), TTG-IgA (Coeliac) |
+| **Fertility in POI** | 5-10% Spontaneous; Donor Oocyte IVF → Main Option |
+| **Turner Renal** | Horseshoe Kidney (30%); Renal US at Diagnosis |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Primary vs Secondary** | Primary = FSH/LH ↑↑; Secondary = FSH/LH Low/Normal |
+| **POI vs Early Menopause** | POI = **<40 Years** + FSH >40; Early Menopause = 40-45 Years |
+| **Turner vs Noonan** | Turner: 45,X, Webbed Neck, Coarctation; Noonan: Normal Karyotype, Pyloric Stenosis, Pulmonary Stenosis |
+| **POI vs Early Menopause** | POI = Before 40; Early Menopause = 40-45 |
+| **Functional vs Organic** | Functional = Weight Loss/Exercise/Stress; Organic = Prolactinoma, Craniopharyngioma, Kallmann |
+| **Kallmann vs Isolated HH** | Kallmann = **Anosmia** + HH; Isolated HH = No Anosmia |
+| **POI HRT Duration** | **Until Age 50** (Natural Menopause Age) |
+| **Turner Fertility** | Donor Oocyte IVF (Own Oocytes Non-Viable) |
+| **Sheehan Syndrome** | Postpartum Pituitary Necrosis → Agalactorrhoea + Amenorrhoea + Empty Sella |
+| **Turner Renal** | Horseshoe Kidney (30%); Renal US at Diagnosis |
+
+---
+
+## 9. Mind Map
+
+```mermaid
+mindmap
+  root((Female Hypogonadism))
+    Primary (Hypergonadotropic)
+      Turner Syndrome (45,X)
+      POI (<40y, FSH>40 x2)
+      Autoimmune (Adrenal, Thyroid)
+      Chemo/Radiotherapy
+      Genetic (FMR1, BMP15)
+    Secondary (Hypogonadotropic)
+      Functional (Weight Loss, Exercise, Stress)
+      Prolactinoma
+      Craniopharyngioma
+      Kallmann (Anosmia)
+      Sheehan (Postpartum Necrosis)
+      Craniopharyngioma
+    PCOS
+      Rotterdam (2/3): Oligo + Hyperandrogenism + PCO
+      LH:FSH >2:1
+      Metabolic: IR, Obesity
+    Turner Syndrome
+      45,X / Mosaic
+      Short Stature, Webbed Neck, Coarctation
+      GH Therapy; Oestrogen Puberty Induction
+      Donor Oocyte IVF
+    POI
+      FSH>40 x2 <40y
+      Autoimmune Screen (Adrenal, Thyroid)
+      HRT Until 50y
+      Donor Oocyte IVF
+    Kallmann
+      Anosmia + HH
+      ANOS1/KAL1 Gene
+    Sheehan
+      Postpartum Necrosis
+      Empty Sella MRI
+```
+
+---
+
+## 10. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Primary Amenorrhoea Causes** | Turner, Müllerian Agenesis, Androgen Insensitivity, Kallmann |
+| **Secondary Amenorrhoea** | Pregnancy → FSH/LH/Oestradiol/Prolactin/TSH |
+| **POI Definition** | **FSH >40 IU/L x2 (4-6wk Apart)** + Amenorrhoea >4mo + Age <40 |
+| **Turner Syndrome** | 45,X; Short Stature, Webbed Neck, **Coarctation**; GH Therapy; Donor Oocyte IVF |
+| **POI HRT** | **Until Age 50**; Transdermal Oestrogen + Cyclical Progestogen |
+| **Kallmann Syndrome** | **Anosmia + Hypogonadotropic Hypogonadism** (ANOS1/KAL1) |
+| **Sheehan Syndrome** | Postpartum Necrosis; **Agalactorrhoea + Amenorrhoea + Hair Loss**; Empty Sella |
+| **POI Autoimmune Screen** | 21-OH Ab (Adrenal), TPOAb (Thyroid), TTG-IgA (Coeliac) |
+| **Turner Cardiac** | **Coarctation (10-20%)**, Bicuspid Aortic Valve; Echo at Diagnosis |
+| **POI Fertility** | 5-10% Spontaneous; **Donor Oocyte IVF** Main Option |
+| **Kallmann** | Anosmia + HH; **ANOS1/KAL1 Gene**; X-Linked Recessive |
+| **Functional Hypothalamic Amenorrhoea** | Weight Loss, Exercise, Stress → Weight Gain, ↓ Exercise |
+| **Turner Renal** | Horseshoe Kidney (30%); Renal US at Diagnosis |
+| **POI Autoimmune** | 21-OH Ab (Adrenal 10-20%), TPOAb (Thyroid 20-30%), Coeliac (5-10%) |
+| **Turner GH Therapy** | Start Age 4-6; 0.035 mg/kg/day |
+| **Turner Puberty** | Oestrogen 6.25µg → Adult Dose Over 2-3 Years |
+
+---
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Reproductive Endocrinology|Reproductive Endocrinology]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[PCOS]], [[Menopause & HRT]], [[Infertility]], [[Turner Syndrome]], [[Kallmann Syndrome]], [[Sheehan Syndrome]]
+## MCQs (10)
+1. **Primary ovarian insufficiency (POI):**
+   A. Ovarian failure <40yr; amenorrhoea, FSH >40, low oestradiol; Turner, chemo, autoimmune
+   B. Menopause >45
+   C. PCOS
+   D. Pregnancy
+   E. Hypothalamic amenorrhoea
+
+2. **Turner syndrome:**
+   A. 45,X; streak ovaries; primary amenorrhoea, short stature, webbed neck, coarctation
+   B. 46,XX
+   C. 47,XXY
+   D. Normal karyotype
+   E. Male phenotype
+
+3. **Premature ovarian insufficiency:**
+   A. <40yr; FSH >40 x2; autoimmune, genetic (FMR1), chemo, idiopathic
+   B. Menopause
+   C. PCOS
+   D. Pregnancy
+   E. Hypothalamic
+
+4. **Hypothalamic amenorrhoea:**
+   A. Low GnRH pulse -> low LH/FSH; stress, weight loss, exercise, eating disorder; FSH/LH low/normal
+   B. High LH/FSH
+   C. Normal LH/FSH
+   D. High oestradiol
+   E. Pregnancy
+
+5. **Functional hypothalamic amenorrhoea:**
+   A. Stress/weight loss/exercise -> suppressed GnRH -> low LH/FSH/oestradiol; reversible
+   B. Primary ovarian failure
+   C. PCOS
+   D. Pregnancy
+   E. Thyroid disease
+
+6. **Kallmann syndrome:**
+   A. Congenital GnRH deficiency + anosmia; X-linked (KAL1) or autosomal; low LH/FSH, low oestradiol
+   B. Normal smell
+   C. High LH/FSH
+   D. Post-pubertal onset
+   E. No anosmia
+
+7. **Ovarian failure causes:**
+   A. Turner, POI, chemo, radiotherapy, surgery, autoimmune, galactosaemia, infections
+   B. Only Turner
+   C. Only chemo
+   D. Only autoimmune
+   E. Only genetic
+
+8. **POI management:**
+   A. HRT until age 50 (bone, CV, vasomotor); fertility referral; genetic counselling
+   B. No treatment
+   C. COCP only
+   D. Surgery
+   E. Observation
+
+9. **Hypothalamic amenorrhoea treatment:**
+   A. Address cause (weight gain, reduce exercise, stress reduction); HRT if persistent; fertility: gonadotrophins
+   B. COCP only
+   C. Surgery
+   D. No treatment
+   E. IVF only
+
+10. **POI fertility:**
+   A. Spontaneous pregnancy 5-10%; donor oocyte IVF main option; genetic counselling
+   B. Normal fertility
+   C. Impossible
+   D. Clomiphene only
+   E. IVF not possible
+
+## SBA Questions (10)
+1. **25yo woman: amenorrhoea 6mo, BMI 17, exercises 2h/day, LH 1, FSH 1, oestradiol low. Diagnosis?**
+   A. Functional hypothalamic amenorrhoea
+   B. POI
+   C. PCOS
+   D. Pregnancy
+   E. Thyroid disease
+
+2. **Same patient: management?**
+   A. Weight gain; reduce exercise; HRT if bone loss; fertility: gonadotrophins
+   B. COCP
+   C. Clomiphene
+   D. Metformin
+   E. Surgery
+
+3. **30yo woman: amenorrhoea, FSH 50, oestradiol low, 46,XX. Diagnosis?**
+   A. Primary ovarian insufficiency (POI)
+   B. Menopause
+   C. PCOS
+   D. Hypothalamic amenorrhoea
+   E. Pregnancy
+
+4. **POI patient: wants pregnancy. Best option?**
+   A. Donor oocyte IVF (5-10% spontaneous)
+   B. Clomiphene
+   C. Letrozole
+   D. Own oocyte IVF
+   E. Surrogacy only
+
+5. **20yo woman: primary amenorrhoea, anosmia, low LH/FSH. Karyotype 46,XX. Diagnosis?**
+   A. Kallmann syndrome
+   B. Turner syndrome
+   C. POI
+   D. PCOS
+   E. Functional hypothalamic amenorrhoea
+
+## Flashcards
+- **Q: Primary ovarian failure**
+  **A: Low oestradiol + HIGH FSH/LH (e.g. Turner, POI, chemo, surgery)**
+
+- **Q: Secondary (hypothalamic) failure**
+  **A: Low oestradiol + LOW/normal LH/FSH (stress, weight loss, exercise, tumour)**
+
+- **Q: POI**
+  **A: <40yr; FSH>40 x2; HRT until 50; 5-10% spontaneous pregnancy; donor oocyte IVF**
+
+- **Q: Turner syndrome**
+  **A: 45,X; streak ovaries; primary amenorrhoea; short stature; coarctation**
+
+- **Q: Kallmann syndrome**
+  **A: Congenital GnRH deficiency + anosmia; KAL1 (X-linked) or autosomal**
+
+- **Q: Hypothalamic amenorrhoea**
+  **A: Stress/weight loss/exercise -> suppressed GnRH -> low LH/FSH; reversible**
+
+- **Q: POI management**
+  **A: HRT until 50; fertility referral; genetic counselling; 5-10% spontaneous pregnancy**
+
+- **Q: Hypothalamic amenorrhoea Rx**
+  **A: Address cause (weight/exercise); HRT if persistent; fertility: gonadotrophins**
+
+- **Q: PCOS vs POI**
+  **A: PCOS: high androgens, PCO, high LH:FSH; POI: high FSH, low oestradiol**
+
+- **Q: Contraception in POI**
+  **A: Not needed if confirmed POI; but 5-10% spontaneous pregnancy possible**
+
+## Answer Key with Explanations
+### MCQs
+1. **Ovarian failure <40yr; amenorrhoea, FSH >40, low oestradiol; Turner, chemo, autoimmune** — Primary ovarian insufficiency (POI):
+
+2. **45,X; streak ovaries; primary amenorrhoea, short stature, webbed neck, coarctation** — Turner syndrome:
+
+3. **<40yr; FSH >40 x2; autoimmune, genetic (FMR1), chemo, idiopathic** — Premature ovarian insufficiency:
+
+4. **Low GnRH pulse -> low LH/FSH; stress, weight loss, exercise, eating disorder; FSH/LH low/normal** — Hypothalamic amenorrhoea:
+
+5. **Stress/weight loss/exercise -> suppressed GnRH -> low LH/FSH/oestradiol; reversible** — Functional hypothalamic amenorrhoea:
+
+6. **Congenital GnRH deficiency + anosmia; X-linked (KAL1) or autosomal; low LH/FSH, low oestradiol** — Kallmann syndrome:
+
+7. **Turner, POI, chemo, radiotherapy, surgery, autoimmune, galactosaemia, infections** — Ovarian failure causes:
+
+8. **HRT until age 50 (bone, CV, vasomotor); fertility referral; genetic counselling** — POI management:
+
+9. **Address cause (weight gain, reduce exercise, stress reduction); HRT if persistent; fertility: gonadotrophins** — Hypothalamic amenorrhoea treatment:
+
+10. **Spontaneous pregnancy 5-10%; donor oocyte IVF main option; genetic counselling** — POI fertility:
+
+
+### SBAs
+1. **Functional hypothalamic amenorrhoea** — 25yo woman: amenorrhoea 6mo, BMI 17, exercises 2h/day, LH 1, FSH 1, oestradiol low. Diagnosis?
+
+2. **Weight gain; reduce exercise; HRT if bone loss; fertility: gonadotrophins** — Same patient: management?
+
+3. **Primary ovarian insufficiency (POI)** — 30yo woman: amenorrhoea, FSH 50, oestradiol low, 46,XX. Diagnosis?
+
+4. **Donor oocyte IVF (5-10% spontaneous)** — POI patient: wants pregnancy. Best option?
+
+5. **Kallmann syndrome** — 20yo woman: primary amenorrhoea, anosmia, low LH/FSH. Karyotype 46,XX. Diagnosis?
+

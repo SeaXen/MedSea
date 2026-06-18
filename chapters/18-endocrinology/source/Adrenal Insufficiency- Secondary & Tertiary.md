@@ -1,0 +1,584 @@
+---
+tags: [medicine, endocrinology, davidson, secondary-adrenal-insufficiency, tertiary-adrenal-insufficiency, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Secondary/Tertiary Adrenal Insufficiency is more common than primary. Key viva topics: differentiation from primary (ACTH low vs high, no hyperpigmentation), causes (pituitary, hypothalamic, steroid withdrawal), and replacement therapy without mineralocorticoid."
+see_also: ["Primary Adrenal Insufficiency (Addison)", "Adrenal Crisis", "Hypopituitarism", "Pituitary Adenomas: Non-Functioning", "Pituitary Apoplexy", "Steroid Withdrawal"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Adrenal Insufficiency: Secondary & Tertiary (Central Adrenal Insufficiency)
+
+> [!info]
+> **Secondary Adrenal Insufficiency = Pituitary ACTH Deficiency.** **Tertiary Adrenal Insufficiency = Hypothalamic CRH Deficiency.** **ACTH Low/Inappropriately Normal.** **No Hyperpigmentation. No Hyperkalaemia. Miner alocorticoid Function Preserved.** **Commonest Cause: Exogenous Steroid Withdrawal / Pituitary Adenoma / Radiotherapy.**
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Distinguish secondary from tertiary adrenal insufficiency
+- [ ] Differentiate central AI from primary (Addison's) using ACTH, electrolytes, pigmentation
+- [ ] Identify common causes (steroid withdrawal, pituitary adenoma, radiotherapy, Sheehan syndrome)
+- [ ] Apply diagnostic tests (Synacthen test, ACTH, 09:00 cortisol)
+- [ ] Prescribe glucocorticoid replacement (no mineralocorticoid needed)
+- [ ] Manage stress dosing and crisis prevention
+
+---
+
+## 2. Classification & Definitions
+
+| Type | Level of Defect | ACTH | Cortisol | Aldosterone | Key Feature |
+|------|-----------------|------|----------|-------------|-------------|
+| **Primary (Addison's)** | Adrenal Cortex | **High** | Low | **Low** | Hyperpigmentation, Hyperkalaemia |
+| **Secondary (Pituitary)** | Pituitary (ACTH Deficiency) | **Low / Inappropriately Normal** | Low | **Normal** | No Hyperpigmentation, No Hyperkalaemia |
+| **Tertiary (Hypothalamic)** | Hypothalamus (CRH Deficiency) | **Low / Inappropriately Normal** | Low | **Normal** | No Hyperpigmentation, No Hyperkalaemia |
+
+**Key Differentiator**: **Primary = ACTH ↑↑; Secondary/Tertiary = ACTH Low/Normal**
+
+---
+
+## 2. Aetiology
+
+### Secondary (Pituitary) — Most Common
+| Cause | Mechanism |
+|-------|----------|
+| **Pituitary Adenoma** (Macro/Micro) | Compression of Corticotrophs |
+| **Pituitary Surgery (TSS)** | Direct Damage to Corticotrophs |
+| **Pituitary Radiotherapy** | Delayed (5-10yr) Corticotroph Damage |
+| **Pituitary Apoplexy** | Haemorrhagic Infarction of Adenoma |
+| **Sheehan Syndrome** | Postpartum Pituitary Necrosis |
+| **Lymphocytic Hypophysitis** | Autoimmune (Postpartum) |
+| **Infiltrative** | Sarcoidosis, LCH, Haemochromatosis, Metastases |
+| **Trauma** | Basal Skull Fracture, Diffuse Axonal Injury |
+| **Craniopharyngioma** | Suprasellar Compression |
+
+### Tertiary (Hypothalamic)
+| Cause | Mechanism |
+|-------|-----------|
+| **Exogenous Steroid Withdrawal** | **Most Common Overall** — HPA Axis Suppression |
+| **Craniopharyngioma** | Suprasellar Compression of Hypothalamus |
+| **Hypothalamic Tumours** (Glioma, Hamartoma) | Direct Hypothalamic Damage |
+| **Infiltrative** | Sarcoidosis, TB, Histiocytosis |
+| **Trauma** | Basal Skull Fracture, Stalk Section |
+
+---
+
+## 2. Exogenous Steroid-Induced (Most Common Tertiary AI)
+
+### Epidemiology
+| Statistic | Value |
+|-----------|-------|
+| **Prevalence** | **Most Common Cause of AI Overall** |
+| **Risk** | **>3 Weeks** of **>5mg/day Prednisolone Equivalent** |
+| **Incidence** | 5-25% of Long-Term Steroid Users |
+| **Recovery** | **Months to Years** (HPA Axis Recovery Variable) |
+
+### HPA Axis Suppression
+| Steroid Duration | Suppression Risk | Recovery Time |
+|------------------|------------------|---------------|
+| **<3 Weeks** | Minimal | Days |
+| **3-4 Weeks** | Moderate | Weeks |
+| **>4 Weeks** | **Significant** (Adrenal Atrophy) | **Months-Years** |
+| **High Dose (>40mg Pred Equiv)** | Severe | Months |
+
+---
+
+## 3. Clinical Features — Secondary vs Primary AI
+
+| Feature | **Primary (Addison's)** | **Secondary/Tertiary AI** |
+|---------|------------------------|--------------------------|
+| **ACTH** | **↑↑ (High)** | **Low / Inappropriately Normal** |
+| **Hyperpigmentation** | **Yes** (ACTH → MSH) | **Absent** (ACTH Low) |
+| **Hyperkalaemia** | **Yes** (Aldosterone Deficiency) | **No** (Aldosterone Preserved) |
+| **Hyponatraemia** | Yes (Cortisol + Aldosterone ↓) | Yes (Cortisol ↓ → ADH ↑) |
+| **Hyperkalaemia** | **Yes** (Aldosterone ↓) | **Absent** (Aldosterone Intact) |
+| **Hyperpigmentation** | **Yes** (ACTH → MSH) | **Absent** |
+| **Hypoglycaemia** | Often (Fasting) | **More Prominent** (GH Deficiency Co-exists) |
+| **Hypotension** | Severe (Volume Depletion) | Mild/Moderate (Volume Intact) |
+
+---
+
+## 3. Diagnostic Approach
+
+### Key Investigation: 09:00 Cortisol + ACTH (Paired)
+| Pattern | Cortisol | ACTH | Diagnosis |
+|----------|----------|------|-----------|
+| **Normal** | Normal | Normal | Normal |
+| **Primary AI** | **Low** | **High** | Primary AI (Addison's) |
+| **Secondary/Tertiary AI** | **Low** | **Low / Inappropriately Normal** | Central AI |
+| **Normal** | Normal | Normal | Normal |
+
+### Synacthen Test (Standard 250µg)
+| Result | Cortisol at 30/60min | Interpretation |
+|---------|----------------------|----------------|
+| **Normal** | **≥500-550 nmol/L** | Normal Adrenal Reserve |
+| **Adrenal Insufficiency** | **<400-500 nmol/L at 30/60min** | AI (Primary or Central) |
+
+**Differentiation**: In Central AI, Adrenals Are **Normal But Unstimulated** → **Normal Response to Exogenous ACTH** (But Baseline Low).
+
+---
+
+## 3. Diagnosis — Differentiation
+
+### 09:00 Cortisol + ACTH (Paired)
+| Scenario | Cortisol | ACTH | Diagnosis |
+|----------|----------|------|-----------|
+| **Normal** | Normal | Normal | Normal |
+| **Primary AI (Addison)** | **Low** | **High** (>100 pg/mL) | **Primary AI** |
+| **Secondary AI** | **Low** | **Low / Inappropriately Normal** | **Secondary AI** |
+| **Tertiary AI** | **Low** | **Low / Normal** | **Tertiary AI** (Steroid Withdrawal) |
+
+### Synacthen Test (Standard 250µg)
+| Result | Cortisol at 30/60min | Interpretation |
+|--------|----------------------|----------------|
+| **Normal** | **≥500-550 nmol/L** | Normal Adrenal Function |
+| **Adrenal Insufficiency** | **<400-500 nmol/L** | Adrenal Insufficiency (Primary or Central) |
+
+**Key**: **Central AI** → **Normal Response to Exogenous ACTH** (Adrenals Intact) but **Baseline Cortisol Low + ACTH Low**.
+
+---
+
+## 3. Differential: Secondary vs Tertiary AI
+
+| Feature | **Secondary (Pituitary)** | **Tertiary (Hypothalamic)** |
+|---------|--------------------------|----------------------------|
+| **Commonest Cause** | Pituitary Adenoma, Surgery, RT | **Exogenous Steroid Withdrawal** |
+| **CRH Test** | **No ACTH Rise** (Pituitary Failure) | **Exaggerated ACTH Rise** (Pituitary Intact) |
+| **Associated Deficits** | Panhypopituitarism (GH→Gonad→TSH→ACTH) | Isolated ACTH Deficiency (Often) |
+| **MRI** | Pituitary Mass / Empty Sella / Stalk Thickening | Normal Pituitary / Hypothalamic Lesion |
+| **Other Deficits** | GH, Gonadotrophs, TSH Often Deficient | Usually Isolated ACTH Deficiency |
+
+---
+
+## 4. Common Causes — Detailed
+
+### 1. Exogenous Steroid Withdrawal (Most Common Tertiary)
+| Risk Factor | Details |
+|-----------|---------|
+| **Duration** | **>3 Weeks** of **>5mg/day Prednisolone Equivalent** |
+| **Dose** | **>40mg/day Pred Equivalent** → High Risk |
+| **Duration of Risk** | **Months-Years** After Stopping |
+| **Recovery** | Months to Years (Variable) |
+| **Management** | **Taper Slowly**; Stress Dose During Recovery |
+
+### 2. Pituitary Adenoma / Surgery / Radiotherapy
+| Cause | Details |
+|-------|---------|
+| **Macroadenoma** | Compression of Normal Corticotrophs |
+| **Pituitary Surgery (TSS)** | Direct Damage / Infarction Risk |
+| **Radiotherapy** | **Delayed 5-10 Years** (Progressive Hypopituitarism) |
+| **Pituitary Apoplexy** | Acute Haemorrhage → Acute AI (Emergency) |
+| **Sheehan Syndrome** | Postpartum Pituitary Necrosis (PPH → Infarction) |
+
+### 3. Other Causes
+| Cause | Details |
+|-------|---------|
+| **Craniopharyngioma** | Suprasellar Mass Compressing Pituitary Stalk |
+| **Lymphocytic Hypophysitis** | Postpartum (3-6mo); MRI: Diffuse Enlargement + Stalk Thickening |
+| **Infiltrative** | Sarcoidosis, LCH, Haemochromatosis, TB, Metastases |
+| **Trauma** | Basal Skull Fracture, Stalk Section |
+| **Checkpoint Inhibitors** | Anti-PD1/PD-L1 → Hypophysitis (0.5-2%) |
+
+---
+
+## 4. Diagnosis — Confirmation
+
+### 09:00 Cortisol + ACTH (Paired)
+| Pattern | Cortisol | ACTH | Diagnosis |
+|-----------|----------|------|-----------|
+| **Normal** | Normal | Normal | Normal |
+| **Primary AI (Addison)** | **Low** | **High (>100 pg/mL)** | **Primary AI** |
+| **Central AI** | **Low** | **Low / Inappropriately Normal (<10 pg/mL)** | **Central AI** |
+
+### Synacthen Test (250µg IM/IV)
+| Result | Cortisol at 30/60min | Interpretation |
+|--------|----------------------|----------------|
+| **Normal** | **≥500-550 nmol/L** | Normal Adrenal Reserve |
+| **Adrenal Insufficiency** | **<400-500 nmol/L** | AI (Central or Primary) |
+
+**Key Differentiator**: **Central AI → Normal Response to Exogenous ACTH** (Adrenals Intact) but **Baseline Cortisol Low + ACTH Low**.
+
+---
+
+## 4. Causes — Detailed
+
+### Steroid Withdrawal (Most Common Tertiary AI)
+| Risk Factor | Details |
+|-----------|---------|
+| **Duration** | **>3 Weeks** of **>5mg/day Prednisolone Equivalent** |
+| **Dose** | **>40mg/day Pred Equivalent** → High Risk |
+| **Recovery** | **Months-Years** (Variable) |
+| **Management** | **Slow Taper**; Stress Dose During Recovery |
+
+### Pituitary Radiotherapy
+| Timeline | Deficiency |
+|----------|------------|
+| **6-12 months** | GH Deficiency (First) |
+| **2-5 years** | Gonadotroph Deficiency |
+| **5-10 years** | TSH Deficiency |
+| **>10 years** | ACTH Deficiency (Rare) |
+
+### Sheehan Syndrome
+| Feature | Details |
+|---------|---------|
+| **Cause** | Postpartum Pituitary Necrosis (PPH + Vasospasm) |
+| **Presentation** | **Agalactorrhoea + Amenorrhoea + Loss of Pubic Hair** |
+| **MRI** | **Empty Sella** (Pituitary Necrosis) |
+| **Hormones** | GH → Gonad → TSH → ACTH (ACTH Often Preserved Initially) |
+
+### Lymphocytic Hypophysitis
+| Feature | Details |
+|---------|---------|
+| **Onset** | **Postpartum** (3-6 Months) |
+| **MRI** | Diffuse Pituitary Enlargement + Stalk Thickening |
+| **Hormones** | ACTH Deficiency Most Common; TSH, Gonadotrophs |
+| **Treatment** | High-Dose Steroids (Pred 1mg/kg) + Hormone Replacement |
+
+---
+
+## 5. Management — Glucocorticoid Replacement
+
+### Regimen (No Mineralocorticoid Needed)
+| Drug | Dose | Schedule |
+|--------|------|---------|
+| **Hydrocortisone** | **15-20mg AM + 5-10mg PM** (Divided BD) | Total 20-30mg/day |
+| **Prednisolone** | **5mg OD** | Longer Half-Life |
+| **Cortisone Acetate** | 25mg AM + 12.5mg PM | Less Common |
+
+### Key Principle: **No Fludrocortisone Needed** (Aldosterone Intact)
+
+### Target & Monitoring
+| Parameter | Target | Frequency |
+|-----------|--------|-----------|
+| **09:00 Cortisol** | **Upper Half of Normal** (200-500 nmol/L) | q3mo (Stable) |
+| **Clinical** | Symptom Control (Fatigue, BP, Weight) | Each Visit |
+| **Weight, BP, Glucose** | Stable | Each Visit |
+| **Bone Density** | DEXA q2-3yr | If Long-Term Glucocorticoid |
+
+---
+
+## 6. Stress Dose Protocol (Same as Primary AI)
+
+| Stress Level | Hydrocortisone IV | Duration |
+|--------------|-------------------|----------|
+| **Minor** (Dental, Minor Surgery) | 25mg IV/IM Pre-Op | Single Dose |
+| **Moderate** (Major Surgery, Sepsis, Trauma) | 50-100mg IV Bolus → 50mg q6-8h | 24-48 Hours |
+| **Major** (Cardiac Surgery, Septic Shock, Major Trauma) | 100mg IV Bolus → 50-100mg q6h | 48-72 Hours |
+
+**Oral Stress Dose**: Triple Usual Oral Dose for Duration of Illness.
+
+---
+
+## 7. Crisis Prevention & Management
+
+| Scenario | Action |
+|----------|--------|
+| **Known AI + Illness** | **Triple Oral Dose**; Seek Medical Review |
+| **Vomiting/Diarrhoea** | **IM Hydrocortisone 100mg** (If Can't Absorb Oral) |
+| **Surgery** | Stress Dose Protocol (Per Risk Level) |
+| **Pregnancy** | ↑ Hydrocortisone 20-40% in 2nd/3rd Tri; Stress Dose Delivery |
+
+---
+
+## 7. Crisis Prevention — Key Points
+
+| Scenario | Action |
+|----------|--------|
+| **Known AI + Febrile Illness** | **Double/ Triple Oral Dose** + Seek Review |
+| **Vomiting/Unable Oral** | **IM Hydrocortisone 100mg** (Keep Emergency Kit) |
+| **Surgery** | Stress Dose Protocol (Per Risk) |
+| **Pregnancy** | ↑ Dose 20-40% 2nd/3rd Tri; **Stress Dose for Delivery** |
+| **Dental/Minor Surgery** | 25mg IV Pre-Op (If No Oral Intake) |
+
+---
+
+## 7. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Secondary vs Primary AI** | Secondary: ACTH Low + No Hyperpigmentation + No Hyperkalaemia |
+| **Most Common Cause** | **Exogenous Steroid Withdrawal** (>3 Weeks, >5mg Pred) |
+| **Secondary vs Primary** | Secondary: ACTH Low, **No Hyperpigmentation, No Hyperkalaemia** |
+| **Secondary vs Tertiary** | Secondary = Pituitary; Tertiary = Hypothalamic (Steroid Withdrawal Most Common) |
+| **CRH Test** | Secondary = No ACTH Rise; Tertiary = Exaggerated ACTH Rise |
+| **Steroid Withdrawal** | >3 Weeks >5mg/day → HPA Suppression; Taper Slowly |
+| **Pituitary RT** | Delayed AI: GH→Gonad→TSH→ACTH (10+ Years for ACTH) |
+| **Sheehan Syndrome** | Postpartum Necrosis → Agalactorrhoea + Amenorrhoea; Empty Sella |
+| **Hypopituitarism Order** | GH → Gonad → TSH → ACTH |
+| **Fludrocortisone** | **NOT NEEDED** in Central AI (Aldosterone Intact) |
+| **Stress Dosing** | Minor 25mg; Moderate 50-100mg; Major 100mg+50mg q6h |
+| **Steroid Taper** | >3 Weeks → Taper Slowly (Months); Stress Dosing During Taper |
+| **Replacement** | Hydrocortisone 15-20mg AM + 5-10mg PM; NO Fludrocortisone |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Primary vs Central AI** | Primary: ACTH ↑↑ + Hyperpigmentation + Hyperkalaemia; Central: ACTH Low, No Pigmentation, No Hyperkalaemia |
+| **Secondary vs Tertiary** | Secondary = Pituitary Failure; Tertiary = Hypothalamic (Steroid Withdrawal Most Common) |
+| **Fludrocortisone in Central AI** | **NOT NEEDED** — Aldosterone Intact |
+| **Steroid Taper** | >3 Weeks >5mg/day → Taper Slowly (Months); Stress Dose During Taper |
+| **Sheehan Syndrome** | Postpartum Pituitary Necrosis → Agalactorrhoea, Amenorrhoea, Hair Loss; Empty Sella on MRI |
+| **Pituitary RT Hypopituitarism** | Delayed: GH (1-2yr) → Gonad (2-5yr) → TSH (5-10yr) → ACTH (10+yr) |
+| **CRH Test** | Secondary = No ACTH Rise; Tertiary = Exaggerated Rise |
+
+**Mnemonic: CENTRAL AI**
+- **C**entral = **C**ortisol Low + **A**CTH **L**ow
+- **E**xogenous **S**teroids = **M**ost **C**ommon **T**ertiary
+- **N**o **P**igmentation + **N**o **H**yperkalaemia
+- **T**ertiary = **S**teroid **W**ithdrawal
+- **R**eplacement: **H**ydrocortisone **O**nly (No Fludro)
+- **A**CTH **L**ow
+
+**Mnemonic: SECONDARY vs TERTIARY**
+- **S**econdary = **S**ella / **P**ituitary (Macroadenoma, Surgery, RT)
+- **T**ertiary = **T**op (Hypothalamus) / **S**teroid **W**ithdrawal
+- **CRH Test**: **S**econdary = **N**o Rise; **T**ertiary = **E**xaggerated Rise
+
+---
+
+## 9. Mind Map
+
+```mermaid
+mindmap
+  root((Secondary/Tertiary Adrenal Insufficiency))
+    Definition
+      Central AI = ACTH Deficiency
+      ACTH Low/Normal, Cortisol Low
+      Aldosterone PRESERVED (No Fludro)
+    Aetiology
+      Secondary (Pituitary)
+        Adenoma, Surgery (TSS), RT, Apoplexy, Sheehan, Hypophysitis
+      Tertiary (Hypothalamic)
+        Steroid Withdrawal (MOST COMMON)
+        Craniopharyngioma, Hypothalamic Lesions
+    Diagnosis
+      09:00 Cortisol Low + ACTH Low/Normal
+      Synacthen: Normal Response (Adrenals Intact)
+      No Hyperpigmentation, No Hyperkalaemia
+    Synacthen Test
+      Normal Response to Exogenous ACTH
+      Baseline Cortisol Low + ACTH Low
+    Management
+      Hydrocortisone 15-20mg AM + 5-10mg PM
+      NO FLUDROCORTISONE
+      Stress Dosing: Minor 25mg, Moderate 50-100mg, Major 100mg+50mg q6h
+      Taper Steroid Withdrawal Slowly
+    Secondary vs Tertiary
+      Secondary: Pituitary Failure (Adenoma, RT, Surgery)
+      Tertiary: Hypothalamic (Steroid Withdrawal #1)
+      CRH Test: Secondary = No Rise; Tertiary = Exaggerated Rise
+      Assoc Deficits: Panhypopituitarism (Secondary) vs Isolated ACTH (Tertiary)
+    Steroid Withdrawal
+      >3 Weeks >5mg Pred → HPA Suppression
+      Taper Slowly (Months); Stress Dose During Taper
+      Recovery Months-Years
+    Crisis Prevention
+      Illness: Triple Oral Dose
+      Vomiting: IM Hydrocortisone 100mg
+      Surgery: Stress Dose Protocol
+      Pregnancy: ↑ Dose 20-40% in 2nd/3rd Tri
+```
+
+---
+
+## 10. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Central AI Hallmark** | **Low Cortisol + Low ACTH** (No Hyperpigmentation, No Hyperkalaemia) |
+| **Primary vs Central** | Primary: ACTH ↑↑, Hyperpigmentation; Central: ACTH Low, No Pigmentation |
+| **Secondary vs Tertiary** | Secondary = Pituitary; Tertiary = Hypothalamic/Steroid Withdrawal |
+| **Most Common Cause** | **Exogenous Steroid Withdrawal** (>3 weeks, >5mg pred) |
+| **Fludrocortisone** | **NOT NEEDED** in Central AI (Aldosterone Preserved) |
+| **Steroid Withdrawal** | >3 Weeks + >5mg/day → HPA Suppression; Taper Slowly (Months) |
+| **Fludrocortisone in Central AI** | **NOT NEEDED** — Aldosterone Preserved |
+| **Steroid Taper** | >3 Weeks → Slow Taper (Months); Stress Dose During Taper |
+| **Sheehan Syndrome** | Postpartum Pituitary Necrosis → Empty Sella; Agalactorrhoea, Amenorrhoea |
+| **Pituitary RT Hypopituitarism** | GH→Gonad→TSH→ACTH (ACTH Lost Last, 10+ Years) |
+| **CRH Test** | Secondary = No ACTH Rise; Tertiary = Exaggerated Rise |
+| **Secondary vs Tertiary** | Secondary = Pituitary Mass/RT/Surgery; Tertiary = Steroid Withdrawal |
+| **Fludrocortisone** | **Never Give in Central AI** (Aldosterone Intact) |
+
+---
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Adrenal Disorders|Adrenal Disorders]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[Primary Adrenal Insufficiency (Addison)]], [[Adrenal Crisis]], [[Hypopituitarism]], [[Pituitary Adenomas: Non-Functioning]], [[Sheehan Syndrome]]
+## MCQs (10)
+1. **Secondary AI cause:**
+   A. Pituitary disease (adenoma, surgery, radiotherapy)
+   B. Adrenal destruction
+   C. Adrenal enzyme defect
+   D. TB
+   E. Autoimmune adrenalitis
+
+2. **Tertiary AI cause:**
+   A. Steroid withdrawal (HPA suppression)
+   B. Pituitary disease
+   C. Adrenal destruction
+   D. Hypothalamic disease
+   E. Autoimmune
+
+3. **Secondary AI biochemistry:**
+   A. Cortisol ↓, ACTH low/normal (inappropriately)
+   B. Cortisol ↓, ACTH ↑↑
+   C. Cortisol ↑, ACTH ↓
+   D. Cortisol normal, ACTH ↑
+   E. Cortisol ↓, ACTH ↑↑
+
+4. **Secondary AI electrolyte:**
+   A. Hyponatraemia (cortisol deficiency → ADH↑); K+ NORMAL
+   B. Hyperkalaemia
+   C. Hyponatraemia + hyperkalaemia
+   D. NormalNa+/K+
+   E. Hypernatraemia
+
+5. **No hyperpigmentation in secondary AI because:**
+   A. ACTH low (no MSH cross-reactivity)
+   B. Cortisol high
+   C. ACTH high
+   D. Normal ACTH
+   E. MSH deficiency
+
+6. **Commonest cause secondary AI:**
+   A. Pituitary macroadenoma / surgery / radiotherapy
+   B. Sheehan syndrome
+   C. Lymphocytic hypophysitis
+   D. Craniopharyngioma
+   E. Empty sella
+
+7. **Synacthen test in secondary AI:**
+   A. Cortisol <400-500 nmol/L (but ACTH low)
+   B. Cortisol >550
+   C. Normal
+   D. Exaggerated
+   E. Delayed peak only
+
+8. **Low-dose (1mcg) Synacthen preferred for:**
+   A. Secondary/tertiary AI (more physiological)
+   B. Primary AI screening
+   C. Cushing syndrome
+   D. CAH
+   E. Phaeochromocytoma
+
+9. **Tertiary AI recovery:**
+   A. Weeks to months after steroid stop
+   B. Days
+   C. Never recovers
+   D. Immediate
+   E. Requires surgery
+
+10. **Sheehan syndrome:**
+   A. Postpartum pituitary necrosis (hypopituitarism)
+   B. Postpartum thyroiditis
+   C. Postpartum psychosis
+   D. Postpartum haemorrhage only
+   E. Postpartum cardiomyopathy
+
+## SBA Questions (10)
+1. **Post-pituitary surgery: fatigue, hypotension, Na+ 130, K+ 4.0, cortisol 40, ACTH 5. Diagnosis?**
+   A. Secondary adrenal insufficiency
+   B. Primary AI
+   C. Cushing syndrome
+   D. CAH
+   E. SIADH
+
+2. **Patient on prednisolone 20mg 6 months stops abruptly: hypotension, hypoglycaemia. Diagnosis?**
+   A. Tertiary AI (steroid withdrawal)
+   B. Primary AI
+   C. Septic shock
+   D. Cushing syndrome
+   E. Factitious
+
+3. **Secondary AI: hydrocortisone replacement same as primary?**
+   A. Yes (15-20mg AM + 5-10mg PM) but NO fludrocortisone
+   B. Yes + fludrocortisone
+   C. Lower dose
+   D. Higher dose
+   E. Prednisolone only
+
+4. **Sheehan syndrome: postpartum woman unable to breastfeed, fatigue, hypotension. Pituitary MRI?**
+   A. Empty sella / pituitary atrophy
+   B. Normal
+   C. Microadenoma
+   D. Macroadenoma
+   E. Craniopharyngioma
+
+5. **Steroid withdrawal taper >3 weeks:**
+   A. Taper over weeks-months; no fixed formula; 2.5-5mg pred reduction q1-2wk
+   B. Stop abruptly
+   C. Taper over days
+   D. Switch to hydrocortisone immediately
+   E. Double dose then stop
+
+## Flashcards
+- **Q: Secondary AI**
+  **A: Pituitary failure → cortisol ↓, ACTH low/normal; no hyperpigmentation, no hyperK**
+
+- **Q: Tertiary AI**
+  **A: Steroid withdrawal → HPA suppression; cortisol ↓, ACTH low; weeks-months recovery**
+
+- **Q: Key diff primary**
+  **A: Secondary/tertiary: no hyperpigmentation, no hyperkalaemia (ACTH low)**
+
+- **Q: Sheehan syndrome**
+  **A: Postpartum pituitary necrosis → panhypopituitarism; empty sella on MRI**
+
+- **Q: Lymphocytic hypophysitis**
+  **A: Autoimmune pituitary; peripartum; mass lesion on MRI**
+
+- **Q: Low-dose Synacthen**
+  **A: 1mcg preferred for secondary/tertiary; same cut-offs**
+
+- **Q: Steroid taper**
+  **A: >3 weeks = HPA suppression; taper 2.5-5mg pred q1-2wk over weeks-months**
+
+- **Q: Hydrocortisone replacement**
+  **A: Same dose for primary/secondary/tertiary; NO fludrocortisone in secondary/tertiary**
+
+- **Q: Sheehan features**
+  **A: Postpartum: agalactorrhoea, amenorrhoea, fatigue, hypotension, cold intolerance**
+
+## Answer Key with Explanations
+### MCQs
+1. **Pituitary disease (adenoma, surgery, radiotherapy)** — Secondary AI cause:
+
+2. **Steroid withdrawal (HPA suppression)** — Tertiary AI cause:
+
+3. **Cortisol ↓, ACTH low/normal (inappropriately)** — Secondary AI biochemistry:
+
+4. **Hyponatraemia (cortisol deficiency → ADH↑); K+ NORMAL** — Secondary AI electrolyte:
+
+5. **ACTH low (no MSH cross-reactivity)** — No hyperpigmentation in secondary AI because:
+
+6. **Pituitary macroadenoma / surgery / radiotherapy** — Commonest cause secondary AI:
+
+7. **Cortisol <400-500 nmol/L (but ACTH low)** — Synacthen test in secondary AI:
+
+8. **Secondary/tertiary AI (more physiological)** — Low-dose (1mcg) Synacthen preferred for:
+
+9. **Weeks to months after steroid stop** — Tertiary AI recovery:
+
+10. **Postpartum pituitary necrosis (hypopituitarism)** — Sheehan syndrome:
+
+
+### SBAs
+1. **Secondary adrenal insufficiency** — Post-pituitary surgery: fatigue, hypotension, Na+ 130, K+ 4.0, cortisol 40, ACTH 5. Diagnosis?
+
+2. **Tertiary AI (steroid withdrawal)** — Patient on prednisolone 20mg 6 months stops abruptly: hypotension, hypoglycaemia. Diagnosis?
+
+3. **Yes (15-20mg AM + 5-10mg PM) but NO fludrocortisone** — Secondary AI: hydrocortisone replacement same as primary?
+
+4. **Empty sella / pituitary atrophy** — Sheehan syndrome: postpartum woman unable to breastfeed, fatigue, hypotension. Pituitary MRI?
+
+5. **Taper over weeks-months; no fixed formula; 2.5-5mg pred reduction q1-2wk** — Steroid withdrawal taper >3 weeks:
+

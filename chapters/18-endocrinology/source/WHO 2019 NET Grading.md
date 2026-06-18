@@ -1,0 +1,480 @@
+---
+tags: [medicine, endocrinology, davidson, who-2019-grading, neuroendocrine, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - WHO 2019 grading unified neuroendocrine neoplasm classification across all sites. Key viva: Ki-67/mitotic count thresholds for NET G1/G2 vs NEC G3, distinction between well-differentiated NET and poorly differentiated NEC, and treatment implications by grade."
+see_also: ["Carcinoid Syndrome", "Pancreatic NETs", "Bronchial NETs", "Merkel Cell Carcinoma", "Neuroendocrine Tumours", "MEN1", "MEN2A"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# WHO 2019 Grading of Neuroendocrine Neoplasms
+
+> [!info]
+> **WHO 2019 Classification = Unified Grading System for All Neuroendocrine Neoplasms (NENs) Across All Sites.** **Three-Tier System: NET G1, NET G2, NEC G3.** **Ki-67 Index and Mitotic Count** as Primary Parameters. **Well-Differentiated (NET G1/G2) vs Poorly-Differentiated (NEC G3)** = Fundamental Prognostic/Treatment Distinction.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Apply WHO 2019 grading criteria using Ki-67 index and mitotic count
+- [ ] Distinguish well-differentiated NETs (G1/G2) from poorly-differentiated NEC (G3)
+- [ ] Apply grading to guide prognosis and treatment selection
+- [ ] Recognise site-specific adaptations and exceptions
+- [ ] Recognise mixed neuroendocrine-non-neuroendocrine neoplasms (MiNEN)
+
+---
+
+## 2. WHO 2019 Grading Criteria — Three-Tier System
+
+| Grade | Mitotic Count (per 2 mm²) | Ki-67 Index (%) | Terminology | Differentiation |
+|-------|---------------------------|-----------------|-------------|-----------------|
+| **NET G1** | **<2** | **<3%** | **Well-Differentiated NET, Grade 1** | **Well-Differentiated** |
+| **NET G2** | **2-20** | **3-20%** | **Well-Differentiated NET, Grade 2** | **Well-Differentiated** |
+| **NEC G3** | **>20** | **>20%** | **Poorly Differentiated Neuroendocrine Carcinoma, Grade 3** | **Poorly Differentiated** |
+
+> **Key Principle**: **Ki-67 Index is Primary Parameter**; Mitotic Count Used if Ki-67 Unavailable/Equivocal.
+
+### Ki-67 Assessment — Technical Requirements
+| Requirement | Specification |
+|-----------|---------------|
+| **Antibody** | MIB-1 (Standard) |
+| **Counting Method** | **Hotspot Method** (Highest Labelling Region) |
+| **Field Count** | **≥2,000 Tumour Cells** (or 10 HPFs at 40x) |
+| **Scanning** | Systematic (Do Not Select Only Hotspots) |
+| **Reporting** | **Percentage (Ki-67 Index)** + **Mitotic Count (per 2mm²)** |
+
+---
+
+## 2. Grade Definitions & Clinical Implications
+
+| Grade | Ki-67 | Mitoses/2mm² | Differentiation | Typical Behaviour | Median Survival |
+|-------|-------|--------------|-----------------|------------------|----------------|
+| **NET G1** | **<3%** | **<2** | Well-Differentiated | Indolent; Slow Growth | **Years-Decades** |
+| **NET G2** | **3-20%** | **2-20** | Well-Differentiated | Intermediate Growth | **Years** |
+| **NEC G3** | **>20%** | **>20** | **Poorly Differentiated** | Aggressive; Rapid Growth | **Months (6-12)** |
+
+> **Critical Distinction**: **Well-Differentiated (NET G1/G2) vs Poorly Differentiated (NEC G3)** — **Fundamental Prognostic & Therapeutic Divide**.
+
+---
+
+## 2. Ki-67 Assessment — Practical Points
+
+| Issue | Guidance |
+|-------|----------|
+| **Hotspot vs Global** | **Hotspot Method** (Select Region of Highest Labelling) |
+| **Cell Count** | **≥2000 Tumour Nuclei** (Minimum) |
+| **Heterogeneity** | Sample **Multiple Blocks** (Primary + Metastases) |
+| **24h Fixation** | **Optimal Fixation: 6-72h in 10% Neutral Buffered Formalin** |
+| **Antibody** | **MIB-1** (Standard); Validate with Controls |
+| **Discordance** | If Ki-67 & Mitotic Count Discrepant → **Assign Higher Grade** |
+
+---
+
+## 3. Grade-Specific Prognosis & Management
+
+| Grade | Prognosis | Standard Treatment | Targeted Therapy |
+|-------|-----------|---------------------|------------------|
+| **NET G1** | Excellent (10-20+ yr) | **Surveillance** (<1cm); Surgery (Resectable) | SST Analogues (Symptom Control); PRRT (G1/G2 Progressive) |
+| **NET G2** | Good (5-10 yr) | Surgery (Resectable); SST Analogues (Symptomatic) | **PRRT (¹⁷⁷Lu-DOTATATE)**; Everolimus/Sunitinib |
+| **NEC G3** | Poor (6-18 mo) | **Platinum/Etoposide Chemotherapy** (1st Line) | **Chemo** (Cisplatin/Etoposide); **NO PRRT** |
+
+> **Critical**: **Well-Differentiated (NET G1/G2) ≠ NEC G3** — Different Biology, Treatment, Prognosis.
+
+---
+
+## 3. Site-Specific Adaptations & Exceptions
+
+| Site | Specific Considerations |
+|------|-------------------------|
+| **Pancreatic NETs** | Standard WHO 2019 Applies; **Insulinoma Often G1**; Non-Functional Often G1/G2 |
+| **Bronchial NETs** | **Typical Carcinoid = G1**; **Atypical Carcinoid = G2**; **LCNEC/SCLC = NEC G3** |
+| **Small Intestine / Appendix** | Mostly G1; Goblet Cell Carcinoma = Separate Entity |
+| **Rectal NETs** | Often G1; <1cm Often Endoscopic Resection; Size <1cm = Low Malignant Potential |
+| **Merkel Cell Carcinoma** | **Always NEC G3** (By Definition); **MCPyV+ vs UV-Negative** |
+| **Thymic NETs** | Often G2/G3; Paraneoplastic (Myasthenia, Cushing) |
+| **Medullary Thyroid Cancer** | **Always G3** (Calitonin High); RET Mutation Testing |
+
+---
+
+## 3. Mixed Neuroendocrine-Non-Neuroendocrine Neoplasms (MiNEN)
+
+| Feature | Details |
+|---------|---------|
+| **Definition** | **Single Tumour** with **Both Neuroendocrine (NE) + Non-NE Components** |
+| **Criteria** | **Each Component ≥30%** of Tumour Volume |
+| **NE Component** | Graded per WHO 2019 (NET G1/G2 or NEC G3) |
+| **Non-NE Component** | Graded per Site-Specific Criteria (e.g., Adenocarcinoma Grading) |
+| **Site Predilection** | **Appendix, Colon, Stomach, Pancreas** |
+| **Prognosis** | Driven by **Higher-Grade Component** |
+| **Management** | Treat **Both Components** (e.g., Surgery + Chemo for NEC Component) |
+
+---
+
+## 4. Grading & Treatment Algorithm
+
+```
+NEN Diagnosed
+    │
+    ├── WELL-DIFFERENTIATED (Morphology)
+    │     ├── Ki-67 <3% & Mitoses <2 → NET G1
+    │     │     → Surgery if Resectable; Surveillance; SST Analogues; PRRT (Progressive)
+    │     ├── Ki-67 3-20% / Mitoses 2-20 → NET G2
+    │     │     → Surgery (Resectable); SST Analogues; Everolimus/Sunitinib; PRRT
+    │     └── Ki-67 >20% / Mitoses >20
+    │           ├── WELL-DIFFERENTIATED MORPHOLOGY → NET G3 (Rare, Controversial)
+    │           └── POORLY DIFFERENTIATED MORPHOLOGY → NEC G3
+    │                 → Platinum/Etoposide Chemo; NO PRRT
+```
+
+---
+
+## 4. Special Categories & Exceptions
+
+### NET G3 (Well-Differentiated Grade 3)
+| Feature | Details |
+|---------|---------|
+| **Definition** | **Well-Differentiated Morphology** + **Ki-67 >20% (or Mitoses >20)** |
+| **Frequency** | Rare (~5% of NENs) |
+| **Behaviour** | Intermediate (Better than NEC G3, Worse than NET G2) |
+| **Management** | **Controversial** — SST Analogues + PRRT Often Used; Chemo if Aggressive |
+
+### Mixed Neuroendocrine-Non-Neuroendocrine Neoplasms (MiNEN)
+| Feature | Details |
+|---------|---------|
+| **Definition** | **Single Tumour** with **NE + Non-NE Components** (Each ≥30%) |
+| **Grading** | **NE Component Graded per WHO 2019**; Non-NE Graded by Site Rules |
+| **Common Sites** | Appendix, Colon, Stomach, Pancreas |
+| **Prognosis** | Driven by **Higher-Grade Component** |
+| **Treatment** | **Multimodal** (Surgery + Systemic Therapy for Each Component) |
+
+### Amphicrine / Composite Tumours
+| Feature | Details |
+|---------|---------|
+| **Definition** | Dual Differentiation (Same Cell Lineage: NE + Non-NE) — Rare |
+| **Example** | Goblet Cell Carcinoids (Appendix) — Hybrid Features |
+
+---
+
+## 4. Grading & Treatment Algorithm
+
+### Decision Tree for Treatment
+```
+NEN Diagnosis
+    │
+    ├── Morphology Well-Differentiated?
+    │     ├── YES → Ki-67 <3% / Mitoses <2 → NET G1 → Surgery / Surveillance / SST Analogues
+    │     ├── YES → Ki-67 3-20% / Mitoses 2-20 → NET G2 → Surgery + SST Analogues ± PRRT / Everolimus / Sunitinib
+    │     └── YES → Ki-67 >20% / Mitoses >20
+    │           ├── Well-Diff Morphology → NET G3 (Rare) → SST Analogues + PRRT ± Chemo
+    │           └── Poorly Diff Morphology → NEC G3 → Platinum/Etoposide Chemo (NO PRRT)
+    │
+    └── Morphology Poorly Differentiated → NEC G3 → Platinum/Etoposide Chemo
+```
+
+---
+
+## 5. Grade-Specific Surveillance & Monitoring
+
+| Grade | Imaging | Biochemical | Frequency |
+|-------|---------|-------------|-----------|
+| **NET G1** | **Annual** CT/MRI + ⁶⁸Ga-DOTATATE PET | CgA, Hormones | **Annual** |
+| **NET G2** | **6-Monthly** CT/MRI + ⁶⁸Ga-DOTATATE | CgA, Hormones, Ki-67 | **6-Monthly** |
+| **NET G3 (Well-Diff)** | **3-6 Monthly** CT + ⁶⁸Ga-DOTATATE | CgA, Hormones | **3-6 Months** |
+| **NEC G3** | **3-Monthly** CT + FDG-PET | CgA, NSE, ProGRP | **3-Monthly** |
+
+---
+
+## 5. Treatment Selection by Grade
+
+| Grade | 1st Line | 2nd Line | 3rd Line |
+|-------|----------|----------|----------|
+| **NET G1** | Surgery / Surveillance | SST Analogues | PRRT (Progressive) |
+| **NET G2** | Surgery / SST Analogues | PRRT / Everolimus / Sunitinib | Chemotherapy (CAPTEM) |
+| **NET G3 (Well-Diff)** | SST Analogues + PRRT | Everolimus / Sunitinib | Chemotherapy (If Aggressive) |
+| **NEC G3** | **Platinum + Etoposide** | **CAPTEM** (Capecitabine + Temozolomide) | Clinical Trial |
+
+### Key Drug Indications by Grade
+| Drug | NET G1 | NET G2 | NET G3 | NEC G3 |
+|------|--------|--------|--------|--------|
+| **SST Analogues** | 1st Line (Symptom Control) | 1st Line | Consider | **Not Recommended** |
+| **PRRT** | Progressive | **1st Line (Progressive)** | Consider | **Contraindicated** |
+| **Everolimus** | 2nd Line | **1st Line** | 2nd Line | No |
+| **Sunitinib** | 2nd Line | **1st Line** | 2nd Line | No |
+| **Platinum/Etoposide** | No | Rare | Consider | **1st Line** |
+| **CAPTEM** | No | 2nd Line | 2nd Line | 2nd Line |
+
+---
+
+## 5. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **WHO 2019 Grading** | **3 Tiers**: NET G1 (<3% Ki-67), NET G2 (3-20%), NEC G3 (>20% Ki-67) |
+| **Primary Parameter** | **Ki-67 Index (Primary)**; Mitotic Count (Secondary) |
+| **NET G1 vs G2** | G1: <3% Ki-67; G2: 3-20% Ki-67 |
+| **NEC G3** | **Poorly Differentiated**; **Ki-67 >20%**; Mitoses >20/2mm² |
+| **Well-Diff vs Poorly-Diff** | **Fundamental Divide**: NET G1/G2 vs NEC G3 |
+| **NET G3 Controversy** | Well-Diff Morphology + Ki-67 >20% = "NET G3" (Controversial) |
+| **MiNEN** | ≥30% Each Component (NE + Non-NE); Grade Each Separately |
+| **Ki-67 Assessment** | MIB-1; Hotspot Method; ≥2000 Cells; >20% = G3 |
+| **NET G3 Controversy** | Well-Diff Morphology + Ki-67 >20% = "NET G3" (Debated) |
+| **NEC G3 Treatment** | **Cisplatin/Etoposide** (SCLC-Type); **No PRRT** |
+| **PRRT Indication** | SSTR2+ NET G1/G2 Progressive; **Not for NEC G3** |
+| **MiNEN** | ≥30% Each Component; Grade Separately |
+| **Ki-67 Assessment** | MIB-1; Hotspot; ≥2000 Cells; Discordant → Higher Grade |
+| **Mitotic Count** | Per 2mm²; 40x HPF; 5mm² Field Area |
+
+---
+
+## 9. Mind Map
+
+```mermaid
+mindmap
+  root((WHO 2019 NET Grading))
+    Three Tiers
+      NET G1: Ki-67 <3%, Mitoses <2
+      NET G2: Ki-67 3-20%, Mitoses 2-20
+      NEC G3: Ki-67 >20%, Mitoses >20
+    Key Distinction
+      NET G1/G2 = Well-Differentiated → Favorable
+      NEC G3 = Poorly Differentiated → Aggressive
+    Ki-67 Assessment
+      MIB-1 Antibody
+      Hotspot Method (Highest Labeling)
+      ≥2000 Cells Counted
+      Discordance → Higher Grade
+    Corner Cases
+      NET G3 (Well-Diff + Ki-67 >20%)
+      MiNEN (≥30% NE + Non-NE)
+      Amphicrine
+    Treatment by Grade
+      G1: Surgery/Surveillance/SST
+      G2: Surgery/SST/PRRT/Everolimus
+      G3 (Well-Diff): SST/PRRT ± Chemo
+      NEC G3: Platinum/Etoposide (No PRRT)
+    MiNEN
+      ≥30% NE + Non-NE
+      Grade Each Separately
+      Treat Both Components
+```
+
+---
+
+## 10. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **WHO 2019 Grades** | **NET G1** (<3% Ki-67), **NET G2** (3-20%), **NEC G3** (>20%) |
+| **Primary Grading Parameter** | **Ki-67 Index** (MIB-1, Hotspot, ≥2000 Cells) |
+| **NET G1** | Ki-67 <3%, Mitoses <2; Indolent; Surveillance/Surgery |
+| **NET G2** | Ki-67 3-20%, Mitoses 2-20; Surgery + SST Analogues/PRRT |
+| **NEC G3** | Ki-67 >20%, Mitoses >20; Poorly Differentiated; Platinum/Etoposide |
+| **NET G1 vs G2** | Ki-67 Cutoff at 3% |
+| **NEC G3** | **No PRRT**; Cisplatin/Etoposide Chemotherapy |
+| **Mitotic Count** | Per 2mm² (40x HPF, ~0.5mm²); 10 HPFs Standard |
+| **Ki-67 Hotspot** | Highest Labelling Region; ≥2000 Nuclei |
+| **NET G3 Controversy** | Well-Diff Morph + Ki-67 >20% = "NET G3" (Debated Category) |
+| **MiNEN** | NE + Non-NE ≥30% Each; Grade Separately; Treat Both |
+| **Ki-67 vs Mitoses** | **Ki-67 Primary**; Mitoses Secondary (If Ki-67 Unavailable) |
+| **Discordance Rule** | Ki-67 vs Mitoses Discordant → Assign **Higher Grade** |
+| **MiNEN** | NE + Non-NE Each ≥30%; Grade Each Separately |
+| **NEC G3 Treatment** | **Cisplatin + Etoposide** (Like SCLC); **No PRRT** |
+| **PRRT Eligibility** | **SSTR2+ NET G1/G2** Progressive; **Not NEC G3** |
+| **MiNEN Prognosis** | Driven by Higher-Grade Component |
+
+---
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Neuroendocrine Tumours|Neuroendocrine Tumours]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[Carcinoid Syndrome]], [[Pancreatic NETs]], [[Bronchial NETs]], [[Merkel Cell Carcinoma]], [[Neuroendocrine Tumours]], [[MEN1]]
+## MCQs (10)
+1. **WHO 2019 NET grading uses:**
+   A. Ki-67 index + mitotic count (per 2mm²); both assessed, higher grade assigned
+   B. Ki-67 only
+   C. Mitotic count only
+   D. Size only
+   E. Stage only
+
+2. **NET G1 (well-differentiated) criteria:**
+   A. Ki-67 <3% AND mitoses <2/2mm²
+   B. Ki-67 <5%
+   C. Ki-67 3-20%
+   D. Ki-67 >20%
+   E. Any Ki-67 if mitoses <2
+
+3. **NET G2 (well-differentiated) criteria:**
+   A. Ki-67 3-20% OR mitoses 2-20/2mm²
+   B. Ki-67 <3%
+   C. Ki-67 >20%
+   D. Mitoses >20
+   E. Size >2cm
+
+4. **NEC G3 (poorly differentiated) criteria:**
+   A. Ki-67 >20% OR mitoses >20/2mm² + poorly differentiated morphology
+   B. Ki-67 3-20%
+   C. Well-differentiated morphology
+   D. Mitoses <2
+   E. Ki-67 <3%
+
+5. **NET G3 (well-differentiated high-grade) — NEW in WHO 2019:**
+   A. Ki-67 >20% OR mitoses >20/2mm² BUT well-differentiated morphology (NET G3 distinct from NEC G3)
+   B. Poorly differentiated
+   C. Ki-67 <3%
+   D. Mitoses <2
+   E. Not a real category
+
+6. **Ki-67 assessment methodology:**
+   A. Hot spot counting: 500-2000 cells in highest labelling area; MIB-1 antibody
+   B. Random fields only
+   C. Average of whole tumour
+   D. Only mitotic count
+   E. No standardisation
+
+7. **Mitotic count methodology:**
+   A. 2mm² (10 HPF at 40x); count mitoses in most mitotically active areas
+   B. 1mm²
+   C. Whole slide
+   D. Random fields
+   E. No standard
+
+8. **Grade determines:**
+   A. Prognosis + treatment (G1/G2: SST/PRRT/everolimus/sunitinib; G3 NEC: platinum+etoposide)
+   B. Only prognosis
+   C. Only treatment
+   D. Neither
+   E. Surgery only
+
+9. **pNET vs GI-NET grading:**
+   A. Same WHO 2019 criteria apply to all gastroenteropancreatic NETs
+   B. Different criteria
+   C. pNET no grading
+   D. GI-NET no grading
+   E. Only pNET graded
+
+10. **NET G3 vs NEC G3 treatment difference:**
+   A. NET G3: SST/PRRT/everolimus/sunitinib/CAPTEM; NEC G3: platinum+etoposide (chemo 1st line)
+   B. Same treatment
+   C. Both chemo only
+   D. Both SST only
+   E. No treatment for either
+
+## SBA Questions (5)
+1. **Pancreatic NET biopsy: Ki-67 25% (hot spot), mitoses 15/2mm², well-differentiated morphology (organoid, trabecular). Grade?**
+   A. NET G3 (well-differentiated high-grade) — NEW category in WHO 2019
+   B. NEC G3
+   C. NET G2
+   D. NET G1
+   E. Cannot grade
+
+2. **Same patient: treatment approach for metastatic NET G3?**
+   A. CAPTEM or SST analogues ± PRRT (like G2); NOT platinum+etoposide 1st line
+   B. Platinum + etoposide (like NEC G3)
+   C. Surgery only
+   D. Observation
+   E. Sunitinib only
+
+3. **Small cell lung cancer morphology: Ki-67 80%, mitoses 60/2mm², necrosis, poorly differentiated. Grade?**
+   A. NEC G3 (poorly differentiated neuroendocrine carcinoma)
+   B. NET G3
+   C. NET G2
+   D. NET G1
+   E. LCNEC
+
+4. **Lung NET: Ki-67 5%, mitoses 3/2mm². Classification?**
+   A. Atypical carcinoid (AC) — intermediate grade NET G2 equivalent
+   B. Typical carcinoid (TC)
+   C. LCNEC
+   D. SCLC
+   E. NET G1
+
+5. **Ki-67 heterogeneity: biopsy shows 3%, resection shows 18%. Which grade?**
+   A. Grade based on HIGHEST sample (resection 18% = NET G2); biopsy may underestimate
+   B. Biopsy grade (3% = G1)
+   C. Average (10% = G2)
+   D. Cannot determine
+   E. Always G3
+
+## Flashcards
+- **Q: WHO 2019 grading**
+  **A: Ki-67 + mitotic count (2mm²); assign HIGHER grade if discordant**
+
+- **Q: NET G1**
+  **A: Ki-67 <3% + mitoses <2/2mm²; well-differentiated**
+
+- **Q: NET G2**
+  **A: Ki-67 3-20% OR mitoses 2-20/2mm²; well-differentiated**
+
+- **Q: NET G3 (NEW)**
+  **A: Ki-67 >20% OR mitoses >20/2mm² + WELL-DIFFERENTIATED morphology**
+
+- **Q: NEC G3**
+  **A: Ki-67 >20% OR mitoses >20/2mm² + POORLY DIFFERENTIATED morphology**
+
+- **Q: Key distinction**
+  **A: NET G3 vs NEC G3 = MORPHOLOGY (well vs poorly differentiated)**
+
+- **Q: Ki-67 method**
+  **A: MIB-1 antibody; hot spot; 500-2000 cells; report highest**
+
+- **Q: Mitotic count**
+  **A: 2mm² (10 HPF at 40x); most active areas**
+
+- **Q: Lung NET terms**
+  **A: TC = NET G1; AC = NET G2; LCNEC = NEC G3; SCLC = NEC G3**
+
+- **Q: Treatment by grade**
+  **A: G1/G2: SST, PRRT, everolimus, sunitinib, CAPTEM; NEC G3: platinum+etoposide**
+
+- **Q: NET G3 treatment**
+  **A: Like G2 (SST/PRRT/CAPTEM/targeted); NOT platinum+etoposide 1st line**
+
+- **Q: NEC G3 treatment**
+  **A: Platinum + etoposide (cisplatin/carboplatin); 1st line chemo**
+
+- **Q: Discordance rule**
+  **A: Higher grade assigned if Ki-67 and mitoses give different grades**
+
+- **Q: Biopsy vs resection**
+  **A: Grade based on HIGHEST specimen (resection > biopsy)**
+
+- **Q: Clinical impact**
+  **A: Grade drives prognosis, surveillance intensity, and therapeutic algorithm**
+
+## Answer Key with Explanations
+### MCQs
+1. **Ki-67 index + mitotic count (per 2mm²); both assessed, higher grade assigned** — WHO 2019 NET grading uses:
+
+2. **Ki-67 <3% AND mitoses <2/2mm²** — NET G1 (well-differentiated) criteria:
+
+3. **Ki-67 3-20% OR mitoses 2-20/2mm²** — NET G2 (well-differentiated) criteria:
+
+4. **Ki-67 >20% OR mitoses >20/2mm² + poorly differentiated morphology** — NEC G3 (poorly differentiated) criteria:
+
+5. **Ki-67 >20% OR mitoses >20/2mm² BUT well-differentiated morphology (NET G3 distinct from NEC G3)** — NET G3 (well-differentiated high-grade) — NEW in WHO 2019:
+
+6. **Hot spot counting: 500-2000 cells in highest labelling area; MIB-1 antibody** — Ki-67 assessment methodology:
+
+7. **2mm² (10 HPF at 40x); count mitoses in most mitotically active areas** — Mitotic count methodology:
+
+8. **Prognosis + treatment (G1/G2: SST/PRRT/everolimus/sunitinib; G3 NEC: platinum+etoposide)** — Grade determines:
+
+9. **Same WHO 2019 criteria apply to all gastroenteropancreatic NETs** — pNET vs GI-NET grading:
+
+10. **NET G3: SST/PRRT/everolimus/sunitinib/CAPTEM; NEC G3: platinum+etoposide (chemo 1st line)** — NET G3 vs NEC G3 treatment difference:
+
+### SBAs
+1. **NET G3 (well-differentiated high-grade) — NEW category in WHO 2019** — Pancreatic NET biopsy: Ki-67 25% (hot spot), mitoses 15/2mm², well-differentiated morphology (organoid, trabecular). Grade?
+
+2. **CAPTEM or SST analogues ± PRRT (like G2); NOT platinum+etoposide 1st line** — Same patient: treatment approach for metastatic NET G3?
+
+3. **NEC G3 (poorly differentiated neuroendocrine carcinoma)** — Small cell lung cancer morphology: Ki-67 80%, mitoses 60/2mm², necrosis, poorly differentiated. Grade?
+
+4. **Atypical carcinoid (AC) — intermediate grade NET G2 equivalent** — Lung NET: Ki-67 5%, mitoses 3/2mm². Classification?
+
+5. **Grade based on HIGHEST sample (resection 18% = NET G2); biopsy may underestimate** — Ki-67 heterogeneity: biopsy shows 3%, resection shows 18%. Which grade?

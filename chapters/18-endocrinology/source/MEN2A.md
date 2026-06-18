@@ -1,0 +1,425 @@
+---
+tags: [medicine, endocrinology, davidson, men2a, multiple-endocrine-neoplasia, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - MEN2A (Sipple Syndrome) = MTC + Phaeochromocytoma + Primary Hyperparathyroidism. RET proto-oncogene. Prophylactic thyroidectomy timing based on RET codon mutation. Key viva: RET codon risk stratification, prophylactic surgery timing, and genetic counselling."
+see_also: ["MEN1", "MEN2B", "MEN4", "Medullary Thyroid Cancer", "Phaeochromocytoma/Paraganglioma", "Primary Hyperparathyroidism", "RET Proto-Oncogene"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# MEN2A (Sipple Syndrome)
+
+> [!info]
+> **MEN2A = Sipple Syndrome.** **Autosomal Dominant** (Penetrance ~95% by Age 50). **RET Proto-Oncogene** (Chromosome 10q11.2). **Triad: MTC + Phaeochromocytoma + Primary Hyperparathyroidism.** **RET Codon 634 (Cysteine) = 85% of Mutations.**
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Define MEN2A and its classic triad
+- [ ] Apply RET codon-based risk stratification for prophylactic thyroidectomy
+- [ ] Manage each component (MTC, Phaeochromocytoma, PHPT)
+- [ ] Apply genetic testing and family screening protocols
+- [ ] Counsel on prophylactic thyroidectomy timing based on RET codon
+
+---
+
+## 2. Genetics & Pathophysiology
+
+| Feature | Details |
+|--------|---------|
+| **Gene** | **RET Proto-Oncogene** (Chromosome 10q11.2) |
+| **Inheritance** | **Autosomal Dominant** (Penetrance ~95% by Age 50) |
+| **Mutation Type** | **Gain-of-Function (Activating)** — Constitutive RET Activation |
+| **Key Codons** | **634 (Cysteine)** — **85% of MEN2A**; 609, 611, 618, 620, 630 (Cysteine-Rich Domain) |
+| **Protein** | Receptor Tyrosine Kinase → Constitutive Activation → Cell Proliferation |
+| **Penetrance** | **MTC ~100% by Age 70**; Phaeo ~50%; PHPT ~20-30% |
+
+---
+
+## 2. MEN2A Triad — Clinical Features
+
+| Component | Frequency | Key Features |
+|-----------|-----------|--------------|
+| **Medullary Thyroid Cancer (MTC)** | **~100% (Penetrance ~100% by Age 70)** | **Earliest Manifestation**; C-Cell Hyperplasia → Nodule → MTC |
+| **Phaeochromocytoma** | **~50%** | Often Bilateral; May Be Asymptomatic; Catecholamine Excess |
+| **Primary Hyperparathyroidism** | **20-30%** | Usually Mild; Multigland Hyperplasia (vs Single Adenoma) |
+
+---
+
+## 2. RET Codon Risk Stratification (ATA Guidelines)
+
+| Risk Level | RET Codons | MTC Risk | Prophylactic Thyroidectomy Timing |
+|------------|------------|----------|-----------------------------------|
+| **Highest (Level A)** | **M918T (Exon 16)**, **A883F (Exon 15)** | **Highest** (Aggressive, Early Metastasis) | **<1 Year** (Ideally 6-12 Months) |
+| **High (Level B)** | **Codon 634** (Cysteine) — **85% of MEN2A** | High | **5 Years** (or Earlier if Calcitonin ↑) |
+| **Moderate (Level C)** | Codons 609, 611, 618, 620, 630 (Cysteine-Rich Domain) | Moderate | **5-10 Years** (Calcitonin-Guided) |
+| **Lower (Level D)** | Codons 768, 804, 891 | Lower | **10-20 Years** (Calcitonin-Guided) |
+
+---
+
+## 3. Component Management
+
+### Medullary Thyroid Cancer (MTC)
+| Aspect | Details |
+|--------|---------|
+| **Presentation** | Thyroid Nodule, Diarrhoea (Calcitonin/Serotonin), Flushing, Bone Pain (Mets) |
+| **Biochemical** | **Calcitonin ↑↑** (Correlates with Tumour Burden); **CEA ↑** |
+| **Genetics** | RET Mutation Analysis → **Prophylactic Thyroidectomy Timing** |
+| **Prophylactic Thyroidectomy** | **Total Thyroidectomy + Central Neck Dissection** (Level VI) |
+| **Post-Op** | **Calcitonin Monitoring** (Basal + Pentagastrin/Calcium Stimulation); Undetectable = Cure |
+| **Recurrence** | Basal Calcitonin >150 pg/mL → Structural Recurrence (Imaging) |
+
+### Phaeochromocytoma (MEN2A)
+| Feature | Details |
+|---------|---------|
+| **Frequency** | ~50% (Often Bilateral) |
+| **Biochemistry** | **Plasma Free Metanephrines / Normetanephrines** (Gold Standard) |
+| **Imaging** | **⁶⁸Ga-DOTATATE PET/CT** (Best); CT/MRI Adrenal; **¹²³I-MIBG** |
+| **Pre-Op** | **Alpha-Blockade First (Phenoxybenzamine 10mg BD → Titrate)** → Beta-Blocker After Alpha |
+| **Surgery** | **Laparoscopic Adrenalectomy** (Cortical-Sparing if Bilateral) |
+
+### Primary Hyperparathyroidism (MEN2A)
+| Feature | Details |
+|---------|---------|
+| **Frequency** | 20-30% |
+| **Pathology** | **Multigland Hyperplasia** (vs Single Adenoma) |
+| **Biochemistry** | Mild Hypercalcaemia; PTH Inappropriately Normal/High |
+| **Surgery** | **Subtotal (3.5-Gland) Parathyroidectomy** + Autotransplant (Forearm) |
+
+---
+
+## 3. Prophylactic Thyroidectomy — Timing Guidelines (ATA)
+
+| RET Mutation Level | Codons | Thyroidectomy Age | Procedure |
+|-------------------|--------|-------------------|---------|
+| **A (Highest)** | **M918T, A883F** | **<1 Year** (6-12 Months) | Total Thyroidectomy + Central Neck Dissection |
+| **B (High)** | **Codon 634** (85% MEN2A) | **5 Years** (or Earlier if Calcitonin ↑) | Total Thyroidectomy + CND |
+| **C (Moderate)** | 609, 611, 618, 620, 630 | **5-10 Years** (Calcitonin-Guided) | Total Thyroidectomy + CND |
+| **D (Lower)** | 768, 804, 891 | **10-20 Years** (Calcitonin-Guided) | Total Thyroidectomy + CND |
+
+**Key**: **Calcitonin Monitoring** from Infancy (q6-12mo); Rising Calcitonin → Earlier Surgery.
+
+---
+
+## 3. Phaeochromocytoma in MEN2A — Specifics
+
+| Feature | Details |
+|---------|---------|
+| **Bilaterality** | **50-70%** (vs 10% Sporadic) |
+| **Genetics** | RET Codon 634 (Common); Also SDHB/SDHD in Sporadic |
+| **Pre-Op Alpha-Blockade** | **Phenoxybenzamine 10mg BD → Titrate 20-80mg/day Over 2-3 Weeks** |
+| **Beta-Blockade** | **ONLY After Alpha-Blockade Established** (Else Unopposed α → Crisis) |
+| **Surgery** | **Cortical-Sparing Adrenalectomy** (If Bilateral) → Preserve Adrenal Function |
+
+---
+
+## 4. Genetic Testing & Family Screening
+
+| Aspect | Details |
+|--------|---------|
+| **Gene** | **RET** (Chromosome 10q11.2) — Proto-Oncogene |
+| **Inheritance** | **Autosomal Dominant** (Penetrance ~95% by Age 50) |
+| **Genetic Testing** | **RET Sequencing** (All Patients + 1st-Degree Relatives) |
+| **Prenatal / Preimplantation** | **Available** (If Familial Mutation Known) |
+| **Cascade Screening** | **50% Risk to Offspring**; Offer Predictive Testing from Childhood |
+
+---
+
+## 4. Surveillance Protocol (MEN2A)
+
+| Component | Frequency | Method |
+|---------|-----------|--------|
+| **Calcitonin** | **6-12 Monthly** (From Infancy) | Basal + Pentagastrin/Calcium Stimulation |
+| **Plasma Metanephrines** | **Annual** | Plasma Free Metanephrines |
+| **Adrenal Imaging** | **Annual** | CT/MRI Adrenal + ⁶⁸Ga-DOTATATE PET (If Suspect Phaeo) |
+| **Neck Ultrasound** | **Annual** (From Age 5) | Thyroid Nodules, Lymph Nodes |
+| **Calcium + PTH** | **Annual** | From Age 10 |
+| **Genetic Counselling** | At Diagnosis | Cascade Testing of Relatives |
+
+---
+
+## 5. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **MEN2A Triad** | **MTC + Phaeochromocytoma + Primary HPT** |
+| **Gene** | **RET Proto-Oncogene** (Chromosome 10q11.2) |
+| **Inheritance** | **Autosomal Dominant** (Penetrance ~95% by 50) |
+| **Most Common Mutation** | **Codon 634 (Cysteine)** — **85% of MEN2A** |
+| **Prophylactic Thyroidectomy** | **Codon 634 → Age 5 Years**; **M918T/A883F → <1 Year** |
+| **MTC** | **Calcitonin** = Tumour Marker; Prophylactic Thyroidectomy by Genotype |
+| **Phaeochromocytoma in MEN2A** | **50% Bilateral**; **Alpha-Blockade First (Phenoxybenzamine)** |
+| **HPT in MEN2A** | **Multigland Hyperplasia**; Subtotal PTX + Autotransplant |
+| **RET Codon 634** | **85% of MEN2A**; Prophylactic Thyroidectomy at **Age 5** |
+| **M918T / A883F** | **Highest Risk**; Thyroidectomy **<1 Year** |
+| **Calcitonin Monitoring** | **Basal + Stimulated (Pentagastrin/Ca)**; q6-12mo |
+| **Phaeochromocytoma Pre-Op** | **Alpha-Blockade FIRST** (Phenoxybenzamine) → **Then Beta-Blocker** |
+| **Bilateral Phaeo in MEN2A** | **Cortical-Sparing Adrenalectomy** Preferred |
+| **Genetic Testing** | **RET Sequencing**; Cascade Testing of Relatives |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **MEN2A vs MEN2B** | MEN2A = MTC + Phaeo + HPT; MEN2B = MTC + Phaeo + **Marfanoid/Neuromas** (No HPT) |
+| **MEN1 vs MEN2A** | MEN1 = Parathyroid + Pituitary + Pancreas (3Ps); MEN2A = MTC + Phaeo + Hyperparathyroidism |
+| **Codon 634** | **Most Common MEN2A** (85%); **Prophylactic Thyroidectomy at Age 5** |
+| **M918T / A883F** | **Highest Risk**; Thyroidectomy **<1 Year** |
+| **Prophylactic Thyroidectomy** | **Not Optional** — Prevents MTC (Near 100% Penetrance) |
+| **Calcitonin Monitoring** | **q6-12mo**; Basal + Stimulated (Pentagastrin/Ca²⁺) |
+| **Phaeochromocytoma Pre-Op** | **Alpha-Blockade FIRST** (Phenoxybenzamine 2+ Weeks) → Then Beta-Blocker |
+| **Bilateral Phaeo** | **Cortical-Sparing Adrenalectomy** (Preserve Adrenal Function) |
+| **Calcitonin Post-Op** | **Undetectable** = Cure; Rising = Recurrence |
+| **Genetic Counselling** | 50% Offspring Risk; Cascade Screening; Prenatal Available |
+
+---
+
+## 9. Mind Map
+
+```mermaid
+mindmap
+  root((MEN2A - Sipple Syndrome))
+    Genetics
+      RET Proto-Oncogene (10q11.2)
+      AD, Penetrance ~95% by 50
+      Codon 634 (85%) vs M918T/A883F
+    Triad
+      MTC (100% Penetrance)
+      Phaeochromocytoma (50%)
+      Primary HPT (20-30%)
+    RET Codon Risk
+      A: M918T, A883F → Thyroidectomy <1yr
+      B: Codon 634 (85%) → Thyroidectomy Age 5
+      C: 609,611,618,620,630 → 5-10yr
+      D: 768,804,891 → 10-20yr
+    MTC
+      Calcitonin ↑↑ (Tumour Marker)
+      Prophylactic Thyroidectomy by Codon
+      Post-Op: Calcitonin Surveillance
+    Phaeochromocytoma
+      50% Bilateral
+      Alpha-Blockade First (Phenoxybenzamine)
+      Cortical-Sparing Adrenalectomy
+      Genetic: RET, SDHB (if Sporadic)
+    HPT
+      Multigland Hyperplasia
+      Subtotal PTX + Autotransplant
+    Genetics
+      RET Proto-Oncogene (10q11.2)
+      AD, Penetrance ~95%
+      Cascade Screening (50% Offspring)
+    Surveillance
+      Calcitonin q6-12mo (Basal + Stim)
+      Metanephrines Annual
+      Neck US Annual
+      Ca/PTH Annual
+```
+
+---
+
+## 9. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **MEN2A Triad** | **MTC + Phaeochromocytoma + Primary HPT** |
+| **Gene** | **RET Proto-Oncogene** (Chromosome 10q11.2) |
+| **Inheritance** | **Autosomal Dominant** (Penetrance ~95% by Age 50) |
+| **Most Common Mutation** | **Codon 634 (Cysteine) — 85% of MEN2A** |
+| **Prophylactic Thyroidectomy** | **Codon 634 → Age 5**; **M918T/A883F → <1 Year** |
+| **MTC Surveillance** | **Calcitonin q6-12mo** (Basal + Stimulated) |
+| **Phaeochromocytoma in MEN2A** | **Bilateral in 50%**; Alpha-Blockade First; **Cortical-Sparing Adrenalectomy** |
+| **HPT in MEN2A** | **Multigland Hyperplasia**; Subtotal Parathyroidectomy + Autotransplant |
+| **RET Codon 634** | **85% of MEN2A**; Prophylactic Thyroidectomy at **Age 5** |
+| **M918T / A883F** | **Highest Risk**; Thyroidectomy **<1 Year** |
+| **Calcitonin Monitoring** | q6-12mo (Basal + Stimulated); Undetectable Post-Op = Cure |
+| **Phaeo Pre-Op** | **Alpha-Blockade FIRST** (Phenoxybenzamine 2+ Weeks) → Beta-Blocker |
+| **Bilateral Phaeo** | Cortical-Sparing Adrenalectomy (Preserve Function) |
+| **Genetic Testing** | RET Sequencing; Cascade Screening (50% Offspring Risk) |
+| **HPT in MEN2A** | Multigland Hyperplasia (Not Single Adenoma); Subtotal PTX |
+
+---
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Multiple Endocrine Neoplasia|Multiple Endocrine Neoplasia]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[MEN1]], [[MEN2B]], [[MEN4]], [[Medullary Thyroid Cancer]], [[Phaeochromocytoma/Paraganglioma]], [[Primary Hyperparathyroidism]]
+## MCQs (10)
+1. **MEN2A =**
+   A. Medullary Thyroid Cancer + Phaeochromocytoma + Primary Hyperparathyroidism; RET gene
+   B. MEN1
+   C. MEN2B
+   D. MEN4
+   E. Isolated
+
+2. **MEN2A MTC:**
+   A. 100% penetrance; often multifocal/bilateral; C-cell hyperplasia precursor
+   B. Rare
+   C. Unilateral only
+   D. Never spreads
+   E. No genetic basis
+
+3. **MEN2A phaeochromocytoma:**
+   A. ~50% penetrance; often bilateral; RET codon 634 mutation
+   B. Never
+   C. Always unilateral
+   D. Malignant always
+   E. Childhood only
+
+4. **MEN2A hyperparathyroidism:**
+   A. Primary HPT (hyperplasia/adenoma); ~20-30% penetrance; usually mild
+   B. Never
+   C. Always severe
+   D. Always carcinoma
+   E. Hypoparathyroidism
+
+5. **MEN2A RET mutations:**
+   A. Codons 609, 611, 618, 620, 630, 634 (cysteine-rich domain)
+   B. Random
+   C. Only codon 634
+   D. Only codon 918
+   E. No genetic basis
+
+6. **MEN2A MTC prophylaxis:**
+   A. Prophylactic thyroidectomy guided by RET codon; codon 634 -> age 5yr; codon 609/611/618/620/630 -> age 10-15yr
+   B. No prophylaxis
+   C. Total thyroidectomy at birth
+   D. Surgery only if symptomatic
+   E. RAI only
+
+7. **MEN2A phaeochromocytoma management:**
+   A. Pre-op alpha-blockade (phenoxybenzamine) -> surgery; bilateral in 50%; genetic testing
+   B. Surgery without blockade
+   C. RAI
+   D. Observation
+   E. Metyrosine only
+
+8. **MEN2A hyperparathyroidism surgery:**
+   A. Subtotal parathyroidectomy (3.5 glands) + autotransplant if indicated
+   B. Total parathyroidectomy
+   C. Single gland removal
+   D. Cinacalcet only
+   E. Observation
+
+9. **MEN2A vs MEN2B:**
+   A. MEN2A: MTC + phaeo + HPT; MEN2B: MTC + phaeo + marfanoid + mucosal neuromas; NO HPT
+   B. Same
+   C. MEN2A has marfanoid
+   D. MEN2B has HPT
+   E. Both same
+
+10. **MEN2A surveillance:**
+   A. Annual calcitonin, CEA, neck US; plasma metanephrines; calcium/PTH
+   B. No surveillance
+   C. Only calcitonin
+   D. Only CEA
+   E. Only neck US
+
+## SBA Questions (10)
+1. **25yo woman: MTC, phaeochromocytoma, hyperparathyroidism. RET codon 634. Family screening?**
+   A. RET testing for family; prophylactic thyroidectomy if positive
+   B. Calcitonin only
+   C. CEA only
+   D. No screening
+   E. Total thyroidectomy for all
+
+2. **Same patient: prophylactic thyroidectomy age?**
+   A. 5 years (codon 634 high-risk)
+   B. Birth
+   C. 10 years
+   D. Adulthood
+   E. Only if calcitonin elevated
+
+3. **MEN2A phaeochromocytoma: pre-op preparation?**
+   A. Alpha-blockade (phenoxybenzamine) 2-3 weeks -> surgery
+   B. Beta-blocker first
+   C. Surgery without blockade
+   D. RAI
+   E. Observation
+
+4. **MEN2A family: RET codon 609 mutation. Prophylactic thyroidectomy age?**
+   A. 10-15 years (moderate risk)
+   B. Birth
+   C. 5 years
+   D. 20 years
+   E. Only if calcitonin elevated
+
+5. **MEN2A vs MEN2B: key difference?**
+   A. MEN2A: HPT present; MEN2B: marfanoid + mucosal neuromas + NO HPT
+   B. MEN2B has HPT
+   C. MEN2A has marfanoid
+   D. Both same
+   E. MEN2B no phaeo
+
+## Flashcards
+- **Q: MEN2A**
+  **A: RET; MTC + Phaeo + HPT (3 Ps of MEN2A)**
+
+- **Q: MTC in MEN2A**
+  **A: 100% penetrance; multifocal/bilateral; C-cell hyperplasia precursor**
+
+- **Q: Phaeo in MEN2A**
+  **A: 50% penetrance; bilateral 50%; codon 634 common**
+
+- **Q: HPT in MEN2A**
+  **A: 20-30% penetrance; mild; hyperplasia/adenoma**
+
+- **Q: RET mutations**
+  **A: Codon 634 = high risk (early thyroidectomy 5yr); 609/611/618/620/630 = moderate (10-15yr)**
+
+- **Q: Prophylactic thyroidectomy**
+  **A: Codon 634: age 5yr; Codons 609/611/618/620/630: age 10-15yr**
+
+- **Q: Phaeo management**
+  **A: Alpha-blockade (phenoxybenzamine) >=2 weeks -> surgery; bilateral 50%**
+
+- **Q: HPT surgery**
+  **A: Subtotal (3.5 glands) + autotransplant if indicated**
+
+- **Q: Genetics**
+  **A: RET proto-oncogene; AD; cysteine-rich domain mutations**
+
+- **Q: Surveillance**
+  **A: Annual calcitonin, CEA, neck US, metanephrines, Ca/PTH**
+
+## Answer Key with Explanations
+### MCQs
+1. **Medullary Thyroid Cancer + Phaeochromocytoma + Primary Hyperparathyroidism; RET gene** — MEN2A =
+
+2. **100% penetrance; often multifocal/bilateral; C-cell hyperplasia precursor** — MEN2A MTC:
+
+3. **~50% penetrance; often bilateral; RET codon 634 mutation** — MEN2A phaeochromocytoma:
+
+4. **Primary HPT (hyperplasia/adenoma); ~20-30% penetrance; usually mild** — MEN2A hyperparathyroidism:
+
+5. **Codons 609, 611, 618, 620, 630, 634 (cysteine-rich domain)** — MEN2A RET mutations:
+
+6. **Prophylactic thyroidectomy guided by RET codon; codon 634 -> age 5yr; codon 609/611/618/620/630 -> age 10-15yr** — MEN2A MTC prophylaxis:
+
+7. **Pre-op alpha-blockade (phenoxybenzamine) -> surgery; bilateral in 50%; genetic testing** — MEN2A phaeochromocytoma management:
+
+8. **Subtotal parathyroidectomy (3.5 glands) + autotransplant if indicated** — MEN2A hyperparathyroidism surgery:
+
+9. **MEN2A: MTC + phaeo + HPT; MEN2B: MTC + phaeo + marfanoid + mucosal neuromas; NO HPT** — MEN2A vs MEN2B:
+
+10. **Annual calcitonin, CEA, neck US; plasma metanephrines; calcium/PTH** — MEN2A surveillance:
+
+
+### SBAs
+1. **RET testing for family; prophylactic thyroidectomy if positive** — 25yo woman: MTC, phaeochromocytoma, hyperparathyroidism. RET codon 634. Family screening?
+
+2. **5 years (codon 634 high-risk)** — Same patient: prophylactic thyroidectomy age?
+
+3. **Alpha-blockade (phenoxybenzamine) 2-3 weeks -> surgery** — MEN2A phaeochromocytoma: pre-op preparation?
+
+4. **10-15 years (moderate risk)** — MEN2A family: RET codon 609 mutation. Prophylactic thyroidectomy age?
+
+5. **MEN2A: HPT present; MEN2B: marfanoid + mucosal neuromas + NO HPT** — MEN2A vs MEN2B: key difference?
+

@@ -1,0 +1,507 @@
+---
+tags: [medicine, endocrinology, davidson, genetics, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Genetic endocrinology covers monogenic diabetes, multiple endocrine neoplasia, congenital adrenal hyperplasia, and syndromes. Key viva: inheritance patterns, gene-disease associations, and genetic testing indications."
+see_also: ["MEN1", "MEN2A", "MEN2B", "MEN4", "Monogenic Diabetes", "Congenital Adrenal Hyperplasia", "Familial Hypocalciuric Hypercalcaemia", "Turner Syndrome", "Klinefelter Syndrome", "Kallmann Syndrome"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Genetic Endocrinology
+
+> [!info]
+> **Genetic Endocrinology = Monogenic & Syndromic Endocrine Disorders.** **High-Yield for FCPS/MRCP:** Inheritance Patterns, Gene-Disease Associations, Genetic Testing Criteria, and Counselling.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Classify genetic endocrine disorders by inheritance pattern
+- [ ] Recognise key gene-disease associations
+- [ ] Apply genetic testing criteria (ACGS/UKGTN)
+- [ ] Counsel on recurrence risk and cascade testing
+- [ ] Recognise when to refer for clinical genetics
+
+---
+
+## 2. Inheritance Patterns & Recurrence Risks
+
+| Pattern | Recurrence Risk | Key Features |
+|---------|----------------|--------------|
+| **Autosomal Dominant (AD)** | 50% (Each Pregnancy) | Variable Penetrance, Variable Expressivity |
+| **Autosomal Recessive (AR)** | 25% (Each Pregnancy) | Both Parents Carriers; Consanguinity ↑ Risk |
+| **X-Linked Recessive (XLR)** | 50% Sons Affected, 50% Daughters Carriers | Males Affected; Females Carriers (May Be Symptomatic) |
+| **X-Linked Dominant (XLD)** | 50% Each Offspring | Males Often More Severe; Lethal in Males (e.g. Incontinentia Pigmenti) |
+| **Mitochondrial** | Maternal Only (100% Offspring) | Heteroplasmy (Variable Threshold) |
+| **Imprinting** | Parent-of-Origin Dependent | **Maternal** (Prader-Willi) vs **Paternal** (Angelman) |
+
+---
+
+## 2. Monogenic Diabetes
+
+| Type | Gene | Inheritance | Key Features | Treatment |
+|------|------|-------------|--------------|-----------|
+| **HNF1A-MODY (MODY3)** | HNF1A | AD | Most Common MODY; Progressive β-Cell Dysfunction; **Sulfonylurea Sensitive** | Low-Dose Sulfonylurea (1st Line) |
+| **HNF4A-MODY (MODY1)** | HNF4A | AD | Macrosomia, Neonatal Hypoglycaemia; Progressive; Sulfonylurea Sensitive | Sulfonylurea |
+| **GCK-MODY (MODY2)** | GCK | AD | **Mild Fasting Hyperglycaemia (5.5-8 mmol/L)**; Non-Progressive; **No Treatment Needed** | Diet Only |
+| **HNF1B-MODY (MODY5)** | HNF1B | AD | Renal Cysts, Genital Tract Malformations, Pancreatic Agenesis | Insulin Often Needed |
+| **Neonatal Diabetes (PNDM/TNDM)** | KCNJ11, ABCC8, INS, GCK | AD/AR | <6 Months; **KCNJ11/ABCC8 → Sulfonylurea Responsive** | High-Dose Sulfonylurea (If K-ATP Channel) |
+| **Mitochondrial Diabetes** | mtDNA (3243 A>G) | Maternal | **MELAS**; Sensorineural Deafness, Short Stature; Insulin Often Needed | Insulin (Sulfonylurea Contraindicated) |
+
+---
+
+## 2. Multiple Endocrine Neoplasia (MEN)
+
+| Syndrome | Gene | Inheritance | Key Tumours |
+|----------|------|-------------|-------------|
+| **MEN1** | MEN1 (Menin) | AD | Parathyroid, Pituitary, Pancreas (3 Ps) |
+| **MEN2A** | RET (Codon 634) | AD | MTC, Phaeochromocytoma, PHPT |
+| **MEN2B** | RET (M918T) | AD | MTC, Phaeochromocytoma, Marfanoid, Neuromas |
+| **MEN4** | CDKN1B (p27) | AD | MEN1-Like; MEN1-Negative |
+
+---
+
+## 3. Congenital Adrenal Hyperplasia (CAH)
+
+| Type | Gene | Inheritance | Enzyme Deficiency | Key Features |
+|------|------|-------------|-------------------|--------------|
+| **21-Hydroxylase Deficiency** | CYP21A2 | AR | **21-Hydroxylase (95%)** | Salt-Wasting, Simple Virilising, Non-Classic |
+| **11β-Hydroxylase Deficiency** | CYP11B1 | AR | 11β-Hydroxylase | Hypertension, Virilisation |
+| **17α-Hydroxylase Deficiency** | CYP17A1 | AR | 17α-Hydroxylase | Hypertension, Sexual Infantilism |
+| **3β-HSD Deficiency** | HSD3B2 | AR | 3β-HSD | Salt-Wasting, Ambiguous Genitalia |
+
+---
+
+## 2. Calcium & Bone Disorders
+
+| Disorder | Gene | Inheritance | Key Features |
+|----------|------|-------------|--------------|
+| **Familial Hypocalciuric Hypercalcaemia (FHH)** | CaSR | AD | Inactivating; Hypocalciuria (Ca/Cr <0.01); Benign |
+| **Neonatal Severe HPT (NSHPT)** | CaSR | AR (Homozygous) | Severe Neonatal Hypercalcaemia; Lethal if Untreated |
+| **Autosomal Dominant Hypocalcaemia (ADH)** | CaSR | AD | **Activating**; Hypocalcaemia, Hypercalciuria |
+| **Hypophosphataemic Rickets (XLH)** | PHEX | XLD | Phosphate Wasting; FGF23 ↑; Rickets |
+| **Osteogenesis Imperfecta** | COL1A1/COL1A2 | AD/AR | Brittle Bones, Blue Sclerae, Deafness |
+| **Pseudohypoparathyroidism (PHP1a)** | GNAS | Maternal Imprinting | AHO Phenotype + PTH Resistance |
+
+---
+
+## 3. Pituitary & Growth Disorders
+
+| Disorder | Gene | Inheritance | Key Features |
+|----------|------|-------------|--------------|
+| **Kallmann Syndrome** | ANOS1 (KAL1), FGFR1, PROKR2, PROK2 | XLR/AD/AR | Anosmia + Hypogonadotropic Hypogonadism |
+| **Combined Pituitary Hormone Deficiency (CPHD)** | PROP1, POU1F1, HESX1, LHX3, LHX4 | AR/AD | Multiple Pituitary Hormone Deficiencies |
+| **Isolated GH Deficiency** | GH1, GHRHR | AR/AD | Short Stature, Low GH/IGF-1 |
+| **Laron Syndrome (GH Resistance)** | GHR | AR | High GH, Low IGF-1, Short Stature |
+| **Septo-Optic Dysplasia** | HESX1 | AD/AR | Optic Nerve Hypoplasia, Pituitary Hypoplasia, Absent Septum Pellucidum |
+
+---
+
+## 3. Thyroid Disorders
+
+| Disorder | Gene | Inheritance | Key Features |
+|----------|------|-------------|--------------|
+| **Dyshormonogenic Congenital Hypothyroidism** | DUOX2, DUOXA2, TG, TPO, SLC5A5 (NIS) | AR | Goitre + Hypothyroidism (Organification Defects) |
+| **Thyroid Hormone Resistance (RTH)** | THRB | AD | High fT4/fT3, Non-Suppressed TSH; Goitre, Tachycardia |
+| **TSH Resistance** | TSHR | AR | Elevated TSH, Normal/High Thyroid Hormones |
+| **Pendred Syndrome** | SLC26A4 | AR | Deafness + Goitre (Thyroid Dyshormonogenesis) |
+
+---
+
+## 3. Reproductive Disorders
+
+| Disorder | Gene | Inheritance | Key Features |
+|----------|------|-------------|--------------|
+| **Turner Syndrome** | 45,X / Mosaic | Chromosomal | Short Stature, Webbed Neck, Coarctation, Streak Ovaries |
+| **Klinefelter Syndrome** | 47,XXY | Chromosomal | Tall, Small Testes, Gynaecomastia, Azoospermia |
+| **Androgen Insensitivity Syndrome** | AR | XLR | 46,XY; Female External Genitalia; Testes; Müllerian Absent |
+| **5α-Reductase Deficiency** | SRD5A2 | AR | 46,XY; Ambiguous Genitalia; Virilisation at Puberty |
+| **Mayer-Rokitansky-Küster-Hauser (MRKH)** | Unknown (WNT4, LHX1) | AD/Complex | 46,XX; Müllerian Agenesis; Normal Ovarian Function |
+| **Premature Ovarian Insufficiency (POI)** | FMR1 (Premutation), BMP15, FOXL2 | X-Linked/AD | <40 Years; FSH >40; Autoimmune/Gentic |
+
+---
+
+## 4. Metabolic & Obesity Syndromes
+
+| Syndrome | Gene | Inheritance | Key Features |
+|----------|------|-------------|--------------|
+| **Prader-Willi Syndrome** | 15q11-q13 (Paternal Deletion/UPD Maternal) | Imprinting | Neonatal Hypotonia, Hyperphagia → Obesity, Hypogonadism, ID |
+| **Bardet-Biedl Syndrome** | Multiple BBS Genes | AR | Retinal Dystrophy, Polydactyly, Obesity, Renal Anomalies, ID |
+| **Alström Syndrome** | ALMS1 | AR | Obesity, Hear Loss, Cardiomyopathy, T2DM, Renal/Hepatic |
+| **Leptin Deficiency** | LEP | AR | Severe Early-Onset Obesity; Leptin Replacement Curative |
+| **Leptin Receptor Deficiency** | LEPR | AR | Similar to Leptin Deficiency; No Leptin Therapy |
+| **MC4R Deficiency** | MC4R | AD/AR | Most Common Monogenic Obesity; Hyperphagia |
+
+---
+
+## 4. Genetic Testing — Indications & Approach
+
+### ACGS/UKGTN Testing Criteria
+| Indication | Action |
+|------------|--------|
+| **Clinical Diagnosis Suspected** | Targeted Gene Panel / Single Gene Test |
+| **Family History** | **Cascade Testing** (Index Case First → Relatives) |
+| **Atypical Presentation** | **Whole Exome/Genome Sequencing** |
+| **Neonatal/Paediatric** | Rapid Exome/Genome (Trio) |
+| **Reproductive Planning** | **Prenatal (CVS/Amnio)** or **PGD (Preimplantation)** |
+
+### Counselling Essentials
+| Element | Details |
+|---------|---------|
+| **Pre-Test** | Explain Test Scope, Possible Results (VUS, Incidental), Implications |
+| **Post-Test** | Result Interpretation, Recurrence Risk, Cascade Testing Offer |
+| **VUS (Variant of Uncertain Significance)** | **Do Not Use for Clinical Management**; Segregation Studies; Functional Studies |
+
+---
+
+## 4. Genetic Testing Strategies
+
+| Scenario | Test |
+|----------|------|
+| **MODY Suspected** | **HNF1A, HNF4A, GCK, HNF1B, PDX1, KLF11, CEL, BLK, KCNJ11, ABCC8** (Panel) |
+| **Neonatal Diabetes** | **KCNJ11, ABCC8, INS, GCK, PDX1, PTF1A** (Rapid Panel) |
+| **CAH** | **CYP21A2** (21-OH Deficiency); **CYP11B1, CYP17A1, HSD3B2** (Rare) |
+| **MEN1** | **MEN1** Sequencing + MLPA (Deletion/Duplication) |
+| **MEN2** | **RET** (Codon-Specific: 634, 918, 883, etc.) |
+| **FHH/NSHPT** | **CaSR** |
+| **PHP1a** | **GNAS** (Methylation Analysis + Sequencing) |
+| **Kallmann** | **ANOS1, FGFR1, PROKR2, PROK2, CHD7, SOX10** |
+| **POI** | **FMR1** (Premutation), **BMP15, FOXL2** |
+| **Monogenic Obesity** | **LEP, LEPR, MC4R, PCSK1, POMC, SIM1, BDNF** |
+
+---
+
+## 5. Recurrence Risks & Counselling
+
+| Scenario | Recurrence Risk | Counselling Point |
+|----------|----------------|-------------------|
+| **AD (Parent Affected)** | 50% | Variable Penetrance/Expressivity |
+| **AR (Both Parents Carriers)** | 25% | Consanguinity ↑ Risk; Carrier Testing |
+| **XLR (Mother Carrier)** | 50% Sons Affected; 50% Daughters Carriers | Prenatal Sex Determination |
+| **Mitochondrial** | **100% Maternal Transmission** | Heteroplasmy Level Predicts Severity |
+| **Imprinting (PWS/AS)** | <1% (De Novo); 50% if Parent Carries Imprinting Defect | Imprinting Centre Analysis |
+
+---
+
+## 5. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **MODY Types** | HNF1A (MODY3) = Sulfonylurea Sensitive; GCK (MODY2) = No Treatment; HNF1B = Renal Cysts |
+| **Neonatal Diabetes** | KCNJ11/ABCC8 → **Sulfonylurea Responsive** (High Dose) |
+| **CAH** | **21-OH Deficiency (CYP21A2) = 95%**; Salt-Wasting vs Simple Virilising vs Non-Classic |
+| **MEN1** | MEN1 Gene (Menin); AD; 3 Ps (Parathyroid, Pituitary, Pancreas) |
+| **MEN2A** | RET Codon 634; MTC + Phaeo + HPT |
+| **MEN2B** | RET M918T; MTC + Phaeo + Marfanoid + Neuromas |
+| **FHH** | CaSR Inactivating; **Ca/Cr <0.01**; Benign |
+| **NSHPT** | CaSR Homozygous; Severe Neonatal Hypercalcaemia |
+| **PHP1a** | GNAS (Maternal Imprinting); AHO + PTH Resistance |
+| **Kallmann** | Anosmia + HH; ANOS1 (XLR), FGFR1 (AD), PROKR2 (AR) |
+| **Turner** | 45,X; Short Stature, Webbed Neck, Coarctation, Streak Ovaries |
+| **Klinefelter** | 47,XXY; Small Testes, Gynaecomastia, Azoospermia |
+| **AIS** | AR Mutation; 46,XY Female Phenotype; Testes + No Müllerian |
+| **Prader-Willi** | 15q11-q13 Paternal Del/UPD Mat; Hypotonia → Hyperphagia → Obesity |
+| **Bardet-Biedl** | Retinal Dystrophy, Polydactyly, Obesity, Renal, ID |
+| **Leptin Deficiency** | LEP Gene; Severe Early Obesity; Leptin Replacement Curative |
+| **MC4R** | Most Common Monogenic Obesity (AD); Hyperphagia |
+| **RTH** | THRB Mutation (AD); High fT4/fT3 + Non-Suppressed TSH |
+| **Genetic Testing** | Targeted Panel → Exome/Genome; Cascade Testing Essential |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **MODY vs T1DM/T2DM** | MODY = Young (<25), AD Family Hx, AutoAb Negative, C-Peptide Preserved |
+| **HNF1A vs HNF4A** | Both Sulfonylurea Sensitive; HNF4A = Macrosomia + Neonatal Hypoglycaemia |
+| **GCK-MODY** | **Mild Fasting Hyperglycaemia (5.5-8)**; **No Treatment** |
+| **Neonatal Diabetes** | <6 Months; **KCNJ11/ABCC8 = Sulfonylurea Responsive** |
+| **MEN1 vs MEN2** | MEN1 = 3Ps; MEN2 = MTC + Phaeo ± HPT |
+| **MEN2A vs MEN2B** | MEN2A = HPT; MEN2B = Marfanoid/Neuromas (No HPT) |
+| **FHH vs PHP** | FHH = CaSR Inactivating (Hypocalciuria); PHP = GNAS (PTH Resistance) |
+| **NSHPT** | CaSR Homozygous/Compound Het; Severe Neonatal Hypercalcaemia |
+| **Kallmann vs Isolated HH** | Kallmann = **Anosmia**; Isolated HH = No Anosmia |
+| **Turner vs Noonan** | Turner = 45,X; Webbed Neck, Coarctation; Noonan = Normal Karyotype, PS |
+| **AIS vs 5α-Reductase** | AIS = 46,XY Female; Testes; No Müllerian; 5α-Red = Ambiguous → Virilises at Puberty |
+| **PHP1a** | GNAS Maternal Imprinting; **AHO + PTH Resistance** |
+| **Imprinting** | **PWS = Paternal 15q Del / Maternal UPD**; **AS = Maternal 15q Del / Paternal UPD** |
+| **Mitochondrial Diabetes** | 3243 A>G; Maternal Inheritance; Deafness + Diabetes |
+
+---
+
+## 9. Mind Map
+
+```mermaid
+mindmap
+  root((Genetic Endocrinology))
+    Inheritance
+      AD: 50% (MEN1, MEN2, MODY, FHH, PHP1a)
+      AR: 25% (CAH, PNDM, XLH, PWS/AS if paternal del)
+      XLR: 50% Sons (Kallmann ANOS1, AIS, XLH)
+      XLD: 50% (XLH, PWS/AS if maternal del)
+      Mitochondrial: Maternal (3243 A>G)
+      Imprinting: PWS/AS, GNAS (PHP1a)
+    Monogenic Diabetes
+      HNF1A (MODY3): SU Sensitive
+      HNF4A (MODY1): SU Sensitive + Macrosomia
+      GCK (MODY2): No Rx
+      HNF1B (MODY5): Renal Cysts
+      Neonatal DM: KCNJ11/ABCC8 → SU
+      Mitochondrial: 3243 A>G + Deafness
+    MEN
+      MEN1: MEN1 (Menin) - 3 Ps
+      MEN2A: RET 634 - MTC, Phaeo, HPT
+      MEN2B: RET M918T - MTC, Phaeo, Marfanoid
+      MEN4: CDKN1B - MEN1-like
+    CAH
+      21-OH (CYP21A2) - 95%
+      11β-OH (CYP11B1) - HTN + Virilisation
+      17α-OH (CYP17A1) - HTN + Infantilism
+    Calcium/Bone
+      FHH: CaSR Inactivating - Ca/Cr <0.01
+      NSHPT: CaSR Homozygous
+      ADH: CaSR Activating
+      XLH: PHEX - Phosphate Wasting
+      PHP1a: GNAS Maternal - AHO + PTH Resistance
+    Pituitary/Growth
+      Kallmann: Anosmia + HH (ANOS1 XLR)
+      CPHD: PROP1, POU1F1, HESX1
+      Laron: GHR - High GH, Low IGF-1
+    Thyroid
+      RTH: THRB - High fT4/fT3 + Non-Supp TSH
+      Dyshormonogenic CH: DUOX2, TG, TPO, NIS
+    Reproductive
+      Turner: 45,X - Short, Webbed Neck, Coarctation
+      Klinefelter: 47,XXY - Small Testes, Gynaecomastia
+      AIS: AR - 46,XY Female + Testes
+      MRKH: Müllerian Agenesis
+    Obesity
+      Prader-Willi: 15q11-q13 Paternal Del
+      Bardet-Biedl: Retinal, Polydactyly, Obesity
+      Leptin/LEPR/MC4R: Monogenic Obesity
+    Testing
+      Targeted Panels (MODY, CAH, MEN, Kallmann)
+      Exome/Genome (Atypical/Neonatal)
+      Cascade Testing (Family)
+      Prenatal/PGD
+```
+
+---
+
+## 10. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **MODY3 (HNF1A)** | Most Common; Sulfonylurea Sensitive |
+| **MODY2 (GCK)** | Mild Fasting Hyperglycaemia; **No Treatment** |
+| **Neonatal Diabetes** | <6 Months; **KCNJ11/ABCC8 → Sulfonylurea Responsive** |
+| **CAH** | **21-OH Deficiency = 95%** (CYP21A2) |
+| **MEN1 Gene** | **MEN1 (Menin)**; AD; 3 Ps |
+| **MEN2A Mutation** | **RET Codon 634 (85%)** |
+| **MEN2B Mutation** | **RET M918T (95%)** |
+| **FHH** | CaSR Inactivating; **Ca/Cr <0.01**; Benign |
+| **NSHPT** | CaSR Homozygous; Severe Neonatal Hypercalcaemia |
+| **PHP1a** | GNAS (Maternal Imprinting); **AHO + PTH Resistance** |
+| **Kallmann** | **Anosmia + HH**; ANOS1 (XLR), FGFR1 (AD) |
+| **Turner Syndrome** | 45,X; Short Stature, Webbed Neck, **Coarctation**, Streak Ovaries |
+| **Klinefelter** | 47,XXY; Small Testes, Gynaecomastia, Azoospermia |
+| **AIS** | AR Mutation; 46,XY Female + Testes; No Müllerian |
+| **Prader-Willi** | 15q11-q13 Paternal Del/UPD Mat; Hypotonia → Hyperphagia → Obesity |
+| **MC4R** | Most Common Monogenic Obesity (AD); Hyperphagia |
+| **RTH** | THRB Mutation (AD); High fT4/fT3 + Non-Suppressed TSH |
+| **Genetic Testing** | Panel → Exome/Genome; **Cascade Testing Essential** |
+
+---
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Special Topics|Special Topics in Endocrinology]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[MEN1]], [[MEN2A]], [[MEN2B]], [[MEN4]], [[Monogenic Diabetes]], [[Congenital Adrenal Hyperplasia]], [[FHH]], [[Kallmann Syndrome]], [[Turner Syndrome]], [[Klinefelter Syndrome]], [[Prader-Willi Syndrome]]
+## MCQs (10)
+1. **MEN1 gene location and protein:**
+   A. 11q13; Menin (tumour suppressor, transcriptional regulation)
+   B. 17p13; p53
+   C. 10q23; PTEN
+   D. 3p25; VHL
+   E. 11p15; CDKN1C
+
+2. **MEN2A/2B gene and mutation pattern:**
+   A. RET proto-oncogene (10q11); gain-of-function mutations (Cys 634 for 2A, M918T for 2B)
+   B. MEN1
+   C. CDKN1B
+   D. VHL
+   E. SDHx
+
+3. **MEN4 (CDKN1B) phenotype:**
+   A. MEN1-like (parathyroid, pituitary, pancreas) but MEN1 negative; p27 loss
+   B. MEN2-like
+   C. Isolated hyperparathyroidism
+   D. Only pituitary
+   E. Only pancreatic NETs
+
+4. **Multiple Endocrine Neoplasia inheritance:**
+   A. All autosomal dominant
+   B. Autosomal recessive
+   C. X-linked
+   D. Mitochondrial
+   E. Sporadic only
+
+5. **Familial isolated hyperparathyroidism (FIHP) genes:**
+   A. MEN1, CDC73 (HRPT2), CASR, GCM2
+   B. RET
+   C. VHL
+   D. SDHx
+   E. CDKN1B
+
+6. **Familial hypocalciuric hypercalcaemia (FHH) type 1:**
+   A. CASR inactivating mutation (loss of function) → ↑ Ca²⁺ set-point
+   B. CASR activating
+   C. PTH mutation
+   D. VDR mutation
+   E. CYP27B1 mutation
+
+7. **Neonatal diabetes mellitus (transient) most common gene:**
+   A. 6q24 methylation defect (TNDM); KCNJ11/ABCC8 (permanent)
+   B. INS
+   C. GCK
+   D. HNF1A
+   E. HNF4A
+
+8. **MODY 1 (HNF4A) and MODY 3 (HNF1A) features:**
+   A. Progressive beta-cell dysfunction; sensitive to sulfonylureas; no microvascular complications early
+   B. Insulin resistance
+   C. Autoimmune
+   D. Ketosis-prone
+   E. Neonatal onset
+
+9. **Thyroid dysgenesis genes:**
+   A. TTF1 (NKX2-1), TTF2 (FOXE1), PAX8, TSHR, DUOX2
+   B. RET
+   C. MEN1
+   D. CASR
+   E. GNAS
+
+10. **Resistance syndromes: Pseudohypoparathyroidism type 1a:**
+   A. GNAS mutation (maternal imprinting) → Albright hereditary osteodystrophy + multi-hormone resistance
+   B. PTH mutation
+   C. VDR mutation
+   D. CASR mutation
+   E. CYP27B1 mutation
+
+## SBA Questions (5)
+1. **30yo woman: hypercalcaemia, PTH 12, urinary calcium/creatinine clearance ratio 0.01. Mother similar. Gene?**
+   A. CASR (FHH type 1) - inactivating mutation
+   B. MEN1
+   C. RET
+   D. CDC73
+   E. CDKN1B
+
+2. **25yo man: medullary thyroid cancer, phaeochromocytoma, marfanoid habitus, mucosal neuromas. RET mutation?**
+   A. M918T (MEN2B, exon 16)
+   B. Cys 634 (MEN2A, exon 11)
+   C. VHL
+   D. SDHB
+   E. MEN1
+
+3. **10yo girl: diabetes diagnosed 6 months, non-obese, negative antibodies, strong family history (3 generations). Sulfonylurea responsive. Gene?**
+   A. HNF1A (MODY 3) or HNF4A (MODY 1)
+   B. GCK (MODY 2)
+   C. INS
+   D. KCNJ11
+   E. MT-TL1
+
+4. **Neonate: diabetes at 2 weeks, remission by 6 months, macrosomia. Genetic test?**
+   A. 6q24 methylation analysis (TNDM)
+   B. KCNJ11
+   C. GCK
+   D. HNF1A
+   E. INS
+
+5. **Family: hyperparathyroidism, pituitary adenoma, gastrinoma. MEN1 negative. Next gene?**
+   A. CDKN1B (MEN4)
+   B. RET
+   C. VHL
+   D. SDHx
+   E. CDC73
+
+## Flashcards
+- **Q: MEN1**
+  **A: 11q13; Menin; 3Ps: Parathyroid (95%), Pituitary (30-40%), Pancreas (duodenal gastrinoma, insulinoma)**
+
+- **Q: MEN2A**
+  **A: RET (10q11) Cys 634; MTC 95%, Phaeo 50%, pHPT 20-30%**
+
+- **Q: MEN2B**
+  **A: RET M918T (95%); MTC 100%, Phaeo 50%, Marfanoid, Mucosal neuromas, NO pHPT**
+
+- **Q: MEN4**
+  **A: CDKN1B (12p13); p27Kip1 loss; MEN1-like phenotype but MEN1 negative**
+
+- **Q: FHH**
+  **A: CASR inactivating → ↑ Ca set-point; high Ca, normal/mildly ↑ PTH, low urine Ca (CCCR <0.01)**
+
+- **Q: Neonatal DM transient**
+  **A: 6q24 methylation (TNDM); macrosomia; remission ~6mo; relapse possible**
+
+- **Q: Neonatal DM permanent**
+  **A: KCNJ11 (Kir6.2), ABCC8 (SUR1); sulfonylurea responsive; developmental delay possible**
+
+- **Q: MODY 1 (HNF4A)**
+  **A: Progressive beta-cell failure; macrosomia at birth; sulfonylurea sensitive**
+
+- **Q: MODY 2 (GCK)**
+  **A: Glucokinase; mild fasting hyperglycaemia (5.5-8); non-progressive; NO treatment needed**
+
+- **Q: MODY 3 (HNF1A)**
+  **A: Most common MODY; progressive; sulfonylurea sensitive; renal cysts possible**
+
+- **Q: MODY 5 (HNF1B)**
+  **A: Renal cysts/dysplasia + diabetes; genital tract malformations**
+
+- **Q: Thyroid dysgenesis**
+  **A: TTF1/NKX2-1 (lung+thyroid), FOXE1/TTF2, PAX8, TSHR, DUOX2**
+
+- **Q: Pseudohypoparathyroidism 1a**
+  **A: GNAS (maternal imprinting); Albright hereditary osteodystrophy (short stature, brachydactyly, subcutaneous ossification) + PTH/TSH/GHRH resistance**
+
+- **Q: Albright hereditary osteodystrophy**
+  **A: GNAS mutation (paternal = PHP1b - no AHO; maternal = PHP1a + AHO)**
+
+## Answer Key with Explanations
+### MCQs
+1. **11q13; Menin (tumour suppressor, transcriptional regulation)** — MEN1 gene location and protein:
+
+2. **RET proto-oncogene (10q11); gain-of-function mutations (Cys 634 for 2A, M918T for 2B)** — MEN2A/2B gene and mutation pattern:
+
+3. **MEN1-like (parathyroid, pituitary, pancreas) but MEN1 negative; p27 loss** — MEN4 (CDKN1B) phenotype:
+
+4. **All autosomal dominant** — Multiple Endocrine Neoplasia inheritance:
+
+5. **MEN1, CDC73 (HRPT2), CASR, GCM2** — Familial isolated hyperparathyroidism (FIHP) genes:
+
+6. **CASR inactivating mutation (loss of function) → ↑ Ca²⁺ set-point** — Familial hypocalciuric hypercalcaemia (FHH) type 1:
+
+7. **6q24 methylation defect (TNDM); KCNJ11/ABCC8 (permanent)** — Neonatal diabetes mellitus (transient) most common gene:
+
+8. **Progressive beta-cell dysfunction; sensitive to sulfonylureas; no microvascular complications early** — MODY 1 (HNF4A) and MODY 3 (HNF1A) features:
+
+9. **TTF1 (NKX2-1), TTF2 (FOXE1), PAX8, TSHR, DUOX2** — Thyroid dysgenesis genes:
+
+10. **GNAS mutation (maternal imprinting) → Albright hereditary osteodystrophy + multi-hormone resistance** — Resistance syndromes: Pseudohypoparathyroidism type 1a:
+
+### SBAs
+1. **CASR (FHH type 1) - inactivating mutation** — 30yo woman: hypercalcaemia, PTH 12, urinary calcium/creatinine clearance ratio 0.01. Mother similar. Gene?
+
+2. **M918T (MEN2B, exon 16)** — 25yo man: medullary thyroid cancer, phaeochromocytoma, marfanoid habitus, mucosal neuromas. RET mutation?
+
+3. **HNF1A (MODY 3) or HNF4A (MODY 1)** — 10yo girl: diabetes diagnosed 6 months, non-obese, negative antibodies, strong family history (3 generations). Sulfonylurea responsive. Gene?
+
+4. **6q24 methylation analysis (TNDM)** — Neonate: diabetes at 2 weeks, remission by 6 months, macrosomia. Genetic test?
+
+5. **CDKN1B (MEN4)** — Family: hyperparathyroidism, pituitary adenoma, gastrinoma. MEN1 negative. Next gene?

@@ -1,0 +1,474 @@
+---
+tags: [medicine, endocrinology, davidson, men4, multiple-endocrine-neoplasia, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 20: Endocrinology
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - MEN4 is the rarest MEN syndrome. CDKN1B (p27) mutation. Phenocopies MEN1 but MEN1-negative. Key viva: differentiation from MEN1, genetic basis, and screening."
+see_also: ["MEN1", "MEN2A", "MEN2B", "Primary Hyperparathyroidism", "Pituitary Adenomas", "Pancreatic NETs"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# MEN4 (Multiple Endocrine Neoplasia Type 4)
+
+> [!info]
+> **MEN4 = Rare MEN Syndrome** phenocopying MEN1 but **MEN1-Negative**. **CDKN1B (p27^Kip1^) Mutation** (Cyclin-Dependent Kinase Inhibitor). **Autosomal Dominant**. **Parathyroid + Pituitary + Pancreatic NETs** (Like MEN1 but MEN1-Negative).
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Define MEN4 and differentiate from MEN1
+- [ ] Recognise the genetic basis (CDKN1B/p27 mutations)
+- [ ] Apply screening and surveillance protocols
+- [ ] Understand the clinical spectrum and management
+
+---
+
+## 2. Definition & Genetics
+
+| Feature | Details |
+|---------|---------|
+| **Definition** | **MEN1-Like Syndrome** with **MEN1-Negative** Genetic Testing |
+| **Gene** | **CDKN1B** (Cyclin-Dependent Kinase Inhibitor 1B, **p27^Kip1^**) |
+| **Location** | Chromosome **12p13.1** |
+| **Protein Function** | **Cyclin-Dependent Kinase Inhibitor** (Cell Cycle Arrest at G1/S) |
+| **Inheritance** | **Autosomal Dominant** |
+| **Penetrance** | **Incomplete** (~50-70%) — Lower than MEN1/MEN2 |
+| **Prevalence** | **Rare** (<1% of MEN Syndromes) |
+
+---
+
+## 2. Pathophysiology
+
+| Aspect | Details |
+|----------|---------|
+| **Gene** | **CDKN1B** (Chromosome 12p13.1) |
+| **Protein** | **p27^Kip1^** (Cyclin-Dependent Kinase Inhibitor) |
+| **Function** | **Cell Cycle Arrest (G1/S Checkpoint)**; Tumour Suppressor |
+| **Mutation Effect** | **Loss-of-Function** → ↓ Cell Cycle Control → Cell Proliferation |
+| **Inheritance** | **Autosomal Dominant** |
+| **Penetrance** | **Incomplete (~50-70%)** — Lower than MEN1/MEN2 |
+
+---
+
+## 2. Clinical Features — MEN1-Like Phenotype
+
+| Feature | MEN4 vs MEN1 |
+|---------|------------|
+| **Parathyroid** | **Primary Hyperparathyroidism** (Commonest; Multigland Hyperplasia) |
+| **Pituitary** | **Pituitary Adenomas** (Prolactinoma > GH > Non-Functioning) |
+| **Pancreas** | **Pancreatic NETs** (Gastrinoma, Insulinoma, Non-Functioning) |
+| **Adrenal** | Incidentalomas (Usually Non-Functioning) |
+| **Thymus/Lung** | Carcinoids (Less Frequent than MEN1) |
+| **Skin** | Lipomas, Angiofibromas (Rare) |
+
+**Key Difference**: **MEN1 Mutation Negative**; Requires **CDKN1B Testing** for Confirmation.
+
+---
+
+## 3. Clinical Presentation
+
+| Organ System | Manifestations |
+|--------------|----------------|
+| **Parathyroid** | **Primary Hyperparathyroidism** (Most Common, 80-90%); Multigland Hyperplasia |
+| **Pituitary** | **Prolactinoma** > **Somatotroph (GH)** > Non-Functioning; Similar to MEN1 |
+| **Pancreas** | **Gastrinoma (ZES)**, **Insulinoma**, **Non-Functioning NETs** |
+| **Adrenal** | Incidentalomas (Non-Functioning); Rarely Functional |
+| **Thymus/Lung** | Carcinoids (Less Common than MEN1) |
+| **Skin** | Lipomas, Angiofibromas (Rare) |
+
+---
+
+## 3. Diagnosis — Differentiation from MEN1
+
+| Step | Investigation |
+|------|---------------|
+| **1. Clinical Suspicion** | MEN1-Like Phenotype (Parathyroid + Pituitary + Pancreas) |
+| **2. MEN1 Testing** | **Negative** (No Pathogenic MEN1 Mutation) |
+| **3. CDKN1B Testing** | **Pathogenic Variant in CDKN1B** (p27) |
+| **4. Family History** | Autosomal Dominant; Incomplete Penetrance |
+
+### Diagnostic Criteria (Proposed)
+| Criterion | Requirement |
+|---------|-------------|
+| **Clinical** | ≥2 of 3 MEN1-Defining Manifestations (Parathyroid, Pituitary, Pancreas) |
+| **Genetic** | **Pathogenic CDKN1B Variant** (Inactivating) |
+| **Exclusion** | **MEN1 Mutation Negative** |
+
+---
+
+## 3. Component Management
+
+### Parathyroid (PHPT)
+| Aspect | Details |
+|---------|---------|
+| **Pathology** | **Multigland Hyperplasia** (Like MEN1) |
+| **Surgery** | **Subtotal (3.5-Gland) Parathyroidectomy** + Autotransplant |
+| **Recurrence** | Higher than Sporadic (Due to Hyperplasia) |
+
+### Pituitary Adenomas
+| Type | Frequency | Management |
+|------|-------------|------------|
+| **Prolactinoma** | Most Common | Cabergoline 1st Line |
+| **Somatotroph (GH)** | Acromegaly | TSS → SST Analogues |
+| **Non-Functioning** | Mass Effect | Surgery if Macroadenoma |
+| **TSH/ACTH** | Rare | As Per Usual Guidelines |
+
+### Pancreatic NETs
+| Tumour | Features | Management |
+|--------|---------|------------|
+| **Gastrinoma (ZES)** | Duodenal > Pancreatic; Multiple | High-Dose PPI + Surgery (Enucleation/Duodenotomy) |
+| **Insulinoma** | Usually Benign | Enucleation |
+| **Non-Functional** | Often Multiple | >2cm → Surgery; <2cm → Surveillance |
+
+---
+
+## 4. Surveillance Protocol
+
+| Component | Frequency | Modality |
+|-----------|-----------|----------|
+| **Calcium + PTH** | Annual (From Age 10) | Blood |
+| **Pituitary Hormones** | Annual | Prolactin, IGF-1, ACTH, Cortisol, TSH, fT4, LH/FSH |
+| **Gut Hormones** | Annual (From Age 20) | Gastrin, Insulin, Glucagon, PP, CgA |
+| **Imaging** | | |
+| MRI Pituitary | Every 3 Years | 3mm Gadolinium |
+| CT/MRI Pancreas | Every 1-3 Years | Multiphasic |
+| Chest CT | Every 3-5 Years | Thymic/Bronchial Carcinoids |
+| Adrenal CT | Every 2-3 Years | Incidentaloma Screening |
+
+---
+
+## 4. Genetic Testing & Counselling
+
+| Aspect | Details |
+|---------|---------|
+| **Gene** | **CDKN1B (p27^Kip1^)** — Chromosome 12p13.1 |
+| **Protein** | Cyclin-Dependent Kinase Inhibitor (p27) |
+| **Function** | Cell Cycle Arrest (G1/S Checkpoint) |
+| **Mutation** | Loss-of-Function (Truncating, Missense, Splice) |
+| **Inheritance** | Autosomal Dominant |
+| **Penetrance** | **Incomplete (~50-70%)** (Lower than MEN1) |
+| **Genetic Testing** | **CDKN1B Sequencing** (If MEN1-Negative + MEN1-Like Phenotype) |
+| **Family Screening** | Predictive Testing for 1st-Degree Relatives (If Mutation Known) |
+| **Prenatal** | CVS/Amniocentesis (If Familial Mutation Known) |
+
+---
+
+## 5. Differences: MEN4 vs MEN1
+
+| Feature | **MEN1** | **MEN4** |
+|---------|----------|--------|
+| **Gene** | **MEN1 (Menin)** | **CDKN1B (p27)** |
+| **Chromosome** | 11q13 | 12p13.1 |
+| **Protein** | Menin (Tumour Suppressor) | p27^Kip1^ (CDK Inhibitor) |
+| **Prevalence** | **Common** (90% of MEN) | **Rare** (<1% of MEN) |
+| **Penetrance** | **>95% by Age 50** | **Incomplete (~50-70%)** |
+| **Phenotype** | 3Ps (Parathyroid, Pituitary, Pancreas) | **MEN1-Like** (Parathyroid, Pituitary, Pancreas) |
+| **Adrenal** | Common (Incidentalomas) | Rare |
+| **Thymic Carcinoid** | Common (MEN1) | Rare |
+| **Bronchial Carcinoid** | Common | Rare |
+| **Skin Lesions** | Angiofibromas, Collagenomas | Rare |
+| **Genetics** | MEN1 Mutation | **CDKN1B (p27) Mutation** |
+
+---
+
+## 5. Surveillance Protocol
+
+| Component | Frequency | Modality |
+|-----------|-----------|----------|
+| **Calcium + PTH** | Annual (From Age 10) | Blood |
+| **Pituitary Hormones** | Annual | PRL, IGF-1, ACTH, TSH, fT4, LH, FSH |
+| **Gut Hormones** | Annual (From Age 20) | Gastrin, Insulin, Glucagon, PP, CgA |
+| **MRI Pituitary** | Every 3 Years | 3mm Gadolinium |
+| **CT/MRI Pancreas** | Every 1-3 Years | Multiphasic |
+| **Chest CT** | Every 3-5 Years | Thymic/Bronchial Carcinoids |
+| **Adrenal CT** | Every 2-3 Years | Incidentaloma Screening |
+
+---
+
+## 5. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **MEN4 Definition** | **MEN1-Like Phenotype + MEN1-Negative + CDKN1B Mutation** |
+| **Gene** | **CDKN1B (p27^Kip1^)** — Cyclin-Dependent Kinase Inhibitor |
+| **Chromosome** | **12p13.1** |
+| **Protein** | **p27^Kip1^** (CDK Inhibitor → Cell Cycle Arrest) |
+| **Inheritance** | **Autosomal Dominant** |
+| **Penetrance** | **Incomplete (~50-70%)** (Lower than MEN1) |
+| **Clinical Phenotype** | **MEN1-Like** (Parathyroid, Pituitary, Pancreas) |
+| **Key Difference from MEN1** | **MEN1 Mutation Negative**; **CDKN1B Mutation Positive** |
+| **PHPT in MEN4** | Multigland Hyperplasia → Subtotal Parathyroidectomy |
+| **Pituitary Adenomas** | Prolactinoma > Somatotroph > Non-Functioning |
+| **Pancreatic NETs** | Gastrinoma, Insulinoma, Non-Functional |
+| **Adrenal** | Incidentalomas (Usually Non-Functional) |
+| **Thymic/Bronchial Carcinoids** | Rare (Unlike MEN1) |
+| **Genetic Testing** | **CDKN1B Sequencing** (If MEN1 Negative + MEN1 Phenotype) |
+| **Penetrance** | **Incomplete (~50-70%)** |
+| **Genetic Counselling** | AD Inheritance; 50% Offspring Risk; Predictive Testing Offered |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **MEN4 vs MEN1** | MEN4 = **MEN1 Phenotype + MEN1-Negative + CDKN1B Mutation** |
+| **CDKN1B vs MEN1 Gene** | CDKN1B = p27 (CDK Inhibitor); MEN1 = Menin (Tumour Suppressor) |
+| **Penetrance** | MEN4 **Incomplete (~50-70%)**; MEN1 **Complete (>95% by 50)** |
+| **Adrenal Involvement** | MEN4: Rare; MEN1: Common (Incidentalomas) |
+| **Carcinoids** | MEN4: Rare; MEN1: Common (Thymic/Bronchial) |
+| **Genetic Testing** | **MEN1 Negative → Test CDKN1B** |
+| **Family Screening** | **Predictive Testing** if Familial Mutation Known |
+| **CDKN1B Function** | **p27 → CDK Inhibitor → G1/S Arrest** |
+
+---
+
+## 9. Mind Map
+
+```mermaid
+mindmap
+  root((MEN4))
+    Definition
+      MEN1-Like + MEN1-Negative + CDKN1B Mutation
+    Gene
+      CDKN1B (p27^Kip1^) — 12p13.1
+      CDK Inhibitor → G1/S Arrest
+      Loss-of-Function → Cell Proliferation
+    Inheritance
+      AD, Incomplete Penetrance (~50-70%)
+    Phenotype (MEN1-Like)
+      Parathyroid: PHPT (Multigland Hyperplasia)
+      Pituitary: Prolactinoma > GH > NFPA
+      Pancreas: Gastrinoma, Insulinoma, Non-Func NET
+      Adrenal: Incidentalomas Only
+      Carcinoids: Rare
+    Genetics
+      CDKN1B (p27^Kip1^)
+      CDK Inhibitor → G1/S Arrest
+      Loss-of-Function Mutations
+      AD, Incomplete Penetrance
+    Diagnosis
+      MEN1-Negative + MEN1-Like Phenotype
+      CDKN1B Pathogenic Variant
+    Surveillance
+      Similar to MEN1 (Annual Ca/PTH, Pituitary, Gut Hormones)
+      MRI Pituitary q3yr; CT Pancreas q1-3yr
+    Genetics
+      AD, Incomplete Penetrance
+      Predictive Testing for Relatives
+      Prenatal Diagnosis Possible
+    Diff from MEN1
+      MEN1 : Common, Full Penetrance, Menin Gene
+      MEN4 : Rare, Incomplete Penetrance, CDKN1B
+```
+
+---
+
+## 10. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **MEN4 Definition** | **MEN1-Like Syndrome + MEN1-Negative + CDKN1B Mutation** |
+| **Gene** | **CDKN1B (p27^Kip1^)** — Chromosome 12p13.1 |
+| **Protein** | **p27^Kip1^** (Cyclin-Dependent Kinase Inhibitor) |
+| **Inheritance** | **Autosomal Dominant** |
+| **Penetrance** | **Incomplete (~50-70%)** (Lower than MEN1) |
+| **Key Difference from MEN1** | **MEN1-Negative + CDKN1B Mutation Positive** |
+| **PHPT in MEN4** | Multigland Hyperplasia → Subtotal Parathyroidectomy |
+| **Pituitary** | Prolactinoma > GH > Non-Functioning |
+| **Pancreatic NETs** | Gastrinoma, Insulinoma, Non-Functional |
+| **Adrenal** | Incidentalomas Only (Usually Non-Functional) |
+| **Carcinoids** | Rare (vs MEN1 Common) |
+| **Genetic Testing** | **CDKN1B Sequencing** (If MEN1-Negative + MEN1 Phenotype) |
+| **Inheritance** | **Autosomal Dominant** |
+| **Penetrance** | **Incomplete (~50-70%)** |
+| **CDKN1B Function** | **CDK Inhibitor** → Cell Cycle Arrest (G1/S) |
+| **Genetic Counselling** | AD Inheritance; 50% Offspring Risk; Predictive Testing |
+
+---
+
+## 9. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Multiple Endocrine Neoplasia|Multiple Endocrine Neoplasia]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[MEN1]], [[MEN2A]], [[MEN2B]], [[Primary Hyperparathyroidism]], [[Pituitary Adenomas]], [[Pancreatic NETs]]
+## MCQs (10)
+1. **MEN4 gene:**
+   A. CDKN1B (12p13) encoding p27Kip1 (cyclin-dependent kinase inhibitor)
+   B. MEN1
+   C. RET
+   D. VHL
+   E. SDHx
+
+2. **MEN4 phenotype:**
+   A. MEN1-like (parathyroid, pituitary, pancreas) but MEN1 gene negative
+   B. MEN2-like
+   C. Only hyperparathyroidism
+   D. Only pituitary
+   E. Only pancreatic NETs
+
+3. **p27Kip1 function:**
+   A. Cell cycle regulator (G1/S checkpoint); loss → uncontrolled proliferation
+   B. DNA repair
+   C. Apoptosis
+   D. Hormone synthesis
+   E. Protein folding
+
+4. **MEN4 inheritance:**
+   A. Autosomal dominant
+   B. Autosomal recessive
+   C. X-linked
+   D. Mitochondrial
+   E. Sporadic
+
+5. **MEN4 parathyroid disease:**
+   A. Primary hyperparathyroidism (most common, like MEN1)
+   B. Hypoparathyroidism
+   C. None
+   D. Secondary HPT
+   E. Tertiary HPT
+
+6. **MEN4 pituitary tumours:**
+   A. Prolactinoma, somatotroph, corticotroph, gonadotroph, non-functioning
+   B. Only prolactinoma
+   C. Only ACTH
+   D. None
+   E. Only non-functioning
+
+7. **MEN4 pancreatic NETs:**
+   A. Gastrinoma, insulinoma, non-functioning; duodenal gastrinomas common
+   B. None
+   C. Only insulinoma
+   D. Only gastrinoma
+   E. Only glucagonoma
+
+8. **MEN4 vs MEN1: distinguishing feature:**
+   A. CDKN1B mutation with MEN1-negative sequencing
+   B. RET mutation
+   C. VHL mutation
+   D. Different phenotype
+   E. No genetic test
+
+9. **MEN4 prevalence:**
+   A. Very rare (<5% of MEN1-negative MEN1-like families)
+   B. Common
+   C. 50%
+   D. 25%
+   E. Unknown
+
+10. **MEN4 surveillance:**
+   A. Same as MEN1: Ca/PTH q1-2yr, pituitary MRI q1-3yr, pancreatic imaging q1-2yr
+   B. No surveillance
+   C. Only Ca
+   D. Only pituitary
+   E. Only pancreas
+
+## SBA Questions (5)
+1. **40yo woman: recurrent hyperparathyroidism (3 surgeries), pituitary macroadenoma (prolactinoma), duodenal gastrinoma. MEN1 sequencing negative. Next genetic test?**
+   A. CDKN1B (MEN4)
+   B. RET
+   C. VHL
+   D. SDHx
+   E. CDC73
+
+2. **Same patient: family screening. Brother has hypercalcaemia, normal MEN1. CDKN1B testing positive. Management?**
+   A. Same surveillance as MEN1: Ca/PTH q1-2yr, pituitary MRI q3yr, pancreatic imaging q1-2yr
+   B. No surveillance
+   C. Only parathyroid
+   D. Only pituitary
+   E. Only pancreas
+
+3. **MEN4 pituitary tumour most common type:**
+   A. Prolactinoma (like MEN1)
+   B. Somatotroph
+   C. Corticotroph
+   D. Gonadotroph
+   E. TSH-secreting
+
+4. **CDKN1B/p27Kip1 mechanism in MEN4:**
+   A. Loss of cell cycle control (G1/S) → tumorigenesis in endocrine tissues
+   B. DNA repair defect
+   C. Hormone overexpression
+   D. Receptor activation
+   E. Protein misfolding
+
+5. **MEN4 vs MEN1 genetic testing:**
+   A. Test MEN1 first; if negative + MEN1-like phenotype → test CDKN1B (MEN4)
+   B. Test CDKN1B first
+   C. Test RET first
+   D. Test VHL first
+   E. No genetic testing
+
+## Flashcards
+- **Q: MEN4 gene**
+  **A: CDKN1B (12p13); encodes p27Kip1 (CDK inhibitor, G1/S checkpoint)**
+
+- **Q: MEN4 phenotype**
+  **A: MEN1-like: pHPT (most common), pituitary adenomas, pancreatic NETs**
+
+- **Q: Inheritance**
+  **A: Autosomal dominant**
+
+- **Q: p27Kip1 function**
+  **A: Cell cycle negative regulator; loss → uncontrolled proliferation**
+
+- **Q: MEN4 vs MEN1**
+  **A: Phenotypically identical; MEN4 = MEN1-negative, CDKN1B-positive**
+
+- **Q: Parathyroid**
+  **A: Primary HPT (most common manifestation, 80-90%)**
+
+- **Q: Pituitary**
+  **A: Prolactinoma most common; also somatotroph, corticotroph, NFPA**
+
+- **Q: Pancreas**
+  **A: Gastrinoma (duodenal), insulinoma, non-functioning NETs**
+
+- **Q: Prevalence**
+  **A: Very rare (~1-5% of MEN1-negative MEN1-like families)**
+
+- **Q: Genetic testing**
+  **A: MEN1 sequencing first; if negative → CDKN1B (MEN4)**
+
+- **Q: Surveillance**
+  **A: Identical to MEN1: Ca/PTH annually, pituitary MRI q1-3yr, pancreatic imaging q1-2yr**
+
+- **Q: Other features**
+  **A: Adrenal cortical tumours, thyroid nodules, renal angiomyolipomas reported**
+
+## Answer Key with Explanations
+### MCQs
+1. **CDKN1B (12p13) encoding p27Kip1 (cyclin-dependent kinase inhibitor)** — MEN4 gene:
+
+2. **MEN1-like (parathyroid, pituitary, pancreas) but MEN1 gene negative** — MEN4 phenotype:
+
+3. **Cell cycle regulator (G1/S checkpoint); loss → uncontrolled proliferation** — p27Kip1 function:
+
+4. **Autosomal dominant** — MEN4 inheritance:
+
+5. **Primary hyperparathyroidism (most common, like MEN1)** — MEN4 parathyroid disease:
+
+6. **Prolactinoma, somatotroph, corticotroph, gonadotroph, non-functioning** — MEN4 pituitary tumours:
+
+7. **Gastrinoma, insulinoma, non-functioning; duodenal gastrinomas common** — MEN4 pancreatic NETs:
+
+8. **CDKN1B mutation with MEN1-negative sequencing** — MEN4 vs MEN1: distinguishing feature:
+
+9. **Very rare (<5% of MEN1-negative MEN1-like families)** — MEN4 prevalence:
+
+10. **Same as MEN1: Ca/PTH q1-2yr, pituitary MRI q1-3yr, pancreatic imaging q1-2yr** — MEN4 surveillance:
+
+### SBAs
+1. **CDKN1B (MEN4)** — 40yo woman: recurrent hyperparathyroidism (3 surgeries), pituitary macroadenoma (prolactinoma), duodenal gastrinoma. MEN1 sequencing negative. Next genetic test?
+
+2. **Same surveillance as MEN1: Ca/PTH q1-2yr, pituitary MRI q3yr, pancreatic imaging q1-2yr** — Same patient: family screening. Brother has hypercalcaemia, normal MEN1. CDKN1B testing positive. Management?
+
+3. **Prolactinoma (like MEN1)** — MEN4 pituitary tumour most common type:
+
+4. **Loss of cell cycle control (G1/S) → tumorigenesis in endocrine tissues** — CDKN1B/p27Kip1 mechanism in MEN4:
+
+5. **Test MEN1 first; if negative + MEN1-like phenotype → test CDKN1B (MEN4)** — MEN4 vs MEN1 genetic testing:

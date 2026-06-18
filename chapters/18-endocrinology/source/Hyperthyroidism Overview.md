@@ -1,0 +1,573 @@
+---
+tags: [medicine, endocrinology, davidson, hyperthyroidism, thyrotoxicosis, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 21: Diabetes Mellitus and Endocrine Disorders (Thyroid)
+davidson_chapter: Chapter 20: Endocrinology (Thyroid Section)
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Hyperthyroidism/Thyrotoxicosis is a core endocrine presentation. Mastering aetiology, investigation, and management of Graves, toxic nodular goitre, and thyroiditis is essential for FCPS/MRCP written and viva."
+see_also: ["Graves Disease", "Toxic Nodular Goitre", "Thyroiditis", "Thyroid Storm", "Hypothyroidism", "TSH/Thyroid Axis"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Hyperthyroidism Overview
+
+> [!info]
+> **Hyperthyroidism = Biochemical excess of thyroid hormones.** Thyrotoxicosis = Clinical syndrome of thyroid hormone excess. Graves disease (70-80%), toxic nodular goitre, thyroiditis are main causes. Key: Distinguish cause for definitive management.
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Define thyrotoxicosis vs hyperthyroidism
+- [ ] List and differentiate causes of thyrotoxicosis
+- [ ] Apply investigation algorithm (TSH, fT4, fT3, TRAb, RAI uptake)
+- [ ] Compare management options (antithyroid drugs, radioiodine, surgery)
+- [ ] Manage special situations (pregnancy, elderly, cardiac disease)
+
+---
+
+## 2. Definitions & Epidemiology
+
+| Term | Definition |
+|------|------------|
+| **Thyrotoxicosis** | Clinical syndrome of thyroid hormone excess (any cause) |
+| **Hyperthyroidism** | **Thyrotoxicosis due to increased thyroid hormone synthesis/secretion** (Graves, toxic nodule) |
+| **Epidemiology** | **1-2% women, 0.1-0.2% men**; Peak 30-50y; 10x female:male |
+| **Commonest Cause** | **Graves Disease (70-80%)** |
+
+---
+
+## 3. Aetiology — Causes of Thyrotoxicosis
+
+| Category | Cause | Mechanism | % of Cases |
+|----------|-------|-----------|------------|
+| **Hyperthyroidism (Increased Synthesis)** | **Graves Disease** | **TRAb (TSH-R stimulating antibodies)** | **70-80%** |
+| | **Toxic Multinodular Goitre (TMNG)** | Autonomous nodules | **10-15%** |
+| | **Toxic Adenoma (Single Toxic Nodule)** | Autonomous single nodule | **3-5%** |
+| | **TSH-secreting Pituitary Adenoma** | TSH excess | **<1%** |
+| | **hCG-mediated** (Molar pregnancy, Choriocarcinoma) | hCG cross-reacts with TSH-R | Rare |
+| **Thyroiditis (Release of Stored Hormone)** | **Subacute (De Quervain's)** | Viral/Post-viral; Painful; Self-limiting | **5-10%** |
+| | **Silent (Painless) / Lymphocytic** | Autoimmune; Postpartum common | **2-5%** |
+| | **Postpartum Thyroiditis** | Autoimmune; 1-4mo postpartum | **5-10% women** |
+| | **Drug-Induced** | Amiodarone (Type 1/2), Lithium, Checkpoint Inhibitors | Variable |
+| **Exogenous** | **Factitious / Iatrogenic** | Exogenous thyroid hormone intake | Rare |
+| **Ectopic** | **Struma Ovarii** | Ovarian Teratoma with Thyroid Tissue | Very Rare |
+
+---
+
+## 3. Clinical Presentation
+
+### Feature | Frequency | Details
+|---------|-----------|---------|
+| **Weight Loss** | >90% | Despite Increased Appetite |
+| **Heat Intolerance / Sweating** | >90% |  |
+| **Palpitations / Tachycardia** | >90% | Atrial Fibrillation in 10-15% (Elderly) |
+| **Tremor** | 70-80% | Fine, Outstretched Hands |
+| **Anxiety / Irritability** | 70-80% |  |
+| **Diarrhoea / ↑ Bowel Frequency** | 50-60% |  |
+| **Menstrual Irregularities** | Women | Oligomenorrhoea, Amenorrhoea |
+| **Muscle Weakness** | Proximal | Thyrotoxic Myopathy |
+| **Ophthalmopathy** | **Graves Only** (25-50%) | Proptosis, Lid Lag, Diplopia |
+| **Dermopathy** | **Graves Only** (1-5%) | Pretibial Myxoedema |
+| **Acropachy** | Graves Only (Rare) | Digital Clubbing, Periosteal Reaction |
+
+---
+
+## 3. Differential Diagnosis of Thyrotoxicosis Causes
+
+| Feature | **Graves** | **Toxic MNG** | **Toxic Adenoma** | **Thyroiditis** | **Factitious** |
+|---------|------------|---------------|-------------------|-----------------|----------------|
+| **TSH** | Suppressed | Suppressed | Suppressed | Suppressed | Suppressed |
+| **fT4/fT3** | ↑↑ | ↑ | ↑ | ↑ (Early) then ↓ | ↑ |
+| **TRAb** | **Positive (>95%)** | Negative | Negative | Negative | Negative |
+| **RAI Uptake** | **Diffuse ↑** | **Multifocal / Patchy** | **Focal (Hot Nodule)** | **Low / Absent** | **Absent** |
+| **Thyroid US** | Diffuse Enlargement, Hypervascular | Multiple Nodules | Single Hot Nodule | Heterogeneous / Inflamed | Normal / Atrophic |
+| **Pain / Tenderness** | No | No | No | **Yes (Subacute)** | No |
+| **Antibodies** | **TRAb +, TPO/TgAb +** | TPOAb +/- | Negative | TPOAb + (Silent/Postpartum) | Negative |
+| **Radioiodine Scan** | **Diffuse Homogeneous Uptake** | **Multiple Hot Spots** | **Single Hot Spot** | **Low / Zero Uptake** | Zero Uptake |
+
+---
+
+## 4. Investigation Algorithm
+
+```
+Clinical Thyrotoxicosis
+         │
+         ▼
+TSH + fT4 + fT3 (+ TRAb if TSH Suppressed)
+         │
+         ├── TSH Suppressed + fT4/fT3 ↑ → PRIMARY THYROTOXICOSIS
+         │       │
+         │       ├── TRAb POSITIVE → **GRAVES DISEASE**
+         │       │       Management: Carbimazole/PTU → RAI or Surgery
+         │       │
+         │       ├── TRAb NEGATIVE → Thyroid US + RAI Uptake
+         │       │       ├── **Diffuse ↑ Uptake** → **GRAVES (Seronegative)**
+         │       │       ├── **Focal Uptake** → **TOXIC ADENOMA**
+         │       │       ├── **Multifocal Uptake** → **TOXIC MULTINODULAR GOITRE**
+         │       │       ├── **LOW Uptake + Painful Thyroid** → **SUBACUTE THYROIDITIS**
+         │       │       ├── **LOW Uptake + Painless + Postpartum** → **POSTPARTUM THYROIDITIS**
+         │       │       ├── **LOW Uptake + Amiodarone** → **TYPE 1 (Iodine Load) / TYPE 2 (Destructive)**
+         │       │       └── **LOW Uptake + No Pain** → **SILENT THYROIDITIS / FACTITIOUS**
+         │       │
+         └── TSH NORMAL/HIGH + fT4/fT3 ↑ → SECONDARY THYROTOXICOSIS (TSH-OMA)
+                 MRI Pituitary + TRH Test → **TSH-SECRETING ADENOMA**
+```
+
+---
+
+## 4. Management — Overview
+
+### Antithyroid Drugs (ATDs) — 1st Line Medical
+| Drug | Dose | Monitoring | Key Points |
+|------|------|------------|------------|
+| **Carbimazole** | **15-40mg/day** (Divided BD/TDS); Maintenance 5-15mg/day | FBC, LFT q2-4wk initially; TSH/fT4 q6-8wk | **1st Line (UK)**; Crosses Placenta; Teratogenic (Aplasia Cutis) |
+| **Propylthiouracil (PTU)** | 100-200mg TDS; Maintenance 50-150mg/day | Same | **Preferred 1st Trimester Pregnancy**; Hepatotoxicity Risk |
+
+**Block & Replace**: Carbimazole 20-40mg/day + Levothyroxine 100-150µg/day (If Relapse/Non-Adherence)
+
+### Radioactive Iodine (RAI) — Definitive
+| Indication | Dose | Contraindications |
+|------------|------|-------------------|
+| **Relapse after ATDs** | **400-600 MBq** (Calibrated) | **Pregnancy, Breastfeeding, Active Ophthalmopathy** |
+| **Elderly / Cardiac Disease** | Lower Dose (200-400 MBq) | Active Ophthalmopathy (Relative) |
+| **Patient Preference** | | Age <5 (Relative) |
+
+**Post-RAI**: Hypothyroidism >80% at 1yr → Lifelong Levothyroxine
+
+### Surgery (Thyroidectomy)
+| Indication | Type |
+|------------|------|
+| **Large Goitre / Compressive Symptoms** | Total / Near-Total Thyroidectomy |
+| **RAI Contraindicated / Failed** | Total / Near-Total |
+| **Suspicion of Malignancy** | Total Thyroidectomy ± LND |
+
+### β-Blockers
+| Drug | Dose | Use |
+|------|------|-----|
+| **Propranolol** | 20-40mg QDS | Symptomatic Control (Tachycardia, Tremor, Anxiety) |
+| **Bisoprolol / Atenolol** | Once Daily | If Propranolol Contraindicated (Asthma) |
+
+---
+
+## 4. Graves Disease — Specific Management
+
+### Algorithm
+```
+Graves Disease Diagnosed
+         │
+         ├── 1st Episode / Mild-Moderate → **Carbimazole** (15-40mg/day) 12-18 Months
+         │       → Remission Rate ~40-50%
+         │       → Relapse → RAI or Surgery
+         │
+         ├── Severe / Large Goitre / Cardiac Disease / Elderly → **RAI** or **Surgery**
+         │
+         ├── **Active Ophthalmopathy** → **RAI Contraindicated** (Worsens)
+         │       → **Surgery Preferred** or **PTU + Steroids** → RAI Delayed
+         │
+         ├── **Pregnancy** → **PTU 1st Trimester** → Switch Carbimazole 2nd/3rd
+         │
+         └── **Children / Adolescents** → Carbimazole (Longer Course); RAI >10-15y
+```
+
+### Relapse Predictors
+| Factor | Relapse Risk |
+|--------|--------------|
+| **High TRAb at 12-18mo** | High (>80%) |
+| **Large Goitre** | High |
+| **Smoking** | **2-3x Higher** |
+| **Young Age (<40)** | Higher |
+| **Male Sex** | Higher |
+
+---
+
+## 5. Toxic Multinodular Goitre (TMNG)
+
+| Feature | Details |
+|---------|---------|
+| **Age** | >50 years |
+| **Goitre** | Long-standing, Multinodular |
+| **Presentation** | Often Subclinical; Atrial Fibrillation Common |
+| **Investigation** | **RAI Uptake: Multifocal / Patchy**; TSH Suppressed; fT4/fT3 ↑ |
+| **Management** | **RAI (Definitive)** OR **Surgery** (Large/Compressive); **ATDs Not Curative** |
+
+---
+
+## 5. Toxic Adenoma
+
+| Feature | Details |
+|---------|---------|
+| **Presentation** | Single Nodule; Often Young Adults |
+| **Investigation** | **RAI Uptake: Focal "Hot" Nodule**; Suppressed TSH |
+| **Management** | **Surgery (Hemithyroidectomy)** — Curative; **RAI Alternative** |
+
+---
+
+## 5. Thyroiditis — Thyrotoxic Phase
+
+| Type | Onset | Pain | RAI Uptake | Course | Treatment |
+|------|-------|------|------------|--------|-----------|
+| **Subacute (De Quervain)** | Subacute | **Yes (Neck Pain)** | **Low** | Self-limiting (3-6mo) | NSAIDs / Steroids; β-Blocker |
+| **Silent / Painless** | Subacute | **No** | Low | Self-limiting (3-6mo) | β-Blocker; Monitor |
+| **Postpartum** | 1-4mo Postpartum | No | Low | Thyrotoxic → Hypothyroid → Recovery | β-Blocker; Monitor; Levothyroxine if Hypothyroid |
+| **Drug-Induced (Amiodarone Type 2)** | Variable | No | Low | Prolonged | Stop Amiodarone if Possible; Steroids |
+
+---
+
+## 6. Special Situations
+
+### Thyrotoxicosis in Pregnancy
+| Trimester | Preferred ATD |
+|-----------|---------------|
+| **1st Trimester** | **PTU** (Lower Teratogenicity) |
+| **2nd/3rd Trimester** | **Carbimazole** (Switch at 12-14wks) |
+| **Targets** | fT4 Upper Normal Range; TSH Low but Detectable |
+| **Fetal Monitoring** | Fetal TSH/FT4 if Maternal TRAb High; Goitre Check |
+
+### Thyrotoxicosis in Elderly
+| Feature | Management |
+|---------|------------|
+| **Atypical Presentation** | "Apathetic Thyrotoxicosis" (Weight Loss, Apathy, AF, Confusion) |
+| **Cardiac Comorbidity** | **RAI Preferred** (Lower Cardiac Risk); Low-Dose ATDs; β-Blockers Essential |
+| **Bone Health** | Monitor BMD; Calcium/Vit D Supplementation |
+
+---
+
+## 6. Thyroid Storm — Emergency
+
+| Diagnostic Criteria (Burch-Wartofsky Score) | Points |
+|---------------------------------------------|--------|
+| **Temperature** | 37.2-37.7: 5; 37.8-38.3: 10; 38.4-38.8: 15; 38.9-39.4: 20; 39.5-39.9: 25; ≥40: 30 |
+| **CNS Effects** | Absent: 0; Mild: 10; Moderate: 20; Severe (Seizure/Coma): 30 |
+| **GI** | Absent: 0; Moderate: 10; Severe (Diarrhoea/Abdo Pain): 20 |
+| **Cardiac** | HR 90-109: 5; 110-119: 10; 120-129: 15; ≥130: 20; AF: 10; HF: 10 |
+| **Precipitant** | Absent: 0; Present: 10 |
+
+| Score | Interpretation |
+|-------|----------------|
+| **<25** | Unlikely |
+| **25-44** | Impending |
+| **≥45** | **Diagnostic** |
+
+### Emergency Management
+| Step | Action |
+|------|--------|
+| **1. PTU** | **600mg Load → 200mg Q6H** (Preferred over Carbimazole) |
+| **2. β-Blocker** | **Propranolol 40-80mg Q6H** (IV if Needed) |
+| **3. Iodine** | **Lugol's Iodine 8 drops 6Hrly** (After 1h PTU) / Saturated Solution KI |
+| **4. Steroids** | **Hydrocortisone 100mg IV q8h** (Blocks Peripheral Conversion) |
+| **5. Supportive** | Fluids, Cooling, Antipyretics, Anticoagulation (if AF) |
+
+---
+
+## 7. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **Thyrotoxicosis vs Hyperthyroidism** | Thyrotoxicosis = Syndrome; Hyperthyroidism = Increased Synthesis (Subset) |
+| **Commonest Cause** | **Graves (70-80%)** |
+| **TRAb** | **Positive >95% Graves**; Negative = Not Graves |
+| **RAI Uptake Patterns** | Graves = Diffuse ↑; TMNG = Multifocal; Toxic Adenoma = Focal; Thyroiditis = Low |
+| **Carbimazole vs PTU** | Carbimazole 1st Line; PTU = 1st Trimester Pregnancy + Thyroid Storm |
+| **Thyroid Storm** | **Burch-Wartofsky ≥45**; PTU + Propranolol + Iodine + Hydrocortisone |
+| **RAI Contraindications** | Pregnancy, Breastfeeding, **Active Ophthalmopathy** |
+| **Carbimazole Side Effects** | Agranulocytosis (0.1-0.5%), Hepatitis, Rash, Arthralgia |
+| **Amiodarone** | Type 1 = Iodine Load (Exacerbates); Type 2 = Destructive Thyroiditis (Treat with Steroids) |
+| **Subclinical Hyperthyroidism** | TSH <0.1 + Normal fT4/fT3; Treat if TSH <0.1 + Age>65 / Cardiac / Osteoporosis |
+| **Factitious Thyrotoxicosis** | Low RAI Uptake + Low Tg + Suppressed TSH + High fT4/fT3 |
+
+---
+
+## 8. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Thyrotoxicosis vs Hyperthyroidism** | Thyrotoxicosis = Syndrome; Hyperthyroidism = Synthesis ↑ (Subset) |
+| **Graves vs Toxic Nodule** | TRAb + Diffuse Uptake vs Focal Uptake (Hot Nodule) |
+| **Thyroiditis vs Graves** | Thyroiditis: Low RAI Uptake, Often Painful (Subacute), Self-Limiting |
+| **Amiodarone Type 1 vs 2** | Type 1 = Iodine Load (Excess Substrate); Type 2 = Destructive Thyroiditis (Inflammatory) |
+| **RAI in Ophthalmopathy** | **Contraindicated** (Worsens Eye Disease); Use Surgery or PTU + Steroids |
+| **PTU in Pregnancy** | **1st Trimester Only** (Less Teratogenic); Switch to Carbimazole 2nd Tri |
+| **Factitious Thyrotoxicosis** | Low RAI Uptake + Low Tg + Suppressed TSH + High fT4/fT3 |
+
+---
+
+## 8. Mind Map
+
+```mermaid
+mindmap
+  root((Hyperthyroidism))
+    Definitions
+      Thyrotoxicosis: Syndrome of Excess TH
+      Hyperthyroidism: ↑ Synthesis/Secretion (Subset)
+    Causes
+      Hyperthyroidism (↑ Synthesis)
+        Graves (70-80%) → TRAb + Diffuse Uptake
+        Toxic MNG → Multifocal Uptake
+        Toxic Adenoma → Focal Uptake
+        TSH-oma → TSH ↑ + fT4↑
+      Thyroiditis (Release)
+        Subacute (Painful) → Low RAI
+        Silent/Postpartum → Low RAI
+        Drug-Induced (Amiodarone)
+      Exogenous / Factitious
+    Investigation
+      TSH + fT4/fT3 + TRAb + RAI Uptake + US
+    Management
+      ATDs: Carbimazole (1st Line), PTU (Pregnancy/Storm)
+      RAI: Definitive (Contra: Pregnancy, Ophthalmopathy)
+      Surgery: Large Goitre, RAI Fail, Suspicion Malignancy
+      β-Blockers: Symptomatic Control
+    Graves
+      Carbimazole 12-18mo → 40-50% Remission
+      RAI if Relapse/Large Goitre/Active Eye
+      PTU for Storm/1st Tri Pregnancy
+    Thyroiditis
+      Subacute: Painful, Low RAI, Self-Limiting
+      Silent/Postpartum: Painless, Low RAI
+      Amiodarone: Type 1 (Iodine) vs Type 2 (Destructive)
+    Storm
+      Burch-Wartofsky ≥45
+      PTU + Propranolol + Iodine + Steroids
+```
+
+---
+
+## MCQs (10)
+1. **Commonest cause of hyperthyroidism is:**
+   A. Graves disease (70-80%)
+   B. Toxic multinodular goitre
+   C. Thyroiditis
+   D. Toxic adenoma
+   E. TSHoma
+
+2. **Thyrotoxicosis vs hyperthyroidism:**
+   A. Thyrotoxicosis = clinical syndrome; Hyperthyroidism = increased synthesis (subset)
+   B. Same thing
+   C. Thyrotoxicosis = subclinical
+   D. Hyperthyroidism = syndrome
+   E. Thyrotoxicosis = crisis only
+
+3. **TRAb is positive in what % of Graves?**
+   A. >95%
+   B. 50-70%
+   C. 80-90%
+   D. 30-50%
+   E. 100%
+
+4. **RAI uptake pattern in Graves:**
+   A. Diffuse increased
+   B. Focal (hot nodule)
+   C. Multifocal/patchy
+   D. Low/absent
+   E. Normal
+
+5. **First-line antithyroid drug in UK (non-pregnant):**
+   A. Carbimazole
+   B. PTU
+   C. Propranolol
+   D. Iodine
+   E. Levothyroxine
+
+6. **PTU preferred over carbimazole in:**
+   A. 1st trimester pregnancy + thyroid storm
+   B. 2nd/3rd trimester
+   C. Elderly
+   D. Children
+   E. Cardiac patients
+
+7. **RAI contraindicated in:**
+   A. Pregnancy, breastfeeding, active ophthalmopathy
+   B. Elderly
+   C. Cardiac disease
+   D. Children
+   E. Mild hyperthyroidism
+
+8. **Burch-Wartofsky score ≥45 indicates:**
+   A. Diagnostic of thyroid storm
+   B. Impending storm
+   C. Unlikely storm
+   D. Severe thyrotoxicosis
+   E. Mild thyrotoxicosis
+
+9. **In thyroid storm, iodine is given:**
+   A. 1 hour AFTER PTU (blocks release)
+   B. Before PTU (blocks synthesis)
+   C. Simultaneously with PTU
+   D. Only if PTU unavailable
+   E. Never in storm
+
+10. **Block-and-replace regimen uses:**
+   A. Carbimazole 20-40mg + Levothyroxine 100-150µg
+   B. PTU + Iodine
+   C. Propranolol + Hydrocortisone
+   D. RAI + Levothyroxine
+   E. Surgery + Levothyroxine
+
+## SBA Questions (10)
+1. **30yo woman: tremor, weight loss, TSH <0.01, fT4 45, fT3 15, TRAb +, diffuse uptake. Management?**
+   A. Carbimazole 20mg daily for 12-18 months
+   B. RAI immediately
+   C. Surgery
+   D. PTU alone
+   E. Propranolol alone
+
+2. **55yo man: long-standing MNG, AF, TSH <0.01, fT4 28. Multifocal uptake. Best definitive Rx?**
+   A. RAI
+   B. Carbimazole long-term
+   C. Surgery
+   D. PTU
+   E. Observation
+
+3. **25yo woman: single hot nodule, TSH suppressed. Curative treatment?**
+   A. Surgery (hemithyroidectomy)
+   B. Carbimazole
+   C. RAI
+   D. PTU
+   E. Observation
+
+4. **40yo woman: subacute thyroiditis, neck pain, TSH <0.01, fT4 30, low RAI uptake. Management?**
+   A. NSAIDs + propranolol; monitor (self-limiting)
+   B. Carbimazole
+   C. RAI
+   D. Antibiotics
+   E. Surgery
+
+5. **Pregnant at 10 weeks: Graves, TSH <0.01, fT4 38. Preferred ATD?**
+   A. PTU 100-200mg TDS
+   B. Carbimazole
+   C. RAI
+   D. Surgery
+   E. Propranolol alone
+
+6. **Thyroid storm: BWS 55. Immediate drugs?**
+   A. PTU 600mg load → 200mg q6h + propranolol 80mg q6h + iodine + hydrocortisone
+   B. Carbimazole + propranolol only
+   C. RAI + propranolol
+   D. Surgery + propranolol
+   E. Iodine + propranolol only
+
+7. **25yo woman: factitious thyrotoxicosis. Key features?**
+   A. Low RAI uptake + low Tg + suppressed TSH + high fT4/fT3
+   B. High RAI uptake + high Tg
+   C. TRAb positive
+   D. Thyroid antibodies + high uptake
+   E. Normal uptake
+
+8. **Amiodarone type 2 thyrotoxicosis. Treatment?**
+   A. Steroids; stop amiodarone if possible
+   B. Carbimazole
+   C. RAI
+   D. High-dose iodine
+   E. Potassium perchlorate
+
+9. **Subclinical hyperthyroidism: TSH <0.1, fT4/fT3 normal. Treat if?**
+   A. TSH <0.1 + Age>65 / Cardiac / Osteoporosis
+   B. Always
+   C. Never
+   D. Only if TSH <0.01
+   E. Only if symptomatic
+
+10. **Relapse predictor after carbimazole for Graves:**
+   A. High TRAb at 12-18mo + large goitre + smoking
+   B. Low TRAb + small goitre
+   C. Age >50
+   D. Male sex alone
+   E. Short course only
+
+## Flashcards
+- **Q: Thyrotoxicosis vs Hyperthyroidism**
+  **A: Thyrotoxicosis = syndrome of excess TH; Hyperthyroidism = increased synthesis/secretion (subset)**
+
+- **Q: Graves disease**
+  **A: TRAb + diffuse ↑ RAI uptake; 70-80% of hyperthyroidism**
+
+- **Q: Toxic MNG**
+  **A: Multifocal RAI uptake; ATDs not curative → RAI or surgery**
+
+- **Q: Toxic adenoma**
+  **A: Focal hot nodule RAI uptake; surgery curative**
+
+- **Q: Thyroiditis thyrotoxic phase**
+  **A: Low RAI uptake; painful (subacute) or painless (silent/postpartum); self-limiting**
+
+- **Q: Amiodarone Type 1**
+  **A: Iodine load → exacerbates underlying autonomy → treat with ATDs**
+
+- **Q: Amiodarone Type 2**
+  **A: Destructive thyroiditis → steroids; stop amiodarone**
+
+- **Q: Carbimazole**
+  **A: 1st line (15-40mg); crosses placenta; teratogenic (aplasia cutis); agranulocytosis 0.1-0.5%**
+
+- **Q: PTU**
+  **A: Preferred 1st trimester + storm (blocks T4→T3); hepatotoxicity risk**
+
+- **Q: RAI**
+  **A: Definitive 400-600 MBq; contra: pregnancy, BF, active ophthalmopathy; >80% hypothyroid at 1yr**
+
+- **Q: Thyroid storm**
+  **A: BWS ≥45; PTU + propranolol + iodine (after PTU) + hydrocortisone + fluids**
+
+- **Q: Factitious thyrotoxicosis**
+  **A: Low RAI uptake + low Tg + suppressed TSH + high fT4/fT3**
+
+- **Q: Subclinical hyperthyroidism**
+  **A: TSH <0.1, fT4/fT3 normal; treat if TSH <0.1 + age>65/cardiac/osteoporosis**
+
+- **Q: Pregnancy Graves**
+  **A: PTU 1st tri → switch carbimazole 2nd/3rd; target fT4 upper normal**
+
+## Answer Key with Explanations
+### MCQs
+1. **Graves disease (70-80%)** — Commonest cause of hyperthyroidism is:
+
+2. **Thyrotoxicosis = clinical syndrome; Hyperthyroidism = increased synthesis (subset)** — Thyrotoxicosis vs hyperthyroidism:
+
+3. **>95%** — TRAb is positive in what % of Graves?
+
+4. **Diffuse increased** — RAI uptake pattern in Graves:
+
+5. **Carbimazole** — First-line antithyroid drug in UK (non-pregnant):
+
+6. **1st trimester pregnancy + thyroid storm** — PTU preferred over carbimazole in:
+
+7. **Pregnancy, breastfeeding, active ophthalmopathy** — RAI contraindicated in:
+
+8. **Diagnostic of thyroid storm** — Burch-Wartofsky score ≥45 indicates:
+
+9. **1 hour AFTER PTU (blocks release)** — In thyroid storm, iodine is given:
+
+10. **Carbimazole 20-40mg + Levothyroxine 100-150µg** — Block-and-replace regimen uses:
+
+
+### SBAs
+1. **Carbimazole 20mg daily for 12-18 months** — 30yo woman: tremor, weight loss, TSH <0.01, fT4 45, fT3 15, TRAb +, diffuse uptake. Management?
+
+2. **RAI** — 55yo man: long-standing MNG, AF, TSH <0.01, fT4 28. Multifocal uptake. Best definitive Rx?
+
+3. **Surgery (hemithyroidectomy)** — 25yo woman: single hot nodule, TSH suppressed. Curative treatment?
+
+4. **NSAIDs + propranolol; monitor (self-limiting)** — 40yo woman: subacute thyroiditis, neck pain, TSH <0.01, fT4 30, low RAI uptake. Management?
+
+5. **PTU 100-200mg TDS** — Pregnant at 10 weeks: Graves, TSH <0.01, fT4 38. Preferred ATD?
+
+6. **PTU 600mg load → 200mg q6h + propranolol 80mg q6h + iodine + hydrocortisone** — Thyroid storm: BWS 55. Immediate drugs?
+
+7. **Low RAI uptake + low Tg + suppressed TSH + high fT4/fT3** — 25yo woman: factitious thyrotoxicosis. Key features?
+
+8. **Steroids; stop amiodarone if possible** — Amiodarone type 2 thyrotoxicosis. Treatment?
+
+9. **TSH <0.1 + Age>65 / Cardiac / Osteoporosis** — Subclinical hyperthyroidism: TSH <0.1, fT4/fT3 normal. Treat if?
+
+10. **High TRAb at 12-18mo + large goitre + smoking** — Relapse predictor after carbimazole for Graves:
+
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Thyroid Disorders|Thyroid Disorders]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[Graves Disease]], [[Toxic Nodular Goitre]], [[Thyroiditis]], [[Thyroid Storm]], [[TSH/Thyroid Axis]], [[Dynamic Testing Principles]]

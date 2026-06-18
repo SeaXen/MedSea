@@ -1,0 +1,525 @@
+---
+tags: [medicine, endocrinology, davidson, thyroid-storm, fcps, mrcp]
+davidson_part: Part 3: Clinical Medicine
+davidson_chapter: Chapter 21: Acute Endocrine Emergencies (or Chapter 20: Endocrinology)
+status: full-fcps-mrcp-note
+priority: HIGH
+exam_relevance: "FCPS/MRCP High Yield - Thyroid Storm is a life-threatening exacerbation of thyrotoxicosis. Key viva topics: Burch-Wartofsky score, immediate management (PTU, propranolol, iodine, steroids), precipitating factors, and differentiation from thyrotoxicosis."
+see_also: ["Graves Disease", "Hyperthyroidism Overview", "Thyroid Eye Disease", "Adrenal Crisis", "Myxoedema Coma", "Endocrine Emergencies"]
+created: 2026-06-14
+modified: 2026-06-14
+---
+
+# Thyroid Storm
+
+> [!info]
+> **Thyroid Storm = Life-Threatening Exacerbation of Thyrotoxicosis.** **Medical Emergency** with **Mortality 10-30%**. **Burch-Wartofsky Score ≥45 = Diagnostic.** **Immediate Multimodal Therapy: PTU + Propranolol + Iodine + Steroids + Supportive Care.**
+
+---
+
+## 1. Learning Objectives
+By the end of this note you should be able to:
+- [ ] Diagnose thyroid storm using Burch-Wartofsky scoring system
+- [ ] Execute immediate multimodal management protocol
+- [ ] Identify precipitating factors and prevent recurrence
+- [ ] Differentiate from severe thyrotoxicosis and other causes of hyperthermia/tachycardia
+
+---
+
+## 2. Definition & Epidemiology
+
+| Feature | Details |
+|---------|---------|
+| **Definition** | **Acute, Life-Threatening Exacerbation** of Thyrotoxicosis with Multiorgan Dysfunction |
+| **Incidence** | **0.5-1 per 100,000/year** (Rare) |
+| **Mortality** | **10-30%** (Despite Modern Therapy) |
+| **Precipitating Factors** | Infection (40%), Surgery, Trauma, Iodine Load, DKA, Stroke, Parturition, Drug Withdrawal, Thyroid Storm in Pregnancy |
+
+---
+
+## 2. Burch-Wartofsky Score (Diagnostic Standard)
+
+| Parameter | Points |
+|-----------|--------|
+| **Temperature (°C)** | 37.2-37.7: 5; 37.8-38.3: 10; 38.4-38.8: 15; 38.9-39.4: 20; 39.5-39.9: 25; **≥40: 30** |
+| **Central Nervous System** | Absent: 0; Mild (Agitation): 10; Moderate (Delirium): 20; Severe (Seizure/Coma): 30 |
+| **Gastrointestinal** | Absent: 0; Moderate (Nausea/Vomiting): 10; Severe (Diarrhoea/Abdo Pain): 20 |
+| **Cardiac** | HR 90-109: 5; 110-119: 10; 120-129: 15; ≥130: 20; AF: 10; HF: 10 |
+| **Precipitant** | Absent: 0; Present: 10 |
+
+| Score | Interpretation |
+|--------|----------------|
+| **<25** | Unlikely |
+| **25-44** | Impending / Probable |
+| **≥45** | **Diagnostic** |
+
+---
+
+## 3. Clinical Presentation
+
+### Cardinal Features
+| System | Findings |
+|--------|----------|
+| **Thermoregulation** | **Hyperpyrexia** (39-41°C), Profuse Sweating |
+| **Cardiovascular** | **Tachycardia** (≥130 bpm), **Atrial Fibrillation** (15-20%), High-Output Heart Failure, Shock |
+| **Central Nervous System** | **Agitation → Delirium → Coma**, Seizures, Tremor |
+| **Gastrointestinal** | Nausea, Vomiting, Diarrhoea, Abdominal Pain, Jaundice (Cholestasis) |
+| **Hepatic** | **Jaundice** (Cholestatic), ↑ Transaminases |
+| **Haematological** | Leukocytosis, Thrombocytopenia, DIC |
+
+### Precipitating Factors (The "I PREPARE" Mnemonic)
+| Letter | Factor |
+|--------|--------|
+| **I** | **I**nfection (Pneumonia, UTI, Sepsis) — **Commonest** |
+| **P** | **P**regnancy / **P**ostpartum / **P**arturition |
+| **R** | **R**adiation (Iodine-131), **R**adiocontrast, **R**efractory thyrotoxicosis |
+| **E** | **E**xternal Trauma / **E**ndocrine Surgery |
+| **P** | **P**ostpartum, **P**ulmonary Embolism |
+| **A** | **A**cute Illness (MI, Stroke, DKA) |
+| **R** | **R**efractory (Non-Adherence to ATDs) |
+| **E** | **E**motional Stress / **E**xercise |
+
+---
+
+## 3. Diagnostic Criteria — Burch-Wartofsky Score ≥45
+
+| Score Range | Interpretation |
+|--------------|----------------|
+| **<25** | Unlikely |
+| **25-44** | Impending / Probable |
+| **≥45** | **Diagnostic of Thyroid Storm** |
+
+### Differential Diagnosis
+| Condition | Key Differentiators |
+|-----------|---------------------|
+| **Severe Thyrotoxicosis** | BWS <45; No Multiorgan Failure |
+| **Sepsis** | Fever, Tachycardia; **Normal TSH/fT4**; Positive Cultures |
+| **Malignant Hyperthermia** | Anaesthesia Trigger; **Rigid Muscles**, ↑ CK |
+| **Neuroleptic Malignant Syndrome** | Dopamine Antagonist Exposure; **Lead-Pipe Rigidity**, ↑ CK |
+| **Serotonin Syndrome** | Serotonergic Drugs; **Clonus, Hyperreflexia**, Diarrhoea |
+| **Heat Stroke** | Environmental Heat Exposure; **Anhidrosis** |
+| **Adrenal Crisis** | Hypotension, Hyponatraemia, Hyperkalaemia; Normal TSH/fT4 |
+
+---
+
+## 3. Emergency Management Protocol (First 60 Minutes)
+
+```
+THYROID STORM SUSPECTED (BWS ≥45)
+         │
+         ▼
+1. ABCDE + ICU ADMISSION
+         │
+         ├── AIRWAY / BREATHING: Intubate if GCS <8 / Respiratory Failure
+         ├── CIRCULATION: **Hydrocortisone 100mg IV STAT** + **Fluid Resuscitation**
+         └── DISABILITY: GCS, Pupils, Neurological Monitoring
+         │
+         ▼
+2. ANTITHYROID THERAPY (IMMEDIATE)
+         │
+         ├── **PTU 600mg LOADING DOSE** (Then 200mg Q6H) — **Preferred** (Blocks Peripheral T4→T3)
+         │   └── If PTU Unavailable → Carbimazole 40-60mg Load → 20mg Q6H
+         │
+         ├── **BETA-BLOCKER** — **Propranolol 40-80mg Q6H** (IV if Needed)
+         │       Contraindicated: Asthma, Severe COPD, Bradycardia, Shock
+         │       Alternative: Esmolol IV Infusion (Titratable)
+         │
+         ├── **IODINE** — **1 Hour AFTER PTU** (Lugol's Iodine 8 Drops Q6H / SSKI 5 Drops Q6H)
+         │       **Purpose**: Blocks Thyroid Hormone Release
+         │       **CaUTION**: Give **AFTER** PTU (Else ↑ Hormone Synthesis)
+         │
+         └── **GLUCOCORTICOIDS** — **Hydrocortisone 100mg IV Q8H** (or Dexamethasone 4mg Q6H)
+                 **Purpose**: Blocks Peripheral T4→T3 Conversion; Adrenal Support; ↓ Cytokines
+         │
+         ▼
+3. SUPPORTIVE CARE
+         │
+         ├── **FLUIDS**: 1-2L 0.9% NaCl 1st Hour → 200-300mL/hr (Target UOP >0.5 mL/kg/h)
+         ├── **COOLING**: External (Ice Packs, Cooling Blanket); **NO ACTIVE REWARMING** in Coma
+         ├── **GLUCOSE**: 10% Dextrose if Hypoglycaemic; Monitor CBG q1-2h
+         ├── **ELECTROLYTES**: K⁺, Mg²⁺, Phosphate q4-6h; Correct Hypokalaemia
+         ├── **CARDIAC**: Propranolol (Rate Control); Digoxin if AF + HF; Amiodarone if Refractory AF
+         ├── **RESPIRATORY**: O₂; Intubate if GCS<8 / pCO₂>6.5 kPa
+         ├── **ANTICOAGULATION**: Heparin (If AF + Risk Factors / Immobilised)
+         └── **TREAT PRECIPITANT**: **Antibiotics** (Sepsis), **Surgery** (If Indicated), **Insulin/Dextrose** (DKA), **Stop ATDs** (If Non-Adherence)
+```
+
+---
+
+## 4. Drug Details & Dosing
+
+| Drug | Dose | Route | Key Points |
+|------|------|--------|------------|
+| **PTU** | **600mg Load → 200mg Q6H** | PO/NGT | **Blocks T4→T3**; Preferred in Storm |
+| **Carbimazole** | 40-60mg Load → 20mg Q6H | PO/NGT | If PTU Unavailable; Less T4→T3 Block |
+| **Propranolol** | 40-80mg Q6H | PO/IV | **Non-Selective β-Blocker**; Avoid if Asthma/Shock |
+| **Esmolol** | 50-200µg/kg/min IV Infusion | IV | **Titratable**; Short t½; Safe in Asthma |
+| **Lugol's Iodine** | 8 Drops (0.1mL) Q6H | PO | **Give 1h AFTER PTU**; Blocks Hormone Release |
+| **SSKI** | 5 Drops Q6H | PO | Alternative to Lugol's |
+| **Hydrocortisone** | 100mg IV Q8H | IV | **Blocks T4→T3**; Adrenal Support |
+| **Dexamethasone** | 4mg IV Q6H | IV | Alternative to Hydrocortisone |
+| **Propranolol** | 40-80mg Q6H | PO/IV | **Non-Selective β-Blocker**; Avoid Asthma |
+| **Esmolol** | 50-200µg/kg/min IV | IV | **Titratable**; Safe in Asthma |
+
+---
+
+## 4. Supportive Care & Monitoring
+
+| System | Intervention | Target |
+|--------|--------------|--------|
+| **Fluids** | 1-2L 0.9% NaCl 1st Hour → 200-300mL/hr | UOP >0.5 mL/kg/h; CVP 8-12 cmH₂O |
+| **Cooling** | **Passive Only** (Ice Packs, Cooling Blanket, Fan) | Target ↓ 0.5-1°C/h; **NO Active External Rewarming** |
+| **Glucose** | 10% Dextrose if Hypoglycaemic | CBG >4 mmol/L |
+| **Electrolytes** | K⁺, Mg²⁺, Phosphate q4-6h; Replace | K⁺ 4.0-5.0; Mg²⁺ >0.7 |
+| **Anticoagulation** | LMWH (If AF + CHA₂DS₂-VASc ≥2 / Immobilised) | |
+| **Nutrition** | Enteral Preferred; High Calorie, High Protein | NGT if GCS<12 |
+| **Bowel Regimen** | Laxatives if Constipated (Constipation Common) | |
+
+---
+
+## 4. Precipitant Management
+
+| Precipitant | Specific Management |
+|------------|---------------------|
+| **Infection/Sepsis** | **Empiric Antibiotics** (Blood/Urine/Sputum Cx → Targeted) |
+| **Surgery/Trauma** | Stabilise → Surgery After Stabilisation |
+| **DKA** | Insulin Infusion + Fluids + K⁺ Replacement |
+| **Stroke** | Neurology Review; Thrombolysis/Thrombectomy if Indicated |
+| **Iodine Load** | Stop Iodine Source; Perchlorate (If Recent) |
+| **Drug Withdrawal** | Restart ATDs; Bridge with IV PTU |
+| **Pregnancy/Postpartum** | PTU Preferred; Multidisciplinary (OB/Gyn + Endo + ICU) |
+
+---
+
+## 4. Monitoring & Endpoints
+
+| Parameter | Frequency | Target |
+|-----------|-----------|--------|
+| **Core Temperature** | Continuous | **↓ 0.5-1°C/hr**; Target <38°C |
+| **Heart Rate** | Continuous | **<100 bpm** (Sinus Rhythm) |
+| **BP / CVP** | q15min (1st hr) → q1h | MAP >65 mmHg; CVP 8-12 |
+| **Temperature** | Continuous / q15min | **↓ 0.5-1°C/hr**; Target <38°C |
+| **GCS / Neuro** | q15-30min | Improvement |
+| **Urine Output** | Hourly | **>0.5 mL/kg/h** |
+| **Labs** | q4-6h | Na⁺, K⁺, Glucose, U&E, LFTs, Coag, ABG, CBC |
+| **Thyroid Function** | Daily TSH, fT4, fT3 | fT4/fT3 Normalisation |
+
+---
+
+## 5. Resolution & Transition to Maintenance
+
+| Milestone | Action |
+|-----------|---------|
+| **Afebrile 48h** | Taper Cooling |
+| **Hemodynamic Stable** | Wean Vasopressors; Switch Oral β-Blocker |
+| **Mental Status Normal** | Stop Sedation; Assess Neuro |
+| **Thyroid Function Improving** | Taper PTU → Switch to Carbimazole (Oral) |
+| **Stabilised** | Transition to Oral Maintenance; Plan Definitive Therapy (RAI/Surgery) |
+
+---
+
+## 5. Complications & Prognosis
+
+| Complication | Incidence | Management |
+|--------------|-----------|------------|
+| **Cardiac Arrhythmias** | 20-30% | β-Blocker, Digoxin, Amiodarone, Cardioversion |
+| **Heart Failure** | 20% | Diuretics, ACEi, Inotropes (Dobutamine) |
+| **Respiratory Failure** | 15% | Mechanical Ventilation |
+| **DIC** | 5-10% | FFP, Platelets, Cryoprecipitate, Heparin |
+| **Hepatic Failure** | 10-15% | Supportive; NAC |
+| **Renal Failure** | 10% | CRRT if Severe |
+
+**Mortality**: **10-30%** Despite Modern Therapy (Higher if Delayed Treatment, Age >60, Comorbidities).
+
+---
+
+## 6. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **BWS Score ≥45** | **Diagnostic** for Thyroid Storm |
+| **BWS <25** | Unlikely |
+| **Immediate Drugs** | **PTU 600mg + Propranolol 80mg + Iodine + Hydrocortisone 100mg IV** |
+| **PTU vs Carbimazole** | **PTU Preferred** (Blocks T4→T3 Conversion) |
+| **Iodine Timing** | **Give 1 Hour AFTER PTU** (Else ↑ Hormone Synthesis) |
+| **β-Blocker Choice** | Propranolol (Non-Selective); **Esmolol if Asthma/Shock** |
+| **Steroid** | **Hydrocortisone 100mg IV** (Blocks T4→T3 + Adrenal Support) |
+| **Cooling** | **Passive Only** (Active Rewarming → Vasodilatation → Shock) |
+| **BWS ≥45** | **Diagnostic**; 25-44 = Probable; <25 = Unlikely |
+| **Precipitant** | **Infection (30-40%)** Most Common |
+| **AF in Storm** | Propranolol/Esmolol; Digoxin if HF; Cardioversion if Unstable |
+| **Anticoagulation** | Heparin if AF + Risk Factors |
+| **Thyroid Storm vs Sepsis** | Storm: ↑ T3/T4, Suppressed TSH; Sepsis: Normal TSH, ↑ Lactate, Cultures + |
+| **Thyroid Storm in Pregnancy** | PTU Preferred; Multidisciplinary (OB + Endo + ICU) |
+| **Mortality** | 10-30% (Despite Optimal Care) |
+| **PTU Hepatotoxicity** | Monitor LFTs q2-3d; Switch to Carbimazole if ALT >3x ULN |
+
+---
+
+## 9. Confusions & Mnemonics
+
+| Confusion | Clarification |
+|-----------|---------------|
+| **Thyroid Storm vs Severe Thyrotoxicosis** | Storm = BWS ≥45 + Multiorgan Dysfunction; Thyrotoxicosis = BWS <45 |
+| **PTU vs Carbimazole** | PTU = Blocks T4→T3 (Preferred); Carbimazole = Only Synthesis Inhibition |
+| **Iodine Timing** | **Give AFTER PTU (1 Hour)**; Before PTU → ↑ Hormone Synthesis (Jod-Basedow) |
+| **β-Blocker Choice** | Propranolol (Non-Selective); Esmolol if Asthma/Shock (Titratable) |
+| **Hydrocortisone vs Dexamethasone** | Hydrocortisone = Physiological Replacement + T4→T3 Block; Dex = Anti-inflammatory |
+| **Cooling Method** | **Passive Only** (Ice Packs, Cooling Blanket); NO Active Rewarming |
+| **Anticoagulation in AF** | Heparin/LMWH if CHA₂DS₂-VASc ≥2 / Immobilised |
+| **PTU Hepatotoxicity** | Monitor LFTs q2-3 Days; Switch to Carbimazole if ALT >3x ULN |
+| **BWS Scoring** | Temp (°C) + CNS + GI + Cardiac + Precipitant = Score |
+| **BWS ≥45** | **Diagnostic** (Specificity >90%) |
+
+---
+
+## 9. Mind Map
+
+```mermaid
+mindmap
+  root((Thyroid Storm))
+    Definition
+      Life-Threatening Thyrotoxicosis
+      Multiorgan Failure
+      Mortality 10-30%
+    BWS Score
+      Temp + CNS + GI + Cardiac + Precipitant
+      ≥45 = Diagnostic
+      25-44 = Probable
+      <25 = Unlikely
+    Precipitants (I PREPARE)
+      Infection (Commonest)
+      Pregnancy/Postpartum
+      Radiation/Iodine/Refractory
+      External Trauma/Surgery
+      Postpartum/PE/Postpartum
+      Acute Illness (MI/Stroke/DKA)
+      Refractory/Non-Adherence
+      Emotional Stress/Exercise
+    Emergency Rx
+      PTU 600mg Load → 200mg q6h
+      Propranolol 80mg q6h (+Esmolol)
+      Iodine (After PTU) 8 Drops q6h
+      Hydrocortisone 100mg IV q8h
+      Fluids + Cooling + β-Blocker
+    Precipitants
+      Infection (Commonest)
+      Surgery/Trauma
+      Parturition
+      Iodine Load
+      Non-Adherence
+      DKA/MI/Stroke
+    Supportive
+      Fluids 1-2L NaCl 1hr
+      Passive Cooling
+      Glucose Monitor
+      Anticoagulation (AF)
+      Treat Precipitant
+    Complications
+      Arrhythmias, HF, DIC, Hepatic/Renal Failure
+      Mortality 10-30%
+```
+
+---
+
+## 8. Exam Pearls (FCPS/MRCP)
+
+| Topic | Key Point |
+|-------|-----------|
+| **BWS ≥45** | **Diagnostic** for Thyroid Storm |
+| **BWS 25-44** | Probable / Impending |
+| **PTU vs Carbimazole** | **PTU 1st Line** (Blocks T4→T3) |
+| **Iodine Timing** | **After PTU** (1 Hour Later) |
+| **β-Blocker** | Propranolol 1st Line; Esmolol if Asthma/Shock |
+| **Steroids** | Hydrocortisone 100mg IV q8h (Blocks T4→T3 + Adrenal Support) |
+| **Cooling** | **Passive Only** (No Active Rewarming) |
+| **Precipitants** | Infection (Commonest), Surgery, Iodine, DKA, Trauma, Non-Compliance |
+| **Anticoagulation** | Heparin if AF + Risk Factors |
+| **Mortality** | 10-30% (Despite Treatment) |
+| **PTU Dose** | 600mg Load → 200mg Q6H |
+| **Propranolol** | 80mg Q6H; Esmolol if Asthma/Shock |
+| **Iodine** | Lugol's 8 Drops Q6H (1h After PTU) |
+| **Hydrocortisone** | 100mg IV q8h (Blocks T4→T3 + Adrenal Support) |
+| **Cooling** | **Passive Only** (Active Rewarming = Harm) |
+| **BWS <25** | Unlikely Thyroid Storm |
+
+---
+
+## 10. Local Navigation (for Dashboard UI)
+
+> **Parent**: [[../Endocrine Emergencies|Endocrine Emergencies]]  
+> **Hierarchy**: [[../../Davidson Chapter 20 - Endocrinology Hierarchy|Endocrinology Hierarchy]]  
+> **Template**: [[../../../Templates/Endocrinology Topic Template|Endocrinology Topic Template]]  
+> **See also**: [[Graves Disease]], [[Hyperthyroidism Overview]], [[Thyroid Eye Disease]], [[Adrenal Crisis]], [[Myxoedema Coma]], [[Endocrine Emergencies]]
+## MCQs (10)
+1. **Thyroid storm diagnosis:**
+   A. Burch-Wartofsky Score >=45
+   B. TSH <0.01 only
+   C. fT4 >50 only
+   D. Tachycardia only
+   E. Fever only
+
+2. **BWS temperature scoring:**
+   A. 37.2-37.7: 5; 37.8-38.3: 10; 38.4-38.8: 15; 38.9-39.4: 20; 39.5-39.9: 25; >=40: 30
+   B. Only fever >38
+   C. Only fever >39
+   D. Only fever >40
+   E. No scoring
+
+3. **First-line antithyroid drug in thyroid storm:**
+   A. PTU (blocks T4->T3 conversion)
+   B. Carbimazole
+   C. RAI
+   D. Propranolol only
+   E. Iodine only
+
+4. **Iodine timing in thyroid storm:**
+   A. Give 1 hour AFTER PTU (blocks release)
+   B. Before PTU
+   C. Simultaneously with PTU
+   D. Never give iodine
+   E. Only if PTU unavailable
+
+5. **Beta-blocker of choice in thyroid storm:**
+   A. Propranolol (non-selective)
+   B. Atenolol
+   C. Bisoprolol
+   D. Metoprolol
+   E. No beta-blocker
+
+6. **Hydrocortisone in thyroid storm:**
+   A. 100mg IV q8h (blocks T4->T3 + adrenal support)
+   B. Not needed
+   C. Dexamethasone preferred
+   D. Oral only
+   E. After thyroid storm resolves
+
+7. **BWS <25:**
+   A. Unlikely thyroid storm
+   B. Diagnostic
+   C. Impending
+   D. Probable
+   E. Severe
+
+8. **Commonest precipitant:**
+   A. Infection (30-40%)
+   B. Surgery
+   C. Trauma
+   D. Iodine load
+   E. Non-compliance
+
+9. **Thyroid storm in pregnancy:**
+   A. PTU preferred; multidisciplinary (OB+Endo+ICU)
+   B. Carbimazole
+   C. RAI
+   D. Surgery
+   E. Propranolol only
+
+10. **Thyroid storm mortality:**
+   A. 10-30% despite treatment
+   B. <1%
+   C. 50%
+   D. >50%
+   E. 0%
+
+## SBA Questions (10)
+1. **35yo woman: fever 40°C, HR 140, delirium, TSH <0.01, fT4 80. BWS?**
+   A. >=45 (diagnostic thyroid storm)
+   B. <25
+   C. 25-44
+   D. Exactly 45
+   E. Cannot calculate
+
+2. **Same patient: immediate drugs?**
+   A. PTU 600mg + Propranolol 80mg + Iodine (after PTU) + Hydrocortisone 100mg IV
+   B. Carbimazole only
+   C. RAI
+   D. Surgery
+   E. Propranolol only
+
+3. **Thyroid storm with asthma: beta-blocker?**
+   A. Esmolol IV (cardioselective, titratable)
+   B. Propranolol
+   C. Atenolol
+   D. No beta-blocker
+   E. Labetalol
+
+4. **Thyroid storm: Iodine given before PTU. Risk?**
+   A. Increased hormone synthesis (Jod-Basedow)
+   B. No risk
+   C. Better efficacy
+   D. No effect
+   E. Allergy only
+
+5. **Post-thyroid storm: cooling method?**
+   A. Passive only (ice packs, blanket); NO active rewarming
+   B. Active rewarming
+   C. Ice water immersion
+   D. Heating blanket
+   E. Antipyretics only
+
+## Flashcards
+- **Q: Thyroid storm**
+  **A: BWS >=45 = diagnostic; PTU + Propranolol + Iodine (after PTU) + Hydrocortisone**
+
+- **Q: BWS scoring**
+  **A: Temp + CNS + GI + Cardiac + Precipitant**
+
+- **Q: PTU preferred**
+  **A: Blocks T4->T3 conversion; 600mg load -> 200mg q6h**
+
+- **Q: Iodine timing**
+  **A: 1 hour AFTER PTU (else Jod-Basedow)**
+
+- **Q: Beta-blocker**
+  **A: Propranolol (non-selective); Esmolol if asthma/shock**
+
+- **Q: Steroids**
+  **A: Hydrocortisone 100mg IV q8h (blocks T4->T3 + adrenal support)**
+
+- **Q: Cooling**
+  **A: Passive ONLY (active rewarming = harm)**
+
+- **Q: Precipitants**
+  **A: Infection (commonest), surgery, iodine, DKA, trauma, non-compliance**
+
+- **Q: Anticoagulation**
+  **A: Heparin if AF + risk factors**
+
+- **Q: Mortality**
+  **A: 10-30% despite treatment**
+
+## Answer Key with Explanations
+### MCQs
+1. **Burch-Wartofsky Score >=45** — Thyroid storm diagnosis:
+
+2. **37.2-37.7: 5; 37.8-38.3: 10; 38.4-38.8: 15; 38.9-39.4: 20; 39.5-39.9: 25; >=40: 30** — BWS temperature scoring:
+
+3. **PTU (blocks T4->T3 conversion)** — First-line antithyroid drug in thyroid storm:
+
+4. **Give 1 hour AFTER PTU (blocks release)** — Iodine timing in thyroid storm:
+
+5. **Propranolol (non-selective)** — Beta-blocker of choice in thyroid storm:
+
+6. **100mg IV q8h (blocks T4->T3 + adrenal support)** — Hydrocortisone in thyroid storm:
+
+7. **Unlikely thyroid storm** — BWS <25:
+
+8. **Infection (30-40%)** — Commonest precipitant:
+
+9. **PTU preferred; multidisciplinary (OB+Endo+ICU)** — Thyroid storm in pregnancy:
+
+10. **10-30% despite treatment** — Thyroid storm mortality:
+
+
+### SBAs
+1. **>=45 (diagnostic thyroid storm)** — 35yo woman: fever 40°C, HR 140, delirium, TSH <0.01, fT4 80. BWS?
+
+2. **PTU 600mg + Propranolol 80mg + Iodine (after PTU) + Hydrocortisone 100mg IV** — Same patient: immediate drugs?
+
+3. **Esmolol IV (cardioselective, titratable)** — Thyroid storm with asthma: beta-blocker?
+
+4. **Increased hormone synthesis (Jod-Basedow)** — Thyroid storm: Iodine given before PTU. Risk?
+
+5. **Passive only (ice packs, blanket); NO active rewarming** — Post-thyroid storm: cooling method?
+
